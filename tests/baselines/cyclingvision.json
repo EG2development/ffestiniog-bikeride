@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-25T09:53:36.824Z",
+  "machine": "darwin-arm64",
+  "gl": "default",
+  "frames": {
+    "5": "58417edab66d8baeab0e2d5c2d51967bb58a4b23eaa2c2b1bbf24ebcb768065f",
+    "1200": "c51dab24b5a8b3cdccafa85928842bf19adac17b2a00834de056f5a9bde731e8",
+    "2200": "6a9065e54e643f45a20fbd4e391b9f3b854cfeeb10f283b58e8cd3897b654488",
+    "2900": "1a09fe9ea413ab44a622901dd7741960b8e1b3b94cb8f07e65922741dca3da58"
+  }
+}

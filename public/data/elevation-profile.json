@@ -1,0 +1,229 @@
+{
+  "source": "Derived from OSM-stitched alignment + Open-Meteo Elevation API (Copernicus DEM GLO-90), smoothed to 250 m steps to remove DEM point-noise",
+  "caveat": "DEM-derived; not a surveyed engineering profile. Point-to-point ascent/descent on the raw 90m-DEM samples summed to ~388 m/358 m, which is implausible for an engineered rail gradient over 13 km and almost certainly DEM interpolation noise rather than real undulation. These smoothed figures are a closer approximation but still require a surveyed profile before any gradient/accessibility claims are made.",
+  "total_length_km": 13.24,
+  "total_length_miles": 8.23,
+  "min_elevation_m": 170.1,
+  "max_elevation_m": 247.0,
+  "smoothed_total_ascent_m": 190,
+  "smoothed_total_descent_m": 160,
+  "direction": "Blaenau Ffestiniog (start, 0 km) -> Trawsfynydd (end)",
+  "profile": [
+    {
+      "distance_km": 0.0,
+      "elevation_m": 217.0
+    },
+    {
+      "distance_km": 0.25,
+      "elevation_m": 221.0
+    },
+    {
+      "distance_km": 0.5,
+      "elevation_m": 210.0
+    },
+    {
+      "distance_km": 0.75,
+      "elevation_m": 199.0
+    },
+    {
+      "distance_km": 1.0,
+      "elevation_m": 192.0
+    },
+    {
+      "distance_km": 1.25,
+      "elevation_m": 207.0
+    },
+    {
+      "distance_km": 1.5,
+      "elevation_m": 217.0
+    },
+    {
+      "distance_km": 1.75,
+      "elevation_m": 217.1
+    },
+    {
+      "distance_km": 2.0,
+      "elevation_m": 207.1
+    },
+    {
+      "distance_km": 2.25,
+      "elevation_m": 218.0
+    },
+    {
+      "distance_km": 2.5,
+      "elevation_m": 205.5
+    },
+    {
+      "distance_km": 2.75,
+      "elevation_m": 200.2
+    },
+    {
+      "distance_km": 3.0,
+      "elevation_m": 190.7
+    },
+    {
+      "distance_km": 3.25,
+      "elevation_m": 200.1
+    },
+    {
+      "distance_km": 3.5,
+      "elevation_m": 193.5
+    },
+    {
+      "distance_km": 3.75,
+      "elevation_m": 203.0
+    },
+    {
+      "distance_km": 4.0,
+      "elevation_m": 187.9
+    },
+    {
+      "distance_km": 4.25,
+      "elevation_m": 176.7
+    },
+    {
+      "distance_km": 4.5,
+      "elevation_m": 183.0
+    },
+    {
+      "distance_km": 4.75,
+      "elevation_m": 191.3
+    },
+    {
+      "distance_km": 5.0,
+      "elevation_m": 195.0
+    },
+    {
+      "distance_km": 5.25,
+      "elevation_m": 195.0
+    },
+    {
+      "distance_km": 5.5,
+      "elevation_m": 188.3
+    },
+    {
+      "distance_km": 5.75,
+      "elevation_m": 183.0
+    },
+    {
+      "distance_km": 6.0,
+      "elevation_m": 184.8
+    },
+    {
+      "distance_km": 6.25,
+      "elevation_m": 170.1
+    },
+    {
+      "distance_km": 6.5,
+      "elevation_m": 184.0
+    },
+    {
+      "distance_km": 6.75,
+      "elevation_m": 180.0
+    },
+    {
+      "distance_km": 7.0,
+      "elevation_m": 183.0
+    },
+    {
+      "distance_km": 7.25,
+      "elevation_m": 175.0
+    },
+    {
+      "distance_km": 7.5,
+      "elevation_m": 181.2
+    },
+    {
+      "distance_km": 7.75,
+      "elevation_m": 188.5
+    },
+    {
+      "distance_km": 8.0,
+      "elevation_m": 185.6
+    },
+    {
+      "distance_km": 8.25,
+      "elevation_m": 180.3
+    },
+    {
+      "distance_km": 8.5,
+      "elevation_m": 177.6
+    },
+    {
+      "distance_km": 8.75,
+      "elevation_m": 187.8
+    },
+    {
+      "distance_km": 9.0,
+      "elevation_m": 186.0
+    },
+    {
+      "distance_km": 9.25,
+      "elevation_m": 190.8
+    },
+    {
+      "distance_km": 9.5,
+      "elevation_m": 199.0
+    },
+    {
+      "distance_km": 9.75,
+      "elevation_m": 201.9
+    },
+    {
+      "distance_km": 10.0,
+      "elevation_m": 209.4
+    },
+    {
+      "distance_km": 10.25,
+      "elevation_m": 215.0
+    },
+    {
+      "distance_km": 10.5,
+      "elevation_m": 215.1
+    },
+    {
+      "distance_km": 10.75,
+      "elevation_m": 215.2
+    },
+    {
+      "distance_km": 11.0,
+      "elevation_m": 222.3
+    },
+    {
+      "distance_km": 11.25,
+      "elevation_m": 221.5
+    },
+    {
+      "distance_km": 11.5,
+      "elevation_m": 217.0
+    },
+    {
+      "distance_km": 11.75,
+      "elevation_m": 213.1
+    },
+    {
+      "distance_km": 12.0,
+      "elevation_m": 216.0
+    },
+    {
+      "distance_km": 12.25,
+      "elevation_m": 221.9
+    },
+    {
+      "distance_km": 12.5,
+      "elevation_m": 221.8
+    },
+    {
+      "distance_km": 12.75,
+      "elevation_m": 231.3
+    },
+    {
+      "distance_km": 13.0,
+      "elevation_m": 240.0
+    },
+    {
+      "distance_km": 13.239,
+      "elevation_m": 247.0
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+import { describe, expect, it } from "vitest";
+import { droneSideTrack, followShot, sequenceShots, withClearance, type Shot } from "../../src/three-core/camera";
+import type { Vec3 } from "../../src/three-core/types";
+import { expectCameraCriteria } from "./criteria";
+import { analyticRider, analyticTrail, profileHeight, syntheticProfile } from "./fixtures";
+
+const FPS = 30;
+
+// A valley along the trail: the floor follows the profile, the sides rise gently.
+const valley = (x: number, z: number) =>
+  profileHeight(Math.min(1000, Math.max(0, x * 10))) / 10 + 0.02 * (z - 3 * Math.sin(x / 20)) ** 2;
+
+function pocShots() {
+  const trail = analyticTrail(1000, syntheticProfile(1000));
+  const rider = analyticRider(trail, 100, FPS);
+  const riderB = (g: number) => rider.riderAt(g + 180);
+  const a = droneSideTrack({
+    trail,
+    riderAt: rider.riderAt,
+    heightAt: valley,
+    fromDistM: 80,
+    toDistM: 230,
+    startHeightM: 120,
+    endHeightM: 25,
+    sideM: 40,
+    frames: 180,
+  });
+  const b = followShot({ poseAt: (g) => rider.poseAt(g + 180), backM: 8, upM: 3, sideM: 1.5 });
+  const shotA = withClearance(a, valley, rider.riderAt, 2, 1.5);
+  const shotB = withClearance(b, valley, riderB, 2, 1.5);
+  return { rider, shotA, shotB, all: sequenceShots([{ shot: shotA, frames: 180 }, { shot: shotB, frames: 180 }]) };
+}
+
+describe("camera (CA1–CA4)", () => {
+  it("CA1–CA4 hold at every frame of the two POC shots", () => {
+    const { rider, all } = pocShots();
+    expectCameraCriteria(all, [[0, 180], [180, 360]], valley, rider.riderAt, FPS);
+  });
+
+  it("sequenceShots hands each shot its own local frames", () => {
+    const { shotA, shotB, all } = pocShots();
+    expect(all(179)).toEqual(shotA(179));
+    expect(all(180)).toEqual(shotB(0));
+    expect(all(359)).toEqual(shotB(179));
+  });
+
+  it("fails loudly when there is no terrain under the camera (review R7)", () => {
+    const trail = analyticTrail(1000, syntheticProfile(1000));
+    const rider = analyticRider(trail, 100, FPS);
+    const nowhere = () => -Infinity;
+    const drone = droneSideTrack({ trail, riderAt: rider.riderAt, heightAt: nowhere, fromDistM: 80, toDistM: 230, startHeightM: 120, endHeightM: 25, sideM: 40, frames: 180 });
+    expect(() => drone(0)).toThrow(/no terrain/);
+    const follow = followShot({ poseAt: rider.poseAt, backM: 8, upM: 3, sideM: 1.5 });
+    expect(() => withClearance(follow, nowhere, rider.riderAt, 2, 1.5)(0)).toThrow(/no terrain/);
+  });
+
+  it("withClearance lifts a camera out of the ground and away from the rider", () => {
+    const rider: Vec3 = [10, 18, 0];
+    const buried: Shot = () => ({ position: [10, 18.05, 0.02], target: [12, 18, 0], fovDeg: 45 });
+    const fixed = withClearance(buried, () => 18, () => rider, 2, 1.5)(0);
+    expect(fixed.position[1]).toBeGreaterThanOrEqual(18 + 0.2 - 1e-9);
+    expect(Math.hypot(fixed.position[0] - 10, fixed.position[1] - 18, fixed.position[2])).toBeGreaterThanOrEqual(0.15 - 1e-9);
+  });
+});

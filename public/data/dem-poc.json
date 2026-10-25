@@ -1,0 +1,23 @@
+{
+  "cols": 471,
+  "rows": 729,
+  "spacingM": 4,
+  "pixelSizeM": [
+    3.9999790584687553,
+    4.0
+  ],
+  "originE": 268754.45676620875,
+  "originN": 341154.0,
+  "crs": "EPSG:27700",
+  "nodata": -9999.0,
+  "fallbackCells": 0,
+  "file": "dem-poc.f32",
+  "sourceFile": "dem-poc-source.u8",
+  "source": "Welsh Government / NRW lidar DTM, 1 m, 32-bit COG (4 m overview level)",
+  "url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif",
+  "licence": "Open Government Licence (to confirm on the layer's metadata page; one catalogue lists 'Not Specified')",
+  "resampling": "unknown (COG overview as published)",
+  "retrieved": "2026-10-25",
+  "heightsMin": 109.69999694824219,
+  "heightsMax": 303.4200134277344
+}

@@ -1,0 +1,1211 @@
+[
+  {
+    "id": "terrain-lidar",
+    "kind": "terrain",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "1 m DTM shown at its 4 m overview; WGS84-BNG by Helmert, about ±5 m horizontally"
+  },
+  {
+    "id": "landcover-osm",
+    "kind": "landcover",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "landuse/natural polygons in public/data/osm-poc.geojson"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ]
+  },
+  {
+    "id": "trail-proposed",
+    "kind": "trail",
+    "category": "proposed",
+    "source": {
+      "type": "original",
+      "ref": "concept treatment, 3.0 m shared-use"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "follows the OSM centreline of the Bala and Festiniog Railway; width not yet checked against ATAG 2021"
+  },
+  {
+    "id": "trees",
+    "kind": "vegetation",
+    "category": "decorative",
+    "source": {
+      "type": "original",
+      "ref": "seeded placement inside OSM woodland"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ]
+  },
+  {
+    "id": "cyclist",
+    "kind": "cyclist",
+    "category": "decorative",
+    "source": {
+      "type": "original",
+      "ref": "procedural model"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ]
+  },
+  {
+    "id": "bridge-159029124",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029124"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "fromKm": 9.149700000000001,
+    "toKm": 9.168899999999999,
+    "note": "position from OSM; generic deck and parapets"
+  },
+  {
+    "id": "overbridge-159029554",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029554"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "fromKm": 7.8021,
+    "toKm": 7.820600000000001,
+    "note": "highway=track bridge over the line; the DTM keeps its deck, so it was removed from the trail profile and the trail passes beneath; drawn by the road ribbon"
+  },
+  {
+    "id": "overbridge-159029127",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029127"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "fromKm": 8.3211,
+    "toKm": 8.3406,
+    "note": "highway=service bridge over the line; the DTM keeps its deck, so it was removed from the trail profile and the trail passes beneath; drawn by the road ribbon"
+  },
+  {
+    "id": "overbridge-159029128",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029128"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "fromKm": 8.5596,
+    "toKm": 8.5911,
+    "note": "highway=trunk bridge over the line; the DTM keeps its deck, so it was removed from the trail profile and the trail passes beneath; drawn by the road ribbon"
+  },
+  {
+    "id": "overbridge-945118076",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/945118076"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "fromKm": 9.472,
+    "toKm": 9.4905,
+    "note": "highway=track bridge over the line; the DTM keeps its deck, so it was removed from the trail profile and the trail passes beneath; drawn by the road ribbon"
+  },
+  {
+    "id": "road-4246984",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/4246984"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-108907151",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/108907151"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=tertiary"
+  },
+  {
+    "id": "road-159029125",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029125"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-159029132",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029132"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-230003694",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230003694"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-289027284",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027284"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-289027303",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027303"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-289033759",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033759"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-293110304",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/293110304"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-293110305",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/293110305"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-293110306",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/293110306"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-311744172",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/311744172"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-311744173",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/311744173"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-311744183",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/311744183"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-357873351",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357873351"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-357873359",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357873359"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-371939650",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/371939650"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-371939651",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/371939651"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-371939652",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/371939652"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-371939653",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/371939653"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-371939656",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/371939656"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-373577742",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373577742"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-373577744",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373577744"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-380095161",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/380095161"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-380095163",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/380095163"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-428585765",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428585765"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-428585766",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428585766"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-428585767",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428585767"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-428585770",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428585770"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-428585782",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428585782"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-747175569",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/747175569"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-945118076",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/945118076"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-945118077",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/945118077"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-945118078",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/945118078"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-1301599643",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1301599643"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-1322700664",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1322700664"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-1325489520",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1325489520"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-123459816",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/123459816"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-159029126",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029126"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-159029127",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029127"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-159029128",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029128"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-159029129",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029129"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-159029130",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029130"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-159029730",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029730"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-311744189",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/311744189"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-357880204",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357880204"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-371939654",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/371939654"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-371939655",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/371939655"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-371939657",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/371939657"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-371939658",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/371939658"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-371939659",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/371939659"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-373593548",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373593548"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-843391702",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/843391702"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-1448594697",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1448594697"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-1448594698",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1448594698"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-33908806",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/33908806"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-159025225",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159025225"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-224967869",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/224967869"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-230003692",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230003692"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-230003693",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230003693"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-364997730",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/364997730"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-373595258",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373595258"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-840779068",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/840779068"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-1000256356",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1000256356"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-1226993508",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1226993508"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-1226993510",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1226993510"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-1231939365",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231939365"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-1231939366",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231939366"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-1231939367",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231939367"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-1322700663",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1322700663"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-159029553",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029553"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-159029554",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029554"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-159029555",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029555"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-224967876",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/224967876"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-373593550",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373593550"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-373593551",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373593551"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-428657024",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428657024"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-1448594695",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1448594695"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-1448594696",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1448594696"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "earthwork-cut-8.602",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "fromKm": 8.602,
+    "toKm": 8.602,
+    "note": "cut, up to 2.4 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-fill-8.865",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "fromKm": 8.865,
+    "toKm": 8.865,
+    "note": "fill, up to 2.1 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-fill-9.009",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Poc3DMaentwrog"
+    ],
+    "fromKm": 9.009,
+    "toKm": 9.009,
+    "note": "fill, up to 3.5 m; DEM-derived, not a surveyed earthwork"
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "path": "src/three/CyclistView.tsx",
+    "kind": "model",
+    "source": "Original procedural model built in this repository from three.js primitives (src/three/CyclistView.tsx, with motion from src/three-core/cyclistMotion.ts); no third-party geometry, textures or rigs (ADR 14)",
+    "licence": "Original work of this project; no third-party licence applies",
+    "attribution": "None required (original work)"
+  }
+]

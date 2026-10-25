@@ -1,0 +1,53 @@
+# CI for the cycling-trail video (mission task t12).
+# Runs the checks that give the same answer on any machine. The render checks (npm run test:render)
+# stay a local release gate: their RG1 baselines are pixel hashes from the development Mac and the
+# 3D renders need a GPU (docs/adr/0026-ci-scope.md, docs/sop-3d.md "CI").
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Lint, tests, audit and build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      # actions pinned to commit SHAs; versions match the development machine
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24.13.1
+          cache: npm
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: npm ci
+      - name: Install the data pipeline's Python dependency
+        run: python -m pip install numpy==2.4.4
+      - name: Lint and type-check
+        run: npm run lint
+      - name: Unit, static and acceptance tests
+        run: npm test
+      - name: Dependency audit (fails on high or critical)
+        run: npm audit --audit-level=high
+      - name: Pipeline self-test and compile check
+        run: |
+          python -I scripts/dem/bng.py
+          python -I -m py_compile scripts/build_poc_data.py scripts/dem/bng.py scripts/dem/cog.py scripts/osm/fetch_bbox.py
+      - name: Build (bundle)
+        run: npm run build -- --out-dir=out/bundle --log=error

@@ -5,3 +5,24 @@ dist
 
 # Ignore the output video from Git but not videos you import into src/.
 out
+# `npm run build` writes the bundle here by default
+build
+# Python bytecode from the pipeline scripts and the CI compile check
+__pycache__/
+
+# Ruflo local secrets and runtime data
+.env.local
+.env.*.local
+.claude-flow/data/
+.claude-flow/logs/
+.claude-flow/sessions/
+# Agent memory databases built from session content (t9 security review)
+.swarm/
+ruvector.db
+agentdb.rvf
+agentdb.rvf.lock
+
+# Codex local configuration
+.codex/
+# Claude Flow runtime data
+# Environment variables
