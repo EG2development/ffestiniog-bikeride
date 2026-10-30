@@ -1,8 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { wgs84ToBng } from "../../src/three-core/bng";
-import { validateCanopyHeader, validateFeatures } from "../../src/three-core/registers";
+import { validateCanopyHeader, validateFeatures, validateImageryHeader } from "../../src/three-core/registers";
+import { imageryNodeColours, imageryPixels } from "../../src/three-core/shading";
 import type { Trail } from "../../src/three-core/trail";
-import { NOMINAL_TREE_HEIGHT_M, placeTrees } from "../../src/three-core/trees";
+import { NOMINAL_TREE_HEIGHT_M, placeTrees, treesInShots, type TreeInstance } from "../../src/three-core/trees";
 import type { DemGrid, LandCover } from "../../src/three-core/types";
 import { syntheticRoute } from "./fixtures";
 
@@ -76,5 +77,91 @@ describe("placeTrees with a canopy", () => {
   it("a barrier is a register kind (ADR 58)", () => {
     const [f] = validateFeatures([{ id: "barrier-t-1", kind: "barrier", category: "approximate", source: { type: "osm", ref: "way/1" }, scenes: ["Section-t"] }]);
     expect(f.kind).toBe("barrier");
+  });
+});
+
+// The reel in the photo look (docs/adr/0060-reel-in-the-photo-look.md): a coarse grid's trees, and the satellite image.
+describe("placeTrees on a coarse grid, and the ground image", () => {
+  const all = (o: ReturnType<typeof placeTrees>) => [...o.conifer, ...o.broadleaf];
+
+  it("treesPerNode 1 is the default placement, and 3 draws three trees a node, each inside its node's cell", () => {
+    const base = { probability: 1, nearZoneM: Infinity };
+    expect(placeTrees(dem, land, route.project, noTrail, { ...base, treesPerNode: 1 })).toEqual(placeTrees(dem, land, route.project, noTrail, base));
+    const one = all(placeTrees(dem, land, route.project, noTrail, base));
+    const three = all(placeTrees(dem, land, route.project, noTrail, { ...base, treesPerNode: 3 }));
+    // three draws a node, each jittered on its own (a few fall off the grid's edge)
+    expect(three.length).toBeGreaterThan(2.9 * one.length);
+    expect(three.length).toBeLessThanOrEqual(3 * one.length + 30);
+    for (const t of three) {
+      const { lon, lat } = route.unproject(t.x, t.z);
+      const { e, n } = wgs84ToBng(lon, lat);
+      const fc = (e - (e0 - 80)) / 4;
+      const fr = (n0 + 80 - n) / 4;
+      expect(Math.abs(fc - Math.round(fc))).toBeLessThanOrEqual(0.5 + 1e-6);
+      expect(Math.abs(fr - Math.round(fr))).toBeLessThanOrEqual(0.5 + 1e-6);
+    }
+  });
+
+  it("canopyCover grows trees wherever the canopy stands, woodland or not, but never on a bare class, and only broadleaves outside woodland", () => {
+    // a third class, built-up, in the south-east quarter; the canopy is about 8 m everywhere, rising eastwards, so it
+    // peaks only along the east edge (where a field tree may stand)
+    const mixed = Uint8Array.from(classes, (k, i) => (k === 1 && Math.floor(i / cols) >= rows / 2 ? 2 : k));
+    const land3: LandCover = { legend: ["woodland", "grass/farmland", "built-up"], classes: mixed };
+    const canopy = new Float32Array(cols * rows).map((_, i) => 8 + 0.01 * (i % cols));
+    const off = placeTrees(dem, land3, route.project, noTrail, { probability: 1, nearZoneM: Infinity, canopy });
+    const on = placeTrees(dem, land3, route.project, noTrail, { probability: 1, nearZoneM: Infinity, canopy, canopyCover: true });
+    const cls = (t: { x: number; z: number }) => mixed[nodeOf(t).r * cols + nodeOf(t).c];
+    expect(all(off).filter((t) => cls(t) === 1).length).toBeLessThanOrEqual(rows / 2); // field trees only, at the canopy's east-edge peaks
+    expect(all(on).filter((t) => cls(t) === 1).length).toBeGreaterThan(150);
+    expect(all(on).filter((t) => cls(t) === 2)).toEqual([]);
+    expect(on.conifer.filter((t) => cls(t) !== 0)).toEqual([]);
+  });
+
+  it("grades the image (gain, saturation about the luma, tint) and colours each node from the pixel on it", () => {
+    const image = { width: 3, height: 3, scale: 2, rgb: Uint8Array.from([...Array(9)].flatMap((_, i) => [10 * i, 128, 255 - 10 * i])) };
+    const flat = imageryPixels(image, { gain: 1, saturation: 1, tint: [1, 1, 1] });
+    const enc = (v: number) => Math.round(255 * (v <= 0.0031308 ? 12.92 * v : 1.055 * v ** (1 / 2.4) - 0.055));
+    expect([...flat.slice(4, 8)]).toEqual([enc(10 / 255), enc(128 / 255), enc(245 / 255), 255]);
+    // saturation 0 is the luma on every channel; a tint scales one channel
+    const grey = imageryPixels(image, { gain: 1, saturation: 0, tint: [1, 1, 1] });
+    expect(grey[0]).toBe(grey[1]);
+    expect(grey[1]).toBe(grey[2]);
+    const warm = imageryPixels(image, { gain: 1, saturation: 1, tint: [1, 1, 0.5] });
+    expect(warm[2]).toBeLessThan(flat[2]);
+    // a 2 x 2 node grid at scale 2 reads pixels (0, 0), (0, 2), (2, 0) and (2, 2)
+    const nodes = imageryNodeColours(image, flat, 2, 2);
+    expect(nodes.length).toBe(12);
+    expect(nodes[3] * 255).toBeCloseTo(flat[4 * 2], 3);
+    expect(nodes[9] * 255).toBeCloseTo(flat[4 * 8], 3);
+  });
+
+  it("refuses an image that is not on the DEM's grid at a whole scale", () => {
+    const demHeader = { cols, rows, spacingM: 4, originE: dem.originE, originN: dem.originN };
+    const ok = { ...demHeader, file: "imagery.u8", scale: 2, width: 79, height: 79 };
+    expect(validateImageryHeader(ok, "imagery.json", demHeader).width).toBe(79);
+    expect(() => validateImageryHeader({ ...ok, originE: 0 }, "imagery.json", demHeader)).toThrow(/imagery grid differs/);
+    expect(() => validateImageryHeader({ ...ok, scale: 1.5 }, "imagery.json", demHeader)).toThrow(/whole number/);
+    expect(() => validateImageryHeader({ ...ok, width: 80 }, "imagery.json", demHeader)).toThrow(/is not the 40 × 40 grid/);
+  });
+
+  it("treesInShots keeps a tree some shadow map reaches as a caster, one only a view holds without its shadow, and drops the rest", () => {
+    const tree = (x: number, z: number): TreeInstance => ({ x, y: 0, z, scale: 1, yaw: 0 });
+    // one camera at the origin looking down +x, 45°; the focus sits 5 units ahead, and a shadow map reaches 10 units
+    const pose = { position: [0, 0.2, 0] as [number, number, number], target: [10, 0.2, 0] as [number, number, number], fovDeg: 45 };
+    const near = tree(8, 2); // by the focus
+    const ahead = tree(100, 3); // far ahead, in view
+    const behind = tree(-60, 0); // behind the camera, far from the focus
+    const aside = tree(20, 80); // well outside the 45° view, far from the focus
+    const out = treesInShots({ conifer: [near, ahead], broadleaf: [behind, aside] }, [pose], [[5, 0, 0]], { shadowReach: 10 });
+    expect(out.casting).toEqual({ conifer: [near], broadleaf: [] });
+    expect(out.shadowless).toEqual({ conifer: [ahead], broadleaf: [] });
+    // a crown's edge in view keeps it: a tree just outside the frustum line by less than its crown radius
+    const edge = tree(40, 40 * Math.tan(Math.PI / 8) * (16 / 9) + 0.4);
+    expect(treesInShots({ conifer: [edge], broadleaf: [] }, [pose], [[5, 0, 0]], { shadowReach: 10 }).shadowless.conifer.length).toBe(1);
+  });
+
+  it("imagery is a register kind, from a Copernicus source (ADR 60)", () => {
+    const [f] = validateFeatures([{ id: "imagery-t", kind: "imagery", category: "approximate", source: { type: "copernicus", ref: "scene" }, scenes: ["Section-t"] }]);
+    expect(f.kind).toBe("imagery");
   });
 });

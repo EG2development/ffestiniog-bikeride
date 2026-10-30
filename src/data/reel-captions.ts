@@ -7,6 +7,9 @@ export type Caption = { id: string; text: string; from: number; to: number; posi
 
 const ATTRIBUTION =
   "Welsh Government / NRW lidar DTM and DSM (OGL) · Map data © OpenStreetMap contributors (ODbL) · Map tiles © OpenTopoMap (CC-BY-SA) · DEM- and OSM-derived, not survey-grade";
+// the photo look draws no map tiles; its aerial ground is a Sentinel-2 image, whose notice the licence asks for (ADR 60)
+const PHOTO_ATTRIBUTION =
+  "Welsh Government / NRW lidar DTM and DSM (OGL) · Map data © OpenStreetMap contributors (ODbL) · Contains modified Copernicus Sentinel data 2025 · DEM- and OSM-derived, not survey-grade";
 const DISCLAIMER = "Concept visualisation — not an approved route";
 
 /** The reel (2,700 frames). */
@@ -35,6 +38,9 @@ export const CAPTIONS: Caption[] = [
   { id: "concept-card", text: "Concept visualisation only. Not an approved cycle route, engineering design or confirmation of landowner agreement.", from: 2455, to: 2700, position: "bottom-center", scene: "closing" },
 ];
 
+/** The reel's captions in a look: the photo look credits the satellite image instead of the map tiles. */
+export const reelCaptions = (look: "concept" | "photo"): Caption[] => (look === "photo" ? CAPTIONS.map((c) => (c.id === "attribution" ? { ...c, text: PHOTO_ATTRIBUTION } : c)) : CAPTIONS);
+
 /** The 20 s photoreal proof of concept (600 frames; docs/adr/0054-photoreal-layer.md): the trail is labelled a proposal
  * as it first appears (H2b), the rider's view is named as the rider's, and the closing statement runs out the shot. */
 export const PHOTO_CAPTIONS: Caption[] = [
@@ -46,11 +52,11 @@ export const PHOTO_CAPTIONS: Caption[] = [
   { id: "closing", text: "Concept only. Mothballed line; heritage rail has been proposed. Not an approved route.", from: 410, to: 600, position: "top-left" },
 ];
 /** The photo look's legend (spec CL7; ADR 38 curated text): the OSM bridge's generic form, and that the people and the
- * levelled, cleared verges are the concept's, not the corridor's today (review 2026-10-30). */
+ * levelled, cleared verges are the concept's, not the corridor's today (review 2026-10-30): one line, so a ground scene
+ * with a bridge and an earthwork keeps the legend to three (spec CL10; ADR 60). */
 export const PHOTO_LEGEND = {
   bridge: "Bridge: OSM position, approximate generic form",
-  people: "People: illustrative",
-  corridor: "Verges levelled and cleared for the concept",
+  ground: "People illustrative; verges levelled and cleared for the concept",
 } as const;
 /** The legend line for registered earthworks a drone shot flies over (spec G8): their km (or km range), marked
  * approximate and DEM-derived, as the register's notes say. */

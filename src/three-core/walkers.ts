@@ -6,10 +6,16 @@ import type { Vec3 } from "./types";
 
 // A walker is the rider's motion model (ADR 15) at a walking pace: a distance table integrated once from a config
 // spec, a pose that is a pure function of the table and the frame, and a figure built from a height. Walkers are
-// decorative and conceptual (nobody is known to walk the mothballed line); a section places them explicitly by spec,
-// never by a random draw, so each one is a choreographed moment the shots can count on.
+// decorative and conceptual (nobody is known to walk the mothballed line). A spec may say how its person moves: walking,
+// running, or walking behind a pram (docs/adr/0061-trail-users-at-random.md); the prototype places its walkers by spec,
+// the reel's sections by a seeded draw (people.ts).
+
+/** How a person moves along the trail (ADR 61). */
+export type Activity = "walk" | "run" | "pram";
 
 export type WalkerSpec = {
+  /** walking (the default), running, or walking behind a pram (ADR 61) */
+  activity?: Activity;
   /** distance along the route at frame 0, metres */
   startDistM: number;
   /** +1 walks with the rider's direction of travel, -1 towards the rider */
@@ -30,7 +36,7 @@ export type WalkerPose = {
   phase: number;
 };
 
-export type WalkerMaterial = "top" | "legs" | "skin" | "hair" | "shoe";
+export type WalkerMaterial = "top" | "legs" | "skin" | "hair" | "shoe" | "frame" | "fabric" | "tyre" | "blanket";
 export type WalkerPart = Omit<Part, "material"> & { material: WalkerMaterial };
 
 /** C9: walking pace 3–6 km/h, slower uphill (gradient in the walker's own direction). */
@@ -38,16 +44,26 @@ export function walkerSpeedKmh(gradient: number): number {
   return Math.min(6, Math.max(3, 4.5 - 30 * gradient));
 }
 
-/** stride (two steps) in metres for a height: about 0.8 of the height at a walking pace */
-export const strideM = (heightM: number): number => 0.8 * heightM;
+/** ADR 61: a person's pace by activity and gradient (in their own direction): walking as C9; running 7.5–12 km/h
+ * (a recreational jog, 10 km/h on the flat); pushing a pram 3–5 km/h, a little slower than walking. */
+export function paceKmh(activity: Activity, gradient: number): number {
+  if (activity === "run") return Math.min(12, Math.max(7.5, 10 - 50 * gradient));
+  if (activity === "pram") return Math.min(5, Math.max(3, 4 - 30 * gradient));
+  return walkerSpeedKmh(gradient);
+}
+
+/** Stride (two steps) in metres for a height: about 0.8 of the height walking, 1.15 running (about 2 m at 10 km/h and
+ * 165 steps a minute), 0.7 behind a pram. */
+export const strideM = (heightM: number, activity: Activity = "walk"): number => (activity === "run" ? 1.15 : activity === "pram" ? 0.7 : 0.8) * heightM;
 
 /** Distance along the route (m) for every frame, integrated once, in the walker's direction. */
 export function walkerTable(trail: Trail, spec: WalkerSpec, frames: number, fps: number): Float64Array {
   const table = new Float64Array(frames);
   table[0] = spec.startDistM;
+  const activity = spec.activity ?? "walk";
   for (let f = 1; f < frames; f++) {
     const g = trail.sampleAt(table[f - 1]).gradient * spec.direction;
-    table[f] = table[f - 1] + (spec.direction * walkerSpeedKmh(g)) / 3.6 / fps;
+    table[f] = table[f - 1] + (spec.direction * paceKmh(activity, g)) / 3.6 / fps;
   }
   return table;
 }
@@ -65,7 +81,7 @@ export function walkerPose(trail: Trail, table: Float64Array, frame: number, spe
   return {
     position: [s.x + fz * off, s.y, s.z - fx * off],
     yaw: Math.atan2(-fz, fx),
-    phase: phase0 + (2 * Math.PI * Math.abs(d - table[0])) / strideM(spec.heightM),
+    phase: phase0 + (2 * Math.PI * Math.abs(d - table[0])) / strideM(spec.heightM, spec.activity),
   };
 }
 
@@ -89,12 +105,19 @@ function knee(hip: Vec3, ankle: Vec3, thigh: number, shin: number): Vec3 {
 
 const seg = (name: string, a: Vec3, b: Vec3, r: number, material: WalkerMaterial): WalkerPart => ({ kind: "capsule", a, b, r, material, name });
 
+/** The figure at a gait phase for an activity (ADR 61): a walker, a runner, or a walker behind a pram with the pram. */
+export function walkerParts(heightM: number, phase: number, activity: Activity = "walk"): WalkerPart[] {
+  if (activity === "run") return runnerParts(heightM, phase);
+  if (activity === "pram") return pusherParts(heightM, phase);
+  return walkParts(heightM, phase);
+}
+
 /**
  * The figure at a gait phase, in walker space (+x forward, +y up, +z right; world units, 1 = 10 m), feet on y = 0.
  * Each foot travels ±SWING·H fore and aft of the hip with the phase and lifts while it swings forward, so one foot is
  * always planted; the knees follow by two-bone geometry and the arms swing against the legs.
  */
-export function walkerParts(heightM: number, phase: number): WalkerPart[] {
+function walkParts(heightM: number, phase: number): WalkerPart[] {
   const H = heightM / 10;
   const u = (k: number) => k * H;
   const parts: WalkerPart[] = [];
@@ -131,18 +154,156 @@ export function walkerParts(heightM: number, phase: number): WalkerPart[] {
   return parts;
 }
 
-/** Clothing, skin and hair colours for a walker from its seed: the same palette every time, never the same two walkers. */
-export function walkerColours(seed: number): Record<WalkerMaterial, string> {
+// A runner (ADR 61): the hips ride lower, the body bobs twice a stride, highest in flight, and leans forward; each foot
+// is down for under half its cycle and swings up behind the hip, so there is a moment with both feet off the ground;
+// the arms are bent near a right angle and swing against the legs.
+const RUN = { hip: 0.48, swing: 0.15, lift: 0.15, bob: 0.02, lean: 0.12, arm: 0.6, elbow: 1.7 };
+
+function runnerParts(heightM: number, phase: number): WalkerPart[] {
+  const H = heightM / 10;
+  const u = (k: number) => k * H;
+  const bob = -u(RUN.bob) * Math.cos(2 * phase);
+  const hipY = u(RUN.hip) + bob;
+  const torso = u(T.shoulder - T.hip);
+  const shoulder: Vec3 = [torso * Math.sin(RUN.lean), hipY + torso * Math.cos(RUN.lean), 0];
+  const parts = upperBody(u, hipY, shoulder, RUN.lean);
+  for (const [side, p, z] of [["left", phase, -u(T.hipHalf)], ["right", phase + Math.PI, u(T.hipHalf)]] as const) {
+    const hip: Vec3 = [0, hipY, z];
+    const c = Math.cos(p);
+    // down while cos(p) < -0.3 (about 40 % of the cycle), lifting towards the buttock as the leg comes through
+    const lift = c > -0.3 ? u(RUN.lift) * ((c + 0.3) / 1.3) ** 0.7 : 0;
+    const ankle: Vec3 = [u(RUN.swing) * Math.sin(p), u(T.ankle) + lift, z];
+    const k = knee(hip, ankle, u(T.thigh), u(T.shin));
+    parts.push(seg(`thigh-${side}`, hip, k, u(0.055), "legs"), seg(`shin-${side}`, k, ankle, u(0.033), "legs"));
+    parts.push(seg(`foot-${side}`, ankle, [ankle[0] + u(T.foot), ankle[1], z], u(T.ankle), "shoe"));
+    const a = -RUN.arm * Math.sin(p);
+    const sz = Math.sign(z) * u(T.shoulderHalf + 0.02);
+    const sh: Vec3 = [shoulder[0], shoulder[1], sz];
+    const elbow: Vec3 = [sh[0] + u(T.upperArm) * Math.sin(a), sh[1] - u(T.upperArm) * Math.cos(a), sz];
+    const b = a + RUN.elbow;
+    const wrist: Vec3 = [elbow[0] + u(T.forearm) * Math.sin(b), elbow[1] - u(T.forearm) * Math.cos(b), sz];
+    parts.push(seg(`upper-arm-${side}`, sh, elbow, u(0.04), "top"), seg(`forearm-${side}`, elbow, wrist, u(0.032), "skin"));
+  }
+  return parts;
+}
+
+/** Hips, torso, shoulders, neck, head and hair for a body leaning forward by `lean` radians. */
+function upperBody(u: (k: number) => number, hipY: number, shoulder: Vec3, lean: number): WalkerPart[] {
+  const neckTop: Vec3 = [shoulder[0] + u(T.neck - T.shoulder) * Math.sin(lean) + u(0.012), shoulder[1] + u(T.neck - T.shoulder) * Math.cos(lean), 0];
+  const head: Vec3 = [shoulder[0] + u(T.head - T.shoulder) * Math.sin(lean) + u(0.014), shoulder[1] + u(T.head - T.shoulder) * Math.cos(lean), 0];
+  return [
+    seg("hips", [0, hipY, -u(T.hipHalf)], [0, hipY, u(T.hipHalf)], u(0.07), "legs"),
+    seg("torso", [0, hipY, 0], shoulder, u(0.085), "top"),
+    seg("shoulders", [shoulder[0], shoulder[1], -u(T.shoulderHalf)], [shoulder[0], shoulder[1], u(T.shoulderHalf)], u(0.055), "top"),
+    seg("neck", shoulder, neckTop, u(0.03), "skin"),
+    { kind: "sphere", a: head, r: u(T.headR), material: "skin", name: "head" },
+    { kind: "sphere", a: [head[0] - u(0.01), head[1] + u(0.012), 0], r: u(0.072), material: "hair", name: "hair", scale: [1, 0.9, 1] },
+  ];
+}
+
+/** Two-bone elbow from shoulder to wrist, hanging below the line between them. */
+function elbowOf(sh: Vec3, wr: Vec3, upper: number, fore: number): Vec3 {
+  const v: Vec3 = [wr[0] - sh[0], wr[1] - sh[1], wr[2] - sh[2]];
+  const d = Math.min(upper + fore - 1e-6, Math.hypot(v[0], v[1], v[2]));
+  const e: Vec3 = [v[0] / d, v[1] / d, v[2] / d];
+  const along = (upper * upper - fore * fore + d * d) / (2 * d);
+  const h = Math.sqrt(Math.max(0, upper * upper - along * along));
+  // "down" made perpendicular to the arm's line
+  const dn = -e[1];
+  const pv: Vec3 = [-dn * e[0], -1 - dn * e[1], -dn * e[2]];
+  const pl = Math.hypot(pv[0], pv[1], pv[2]) || 1;
+  return [sh[0] + e[0] * along + (pv[0] / pl) * h, sh[1] + e[1] * along + (pv[1] / pl) * h, sh[2] + e[2] * along + (pv[2] / pl) * h];
+}
+
+// Behind a pram (ADR 61): a walker's legs at a shorter step, the body leaning a little, both hands on the handlebar at
+// 0.58 H (handlebars adjust to the pusher) and 0.24 H ahead of the hips; the pram's size is a pram's, in metres: rear
+// wheels 0.30 m across, front 0.20 m, a 0.78 × 0.46 m body under a hood, a blanket over the front of it.
+const PRAM = { lean: 0.14, swing: 0.1, lift: 0.035, handX: 0.24, handY: 0.58, handZ: 0.22 };
+const TYRE_OUTER = 1.18; // the view's tyre torus: radius 1, tube 0.18
+
+function pusherParts(heightM: number, phase: number): WalkerPart[] {
+  const H = heightM / 10;
+  const u = (k: number) => k * H;
+  const m = (x: number) => x / 10; // metres to world units
+  const bob = u(0.01) * (0.5 + 0.5 * Math.cos(2 * phase));
+  const hipY = u(HIP_WALK) + bob;
+  const torso = u(T.shoulder - T.hip);
+  const shoulder: Vec3 = [torso * Math.sin(PRAM.lean), hipY + torso * Math.cos(PRAM.lean), 0];
+  const parts = upperBody(u, hipY, shoulder, PRAM.lean);
+  const hx = u(PRAM.handX);
+  const hy = u(PRAM.handY);
+  for (const [side, p, z] of [["left", phase, -u(T.hipHalf)], ["right", phase + Math.PI, u(T.hipHalf)]] as const) {
+    const hip: Vec3 = [0, hipY, z];
+    const ankle: Vec3 = [u(PRAM.swing) * Math.sin(p), u(T.ankle) + u(PRAM.lift) * Math.max(0, Math.cos(p)), z];
+    const k = knee(hip, ankle, u(T.thigh), u(T.shin));
+    parts.push(seg(`thigh-${side}`, hip, k, u(0.055), "legs"), seg(`shin-${side}`, k, ankle, u(0.033), "legs"));
+    parts.push(seg(`foot-${side}`, ankle, [ankle[0] + u(T.foot), ankle[1], z], u(T.ankle), "shoe"));
+    const sh: Vec3 = [shoulder[0], shoulder[1], Math.sign(z) * u(T.shoulderHalf + 0.02)];
+    const wrist: Vec3 = [hx, hy, Math.sign(z) * m(PRAM.handZ)];
+    const elbow = elbowOf(sh, wrist, u(T.upperArm), u(T.forearm));
+    parts.push(seg(`upper-arm-${side}`, sh, elbow, u(0.04), "top"), seg(`forearm-${side}`, elbow, wrist, u(0.032), "skin"));
+  }
+  return [...parts, ...pramParts(hx + m(0.01), hy)];
+}
+
+/** The pram ahead of its pusher: the handlebar at (x, y), wheels on y = 0, in walker space. */
+function pramParts(x: number, y: number): WalkerPart[] {
+  const m = (v: number) => v / 10;
+  const rear = x + m(0.2);
+  const front = rear + m(0.62);
+  const [rR, rF] = [m(0.15), m(0.1)];
+  const box = (name: string, c: Vec3, size: Vec3, material: WalkerMaterial): WalkerPart => ({ kind: "box", a: c, r: 1, scale: size, material, name });
+  const parts: WalkerPart[] = [seg("handlebar", [x, y, -m(0.25)], [x, y, m(0.25)], m(0.015), "frame")];
+  for (const zs of [-1, 1]) {
+    const z = zs * m(0.24);
+    parts.push(seg(`strut-${zs}`, [x, y, z], [rear, rR, z], m(0.012), "frame"));
+    parts.push(seg(`rail-${zs}`, [rear, rR, z], [front, rF, z], m(0.01), "frame"));
+    parts.push(seg(`post-rear-${zs}`, [rear + m(0.08), rR, zs * m(0.2)], [rear + m(0.12), m(0.4), zs * m(0.2)], m(0.01), "frame"));
+    parts.push(seg(`post-front-${zs}`, [front - m(0.1), rF, zs * m(0.2)], [front - m(0.15), m(0.4), zs * m(0.2)], m(0.01), "frame"));
+    // the tyre torus's outer edge is the wheel's radius, so the tyre touches the ground
+    parts.push({ kind: "torus", a: [rear, rR, zs * m(0.26)], r: rR / TYRE_OUTER, material: "tyre", name: `tyre-rear-${zs}` });
+    parts.push({ kind: "torus", a: [front, rF, zs * m(0.26)], r: rF / TYRE_OUTER, material: "tyre", name: `tyre-front-${zs}` });
+  }
+  parts.push(seg("axle-rear", [rear, rR, -m(0.26)], [rear, rR, m(0.26)], m(0.008), "frame"), seg("axle-front", [front, rF, -m(0.26)], [front, rF, m(0.26)], m(0.008), "frame"));
+  const cx = (rear + front) / 2;
+  parts.push(box("body", [cx, m(0.52), 0], [m(0.78), m(0.26), m(0.46)], "fabric"));
+  parts.push({ kind: "sphere", a: [rear + m(0.16), m(0.56), 0], r: m(0.26), material: "fabric", name: "hood", scale: [1, 0.95, 0.92] });
+  parts.push(box("blanket", [cx + m(0.12), m(0.655), 0], [m(0.42), m(0.03), m(0.42)], "blanket"));
+  return parts;
+}
+
+/** Clothing, skin and hair colours for a walker from its seed: the same palette every time, never the same two walkers.
+ * A runner wears sports colours (ADR 61); the pram's colours come from a second stream, so a walker's never change. */
+export function walkerColours(seed: number, activity: Activity = "walk"): Record<WalkerMaterial, string> {
   const rand = mulberry32(seed);
   const pick = <T>(xs: readonly T[]): T => xs[Math.floor(rand() * xs.length)];
-  return {
-    top: pick(WALKER_PALETTE.top),
-    legs: pick(WALKER_PALETTE.legs),
+  const sport = activity === "run";
+  const person = {
+    top: pick(sport ? RUNNER_PALETTE.top : WALKER_PALETTE.top),
+    legs: pick(sport ? RUNNER_PALETTE.legs : WALKER_PALETTE.legs),
     skin: pick(WALKER_PALETTE.skin),
     hair: pick(WALKER_PALETTE.hair),
-    shoe: pick(WALKER_PALETTE.shoe),
+    shoe: pick(sport ? RUNNER_PALETTE.shoe : WALKER_PALETTE.shoe),
   };
+  const pram = mulberry32((seed ^ 0x5bd1e995) >>> 0);
+  const pickPram = <T>(xs: readonly T[]): T => xs[Math.floor(pram() * xs.length)];
+  return { ...person, frame: pickPram(PRAM_PALETTE.frame), fabric: pickPram(PRAM_PALETTE.fabric), tyre: PRAM_PALETTE.tyre[0], blanket: pickPram(PRAM_PALETTE.blanket) };
 }
+
+/** Running kit (sRGB): bright tops, dark leggings or shorts, light trainers. */
+export const RUNNER_PALETTE = {
+  top: ["#d8342a", "#2f7bd6", "#e8b520", "#1f9e78", "#d9619c", "#ec7a22"],
+  legs: ["#1e1f24", "#2a2f3a", "#3a3d45"],
+  shoe: ["#e6e6e6", "#c9372c", "#3a6fb8"],
+} as const;
+
+/** Prams (sRGB): a dark or silver frame, a fabric body and hood, black tyres, a pale blanket. */
+export const PRAM_PALETTE = {
+  frame: ["#26282c", "#8a8d92"],
+  fabric: ["#2b3a55", "#5a5f66", "#6b3a3f", "#4d5b3a", "#1f2226"],
+  tyre: ["#1b1b1b"],
+  blanket: ["#efe9dc", "#d8e3ee", "#eedbe0"],
+} as const;
 
 /** Outdoor clothing and a range of skin and hair tones (sRGB). */
 export const WALKER_PALETTE = {
@@ -163,6 +324,7 @@ export function walkerTracks(trail: Trail, specs: readonly WalkerSpec[], frames:
     seeds.add(spec.seed);
     if (Math.abs(spec.sideM) > 1) throw new Error(`walker ${i}: sideM ${spec.sideM} is more than 1 m off the centreline (C3)`);
     if (spec.heightM < 1.5 || spec.heightM > 1.95) throw new Error(`walker ${i}: heightM ${spec.heightM} is outside 1.5–1.95 m (C9)`);
+    if (spec.activity !== undefined && !["walk", "run", "pram"].includes(spec.activity)) throw new Error(`walker ${i}: unknown activity ${String(spec.activity)}`);
     const table = walkerTable(trail, spec, frames, fps);
     return { spec, table, poseAt: (f: number) => walkerPose(trail, table, f, spec) };
   });

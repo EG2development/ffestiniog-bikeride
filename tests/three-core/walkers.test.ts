@@ -3,7 +3,7 @@ import { partsBounds, type Part } from "../../src/three-core/cyclistModel";
 import { defaultCyclistDims, distanceTable } from "../../src/three-core/cyclistMotion";
 import { PROTOTYPES } from "../../src/three-core/sections";
 import { buildTrail, TRAIL_WIDTH_M, type TrailProfile } from "../../src/three-core/trail";
-import { strideM, WALKER_PALETTE, walkerColours, walkerParts, walkerPose, walkerSpeedKmh, walkerTable, walkerTracks, type WalkerSpec } from "../../src/three-core/walkers";
+import { paceKmh, PRAM_PALETTE, RUNNER_PALETTE, strideM, WALKER_PALETTE, walkerColours, walkerParts, walkerPose, walkerSpeedKmh, walkerTable, walkerTracks, type WalkerSpec } from "../../src/three-core/walkers";
 import { analyticTrail, readJson, realRoute, syntheticProfile } from "./fixtures";
 
 // Spec C9: walkers follow the rider's rules (C1–C5) at walking ranges (docs/adr/0059-walkers-on-the-trail.md).
@@ -100,7 +100,8 @@ describe("walkers (C9: C1–C5 at walking ranges)", () => {
     for (const spec of PROTOTYPES["maentwrog-photo"].photo!.walkers!) {
       const c = walkerColours(spec.seed);
       expect(walkerColours(spec.seed)).toEqual(c);
-      for (const [k, hex] of Object.entries(c)) expect((WALKER_PALETTE as Record<string, readonly string[]>)[k]).toContain(hex);
+      for (const k of ["top", "legs", "skin", "hair", "shoe"] as const) expect(WALKER_PALETTE[k] as readonly string[]).toContain(c[k]);
+      for (const k of ["frame", "fabric", "tyre", "blanket"] as const) expect(PRAM_PALETTE[k] as readonly string[]).toContain(c[k]);
       seen.add(JSON.stringify(c));
     }
     expect(seen.size).toBe(3);
@@ -111,6 +112,84 @@ describe("walkers (C9: C1–C5 at walking ranges)", () => {
     expect(() => walkerTracks(trail, [{ ...SPECS[0], sideM: 1.2 }], 60, FPS)).toThrow(/C3/);
     expect(() => walkerTracks(trail, [{ ...SPECS[0], heightM: 1.4 }], 60, FPS)).toThrow(/C9/);
     expect(walkerTracks(trail, SPECS, 60, FPS).map((t) => t.table.length)).toEqual([60, 60, 60]);
+  });
+});
+
+describe("runners and people behind prams (ADR 61)", () => {
+  const H = 1.75;
+  const bounds = (parts: { a: number[]; b?: number[]; r: number; scale?: number[] }[]) => partsBounds(parts as unknown as Part[]);
+
+  it("pace: runners 7.5–12 km/h, 10 on the flat; prams 3–5 km/h; both slower uphill; the stride follows the activity", () => {
+    expect(paceKmh("run", 0)).toBe(10);
+    expect(paceKmh("pram", 0)).toBe(4);
+    expect(paceKmh("walk", 0.02)).toBe(walkerSpeedKmh(0.02));
+    for (let g = -0.15; g <= 0.15; g += 0.005) {
+      expect(paceKmh("run", g)).toBeGreaterThanOrEqual(7.5);
+      expect(paceKmh("run", g)).toBeLessThanOrEqual(12);
+      expect(paceKmh("pram", g)).toBeGreaterThanOrEqual(3);
+      expect(paceKmh("pram", g)).toBeLessThanOrEqual(5);
+    }
+    expect(paceKmh("run", 0.03)).toBeLessThan(paceKmh("run", -0.03));
+    expect(strideM(H, "run")).toBeCloseTo(1.15 * H, 9);
+    expect(strideM(H, "pram")).toBeCloseTo(0.7 * H, 9);
+    // a runner's table moves at the running pace, its gait at the running stride
+    const spec: WalkerSpec = { activity: "run", startDistM: 300, direction: 1, sideM: -0.6, heightM: H, seed: 77 };
+    const table = walkerTable(trail, spec, 90, FPS);
+    for (let f = 0; f + 1 < 90; f++) {
+      const kmh = (table[f + 1] - table[f]) * FPS * 3.6;
+      expect(kmh).toBeGreaterThanOrEqual(7.5 - 1e-9);
+      expect(kmh).toBeLessThanOrEqual(12 + 1e-9);
+      const [a, b] = [walkerPose(trail, table, f, spec), walkerPose(trail, table, f + 1, spec)];
+      expect(b.phase - a.phase).toBeCloseTo((2 * Math.PI * (table[f + 1] - table[f])) / strideM(H, "run"), 9);
+    }
+  });
+
+  it("a runner stays within its height, never goes under the ground, has a moment with both feet up and is down the rest", () => {
+    let flight = 0;
+    let down = 0;
+    for (let k = 0; k < 48; k++) {
+      const parts = walkerParts(H, (k / 48) * 2 * Math.PI, "run");
+      const { min, max } = bounds(parts);
+      expect((max[1] - min[1]) * 10).toBeLessThanOrEqual(H + 1e-9);
+      const soles = parts.filter((p) => p.name?.startsWith("foot-")).map((p) => (p.a[1] - p.r) * 10);
+      expect(Math.min(...soles)).toBeGreaterThanOrEqual(-1e-9);
+      if (Math.min(...soles) > 0.005) flight++;
+      else down++;
+      // the legs reach the feet: no shin longer than it is (the knee is solved, not stretched)
+      for (const side of ["left", "right"]) {
+        const shin = parts.find((p) => p.name === `shin-${side}`)!;
+        expect(Math.hypot(shin.b![0] - shin.a[0], shin.b![1] - shin.a[1]) * 10).toBeLessThanOrEqual(0.245 * H + 1e-6);
+      }
+    }
+    expect(flight).toBeGreaterThan(0);
+    expect(down).toBeGreaterThan(flight);
+  });
+
+  it("a pram's tyres stand on the ground ahead of its pusher's feet, and the pusher's hands are on its handlebar", () => {
+    for (let k = 0; k < 24; k++) {
+      const parts = walkerParts(H, (k / 24) * 2 * Math.PI, "pram");
+      const tyres = parts.filter((p) => p.kind === "torus");
+      expect(tyres.length).toBe(4);
+      // the torus's outer edge is 1.18 × its radius (the view's tyre)
+      for (const t of tyres) expect((t.a[1] - 1.18 * t.r) * 10).toBeCloseTo(0, 6);
+      const toes = Math.max(...parts.filter((p) => p.name?.startsWith("foot-")).map((p) => (p.b ?? p.a)[0] + p.r));
+      expect(Math.min(...tyres.map((t) => t.a[0] - 1.18 * t.r))).toBeGreaterThan(toes);
+      const bar = parts.find((p) => p.name === "handlebar")!;
+      for (const side of ["left", "right"]) {
+        const wrist = parts.find((p) => p.name === `forearm-${side}`)!.b!;
+        expect(Math.abs(wrist[0] - bar.a[0]) * 10).toBeLessThan(0.03);
+        expect(Math.abs(wrist[1] - bar.a[1]) * 10).toBeLessThan(0.01);
+      }
+      // arms are not stretched past their length
+      for (const side of ["left", "right"]) {
+        const up = parts.find((p) => p.name === `upper-arm-${side}`)!;
+        expect(Math.hypot(up.b![0] - up.a[0], up.b![1] - up.a[1], up.b![2] - up.a[2]) * 10).toBeCloseTo(0.17 * H, 3);
+      }
+    }
+    // a runner wears sports colours; a walker's colours are unchanged by the pram's stream
+    const run = walkerColours(77, "run");
+    expect(RUNNER_PALETTE.top as readonly string[]).toContain(run.top);
+    expect(walkerColours(7)).toEqual(walkerColours(7, "walk"));
   });
 });
 

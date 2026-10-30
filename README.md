@@ -59,15 +59,20 @@ writes `out/reel.mp4`; `npm run still:reel -- --frame=<n>` renders one frame; ev
 also registered as `Section-<id>` for stills. Captions are data in `src/data/reel-captions.ts`
 and the frame budget in `src/data/reel-timeline.ts`.
 
-**Photoreal prototype (2026-10-29, ADRs 54–59).** `Poc3DMaentwrogPhoto` is a 20 s proof of a more lifelike look on
+**Photoreal prototype (2026-10-29, ADRs 54–59) and the reel in its look (ADR 60).** `Poc3DMaentwrogPhoto` is a 20 s proof of a more lifelike look on
 the Maentwrog window: an aerial establishing shot, the rider's own view at handlebar height, and a follow shot across
 the OSM bridge. It is the same scene and data with a `look: "photo"` layer: detail-textured terrain by land cover and
 slope, a gravel trail, stone bridge, card trees sized from the lidar canopy (`npm run data:canopy -- <window>`),
 OSM drystone walls and fences (`npm run data:barriers -- <window>`), grass, three walkers sharing the path in the
 rider's view (ADR 59, conceptual), a cloud sky that lights the scene, and a post pass (ambient occlusion, AgX tone
 mapping). `npm run render:photo` writes `out/poc-maentwrog-photo.mp4`;
-`npm run still:photo -- --frame=<n>` one frame. The reel is unchanged. How it was chosen, what it costs and what is
-still generic: `docs/research-photoreal.md`, `docs/design-photoreal.md`, `docs/sop-3d.md`.
+`npm run still:photo -- --frame=<n>` one frame. Since 2026-10-30 the reel is drawn in this look too (ADR 60): every
+ground section with its own lidar trees, walls, grass, and walkers, runners and people pushing prams placed by a
+seeded draw (ADR 61), and the aerial sections over the corridor's OSM
+cover and lidar canopy, coloured by a Sentinel-2 image (`python3 scripts/build_imagery.py --section corridor`; the
+attribution carries the Copernicus notice). `--props='{"look":"concept"}'` renders the first look, unchanged. How it
+was chosen, what it costs and what is still generic: `docs/research-photoreal.md`, `docs/design-photoreal.md`,
+`docs/sop-3d.md`.
 
 Checks:
 - **CI** (`.github/workflows/ci.yml`) runs `npm run lint`, `npm test` (unit, static, docs

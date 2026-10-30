@@ -21,6 +21,7 @@ const KINDS = [
   "building",
   "barrier",
   "walker",
+  "imagery",
 ] as const;
 /** A building's state on its latest dated observation; a planning approval is "approved", never "existing" (ADR 51). */
 export type FeatureStatus = "existing" | "construction" | "approved" | "demolished";
@@ -233,6 +234,25 @@ export function validateDemHeader(x: unknown, path: string): DemHeader {
 export type CanopyHeader = { cols: number; rows: number; spacingM: number; originE: number; originN: number; file: string };
 
 export function validateCanopyHeader(x: unknown, path: string, dem: Pick<DemHeader, "cols" | "rows" | "spacingM" | "originE" | "originN">): CanopyHeader {
+  return validateNodeGridHeader(x, path, dem, "canopy");
+}
+
+export type ImageryHeader = CanopyHeader & { scale: number; width: number; height: number };
+
+/** A satellite image on the DEM's grid at `scale` pixels per node spacing, pixel (0, 0) on node (0, 0)
+ * (docs/adr/0060-reel-in-the-photo-look.md): the terrain maps it by node index, so the grid must be the DEM's. */
+export function validateImageryHeader(x: unknown, path: string, dem: Pick<DemHeader, "cols" | "rows" | "spacingM" | "originE" | "originN">): ImageryHeader {
+  const h = validateNodeGridHeader(x, path, dem, "imagery");
+  const o = x as Item;
+  const scale = finiteNumber(o.scale, `${path}.scale`);
+  if (!Number.isInteger(scale) || scale < 1) fail(`${path}.scale`, `expected a whole number of pixels per node spacing, got ${scale}`);
+  const width = finiteNumber(o.width, `${path}.width`);
+  const height = finiteNumber(o.height, `${path}.height`);
+  if (width !== (h.cols - 1) * scale + 1 || height !== (h.rows - 1) * scale + 1) fail(path, `a ${width} × ${height} image is not the ${h.cols} × ${h.rows} grid at scale ${scale}`);
+  return { ...h, scale, width, height };
+}
+
+function validateNodeGridHeader(x: unknown, path: string, dem: Pick<DemHeader, "cols" | "rows" | "spacingM" | "originE" | "originN">, what: string): CanopyHeader {
   if (!isObject(x)) fail(path, "expected an object");
   const h: CanopyHeader = {
     cols: finiteNumber(x.cols, `${path}.cols`),
@@ -242,9 +262,9 @@ export function validateCanopyHeader(x: unknown, path: string, dem: Pick<DemHead
     originN: finiteNumber(x.originN, `${path}.originN`),
     file: dataFileName(x.file, `${path}.file`),
   };
-  // the tree placer indexes the canopy by DEM node, so the grids must be the same grid
+  // the tree placer and the terrain index these grids by DEM node, so they must be the DEM's own grid
   for (const k of ["cols", "rows", "spacingM", "originE", "originN"] as const) {
-    if (h[k] !== dem[k]) fail(`${path}.${k}`, `canopy grid differs from the DEM (${String(h[k])} vs ${String(dem[k])})`);
+    if (h[k] !== dem[k]) fail(`${path}.${k}`, `${what} grid differs from the DEM (${String(h[k])} vs ${String(dem[k])})`);
   }
   return h;
 }

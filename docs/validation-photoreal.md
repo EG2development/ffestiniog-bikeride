@@ -1,7 +1,8 @@
-# Validation log: the photoreal layer (ADRs 54–59)
+# Validation log: the photoreal layer (ADRs 54–60)
 
 The photoreal prototype's records (`Poc3DMaentwrogPhoto`; `docs/design-photoreal.md`, `docs/research-photoreal.md`), kept
 apart from `docs/validation-3d.md` as the POC and reel records are (`docs/validation-poc.md`, `docs/validation-reel.md`).
+Since the reel moved to the photo look (ADR 60) its records, and `npm run test:render`'s appended reports, are here too.
 The independent review's own report is `docs/evidence/photo/independent-review-2026-10-30.md`.
 
 ## Photoreal prototype (ADRs 54–58, 2026-10-29)
@@ -137,3 +138,161 @@ and the video were re-rendered from this state.
 | RN3 format | pass | `ffprobe`: h264, 1920×1080, 30/1, 600 frames; 25.3 MB |
 | RN5b blank scan | pass | 600 frames, centre-crop mean luma 99.8–120.8 |
 | Render time | pass | 600 frames in 20.6 s wall, 60.2 s CPU (0.034 s/frame; up from 13.6 s: the trees now stand close to the camera in the rider's view and the follow shot, and the close shadow map is re-fitted per frame) |
+
+## The reel in the photo look (ADR 60, 2026-10-30)
+
+Builder's own record, on the dirty worktree of `mission/3d-reel` (HEAD `8d925e8`); nothing committed or pushed;
+`tests/baselines/` untouched (X2). The owner asked for every part of the reel to look like `Poc3DMaentwrogPhoto`.
+
+**Data built** (network: the lidar COGs, the OSM API, and for the image the Earth Search STAC API and the
+`sentinel-cogs` open-data bucket; all four allowlisted, RL30): canopy grids for blaenau (19.5 % of cells ≥ 2 m),
+vale-north (15.5 %), vale-south (21.5 %), trawsfynydd (11.4 %) and the corridor at 16 m (17.4 %); boundaries for
+blaenau (151 ways), vale-north (108), vale-south (30), trawsfynydd (134) and the corridor (478); the corridor rebuilt
+with OSM (939 roads, 38 water bodies, land cover by node; 434 lake cells filled at their shore level; 13 bridges and 16
+overbridges interpolated in its trail profile; existing lake levels unchanged, one new: way/271072334 at 447.76 m);
+Sentinel-2 scene S2C_30UVD_20250712_0_L2A sampled on the corridor's grid at 8 m (451 × 1383, 2 tiles read). The image
+lines up with OSM's lake outlines; its water nodes are under half as bright as its land nodes (tested).
+
+| Check | Result | Detail |
+|---|---|---|
+| `npm run lint`, `npm test` | pass | 44 files, 316 passed, 2 expected fails (RL8, unchanged); new `tests/three-core/reel-photo.test.ts` (18 tests), occlusion in both looks (10), 6 new unit tests in `trees-canopy.test.ts`, the three photo scripts' self-tests |
+| The concept look unchanged by the photo extras | pass | every reel section: the same trees, roads, water, bridges and terrain colours as its config without them, and no grass, boundaries, walkers or image (tested); 132 of the 139 regenerated concept stills and masks byte-identical to the 26 Oct set (`out/after-2026-10-26/`). The other seven are the aerials, whose corridor data were rebuilt: overview 19.8 % of pixels changed by a mean of 0.52 levels (sub-pixel shifts of the map's lines as the pull-back's start height follows the new profile, and one crossing), heritage 5.0 % / 0.25, intro 1.4 % / 0.07, closing 0.00 % |
+| Walkers (C9) | pass | 1–3 per ground scene, each met or overtaken in the follow shot, ≥ 0.9 m from the rider's line, ≥ 2.5 m from the camera, never crossing another walker (tested on each real trail) |
+| CL5 in the photo look | pass | no tree crown between the camera and the rider in any frame of the five ground scenes |
+| CL6 one look (the photo reel's aerials against its ground scenes) | pass (after a regrade) | the render checks' CL6 row measures the concept look's stills (`stills.mjs` pins it); this row is CL6's own method (`still_metrics.py`'s circular mean hue and mean saturation over each still's terrain mask) on photo-look stills and masks of the same 15 frames (`out/photo-cl6/`). With the first grade (saturation 1.3, tint 1.25/1/0.8) it **failed**: aerial hue 84.6° against the ground's 62.2° (36.2 %), saturation 7.0 %. With saturation 1.1 and tint 1.6/1/0.7: aerial 67.8° against 62.2° (9.0 %), saturation 0.282 against 0.277 (1.8 %) |
+| CL10 legend lines (second run, below) | FAIL, then fixed | the photo legend had four lines on Blaenau and Maentwrog frames (bridge, earthwork, "People: illustrative", "Verges levelled and cleared for the concept"); the last two are now one line, `PHOTO_LEGEND.ground` (tested: at most three lines, each ≤ 70 characters; no reel section draws translucent buildings, the only other line) |
+| RL24 first run (below) | FAIL | the intro's scene pass at 3.42 M triangles (the corridor's trees and their trunks, each drawn again for the shadow map); Trawsfynydd's at 2.35 M was not reached by the check, which stops at the first frame over |
+| The three fixes (ADR 60) | byte-identical | aerial trunks dropped (the only visible change: trunks under a pixel); then `treesInShots` and the terrain tiles: five reference frames (reel 100, 1500, 2050, 2600 and the prototype's 245) rendered with the same md5 before and after each |
+| Scene pass after the fixes (second run, below: worst frame 600 at 1.69 M) | within RL24 | intro/heritage/overview 1.65–1.69 M (20,000 trees per kind restored), closing 1.28 M, blaenau 1.20 M, vale-north 1.05 M, vale-south 1.31 M, Maentwrog 1.43 M, Trawsfynydd 1.48–1.60 M; at most 154 calls |
+
+**Visual review** (stills in `out/photo-reel/`, not committed): the ground scenes read as the prototype does (lidar
+trees, walls and hedges, grass, gravel trail, walkers, tarmac roads, buildings with stone relief, a lake that mirrors
+the sky). The aerials are the photo views over the satellite's colours: fields, woods and moorland where the satellite
+saw them, walls and roads as lines, lidar trees with shadows; they are softer than the ground scenes, as a 10 m pixel
+is 30–40 screen pixels at the intro's distance (design risk K21).
+
+### Render checks 2026-10-30T10:39:51.913Z (darwin-arm64; snapshot tree fb6aa55fc8bf, dirty, untracked ea727cf037ac)
+
+| Check | Result | Detail |
+|---|---|---|
+| RG1 CyclingVision unchanged | pass | 4 frames match |
+| RN2 POC deterministic | pass | frames 0, 180, 359 identical |
+| RN3/RN6 POC format and speed | pass | 1920x1080 30fps h264 360 frames, 0.02 s/frame |
+| RN5b no blank canvas in the full POC render | pass | 360 frames, canvas-centre luma 45.9–82.4 |
+| RN6 draw calls and triangles; H2a/H3/L2/G3 overlays visible | pass | f0: 65 calls, 1104318 tris; f45: 65 calls, 1104318 tris; f180: 65 calls, 1104318 tris; f210: 65 calls, 1104318 tris; f359: 65 calls, 1104318 tris |
+| RN5b terrain drawn at frame 0 | pass | 257 distinct colour bins |
+| RL1/RL24 reel format and speed | pass | 1920x1080 30fps h264 2700 frames in 82 s (0.0302 s/frame) |
+| RL26/RL27 no blank canvas in the full reel | pass | 2700 frames, canvas-centre luma 96.9–136.5 |
+| RL23 reel deterministic | pass | frames 0, 1349, 2699 identical |
+| RL24/BL12 reel draw calls and triangles per scene and before each cut, buildings on; RL17/RL22 overlays visible | FAIL | frame 100: 43 calls, 3422142 triangles |
+| RL10 terrain drawn in every scene still | pass | colour bins in the lower half: intro 427, heritage 2109, overview 1426, blaenau 275, vale-north 231, vale-south 402, maentwrog 311, trawsfynydd 268, closing 2257 |
+| RL32 one preview still per scene in out/previews | pass | 9 stills in out/previews/ |
+| CL9/CL10 every overlay inside the title-safe area, at most 3 lines | pass | 22 boxes at 6 frames, max 2 lines |
+| RD6 no missing map tiles in the reel | pass | 1 MAP_DRAPE lines, all 0 missing |
+| RD1/RD2 fresh-process stills: first, middle and last frame of every section, and after each cut | pass | 43 fresh stills (9 sections x 3, 8 cuts x 2): centre luma >= 20, >= 4 colour bins |
+| X1 CyclingVision full render decodes to the pre-3D md5 | pass | decoded md5 adfca9a7f31577885e4ec84c1aca3f53 |
+| X2 visual baselines untouched | pass | git diff --quiet HEAD -- tests/baselines; no untracked file there |
+| CL1 before and after stills from one environment, after on this snapshot | pass | 139 after stills on fb6aa55fc8bf; before b35021274ddf; 7 environment fields equal |
+| WA6/WA7 water drawn where expected, lit, with no terrain specks at two adjacent frames | pass | WA6 trawsfynydd_60 100.0 %, trawsfynydd_200 100.0 %; WA7 specks <= 0.11 % at 3 frames |
+| CL2/CL3 shade-side trees lifted 20 %, frame luma within 10 %, <= 1 % clipped | pass | CL2 x1.91-x3.72 (11 stills); CL3 max change 9.5 % (15 stills) |
+| CL4 trail distinct from nearby roads and terrain (dE76 >= 20) | pass | min dE terrain 25.6, roads 42.0 (11 stills) |
+| CL6 one look: aerial terrain hue and saturation within 15 % of the ground | pass | hue 84.9 vs 86.6 (2.0 %), saturation 0.404 vs 0.453 (10.9 %) |
+| BL13 landmarks on screen >= 2 s and >= 40 px | pass | no landmark is listed in any section, so no shot names one |
+
+### Render checks 2026-10-30T11:06:59.874Z (darwin-arm64; snapshot tree 27d37d33b904, dirty, untracked 21a1b49c25a7)
+
+| Check | Result | Detail |
+|---|---|---|
+| RG1 CyclingVision unchanged | pass | 4 frames match |
+| RN2 POC deterministic | pass | frames 0, 180, 359 identical |
+| RN3/RN6 POC format and speed | pass | 1920x1080 30fps h264 360 frames, 0.02 s/frame |
+| RN5b no blank canvas in the full POC render | pass | 360 frames, canvas-centre luma 45.9–82.4 |
+| RN6 draw calls and triangles; H2a/H3/L2/G3 overlays visible | pass | f0: 65 calls, 1104318 tris; f45: 65 calls, 1104318 tris; f180: 65 calls, 1104318 tris; f210: 65 calls, 1104318 tris; f359: 65 calls, 1104318 tris |
+| RN5b terrain drawn at frame 0 | pass | 257 distinct colour bins |
+| RL1/RL24 reel format and speed | pass | 1920x1080 30fps h264 2700 frames in 82 s (0.0303 s/frame) |
+| RL26/RL27 no blank canvas in the full reel | pass | 2700 frames, canvas-centre luma 96.9–136.5 |
+| RL23 reel deterministic | pass | frames 0, 1349, 2699 identical |
+| RL24/BL12 reel draw calls and triangles per scene and before each cut, buildings on; RL17/RL22 overlays visible | pass | 20 stills, 19 distinct frames, measured (intro@100, heritage@350, overview@600, blaenau@900, vale-north@1200, vale-south@1500, maentwrog@1750, trawsfynydd@2050, closing@2600; cuts 239/479/779/1079/1349/1619/1919/2399); worst frame 600: 39 calls, 1688385 tris (scene pass); whole frame at most 3029098 tris; overlays visible |
+| RL10 terrain drawn in every scene still | pass | colour bins in the lower half: intro 420, heritage 393, overview 388, blaenau 569, vale-north 586, vale-south 557, maentwrog 559, trawsfynydd 443, closing 480 |
+| RL32 one preview still per scene in out/previews | pass | 9 stills in out/previews/ |
+| CL9/CL10 every overlay inside the title-safe area, at most 3 lines | FAIL | Reel3D@900 legend (1401,98,423x109, 4 lines); Reel3D@1750 legend (1404,98,420x109, 4 lines) |
+| RD6 no missing map tiles in the reel | pass | 1 MAP_DRAPE lines, all 0 missing |
+| RD1/RD2 fresh-process stills: first, middle and last frame of every section, and after each cut | pass | 43 fresh stills (9 sections x 3, 8 cuts x 2): centre luma >= 20, >= 4 colour bins |
+| X1 CyclingVision full render decodes to the pre-3D md5 | pass | decoded md5 adfca9a7f31577885e4ec84c1aca3f53 |
+| X2 visual baselines untouched | pass | git diff --quiet HEAD -- tests/baselines; no untracked file there |
+| CL1 before and after stills from one environment, after on this snapshot | pass | 139 after stills on 27d37d33b904; before b35021274ddf; 7 environment fields equal |
+| WA6/WA7 water drawn where expected, lit, with no terrain specks at two adjacent frames | pass | WA6 trawsfynydd_60 100.0 %, trawsfynydd_200 100.0 %; WA7 specks <= 0.11 % at 3 frames |
+| CL2/CL3 shade-side trees lifted 20 %, frame luma within 10 %, <= 1 % clipped | pass | CL2 x1.91-x3.72 (11 stills); CL3 max change 9.5 % (15 stills) |
+| CL4 trail distinct from nearby roads and terrain (dE76 >= 20) | pass | min dE terrain 25.6, roads 42.0 (11 stills) |
+| CL6 one look: aerial terrain hue and saturation within 15 % of the ground | pass | hue 84.9 vs 86.6 (2.0 %), saturation 0.404 vs 0.453 (10.9 %) |
+| BL13 landmarks on screen >= 2 s and >= 40 px | pass | no landmark is listed in any section, so no shot names one |
+
+### Render checks 2026-10-30T11:28:30.728Z (darwin-arm64; snapshot tree e36d647dd05d, dirty, untracked e397f19197d2)
+
+| Check | Result | Detail |
+|---|---|---|
+| RG1 CyclingVision unchanged | pass | 4 frames match |
+| RN2 POC deterministic | pass | frames 0, 180, 359 identical |
+| RN3/RN6 POC format and speed | pass | 1920x1080 30fps h264 360 frames, 0.02 s/frame |
+| RN5b no blank canvas in the full POC render | pass | 360 frames, canvas-centre luma 45.9–82.4 |
+| RN6 draw calls and triangles; H2a/H3/L2/G3 overlays visible | pass | f0: 65 calls, 1104318 tris; f45: 65 calls, 1104318 tris; f180: 65 calls, 1104318 tris; f210: 65 calls, 1104318 tris; f359: 65 calls, 1104318 tris |
+| RN5b terrain drawn at frame 0 | pass | 257 distinct colour bins |
+| RL1/RL24 reel format and speed | pass | 1920x1080 30fps h264 2700 frames in 81 s (0.0301 s/frame) |
+| RL26/RL27 no blank canvas in the full reel | pass | 2700 frames, canvas-centre luma 96.9–139.5 |
+| RL23 reel deterministic | pass | frames 0, 1349, 2699 identical |
+| RL24/BL12 reel draw calls and triangles per scene and before each cut, buildings on; RL17/RL22 overlays visible | pass | 20 stills, 19 distinct frames, measured (intro@100, heritage@350, overview@600, blaenau@900, vale-north@1200, vale-south@1500, maentwrog@1750, trawsfynydd@2050, closing@2600; cuts 239/479/779/1079/1349/1619/1919/2399); worst frame 600: 39 calls, 1688385 tris (scene pass); whole frame at most 3029098 tris; overlays visible |
+| RL10 terrain drawn in every scene still | pass | colour bins in the lower half: intro 377, heritage 381, overview 358, blaenau 569, vale-north 586, vale-south 557, maentwrog 559, trawsfynydd 443, closing 449 |
+| RL32 one preview still per scene in out/previews | pass | 9 stills in out/previews/ |
+| CL9/CL10 every overlay inside the title-safe area, at most 3 lines | pass | 80 boxes at 24 frames, max 3 lines |
+| RD6 no missing map tiles in the reel | pass | 1 MAP_DRAPE lines, all 0 missing |
+| RD1/RD2 fresh-process stills: first, middle and last frame of every section, and after each cut | pass | 43 fresh stills (9 sections x 3, 8 cuts x 2): centre luma >= 20, >= 4 colour bins |
+| X1 CyclingVision full render decodes to the pre-3D md5 | pass | decoded md5 adfca9a7f31577885e4ec84c1aca3f53 |
+| X2 visual baselines untouched | pass | git diff --quiet HEAD -- tests/baselines; no untracked file there |
+| CL1 before and after stills from one environment, after on this snapshot | pass | 139 after stills on e36d647dd05d; before b35021274ddf; 7 environment fields equal |
+| WA6/WA7 water drawn where expected, lit, with no terrain specks at two adjacent frames | pass | WA6 trawsfynydd_60 100.0 %, trawsfynydd_200 100.0 %; WA7 specks <= 0.11 % at 3 frames |
+| CL2/CL3 shade-side trees lifted 20 %, frame luma within 10 %, <= 1 % clipped | pass | CL2 x1.91-x3.72 (11 stills); CL3 max change 9.5 % (15 stills) |
+| CL4 trail distinct from nearby roads and terrain (dE76 >= 20) | pass | min dE terrain 25.6, roads 42.0 (11 stills) |
+| CL6 one look: aerial terrain hue and saturation within 15 % of the ground | pass | hue 84.9 vs 86.6 (2.0 %), saturation 0.404 vs 0.453 (10.9 %) |
+| BL13 landmarks on screen >= 2 s and >= 40 px | pass | no landmark is listed in any section, so no shot names one |
+
+## Walkers, runners and prams at random (ADR 61, 2026-10-30)
+
+The reel's ground scenes draw their people (`photo.people`); the prototype keeps its three walkers. The draw placed 24:
+blaenau 3 runners and 2 prams; vale-north 2 runners and 2 prams; vale-south a pair of walkers, a runner and a pram;
+maentwrog 2 walkers, 2 runners and a pram; trawsfynydd 3 walkers (a pair among them), 2 runners and a pram. The rider
+meets or overtakes a runner in Blaenau (frame 143), Vale north (213) and Maentwrog (184), a walker in Maentwrog (342),
+and a pram (222) and three walkers (419, 440) in Trawsfynydd.
+
+| Check | Result | Detail |
+|---|---|---|
+| `npm run lint`, `npm test` | pass | 43 files, 321 passed, 2 expected fails; runner and pram figures, paces and strides (`walkers.test.ts`); per scene the same draw twice, a runner and a pram, and every placement rule checked at every frame independently of the placer (`reel-photo.test.ts`) |
+| Rules tried and dropped | recorded | a 4 m camera distance, then keeping people out of the follow camera's view nearer than 6 m or 4.5 m: each left the rider meeting nobody in four of five scenes; passers may sweep past the frame's lower edge (ADR 61) |
+| Render checks (below) | pass | all 23; reel 2,700 frames in 126 s (81 s before: the draw and the extra figures); worst scene pass 1.69 M triangles (the overview, unchanged), Trawsfynydd about 170 calls; legend at most 3 lines |
+
+### Render checks 2026-10-30T13:10:13.674Z (darwin-arm64; snapshot tree 685c2191d115, dirty, untracked c213aeeb7f96)
+
+| Check | Result | Detail |
+|---|---|---|
+| RG1 CyclingVision unchanged | pass | 4 frames match |
+| RN2 POC deterministic | pass | frames 0, 180, 359 identical |
+| RN3/RN6 POC format and speed | pass | 1920x1080 30fps h264 360 frames, 0.03 s/frame |
+| RN5b no blank canvas in the full POC render | pass | 360 frames, canvas-centre luma 45.9–82.4 |
+| RN6 draw calls and triangles; H2a/H3/L2/G3 overlays visible | pass | f0: 65 calls, 1104318 tris; f45: 65 calls, 1104318 tris; f180: 65 calls, 1104318 tris; f210: 65 calls, 1104318 tris; f359: 65 calls, 1104318 tris |
+| RN5b terrain drawn at frame 0 | pass | 257 distinct colour bins |
+| RL1/RL24 reel format and speed | pass | 1920x1080 30fps h264 2700 frames in 126 s (0.0465 s/frame) |
+| RL26/RL27 no blank canvas in the full reel | pass | 2700 frames, canvas-centre luma 96.9–139.5 |
+| RL23 reel deterministic | pass | frames 0, 1349, 2699 identical |
+| RL24/BL12 reel draw calls and triangles per scene and before each cut, buildings on; RL17/RL22 overlays visible | pass | 20 stills, 19 distinct frames, measured (intro@100, heritage@350, overview@600, blaenau@900, vale-north@1200, vale-south@1500, maentwrog@1750, trawsfynydd@2050, closing@2600; cuts 239/479/779/1079/1349/1619/1919/2399); worst frame 600: 39 calls, 1688385 tris (scene pass); whole frame at most 3137210 tris; overlays visible |
+| RL10 terrain drawn in every scene still | pass | colour bins in the lower half: intro 377, heritage 381, overview 358, blaenau 569, vale-north 586, vale-south 557, maentwrog 559, trawsfynydd 443, closing 449 |
+| RL32 one preview still per scene in out/previews | pass | 9 stills in out/previews/ |
+| CL9/CL10 every overlay inside the title-safe area, at most 3 lines | pass | 80 boxes at 24 frames, max 3 lines |
+| RD6 no missing map tiles in the reel | pass | 1 MAP_DRAPE lines, all 0 missing |
+| RD1/RD2 fresh-process stills: first, middle and last frame of every section, and after each cut | pass | 43 fresh stills (9 sections x 3, 8 cuts x 2): centre luma >= 20, >= 4 colour bins |
+| X1 CyclingVision full render decodes to the pre-3D md5 | pass | decoded md5 adfca9a7f31577885e4ec84c1aca3f53 |
+| X2 visual baselines untouched | pass | git diff --quiet HEAD -- tests/baselines; no untracked file there |
+| CL1 before and after stills from one environment, after on this snapshot | pass | 139 after stills on 685c2191d115; before b35021274ddf; 7 environment fields equal |
+| WA6/WA7 water drawn where expected, lit, with no terrain specks at two adjacent frames | pass | WA6 trawsfynydd_60 100.0 %, trawsfynydd_200 100.0 %; WA7 specks <= 0.11 % at 3 frames |
+| CL2/CL3 shade-side trees lifted 20 %, frame luma within 10 %, <= 1 % clipped | pass | CL2 x1.91-x3.72 (11 stills); CL3 max change 9.5 % (15 stills) |
+| CL4 trail distinct from nearby roads and terrain (dE76 >= 20) | pass | min dE terrain 25.6, roads 42.0 (11 stills) |
+| CL6 one look: aerial terrain hue and saturation within 15 % of the ground | pass | hue 84.9 vs 86.6 (2.0 %), saturation 0.404 vs 0.453 (10.9 %) |
+| BL13 landmarks on screen >= 2 s and >= 40 px | pass | no landmark is listed in any section, so no shot names one |

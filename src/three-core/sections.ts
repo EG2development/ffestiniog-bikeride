@@ -10,10 +10,12 @@ import { cyclistPose, defaultCyclistDims, distanceTable, type CyclistDims } from
 import { buildTerrainMesh, heightAtBng } from "./dem";
 import type { Feature, OsmLine, SectionBuilding } from "./registers";
 import { buildRoadMesh, type RoadLine } from "./roads";
-import { shadeTerrain } from "./shading";
+import { IMAGERY_GRADE } from "./photoLook";
+import { imageryNodeColours, imageryPixels, shadeTerrain, type GroundImage } from "./shading";
 import { buildTrail, flattenCorridor, TRAIL_WIDTH_M, type CutFill, type Trail, type TrailProfile } from "./trail";
 import { placeTrees, type TreePlacement } from "./trees";
 import type { DemGrid, LandCover, MeshArrays, Vec3 } from "./types";
+import { placePeople, type PeopleOptions } from "./people";
 import { walkerTracks, type WalkerSpec, type WalkerTrack } from "./walkers";
 import { waterBodies, type WaterBody } from "./water";
 
@@ -23,6 +25,9 @@ export type { OsmLine } from "./registers";
 // Maentwrog config reproduces the proof of concept exactly (docs/adr/0040-migrate-maentwrog-first.md).
 
 export type SectionKind = "ground" | "aerial";
+/** `concept` is the reel's first look; `photo` the photoreal layer's (docs/adr/0054-photoreal-layer.md), the reel's own since
+ * docs/adr/0060-reel-in-the-photo-look.md. A config's `photo` extras are built only in the photo look. */
+export type Look = "concept" | "photo";
 export type ShotSpec =
   | { kind: "drone-side"; fromDistM: number; toDistM: number; startHeightM: number; endHeightM: number; sideM: number; frames: number }
   | { kind: "follow"; backM: number; upM: number; sideM: number; frames: number }
@@ -45,18 +50,29 @@ export type SectionConfig = {
   ve: 1;
   /** instanced trees per kind; lower for a window whose terrain alone is large (RN6) */
   maxTreesPerKind?: number;
-  /** the photoreal layer's sourced extras (docs/adr/0054-photoreal-layer.md); absent for the reel's sections, whose
-   * output stays unchanged: trees sized from the lidar canopy (ADR 57), OSM field boundaries (ADR 58), grass clumps,
-   * and the walkers a section choreographs on the trail (ADR 59) */
+  /** the photoreal layer's sourced extras (docs/adr/0054-photoreal-layer.md), built in the photo look only, so the concept
+   * look's output stays unchanged (ADR 60): trees sized from the lidar canopy (ADR 57), OSM field boundaries (ADR 58),
+   * grass clumps along the stretch the camera sees, and the walkers a section choreographs on the trail (ADR 59) */
   photo?: {
     canopyTrees: boolean;
     barriers: boolean;
-    grassAlongM: [number, number];
-    grassBandM: number;
+    /** grass along this stretch of the route (metres), out to `grassBandM` either side; ground sections only */
+    grassAlongM?: [number, number];
+    grassBandM?: number;
     walkers?: WalkerSpec[];
+    /** walkers, runners and people behind prams by a seeded draw, along `grassAlongM` (ADR 61) */
+    people?: PeopleOptions;
     /** trunks no closer than this to the centreline, instead of the reel's 10 m (ADR 11): the lidar canopy stands
-     * 5 m from the line along much of this window (review 2026-10-30), and the rider's view needs no sight line */
+     * 5 m from the line along much of the route (review 2026-10-30), and the shots' sight lines still keep the rider clear */
     treeClearOfTrailM?: number;
+    /** an aerial window's trees (ADR 60): every woodland node within this distance of the line (the reel's ground windows use 300 m) */
+    treeZoneM?: number;
+    /** trees per woodland node on a coarse grid: the corridor's 16 m nodes hold several crowns (ADR 60) */
+    treesPerNode?: number;
+    /** trees wherever the lidar canopy stands, mapped as woodland or not (built-up, quarry and water excepted; ADR 60) */
+    canopyCover?: boolean;
+    /** the ground's colour from the window's Sentinel-2 image instead of its land cover (ADR 60) */
+    imagery?: boolean;
   };
 };
 
@@ -88,19 +104,34 @@ export function earthworksInRange(features: readonly Feature[], rangeM: [number,
 
 const ROUTE_KM: [number, number] = [0, 13.24];
 const SHARED = ["terrain-lidar", "landcover-osm", "trail-proposed", "trees", "cyclist"];
+// The photo look's extras for the reel (docs/adr/0060-reel-in-the-photo-look.md). A ground scene grows grass along the
+// stretch its two shots see and keeps trunks 5 m off the line, as the prototype does; its people (walkers, runners and
+// people behind prams) come from a seeded draw on that stretch, each kept only where it clears the rider, the camera and
+// the others (ADR 61; tests/three-core/reel-photo.test.ts). An aerial scene draws the lidar canopy across
+// the corridor wherever it stands, mapped woodland or not, three crowns to a 16 m node within 1.5 km of the line.
+const groundPhoto = (grassAlongM: [number, number], people: PeopleOptions): NonNullable<SectionConfig["photo"]> => ({ canopyTrees: true, barriers: true, grassAlongM, grassBandM: 50, treeClearOfTrailM: 5, people });
+const AERIAL_PHOTO: NonNullable<SectionConfig["photo"]> = { canopyTrees: true, barriers: true, treeZoneM: 1500, treesPerNode: 3, canopyCover: true, imagery: true };
 const ground = (c: Omit<SectionConfig, "kind" | "ve" | "featureIds"> & { featureIds?: string[] }): SectionConfig => ({ kind: "ground", ve: 1, featureIds: SHARED, ...c });
-const aerial = (c: Omit<SectionConfig, "kind" | "ve" | "featureIds" | "kmRange" | "window">): SectionConfig => ({ kind: "aerial", ve: 1, featureIds: ["terrain-lidar", "trail-proposed"], kmRange: ROUTE_KM, window: "corridor", ...c });
+const aerial = (c: Omit<SectionConfig, "kind" | "ve" | "featureIds" | "kmRange" | "window">): SectionConfig => ({ kind: "aerial", ve: 1, featureIds: ["terrain-lidar", "trail-proposed"], kmRange: ROUTE_KM, window: "corridor", photo: AERIAL_PHOTO, maxTreesPerKind: AERIAL_TREES_PER_KIND, ...c });
+/** the aerial scenes' cap on each tree kind in the photo look (the concept look draws none); with trunks left out and
+ * the unseen trees culled (ADR 60) the scene pass, shadow map included, stays inside RL24's 2 M triangles */
+const AERIAL_TREES_PER_KIND = 20000;
 
 export const SECTIONS: Record<string, SectionConfig> = {
   intro: aerial({ id: "intro", title: "Introduction", frames: 240, startDistM: 8660, captionIds: ["intro-title"], shots: [{ kind: "aerial-orbit", centreDistM: 8660, radiusM: 420, heightM: 260, fromDeg: 200, toDeg: 140, frames: 240 }] }),
   heritage: aerial({ id: "heritage", title: "Historic railway", frames: 240, startDistM: 5330, captionIds: ["heritage"], shots: [{ kind: "hold", distM: 5330, heightM: 180, sideM: 150, frames: 240 }] }),
   overview: aerial({ id: "overview", title: "Route overview", frames: 300, startDistM: 6600, captionIds: ["overview-title"], shots: [{ kind: "pull-back", fromDistM: 6600, startHeightM: 300, endHeightM: 600, backM: 300, frames: 300 }] }),
-  blaenau: ground({ id: "blaenau", title: "Blaenau Ffestiniog", kmRange: [0, 1.5], window: "blaenau", frames: 300, startDistM: 300, captionIds: ["live-station"], shots: [{ kind: "drone-side", fromDistM: 150, toDistM: 280, startHeightM: 120, endHeightM: 25, sideM: 40, frames: 150 }, { kind: "follow", backM: 8, upM: 3, sideM: 1.5, frames: 150 }] }),
-  "vale-north": ground({ id: "vale-north", title: "Vale of Ffestiniog, north", kmRange: [1.5, 4.8], window: "vale-north", frames: 270, startDistM: 3000, captionIds: ["vale-north-title"], shots: [{ kind: "drone-side", fromDistM: 2850, toDistM: 2970, startHeightM: 120, endHeightM: 25, sideM: 40, frames: 135 }, { kind: "follow", backM: 8, upM: 3, sideM: 1.5, frames: 135 }] }),
-  "vale-south": ground({ id: "vale-south", title: "Vale of Ffestiniog, south", kmRange: [4.8, 7.7], window: "vale-south", frames: 270, startDistM: 5400, captionIds: ["vale-title"], shots: [{ kind: "drone-side", fromDistM: 5250, toDistM: 5370, startHeightM: 120, endHeightM: 25, sideM: 40, frames: 135 }, { kind: "follow", backM: 8, upM: 3, sideM: 1.5, frames: 135 }] }),
-  maentwrog: ground({ id: "maentwrog", title: "Maentwrog Road", kmRange: [7.7, 9.7], window: "maentwrog", frames: 360, startDistM: 9120, captionIds: ["private-home"], featureIds: [...SHARED, "bridge-159029124"], shots: [{ kind: "drone-side", fromDistM: 8980, toDistM: 9100, startHeightM: 120, endHeightM: 25, sideM: 40, frames: 180 }, { kind: "follow", backM: 8, upM: 3, sideM: 1.5, frames: 180 }] }),
+  blaenau: ground({ id: "blaenau", title: "Blaenau Ffestiniog", kmRange: [0, 1.5], window: "blaenau", frames: 300, startDistM: 300, captionIds: ["live-station"], shots: [{ kind: "drone-side", fromDistM: 150, toDistM: 280, startHeightM: 120, endHeightM: 25, sideM: 40, frames: 150 }, { kind: "follow", backM: 8, upM: 3, sideM: 1.5, frames: 150 }],
+    photo: groundPhoto([100, 560], { count: 5, seed: 2101 }) }),
+  "vale-north": ground({ id: "vale-north", title: "Vale of Ffestiniog, north", kmRange: [1.5, 4.8], window: "vale-north", frames: 270, startDistM: 3000, captionIds: ["vale-north-title"], shots: [{ kind: "drone-side", fromDistM: 2850, toDistM: 2970, startHeightM: 120, endHeightM: 25, sideM: 40, frames: 135 }, { kind: "follow", backM: 8, upM: 3, sideM: 1.5, frames: 135 }],
+    photo: groundPhoto([2800, 3250], { count: 4, seed: 3101 }) }),
+  "vale-south": ground({ id: "vale-south", title: "Vale of Ffestiniog, south", kmRange: [4.8, 7.7], window: "vale-south", frames: 270, startDistM: 5400, captionIds: ["vale-title"], shots: [{ kind: "drone-side", fromDistM: 5250, toDistM: 5370, startHeightM: 120, endHeightM: 25, sideM: 40, frames: 135 }, { kind: "follow", backM: 8, upM: 3, sideM: 1.5, frames: 135 }],
+    photo: groundPhoto([5200, 5650], { count: 4, seed: 4101 }) }),
+  maentwrog: ground({ id: "maentwrog", title: "Maentwrog Road", kmRange: [7.7, 9.7], window: "maentwrog", frames: 360, startDistM: 9120, captionIds: ["private-home"], featureIds: [...SHARED, "bridge-159029124"], shots: [{ kind: "drone-side", fromDistM: 8980, toDistM: 9100, startHeightM: 120, endHeightM: 25, sideM: 40, frames: 180 }, { kind: "follow", backM: 8, upM: 3, sideM: 1.5, frames: 180 }],
+    photo: groundPhoto([8850, 9320], { count: 5, seed: 5101 }) }),
   trawsfynydd: ground({ id: "trawsfynydd", title: "Trawsfynydd Lake Halt to Trawsfynydd", kmRange: [9.7, 13.24], window: "trawsfynydd", frames: 480, startDistM: 10300, captionIds: ["decommissioning"], maxTreesPerKind: 2500, // the drone flies on the left of the line, low, so Llyn Trawsfynydd (1.8 km to the right) stays in view beyond the rider
-    shots: [{ kind: "drone-side", fromDistM: 10120, toDistM: 10260, startHeightM: 60, endHeightM: 20, sideM: -120, frames: 240 }, { kind: "follow", backM: 8, upM: 3, sideM: 1.5, frames: 240 }] }),
+    shots: [{ kind: "drone-side", fromDistM: 10120, toDistM: 10260, startHeightM: 60, endHeightM: 20, sideM: -120, frames: 240 }, { kind: "follow", backM: 8, upM: 3, sideM: 1.5, frames: 240 }],
+    photo: groundPhoto([10050, 10650], { count: 6, seed: 6101 }) }),
   closing: aerial({ id: "closing", title: "Future vision", frames: 300, startDistM: 11000, captionIds: ["concept-card"], shots: [{ kind: "pull-back", fromDistM: 11000, startHeightM: 150, endHeightM: 600, backM: 400, frames: 300 }] }),
 };
 
@@ -141,16 +172,6 @@ export const PROTOTYPES: Record<string, SectionConfig> = {
   }),
 };
 
-// The reel's Maentwrog section with the photo extras, for like-for-like stills from the reel's own cameras: render
-// `Section-maentwrog` with `--props '{"section":"maentwrog-cmp","look":"photo"}'` (same frames, same shots).
-PROTOTYPES["maentwrog-cmp"] = {
-  ...SECTIONS.maentwrog,
-  id: "maentwrog-cmp",
-  title: "Maentwrog Road (reel cameras, photo look)",
-  featureIds: ["terrain-lidar", "landcover-osm", "trail-proposed", "trees-canopy-maentwrog", "grass-maentwrog", "cyclist", "walkers-maentwrog", "bridge-159029124"],
-  photo: PROTOTYPES["maentwrog-photo"].photo,
-};
-
 /** A section or prototype config by id, or a named error at the boundary. */
 export function configById(id: string): SectionConfig {
   const cfg = SECTIONS[id] ?? PROTOTYPES[id];
@@ -189,7 +210,9 @@ export type PocScene = {
   shot: Shot;
 };
 
-export type SectionScene = PocScene & { config: SectionConfig; roads: MeshArrays; bridges: MeshArrays[]; trees: TreePlacement; water: WaterBody[]; buildings: SectionBuildings; barriers: BarrierMeshes; grass: GrassClump[]; walkers: WalkerTrack[] };
+/** The ground's photograph for the photo look's terrain (ADR 60): graded sRGB RGBA pixels on the DEM's grid. */
+export type SceneImage = { width: number; height: number; scale: number; rgba: Uint8Array; cols: number; rows: number };
+export type SectionScene = PocScene & { groundImage?: SceneImage; config: SectionConfig; roads: MeshArrays; bridges: MeshArrays[]; trees: TreePlacement; water: WaterBody[]; buildings: SectionBuildings; barriers: BarrierMeshes; grass: GrassClump[]; walkers: WalkerTrack[] };
 
 /** The ground scene of a section: trail, flattened and shaded terrain, rider table, heights and shots. */
 function groundScene(cfg: SectionConfig, inputs: PocInputs): PocScene {
@@ -307,17 +330,21 @@ function sightLines(cfg: SectionConfig, scene: PocScene): { a: Vec3; b: Vec3 }[]
   return out;
 }
 
-type ExtraInputs = PocInputs & { osm: OsmLine[]; features: Feature[]; bridgeIds?: string[]; waterLevels?: Record<string, number>; buildings?: SectionBuilding[]; canopy?: Float32Array; barriers?: OsmLine[] };
+type ExtraInputs = PocInputs & { osm: OsmLine[]; features: Feature[]; bridgeIds?: string[]; waterLevels?: Record<string, number>; buildings?: SectionBuilding[]; canopy?: Float32Array; barriers?: OsmLine[]; imagery?: GroundImage };
 
 const NO_BARRIERS = (): BarrierMeshes => {
   const empty = () => ({ positions: new Float32Array(0), indices: new Uint32Array(0), uvs: new Float32Array(0) });
   return { wall: empty(), hedge: empty(), fence: empty() };
 };
 
-function extras(cfg: SectionConfig, inputs: ExtraInputs, scene: PocScene) {
+function extras(cfg: SectionConfig, inputs: ExtraInputs, scene: PocScene, look: Look) {
+  // the photoreal layer's sourced extras, only in the photo look and where the config asks (ADRs 54, 60)
+  const photo = look === "photo" ? cfg.photo : undefined;
+  // an aerial scene in the concept look shows roads and water on its map drape (ADR 33); the photo look draws them
+  const drawsCover = cfg.kind === "ground" || photo !== undefined;
   const roadRefs = new Set(inputs.features.filter((f) => f.kind === "road").map((f) => f.source.ref));
   const roads: RoadLine[] = inputs.osm
-    .filter((f) => roadRefs.has(f.properties.id) && f.geometry.type === "LineString")
+    .filter((f) => drawsCover && roadRefs.has(f.properties.id) && f.geometry.type === "LineString")
     .map((f) => ({ coords: f.geometry.coordinates as [number, number][], highway: f.properties.tags.highway }));
   // every railway bridge the registers hold is drawn (their spans are left unflattened by the corridor); the POC's tests pass explicit ids (review R1)
   // only bridges inside this section's km range: the merged registers also hold other windows' structures, and a span
@@ -331,8 +358,6 @@ function extras(cfg: SectionConfig, inputs: ExtraInputs, scene: PocScene) {
   // only buildings the register lists, with its status (spec BL3, BL16); they stand on the rendered ground (BL5)
   const buildings = sectionBuildings(inputs.buildings ?? [], buildingStatus(inputs.features), inputs.route.project, scene.heightAt, cfg.ve);
   const footprints = buildings.records.map((r) => r.ring);
-  // the photoreal layer's sourced extras, only where the config asks (ADR 54): the reel's sections never do
-  const photo = cfg.photo;
   const lines = photo?.barriers && inputs.barriers ? barrierLines(inputs.barriers) : [];
   // no tree stands in a wall or hedge: each boundary is a keep-out corridor for the placer
   const keepOut = lines.flatMap((l) => {
@@ -343,47 +368,70 @@ function extras(cfg: SectionConfig, inputs: ExtraInputs, scene: PocScene) {
   return {
     roads: buildRoadMesh(roads, inputs.route.project, roadBase),
     bridges,
+    // an aerial shot has no rider to keep in view, so its trees need no sight lines
     trees:
-      cfg.kind === "ground"
+      drawsCover
         ? placeTrees(inputs.dem, inputs.land, inputs.route.project, scene.trail, {
             roads,
             ve: cfg.ve,
-            sightLines: sightLines(cfg, scene),
+            sightLines: cfg.kind === "ground" ? sightLines(cfg, scene) : [],
             footprints,
             ...(cfg.maxTreesPerKind !== undefined && { maxTrees: cfg.maxTreesPerKind }),
             ...(canopy && { canopy }),
             ...(keepOut.length > 0 && { keepOut }),
             ...(photo?.treeClearOfTrailM !== undefined && { clearOfTrailM: photo.treeClearOfTrailM }),
+            ...(photo?.treeZoneM !== undefined && { nearZoneM: photo.treeZoneM }),
+            ...(photo?.treesPerNode !== undefined && { treesPerNode: photo.treesPerNode }),
+            ...(photo?.canopyCover && { canopyCover: true }),
           })
         : { conifer: [], broadleaf: [] },
-    water: cfg.kind === "ground" ? waterBodies(inputs.osm, inputs.route.project, scene.heightAt, 10_000, inputs.waterLevels ?? {}, cfg.ve) : [],
+    water: drawsCover ? waterBodies(inputs.osm, inputs.route.project, scene.heightAt, 10_000, inputs.waterLevels ?? {}, cfg.ve) : [],
     buildings,
     barriers: lines.length > 0 ? buildBarrierMeshes(lines, inputs.route.project, scene.heightAt, { ve: cfg.ve, trail: scene.trail, gapM: 3 }) : NO_BARRIERS(),
     // open ground gets grass; the woodland floor a sparser, darker growth (bracken and bramble read as the same clumps);
     // every clump stands on the rendered (flattened) ground, like the roads and trees (RL15)
     grass:
-      photo && cfg.kind === "ground"
+      photo?.grassAlongM && photo.grassBandM !== undefined && cfg.kind === "ground"
         ? [
             ...placeGrass(inputs.dem, inputs.land, inputs.route.project, scene.trail, { alongM: photo.grassAlongM, bandM: photo.grassBandM, ve: cfg.ve, groundAt: scene.heightAt }),
             ...placeGrass(inputs.dem, inputs.land, inputs.route.project, scene.trail, { seed: 20261030, alongM: photo.grassAlongM, bandM: photo.grassBandM, ve: cfg.ve, classes: /wood|forest/, per100m2: 25, tintScale: 0.72, groundAt: scene.heightAt }),
           ]
         : [],
-    // walkers only where the config choreographs them (ADR 59); their tables run the section's frames at the rider's fps
-    walkers: photo?.walkers && cfg.kind === "ground" ? walkerTracks(scene.trail, photo.walkers, cfg.frames, POC.fps) : [],
+    // walkers where the config places them (ADR 59) and people by its seeded draw (ADR 61); their tables run the
+    // section's frames at the rider's fps
+    walkers: photo && cfg.kind === "ground" ? walkerTracks(scene.trail, [...(photo.walkers ?? []), ...peopleOf(cfg, scene)], cfg.frames, POC.fps) : [],
   };
+}
+
+/** The section's people by its seeded draw, on the stretch its shots see (ADR 61). */
+function peopleOf(cfg: SectionConfig, scene: PocScene): WalkerSpec[] {
+  const people = cfg.photo?.people;
+  if (!people) return [];
+  const alongM = cfg.photo?.grassAlongM ?? [cfg.startDistM - 100, cfg.startDistM + 300];
+  return placePeople({ trail: scene.trail, frames: cfg.frames, fps: POC.fps, kmRange: cfg.kmRange, alongM, rider: { table: scene.table, lateralM: scene.dims.lateralOffsetM }, shot: scene.shot }, people);
 }
 
 const buildingStatus = (features: Feature[]) => new Map<string, BuildingStatus>(features.filter((f) => f.kind === "building" && f.status).map((f) => [f.id, f.status!]));
 
-export function buildSectionScene(cfg: SectionConfig, inputs: Omit<ExtraInputs, "bridgeIds">): SectionScene {
+/** A section's scene in a look: the concept look ignores the config's photo extras (ADR 60). */
+export function buildSectionScene(cfg: SectionConfig, inputs: Omit<ExtraInputs, "bridgeIds">, look: Look = "concept"): SectionScene {
   const scene = groundScene(cfg, inputs);
-  return { ...scene, config: cfg, ...extras(cfg, inputs, scene) };
+  // the terrain's vertices are the DEM's nodes row by row, so the image's node colours replace the land cover's one for one
+  let groundImage: SceneImage | undefined;
+  if (look === "photo" && cfg.photo?.imagery) {
+    if (!inputs.imagery) throw new Error(`section ${cfg.id}: the photo look wants the window's imagery and none was loaded`);
+    const rgba = imageryPixels(inputs.imagery, IMAGERY_GRADE);
+    const { cols, rows } = inputs.dem;
+    groundImage = { width: inputs.imagery.width, height: inputs.imagery.height, scale: inputs.imagery.scale, rgba, cols, rows };
+    scene.terrain = { ...scene.terrain, colors: imageryNodeColours(inputs.imagery, rgba, cols, rows) };
+  }
+  return { ...scene, ...(groundImage && { groundImage }), config: cfg, ...extras(cfg, inputs, scene, look) };
 }
 
 /** The proof of concept's scene: the Maentwrog config through the same assembly. */
 export const buildPocScene = (inputs: PocInputs): PocScene => groundScene(SECTIONS.maentwrog, inputs);
 
 export function buildPocExtras(inputs: PocInputs & { osm: OsmLine[]; features: Feature[]; bridgeIds: string[] }, scene: PocScene): { roads: MeshArrays; bridges: MeshArrays[]; trees: TreePlacement } {
-  const { roads, bridges, trees } = extras(SECTIONS.maentwrog, inputs, scene);
+  const { roads, bridges, trees } = extras(SECTIONS.maentwrog, inputs, scene, "concept");
   return { roads, bridges, trees };
 }

@@ -68,3 +68,5 @@ tasks. ADRs 27–40 record the reel design (D23–D36, mission `msn_44274a1de641
 | [57. Tree heights and field trees from the lidar canopy, when a section asks](0057-canopy-heights-from-lidar.md) | Proposed | D52 (photoreal); amends ADRs 11, 37 |
 | [58. Field boundaries from OSM barrier ways, in their own file, with a gap at the trail](0058-walls-and-hedges-from-osm.md) | Proposed | D53 (photoreal); amends ADRs 12, 20 |
 | [59. Walkers on the trail, choreographed by the section, under the rider's rules](0059-walkers-on-the-trail.md) | Proposed | D54 (photoreal); implements spec C9 |
+| [60. The reel in the photo look: every scene, its aerials coloured by a satellite image](0060-reel-in-the-photo-look.md) | Proposed | D55 (photoreal); amends ADRs 33, 54, 57, 58, 59 |
+| [61. Trail users at random: walkers, runners and prams, by a seeded draw that keeps the rider's rules](0061-trail-users-at-random.md) | Proposed | D56 (photoreal); amends ADRs 59, 60 |

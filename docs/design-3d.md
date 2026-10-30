@@ -326,6 +326,36 @@ export const NOMINAL_TREE_HEIGHT_M: { conifer: number; broadleaf: number }; // t
 // registers.ts (ADR 57): the canopy grid header, which must be the DEM's grid; KINDS gains 'barrier' (ADR 58)
 export type CanopyHeader = { cols: number; rows: number; spacingM: number; originE: number; originN: number; file: string };
 export function validateCanopyHeader(x: unknown, path: string, dem: Pick<DemHeader, 'cols' | 'rows' | 'spacingM' | 'originE' | 'originN'>): CanopyHeader;
+// --- the reel in the photo look (docs/adr/0060-reel-in-the-photo-look.md) ---
+// sections.ts: every reel section carries photo extras, built in the photo look only (the concept look is unchanged);
+// SectionConfig.photo gains treeZoneM?, treesPerNode?, canopyCover?, imagery?, and its grass fields become optional
+export type Look = 'concept' | 'photo';
+export type SceneImage = { width: number; height: number; scale: number; rgba: Uint8Array; cols: number; rows: number }; // SectionScene gains groundImage?
+// buildSectionScene(cfg, inputs, look = 'concept'): inputs gain canopy?, barriers? and imagery?: GroundImage
+// trees.ts: TreeOptions gains treesPerNode (1) and canopyCover (false: trees wherever the canopy stands, bare classes excepted)
+export function treesInShots(trees: TreePlacement, poses: { position: Vec3; target: Vec3; fovDeg: number }[], focus: Vec3[], opts: { shadowReach: number; aspect?: number; far?: number }): { casting: TreePlacement; shadowless: TreePlacement }; // the photo look's draw lists: no pixel changes
+// shading.ts: a Sentinel-2 true-colour image on the DEM's grid as the ground's colour
+export type GroundImage = { width: number; height: number; scale: number; rgb: Uint8Array }; // pixel (0, 0) on node (0, 0), north row first
+export function imageryPixels(image: GroundImage, grade: { gain: number; saturation: number; tint: readonly [number, number, number] }): Uint8Array; // graded sRGB RGBA
+export function imageryNodeColours(image: GroundImage, pixels: Uint8Array, cols: number, rows: number): Float32Array; // the pixel on each node, in vertex order
+// photoLook.ts and atmosphere.ts
+export const IMAGERY_GRADE: { gain: number; saturation: number; tint: readonly [number, number, number] }; // 1, 1.1, [1.6, 1, 0.7]: towards the ground palette (CL6)
+export const SHADOW_PHOTO_AERIAL: { rangeM: number; normalBias: number; bias: number }; // 2.4 km, 0.8 m, −0.0004
+// registers.ts: KINDS gains 'imagery'; the image header must be the DEM's grid at a whole scale
+export type ImageryHeader = CanopyHeader & { scale: number; width: number; height: number };
+export function validateImageryHeader(x: unknown, path: string, dem: Pick<DemHeader, 'cols' | 'rows' | 'spacingM' | 'originE' | 'originN'>): ImageryHeader;
+// --- trail users at random (docs/adr/0061-trail-users-at-random.md) ---
+// walkers.ts: WalkerSpec gains activity?: Activity; strideM(heightM, activity?), walkerParts(heightM, phase, activity?) and
+// walkerColours(seed, activity?) follow it (a walker's figure and colours are unchanged); WalkerMaterial gains 'frame' | 'fabric' | 'tyre' | 'blanket'
+export type Activity = 'walk' | 'run' | 'pram';
+export function paceKmh(activity: Activity, gradient: number): number; // walk as C9; run clamp(10 − 50 g, 7.5, 12); pram clamp(4 − 30 g, 3, 5)
+export const RUNNER_PALETTE: { top: readonly string[]; legs: readonly string[]; shoe: readonly string[] };
+export const PRAM_PALETTE: { frame: readonly string[]; fabric: readonly string[]; tyre: readonly string[]; blanket: readonly string[] };
+// people.ts: a section's people by a seeded draw, each kept only if it clears the rider, the camera and the others
+export type PeopleOptions = { count: number; seed: number };   // SectionConfig.photo gains people?: PeopleOptions
+export type PeopleInputs = { trail: Trail; frames: number; fps: number; kmRange: [number, number]; alongM: [number, number]; rider: { table: Float64Array; lateralM: number }; shot: Shot };
+export function placePeople(inp: PeopleInputs, opts: PeopleOptions): WalkerSpec[]; // a runner and a pram among them; a walker may bring a companion
+export const PEOPLE_RULES: { span: Record<Activity, [number, number]>; half: Record<Activity, number>; rider: { span: [number, number]; half: number }; clear: { rider: number; person: number }; cameraM: number; seenM: number };
 ```
 
 ### Runtime data: `src/data/Scene3DDataProvider.tsx` (new)
@@ -418,10 +448,10 @@ It releases its hold in an effect after its children have mounted, so `<ThreeCan
 | `tests/three-core/water-holes.test.ts` | WA3, WA5: `polygonsOf` keeps holes from the geometry and `inner_rings` alike, orients rings, assigns each hole to its part; `waterBodies` keeps holes and uses shared levels; Llyn Trawsfynydd has one level and the same islands in both windows (ADRs 41, 42). |
 | `tests/water-geometry.test.ts` | WA1, WA2: `waterArrays` faces every triangle up for either winding, leaves islands open, keeps the area; real lake (ADR 41). |
 | `tests/three-core/water-terrain.test.ts` | WA7: no terrain node inside a lake, more than 0.1 m from its shore and outside its islands, rises above the lake's shared level; every drawn lake has one (t10). |
-| `tests/pipeline-python.test.ts` | WA3, WA4, WA6, WA7, CL4, BL6, BL17: the pipeline and still-metric self-tests; Llyn Trawsfynydd's islands rise above the lake level in the real DTM (ADRs 41, 42, 49). |
+| `tests/pipeline-python.test.ts` | WA3, WA4, WA6, WA7, CL4, BL6, BL17: the pipeline and still-metric self-tests, and the canopy, boundary and imagery scripts' (ADRs 57, 58, 60); Llyn Trawsfynydd's islands rise above the lake level in the real DTM (ADRs 41, 42, 49). |
 | `tests/load-gate.test.ts` | RD3–RD5: one hold per input, taken while rendering (not in an effect), new hold before the old is released, stale and unmounted settles ignored, errors name section and asset; the providers use the gate; `memoOnSuccess` keeps only successful loads (ADR 43, t8). |
 | `tests/load-gate-hook.test.ts` | RD3: in a component, the render with a new input never returns the old input's data and is already held; effects run again after a cleanup still load (t10). |
-| `tests/three-core/occlusion.test.ts` | CL5: no drawn tree crown (exact cone, enclosing ellipsoid) between the camera and the rider in any frame of both ground shots in the five ground sections (ADR 47). |
+| `tests/three-core/occlusion.test.ts` | CL5: no drawn tree crown (exact cone, enclosing ellipsoid) between the camera and the rider in any frame of both ground shots in the five ground sections, in both looks (ADRs 47, 60). |
 | `tests/overlays.test.ts` | CL7, CL9, CL11, CL12, BL14: safe-area tokens, 4.5:1 contrast over black and white frames, minimum text sizes (ADR 48); the legend names exactly the styles drawn. |
 | `tests/registers-buildings.test.ts` | BL2–BL4, BL16: building entries need status and provenance; planning alone is not "existing"; old observations cannot be high confidence; real source types (ADR 51). |
 | `tests/three-core/visibility.test.ts` | BL1: `visibleFootprints` lists footprints in view and not behind terrain (ADR 49). |
@@ -431,8 +461,9 @@ It releases its hold in an effect after its children have mounted, so `<ThreeCan
 | `tests/three-core/first-person.test.ts` | ADRs 54, 56: the rider's view meets CA1, CA2, CA4 and CA3 as amended, bobs with the crank, plays at the section frame; the prototype config sits outside the reel and names the shot owning each frame. |
 | `tests/three-core/barriers.test.ts` | ADR 58: OSM tags to wall, hedge or fence; lofted boxes of each kind's size or the tagged height, embedded 0.3 m, on a slope, with UVs; the gap at the trail; stations off the terrain dropped. |
 | `tests/three-core/grass.test.ts` | ADR 54: clumps only on grass-like cover inside the band and clear of the ribbon, never on woodland; the stretch, the thinning band edge, determinism, the cap. |
-| `tests/three-core/trees-canopy.test.ts` | ADR 57: woodland draws unchanged, felled nodes skipped, scales from the measured height, field trees at canopy peaks outside woodland from their own stream; the canopy header must be the DEM's grid; `barrier` is a register kind (ADR 58). |
-| `tests/three-core/walkers.test.ts` | C9 (ADR 59): the walking pace, the figure's height and width at every gait phase with a sole on the ground, C2–C5 at every frame in both directions, the gait's advance, determinism, the palette, the boundary refusals; the prototype's choreography on the real Maentwrog trail (passes in the rider's view, every walker behind the follow camera, inside the window). |
+| `tests/three-core/trees-canopy.test.ts` | ADR 57: woodland draws unchanged, felled nodes skipped, scales from the measured height, field trees at canopy peaks outside woodland from their own stream; the canopy header must be the DEM's grid; `barrier` is a register kind (ADR 58); ADR 60: several trees a node inside the node's cell, canopy cover off bare classes, the photo look's draw lists (`treesInShots`), the image's grade and node colours, its header at a whole scale, `imagery` a register kind. |
+| `tests/three-core/walkers.test.ts` | C9 (ADR 59): the walking pace, the figure's height and width at every gait phase with a sole on the ground, C2–C5 at every frame in both directions, the gait's advance, determinism, the palette, the boundary refusals; the prototype's choreography on the real Maentwrog trail (passes in the rider's view, every walker behind the follow camera, inside the window). ADR 61: runner and pram paces and strides, a runner's flight phase and reach, a pram's tyres on the ground ahead of its pusher's feet with the hands on its bar. |
+| `tests/three-core/reel-photo.test.ts` | ADR 60: the reel's look and its attribution; every reel scene's photo extras; the concept look unchanged by them (trees, roads, water, terrain colours; no grass, boundaries, walkers or image); ADR 61: each ground scene's people on its real trail (the same draw every time, a runner and a pram in each, inside the section, on screen, clear of the rider, the camera and each other; three runners and three prams across the reel); the aerial image on the corridor's grid (dark lakes) and trees only where the canopy stands on cover that is not bare. |
 | `scripts/render-checks.mjs` (`npm run test:render`) | RG1 (sha256 of `CyclingVision` stills 5/1200/2200/2900 vs `tests/baselines/cyclingvision.json`, captured before any 3D code), RN2 (POC frames 0/180/359 rendered twice), RN3 (`ffprobe`), RN5b (no blank canvas in any frame of the full render; terrain drawn at frame 0), RN6 (timings, `renderer.info`), H2(a), L2, G3. The reel (ADR 39): RL1/RL24 full render, format and time; RL26/RL27 blank scan of all 2,700 frames; RL23 frames 0/1349/2699 twice; RL24 `renderer.info` at one frame per scene and at the last frame before each cut; RL17/RL22 overlays visible; RL32 one preview still per scene in `out/previews/`. Results are appended to `docs/validation-3d.md`. |
 
 ## Performance budget (RN6: ≤ 300 draw calls, ≤ 2 M triangles)

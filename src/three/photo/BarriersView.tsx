@@ -23,13 +23,23 @@ function useBarrierGeometry(mesh: MeshArrays): THREE.BufferGeometry {
   return geometry;
 }
 
+/** The share of a hedge's own colour it shows on every side, like the trees' fill. */
+const HEDGE_FILL = 0.18;
+
 const Kind: React.FC<{ kind: BarrierKind; mesh: MeshArrays; mask?: Mask; textures?: BarrierTextures }> = ({ kind, mesh, mask, textures }) => {
   const geometry = useBarrierGeometry(mesh);
   if (mesh.positions.length === 0) return null;
   const tex = textures?.[kind];
   return (
     <mesh geometry={geometry} castShadow receiveShadow>
-      {mask ? <meshBasicMaterial color="#000000" /> : tex ? <meshStandardMaterial map={tex.map} normalMap={tex.normalMap ?? null} roughness={1} metalness={0} /> : <meshStandardMaterial color={BARRIER_COLOURS[kind]} roughness={1} metalness={0} />}
+      {mask ? (
+        <meshBasicMaterial color="#000000" />
+      ) : tex ? (
+        // a hedge is foliage, lit through by the sky on its shade side, as the card trees are (spec CL2)
+        <meshStandardMaterial map={tex.map} normalMap={tex.normalMap ?? null} roughness={1} metalness={0} {...(kind === "hedge" && { emissive: "#ffffff", emissiveMap: tex.map, emissiveIntensity: HEDGE_FILL })} />
+      ) : (
+        <meshStandardMaterial color={BARRIER_COLOURS[kind]} roughness={1} metalness={0} />
+      )}
     </mesh>
   );
 };

@@ -17,7 +17,8 @@ import { mulberry32 } from "../../three-core/rng";
 // no second loop. This is the only file allowed to call useFrame (static test RN1 as amended by ADR 55).
 // Passes: the scene into a half-float multisampled target, ground-truth ambient occlusion, a mild grade, then AgX tone
 // mapping and the sRGB output. With diagnostics the renderer's counts for the whole frame (every pass) are logged
-// once, as Diagnostics does for the concept look.
+// once, as Diagnostics does for the concept look, with the scene pass's own counts (shadow map included, as the concept
+// look's are) beside them: the spec's budget (RN6, RL24) was written for that one pass (ADR 60).
 
 /** GTAO whose normal and depth pass skips objects flagged `userData.noAO`: the alpha-cut tree cards, which the override
  * material would render as solid slabs (the pass cannot read a material's alpha test), leaving card-shaped halos; and
@@ -55,6 +56,16 @@ class SceneAwareGTAOPass extends GTAOPass {
   }
 }
 
+/** The scene pass, remembering the renderer's counts once it has drawn (the frame's counters were reset just before). */
+class CountingRenderPass extends RenderPass {
+  counted = { calls: 0, triangles: 0 };
+
+  render(renderer: THREE.WebGLRenderer, writeBuffer: THREE.WebGLRenderTarget, readBuffer: THREE.WebGLRenderTarget, deltaTime: number, maskActive: boolean): void {
+    super.render(renderer, writeBuffer, readBuffer, deltaTime, maskActive);
+    this.counted = { calls: renderer.info.render.calls, triangles: renderer.info.render.triangles };
+  }
+}
+
 const GRADE = {
   uniforms: { tDiffuse: { value: null as THREE.Texture | null }, vignette: { value: POST.vignette }, saturation: { value: POST.saturation } },
   vertexShader: `varying vec2 vUv; void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
@@ -82,7 +93,8 @@ export const PostFX: React.FC<{ width: number; height: number; ve: number; diagn
     const c = new EffectComposer(gl, target);
     c.setPixelRatio(1);
     c.setSize(width, height);
-    c.addPass(new RenderPass(scene, camera));
+    const scenePass = new CountingRenderPass(scene, camera);
+    c.addPass(scenePass);
     const ao = new SceneAwareGTAOPass(scene, camera, width, height);
     ao.output = GTAOPass.OUTPUT.Default;
     ao.blendIntensity = POST.aoIntensity;
@@ -90,11 +102,11 @@ export const PostFX: React.FC<{ width: number; height: number; ve: number; diagn
     c.addPass(ao);
     c.addPass(new ShaderPass(GRADE));
     c.addPass(new OutputPass());
-    return c;
+    return { c, scenePass };
   }, [gl, scene, camera, width, height]);
   useEffect(
     () => () => {
-      composer.dispose();
+      composer.c.dispose();
       gl.toneMapping = THREE.NoToneMapping;
       gl.toneMappingExposure = 1;
       gl.info.autoReset = true;
@@ -103,10 +115,10 @@ export const PostFX: React.FC<{ width: number; height: number; ve: number; diagn
   );
   useFrame(() => {
     gl.info.reset();
-    composer.render();
+    composer.c.render();
     if (diagnostics) {
       const { calls, triangles } = gl.info.render;
-      console.log(`THREE_STATS ${JSON.stringify({ calls, triangles, ve })}`);
+      console.log(`THREE_STATS ${JSON.stringify({ calls, triangles, ve, scenePass: composer.scenePass.counted })}`);
     }
   }, 1);
   return null;

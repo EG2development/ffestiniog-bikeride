@@ -10,7 +10,7 @@ import type { Mask } from "./mask";
 
 /** The shadow map's extent around the focus and its biases; the reel's values when not given (spec RL12). */
 export type ShadowSetup = { rangeM: number; normalBias: number; bias: number };
-const REEL_SHADOW: ShadowSetup = { rangeM: 300, normalBias: 0.02, bias: -0.0002 };
+export const REEL_SHADOW: ShadowSetup = { rangeM: 300, normalBias: 0.02, bias: -0.0002 };
 
 // Fixed sun and hemisphere fill; no HDRI (docs/adr/0018-fixed-lighting.md). The sky dome owns the
 // background and the fog (ADR 30). The shadow camera follows the focus so the 2048² map covers `rangeM` around it.

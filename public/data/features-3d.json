@@ -70,7 +70,9 @@
       "ref": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif minus the DTM (public/data/sections/maentwrog/canopy.json)"
     },
     "scenes": [
-      "Poc3DMaentwrogPhoto"
+      "Poc3DMaentwrogPhoto",
+      "Reel3D",
+      "Section-maentwrog"
     ],
     "note": "tree positions by seeded draw inside OSM woodland where the lidar canopy is at least 3 m, scaled to the measured canopy height; field trees at canopy peaks of 6 m or more outside woodland; species and crown form are generic (ADR 57); the lidar was flown 2022-01-11 (tile catalogue)"
   },
@@ -83,7 +85,9 @@
       "ref": "seeded clumps on OSM grass, heath and unclassified cover within 50 m of the trail, km 8.85-9.32"
     },
     "scenes": [
-      "Poc3DMaentwrogPhoto"
+      "Poc3DMaentwrogPhoto",
+      "Reel3D",
+      "Section-maentwrog"
     ]
   },
   {
@@ -92,12 +96,212 @@
     "category": "decorative",
     "source": {
       "type": "original",
-      "ref": "three procedural figures choreographed in PROTOTYPES[\"maentwrog-photo\"].photo.walkers (ADR 59)"
+      "ref": "procedural people: three walkers placed by spec in PROTOTYPES[\"maentwrog-photo\"].photo.walkers (ADR 59), and up to five walkers, runners and people pushing prams by the seeded draw SECTIONS.maentwrog.photo.people (ADR 61)"
     },
     "scenes": [
-      "Poc3DMaentwrogPhoto"
+      "Poc3DMaentwrogPhoto",
+      "Reel3D",
+      "Section-maentwrog"
     ],
     "note": "conceptual: shows the proposed path in shared use (Active Travel Act guidance Table 11.5, 3 m); nobody is recorded walking the mothballed line, and no path exists there today"
+  },
+  {
+    "id": "trees-canopy-blaenau",
+    "kind": "vegetation",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif minus the DTM (public/data/sections/blaenau/canopy.json)"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "the photo look's trees, as trees-canopy-maentwrog (ADR 57): inside OSM woodland where the lidar canopy is at least 3 m, at the measured height; field trees at canopy peaks of 6 m or more; species and crown form generic (ADR 60)"
+  },
+  {
+    "id": "grass-blaenau",
+    "kind": "vegetation",
+    "category": "decorative",
+    "source": {
+      "type": "original",
+      "ref": "seeded clumps on OSM grass, heath and unclassified cover within 50 m of the trail, km 0.10-0.56"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ]
+  },
+  {
+    "id": "walkers-blaenau",
+    "kind": "walker",
+    "category": "decorative",
+    "source": {
+      "type": "original",
+      "ref": "up to 5 procedural people (walkers, runners and people pushing prams) placed by the seeded draw SECTIONS[\"blaenau\"].photo.people (ADRs 59–61)"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "conceptual: shows the proposed path in shared use (Active Travel Act guidance Table 11.5, 3 m); nobody is recorded walking the mothballed line, and no path exists there today"
+  },
+  {
+    "id": "trees-canopy-vale-north",
+    "kind": "vegetation",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif minus the DTM (public/data/sections/vale-north/canopy.json)"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-north"
+    ],
+    "note": "the photo look's trees, as trees-canopy-maentwrog (ADR 57): inside OSM woodland where the lidar canopy is at least 3 m, at the measured height; field trees at canopy peaks of 6 m or more; species and crown form generic (ADR 60)"
+  },
+  {
+    "id": "grass-vale-north",
+    "kind": "vegetation",
+    "category": "decorative",
+    "source": {
+      "type": "original",
+      "ref": "seeded clumps on OSM grass, heath and unclassified cover within 50 m of the trail, km 2.80-3.25"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-north"
+    ]
+  },
+  {
+    "id": "walkers-vale-north",
+    "kind": "walker",
+    "category": "decorative",
+    "source": {
+      "type": "original",
+      "ref": "up to 4 procedural people (walkers, runners and people pushing prams) placed by the seeded draw SECTIONS[\"vale-north\"].photo.people (ADRs 59–61)"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-north"
+    ],
+    "note": "conceptual: shows the proposed path in shared use (Active Travel Act guidance Table 11.5, 3 m); nobody is recorded walking the mothballed line, and no path exists there today"
+  },
+  {
+    "id": "trees-canopy-vale-south",
+    "kind": "vegetation",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif minus the DTM (public/data/sections/vale-south/canopy.json)"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "the photo look's trees, as trees-canopy-maentwrog (ADR 57): inside OSM woodland where the lidar canopy is at least 3 m, at the measured height; field trees at canopy peaks of 6 m or more; species and crown form generic (ADR 60)"
+  },
+  {
+    "id": "grass-vale-south",
+    "kind": "vegetation",
+    "category": "decorative",
+    "source": {
+      "type": "original",
+      "ref": "seeded clumps on OSM grass, heath and unclassified cover within 50 m of the trail, km 5.20-5.65"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ]
+  },
+  {
+    "id": "walkers-vale-south",
+    "kind": "walker",
+    "category": "decorative",
+    "source": {
+      "type": "original",
+      "ref": "up to 4 procedural people (walkers, runners and people pushing prams) placed by the seeded draw SECTIONS[\"vale-south\"].photo.people (ADRs 59–61)"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "conceptual: shows the proposed path in shared use (Active Travel Act guidance Table 11.5, 3 m); nobody is recorded walking the mothballed line, and no path exists there today"
+  },
+  {
+    "id": "trees-canopy-trawsfynydd",
+    "kind": "vegetation",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif minus the DTM (public/data/sections/trawsfynydd/canopy.json)"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "the photo look's trees, as trees-canopy-maentwrog (ADR 57): inside OSM woodland where the lidar canopy is at least 3 m, at the measured height; field trees at canopy peaks of 6 m or more; species and crown form generic (ADR 60)"
+  },
+  {
+    "id": "grass-trawsfynydd",
+    "kind": "vegetation",
+    "category": "decorative",
+    "source": {
+      "type": "original",
+      "ref": "seeded clumps on OSM grass, heath and unclassified cover within 50 m of the trail, km 10.05-10.65"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ]
+  },
+  {
+    "id": "walkers-trawsfynydd",
+    "kind": "walker",
+    "category": "decorative",
+    "source": {
+      "type": "original",
+      "ref": "up to 6 procedural people (walkers, runners and people pushing prams) placed by the seeded draw SECTIONS[\"trawsfynydd\"].photo.people (ADRs 59–61)"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "conceptual: shows the proposed path in shared use (Active Travel Act guidance Table 11.5, 3 m); nobody is recorded walking the mothballed line, and no path exists there today"
+  },
+  {
+    "id": "trees-canopy-corridor",
+    "kind": "vegetation",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif minus the DTM (public/data/sections/corridor/canopy.json, 16 m overview level)"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-intro",
+      "Section-heritage",
+      "Section-overview",
+      "Section-closing"
+    ],
+    "note": "the photo look's aerial trees (ADR 60): three crowns to each 16 m node where the lidar canopy is at least 3 m, mapped as woodland or not (built-up, quarry and water excepted), within 1.5 km of the line, at the measured height; species and crown form generic"
+  },
+  {
+    "id": "imagery-corridor",
+    "kind": "imagery",
+    "category": "approximate",
+    "source": {
+      "type": "copernicus",
+      "ref": "Sentinel-2 L2A scene S2C_30UVD_20250712_0_L2A, true-colour image (public/data/sections/corridor/imagery.json)"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-intro",
+      "Section-heritage",
+      "Section-overview",
+      "Section-closing"
+    ],
+    "note": "the photo look's aerial ground colour (ADR 60): 10 m pixels of 12 July 2025, graded towards the ground scenes' palette; fields and woods are as the satellite saw them, finer detail is texture. Contains modified Copernicus Sentinel data 2025"
   },
   {
     "id": "bridge-159029124",

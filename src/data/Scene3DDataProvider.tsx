@@ -9,6 +9,7 @@ import {
   validateAssets,
   validateCanopyHeader,
   validateDemHeader,
+  validateImageryHeader,
   validateLandCoverHeader,
   validateOsmLines,
   validateTrailProfile,
@@ -18,6 +19,7 @@ import {
   type OsmLine,
   type SectionBuilding,
 } from "../three-core/registers";
+import type { GroundImage } from "../three-core/shading";
 import type { TrailProfile } from "../three-core/trail";
 import type { DemGrid, LandCover } from "../three-core/types";
 
@@ -40,18 +42,20 @@ export type Scene3DData = {
    * lidar canopy heights per DEM node (ADR 57) and the OSM field boundaries (ADR 58) */
   canopy?: Float32Array;
   barriers?: OsmLine[];
+  /** a satellite image on the DEM's grid (docs/adr/0060-reel-in-the-photo-look.md) */
+  imagery?: GroundImage;
 };
 
 /** Which optional files a composition wants; a wanted file that is missing or invalid fails the render (spec RD5). */
-export type Scene3DWants = { canopy?: boolean; barriers?: boolean };
+export type Scene3DWants = { canopy?: boolean; barriers?: boolean; imagery?: boolean };
 
 const Scene3DDataContext = createContext<Scene3DData | null>(null);
 
 /** The files a composition loads: the proof of concept's `-poc` set, or a section window under data/sections/<id>/. */
-export function dataPaths(section?: string): { dem: string; land: string; profile: string; osm: string; features: string[]; buildings?: string; waterLevels: string; canopy?: string; barriers?: string } {
+export function dataPaths(section?: string): { dem: string; land: string; profile: string; osm: string; features: string[]; buildings?: string; waterLevels: string; canopy?: string; barriers?: string; imagery?: string } {
   if (!section) return { dem: "data/dem-poc.json", land: "data/landcover-poc.json", profile: "data/trail-profile-poc.json", osm: "data/osm-poc.geojson", features: ["data/features-3d.json"], waterLevels: "data/water-levels.json" };
   const dir = `data/sections/${section}`;
-  return { dem: `${dir}/dem.json`, land: `${dir}/landcover.json`, profile: `${dir}/trail-profile.json`, osm: `${dir}/osm.geojson`, features: ["data/features-3d.json", `data/features-${section}.json`], buildings: `${dir}/buildings.json`, waterLevels: "data/water-levels.json", canopy: `${dir}/canopy.json`, barriers: `${dir}/barriers.geojson` };
+  return { dem: `${dir}/dem.json`, land: `${dir}/landcover.json`, profile: `${dir}/trail-profile.json`, osm: `${dir}/osm.geojson`, features: ["data/features-3d.json", `data/features-${section}.json`], buildings: `${dir}/buildings.json`, waterLevels: "data/water-levels.json", canopy: `${dir}/canopy.json`, barriers: `${dir}/barriers.geojson`, imagery: `${dir}/imagery.json` };
 }
 
 /** Every file of a section, validated at the boundary; any failure names the section and the asset (spec RD5). */
@@ -102,6 +106,15 @@ async function loadScene3D(section: string | undefined, signal: AbortSignal, lab
     const raw = await json(paths.barriers);
     barriers = checked(paths.barriers, () => validateOsmLines(raw, paths.barriers!));
   }
+  let imagery: GroundImage | undefined;
+  if (wants.imagery) {
+    if (!paths.imagery) throw new AssetLoadError(name, "imagery.json", "the proof-of-concept data set has no imagery");
+    const rawHeader = await json(paths.imagery);
+    const imageryHeader = checked(paths.imagery, () => validateImageryHeader(rawHeader, paths.imagery!, header));
+    const buf = await bytes(`${dir}/${imageryHeader.file}`);
+    const { width, height, scale } = imageryHeader;
+    imagery = { width, height, scale, rgb: new Uint8Array(checked(`${dir}/${imageryHeader.file}`, () => expectGridBytes(buf, { cols: width, rows: height }, 3, imageryHeader.file))) };
+  }
   return {
     dem: { ...header, heights: new Float32Array(heights), sourceIndex: new Uint8Array(sources) },
     land: { legend: landMeta.legend, classes: new Uint8Array(classes) },
@@ -113,6 +126,7 @@ async function loadScene3D(section: string | undefined, signal: AbortSignal, lab
     buildings: paths.buildings ? checked(paths.buildings, () => validateBuildings(buildings, paths.buildings!)) : [],
     ...(canopy && { canopy }),
     ...(barriers && { barriers }),
+    ...(imagery && { imagery }),
   };
 }
 
@@ -130,7 +144,7 @@ function validateWaterLevels(x: unknown): Record<string, number> {
 export const Scene3DDataProvider: React.FC<{ section?: string; label?: string; wants?: Scene3DWants; children: React.ReactNode }> = ({ section, label, wants, children }) => {
   // one hold per section, released after the children mount; a stale load never lands (docs/adr/0043-load-gate-for-providers.md)
   // the key names the optional files too, so a composition that wants them never receives a load made without them
-  const key = `${section ?? "poc"}${wants?.canopy ? "+canopy" : ""}${wants?.barriers ? "+barriers" : ""}`;
+  const key = `${section ?? "poc"}${wants?.canopy ? "+canopy" : ""}${wants?.barriers ? "+barriers" : ""}${wants?.imagery ? "+imagery" : ""}`;
   const data = useLoadGate((k) => `Loading 3D terrain, land cover and registers for ${k}`, key, (signal) => loadScene3D(section, signal, label, wants));
   if (!data) return null;
   return <Scene3DDataContext.Provider value={data}>{children}</Scene3DDataContext.Provider>;

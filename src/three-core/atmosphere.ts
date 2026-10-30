@@ -38,6 +38,9 @@ export const SKY_PHOTO = { environmentIntensity: 0.55, cloudCover: 0.5, cloudSca
  * normal bias drops from 0.2 m to 6 cm, so a figure's shadow starts at its feet instead of 20 cm away. The drone shot
  * keeps the reel's range and bias, since its ground is hundreds of metres across. World units: 1 = 10 m. */
 export const SHADOW_PHOTO_CLOSE = { rangeM: 160, normalBias: 0.006, bias: -0.0002 } as const;
+/** The photo look's aerial scenes (docs/adr/0060-reel-in-the-photo-look.md): trees stand across kilometres of the view, so
+ * the map covers 2.4 km around the target (a 1.2 m texel, enough for a crown's shadow) and the normal bias grows with it. */
+export const SHADOW_PHOTO_AERIAL = { rangeM: 2400, normalBias: 0.08, bias: -0.0004 } as const;
 
 /** The aerial map drape's grade towards the ground palette (spec CL6; docs/pseudocode-reel-v2.md §4.4). Only the map's
  * near-neutral paper and hill shading (HSV saturation below `neutral`) takes the tint, at its own luma and with weight

@@ -55,6 +55,12 @@ function inputs(id: string) {
     profile: readJson<TrailProfile>(`${w}/trail-profile.json`),
     osm: readJson<{ features: OsmLine[] }>(`${w}/osm.geojson`).features,
     features: [...validateFeatures(readJson<unknown>("data/features-3d.json")), ...validateFeatures(readJson<unknown>(`data/features-${id}.json`))],
+    // the photo look's lidar canopy and field boundaries (ADRs 57, 58, 60); the concept look ignores them
+    canopy: (() => {
+      const c = readProjectFile(`${w}/canopy.f32`);
+      return new Float32Array(c.buffer.slice(c.byteOffset, c.byteOffset + c.byteLength));
+    })(),
+    barriers: readJson<{ features: OsmLine[] }>(`${w}/barriers.geojson`).features,
   };
 }
 
@@ -67,11 +73,11 @@ function hits(a: V3, b: V3, c: V3, r: number): boolean {
   return p[0] * p[0] + p[1] * p[1] + p[2] * p[2] < r * r;
 }
 
-describe("trees do not hide the rider (CL5, real sections)", () => {
-  for (const id of ["blaenau", "vale-north", "vale-south", "maentwrog", "trawsfynydd"]) {
-    it(`${id}: no frame of a ground shot has a tree crown between the camera and the rider`, () => {
+describe("trees do not hide the rider (CL5, real sections, both looks: ADR 60)", () => {
+  for (const [id, look] of ["blaenau", "vale-north", "vale-south", "maentwrog", "trawsfynydd"].flatMap((id) => (["concept", "photo"] as const).map((look) => [id, look] as const))) {
+    it(`${id}, ${look} look: no frame of a ground shot has a tree crown between the camera and the rider`, () => {
       const cfg = SECTIONS[id];
-      const scene = buildSectionScene(cfg, inputs(id) as Parameters<typeof buildSectionScene>[1]) as SectionScene;
+      const scene = buildSectionScene(cfg, inputs(id) as Parameters<typeof buildSectionScene>[1], look) as SectionScene;
       const trees = (["conifer", "broadleaf"] as const).flatMap((k) => scene.trees[k].map((t) => ({ t, k, c: [t.x, t.y + 0.85 * t.scale, t.z] as V3, r: 0.75 * t.scale })));
       const blocked = { drone: 0, follow: 0 };
       const start = followStartFrame(cfg);

@@ -479,7 +479,8 @@ Earlier reports, 11 runs from 2026-10-25 and 26, are in `docs/evidence/render-ch
 | CL6 one look: aerial terrain hue and saturation within 15 % of the ground | pass | hue 84.9 vs 86.6 (2.0 %), saturation 0.404 vs 0.453 (10.9 %) |
 | BL13 landmarks on screen >= 2 s and >= 40 px | pass | no landmark is listed in any section, so no shot names one |
 
-## Photoreal prototype records (ADRs 54–59, 2026-10-29 and 2026-10-30)
+## Photoreal records (ADRs 54–60, 2026-10-29 and 2026-10-30)
 
-The photoreal prototype's checks, measurements, visual reviews and the walkers' addendum are in `docs/validation-photoreal.md`;
+The photoreal prototype's checks, measurements, visual reviews and the walkers' addendum, and since ADR 60 the reel's own
+records and `npm run test:render`'s reports (the reel is drawn in the photo look), are in `docs/validation-photoreal.md`;
 the independent review's report (spec X4) is `docs/evidence/photo/independent-review-2026-10-30.md`.

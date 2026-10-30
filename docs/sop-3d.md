@@ -21,11 +21,11 @@ readiness, clarity and buildings"), then `npm run data:sync`.
 | Copy source data to the runtime folder | `npm run data:sync` (ADR 21) | exists |
 | Lint and type-check | `npm run lint` | exists |
 | Unit, static, docs and acceptance tests | `npm test` (needs Python 3 with numpy and Pillow: `tests/pipeline-python.test.ts` runs the pipeline self-tests) | exists; the acceptance tests run on the real data, and `tests/docs.test.ts` fails if `docs/design-3d.md` and the code drift apart |
-| Render checks: 2D regression and full 2D md5; POC and reel determinism, format, blank frames, load per scene and before each cut, caption visibility; fresh-process stills per section and at each cut; overlay safe area and line counts; missing tiles; the before/after still metrics (water, trees, trail, one look); one preview still per scene in `out/previews/` | `npm run test:render` (about 10 minutes, or about 30 when it must re-render the 139 measurement stills because the code changed; needs `out/before-masks/`, Python with numpy and Pillow, and ffmpeg) | exists; appends results to `docs/validation-3d.md`. Set `REMOTION_PORT` if 3517 is taken |
+| Render checks: 2D regression and full 2D md5; POC and reel determinism, format, blank frames, load per scene and before each cut, caption visibility; fresh-process stills per section and at each cut; overlay safe area and line counts; missing tiles; the before/after still metrics (water, trees, trail, one look); one preview still per scene in `out/previews/` | `npm run test:render` (about 10 minutes, or about 30 when it must re-render the 139 measurement stills because the code changed; needs `out/before-masks/`, Python with numpy and Pillow, and ffmpeg) | exists; appends results to `docs/validation-photoreal.md` since the reel moved to the photo look (ADR 60; earlier runs are in `docs/validation-3d.md`). Set `REMOTION_PORT` if 3517 is taken |
 | Preview | `npm run dev`, then pick `CyclingVision` (2D), `Poc3DMaentwrog`, `Reel3D` or a `Section-<id>` (3D) | exists |
 | Render the 2D video | `npx remotion render src/index.ts CyclingVision out/trawsfynydd-cycle-vision.mp4` | exists |
 | Render the 3D POC | `npm run render:poc` (passes `--gl=angle`, ADR 19, and GPU encoding at 10 Mbit/s, ADR 53; needs the `maentwrog` window), or `npm run still:poc` for one frame | exists |
-| Render the reel | `npm run render:reel` → `out/reel.mp4`, or `npm run still:reel -- --frame=<n>` for one frame | exists |
+| Render the reel | `npm run render:reel` → `out/reel.mp4` in the photo look (ADR 60), or `npm run still:reel -- --frame=<n>` for one frame; add `--props='{"look":"concept"}'` for the first look | exists |
 
 Never render 3D without `--gl=angle`, and never set the GL renderer in
 `remotion.config.ts`. It changes the 2D video's pixels (ADR 19). For 3D video, also pass
@@ -225,22 +225,28 @@ one-line comment when you create it.
 - *Budgets.* Measure again after each track. If a frame exceeds RL24, lower that
   section's tree cap first (ADR 52).
 
-## The photoreal layer (ADRs 54–59; `docs/design-photoreal.md`; research in `docs/research-photoreal.md`)
+## The photoreal layer (ADRs 54–61; `docs/design-photoreal.md`; research in `docs/research-photoreal.md`)
 
 **Decision map.** ADR 54 the look as a layer and the prototype · 55 post-processing · 56 the rider's view · 57 canopy
-heights · 58 walls and hedges · 59 walkers.
+heights · 58 walls and hedges · 59 walkers · 60 the reel in the photo look, its aerials coloured by a Sentinel-2 image ·
+61 walkers, runners and prams at random.
 
 **Run.**
 1. Per ground window, the two sourced extras (network: the lidar COGs and the OSM API, both allowlisted):
    `npm run data:canopy -- <id>` (DSM minus DTM on the window's grid) and `npm run data:barriers -- <id>` (OSM
-   walls, hedges and fences, plus their `barrier` register entries), then `npm run data:sync`. Built so far: `maentwrog`.
+   walls, hedges and fences, plus their `barrier` register entries), then `npm run data:sync`. Built for every reel
+   window, the corridor included (ADR 60; its OSM land cover, roads and water come from
+   `python3 scripts/build_section_data.py --section corridor`). The aerial ground image:
+   `python3 scripts/build_imagery.py --section corridor` (network: the Earth Search STAC API and the scene's open-data
+   bucket, both allowlisted; the scene is pinned in the script), writing `imagery.json` and `imagery.u8` straight
+   into the window's folder.
 2. Preview the prototype: `npm run dev`, composition `Poc3DMaentwrogPhoto` (20 s: aerial, rider's view, follow).
 3. One frame: `npm run still:photo -- --frame=<n>`. The video: `npm run render:photo` (pass `--port=<free>` if the
    Studio holds 3000, as every render here does). Browser console (shader errors are not shown by the CLI): render
    through the Node API with `onBrowserLog`, as `scripts/render-checks.mjs` does.
-4. Like-for-like stills from the reel's own cameras: `npx remotion still src/index.ts Section-maentwrog out/x.png
-   --frame=<n> --gl=angle --props='{"section":"maentwrog-cmp","look":"photo"}'`, and the same frame with
-   `"look":"concept"`. Both looks build the same scene; only the views differ.
+4. Like-for-like stills from the reel's own cameras: `npx remotion still src/index.ts Section-<id> out/x.png
+   --frame=<n> --gl=angle` (the photo look, the default), and the same frame with `--props='{"look":"concept"}'`. The
+   concept look ignores the config's photo extras, so its stills match `out/after`.
 5. Textures: run the fetch script (`docs/research-photoreal.md` lists the chosen CC0 files) into `public/3d/`, add
    each file to `data/assets-3d.json` (source, licence, attribution), name it by role in
    `src/three/photo/assetRoles.ts`, then `npm test` (the static test ties the roles to the register). A role without a
@@ -250,18 +256,24 @@ heights · 58 walls and hedges · 59 walkers.
 - *The look's numbers* (exposure, AO, vignette, grass, barrier colours): `src/three-core/photoLook.ts`; the sky, the
   photo light and the close shots' shadow map: `SKY_PHOTO`, `LIGHTING_PHOTO` and `SHADOW_PHOTO_CLOSE` in
   `atmosphere.ts`; how close the trees come to the line: `photo.treeClearOfTrailM` on the config. Record before and
-  after stills, and re-check the reel's stills against `out/after` (they must stay byte-identical).
+  after stills, and re-check the concept look's stills against `out/after` (they must stay byte-identical). The aerial
+  image's grade (`IMAGERY_GRADE`) keeps the aerial scenes' hue and saturation near the ground scenes' (CL6): measure
+  both after changing it, or the land-cover palette.
 - *A shot for the prototype:* `PROTOTYPES["maentwrog-photo"]` in `sections.ts`; its shots must sum to its frames and
-  pass `tests/three-core/first-person.test.ts`. The reel's sections take the photo extras only through
-  `SectionConfig.photo`, which none sets: adding it to a reel section changes that section's trees (ADR 57) and needs
-  new before stills.
+  pass `tests/three-core/first-person.test.ts`. Every reel section carries `SectionConfig.photo` (ADR 60); it is built
+  in the photo look only, so changing it never moves the concept look's trees (`tests/three-core/reel-photo.test.ts`).
 - *A new textured view* goes under `src/three/photo/`, takes its textures as props from `PhotoAssetsProvider`, and
   falls back to a colour or a stand-in when the role has no file.
 - *A walker* (ADR 59) is one spec in a config's `photo.walkers` (`startDistM`, `direction`, `sideM` ≤ 1 m, `heightM`
   1.5–1.95, a seed no other walker uses). Choreograph it against the rider's table (print `distanceTable` for the
   config, as `tests/three-core/walkers.test.ts` does on the real trail), keep every walker behind the follow camera
   from its first frame, and add the section's `walkers-<window>` register entry (kind `walker`, decorative, with the
-  conceptual-use note) to the composition's `FEATURE_IDS`. The reel's sections list none.
+  conceptual-use note) to the composition's `FEATURE_IDS`.
+- *The reel's people* (ADR 61) are a draw, not a list: `photo.people = { count, seed }` on a ground config. A new seed
+  redraws the section's walkers, runners and prams; `tests/three-core/reel-photo.test.ts` checks every rule (inside the
+  section, clear of the rider, the camera and each other, on screen within 40 m, a runner and a pram in each) on the
+  real trail, whatever the draw. The share of each activity and the margins are constants in
+  `src/three-core/people.ts`; paces, strides and figures in `walkers.ts`.
 - *Tree sprites and card layout:* `TreesPhotoView`; keep the crowns inside `CROWN_SHAPES`, which the placer's
   sight-line and building rules use.
 

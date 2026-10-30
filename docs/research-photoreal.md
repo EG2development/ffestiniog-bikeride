@@ -26,7 +26,7 @@ lake shore "convince" as a concept, the aerials read "as a magnified paper map",
 | The trail is one buff colour; the bridge is a hatched box; roads are flat grey | ADRs 12, 13; CL7 hatching |
 | No walls, hedges or field boundaries, the Vale's signature | the pipeline's tag allowlist (ADR 38) keeps no barriers |
 | No first-person view; the rider is a capsule model | ADRs 14, 16, 35 |
-| Aerials drape OpenTopoMap tiles: a map, not a photograph | ADR 33; no open orthophoto |
+| Aerials drape OpenTopoMap tiles: a map, not a photograph | ADR 33; no open orthophoto. Since ADR 60 the concept look's only: the photo reel colours its aerials from a Sentinel-2 scene |
 
 What is already right and must be kept: 1 m lidar terrain (ADR 6), the OSM alignment through one projection (ADR 5),
 the lidar trail profile with bridge spans (ADRs 9, 23), sourced structures and buildings (ADRs 12, 49), deterministic
@@ -87,7 +87,7 @@ frame-based rendering under `@remotion/three` (ADRs 1, 17), the registers and th
 | Welsh Government / NRW lidar DTM and DSM, COGs on `dmwproductionblob` | **OGL v3, confirmed** (V): the DataMapWales LiDAR viewer page states "Open Government Licence" and lists this very COG as the published product; the tile catalogue WFS dates the corridor tiles (SH6742–SH7042) to flights on 2022-01-11, 1 m, by Bluesky for NRW. Closes design risk K2 and dates the DSM (K16) | 1 m, overviews to 64 m | HTTP range reads, in use (ADR 7) | Keep; the DSM minus DTM now gives canopy heights (ADR 57). Attribution: "Contains public sector information licensed under the Open Government Licence v3.0" |
 | OpenStreetMap | ODbL | vector | `api.openstreetmap.org/api/0.6/map`, in use | Keep; now also `barrier=*` ways (ADR 58). Overpass counts for the corridor bbox (52.93–53.00 N, 3.98–3.92 W, 2026-10-29, V): 350 walls, 11 hedges, 57 fences, 9 tree rows, 38 quarries, 90 scree, 49 spoil heaps, 88 bare rock, 309 wood/forest polygons but only 7 with `leaf_type`, 107 railway ways of which 14 bridges, 5 cuttings, 1 embankment, 2 tunnels, 43 water |
 | Welsh Government aerial photography (DataMapWales) | APGB Aerial Photography and Height Data Supply public-sector end-user licence: internal business use, third parties need a contractor licence (V) | 12.5–25 cm | — | Not usable for a public drape; the aerial scenes keep the map tiles |
-| Sentinel-2 L2A true colour (Earth Search STAC) | Sentinel Data Legal Notice: free, full and open, including adaptation and distribution, with the notice "Contains modified Copernicus Sentinel data [year]" (V) | 10 m | STAC search plus HTTP range reads on the TCI COG, numpy + zlib as for the lidar (V: range requests answer 206); a cloud-free scene exists, S2C_30UVD_20250712 (12 Jul 2025, 0.06 % cloud) | Not built; the first candidate for a photographic drape of the aerial scenes, too coarse near the trail |
+| Sentinel-2 L2A true colour (Earth Search STAC) | Sentinel Data Legal Notice: free, full and open, including adaptation and distribution, with the notice "Contains modified Copernicus Sentinel data [year]" (V) | 10 m | STAC search plus HTTP range reads on the TCI COG, numpy + zlib as for the lidar (V: range requests answer 206); a cloud-free scene exists, S2C_30UVD_20250712 (12 Jul 2025, 0.06 % cloud) | Built (ADR 60, `scripts/build_imagery.py`): the photo reel's aerial ground colour, on the corridor's grid at 8 m, graded to the ground palette; soft from 300 m, so walls, roads and lidar trees carry the edges |
 | ESA WorldCover 2021 | CC BY 4.0 with its stated credit (V) | 10 m | range reads on the N51W006 COG | Not built; a second land-cover source where OSM has no polygon (the 53 % "other" of the Maentwrog window) |
 | NRW Phase 1 Habitat survey | OGL with the NRW and OS attribution line (V) | vector, fieldwork from 1979 | WFS GeoJSON | Not built; habitat classes (bracken, heath, bog) OSM lacks, but dated |
 | Living Wales land cover; UKCEH Land Cover Map; CLC+ Backbone | no licence stated; non-commercial application only; excludes the UK (V) | 10 m | — | Not used |
@@ -202,7 +202,8 @@ in. `npm run render:photo` writes `out/poc-maentwrog-photo.mp4`.
 ## 6. Visual evidence
 
 `docs/evidence/photo/`: `maentwrog_<60|150|240|330>_concept_vs_photo.jpg` are the reel's own Maentwrog cameras
-rendered in both looks from the same code and data (`Section-maentwrog` with `section: "maentwrog-cmp"`), and
+rendered in both looks from the same code and data (then a `maentwrog-cmp` config; since ADR 60 `Section-maentwrog`
+itself, whose photo extras the concept look ignores), and
 `prototype_frame_<n>.jpg` (30, 200, 245, 300, 400, 520) are frames of the video; 200 and 245 show the walker being
 overtaken and the pair being met. Real-world references for the comparison are the Geograph
 photographs listed in `data/landmarks.json` and `docs/visual-reference-prompts.md` (looked at, not reproduced).
@@ -231,12 +232,14 @@ render through SwiftShader, slowly but identically in content). No cloud service
    (the lake; add a reflection pass under its own ADR) and re-measure RL24 and the CL metrics: the tree layout of a
    section changes when its canopy arrives (ADR 57).
 3. Add a textured road view (asphalt is already registered) and a cockpit (bars, hands) for the rider's view; replace
-   the procedural rider's materials; give one reel section a walker or two by spec (ADR 59), and let the rider slow
-   for them (a motion change under spec C2).
+   the procedural rider's materials; let the rider slow for walkers (a motion change under spec C2). Done by ADR 60:
+   textured roads, and walkers in every reel ground section.
 4. For the aerial scenes, keep the map drape until an open orthophoto exists, or run the Blender background
-   experiment of §3 for the intro and closing shots only.
+   experiment of §3 for the intro and closing shots only. ADR 60 took a third way: the photo views over a Sentinel-2
+   ground colour; a finer open orthophoto would still be the better source.
 5. When the reel adopts the look, fold the photo prototype's captions into `reel-captions.ts` and retire
-   `Poc3DMaentwrogPhoto` or keep it as the stills reference.
+   `Poc3DMaentwrogPhoto` or keep it as the stills reference. The reel adopted it (ADR 60) with its own captions and a
+   photo attribution; the prototype stays as the stills reference.
 
 ## 9. Documentation
 

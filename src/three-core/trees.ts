@@ -44,6 +44,13 @@ export type TreeOptions = {
   canopy?: Float32Array;
   minCanopyM: number;
   fieldTreeM: number;
+  /** trees drawn per woodland node, each with its own five draws: 1 for the 4 m windows; the corridor's 16 m nodes hold
+   * several crowns, or its woodland reads as parkland from the air (docs/adr/0060-reel-in-the-photo-look.md) */
+  treesPerNode: number;
+  /** with a canopy: every node where the lidar stands ≥ `minCanopyM`, mapped as woodland or not, grows trees as a woodland
+   * node does (broadleaf outside OSM woodland); built-up, quarry and water nodes never do, as their DSM is roofs and
+   * spoil. For a coarse grid, whose single field-tree peaks read as parkland from the air (ADR 60). */
+  canopyCover: boolean;
 };
 
 /** The heights the drawn crowns reach per unit of scale, metres: a canopy height divided by these gives the scale. */
@@ -103,7 +110,7 @@ function edgeDistance(x: number, z: number, ring: { x: number; z: number }[]): n
   return best;
 }
 
-const DEFAULTS: TreeOptions = { seed: 20261025, probability: 0.12, maxTrees: 6000, clearOfTrailM: 10, roads: [], clearOfRoadM: 2, ve: 1, nearZoneM: 300, densityPer100m2: 4, minCanopyM: 3, fieldTreeM: 6 };
+const DEFAULTS: TreeOptions = { seed: 20261025, probability: 0.12, maxTrees: 6000, clearOfTrailM: 10, roads: [], clearOfRoadM: 2, ve: 1, nearZoneM: 300, densityPer100m2: 4, minCanopyM: 3, fieldTreeM: 6, treesPerNode: 1, canopyCover: false };
 
 /** True within `reachUnits` of any trail sample; samples are hashed by cell so each node checks its 3 × 3 neighbourhood only. */
 function nearTrail(samples: { x: number; z: number }[], reachUnits: number): (x: number, z: number) => boolean {
@@ -163,12 +170,18 @@ export function placeTrees(
   const woodland = land.legend.findIndex((name) => /wood|forest/.test(name));
   const out: TreePlacement = { conifer: [], broadleaf: [] };
   if (woodland < 0) return out;
+  const canopy = opts.canopy;
+  if (canopy && canopy.length !== dem.cols * dem.rows) throw new Error(`canopy has ${canopy.length} values for ${dem.cols * dem.rows} DEM nodes`);
+  const canopyAt = (r: number, c: number) => canopy![Math.min(dem.rows - 1, Math.max(0, r)) * dem.cols + Math.min(dem.cols - 1, Math.max(0, c))];
+  const bare = land.legend.map((name) => /built|resid|urban|industrial|quarry|rock|scree|slate|bare|water|lake|reservoir|river/.test(name.toLowerCase()));
+  /** a node the lidar canopy covers, where `canopyCover` lets it grow trees outside OSM woodland */
+  const covered = (r: number, c: number) => opts.canopyCover && canopy !== undefined && !bare[land.classes[r * dem.cols + c]] && canopyAt(r, c) >= opts.minCanopyM;
 
   // Candidate nodes first, so the per-kind cap thins the whole woodland evenly instead of stopping part way
   // through the row-major scan (review R2). Conifers are 55 % of the draws.
   const candidate = (r: number, c: number): boolean => {
     const i = r * dem.cols + c;
-    if (land.classes[i] !== woodland) return false;
+    if (land.classes[i] !== woodland && !covered(r, c)) return false;
     if (!Number.isFinite(opts.nearZoneM) && trail.samples.length === 0) return true;
     const { lon, lat } = bngToWgs84(dem.originE + c * dem.spacingM, dem.originN - r * dem.spacingM);
     const p = project(lon, lat);
@@ -176,7 +189,7 @@ export function placeTrees(
   };
   let candidates = 0;
   for (let r = 0; r < dem.rows; r++) for (let c = 0; c < dem.cols; c++) if (candidate(r, c)) candidates++;
-  const evenUnderCap = candidates > 0 ? (0.9 * opts.maxTrees) / (0.55 * candidates) : 1;
+  const evenUnderCap = candidates > 0 ? (0.9 * opts.maxTrees) / (0.55 * candidates * opts.treesPerNode) : 1;
   const probability = options.probability ?? Math.min(keep, evenUnderCap);
 
   // coarse hash of trail samples for the "clear of the trail" test
@@ -232,9 +245,6 @@ export function placeTrees(
       return Math.hypot(x - (s.ax + u * vx), z - (s.az + u * vz)) >= s.clear;
     });
 
-  const canopy = opts.canopy;
-  if (canopy && canopy.length !== dem.cols * dem.rows) throw new Error(`canopy has ${canopy.length} values for ${dem.cols * dem.rows} DEM nodes`);
-  const canopyAt = (r: number, c: number) => canopy![Math.min(dem.rows - 1, Math.max(0, r)) * dem.cols + Math.min(dem.cols - 1, Math.max(0, c))];
   /** a field tree stands where the canopy peaks: the node is at least as tall as its eight neighbours */
   const localMax = (r: number, c: number) => {
     const h = canopyAt(r, c);
@@ -247,38 +257,93 @@ export function placeTrees(
   for (let r = 0; r < dem.rows; r++) {
     for (let c = 0; c < dem.cols; c++) {
       const i = r * dem.cols + c;
-      const inWood = land.classes[i] === woodland;
-      // a field tree: outside OSM woodland, where the lidar canopy peaks above fieldTreeM (ADR 57)
-      const fieldTree = !inWood && canopy !== undefined && canopyAt(r, c) >= opts.fieldTreeM && localMax(r, c);
+      const mapped = land.classes[i] === woodland;
+      // a canopy-covered node grows as woodland does, from its own node-keyed stream (below)
+      const cover = !mapped && covered(r, c);
+      const inWood = mapped || cover;
+      // a field tree: outside OSM woodland, where the lidar canopy peaks above fieldTreeM (ADR 57); with canopy cover a
+      // bare node's peak is a roof or spoil, as the window has no footprints to tell (ADR 60)
+      const fieldTree = !inWood && !(opts.canopyCover && bare[land.classes[i]]) && canopy !== undefined && canopyAt(r, c) >= opts.fieldTreeM && localMax(r, c);
       if (!inWood && !fieldTree) continue;
       // draw all five numbers for every woodland node, so one node's tree doesn't depend on whether earlier ones were kept;
       // a field tree draws from its own stream, keyed by node, so it never shifts the woodland draws
-      const draw = fieldTree ? mulberry32((opts.seed ^ (i * 2654435761)) >>> 0) : rand;
-      const pick = draw();
-      const jx = (draw() - 0.5) * dem.spacingM;
-      const jy = (draw() - 0.5) * dem.spacingM;
-      const kind = draw();
-      let scale = 0.75 + 0.5 * draw();
-      const yaw = 2 * Math.PI * draw();
-      if (inWood && pick > probability) continue;
-      if (inWood && canopy !== undefined && canopyAt(r, c) < opts.minCanopyM) continue; // mapped as woodland, but the lidar saw no tree here
-      const e = dem.originE + c * dem.spacingM + jx;
-      const n = dem.originN - r * dem.spacingM + jy;
-      const h = heightAtBng(dem, e, n);
-      if (h === null) continue;
-      const { lon, lat } = bngToWgs84(e, n);
-      const p = project(lon, lat);
-      if (!inNearZone(p.x, p.y) || !clearOfTrail(p.x, p.y) || !clearOfRoads(p.x, p.y) || !outOfKeepOut(p.x, p.y)) continue;
-      const k = fieldTree ? "broadleaf" : kind < 0.55 ? "conifer" : "broadleaf";
-      if (canopy !== undefined) scale = scaleFor(k, canopyAt(r, c));
-      const y = (h / 10) * opts.ve;
-      if (!clearOfSight(p.x, y, p.y, k, scale)) continue; // decorative trees give way to the view of the rider (ADR 47)
-      if (!clearOfBuildings(p.x, p.y, Math.max(...CROWN_SPHERES[k].map((s) => s.r)) * scale)) continue; // and to sourced buildings (BL13)
-      const list = out[k];
-      if (list.length >= opts.maxTrees) continue; // the cap is per kind (ADR 37)
-      // look variation from a second stream keyed by node: the photoreal view reads it, the concept view ignores it
-      const look = mulberry32((opts.seed + 7919 + i) >>> 0);
-      list.push({ x: p.x, y, z: p.y, scale, yaw, tint: 0.85 + 0.3 * look(), variant: Math.floor(look() * 3) });
+      const draw = fieldTree || cover ? mulberry32((opts.seed ^ (i * 2654435761)) >>> 0) : rand;
+      for (let t = 0; t < (fieldTree ? 1 : opts.treesPerNode); t++) {
+        const pick = draw();
+        const jx = (draw() - 0.5) * dem.spacingM;
+        const jy = (draw() - 0.5) * dem.spacingM;
+        const kind = draw();
+        const size = draw();
+        let scale = 0.75 + 0.5 * size;
+        const yaw = 2 * Math.PI * draw();
+        if (inWood && pick > probability) continue;
+        if (inWood && canopy !== undefined && canopyAt(r, c) < opts.minCanopyM) continue; // mapped as woodland, but the lidar saw no tree here
+        const e = dem.originE + c * dem.spacingM + jx;
+        const n = dem.originN - r * dem.spacingM + jy;
+        const h = heightAtBng(dem, e, n);
+        if (h === null) continue;
+        const { lon, lat } = bngToWgs84(e, n);
+        const p = project(lon, lat);
+        if (!inNearZone(p.x, p.y) || !clearOfTrail(p.x, p.y) || !clearOfRoads(p.x, p.y) || !outOfKeepOut(p.x, p.y)) continue;
+        const k = fieldTree || cover ? "broadleaf" : kind < 0.55 ? "conifer" : "broadleaf";
+        // several crowns to a node are not all the node's height: the lidar cell holds the tallest and some below it
+        if (canopy !== undefined) scale = scaleFor(k, canopyAt(r, c)) * (t === 0 ? 1 : 0.7 + 0.3 * size);
+        const y = (h / 10) * opts.ve;
+        if (!clearOfSight(p.x, y, p.y, k, scale)) continue; // decorative trees give way to the view of the rider (ADR 47)
+        if (!clearOfBuildings(p.x, p.y, Math.max(...CROWN_SPHERES[k].map((s) => s.r)) * scale)) continue; // and to sourced buildings (BL13)
+        const list = out[k];
+        if (list.length >= opts.maxTrees) continue; // the cap is per kind (ADR 37)
+        // look variation from a second stream keyed by node (and by tree within it): the photoreal view reads it, the concept view ignores it
+        const look = mulberry32((opts.seed + 7919 + i + t * 1_000_003) >>> 0);
+        list.push({ x: p.x, y, z: p.y, scale, yaw, tint: 0.85 + 0.3 * look(), variant: Math.floor(look() * 3) });
+      }
+    }
+  }
+  return out;
+}
+
+/**
+ * The photo look's draw lists (docs/adr/0060-reel-in-the-photo-look.md): a tree no frame's view holds and no frame's
+ * shadow map can reach is never seen, and one outside every shadow map's reach casts no shadow anyone sees, so dropping
+ * the first and not casting the second changes no pixel. A crown is a sphere round its middle; a view is the pose's
+ * frustum at `aspect`, out to `far`; a shadow map reaches `shadowReach` (world units) from the frame's focus in plan,
+ * which the caller sizes from the map's half-width, the relief and the sun's elevation.
+ */
+export function treesInShots(
+  trees: TreePlacement,
+  poses: { position: Vec3; target: Vec3; fovDeg: number }[],
+  focus: Vec3[],
+  opts: { shadowReach: number; aspect?: number; far?: number },
+): { casting: TreePlacement; shadowless: TreePlacement } {
+  const aspect = opts.aspect ?? 16 / 9;
+  const far = opts.far ?? 2600;
+  const views = poses.map((p) => {
+    const f: Vec3 = [p.target[0] - p.position[0], p.target[1] - p.position[1], p.target[2] - p.position[2]];
+    const fl = Math.hypot(f[0], f[1], f[2]) || 1;
+    const fwd: Vec3 = [f[0] / fl, f[1] / fl, f[2] / fl];
+    const rl = Math.hypot(fwd[0], fwd[2]) || 1;
+    const right: Vec3 = [-fwd[2] / rl, 0, fwd[0] / rl];
+    const up: Vec3 = [right[1] * fwd[2] - right[2] * fwd[1], right[2] * fwd[0] - right[0] * fwd[2], right[0] * fwd[1] - right[1] * fwd[0]];
+    const tv = Math.tan((p.fovDeg * Math.PI) / 360);
+    return { o: p.position, fwd, right, up, tv, th: tv * aspect };
+  });
+  const seen = (c: Vec3, r: number) =>
+    views.some(({ o, fwd, right, up, tv, th }) => {
+      const d: Vec3 = [c[0] - o[0], c[1] - o[1], c[2] - o[2]];
+      const depth = d[0] * fwd[0] + d[1] * fwd[1] + d[2] * fwd[2];
+      if (depth < -r || depth > far + r) return false;
+      const x = Math.abs(d[0] * right[0] + d[1] * right[1] + d[2] * right[2]);
+      const y = Math.abs(d[0] * up[0] + d[1] * up[1] + d[2] * up[2]);
+      return x <= th * depth + r * Math.hypot(1, th) && y <= tv * depth + r * Math.hypot(1, tv);
+    });
+  const reach2 = opts.shadowReach * opts.shadowReach;
+  const lit = (t: TreeInstance) => focus.some((f) => (f[0] - t.x) ** 2 + (f[2] - t.z) ** 2 <= reach2);
+  const out = { casting: { conifer: [], broadleaf: [] } as TreePlacement, shadowless: { conifer: [], broadleaf: [] } as TreePlacement };
+  for (const k of ["conifer", "broadleaf"] as const) {
+    // the crown's middle and a radius that holds the whole tree (CROWN_SPHERES reach 1.38 × scale up and 0.42 × scale out)
+    for (const t of trees[k]) {
+      if (lit(t)) out.casting[k].push(t);
+      else if (seen([t.x, t.y + 0.7 * t.scale, t.z], 0.8 * t.scale)) out.shadowless[k].push(t);
     }
   }
   return out;

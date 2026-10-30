@@ -39,7 +39,7 @@ const STAND_IN: Record<TextureRole, { a: string; b: string; bump: number; tileM:
   gravel: { a: "#cfc6b4", b: "#e6ded0", bump: 0.7, tileM: 0.8 },
   stone: { a: "#7d7a72", b: "#9c978c", bump: 1.2, tileM: 2 },
   tarmac: { a: "#4e4e4c", b: "#5c5c5a", bump: 0.4, tileM: 2 },
-  hedge: { a: "#2f4a22", b: "#4e6a30", bump: 1.2, tileM: 1.5 },
+  hedge: { a: "#466a34", b: "#76964a", bump: 1.2, tileM: 1.5 }, // lighter than a leaf in sun: a box's shade side reads near black otherwise (ADR 60)
   bark: { a: "#4a3a2a", b: "#6a5a48", bump: 1.0, tileM: 1 },
 };
 

@@ -24,6 +24,9 @@ const photoMetadata = async () => {
   return { durationInFrames: PROTOTYPES["maentwrog-photo"].frames, fps: 30 };
 };
 const SECTION_IDS = ["intro", "heritage", "overview", "blaenau", "vale-north", "vale-south", "maentwrog", "trawsfynydd", "closing"];
+// the reel and its sections render in the photo look (REEL_LOOK, docs/adr/0060-reel-in-the-photo-look.md); set `look` to
+// "concept" in the props for the first look
+const LOOK = "photo" as const;
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -50,7 +53,7 @@ export const RemotionRoot: React.FC = () => {
         calculateMetadata={reelMetadata}
         width={1920}
         height={1080}
-        defaultProps={{ diagnostics: false }}
+        defaultProps={{ diagnostics: false, look: LOOK }}
       />
       <Composition
         id="Poc3DMaentwrogPhoto"
@@ -68,7 +71,7 @@ export const RemotionRoot: React.FC = () => {
           calculateMetadata={sectionMetadata(id)}
           width={1920}
           height={1080}
-          defaultProps={{ section: id, diagnostics: false, captions: "section" as const }}
+          defaultProps={{ section: id, diagnostics: false, captions: "section" as const, look: LOOK }}
         />
       ))}
     </>

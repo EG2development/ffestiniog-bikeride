@@ -222,15 +222,20 @@ await check("RL23 reel deterministic", () => {
 });
 
 // Per scene and at the last frame before each cut (ADR 39). Each mounted canvas logs THREE_STATS twice per still
-// (its first render and the frame), so the per-frame figure is the sum of the last half of the lines.
+// (its first render and the frame), so the per-frame figure is the sum of the last half of the lines. In the photo look
+// (the reel's since ADR 60) a line carries the scene pass's counts beside the whole frame's: the budget is the scene
+// pass's, as the spec wrote it for one pass; the whole frame (both ambient-occlusion passes too) is recorded beside it.
+let reelServeUrl = null;
 await check("RL24/BL12 reel draw calls and triangles per scene and before each cut, buildings on; RL17/RL22 overlays visible", async () => {
   const serveUrl = await bundle({ entryPoint: resolve(ROOT, "src/index.ts"), rspack: true });
+  reelServeUrl = serveUrl;
   const inputProps = { diagnostics: true };
   const chromiumOptions = { gl: "angle" };
   const port = Number(PORT);
   const composition = await selectComposition({ serveUrl, id: REEL, inputProps, chromiumOptions, port });
   const details = [];
   let worst = { f: -1, calls: 0, triangles: 0 };
+  let wholeWorst = 0;
   for (const f of [...Object.values(SCENE_FRAMES), ...BEFORE_CUT, 0, 1349, 2699]) {
     const texts = [];
     await renderStill({ serveUrl, composition, inputProps, chromiumOptions, port, frame: f, output: join(OUT, `reel_diag_${f}.png`), overwrite: true, onBrowserLog: (log) => texts.push(log.text) });
@@ -238,7 +243,9 @@ await check("RL24/BL12 reel draw calls and triangles per scene and before each c
     collectRects(`${REEL}@${f}`, texts);
     drapeLines.push(...texts.filter((t) => t.includes("MAP_DRAPE")));
     assert(stats.length > 0, `frame ${f}: no THREE_STATS line`);
-    const perFrame = stats.slice(-Math.max(1, Math.round(stats.length / 2))).reduce((a, s) => ({ calls: a.calls + s.calls, triangles: a.triangles + s.triangles }), { calls: 0, triangles: 0 });
+    const lastHalf = stats.slice(-Math.max(1, Math.round(stats.length / 2)));
+    const perFrame = lastHalf.reduce((a, s) => ({ calls: a.calls + (s.scenePass ?? s).calls, triangles: a.triangles + (s.scenePass ?? s).triangles }), { calls: 0, triangles: 0 });
+    wholeWorst = Math.max(wholeWorst, lastHalf.reduce((a, s) => a + s.triangles, 0));
     assert(perFrame.calls <= 300 && perFrame.triangles <= 2_000_000, `frame ${f}: ${perFrame.calls} calls, ${perFrame.triangles} triangles`);
     if (perFrame.triangles > worst.triangles) worst = { f, ...perFrame };
     const overlays = texts.map((t) => /OVERLAYS (\[.*\])/.exec(t)).filter(Boolean).map((m) => JSON.parse(m[1])).pop() ?? [];
@@ -247,7 +254,7 @@ await check("RL24/BL12 reel draw calls and triangles per scene and before each c
     if (BEFORE_CUT.includes(f)) details.push(`cut@${f + 1}: ${perFrame.calls}/${perFrame.triangles}`);
   }
   const scenes = Object.entries(SCENE_FRAMES).map(([id, f]) => `${id}@${f}`).join(", ");
-  return `20 stills, 19 distinct frames, measured (${scenes}; cuts ${BEFORE_CUT.join("/")}); worst frame ${worst.f}: ${worst.calls} calls, ${worst.triangles} tris; overlays visible`;
+  return `20 stills, 19 distinct frames, measured (${scenes}; cuts ${BEFORE_CUT.join("/")}); worst frame ${worst.f}: ${worst.calls} calls, ${worst.triangles} tris (scene pass); whole frame at most ${wholeWorst} tris; overlays visible`;
 });
 
 await check("RL10 terrain drawn in every scene still", () => {
@@ -278,8 +285,16 @@ await check("CL9/CL10 every overlay inside the title-safe area, at most 3 lines"
   return `${rects.length} boxes at ${new Set(rects.map((r) => r.where)).size} frames, max ${Math.max(...rects.map((r) => r.lines))} lines`;
 });
 
-await check("RD6 no missing map tiles in the reel", () => {
+await check("RD6 no missing map tiles in the reel", async () => {
   const all = [...drapeLines, ...reelLog.split("\n").filter((l) => l.includes("MAP_DRAPE"))];
+  // the photo reel draws no map tiles (ADR 60): the drape is the concept look's, so check it on a concept aerial still
+  if (all.length === 0 && reelServeUrl) {
+    const inputProps = { section: "overview", captions: "section", diagnostics: true, look: "concept" };
+    const chromiumOptions = { gl: "angle" };
+    const port = Number(PORT);
+    const composition = await selectComposition({ serveUrl: reelServeUrl, id: "Section-overview", inputProps, chromiumOptions, port });
+    await renderStill({ serveUrl: reelServeUrl, composition, inputProps, chromiumOptions, port, frame: 150, output: join(OUT, "rd6_concept_overview.png"), overwrite: true, onBrowserLog: (log) => log.text.includes("MAP_DRAPE") && all.push(log.text) });
+  }
   assert(all.length > 0, "no MAP_DRAPE line seen: the drape log is not reaching the checks");
   const missing = all.map((l) => Number(/MAP_DRAPE missing (\d+)/.exec(l)?.[1] ?? NaN)).filter((n) => !(n === 0));
   assert(missing.length === 0, `missing tiles: ${missing.join(", ")}`);
@@ -390,6 +405,7 @@ await check("BL13 landmarks on screen >= 2 s and >= 40 px", () => {
 const lines = results.map((r) => `| ${r.id} | ${r.ok ? "pass" : "FAIL"} | ${r.detail.replace(/\|/g, "/")} |`);
 const snap = snapshot(ROOT);
 const report = [`\n### Render checks ${new Date().toISOString()} (${process.platform}-${process.arch}; snapshot tree ${snap.tree.slice(0, 12)}${snap.dirty ? ", dirty" : ""}, untracked ${snap.untrackedSha256.slice(0, 12)})\n`, "| Check | Result | Detail |", "|---|---|---|", ...lines, ""].join("\n");
-appendFileSync(resolve(ROOT, "docs/validation-3d.md"), report);
+// since the reel moved to the photo look (ADR 60) its records sit with the photo look's; validation-3d.md holds the earlier runs
+appendFileSync(resolve(ROOT, "docs/validation-photoreal.md"), report);
 console.log(report);
 process.exit(results.every((r) => r.ok) ? 0 : 1);

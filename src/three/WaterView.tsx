@@ -7,6 +7,8 @@ import { maskColour, type Mask } from "./mask";
 
 // A water body as a flat surface at its shore height with a frame-driven ripple pattern and no
 // reflection pass (docs/adr/0032-water-from-osm.md). Animation is a function of the frame only (RN1).
+// In the photo look (ADR 60) the surface is smooth and dark, so it mirrors the sky's environment map, brighter at a
+// grazing angle as real water is; the ripple map breaks the reflection up.
 
 function rippleNormalMap(): THREE.DataTexture {
   const n = 64;
@@ -28,7 +30,7 @@ function rippleNormalMap(): THREE.DataTexture {
   return t;
 }
 
-const Body: React.FC<{ body: WaterBody; normalMap: THREE.DataTexture; mask?: Mask }> = ({ body, normalMap, mask }) => {
+const Body: React.FC<{ body: WaterBody; normalMap: THREE.DataTexture; mask?: Mask; photo?: boolean }> = ({ body, normalMap, mask, photo }) => {
   const mc = maskColour(mask, "water");
   const geometry = useMemo(() => {
     // islands stay open and every triangle faces up; the surface sits at the level, drawn over the flattened
@@ -48,6 +50,8 @@ const Body: React.FC<{ body: WaterBody; normalMap: THREE.DataTexture; mask?: Mas
     <mesh geometry={geometry} receiveShadow>
       {mc ? (
         <meshBasicMaterial color={mc} side={mask === "water-expected" ? THREE.DoubleSide : THREE.FrontSide} polygonOffset polygonOffsetFactor={-2} polygonOffsetUnits={-2} />
+      ) : photo ? (
+        <meshStandardMaterial color={WATER_PHOTO.colour} roughness={WATER_PHOTO.roughness} metalness={0} normalMap={normalMap} normalScale={new THREE.Vector2(WATER_PHOTO.ripple, WATER_PHOTO.ripple)} polygonOffset polygonOffsetFactor={-2} polygonOffsetUnits={-2} />
       ) : (
         <meshStandardMaterial color="#2c5672" roughness={0.78} metalness={0} normalMap={normalMap} normalScale={new THREE.Vector2(0.12, 0.12)} polygonOffset polygonOffsetFactor={-2} polygonOffsetUnits={-2} />
       )}
@@ -55,7 +59,10 @@ const Body: React.FC<{ body: WaterBody; normalMap: THREE.DataTexture; mask?: Mas
   );
 };
 
-export const WaterView: React.FC<{ bodies: WaterBody[]; frame: number; mask?: Mask }> = ({ bodies, frame, mask }) => {
+/** The photo look's water: a dark peaty body colour under a near-mirror surface. */
+const WATER_PHOTO = { colour: "#1e2f36", roughness: 0.2, ripple: 0.07 } as const;
+
+export const WaterView: React.FC<{ bodies: WaterBody[]; frame: number; mask?: Mask; photo?: boolean }> = ({ bodies, frame, mask, photo }) => {
   const normalMap = useMemo(rippleNormalMap, []);
   useEffect(() => () => normalMap.dispose(), [normalMap]);
   const o = (frame * 0.0007) % 1;
@@ -63,7 +70,7 @@ export const WaterView: React.FC<{ bodies: WaterBody[]; frame: number; mask?: Ma
   return (
     <>
       {bodies.map((b) => (
-        <Body key={b.id} body={b} normalMap={normalMap} mask={mask} />
+        <Body key={b.id} body={b} normalMap={normalMap} mask={mask} photo={photo} />
       ))}
     </>
   );

@@ -222,7 +222,7 @@ function treeGeometry(kind: Kind, variant: number): { trunk: THREE.BufferGeometr
 
 type Sprites = Record<Sprite, THREE.Texture>;
 
-const Group: React.FC<{ kind: Kind; variant: number; trees: TreeInstance[]; sprites: Sprites }> = ({ kind, variant, trees, sprites }) => {
+const Group: React.FC<{ kind: Kind; variant: number; trees: TreeInstance[]; sprites: Sprites; trunks: boolean; castShadow: boolean }> = ({ kind, variant, trees, sprites, trunks, castShadow }) => {
   const trunkRef = useRef<THREE.InstancedMesh>(null);
   const cardsRef = useRef<THREE.InstancedMesh>(null);
   const discsRef = useRef<THREE.InstancedMesh>(null);
@@ -256,14 +256,16 @@ const Group: React.FC<{ kind: Kind; variant: number; trees: TreeInstance[]; spri
   if (trees.length === 0) return null;
   return (
     <>
-      <instancedMesh ref={trunkRef} args={[geometry.trunk, undefined, trees.length]} castShadow receiveShadow frustumCulled={false}>
-        <meshStandardMaterial color={TRUNK[kind]} roughness={0.95} metalness={0} />
-      </instancedMesh>
-      <instancedMesh ref={cardsRef} args={[geometry.cards, undefined, trees.length]} castShadow receiveShadow frustumCulled={false} userData={NO_AO}>
+      {trunks ? (
+        <instancedMesh ref={trunkRef} args={[geometry.trunk, undefined, trees.length]} castShadow={castShadow} receiveShadow frustumCulled={false}>
+          <meshStandardMaterial color={TRUNK[kind]} roughness={0.95} metalness={0} />
+        </instancedMesh>
+      ) : null}
+      <instancedMesh ref={cardsRef} args={[geometry.cards, undefined, trees.length]} castShadow={castShadow} receiveShadow frustumCulled={false} userData={NO_AO}>
         <meshStandardMaterial map={sprites[kind]} alphaTest={0.5} side={THREE.DoubleSide} roughness={0.9} metalness={0} />
       </instancedMesh>
       {geometry.discs ? (
-        <instancedMesh ref={discsRef} args={[geometry.discs, undefined, trees.length]} castShadow receiveShadow frustumCulled={false} userData={NO_AO}>
+        <instancedMesh ref={discsRef} args={[geometry.discs, undefined, trees.length]} castShadow={castShadow} receiveShadow frustumCulled={false} userData={NO_AO}>
           <meshStandardMaterial map={sprites.tier} alphaTest={0.5} side={THREE.DoubleSide} roughness={0.9} metalness={0} />
         </instancedMesh>
       ) : null}
@@ -271,7 +273,10 @@ const Group: React.FC<{ kind: Kind; variant: number; trees: TreeInstance[]; spri
   );
 };
 
-export const TreesPhotoView: React.FC<{ trees: TreePlacement }> = ({ trees }) => {
+/** `trunks: false` for the aerial scenes (ADR 60): from 150–600 m up a trunk is under a pixel and under its crown, and
+ * the corridor's thousands of them, drawn again for the shadow map, would cost more triangles than the terrain.
+ * `shadowless` trees are drawn without casting: no shadow map they could reach is ever made (`treesInShots`). */
+export const TreesPhotoView: React.FC<{ trees: TreePlacement; shadowless?: TreePlacement; trunks?: boolean }> = ({ trees, shadowless, trunks = true }) => {
   const sprites = useMemo<Sprites>(() => ({ conifer: sprite("conifer"), tier: sprite("tier"), broadleaf: sprite("broadleaf") }), []);
   useEffect(
     () => () => {
@@ -280,14 +285,17 @@ export const TreesPhotoView: React.FC<{ trees: TreePlacement }> = ({ trees }) =>
     [sprites],
   );
   const groups = useMemo(() => {
-    const out: { kind: Kind; variant: number; trees: TreeInstance[] }[] = [];
-    for (const kind of ["conifer", "broadleaf"] as const) for (let v = 0; v < VARIANTS; v++) out.push({ kind, variant: v, trees: trees[kind].filter((t) => (t.variant ?? 0) % VARIANTS === v) });
+    const out: { kind: Kind; variant: number; trees: TreeInstance[]; castShadow: boolean }[] = [];
+    for (const [set, castShadow] of [[trees, true], [shadowless, false]] as const) {
+      if (!set) continue;
+      for (const kind of ["conifer", "broadleaf"] as const) for (let v = 0; v < VARIANTS; v++) out.push({ kind, variant: v, castShadow, trees: set[kind].filter((t) => (t.variant ?? 0) % VARIANTS === v) });
+    }
     return out;
-  }, [trees]);
+  }, [trees, shadowless]);
   return (
     <>
       {groups.map((g) => (
-        <Group key={`${g.kind}-${g.variant}`} kind={g.kind} variant={g.variant} trees={g.trees} sprites={sprites} />
+        <Group key={`${g.kind}-${g.variant}-${g.castShadow}`} kind={g.kind} variant={g.variant} trees={g.trees} sprites={sprites} trunks={trunks} castShadow={g.castShadow} />
       ))}
     </>
   );

@@ -52,7 +52,8 @@ bundleOnce();
 const made = [];
 for (const [id, frames] of Object.entries(FRAMES)) {
   for (const f of frames) {
-    const base = { section: id, captions: "section", diagnostics: false };
+    // the concept look, whose iteration-2 measures (CL2–CL6, WA6, WA7) these stills serve; the photo look has its own records (ADR 60)
+    const base = { section: id, captions: "section", diagnostics: false, look: "concept" };
     const normal = join(dir, `${id}_${f}.png`);
     still(id, f, normal, base);
     made.push({ id, frame: f, mask: null, file: normal, sha256: sha256(normal) });
