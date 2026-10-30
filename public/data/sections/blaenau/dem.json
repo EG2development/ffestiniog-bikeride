@@ -1,0 +1,33 @@
+{
+  "cols": 424,
+  "rows": 578,
+  "spacingM": 4,
+  "pixelSizeM": [
+    3.9999790584687553,
+    4.0
+  ],
+  "originE": 269550.452598844,
+  "originN": 346434.0,
+  "crs": "EPSG:27700",
+  "nodata": -9999.0,
+  "fallbackCells": 17,
+  "file": "dem.f32",
+  "sourceFile": "dem-source.u8",
+  "source": "Welsh Government / NRW lidar DTM, 1 m, 32-bit COG (4 m overview level)",
+  "url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif",
+  "licence": "Open Government Licence (to confirm on the layer's metadata page; one catalogue lists 'Not Specified')",
+  "fill": {
+    "nodataBefore": 0,
+    "waterShoreHeight": 17,
+    "neighbourMean": 0,
+    "note": "filled cells have sourceIndex 1 and are approximate (ADR 32)"
+  },
+  "section": "blaenau",
+  "kmRange": [
+    0.0,
+    1.5
+  ],
+  "retrieved": "2026-10-25",
+  "heightsMin": 113.12000274658203,
+  "heightsMax": 483.4599914550781
+}

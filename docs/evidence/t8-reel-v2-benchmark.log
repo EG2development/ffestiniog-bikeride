@@ -1,0 +1,64 @@
+# t8 (mission msn_33e838999675db739df3c922) benchmark evidence, 2026-10-25
+# Method: CLI renders from --bundle-cache=false bundles; /usr/bin/time -p (wall, children's user+sys); ffmpeg -f md5 on the decoded video; interleaved runs; Apple M4 Pro
+
+## Candidate, software encoding (first batch)
+bundle load=6.47 wall=1.28 cpu=2.2
+reel1 load=6.19 wall=34.79 cpu=302.4 md5=aba11166d40c1a42d99662532bb84ed1
+poc1 load=10.46 wall=6.78 cpu=47.1 md5=b2357c0e87d346424705b69f120e9e6f
+reel2 load=12.72 wall=34.98 cpu=301.1 md5=aba11166d40c1a42d99662532bb84ed1
+poc2 load=12.72 wall=6.66 cpu=47.3 md5=b2357c0e87d346424705b69f120e9e6f
+reel3 load=13.73 wall=35.63 cpu=303.3 md5=aba11166d40c1a42d99662532bb84ed1
+poc3 load=20.04 wall=7.08 cpu=45.6 md5=b2357c0e87d346424705b69f120e9e6f
+cv1 load=20.41 wall=37.44 cpu=333.6 md5=adfca9a7f31577885e4ec84c1aca3f53
+cv2 load=21.11 wall=35.78 cpu=346.4 md5=adfca9a7f31577885e4ec84c1aca3f53
+
+## Frozen reference bb9c039 vs candidate POC (interleaved)
+poc-bb9c039 wall 5.60/5.55/5.67 s cpu 39.8/40.1/40.8 s; candidate wall 6.34/6.14/6.47 s cpu 46.6/48.2/48.0 s
+
+## Attribution (interleaved pairs)
+maentwrog full 47.9/48.9 s cpu, nowater 46.9/48.0, nobuildings 46.6/48.0, neither 47.4/47.3
+trawsfynydd water 61.3/59.8 s cpu, nowater 60.5/60.4
+blaenau buildings 38.0/38.2 s cpu, none 37.7/37.3
+poc reverted fill/hatch/legend 43.9/44.6/45.6 s cpu, candidate 44.6/45.7/46.7
+scene build additions 0-10 ms per section; drape grade 35-45 ms per 6.3 Mpx load
+
+## Drape cache (interleaved, before/after)
+before wall 35.56/35.97/36.68 s cpu 309.3/303.6/303.1; after wall 33.62/33.68/33.97 s cpu 295.2/293.8/293.0; decoded md5 aba11166 in all 6
+
+## GPU (WebGL renderer probe)
+angle: ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro); default and swangle: SwiftShader
+
+## Encode quality, frames 2050-2349 vs CRF 1 reference (SSIM / PSNR / bytes)
+libx264 default 0.996418 / 49.12 dB / 5193701; vt default 0.997563 / 51.12 / 13603686; vt 8M 0.996036 / 48.22 / 8805516; vt 10M 0.996753 / 49.42 / 10538310; vt 12M 0.997233 / 50.38 / 12186139; vt 5M 0.994303 / 46.02 / 6245690
+
+## Final code, software vs GPU encoding (interleaved, fresh bundle)
+reel sw wall 40.03/38.28/42.59 s cpu 350.8/331.3/384.2 md5 aba11166 x3; reel gpu wall 36.55/35.51/35.25 s cpu 168.4/175.7/165.7 md5 ad33af81 x3; size 36521397 vs 111069202
+poc sw wall 7.54/6.81/6.73 s cpu 51.5/49.8/50.4 md5 b2357c0e x3; poc gpu wall 6.18/6.28/5.87 s cpu 28.4/28.4/28.0 md5 7d390a72 x3
+2D CyclingVision (software) wall 42.35/42.35 s cpu 397.1/390.2 md5 adfca9a7 x2; entry chunk 1339650 B
+
+# npm run test:render (exit 0)
+### Render checks 2026-10-25T22:58:38.414Z (darwin-arm64; snapshot tree 013e37cd2bc0, dirty, untracked 7e5744d19dcf)
+| Check | Result | Detail |
+| RG1 CyclingVision unchanged | pass | 4 frames match |
+| RN2 POC deterministic | pass | frames 0, 180, 359 identical |
+| RN3/RN6 POC format and speed | pass | 1920x1080 30fps h264 360 frames, 0.02 s/frame |
+| RN5b no blank canvas in the full POC render | pass | 360 frames, canvas-centre luma 42.5–82.5 |
+| RN6 draw calls and triangles; H2a/H3/L2/G3 overlays visible | pass | f0: 65 calls, 1104586 tris; f45: 65 calls, 1104586 tris; f180: 65 calls, 1104586 tris; f210: 65 calls, 1104586 tris; f359: 65 calls, 1104586 tris |
+| RN5b terrain drawn at frame 0 | pass | 273 distinct colour bins |
+| RL1/RL24 reel format and speed | pass | 1920x1080 30fps h264 2700 frames in 35 s (0.0129 s/frame) |
+| RL26/RL27 no blank canvas in the full reel | pass | 2700 frames, canvas-centre luma 42.5–168.3 |
+| RL23 reel deterministic | pass | frames 0, 1349, 2699 identical |
+| RL24/BL12 reel draw calls and triangles per scene and before each cut, buildings on; RL17/RL22 overlays visible | pass | 20 stills, 19 distinct frames, measured (intro@100, heritage@350, overview@600, blaenau@900, vale-north@1200, vale-south@1500, maentwrog@1750, trawsfynydd@2050, closing@2600; cuts 239/479/779/1079/1349/1619/1919/2399); worst frame 2399: 64 calls, 1938182 tris; overlays visible |
+| RL10 terrain drawn in every scene still | pass | colour bins in the lower half: intro 1755, heritage 2109, overview 1426, blaenau 275, vale-north 231, vale-south 402, maentwrog 302, trawsfynydd 264, closing 2257 |
+| RL32 one preview still per scene in out/previews | pass | 9 stills in out/previews/ |
+| CL9/CL10 every overlay inside the title-safe area, at most 3 lines | pass | 89 boxes at 24 frames, max 2 lines |
+| RD6 no missing map tiles in the reel | pass | 16 MAP_DRAPE lines, all 0 missing |
+| RD1/RD2 fresh-process stills: first, middle and last frame of every section, and after each cut | pass | 35 fresh stills (9 sections x 3, 8 cuts): centre luma >= 20, >= 4 colour bins |
+| X1 CyclingVision full render decodes to the pre-3D md5 | pass | decoded md5 adfca9a7f31577885e4ec84c1aca3f53 |
+| X2 visual baselines untouched | pass | git diff --quiet -- tests/baselines |
+| CL1 before and after stills from one environment, after on this snapshot | pass | 139 after stills on 013e37cd2bc0; before b35021274ddf; 7 environment fields equal |
+| WA6/WA7 water drawn where expected, lit, with no terrain specks at two adjacent frames | pass | WA6 trawsfynydd_60 100.0 %, trawsfynydd_200 100.0 %; WA7 specks <= 0.10 % at 3 frames |
+| CL2/CL3 shade-side trees lifted 20 %, frame luma within 10 %, <= 1 % clipped | pass | CL2 x2.06-x3.84 (11 stills); CL3 max change 9.8 % (15 stills) |
+| CL4 trail distinct from nearby roads and terrain (dE76 >= 20) | pass | min dE terrain 25.6, roads 42.0 (11 stills) |
+| CL6 one look: aerial terrain hue and saturation within 15 % of the ground | pass | hue 84.8 vs 86.6 (2.1 %), saturation 0.404 vs 0.454 (11.2 %) |
+| BL13 landmarks on screen >= 2 s and >= 40 px | pass | no landmark is listed in any section, so no shot names one |

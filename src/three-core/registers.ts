@@ -1,4 +1,6 @@
+// Iteration 2: status and provenance for buildings (docs/adr/0051-register-status-and-provenance.md).
 // docs/adr/0020-registers-as-json.md
+import type { LandmarkModel } from "./buildings";
 import type { TrailProfile } from "./trail";
 
 export type FeatureCategory = "verified" | "approximate" | "proposed" | "decorative";
@@ -16,7 +18,18 @@ const KINDS = [
   "cyclist",
   "label",
   "earthwork",
+  "building",
+  "barrier",
+  "walker",
 ] as const;
+/** A building's state on its latest dated observation; a planning approval is "approved", never "existing" (ADR 51). */
+export type FeatureStatus = "existing" | "construction" | "approved" | "demolished";
+const STATUSES = ["existing", "construction", "approved", "demolished"] as const;
+/** What a source is: a dated observation (map, imagery, record, photo, lidar) or a planning decision. */
+const EVIDENCE = ["map", "imagery", "record", "photo", "lidar", "planning"] as const;
+const OBSERVATIONS: readonly string[] = ["map", "imagery", "record", "photo", "lidar"];
+export type FeatureProvenance = { urls: string[]; evidence: (typeof EVIDENCE)[number][]; observedAt: string; retrievedAt: string; licence: string; confidence: "high" | "medium" | "low" };
+const BUILDING_SOURCES: readonly string[] = ["osm", "coflein", "lidar-dtm"];
 const CATEGORIES = ["verified", "approximate", "proposed", "decorative"] as const;
 const SOURCE_TYPES = ["osm", "lidar-dtm", "copernicus", "waypoints", "tiles", "original", "coflein"] as const;
 const ASSET_KINDS = ["model", "texture", "data"] as const;
@@ -32,6 +45,9 @@ export type Feature = {
   /** for earthworks: the distance range they cover, in km along the route */
   fromKm?: number;
   toKm?: number;
+  /** required for buildings (docs/adr/0051-register-status-and-provenance.md) */
+  status?: FeatureStatus;
+  provenance?: FeatureProvenance;
 };
 
 export type Asset = {
@@ -81,6 +97,7 @@ export function validateFeatures(x: unknown): Feature[] {
     for (const key of ["fromKm", "toKm"] as const) {
       if (raw[key] !== undefined && typeof raw[key] !== "number") fail(`${at}.${key}`, "expected a number");
     }
+    if (kind === "building") validateBuilding(raw, at, type);
     return {
       ...(raw as object),
       id: raw.id,
@@ -90,6 +107,54 @@ export function validateFeatures(x: unknown): Feature[] {
       scenes: raw.scenes as string[],
     } as Feature;
   });
+}
+
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+
+/** Over 3 years by the calendar: the retrieval is after the observation's third anniversary (29 Feb counts as 28 Feb). The
+ * same rule as build_buildings.py, at every date (t10 L4). */
+function moreThanThreeYears(observedAt: string, retrievedAt: string): boolean {
+  const [y, m, d] = observedAt.split("-").map(Number);
+  const anniversary = `${String(y + 3).padStart(4, "0")}-${String(m).padStart(2, "0")}-${String(m === 2 && d === 29 ? 28 : d).padStart(2, "0")}`;
+  return retrievedAt > anniversary;
+}
+
+/** YYYY-MM-DD naming a real day: 2015-13-40 matches the pattern but is no date. */
+function isCalendarDate(v: unknown): v is string {
+  if (typeof v !== "string" || !ISO_DATE.test(v)) return false;
+  const [y, m, d] = v.split("-").map(Number);
+  const days = [31, y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  return m >= 1 && m <= 12 && d >= 1 && d <= days[m - 1];
+}
+
+/** A building's status and provenance (spec BL2–BL4, BL16). */
+function validateBuilding(raw: Item, at: string, sourceType: string): void {
+  if (!BUILDING_SOURCES.includes(sourceType)) fail(`${at}.source.type`, `a building needs a real source (${BUILDING_SOURCES.join(", ")}), got "${sourceType}"`);
+  const status = oneOf(raw.status, STATUSES, `${at}.status`);
+  const p = raw.provenance;
+  if (!isObject(p)) fail(`${at}.provenance`, "required for a building: urls, evidence, observedAt, retrievedAt, licence, confidence");
+  if (!Array.isArray(p.urls) || p.urls.length === 0 || !p.urls.every(nonEmptyString)) fail(`${at}.provenance.urls`, "expected a non-empty array of source URLs");
+  if (!Array.isArray(p.evidence) || p.evidence.length === 0) fail(`${at}.provenance.evidence`, `expected a non-empty array of ${EVIDENCE.join(", ")}`);
+  const evidence = (p.evidence as unknown[]).map((e, i) => oneOf(e, EVIDENCE, `${at}.provenance.evidence[${i}]`));
+  // a real calendar date (2015-13-40 matches the pattern but is no date), and no observation after the retrieval (t9 F6)
+  for (const key of ["observedAt", "retrievedAt"] as const) if (!isCalendarDate(p[key])) fail(`${at}.provenance.${key}`, "expected a calendar date, YYYY-MM-DD");
+  if ((p.observedAt as string) > (p.retrievedAt as string)) fail(`${at}.provenance.observedAt`, "is later than retrievedAt"); // ISO dates sort as text
+  if (!nonEmptyString(p.licence)) fail(`${at}.provenance.licence`, "expected the licence of the sources");
+  const confidence = oneOf(p.confidence, ["high", "medium", "low"] as const, `${at}.provenance.confidence`);
+  if ((status === "existing" || status === "construction") && !evidence.some((e) => OBSERVATIONS.includes(e))) {
+    fail(`${at}.status`, `"${status}" needs a dated observation; a planning record alone gives "approved"`);
+  }
+  if (moreThanThreeYears(p.observedAt as string, p.retrievedAt as string) && confidence === "high") fail(`${at}.provenance.confidence`, `the latest observation (${p.observedAt as string}) is over 3 years before ${p.retrievedAt as string}: at most "medium"`);
+}
+
+/** Several register files as one validated list, so a duplicate id across files is caught too (review R6). */
+export function mergeRegisters(files: unknown[]): Feature[] {
+  const all: unknown[] = [];
+  files.forEach((raw, i) => {
+    if (!Array.isArray(raw)) fail(`register file ${i}`, "the register must be an array");
+    all.push(...raw);
+  });
+  return validateFeatures(all);
 }
 
 export function validateAssets(x: unknown): Asset[] {
@@ -164,6 +229,26 @@ export function validateDemHeader(x: unknown, path: string): DemHeader {
   };
 }
 
+/** A window's canopy-height grid header (docs/adr/0057-canopy-heights-from-lidar.md): the same nodes as its DEM. */
+export type CanopyHeader = { cols: number; rows: number; spacingM: number; originE: number; originN: number; file: string };
+
+export function validateCanopyHeader(x: unknown, path: string, dem: Pick<DemHeader, "cols" | "rows" | "spacingM" | "originE" | "originN">): CanopyHeader {
+  if (!isObject(x)) fail(path, "expected an object");
+  const h: CanopyHeader = {
+    cols: finiteNumber(x.cols, `${path}.cols`),
+    rows: finiteNumber(x.rows, `${path}.rows`),
+    spacingM: finiteNumber(x.spacingM, `${path}.spacingM`),
+    originE: finiteNumber(x.originE, `${path}.originE`),
+    originN: finiteNumber(x.originN, `${path}.originN`),
+    file: dataFileName(x.file, `${path}.file`),
+  };
+  // the tree placer indexes the canopy by DEM node, so the grids must be the same grid
+  for (const k of ["cols", "rows", "spacingM", "originE", "originN"] as const) {
+    if (h[k] !== dem[k]) fail(`${path}.${k}`, `canopy grid differs from the DEM (${String(h[k])} vs ${String(dem[k])})`);
+  }
+  return h;
+}
+
 export function validateLandCoverHeader(x: unknown, path: string): LandCoverHeader {
   if (!isObject(x)) fail(path, "expected an object");
   if (!Array.isArray(x.legend) || x.legend.length === 0 || !x.legend.every(nonEmptyString)) fail(`${path}.legend`, "expected a list of class names");
@@ -203,4 +288,69 @@ export function validateOsmLines(x: unknown, path: string): OsmLine[] {
     if (!Array.isArray(raw.geometry.coordinates)) fail(`${at}.geometry.coordinates`, "expected an array");
     return raw as OsmLine;
   });
+}
+
+/** The tallest structure in the windows is about 54 m (Trawsfynydd's reactor halls): anything above this is a data error. */
+const MAX_BUILDING_M = 200;
+
+/** One building of a section's `buildings.json` (docs/adr/0049-buildings-from-sourced-data.md): an OSM footprint in lon/lat. */
+export type SectionBuilding = {
+  id: string;
+  osm?: string;
+  footprint: [number, number][];
+  heightM: number;
+  heightSource?: string;
+  roof: "flat" | "gabled";
+  kind: "background" | "landmark";
+  status: FeatureStatus;
+  landmark?: string;
+  model?: LandmarkModel;
+};
+
+/** A section's buildings file, checked at the boundary; each failure names the file, the index and the field (spec BL11, RD5). */
+export function validateBuildings(x: unknown, path: string): SectionBuilding[] {
+  if (!Array.isArray(x)) fail(path, "expected a list of buildings");
+  const ids = new Set<string>();
+  return x.map((raw: unknown, i: number) => {
+    const at = `${path}[${i}]`;
+    if (!isObject(raw)) fail(at, "expected an object");
+    if (!nonEmptyString(raw.id)) fail(`${at}.id`, "expected a non-empty string");
+    const ring = raw.footprint;
+    if (!Array.isArray(ring) || ring.length < 3 || !ring.every((p) => Array.isArray(p) && p.length >= 2 && p.every((v) => typeof v === "number" && Number.isFinite(v))))
+      fail(`${at}.footprint`, "expected a ring of 3 or more [lon, lat] points");
+    if (new Set((ring as number[][]).map((p) => `${p[0]},${p[1]}`)).size < 3) fail(`${at}.footprint`, "expected 3 or more distinct points"); // t10 L3
+    if (ids.has(raw.id as string)) fail(`${at}.id`, `duplicate id ${raw.id as string}`);
+    ids.add(raw.id as string);
+    const h = finiteNumber(raw.heightM, `${at}.heightM`);
+    if (h <= 0 || h > MAX_BUILDING_M) fail(`${at}.heightM`, `expected a height above 0 and at most ${MAX_BUILDING_M} m, got ${h}`); // t9 F1
+    if (raw.roof !== "flat" && raw.roof !== "gabled") fail(`${at}.roof`, `expected flat or gabled, got ${JSON.stringify(raw.roof)}`);
+    if (!STATUSES.includes(raw.status as FeatureStatus)) fail(`${at}.status`, `expected one of ${STATUSES.join(", ")}`);
+    const kind = raw.kind ?? "background";
+    if (kind !== "background" && kind !== "landmark") fail(`${at}.kind`, "expected background or landmark");
+    if (kind === "landmark") {
+      const m = raw.model;
+      if (!isObject(m) || !["church", "station", "block"].includes(m.type as string)) fail(`${at}.model.type`, "expected church, station or block");
+      for (const k of ["lengthM", "widthM", "heightM"]) if (finiteNumber(m[k], `${at}.model.${k}`) <= 0) fail(`${at}.model.${k}`, "expected a positive size");
+      if (m.towerHeightM !== undefined && finiteNumber(m.towerHeightM, `${at}.model.towerHeightM`) <= 0) fail(`${at}.model.towerHeightM`, "expected a positive height");
+    }
+    return { ...(raw as object), kind, footprint: (ring as number[][]).map((p) => [p[0], p[1]] as [number, number]) } as SectionBuilding;
+  });
+}
+
+export type TilesManifest = { layers: { name?: string; zoom: number; tiles: { x: number; y: number; path: string }[] }[] };
+const TILE_PATH = /^(?!.*(^|\/)\.\.(\/|$))[A-Za-z0-9_][A-Za-z0-9_./-]*\.(png|jpg|jpeg|webp)$/;
+
+/** `data/tiles-manifest.json` checked at the boundary: layers with a zoom and tiles whose paths are relative image paths
+ * under `public/`, never `..` (spec RD5; t9 F2). */
+export function validateTilesManifest(x: unknown, path: string): TilesManifest {
+  if (!isObject(x) || !Array.isArray(x.layers)) fail(`${path}.layers`, "expected a list of tile layers");
+  x.layers.forEach((l: unknown, i: number) => {
+    const at = `${path}.layers[${i}]`;
+    if (!isObject(l) || !Number.isInteger(l.zoom) || (l.zoom as number) < 0 || !Array.isArray(l.tiles)) fail(`${at}.zoom`, "expected { zoom ≥ 0, tiles }");
+    l.tiles.forEach((t: unknown, k: number) => {
+      if (!isObject(t) || !Number.isInteger(t.x) || !Number.isInteger(t.y) || (t.x as number) < 0 || (t.y as number) < 0) fail(`${at}.tiles[${k}]`, "expected non-negative integer x and y");
+      if (typeof t.path !== "string" || !TILE_PATH.test(t.path)) fail(`${at}.tiles[${k}].path`, `expected a relative image path, got ${JSON.stringify(t.path)}`);
+    });
+  });
+  return x as TilesManifest;
 }

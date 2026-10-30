@@ -13,3 +13,5 @@ Config.setOverwriteOutput(true);
 Config.setDefaultPremountInSeconds(2);
 // No GL renderer here: a global --gl=angle changes the 2D video's pixels, so 3D
 // renders pass it per command (docs/adr/0019-gl-angle-per-render.md, docs/sop-3d.md).
+// No hardware encoding here either: 3D renders pass --hardware-acceleration per command, and the
+// 2D video keeps software encoding, whose decoded md5 is its baseline (docs/adr/0053-gpu-encoding-for-3d-renders.md).

@@ -1,0 +1,23 @@
+{
+  "legend": [
+    "water",
+    "built-up",
+    "quarry/rock/scree",
+    "woodland",
+    "heath/scrub",
+    "grass/farmland",
+    "other"
+  ],
+  "file": "landcover.u8",
+  "counts": {
+    "water": 197842,
+    "built-up": 15298,
+    "quarry/rock/scree": 3446,
+    "woodland": 74875,
+    "heath/scrub": 35262,
+    "grass/farmland": 257246,
+    "other": 222155
+  },
+  "source": "OpenStreetMap contributors (ODbL)",
+  "retrieved": "2026-10-25"
+}

@@ -1,0 +1,884 @@
+[
+  {
+    "id": "building-maentwrog-289027285",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027285"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/289027285",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-06-21",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 5.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-289033758",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033758"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/289033758",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-06-21",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 12.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-357866903",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357866903"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/357866903",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2015-07-01",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "industrial; height 6.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-357866905",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357866905"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/357866905",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2015-07-01",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "industrial; height 4.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-372388116",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372388116"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/372388116",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2015-10-03",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 3.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-373577738",
+    "kind": "building",
+    "category": "verified",
+    "source": {
+      "type": "osm",
+      "ref": "way/373577738"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/373577738",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+        "https://coflein.gov.uk/en/site/8551/",
+        "https://www.geograph.org.uk/photo/443457",
+        "https://www.geograph.org.uk/photo/449941"
+      ],
+      "evidence": [
+        "lidar",
+        "map",
+        "photo",
+        "record"
+      ],
+      "observedAt": "2015-10-03",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM); evidence only, nothing reproduced: Coflein record (RCAHMW, Non-commercial Government Licence); Geograph photos 443457, 449941 (CC BY-SA 2.0)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 8.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-373577741",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373577741"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/373577741",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2015-10-03",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "house; height 6.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-428585769",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428585769"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/428585769",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-01",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 2.6 m from lidar-dsm"
+  },
+  {
+    "id": "barrier-maentwrog-89573355",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/89573355"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-89573357",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/89573357"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-369340238",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/369340238"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-369340296",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/369340296"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-369340297",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/369340297"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-288662076",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/288662076"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "city_wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-288662077",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/288662077"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "city_wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-289024227",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024227"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-289024228",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024228"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "city_wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-289024229",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024229"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-289024480",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024480"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-289024481",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024481"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-289024485",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024485"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-289024486",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024486"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-289027292",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027292"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-289027293",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027293"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-289027294",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027294"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-289027295",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027295"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-289027296",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027296"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-289027297",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027297"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-289027298",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027298"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-289027299",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027299"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-289027300",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027300"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-289027301",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027301"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-289027302",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027302"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-361196125",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361196125"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "city_wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-361197010",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361197010"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-361200007",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361200007"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-361201362",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361201362"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-361201363",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361201363"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-361201364",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361201364"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-361201366",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361201366"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-372402179",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372402179"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-373575643",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373575643"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-373575644",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373575644"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-373589753",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373589753"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-1231927613",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231927613"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-1231927614",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231927614"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-1231927615",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231927615"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-1231927616",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231927616"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-1231927617",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231927617"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-1231927618",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231927618"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-maentwrog-1233826936",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1233826936"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog",
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  }
+]

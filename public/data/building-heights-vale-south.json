@@ -1,0 +1,26 @@
+{
+ "way/1391276014": {
+  "heightM": 6.3,
+  "source": "lidar-dsm"
+ },
+ "way/263063605": {
+  "heightM": 7.3,
+  "source": "lidar-dsm"
+ },
+ "way/263176075": {
+  "heightM": 7.0,
+  "source": "lidar-dsm"
+ },
+ "way/371939661": {
+  "heightM": 7.6,
+  "source": "lidar-dsm"
+ },
+ "way/373593956": {
+  "heightM": 6.9,
+  "source": "lidar-dsm"
+ },
+ "way/373593957": {
+  "heightM": 7.3,
+  "source": "lidar-dsm"
+ }
+}

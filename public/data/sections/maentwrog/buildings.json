@@ -1,0 +1,263 @@
+[
+ {
+  "id": "building-maentwrog-289027285",
+  "osm": "way/289027285",
+  "footprint": [
+   [
+    -3.941472,
+    52.9348841
+   ],
+   [
+    -3.9411686,
+    52.9349507
+   ],
+   [
+    -3.9410704,
+    52.9347878
+   ],
+   [
+    -3.9413737,
+    52.9347213
+   ],
+   [
+    -3.941472,
+    52.9348841
+   ]
+  ],
+  "heightM": 5.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-maentwrog-289033758",
+  "osm": "way/289033758",
+  "footprint": [
+   [
+    -3.9380693,
+    52.9265059
+   ],
+   [
+    -3.9380606,
+    52.9265645
+   ],
+   [
+    -3.9378835,
+    52.926555
+   ],
+   [
+    -3.9378922,
+    52.9264963
+   ],
+   [
+    -3.9380693,
+    52.9265059
+   ]
+  ],
+  "heightM": 12.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-maentwrog-357866903",
+  "osm": "way/357866903",
+  "footprint": [
+   [
+    -3.9476874,
+    52.9267583
+   ],
+   [
+    -3.9474098,
+    52.9269329
+   ],
+   [
+    -3.947632,
+    52.9270612
+   ],
+   [
+    -3.9479095,
+    52.9268866
+   ],
+   [
+    -3.9476874,
+    52.9267583
+   ]
+  ],
+  "heightM": 6.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "industrial"
+ },
+ {
+  "id": "building-maentwrog-357866905",
+  "osm": "way/357866905",
+  "footprint": [
+   [
+    -3.9479703,
+    52.9269346
+   ],
+   [
+    -3.9477356,
+    52.927083
+   ],
+   [
+    -3.947898,
+    52.9271763
+   ],
+   [
+    -3.9481327,
+    52.9270279
+   ],
+   [
+    -3.9479703,
+    52.9269346
+   ]
+  ],
+  "heightM": 4.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "industrial"
+ },
+ {
+  "id": "building-maentwrog-372388116",
+  "osm": "way/372388116",
+  "footprint": [
+   [
+    -3.9393832,
+    52.933248
+   ],
+   [
+    -3.9394803,
+    52.9331757
+   ],
+   [
+    -3.9395065,
+    52.9331561
+   ],
+   [
+    -3.9395932,
+    52.9331984
+   ],
+   [
+    -3.9394699,
+    52.9332903
+   ],
+   [
+    -3.9393832,
+    52.933248
+   ]
+  ],
+  "heightM": 3.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-maentwrog-373577738",
+  "osm": "way/373577738",
+  "footprint": [
+   [
+    -3.9424838,
+    52.9328024
+   ],
+   [
+    -3.942569,
+    52.9329048
+   ],
+   [
+    -3.9423621,
+    52.9329673
+   ],
+   [
+    -3.9422769,
+    52.9328649
+   ],
+   [
+    -3.9424838,
+    52.9328024
+   ]
+  ],
+  "heightM": 8.3,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "curated": "utica-chapel"
+ },
+ {
+  "id": "building-maentwrog-373577741",
+  "osm": "way/373577741",
+  "footprint": [
+   [
+    -3.9419692,
+    52.9322463
+   ],
+   [
+    -3.941878,
+    52.9322764
+   ],
+   [
+    -3.9419492,
+    52.9323549
+   ],
+   [
+    -3.9420404,
+    52.9323248
+   ],
+   [
+    -3.9419692,
+    52.9322463
+   ]
+  ],
+  "heightM": 6.2,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "house"
+ },
+ {
+  "id": "building-maentwrog-428585769",
+  "osm": "way/428585769",
+  "footprint": [
+   [
+    -3.9503186,
+    52.9260904
+   ],
+   [
+    -3.9505952,
+    52.9262745
+   ],
+   [
+    -3.9507753,
+    52.9261761
+   ],
+   [
+    -3.9504987,
+    52.925992
+   ],
+   [
+    -3.9503186,
+    52.9260904
+   ]
+  ],
+  "heightM": 2.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ }
+]

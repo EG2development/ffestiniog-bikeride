@@ -1,0 +1,19 @@
+[
+  {
+    "id": "terrain-corridor",
+    "kind": "terrain",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-intro",
+      "Section-heritage",
+      "Section-overview",
+      "Section-closing"
+    ],
+    "note": "lidar DTM at its 16 m overview; 0 cells filled (water shore height or neighbour mean), see dem.json"
+  }
+]

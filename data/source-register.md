@@ -25,7 +25,8 @@ open items):
 - No bridge, tunnel, cutting or embankment inventory has been compiled yet.
   Candidate next source: Coflein (RCAHMW, https://coflein.gov.uk) and
   Ordnance Survey historical 1:25,000 mapping (National Library of Scotland
-  map viewer). Not yet queried.
+  map viewer). Coflein was queried for buildings and landmarks at reel v2 t7
+  (see "Water and buildings" below), not yet for structures on the line.
 - Elevation is DEM-sampled, not surveyed. Raw per-node differencing produced
   an implausible 388 m/358 m cumulative ascent/descent for a 13 km, ~30 m-net
   railway alignment — almost certainly DEM interpolation noise. The
@@ -103,5 +104,54 @@ Built by `python3 scripts/build_poc_data.py`, then `npm run data:earthworks` and
 
 **Gaps found while building (open):**
 - **km 9.00–9.02:** the DTM shows a dip of about 1 m in the trackbed and a 3.5 m hollow beside it, where an OSM track (way 159029132, no bridge tag) crosses at grade. It may be an unmapped culvert, underbridge or level crossing. The trail follows the DTM here (11.9 % over 5 m, the steepest step in the section), and the hollow is registered as an approximate earthwork. Check against imagery or Coflein.
+- **Vale south km 5.785–5.970, 6.025–6.040, 6.290–6.325 and 7.335–7.375; Trawsfynydd km 10.345–10.455, 10.535–10.645, 11.495–11.525, 11.715–11.735, 11.895–11.915, 11.995–12.185, 12.740–12.780, 12.885–12.895 and 13.025–13.045 (found at t13 of the reel; the last three added after the t14 validation):** the 1 m lidar profile along the OSM centreline climbs and drops at 5–19 % over 5 m steps (steepest 18.7 % at km 5.90 and 13.6 % at km 10.36) for stretches of 50–300 m, far beyond any railway gradient. Cause unverified: the trackbed removed or re-graded, or the OSM centreline off the trackbed. The rider in the Trawsfynydd section (km 10.30–10.37) rides through the first of these. Not yet labelled on screen; spec RL8 is open for these two windows.
 - **Overbridge spans** are estimated from the OSM road width and crossing angle, not measured.
 - **Lidar licence** still to confirm (see above).
+
+## Water and buildings (reel v2, mission `msn_33e838999675db739df3c922`, built 2026-10-25/26)
+
+| Dataset | Source | Licence | Used for |
+|---|---|---|---|
+| Lake levels | The lidar DTM above at its 4 m level, sampled every 5 m along each OSM water outline of 1 ha or more (`scripts/build_section_data.py`) | OGL (to confirm, as the DTM) for heights; ODbL for the outlines | `data/water-levels.json`: one level per body (relation 3084421 197.26 m, way 4684879 306.44 m, way 4685059 405.93 m); the windows' lake fill and the water surface |
+| Building footprints | The windows' OSM data; tags and dates re-fetched for the candidates from `api.openstreetmap.org/api/0.6/ways` and `/relations` | ODbL | 156 footprints drawn of the windows' 1,360; tags limited to `building`, `building:levels`, `height` and `roof:shape` (no names, addresses or contacts); ways deleted in OSM are skipped |
+| Building heights | Welsh Government / NRW lidar **DSM**, 1 m, 32-bit COG (`https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif`), with the DTM above, both at the 2 m level | OGL (to confirm, as the DTM) | 90th percentile of DSM − DTM inside each footprint, kept when 2–60 m; else levels × 3 m (1–30 levels) or 6 m, marked approximate. 152 of 156 heights are from the lidar |
+| Building files | `scripts/building-candidates.ts`, `scripts/build_buildings.py` | as their sources | `public/data/sections/<w>/buildings.json`; `data/building-candidates-<w>.json` (the footprints the shots see, with the height each was tested at); `data/building-heights-<w>.json` (every height measured); the building entries in `data/features-<w>.json`, each with URLs, evidence, observed and retrieved dates, licence, confidence and status |
+| Curated landmark | `data/landmarks.json`: Capel Utica, OSM way 373577738 (ODbL); Coflein NPRN 8551 (https://coflein.gov.uk/en/site/8551/, Non-commercial Government Licence); Geograph photos 443457 and 449941 (CC BY-SA 2.0) | Evidence only: nothing from Coflein or Geograph is reproduced | Status (existing, observed 2015-10-03, medium confidence) and roof form; screened with `aidefence_scan` and `aidefence_has_pii`. Not drawn as a landmark model (28–31 px in shot) |
+
+## Photoreal layer (ADRs 54–58, built 2026-10-29; the Maentwrog window only so far)
+
+| Dataset | Source | Licence | Used for |
+|---|---|---|---|
+| Canopy height grid | The lidar **DSM** minus the lidar DTM above, both at the 4 m level on the window's own DEM grid (`scripts/build_canopy.py`) | OGL (to confirm, as the DTM); the DSM's survey date is not published with the COG | `public/data/sections/maentwrog/canopy.{json,f32}`: tree heights and the absence of trees inside OSM woodland, and field trees at canopy peaks ≥ 6 m outside it (register entry `trees-canopy-maentwrog`). Maentwrog: 71,368 of 343,359 cells ≥ 2 m (20.8 %), median 9.4 m, 95th percentile 17.9 m |
+| Field boundaries | OSM ways `barrier=wall\|city_wall\|retaining_wall\|hedge\|fence` and `natural=tree_row` in the window's bbox (`scripts/fetch_barriers.py`), tags cut to `barrier`, `wall`, `height`, `natural`, `leaf_type` | ODbL | `public/data/sections/maentwrog/barriers.geojson` and one `barrier` register entry per way in `data/features-maentwrog.json`: 33 walls (4 tagged `dry_stone`), 4 `city_wall`, 6 fences, no hedge or tree row mapped, no `height` tag on any |
+| Textures, sky | 16 Poly Haven files (eight roles, 1K diffuse and normal maps; CC0 1.0, verified on polyhaven.com/license) under `public/3d/textures/`, each with a sha256 and licence entry in `data/assets-3d.json` and named by role in `src/three/photo/assetRoles.ts`; a role without a file renders its procedural stand-in. They are photographs of similar surfaces, not of this valley. The sky is a procedural dome (no HDRI) | 2026-10-29 | — |
+
+**Lidar licence and dates (risk K2 and design risk K16, closed 2026-10-30):** the DataMapWales LiDAR viewer
+(https://datamap.gov.wales/maps/lidar-viewer/) states "Open Government Licence for Public Sector Information (OGL)"
+(OGL v3) and lists the DTM and DSM COGs used here as the published products; the tile catalogue WFS
+(`geonode:welsh_government_lidar_tile_catalogue_2020_2023`) dates the corridor tiles SH6742–SH7042 to flights on
+2022-01-11 (delivery 20, 1 m, Bluesky International for NRW). Attribution: "Contains public sector information licensed
+under the Open Government Licence v3.0". Every "OGL (to confirm)" above is therefore confirmed; the per-layer metadata
+pages still show "Not specified", which is a catalogue gap, not a licence condition.
+
+**Gradient standard (for the open RL8 stretches):** the same guidance, §9.7.2 and Table 9.7: desirable maximum 5 %,
+absolute maximum 8 %, and a 4 % grade for at most 50 m, 3 % for 80 m, 2 % for 150 m.
+
+**Trail width source (spec TR1, closed 2026-10-29):** the Welsh Government *Active Travel Act Guidance* (2021;
+https://www.gov.wales/active-travel-act-guidance), §11.16.5 and Table 11.5 give a recommended minimum width of 3.0 m
+for shared use routes carrying up to 300 pedestrians and 300 cyclists per hour (4.5 m above 300 cyclists per hour);
+its design-element sheet for a retained shared use path gives a desirable minimum of 3.0 m and an absolute minimum of
+2.5 m. The trail's 3.0 m (`TRAIL_WIDTH_M`) is therefore the guidance's minimum, not a design.
+
+**Gaps (open):**
+- Wall and fence heights are typical values, not surveyed (no OSM `height` tag in the window); the four `city_wall`
+  ways are drawn as walls and may be retaining walls.
+- Where a mapped boundary crosses the trackbed it is drawn open for 3 m either side of the centreline: a proposal (a
+  gate or stile), not a mapped gap.
+- Tree species, crown form and the ground textures are generic; only positions, heights and the land-cover class are
+  from data.
+
+**Findings (open):**
+- **A building on the trackbed, near km 10.93.** OSM way 289033748 (a building mapped 2014-06-21, 4.9 m in the lidar DSM, about 34 × 32 m) stands on a 54 m stretch that OSM tags `railway=dismantled` (way 1344840040, edited 2024-12-22, between the `abandoned` ways 31966910 and 1344840045). The proposed trail on the alignment would have to pass round it. Kept and listed (spec BL7); not yet checked on the ground or in imagery.
+- **The Trawsfynydd reactor halls** (probably ways 289033763 and 289033764, about 54 m today per World Nuclear News, 2025-10-07 and 2026-05-29; reduction to about 25 m planned, not started) are outside every Trawsfynydd ground frame, so they are not drawn.
+

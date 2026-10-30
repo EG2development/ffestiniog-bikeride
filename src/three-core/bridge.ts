@@ -31,15 +31,20 @@ export function buildBridgeMesh(
     [-w, h],
   ];
 
+  // texture coordinates for a stone material (the photoreal layer): u along the deck in metres, v round the profile
+  const uvs: number[] = [];
+  const around: number[] = [0];
+  for (let k = 1; k < profile.length; k++) around.push(around[k - 1] + Math.hypot(profile[k][0] - profile[k - 1][0], profile[k][1] - profile[k - 1][1]));
   stations.forEach((d) => {
     const s = trail.sampleAt(d);
     const l = Math.hypot(s.tangent[0], s.tangent[2]) || 1;
     const lx = s.tangent[2] / l;
     const lz = -s.tangent[0] / l;
     const top = s.y - 0.003;
-    for (const [across, up] of profile) {
+    profile.forEach(([across, up], k) => {
       positions.push(s.x + (lx * across) / 10, top + up / 10, s.z + (lz * across) / 10);
-    }
+      uvs.push(d - span[0], around[k]);
+    });
   });
   const n = profile.length;
   for (let i = 0; i + 1 < stations.length; i++) {
@@ -51,5 +56,5 @@ export function buildBridgeMesh(
       indices.push(a, c, b, b, c, e);
     }
   }
-  return { positions: Float32Array.from(positions), indices: Uint32Array.from(indices) };
+  return { positions: Float32Array.from(positions), indices: Uint32Array.from(indices), uvs: Float32Array.from(uvs) };
 }

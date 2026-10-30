@@ -42,7 +42,15 @@
     "data:earthworks": "esbuild scripts/gen-earthworks.ts --bundle --platform=node --format=esm --outfile=out/.gen-earthworks.mjs --log-level=warning && node out/.gen-earthworks.mjs",
     "data:sync": "node scripts/sync-public-data.mjs",
     "still:poc": "remotion still src/index.ts Poc3DMaentwrog out/poc-still.png --gl=angle",
-    "render:poc": "remotion render src/index.ts Poc3DMaentwrog out/poc-maentwrog.mp4 --gl=angle"
+    "render:poc": "remotion render src/index.ts Poc3DMaentwrog out/poc-maentwrog.mp4 --gl=angle --hardware-acceleration=if-possible --video-bitrate=10M",
+    "data:section": "python3 scripts/build_section_data.py --section",
+    "still:reel": "remotion still src/index.ts Reel3D out/reel-still.png --gl=angle",
+    "render:reel": "remotion render src/index.ts Reel3D out/reel.mp4 --gl=angle --hardware-acceleration=if-possible --video-bitrate=10M",
+    "data:candidates": "esbuild scripts/building-candidates.ts --bundle --platform=node --format=esm --outfile=out/.building-candidates.mjs --log-level=warning && node out/.building-candidates.mjs",
+    "data:canopy": "python3 scripts/build_canopy.py --section",
+    "data:barriers": "python3 scripts/fetch_barriers.py --section",
+    "still:photo": "remotion still src/index.ts Poc3DMaentwrogPhoto out/photo-still.png --gl=angle",
+    "render:photo": "remotion render src/index.ts Poc3DMaentwrogPhoto out/poc-maentwrog-photo.mp4 --gl=angle --hardware-acceleration=if-possible --video-bitrate=10M"
   },
   "allowScripts": {
     "esbuild": false

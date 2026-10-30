@@ -1,0 +1,116 @@
+t12 local CI verification, started 2026-10-25T14:42:04Z
+node v24.13.1, npm 11.21.0, Python 3.13.5; macOS (the hosted runner is ubuntu-24.04)
+
+== Static checks on .github/workflows/ci.yml
+  parses: yes; job 'checks' on ubuntu-24.04, timeout 20 min, 10 steps
+  triggers: ['pull_request', 'push', 'workflow_dispatch']; permissions: {'contents': 'read'}
+  - uses actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+  - uses actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+  - uses actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+  - run  Install dependencies
+  - run  Install the data pipeline's Python dependency
+  - run  Lint and type-check
+  - run  Unit, static and acceptance tests
+  - run  Dependency audit (fails on high or critical)
+  - run  Pipeline self-test and compile check
+  - run  Build (bundle)
+  result: PASS
+
+== Clean copy of the files git would ship
+  1004 files copied; node_modules present: False; out present: False
+
+== Step: Install dependencies
+  $ npm ci
+  
+  added 393 packages, and audited 394 packages in 2s
+  
+  92 packages are looking for funding
+    run `npm fund` for details
+  
+  found 0 vulnerabilities
+  npm warn install-scripts 1 package has install scripts not yet covered by allowScripts:
+  npm warn install-scripts   fsevents@2.3.3 (install: (install scripts present))
+  npm warn install-scripts
+  npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+  -- exit 0 after 2.5 s
+
+== Step: Install the data pipeline's Python dependency
+  $ python -m pip install numpy==2.4.4
+  Requirement already satisfied: numpy==2.4.4 in /Users/eray/miniconda3/lib/python3.13/site-packages (2.4.4)
+  
+  [notice] A new release of pip is available: 26.1.1 -> 26.2.2
+  [notice] To update, run: pip install --upgrade pip
+  -- exit 0 after 1.0 s
+
+== Step: Lint and type-check
+  $ npm run lint
+  
+  > ffestiniog-bikeride@1.0.0 lint
+  > eslint src && tsc
+  -- exit 0 after 2.4 s
+
+== Step: Unit, static and acceptance tests
+  $ npm test
+  
+  > ffestiniog-bikeride@1.0.0 test
+  > vitest run
+  
+  
+   RUN  v5.0.5 /private/tmp/claude-501/-Users-eray-ffestiniog-bikeride/bb3f26c8-7af5-483b-b78b-7ff809bf3730/scratchpad/t12/clean
+  
+  (node:70664) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+  Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+  (Use `node --trace-deprecation ...` to show where the warning was created)
+  
+   Test Files  24 passed (24)
+        Tests  128 passed (128)
+     Start at  14:42:12
+     Duration  2.20s (tests 69%, transform 23%, import 6%, worker 1%)
+  -- exit 0 after 3.1 s
+
+== Step: Dependency audit (fails on high or critical)
+  $ npm audit --audit-level=high
+  found 0 vulnerabilities
+  -- exit 0 after 0.5 s
+
+== Step: Pipeline self-test and compile check
+  $ python -I scripts/dem/bng.py
+  $ python -I -m py_compile scripts/build_poc_data.py scripts/build_section_data.py scripts/dem/bng.py scripts/dem/cog.py scripts/osm/fetch_bbox.py
+  bng.py self-test passed: OS worked example 651409.903 313177.27
+  -- exit 0 after 0.2 s
+
+== Step: Build (bundle)
+  $ npm run build -- --out-dir=out/bundle --log=error
+  
+  > ffestiniog-bikeride@1.0.0 build
+  > remotion bundle --out-dir=out/bundle --log=error
+  
+  -------------
+  Version mismatch:
+  Extra packages with wrong versions:
+    - zod: installed 4.6.7, required 4.5.4
+      See: https://www.remotion.dev/docs/zod-types/
+  
+  You may experience breakages such as:
+  - React context and hooks not working
+  - Type errors and feature incompatibilities
+  - Failed renders and unclear errors
+  
+  To resolve:
+  - Make sure your package.json has all Remotion packages pointing to the same version.
+  - Remove the `^` character in front of a version to pin a package.
+  - For zod, install exact version 4.5.4 (run: npx remotion add zod).
+  - Run `npx remotion versions --log=verbose` to see the path of the modules resolved.
+  -------------
+  -- exit 0 after 2.2 s
+
+== Summary, finished 2026-10-25T14:42:17Z
+  PASS  static checks on the workflow file
+  PASS  exit 0  2.5 s  Install dependencies
+  PASS  exit 0  1.0 s  Install the data pipeline's Python dependency
+  PASS  exit 0  2.4 s  Lint and type-check
+  PASS  exit 0  3.1 s  Unit, static and acceptance tests
+  PASS  exit 0  0.5 s  Dependency audit (fails on high or critical)
+  PASS  exit 0  0.2 s  Pipeline self-test and compile check
+  PASS  exit 0  2.2 s  Build (bundle)
+  overall: GREEN

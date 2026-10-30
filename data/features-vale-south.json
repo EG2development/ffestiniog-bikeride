@@ -1,0 +1,2700 @@
+[
+  {
+    "id": "terrain-vale-south",
+    "kind": "terrain",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "lidar DTM at its 4 m overview; 123 cells filled (water shore height or neighbour mean), see dem.json"
+  },
+  {
+    "id": "landcover-vale-south",
+    "kind": "landcover",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "landuse/natural polygons in public/data/sections/vale-south/osm.geojson"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ]
+  },
+  {
+    "id": "bridge-vale-south-159027704",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159027704"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "fromKm": 4.7993999999999994,
+    "toKm": 4.8133,
+    "note": "position from OSM; generic deck and parapets"
+  },
+  {
+    "id": "bridge-vale-south-159027701",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159027701"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "fromKm": 5.3723,
+    "toKm": 5.3896999999999995,
+    "note": "position from OSM; generic deck and parapets"
+  },
+  {
+    "id": "bridge-vale-south-159029792",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029792"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "fromKm": 6.6045,
+    "toKm": 6.669899999999999,
+    "note": "position from OSM; generic deck and parapets"
+  },
+  {
+    "id": "overbridge-vale-south-978249728",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/978249728"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "fromKm": 4.9396,
+    "toKm": 4.961,
+    "note": "highway=unclassified bridge over the line; deck removed from the trail profile (ADR 23)"
+  },
+  {
+    "id": "overbridge-vale-south-159029547",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029547"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "fromKm": 6.7762,
+    "toKm": 6.7966999999999995,
+    "note": "highway=unclassified bridge over the line; deck removed from the trail profile (ADR 23)"
+  },
+  {
+    "id": "overbridge-vale-south-159029554",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029554"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "fromKm": 7.8021,
+    "toKm": 7.820600000000001,
+    "note": "highway=track bridge over the line; deck removed from the trail profile (ADR 23)"
+  },
+  {
+    "id": "road-vale-south-123459816",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/123459816"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-159029126",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029126"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-vale-south-159029127",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029127"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-159029128",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029128"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-vale-south-159029129",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029129"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-159029130",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029130"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-159029553",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029553"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-vale-south-159029554",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029554"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-vale-south-159029555",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029555"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-vale-south-224967876",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/224967876"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-311744189",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/311744189"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-373593551",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373593551"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-1448594695",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1448594695"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-1448594696",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1448594696"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-89574886",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/89574886"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-89574901",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/89574901"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-89575396",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/89575396"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-119360148",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/119360148"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-vale-south-122929201",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/122929201"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=secondary"
+  },
+  {
+    "id": "road-vale-south-138299825",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/138299825"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=secondary"
+  },
+  {
+    "id": "road-vale-south-224911263",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/224911263"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=secondary"
+  },
+  {
+    "id": "road-vale-south-224952941",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/224952941"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-338684666",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338684666"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-338684667",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338684667"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-373593548",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373593548"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-461159625",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461159625"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-461159640",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461159640"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-461159651",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461159651"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-461159658",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461159658"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-806379715",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/806379715"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-837026321",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/837026321"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-843391702",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/843391702"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-850288001",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/850288001"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=secondary"
+  },
+  {
+    "id": "road-vale-south-850288002",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/850288002"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=secondary"
+  },
+  {
+    "id": "road-vale-south-1214864615",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1214864615"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-vale-south-89575261",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/89575261"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-120475600",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/120475600"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-120475601",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/120475601"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-263176072",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263176072"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-263176078",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263176078"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-263176084",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263176084"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-461133563",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461133563"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-461159649",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461159649"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-461159650",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461159650"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-461162387",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461162387"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-vale-south-806379716",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/806379716"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-806379721",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/806379721"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-vale-south-806398307",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/806398307"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=primary"
+  },
+  {
+    "id": "road-vale-south-834775891",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/834775891"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-840414822",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/840414822"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-373593550",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373593550"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-428657024",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428657024"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-119360152",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/119360152"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-vale-south-138281033",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/138281033"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=secondary"
+  },
+  {
+    "id": "road-vale-south-224952940",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/224952940"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-vale-south-224959027",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/224959027"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-vale-south-263176070",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263176070"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-338684656",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338684656"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-338684657",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338684657"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-338684658",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338684658"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-338684659",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338684659"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-338684661",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338684661"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-338684662",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338684662"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-428367938",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428367938"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-vale-south-526539431",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/526539431"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-vale-south-978249723",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/978249723"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-vale-south-2425274",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/2425274"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-vale-south-60954188",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/60954188"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-60954189",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/60954189"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-60954190",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/60954190"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-103287570",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/103287570"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-119355642",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/119355642"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-119356174",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/119356174"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-119356176",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/119356176"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-119356408",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/119356408"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-119356410",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/119356410"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-119359326",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/119359326"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-119359910",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/119359910"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-119359913",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/119359913"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-263176067",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263176067"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-263176068",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263176068"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-263176069",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263176069"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-263176071",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263176071"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-263176073",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263176073"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-vale-south-263176074",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263176074"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-263176076",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263176076"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-vale-south-263176077",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263176077"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-263176080",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263176080"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-vale-south-263176087",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263176087"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-271266550",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271266550"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-271266554",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271266554"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-271266556",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271266556"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-vale-south-271266565",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271266565"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-271266567",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271266567"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-271266569",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271266569"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-vale-south-271266578",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271266578"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-271407736",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271407736"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-271932725",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271932725"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-338684655",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338684655"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-338684663",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338684663"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-338684664",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338684664"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-338684665",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338684665"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-425578935",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/425578935"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-461133562",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461133562"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-461133959",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461133959"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-461133960",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461133960"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-461138251",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461138251"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-707085677",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/707085677"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-vale-south-840004226",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/840004226"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-840004227",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/840004227"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-840004228",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/840004228"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-978249724",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/978249724"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-978249725",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/978249725"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-978249726",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/978249726"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-978249727",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/978249727"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-978249728",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/978249728"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-5130651",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/5130651"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-vale-south-123459813",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/123459813"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-159029546",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029546"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-159029547",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029547"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-235291003",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/235291003"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-295805341",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295805341"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-295806319",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295806319"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-314084937",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314084937"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-vale-south-314084938",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314084938"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-vale-south-360032853",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/360032853"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-360032854",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/360032854"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-428657022",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428657022"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-526539433",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/526539433"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-806331794",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/806331794"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-806331795",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/806331795"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-806331796",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/806331796"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-837903287",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/837903287"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-837903288",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/837903288"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-837903289",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/837903289"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-61954416",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/61954416"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-123461521",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/123461521"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-vale-south-295793435",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295793435"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-vale-south-295793436",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295793436"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-vale-south-405979596",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/405979596"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-526539432",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/526539432"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-vale-south-159029150",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029150"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-vale-south-271936903",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271936903"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-vale-south-271936904",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271936904"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-271936907",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271936907"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-vale-south-271936912",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271936912"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-vale-south-314088543",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314088543"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-314092950",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314092950"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-314093282",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314093282"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-707085679",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/707085679"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-707085681",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/707085681"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=secondary"
+  },
+  {
+    "id": "road-vale-south-707085683",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/707085683"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-vale-south-840396655",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/840396655"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "water-vale-south-271266559",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271266559"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "surface at the median DTM height along the shore; not a surveyed level (ADR 32)"
+  },
+  {
+    "id": "water-vale-south-338684651",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338684651"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "surface at the median DTM height along the shore; not a surveyed level (ADR 32)"
+  },
+  {
+    "id": "water-vale-south-461133961",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461133961"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "surface at the median DTM height along the shore; not a surveyed level (ADR 32)"
+  },
+  {
+    "id": "water-vale-south-313968511",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/313968511"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "surface at the median DTM height along the shore; not a surveyed level (ADR 32)"
+  },
+  {
+    "id": "water-vale-south-314089832",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314089832"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "surface at the median DTM height along the shore; not a surveyed level (ADR 32)"
+  },
+  {
+    "id": "water-vale-south-314089833",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314089833"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "surface at the median DTM height along the shore; not a surveyed level (ADR 32)"
+  },
+  {
+    "id": "water-vale-south-314092267",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314092267"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "surface at the median DTM height along the shore; not a surveyed level (ADR 32)"
+  },
+  {
+    "id": "water-vale-south-314092951",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314092951"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "surface at the median DTM height along the shore; not a surveyed level (ADR 32)"
+  },
+  {
+    "id": "earthwork-cut-4.866",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-vale-south",
+      "Reel3D"
+    ],
+    "fromKm": 4.866,
+    "toKm": 4.866,
+    "note": "cut, up to 2.0 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-cut-4.879",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-vale-south",
+      "Reel3D"
+    ],
+    "fromKm": 4.879,
+    "toKm": 4.879,
+    "note": "cut, up to 2.2 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-cut-4.909",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-vale-south",
+      "Reel3D"
+    ],
+    "fromKm": 4.909,
+    "toKm": 4.909,
+    "note": "cut, up to 2.1 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-cut-4.933",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-vale-south",
+      "Reel3D"
+    ],
+    "fromKm": 4.933,
+    "toKm": 4.933,
+    "note": "cut, up to 2.5 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-cut-5.723",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-vale-south",
+      "Reel3D"
+    ],
+    "fromKm": 5.723,
+    "toKm": 5.723,
+    "note": "cut, up to 2.4 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-cut-5.886",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-vale-south",
+      "Reel3D"
+    ],
+    "fromKm": 5.886,
+    "toKm": 5.891,
+    "note": "cut, up to 3.5 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-fill-5.893",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-vale-south",
+      "Reel3D"
+    ],
+    "fromKm": 5.893,
+    "toKm": 5.893,
+    "note": "fill, up to 3.2 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-cut-5.900",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-vale-south",
+      "Reel3D"
+    ],
+    "fromKm": 5.9,
+    "toKm": 5.9,
+    "note": "cut, up to 2.3 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-cut-5.940",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-vale-south",
+      "Reel3D"
+    ],
+    "fromKm": 5.94,
+    "toKm": 5.94,
+    "note": "cut, up to 2.2 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-fill-6.309",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-vale-south",
+      "Reel3D"
+    ],
+    "fromKm": 6.309,
+    "toKm": 6.309,
+    "note": "fill, up to 2.5 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-fill-7.356",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-vale-south",
+      "Reel3D"
+    ],
+    "fromKm": 7.356,
+    "toKm": 7.356,
+    "note": "fill, up to 2.6 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "building-vale-south-263063605",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263063605"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263063605",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-02-23",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 7.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-263176075",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263176075"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263176075",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-02-24",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 7.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-371939661",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/371939661"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/371939661",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2015-09-22",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 7.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-373593956",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373593956"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/373593956",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2024-10-05",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "church; height 6.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-373593957",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373593957"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/373593957",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2015-10-03",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "school; height 7.3 m from lidar-dsm"
+  }
+]

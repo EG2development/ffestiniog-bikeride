@@ -1,0 +1,45 @@
+{
+  "section": "vale-south",
+  "footprints": 50,
+  "posesSampled": 27,
+  "farM": 6000,
+  "upperBoundM": 60,
+  "unmeasured": 0,
+  "candidates": [
+    {
+      "id": "way/263063605",
+      "lon": -3.931743,
+      "lat": 52.958912,
+      "areaM2": 231,
+      "testedAtM": 7.3
+    },
+    {
+      "id": "way/263176075",
+      "lon": -3.931923,
+      "lat": 52.958787,
+      "areaM2": 228,
+      "testedAtM": 7
+    },
+    {
+      "id": "way/371939661",
+      "lon": -3.944432,
+      "lat": 52.941085,
+      "areaM2": 121,
+      "testedAtM": 7.6
+    },
+    {
+      "id": "way/373593956",
+      "lon": -3.931521,
+      "lat": 52.958651,
+      "areaM2": 115,
+      "testedAtM": 6.9
+    },
+    {
+      "id": "way/373593957",
+      "lon": -3.932312,
+      "lat": 52.95845,
+      "areaM2": 747,
+      "testedAtM": 7.3
+    }
+  ]
+}

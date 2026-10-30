@@ -1,0 +1,39 @@
+# t7 (mission msn_33e838999675db739df3c922) evidence, 2026-10-25
+# npx vitest run
+ RUN  v5.0.5 /Users/eray/ffestiniog-bikeride
+(node:34649) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ Test Files  35 passed (35)
+      Tests  227 passed | 2 expected fail (229)
+   Start at  21:59:38
+   Duration  2.84s (tests 73%, import 22%, transform 5%, worker 1%)
+
+# npm run lint: exit 0; npm run build: exit 0
+
+# npm run test:render (exit 0)
+### Render checks 2026-10-25T21:58:53.821Z (darwin-arm64; snapshot tree 7897cb587013, dirty, untracked df6cc849b6aa)
+| Check | Result | Detail |
+| RG1 CyclingVision unchanged | pass | 4 frames match |
+| RN2 POC deterministic | pass | frames 0, 180, 359 identical |
+| RN3/RN6 POC format and speed | pass | 1920x1080 30fps h264 360 frames, 0.02 s/frame |
+| RN5b no blank canvas in the full POC render | pass | 360 frames, canvas-centre luma 42.5–82.5 |
+| RN6 draw calls and triangles; H2a/H3/L2/G3 overlays visible | pass | f0: 65 calls, 1104586 tris; f45: 65 calls, 1104586 tris; f180: 65 calls, 1104586 tris; f210: 65 calls, 1104586 tris; f359: 65 calls, 1104586 tris |
+| RN5b terrain drawn at frame 0 | pass | 273 distinct colour bins |
+| RL1/RL24 reel format and speed | pass | 1920x1080 30fps h264 2700 frames in 40 s (0.0147 s/frame) |
+| RL26/RL27 no blank canvas in the full reel | pass | 2700 frames, canvas-centre luma 42.5–168.3 |
+| RL23 reel deterministic | pass | frames 0, 1349, 2699 identical |
+| RL24/BL12 reel draw calls and triangles per scene and before each cut, buildings on; RL17/RL22 overlays visible | pass | 20 stills, 19 distinct frames, measured (intro@100, heritage@350, overview@600, blaenau@900, vale-north@1200, vale-south@1500, maentwrog@1750, trawsfynydd@2050, closing@2600; cuts 239/479/779/1079/1349/1619/1919/2399); worst frame 2399: 64 calls, 1938182 tris; overlays visible |
+| RL10 terrain drawn in every scene still | pass | colour bins in the lower half: intro 1755, heritage 2109, overview 1426, blaenau 275, vale-north 231, vale-south 402, maentwrog 302, trawsfynydd 264, closing 2257 |
+| RL32 one preview still per scene in out/previews | pass | 9 stills in out/previews/ |
+| CL9/CL10 every overlay inside the title-safe area, at most 3 lines | pass | 89 boxes at 24 frames, max 2 lines |
+| RD6 no missing map tiles in the reel | pass | 37 MAP_DRAPE lines, all 0 missing |
+| RD1/RD2 fresh-process stills: first, middle and last frame of every section, and after each cut | pass | 35 fresh stills (9 sections x 3, 8 cuts): centre luma >= 20, >= 4 colour bins |
+| X1 CyclingVision full render decodes to the pre-3D md5 | pass | decoded md5 adfca9a7f31577885e4ec84c1aca3f53 |
+| X2 visual baselines untouched | pass | git diff --quiet -- tests/baselines |
+| CL1 before and after stills from one environment, after on this snapshot | pass | 139 after stills on 7897cb587013; before b35021274ddf; 7 environment fields equal |
+| WA6/WA7 water drawn where expected, lit, with no terrain specks at two adjacent frames | pass | WA6 trawsfynydd_60 100.0 %, trawsfynydd_200 100.0 %; WA7 specks <= 0.10 % at 3 frames |
+| CL2/CL3 shade-side trees lifted 20 %, frame luma within 10 %, <= 1 % clipped | pass | CL2 x2.06-x3.84 (11 stills); CL3 max change 9.8 % (15 stills) |
+| CL4 trail distinct from nearby roads and terrain (dE76 >= 20) | pass | min dE terrain 25.6, roads 42.0 (11 stills) |
+| CL6 one look: aerial terrain hue and saturation within 15 % of the ground | pass | hue 84.8 vs 86.6 (2.1 %), saturation 0.404 vs 0.454 (11.2 %) |
+| BL13 landmarks on screen >= 2 s and >= 40 px | pass | no landmark is listed in any section, so no shot names one |

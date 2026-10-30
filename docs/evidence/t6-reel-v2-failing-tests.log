@@ -1,0 +1,5212 @@
+
+ RUN  v5.0.5 /Users/eray/ffestiniog-bikeride
+
+ ❯ tests/registers-buildings.test.ts (7 tests | 7 failed) 7ms
+   ❯ building entries in the register (7)
+     × BL2: accepts a building with status and full provenance 3ms
+     × BL2: rejects a building without provenance, naming the field 2ms
+     × BL2: rejects a building whose provenance lacks a field 0ms
+     × BL2: rejects an unknown status 0ms
+     × BL3: a planning record alone cannot make a building existing, but can make it approved 0ms
+     × BL4: an observation over 3 years older than the retrieval cannot have high confidence 0ms
+     × BL16: a building needs a real source type 0ms
+ ❯ tests/three-core/visibility.test.ts (2 tests | 2 failed) 4ms
+   ❯ visibleFootprints (BL1) (2)
+     × lists what is in view and not behind terrain; skips what is behind the camera, out of frame or hidden 3ms
+     × collects across the poses of a shot 0ms
+ ❯ tests/water-geometry.test.ts (3 tests | 3 failed) 4ms
+   ❯ waterArrays (WA1, WA2) (3)
+     × faces every triangle up, whichever way the ring is wound 3ms
+     × leaves the island open: no triangle inside it, area = lake minus island 0ms
+     × faces Llyn Trawsfynydd up with its islands open (real data) 0ms
+ ❯ tests/load-gate.test.ts (9 tests | 9 failed) 6ms
+   ❯ createLoadGate (6)
+     × RD3: holds the frame until the data has mounted, then releases once 3ms
+     × RD3: an input change takes the new hold before it releases the old one, and clears the stale data 0ms
+     × RD4: a request that settles after a newer one began neither sets data nor cancels the render 0ms
+     × RD4: a failure after unmount does not cancel, and unmounting releases the hold 0ms
+     × RD4: an aborted request is ignored 0ms
+     × RD5: the current request's failure cancels the render with the section and the asset path 0ms
+   ❯ the providers use the gate (RD3–RD5) (3)
+     × src/data/Scene3DDataProvider.tsx loads through the gate and names the section in its errors 1ms
+     × src/data/MapDrapeProvider.tsx loads through the gate and names the section in its errors 0ms
+     × src/data/RouteDataProvider.tsx loads through the gate and names the section in its errors 0ms
+ ❯ tests/three-core/water-holes.test.ts (7 tests | 7 failed) 48ms
+   ❯ polygonsOf: one normaliser for holes (WA3) (4)
+     × reads holes from the geometry and from properties.inner_rings alike 16ms
+     × gives a Polygon and a one-part MultiPolygon the same result, without closing duplicates 15ms
+     × orients outer rings anticlockwise and holes clockwise 1ms
+     × gives each inner ring to the MultiPolygon part that contains it, and to no other part 4ms
+   ❯ waterBodies keeps holes and uses shared levels (WA3, WA5) (3)
+     × keeps the island as a hole and counts its area out 2ms
+     × takes the surface from a shared level when one is given 2ms
+     × gives Llyn Trawsfynydd one level and the same islands in both windows that show it (real data) 7ms
+ ❯ tests/three-core/buildings.test.ts (7 tests | 7 failed) 96ms
+   ❯ buildings on the ground (BL5) (2)
+     × bases a building at the lowest ground under its footprint 4ms
+     × has no floating wall and rises clear of the highest ground under it 0ms
+   ❯ buildings stay clear of roads and of each other (BL7, BL8) (2)
+     × reports a line that runs through a footprint and none that runs around it 0ms
+     × measures overlap as a share of the smaller footprint 0ms
+   ❯ drawing (BL10, BL14) (1)
+     × merges every building into at most 3 groups and draws approved or demolished ones apart 0ms
+   ❯ landmarks (BL9) (1)
+     × builds a church from its recorded dimensions, within 10 % 0ms
+   ❯ loading per section (BL11) (1)
+     × a section loads only its own buildings file 90ms
+ ❯ tests/overlays.test.ts (3 tests | 3 failed) 82ms
+   ❯ overlay style tokens (3)
+     × CL9: the safe area is the 5 % title-safe area of a 1920 × 1080 frame 80ms
+     × CL11: caption, badge and attribution text have at least 4.5:1 contrast against their box 1ms
+     × CL12: captions are at least 28 px; the badge and the attribution at least 18 px 0ms
+ ❯ tests/reel-captions.test.ts (9 tests | 2 failed) 124ms
+   ❯ captions are on screen long enough to read (CL8) (3)
+     × in the reel 4ms
+     × in the proof of concept 1ms
+(node:55083) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ ❯ tests/static-3d.test.ts (25 tests | 1 failed) 102ms
+   ❯ iteration 2 static rules (4)
+     × CL6: Lighting takes its values from one source, LIGHTING in atmosphere.ts 4ms
+ ❯ tests/three-core/trees.test.ts (5 tests | 1 failed) 124ms
+   ❯ placeTrees keep-out corridor (1)
+     × places no tree within rM of a keep-out segment 43ms
+ ❯ tests/pipeline-python.test.ts (3 tests | 3 failed) 2364ms
+   ❯ pipeline self-tests (2)
+     × WA3, WA4: build_section_data.py --self-test (holes per part, islands kept, Polygon = one-part MultiPolygon) 264ms
+     × BL6, BL17: build_buildings.py --self-test (DSM − DTM heights, tag allowlist) 0ms
+   ❯ Llyn Trawsfynydd's islands keep their terrain (WA4, real data) (1)
+     × every island with a DTM cell rises above the lake level 2099ms
+ ❯ tests/three-core/occlusion.test.ts (5 tests | 2 failed) 2528ms
+   ❯ trees do not hide the rider (CL5, real sections) (5)
+     × maentwrog: no frame of a ground shot has a tree crown between the camera and the rider 408ms
+     × trawsfynydd: no frame of a ground shot has a tree crown between the camera and the rider 775ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 47 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/load-gate.test.ts > createLoadGate > RD3: holds the frame until the data has mounted, then releases once
+Error: src/data/loadGate.ts is not implemented yet
+ ❯ load tests/three-core/pending.ts:10:32
+      8| export async function load<T>(rel: string): Promise<T> {
+      9|   const path = resolve(ROOT, rel);
+     10|   if (!existsSync(path)) throw new Error(`${rel} is not implemented ye…
+       |                                ^
+     11|   return (await import(/* @vite-ignore */ path)) as T;
+     12| }
+ ❯ loadExports tests/three-core/pending.ts:16:21
+ ❯ tests/load-gate.test.ts:39:38
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/47]⎯
+
+ FAIL  tests/load-gate.test.ts > createLoadGate > RD3: an input change takes the new hold before it releases the old one, and clears the stale data
+Error: src/data/loadGate.ts is not implemented yet
+ ❯ load tests/three-core/pending.ts:10:32
+      8| export async function load<T>(rel: string): Promise<T> {
+      9|   const path = resolve(ROOT, rel);
+     10|   if (!existsSync(path)) throw new Error(`${rel} is not implemented ye…
+       |                                ^
+     11|   return (await import(/* @vite-ignore */ path)) as T;
+     12| }
+ ❯ loadExports tests/three-core/pending.ts:16:21
+ ❯ tests/load-gate.test.ts:55:38
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/47]⎯
+
+ FAIL  tests/load-gate.test.ts > createLoadGate > RD4: a request that settles after a newer one began neither sets data nor cancels the render
+Error: src/data/loadGate.ts is not implemented yet
+ ❯ load tests/three-core/pending.ts:10:32
+      8| export async function load<T>(rel: string): Promise<T> {
+      9|   const path = resolve(ROOT, rel);
+     10|   if (!existsSync(path)) throw new Error(`${rel} is not implemented ye…
+       |                                ^
+     11|   return (await import(/* @vite-ignore */ path)) as T;
+     12| }
+ ❯ loadExports tests/three-core/pending.ts:16:21
+ ❯ tests/load-gate.test.ts:74:38
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/47]⎯
+
+ FAIL  tests/load-gate.test.ts > createLoadGate > RD4: a failure after unmount does not cancel, and unmounting releases the hold
+Error: src/data/loadGate.ts is not implemented yet
+ ❯ load tests/three-core/pending.ts:10:32
+      8| export async function load<T>(rel: string): Promise<T> {
+      9|   const path = resolve(ROOT, rel);
+     10|   if (!existsSync(path)) throw new Error(`${rel} is not implemented ye…
+       |                                ^
+     11|   return (await import(/* @vite-ignore */ path)) as T;
+     12| }
+ ❯ loadExports tests/three-core/pending.ts:16:21
+ ❯ tests/load-gate.test.ts:87:38
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/47]⎯
+
+ FAIL  tests/load-gate.test.ts > createLoadGate > RD4: an aborted request is ignored
+Error: src/data/loadGate.ts is not implemented yet
+ ❯ load tests/three-core/pending.ts:10:32
+      8| export async function load<T>(rel: string): Promise<T> {
+      9|   const path = resolve(ROOT, rel);
+     10|   if (!existsSync(path)) throw new Error(`${rel} is not implemented ye…
+       |                                ^
+     11|   return (await import(/* @vite-ignore */ path)) as T;
+     12| }
+ ❯ loadExports tests/three-core/pending.ts:16:21
+ ❯ tests/load-gate.test.ts:100:38
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/47]⎯
+
+ FAIL  tests/load-gate.test.ts > createLoadGate > RD5: the current request's failure cancels the render with the section and the asset path
+Error: src/data/loadGate.ts is not implemented yet
+ ❯ load tests/three-core/pending.ts:10:32
+      8| export async function load<T>(rel: string): Promise<T> {
+      9|   const path = resolve(ROOT, rel);
+     10|   if (!existsSync(path)) throw new Error(`${rel} is not implemented ye…
+       |                                ^
+     11|   return (await import(/* @vite-ignore */ path)) as T;
+     12| }
+ ❯ loadExports tests/three-core/pending.ts:16:21
+ ❯ tests/load-gate.test.ts:112:54
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/47]⎯
+
+ FAIL  tests/load-gate.test.ts > the providers use the gate (RD3–RD5) > src/data/Scene3DDataProvider.tsx loads through the gate and names the section in its errors
+AssertionError: src/data/Scene3DDataProvider.tsx: expected '// Iteration 2: readiness through one…' to match /from "\.\/loadGate"/loadGate"
+
+- Expected:
+/from "\.\/loadGate"/
+
++ Received:
+"// Iteration 2: readiness through one load gate, where a test shows a fault (docs/adr/0043-load-gate-for-providers.md).
+// Reel: per-section windows (docs/adr/0029-terrain-windows-per-section.md); aerial tiles come from a sibling provider (docs/adr/0033-aerial-map-tile-drape.md).
+import React, { createContext, useContext, useEffect, useState } from \"react\";
+import { cancelRender, continueRender, delayRender, staticFile } from \"remotion\";
+import {
+  expectGridBytes,
+  mergeRegisters,
+  validateAssets,
+  validateDemHeader,
+  validateLandCoverHeader,
+  validateOsmLines,
+  validateTrailProfile,
+  type Asset,
+  type Feature,
+  type OsmLine,
+} from \"../three-core/registers\";
+import type { TrailProfile } from \"../three-core/trail\";
+import type { DemGrid, LandCover } from \"../three-core/types\";
+
+// Loads the 3D-only data (docs/design-3d.md \"Runtime data\"); used by 3D compositions only,
+// so the 2D video never fetches the DEM. Read outside <ThreeCanvas> (docs/adr/0004-props-into-canvas.md).
+// Every file is validated here, at the boundary, before a scene uses it.
+
+export type Scene3DData = {
+  dem: DemGrid;
+  land: LandCover;
+  profile: TrailProfile;
+  osm: OsmLine[];
+  features: Feature[];
+  assets: Asset[];
+};
+
+const Scene3DDataContext = createContext<Scene3DData | null>(null);
+
+const load = (path: string): Promise<Response> =>
+  fetch(staticFile(path)).then((r) => {
+    if (!r.ok) throw new Error(`${path}: HTTP ${r.status}`);
+    return r;
+  });
+const json = (path: string): Promise<unknown> => load(path).then((r) => r.json());
+const bytes = (path: string): Promise<ArrayBuffer> => load(path).then((r) => r.arrayBuffer());
+
+/** The files a composition loads: the proof of concept's `-poc` set, or a section window under data/sections/<id>/. */
+export function dataPaths(section?: string): { dem: string; land: string; profile: string; osm: string; features: string[] } {
+  if (!section) return { dem: \"data/dem-poc.json\", land: \"data/landcover-poc.json\", profile: \"data/trail-profile-poc.json\", osm: \"data/osm-poc.geojson\", features: [\"data/features-3d.json\"] };
+  const dir = `data/sections/${section}`;
+  return { dem: `${dir}/dem.json`, land: `${dir}/landcover.json`, profile: `${dir}/trail-profile.json`, osm: `${dir}/osm.geojson`, features: [\"data/features-3d.json\", `data/features-${section}.json`] };
+}
+
+export const Scene3DDataProvider: React.FC<{ section?: string; children: React.ReactNode }> = ({ section, children }) => {
+  const [handle] = useState(() => delayRender(\"Loading 3D terrain, land cover and registers\"));
+  const [data, setData] = useState<Scene3DData | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const paths = dataPaths(section);
+      const dir = paths.dem.slice(0, paths.dem.lastIndexOf(\"/\"));
+      const [demJson, landJson] = await Promise.all([json(paths.dem), json(paths.land)]);
+      const header = validateDemHeader(demJson, paths.dem);
+      const landMeta = validateLandCoverHeader(landJson, paths.land);
+      const [heights, sources, classes, profile, osm, assets, ...registers] = await Promise.all([
+        bytes(`${dir}/${header.file}`).then((b) => expectGridBytes(b, header, 4, header.file)),
+        bytes(`${dir}/${header.sourceFile}`).then((b) => expectGridBytes(b, header, 1, header.sourceFile)),
+        bytes(`${dir}/${landMeta.file}`).then((b) => expectGridBytes(b, header, 1, landMeta.file)),
+        json(paths.profile),
+        json(paths.osm),
+        json(\"data/assets-3d.json\"),
+        ...paths.features.map((f) => json(f)),
+      ]);
+      if (cancelled) return;
+      setData({
+        dem: { ...header, heights: new Float32Array(heights), sourceIndex: new Uint8Array(sources) },
+        land: { legend: landMeta.legend, classes: new Uint8Array(classes) },
+        profile: validateTrailProfile(profile, paths.profile),
+        osm: validateOsmLines(osm, paths.osm),
+        features: mergeRegisters(registers),
+        assets: validateAssets(assets),
+      });
+    })().catch((err) => cancelRender(err));
+    return () => {
+      cancelled = true;
+    };
+  }, [handle, section]);
+
+  // Release the hold only after the children have mounted, so <ThreeCanvas> already holds
+  // the frame: releasing it straight after setData let a tab's first frame be captured
+  // before the canvas had drawn (blank frame found by the t8 benchmark).
+  useEffect(() => {
+    if (data) continueRender(handle);
+  }, [data, handle]);
+
+  if (!data) return null;
+  return <Scene3DDataContext.Provider value={data}>{children}</Scene3DDataContext.Provider>;
+};
+
+export function useScene3DData(): Scene3DData {
+  const ctx = useContext(Scene3DDataContext);
+  if (!ctx) throw new Error(\"useScene3DData() must be used inside <Scene3DDataProvider>\");
+  return ctx;
+}
+"
+
+ ❯ tests/load-gate.test.ts:125:25
+    123|     it(`${file} loads through the gate and names the section in its er…
+    124|       const src = readFileSync(resolve(__dirname, "..", file), "utf8");
+    125|       expect(src, file).toMatch(/from "\.\/loadGate"/);
+       |                         ^
+    126|       expect(src, file).toMatch(/AssetLoadError|useLoadGate/);
+    127|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/47]⎯
+
+ FAIL  tests/load-gate.test.ts > the providers use the gate (RD3–RD5) > src/data/MapDrapeProvider.tsx loads through the gate and names the section in its errors
+AssertionError: src/data/MapDrapeProvider.tsx: expected '// Iteration 2: load gate (docs/adr/0…' to match /from "\.\/loadGate"/loadGate"
+
+- Expected:
+/from "\.\/loadGate"/
+
++ Received:
+"// Iteration 2: load gate (docs/adr/0043-load-gate-for-providers.md); the drape is graded towards the ground palette (docs/adr/0046-clarity-tuned-as-data.md).
+import React, { createContext, useContext, useEffect, useState } from \"react\";
+import { cancelRender, continueRender, delayRender, staticFile } from \"remotion\";
+import type { MapDrape } from \"../three/MapDrapeView\";
+import { bngToWgs84 } from \"../three-core/bng\";
+import { tileRange, type Bbox } from \"../three-core/tileUv\";
+import type { DemGrid } from \"../three-core/types\";
+
+// Loads the cached OpenTopoMap tiles that cover a DEM window into one canvas, behind delayRender,
+// outside the 3D canvas (docs/adr/0033-aerial-map-tile-drape.md, docs/adr/0004-props-into-canvas.md).
+// Tiles the cache lacks are drawn in the horizon colour and counted; the count is logged and reported.
+
+const Ctx = createContext<MapDrape | null>(null);
+const TILE = 256;
+type Manifest = { layers: { name: string; zoom: number; tiles: { x: number; y: number; path: string }[] }[] };
+
+export const bboxOf = (dem: Pick<DemGrid, \"cols\" | \"rows\" | \"spacingM\" | \"originE\" | \"originN\">): Bbox => {
+  const corners = [
+    bngToWgs84(dem.originE, dem.originN),
+    bngToWgs84(dem.originE + (dem.cols - 1) * dem.spacingM, dem.originN),
+    bngToWgs84(dem.originE, dem.originN - (dem.rows - 1) * dem.spacingM),
+    bngToWgs84(dem.originE + (dem.cols - 1) * dem.spacingM, dem.originN - (dem.rows - 1) * dem.spacingM),
+  ];
+  return { west: Math.min(...corners.map((c) => c.lon)), east: Math.max(...corners.map((c) => c.lon)), south: Math.min(...corners.map((c) => c.lat)), north: Math.max(...corners.map((c) => c.lat)) };
+};
+
+export const MapDrapeProvider: React.FC<{ dem: DemGrid; zoom: number; fill: string; children: React.ReactNode }> = ({ dem, zoom, fill, children }) => {
+  const [handle] = useState(() => delayRender(\"Loading map tiles for the aerial drape\"));
+  const [drape, setDrape] = useState<MapDrape | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const manifest = (await fetch(staticFile(\"data/tiles-manifest.json\")).then((r) => {
+        if (!r.ok) throw new Error(`tiles-manifest.json: HTTP ${r.status}`);
+        return r.json();
+      })) as Manifest;
+      const layer = manifest.layers.find((l) => l.zoom === zoom);
+      if (!layer) throw new Error(`no cached tile layer at zoom ${zoom}`);
+      const cached = new Map(layer.tiles.map((t) => [`${t.x}/${t.y}`, t.path]));
+      const range = tileRange(bboxOf(dem), zoom);
+      const canvas = document.createElement(\"canvas\");
+      canvas.width = (range.x1 - range.x0 + 1) * TILE;
+      canvas.height = (range.y1 - range.y0 + 1) * TILE;
+      const ctx = canvas.getContext(\"2d\")!;
+      ctx.fillStyle = fill;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      let missing = 0;
+      const loads: Promise<void>[] = [];
+      for (let x = range.x0; x <= range.x1; x++) {
+        for (let y = range.y0; y <= range.y1; y++) {
+          const path = cached.get(`${x}/${y}`);
+          if (!path) {
+            missing++;
+            continue;
+          }
+          loads.push(
+            new Promise<void>((resolve, reject) => {
+              const img = new Image();
+              img.onload = () => {
+                ctx.drawImage(img, (x - range.x0) * TILE, (y - range.y0) * TILE, TILE, TILE);
+                resolve();
+              };
+              img.onerror = () => reject(new Error(`tile ${path} failed to load`));
+              img.src = staticFile(path);
+            }),
+          );
+        }
+      }
+      await Promise.all(loads);
+      if (cancelled) return;
+      if (missing > 0) console.log(`MAP_DRAPE missing ${missing} of ${(range.x1 - range.x0 + 1) * (range.y1 - range.y0 + 1)} tiles at zoom ${zoom}`);
+      setDrape({ canvas, range, z: zoom, missing });
+    })().catch((err) => cancelRender(err));
+    return () => {
+      cancelled = true;
+    };
+  }, [dem, zoom, fill, handle]);
+
+  // Released after the children mount, so the 3D canvas holds the frame first (spec RN5c).
+  useEffect(() => {
+    if (drape) continueRender(handle);
+  }, [drape, handle]);
+
+  if (!drape) return null;
+  return <Ctx.Provider value={drape}>{children}</Ctx.Provider>;
+};
+
+export function useMapDrape(): MapDrape {
+  const d = useContext(Ctx);
+  if (!d) throw new Error(\"useMapDrape() must be used inside <MapDrapeProvider>\");
+  return d;
+}
+"
+
+ ❯ tests/load-gate.test.ts:125:25
+    123|     it(`${file} loads through the gate and names the section in its er…
+    124|       const src = readFileSync(resolve(__dirname, "..", file), "utf8");
+    125|       expect(src, file).toMatch(/from "\.\/loadGate"/);
+       |                         ^
+    126|       expect(src, file).toMatch(/AssetLoadError|useLoadGate/);
+    127|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/47]⎯
+
+ FAIL  tests/load-gate.test.ts > the providers use the gate (RD3–RD5) > src/data/RouteDataProvider.tsx loads through the gate and names the section in its errors
+AssertionError: src/data/RouteDataProvider.tsx: expected '// Iteration 2: load gate, where a te…' to match /from "\.\/loadGate"/loadGate"
+
+- Expected:
+/from "\.\/loadGate"/
+
++ Received:
+"// Iteration 2: load gate, where a test shows a fault (docs/adr/0043-load-gate-for-providers.md).
+import React, { createContext, useContext, useEffect, useState } from \"react\";
+import { cancelRender, continueRender, delayRender, staticFile } from \"remotion\";
+import { buildRouteModel, RouteModel } from \"./route\";
+
+const RouteDataContext = createContext<RouteModel | null>(null);
+
+const loadJson = (path: string) =>
+  fetch(staticFile(path)).then((r) => {
+    if (!r.ok) throw new Error(`${path}: HTTP ${r.status}`);
+    return r.json();
+  });
+
+export const RouteDataProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  const [handle] = useState(() => delayRender(\"Loading route GIS data\"));
+  const [model, setModel] = useState<RouteModel | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const [routeGeoJson, waypoints, elevationProfile, tilesManifest] =
+        await Promise.all([
+          loadJson(\"data/railway-route.geojson\"),
+          loadJson(\"data/waypoints.json\"),
+          loadJson(\"data/elevation-profile.json\"),
+          loadJson(\"data/tiles-manifest.json\"),
+        ]);
+      if (cancelled) return;
+      setModel(
+        buildRouteModel(routeGeoJson, waypoints, elevationProfile, tilesManifest),
+      );
+    })().catch((err) => cancelRender(err));
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  // Release the hold only after the children have mounted and registered their own holds
+  // (see Scene3DDataProvider).
+  useEffect(() => {
+    if (model) continueRender(handle);
+  }, [model, handle]);
+
+  if (!model) return null;
+
+  return (
+    <RouteDataContext.Provider value={model}>
+      {children}
+    </RouteDataContext.Provider>
+  );
+};
+
+export function useRouteData(): RouteModel {
+  const ctx = useContext(RouteDataContext);
+  if (!ctx) {
+    throw new Error(\"useRouteData() must be used inside <RouteDataProvider>\");
+  }
+  return ctx;
+}
+"
+
+ ❯ tests/load-gate.test.ts:125:25
+    123|     it(`${file} loads through the gate and names the section in its er…
+    124|       const src = readFileSync(resolve(__dirname, "..", file), "utf8");
+    125|       expect(src, file).toMatch(/from "\.\/loadGate"/);
+       |                         ^
+    126|       expect(src, file).toMatch(/AssetLoadError|useLoadGate/);
+    127|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/47]⎯
+
+ FAIL  tests/overlays.test.ts > overlay style tokens > CL9: the safe area is the 5 % title-safe area of a 1920 × 1080 frame
+Error: src/three/Overlays.tsx does not export SAFE yet
+ ❯ loadExports tests/three-core/pending.ts:18:33
+     16|   const mod = await load<T>(rel);
+     17|   const missing = names.filter((n) => !(n in mod));
+     18|   if (missing.length > 0) throw new Error(`${rel} does not export ${mi…
+       |                                 ^
+     19|   return mod;
+     20| }
+ ❯ tests/overlays.test.ts:39:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/47]⎯
+
+ FAIL  tests/overlays.test.ts > overlay style tokens > CL11: caption, badge and attribution text have at least 4.5:1 contrast against their box
+Error: src/three/Overlays.tsx does not export CAPTION_STYLE, BADGE_STYLE, ATTRIBUTION_STYLE yet
+ ❯ loadExports tests/three-core/pending.ts:18:33
+     16|   const mod = await load<T>(rel);
+     17|   const missing = names.filter((n) => !(n in mod));
+     18|   if (missing.length > 0) throw new Error(`${rel} does not export ${mi…
+       |                                 ^
+     19|   return mod;
+     20| }
+ ❯ tests/overlays.test.ts:44:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/47]⎯
+
+ FAIL  tests/overlays.test.ts > overlay style tokens > CL12: captions are at least 28 px; the badge and the attribution at least 18 px
+Error: src/three/Overlays.tsx does not export CAPTION_STYLE, BADGE_STYLE, ATTRIBUTION_STYLE yet
+ ❯ loadExports tests/three-core/pending.ts:18:33
+     16|   const mod = await load<T>(rel);
+     17|   const missing = names.filter((n) => !(n in mod));
+     18|   if (missing.length > 0) throw new Error(`${rel} does not export ${mi…
+       |                                 ^
+     19|   return mod;
+     20| }
+ ❯ tests/overlays.test.ts:52:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/47]⎯
+
+ FAIL  tests/pipeline-python.test.ts > pipeline self-tests > WA3, WA4: build_section_data.py --self-test (holes per part, islands kept, Polygon = one-part MultiPolygon)
+AssertionError:                              [--section {blaenau,corridor,maentwrog,trawsfynydd,vale-north,vale-south}]
+                             [--strip-existing]
+build_section_data.py: error: unrecognized arguments: --self-test: expected 2 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 2
+
+ ❯ tests/pipeline-python.test.ts:19:62
+     17|   it("WA3, WA4: build_section_data.py --self-test (holes per part, isl…
+     18|     const r = python("scripts/build_section_data.py", "--self-test");
+     19|     expect(r.status, r.out.split("\n").slice(-3).join("\n")).toBe(0);
+       |                                                              ^
+     20|   });
+     21|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/47]⎯
+
+ FAIL  tests/pipeline-python.test.ts > pipeline self-tests > BL6, BL17: build_buildings.py --self-test (DSM − DTM heights, tag allowlist)
+AssertionError: scripts/build_buildings.py is not implemented yet: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ python tests/pipeline-python.test.ts:11:81
+      9| // pseudocode-reel-v2 §1.4, §1.5, §5.3). They need python3 with numpy,…
+     10| const python = (script: string, ...args: string[]) => {
+     11|   expect(existsSync(resolve(ROOT, script)), `${script} is not implemen…
+       |                                                                                 ^
+     12|   const r = spawnSync("python3", ["-I", script, ...args], { cwd: ROOT,…
+     13|   return { status: r.status, out: `${r.stdout}${r.stderr}`.trim() };
+ ❯ tests/pipeline-python.test.ts:23:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/47]⎯
+
+ FAIL  tests/pipeline-python.test.ts > Llyn Trawsfynydd's islands keep their terrain (WA4, real data) > every island with a DTM cell rises above the lake level
+AssertionError: islands at or below the lake level 197.16 m + 0.5 m: expected [ 'island 2 (27 cells)', …(5) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "island 2 (27 cells)",
++   "island 5 (11 cells)",
++   "island 9 (44 cells)",
++   "island 10 (43 cells)",
++   "island 11 (16 cells)",
++   "island 13 (26 cells)",
++ ]
+
+ ❯ tests/pipeline-python.test.ts:74:91
+     72|     expect(checked.length, "islands large enough to hold a DTM cell").…
+     73|     const flattened = checked.filter((x) => Math.max(...x.cells.map((i…
+     74|     expect(flattened, `islands at or below the lake level ${level.toFi…
+       |                                                                                           ^
+     75|   });
+     76| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/47]⎯
+
+ FAIL  tests/reel-captions.test.ts > captions are on screen long enough to read (CL8) > in the reel
+AssertionError: expected [ …(6) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "intro-title: 5.3 s for 93 characters (needs 6.2 s)",
++   "heritage: 4.0 s for 153 characters (needs 10.2 s)",
++   "live-station: 4.7 s for 90 characters (needs 6.0 s)",
++   "vale-title: 4.3 s for 92 characters (needs 6.1 s)",
++   "decommissioning: 4.3 s for 80 characters (needs 5.3 s)",
++   "concept-card: 6.5 s for 115 characters (needs 7.7 s)",
++ ]
+
+ ❯ tests/reel-captions.test.ts:109:42
+    107|
+    108|   it("in the reel", async () => {
+    109|     expect(pace(await captions(), 2700)).toEqual([]);
+       |                                          ^
+    110|   });
+    111|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/47]⎯
+
+ FAIL  tests/reel-captions.test.ts > captions are on screen long enough to read (CL8) > in the proof of concept
+AssertionError: expected [ …(3) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "section-title: 4.0 s for 92 characters (needs 6.1 s)",
++   "proposed-label: 2.0 s for 65 characters (needs 4.3 s)",
++   "closing: 5.0 s for 119 characters (needs 7.9 s)",
++ ]
+
+ ❯ tests/reel-captions.test.ts:114:37
+    112|   it("in the proof of concept", async () => {
+    113|     const { POC_CAPTIONS } = await load<{ POC_CAPTIONS: Caption[] }>("…
+    114|     expect(pace(POC_CAPTIONS, 360)).toEqual([]);
+       |                                     ^
+    115|   });
+    116|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/47]⎯
+
+ FAIL  tests/registers-buildings.test.ts > building entries in the register > BL2: accepts a building with status and full provenance
+Error: features[0].kind: expected one of terrain, alignment, trail, structure, road, water, landcover, vegetation, place, cyclist, label, earthwork, got "building"
+ ❯ fail src/three-core/registers.ts:51:9
+     49|
+     50| function fail(path: string, problem: string): never {
+     51|   throw new Error(`${path}: ${problem}`);
+       |         ^
+     52| }
+     53|
+ ❯ oneOf src/three-core/registers.ts:56:5
+ ❯ src/three-core/registers.ts:71:18
+ ❯ validateFeatures src/three-core/registers.ts:65:12
+ ❯ tests/registers-buildings.test.ts:18:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/47]⎯
+
+ FAIL  tests/registers-buildings.test.ts > building entries in the register > BL2: rejects a building without provenance, naming the field
+AssertionError: expected [Function] to throw error matching /provenance/ but got 'features[0].kind: expected one of ter…'
+
+- Expected:
+/provenance/
+
++ Received:
+"features[0].kind: expected one of terrain, alignment, trail, structure, road, water, landcover, vegetation, place, cyclist, label, earthwork, got \"building\""
+
+ ❯ tests/registers-buildings.test.ts:22:75
+     20|
+     21|   it("BL2: rejects a building without provenance, naming the field", (…
+     22|     expect(() => validateFeatures([building({ provenance: undefined })…
+       |                                                                           ^
+     23|   });
+     24|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/47]⎯
+
+ FAIL  tests/registers-buildings.test.ts > building entries in the register > BL2: rejects a building whose provenance lacks a field
+AssertionError: urls: expected [Function] to throw error matching /provenance.*urls|urls/ but got 'features[0].kind: expected one of ter…'
+
+- Expected:
+/provenance.*urls|urls/
+
++ Received:
+"features[0].kind: expected one of terrain, alignment, trail, structure, road, water, landcover, vegetation, place, cyclist, label, earthwork, got \"building\""
+
+ ❯ tests/registers-buildings.test.ts:29:74
+     27|       const p = { ...building().provenance } as Record<string, unknown…
+     28|       delete p[key];
+     29|       expect(() => validateFeatures([building({ provenance: p })]), ke…
+       |                                                                          ^
+     30|     }
+     31|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/47]⎯
+
+ FAIL  tests/registers-buildings.test.ts > building entries in the register > BL2: rejects an unknown status
+AssertionError: expected [Function] to throw error matching /status/ but got 'features[0].kind: expected one of ter…'
+
+- Expected:
+/status/
+
++ Received:
+"features[0].kind: expected one of terrain, alignment, trail, structure, road, water, landcover, vegetation, place, cyclist, label, earthwork, got \"building\""
+
+ ❯ tests/registers-buildings.test.ts:34:71
+     32|
+     33|   it("BL2: rejects an unknown status", () => {
+     34|     expect(() => validateFeatures([building({ status: "planned" })])).…
+       |                                                                       ^
+     35|   });
+     36|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/47]⎯
+
+ FAIL  tests/registers-buildings.test.ts > building entries in the register > BL3: a planning record alone cannot make a building existing, but can make it approved
+AssertionError: expected [Function] to throw error matching /planning/ but got 'features[0].kind: expected one of ter…'
+
+- Expected:
+/planning/
+
++ Received:
+"features[0].kind: expected one of terrain, alignment, trail, structure, road, water, landcover, vegetation, place, cyclist, label, earthwork, got \"building\""
+
+ ❯ tests/registers-buildings.test.ts:39:74
+     37|   it("BL3: a planning record alone cannot make a building existing, bu…
+     38|     const planning = { ...building().provenance, evidence: ["planning"…
+     39|     expect(() => validateFeatures([building({ provenance: planning })]…
+       |                                                                          ^
+     40|     expect(validateFeatures([building({ status: "approved", provenance…
+     41|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/47]⎯
+
+ FAIL  tests/registers-buildings.test.ts > building entries in the register > BL4: an observation over 3 years older than the retrieval cannot have high confidence
+AssertionError: expected [Function] to throw error matching /confidence/ but got 'features[0].kind: expected one of ter…'
+
+- Expected:
+/confidence/
+
++ Received:
+"features[0].kind: expected one of terrain, alignment, trail, structure, road, water, landcover, vegetation, place, cyclist, label, earthwork, got \"building\""
+
+ ❯ tests/registers-buildings.test.ts:45:69
+     43|   it("BL4: an observation over 3 years older than the retrieval cannot…
+     44|     const old = { ...building().provenance, observedAt: "2022-01-01" };
+     45|     expect(() => validateFeatures([building({ provenance: old })])).to…
+       |                                                                     ^
+     46|     expect(validateFeatures([building({ provenance: { ...old, confiden…
+     47|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/47]⎯
+
+ FAIL  tests/registers-buildings.test.ts > building entries in the register > BL16: a building needs a real source type
+AssertionError: expected [Function] to throw error matching /source/ but got 'features[0].kind: expected one of ter…'
+
+- Expected:
+/source/
+
++ Received:
+"features[0].kind: expected one of terrain, alignment, trail, structure, road, water, landcover, vegetation, place, cyclist, label, earthwork, got \"building\""
+
+ ❯ tests/registers-buildings.test.ts:50:99
+     48|
+     49|   it("BL16: a building needs a real source type", () => {
+     50|     expect(() => validateFeatures([building({ source: { type: "origina…
+       |                                                                                                   ^
+     51|   });
+     52| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/47]⎯
+
+ FAIL  tests/static-3d.test.ts > iteration 2 static rules > CL6: Lighting takes its values from one source, LIGHTING in atmosphere.ts
+AssertionError: expected '\n\nimport React, { useMemo } from "r…' to match /\bLIGHTING\b/
+
+- Expected:
+/\bLIGHTING\b/
+
++ Received:
+"
+
+import React, { useMemo } from \"react\";
+import * as THREE from \"three\";
+import type { Vec3 } from \"../three-core/types\";
+
+
+
+export const Lighting: React.FC<{ sunDirection: Vec3; focus: Vec3 }> = ({ sunDirection, focus }) => {
+  const target = useMemo(() => new THREE.Object3D(), []);
+  target.position.set(...focus);
+  target.updateMatrixWorld();
+  const sun: Vec3 = [focus[0] + sunDirection[0] * 120, focus[1] + sunDirection[1] * 120, focus[2] + sunDirection[2] * 120];
+  return (
+    <>
+      <hemisphereLight args={[\"#dfe8ee\", \"#5c6a4a\", 0.75]} />
+      <primitive object={target} />
+      <directionalLight
+        position={sun}
+        target={target}
+        intensity={2.2}
+        color=\"#fff4e2\"
+        castShadow
+        shadow-mapSize-width={2048}
+        shadow-mapSize-height={2048}
+        shadow-camera-left={-15}
+        shadow-camera-right={15}
+        shadow-camera-top={15}
+        shadow-camera-bottom={-15}
+        shadow-camera-near={1}
+        shadow-camera-far={300}
+        shadow-bias={-0.0002}
+        shadow-normalBias={0.02}
+      />
+    </>
+  );
+};
+"
+
+ ❯ tests/static-3d.test.ts:216:17
+    214|   it("CL6: Lighting takes its values from one source, LIGHTING in atmo…
+    215|     const src = code("src/three/Lighting.tsx");
+    216|     expect(src).toMatch(/\bLIGHTING\b/);
+       |                 ^
+    217|     expect(src, "no literal light intensities or colours in the view")…
+    218|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/47]⎯
+
+ FAIL  tests/water-geometry.test.ts > waterArrays (WA1, WA2) > faces every triangle up, whichever way the ring is wound
+Error: src/three/waterGeometry.ts is not implemented yet
+ ❯ load tests/three-core/pending.ts:10:32
+      8| export async function load<T>(rel: string): Promise<T> {
+      9|   const path = resolve(ROOT, rel);
+     10|   if (!existsSync(path)) throw new Error(`${rel} is not implemented ye…
+       |                                ^
+     11|   return (await import(/* @vite-ignore */ path)) as T;
+     12| }
+ ❯ tests/water-geometry.test.ts:29:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/47]⎯
+
+ FAIL  tests/water-geometry.test.ts > waterArrays (WA1, WA2) > leaves the island open: no triangle inside it, area = lake minus island
+Error: src/three/waterGeometry.ts is not implemented yet
+ ❯ load tests/three-core/pending.ts:10:32
+      8| export async function load<T>(rel: string): Promise<T> {
+      9|   const path = resolve(ROOT, rel);
+     10|   if (!existsSync(path)) throw new Error(`${rel} is not implemented ye…
+       |                                ^
+     11|   return (await import(/* @vite-ignore */ path)) as T;
+     12| }
+ ❯ tests/water-geometry.test.ts:38:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/47]⎯
+
+ FAIL  tests/water-geometry.test.ts > waterArrays (WA1, WA2) > faces Llyn Trawsfynydd up with its islands open (real data)
+Error: src/three/waterGeometry.ts is not implemented yet
+ ❯ load tests/three-core/pending.ts:10:32
+      8| export async function load<T>(rel: string): Promise<T> {
+      9|   const path = resolve(ROOT, rel);
+     10|   if (!existsSync(path)) throw new Error(`${rel} is not implemented ye…
+       |                                ^
+     11|   return (await import(/* @vite-ignore */ path)) as T;
+     12| }
+ ❯ tests/water-geometry.test.ts:47:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/47]⎯
+
+ FAIL  tests/three-core/buildings.test.ts > buildings on the ground (BL5) > bases a building at the lowest ground under its footprint
+Error: src/three-core/buildings.ts is not implemented yet
+ ❯ load tests/three-core/pending.ts:10:32
+      8| export async function load<T>(rel: string): Promise<T> {
+      9|   const path = resolve(ROOT, rel);
+     10|   if (!existsSync(path)) throw new Error(`${rel} is not implemented ye…
+       |                                ^
+     11|   return (await import(/* @vite-ignore */ path)) as T;
+     12| }
+ ❯ loadExports tests/three-core/pending.ts:16:21
+ ❯ tests/three-core/buildings.test.ts:22:36
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/47]⎯
+
+ FAIL  tests/three-core/buildings.test.ts > buildings on the ground (BL5) > has no floating wall and rises clear of the highest ground under it
+Error: src/three-core/buildings.ts is not implemented yet
+ ❯ load tests/three-core/pending.ts:10:32
+      8| export async function load<T>(rel: string): Promise<T> {
+      9|   const path = resolve(ROOT, rel);
+     10|   if (!existsSync(path)) throw new Error(`${rel} is not implemented ye…
+       |                                ^
+     11|   return (await import(/* @vite-ignore */ path)) as T;
+     12| }
+ ❯ loadExports tests/three-core/pending.ts:16:21
+ ❯ tests/three-core/buildings.test.ts:27:38
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/47]⎯
+
+ FAIL  tests/three-core/buildings.test.ts > buildings stay clear of roads and of each other (BL7, BL8) > reports a line that runs through a footprint and none that runs around it
+Error: src/three-core/buildings.ts is not implemented yet
+ ❯ load tests/three-core/pending.ts:10:32
+      8| export async function load<T>(rel: string): Promise<T> {
+      9|   const path = resolve(ROOT, rel);
+     10|   if (!existsSync(path)) throw new Error(`${rel} is not implemented ye…
+       |                                ^
+     11|   return (await import(/* @vite-ignore */ path)) as T;
+     12| }
+ ❯ loadExports tests/three-core/pending.ts:16:21
+ ❯ tests/three-core/buildings.test.ts:41:44
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/47]⎯
+
+ FAIL  tests/three-core/buildings.test.ts > buildings stay clear of roads and of each other (BL7, BL8) > measures overlap as a share of the smaller footprint
+Error: src/three-core/buildings.ts is not implemented yet
+ ❯ load tests/three-core/pending.ts:10:32
+      8| export async function load<T>(rel: string): Promise<T> {
+      9|   const path = resolve(ROOT, rel);
+     10|   if (!existsSync(path)) throw new Error(`${rel} is not implemented ye…
+       |                                ^
+     11|   return (await import(/* @vite-ignore */ path)) as T;
+     12| }
+ ❯ loadExports tests/three-core/pending.ts:16:21
+ ❯ tests/three-core/buildings.test.ts:48:40
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/47]⎯
+
+ FAIL  tests/three-core/buildings.test.ts > drawing (BL10, BL14) > merges every building into at most 3 groups and draws approved or demolished ones apart
+Error: src/three-core/buildings.ts is not implemented yet
+ ❯ load tests/three-core/pending.ts:10:32
+      8| export async function load<T>(rel: string): Promise<T> {
+      9|   const path = resolve(ROOT, rel);
+     10|   if (!existsSync(path)) throw new Error(`${rel} is not implemented ye…
+       |                                ^
+     11|   return (await import(/* @vite-ignore */ path)) as T;
+     12| }
+ ❯ loadExports tests/three-core/pending.ts:16:21
+ ❯ tests/three-core/buildings.test.ts:57:38
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/47]⎯
+
+ FAIL  tests/three-core/buildings.test.ts > landmarks (BL9) > builds a church from its recorded dimensions, within 10 %
+Error: src/three-core/buildings.ts is not implemented yet
+ ❯ load tests/three-core/pending.ts:10:32
+      8| export async function load<T>(rel: string): Promise<T> {
+      9|   const path = resolve(ROOT, rel);
+     10|   if (!existsSync(path)) throw new Error(`${rel} is not implemented ye…
+       |                                ^
+     11|   return (await import(/* @vite-ignore */ path)) as T;
+     12| }
+ ❯ loadExports tests/three-core/pending.ts:16:21
+ ❯ tests/three-core/buildings.test.ts:71:37
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[34/47]⎯
+
+ FAIL  tests/three-core/buildings.test.ts > loading per section (BL11) > a section loads only its own buildings file
+AssertionError: expected undefined to be 'data/sections/trawsfynydd/buildings.j…' // Object.is equality
+
+- Expected:
+"data/sections/trawsfynydd/buildings.json"
+
++ Received:
+undefined
+
+ ❯ tests/three-core/buildings.test.ts:82:48
+     80|   it("a section loads only its own buildings file", async () => {
+     81|     const { dataPaths } = await load<{ dataPaths: (s?: string) => Reco…
+     82|     expect(dataPaths("trawsfynydd").buildings).toBe("data/sections/tra…
+       |                                                ^
+     83|     expect(JSON.stringify(dataPaths("trawsfynydd"))).not.toMatch(/maen…
+     84|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[35/47]⎯
+
+ FAIL  tests/three-core/occlusion.test.ts > trees do not hide the rider (CL5, real sections) > maentwrog: no frame of a ground shot has a tree crown between the camera and the rider
+AssertionError: maentwrog: frames where a crown crosses the camera-to-rider line (drone-side frames 0–179, follow 180–359): expected { drone: 25, follow: +0 } to deeply equal { drone: +0, follow: +0 }
+
+- Expected
++ Received
+
+  {
+-   "drone": 0,
++   "drone": 25,
+    "follow": 0,
+  }
+
+ ❯ tests/three-core/occlusion.test.ts:59:157
+     57|         if (spheres.some((s) => s.c[0] > x0 && s.c[0] < x1 && s.c[2] >…
+     58|       }
+     59|       expect(blocked, `${id}: frames where a crown crosses the camera-…
+       |                                                                                                                                                             ^
+     60|     }, 120_000);
+     61|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[36/47]⎯
+
+ FAIL  tests/three-core/occlusion.test.ts > trees do not hide the rider (CL5, real sections) > trawsfynydd: no frame of a ground shot has a tree crown between the camera and the rider
+AssertionError: trawsfynydd: frames where a crown crosses the camera-to-rider line (drone-side frames 0–239, follow 240–479): expected { drone: 149, follow: +0 } to deeply equal { drone: +0, follow: +0 }
+
+- Expected
++ Received
+
+  {
+-   "drone": 0,
++   "drone": 149,
+    "follow": 0,
+  }
+
+ ❯ tests/three-core/occlusion.test.ts:59:157
+     57|         if (spheres.some((s) => s.c[0] > x0 && s.c[0] < x1 && s.c[2] >…
+     58|       }
+     59|       expect(blocked, `${id}: frames where a crown crosses the camera-…
+       |                                                                                                                                                             ^
+     60|     }, 120_000);
+     61|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[37/47]⎯
+
+ FAIL  tests/three-core/trees.test.ts > placeTrees keep-out corridor > places no tree within rM of a keep-out segment
+AssertionError: expected [ …(579) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "scale": 0.922608433291316,
++     "x": -51.725162047274445,
++     "y": 15.184040702984202,
++     "yaw": 5.7302381542083305,
++     "z": 27.30109948071933,
++   },
++   {
++     "scale": 1.140838989871554,
++     "x": -51.672651281319986,
++     "y": 15.473616427532397,
++     "yaw": 2.934223231729583,
++     "z": 24.98653653812708,
++   },
++   {
++     "scale": 1.1954343146644533,
++     "x": -51.825378028594606,
++     "y": 15.797444246651139,
++     "yaw": 2.151976340166684,
++     "z": 22.403917880362165,
++   },
++   {
++     "scale": 0.8350439084460959,
++     "x": -51.7825845663692,
++     "y": 15.957201967458241,
++     "yaw": 4.481818293675814,
++     "z": 21.126609427709745,
++   },
++   {
++     "scale": 0.9316339250653982,
++     "x": -51.892265095140374,
++     "y": 16.257336948090234,
++     "yaw": 3.9892244419532354,
++     "z": 18.73208472949288,
++   },
++   {
++     "scale": 0.9391450642142445,
++     "x": -52.010828546886934,
++     "y": 16.331006691418587,
++     "yaw": 0.5957519121441471,
++     "z": 18.146813289894403,
++   },
++   {
++     "scale": 1.0372288557700813,
++     "x": -52.001864837006394,
++     "y": 16.457760309765582,
++     "yaw": 1.585492869113446,
++     "z": 17.134057584503047,
++   },
++   {
++     "scale": 1.0252667730674148,
++     "x": -52.016372818441006,
++     "y": 16.60962358409306,
++     "yaw": 1.9832549859364772,
++     "z": 15.921359420139192,
++   },
++   {
++     "scale": 1.2280349439242855,
++     "x": -52.055371778365384,
++     "y": 16.656748024420814,
++     "yaw": 5.845492175755232,
++     "z": 15.545981546553634,
++   },
++   {
++     "scale": 1.0198418585350737,
++     "x": -52.134271990995614,
++     "y": 16.809785809367895,
++     "yaw": 2.602243509955921,
++     "z": 14.325641624005039,
++   },
++   {
++     "scale": 0.9523149817250669,
++     "x": -52.13781748600837,
++     "y": 17.24264357087668,
++     "yaw": 0.5488528768282207,
++     "z": 10.868050467710777,
++   },
++   {
++     "scale": 0.8875256426399574,
++     "x": -52.15288237082839,
++     "y": 17.412303912197242,
++     "yaw": 0.6584283258397833,
++     "z": 9.513203249309125,
++   },
++   {
++     "scale": 1.0528560117818415,
++     "x": -52.28778423709186,
++     "y": 17.47185943017248,
++     "yaw": 3.6368378731696276,
++     "z": 9.041115860927933,
++   },
++   {
++     "scale": 0.8270547915017232,
++     "x": -52.16041405465271,
++     "y": 17.614589791512117,
++     "yaw": 1.7894113886468659,
++     "z": 7.897538249333758,
++   },
++   {
++     "scale": 1.0035796972224489,
++     "x": -52.22916847934241,
++     "y": 17.658777087123603,
++     "yaw": 0.9016026925596647,
++     "z": 7.5464255551528705,
++   },
++   {
++     "scale": 0.8836709995521232,
++     "x": -52.20359860270785,
++     "y": 17.72200065604411,
++     "yaw": 0.3598683838826665,
++     "z": 7.040702126041038,
++   },
++   {
++     "scale": 1.031889615347609,
++     "x": -51.35549531279344,
++     "y": 15.183163358469027,
++     "yaw": 2.1195620400381183,
++     "z": 27.298106311552793,
++   },
++   {
++     "scale": 0.7745253366883844,
++     "x": -51.414220493158474,
++     "y": 15.339604466827586,
++     "yaw": 2.6161040589605653,
++     "z": 26.05003807746699,
++   },
++   {
++     "scale": 0.9250520614441484,
++     "x": -51.63047450271904,
++     "y": 15.464643568196333,
++     "yaw": 3.0680592606631074,
++     "z": 25.057071180523273,
++   },
++   {
++     "scale": 1.0522866746177897,
++     "x": -51.476867608176576,
++     "y": 15.509682784194595,
++     "yaw": 2.9446005201224406,
++     "z": 24.693141153162664,
++   },
++   {
++     "scale": 0.8250480341957882,
++     "x": -51.4074335949511,
++     "y": 15.813538565847557,
++     "yaw": 1.4433271016700207,
++     "z": 22.264052558632265,
++   },
++   {
++     "scale": 1.1319793678121641,
++     "x": -51.63734456700879,
++     "y": 15.852442794688978,
++     "yaw": 2.4358342114378297,
++     "z": 21.959502007145865,
++   },
++   {
++     "scale": 1.2028649082640186,
++     "x": -51.78233515607858,
++     "y": 16.011721250321717,
++     "yaw": 3.8030943933010293,
++     "z": 20.691100468468544,
++   },
++   {
++     "scale": 1.1553779233945534,
++     "x": -51.638444784571675,
++     "y": 16.096199198218528,
++     "yaw": 2.3191923121945366,
++     "z": 20.01239642691818,
++   },
++   {
++     "scale": 0.9771113491151482,
++     "x": -51.68260597360918,
++     "y": 16.259430397395043,
++     "yaw": 3.142326516203831,
++     "z": 18.709693515802634,
++   },
++   {
++     "scale": 0.8818250808399171,
++     "x": -51.55243375918294,
++     "y": 16.29880986054195,
++     "yaw": 4.472942307406787,
++     "z": 18.391609429999566,
++   },
++   {
++     "scale": 1.1796342910965905,
++     "x": -51.691325158821634,
++     "y": 16.369815802644005,
++     "yaw": 0.8696418399818671,
++     "z": 17.82816644583069,
++   },
++   {
++     "scale": 1.148946619941853,
++     "x": -51.849853054281425,
++     "y": 16.422866871301085,
++     "yaw": 3.980256757053164,
++     "z": 17.40867826373368,
++   },
++   {
++     "scale": 0.8497451014118269,
++     "x": -51.56185871179048,
++     "y": 16.780539738433436,
++     "yaw": 5.820630905577824,
++     "z": 14.543788867621293,
++   },
++   {
++     "scale": 0.7883715304778889,
++     "x": -51.90901383756441,
++     "y": 16.839168420084754,
++     "yaw": 1.9841372440346396,
++     "z": 14.084843762719462,
++   },
++   {
++     "scale": 1.0190438892459497,
++     "x": -51.94652431297707,
++     "y": 16.97476276832167,
++     "yaw": 2.922181351759804,
++     "z": 13.002724332725819,
++   },
++   {
++     "scale": 1.0577478884952143,
++     "x": -51.82603972200633,
++     "y": 17.01157959533157,
++     "yaw": 1.772029949851601,
++     "z": 12.70537390116946,
++   },
++   {
++     "scale": 0.9168092317413539,
++     "x": -51.94545572386204,
++     "y": 17.17062967971433,
++     "yaw": 6.209572488041623,
++     "z": 11.438102521422392,
++   },
++   {
++     "scale": 0.7591730179265141,
++     "x": -51.90448847881595,
++     "y": 17.422200293443165,
++     "yaw": 4.017336765218626,
++     "z": 9.427439351341214,
++   },
++   {
++     "scale": 0.8383880612673238,
++     "x": -51.962307523916365,
++     "y": 17.441989629296586,
++     "yaw": 0.10767953205043967,
++     "z": 9.270923498158277,
++   },
++   {
++     "scale": 1.0890268461080268,
++     "x": -51.99359488054205,
++     "y": 17.58610682088183,
++     "yaw": 4.6533766600675355,
++     "z": 8.120554755525399,
++   },
++   {
++     "scale": 0.9028033860959113,
++     "x": -52.071320569409316,
++     "y": 17.637529713031835,
++     "yaw": 4.929601127205331,
++     "z": 7.7118863181749315,
++   },
++   {
++     "scale": 0.8375072989147156,
++     "x": -52.140303821053976,
++     "y": 17.75654496923089,
++     "yaw": 1.6541876502525292,
++     "z": 6.763050856063337,
++   },
++   {
++     "scale": 0.838091898127459,
++     "x": -51.88704122272293,
++     "y": 17.824564956722316,
++     "yaw": 1.839134503928487,
++     "z": 6.2128632331970355,
++   },
++   {
++     "scale": 1.100861456245184,
++     "x": -51.910976886265644,
++     "y": 17.830151800916063,
++     "yaw": 1.4062217104129657,
++     "z": 6.168881841917353,
++   },
++   {
++     "scale": 0.8366844970732927,
++     "x": -51.02696993762149,
++     "y": 15.317574042244814,
++     "yaw": 3.8598570089375244,
++     "z": 26.21554159158965,
++   },
++   {
++     "scale": 1.124369962257333,
++     "x": -50.91408391415473,
++     "y": 15.39963154764846,
++     "yaw": 1.2418102840056955,
++     "z": 25.557010152574563,
++   },
++   {
++     "scale": 0.8488874458707869,
++     "x": -51.19993780693818,
++     "y": 15.446132259385195,
++     "yaw": 6.034431641545225,
++     "z": 25.19329382237681,
++   },
++   {
++     "scale": 0.8629501550458372,
++     "x": -50.98597802218674,
++     "y": 15.641540828882716,
++     "yaw": 1.9848029522212005,
++     "z": 23.626576995841845,
++   },
++   {
++     "scale": 1.1443322785198689,
++     "x": -51.17393181285567,
++     "y": 15.801138898218051,
++     "yaw": 6.237078572203292,
++     "z": 22.356786471643407,
++   },
++   {
++     "scale": 0.971170692355372,
++     "x": -51.09809329901208,
++     "y": 15.955707825243007,
++     "yaw": 4.0031261457692855,
++     "z": 21.12003436912811,
++   },
++   {
++     "scale": 0.8834070910234004,
++     "x": -51.03408014678607,
++     "y": 16.045676417078358,
++     "yaw": 4.605708845208856,
++     "z": 20.39963170273763,
++   },
++   {
++     "scale": 0.9767796988599002,
++     "x": -51.40249019074101,
++     "y": 16.118674361344894,
++     "yaw": 5.817273631471025,
++     "z": 19.82648382362204,
++   },
++   {
++     "scale": 1.2379193304805085,
++     "x": -51.259170576962696,
++     "y": 16.14263056712225,
++     "yaw": 1.9113101069949179,
++     "z": 19.631245580035014,
++   },
++   {
++     "scale": 0.99602665763814,
++     "x": -51.41039509176871,
++     "y": 16.273127498861868,
++     "yaw": 4.348435824937749,
++     "z": 18.59292072491032,
++   },
++   {
++     "scale": 1.0310650906758383,
++     "x": -51.06150460041786,
++     "y": 16.34287188333692,
++     "yaw": 2.0298283230229077,
++     "z": 18.026367644416503,
++   },
++   {
++     "scale": 1.2492618042742833,
++     "x": -51.260266613662814,
++     "y": 16.409141103352887,
++     "yaw": 5.406661107651248,
++     "z": 17.502380805240072,
++   },
++   {
++     "scale": 1.128380875219591,
++     "x": -51.20967455238699,
++     "y": 16.69894120617537,
++     "yaw": 4.652394124786712,
++     "z": 15.186081230421754,
++   },
++   {
++     "scale": 1.0315984033513814,
++     "x": -51.49479564213063,
++     "y": 16.88688760900404,
++     "yaw": 1.5850875237720428,
++     "z": 13.692465829740112,
++   },
++   {
++     "scale": 0.8268455234356225,
++     "x": -51.31057962637533,
++     "y": 17.065227777266408,
++     "yaw": 3.0403807364957625,
++     "z": 12.262900278579094,
++   },
++   {
++     "scale": 1.184340946841985,
++     "x": -51.55403905758709,
++     "y": 17.08897150984267,
++     "yaw": 4.114502258219994,
++     "z": 12.079813789064044,
++   },
++   {
++     "scale": 1.0087661497527733,
++     "x": -51.373701627272965,
++     "y": 17.14068345798878,
++     "yaw": 0.10920585299926228,
++     "z": 11.66186373346741,
++   },
++   {
++     "scale": 0.8907791964011267,
++     "x": -51.40578433488222,
++     "y": 17.22650554104475,
++     "yaw": 0.8511158608947622,
++     "z": 10.977181156640821,
++   },
++   {
++     "scale": 0.7704344638623297,
++     "x": -51.640756801282464,
++     "y": 17.347543004341425,
++     "yaw": 0.040987409690133196,
++     "z": 10.016678870221234,
++   },
++   {
++     "scale": 1.2240417677676305,
++     "x": -51.41245100526489,
++     "y": 17.469789945031515,
++     "yaw": 1.7929769925285794,
++     "z": 9.033997740147234,
++   },
++   {
++     "scale": 1.0152654433622956,
++     "x": -51.69023522537276,
++     "y": 17.504625932313502,
++     "yaw": 4.837682656146345,
++     "z": 8.76323161925238,
++   },
++   {
++     "scale": 1.2251483348663896,
++     "x": -51.451593399938496,
++     "y": 17.610752406786197,
++     "yaw": 1.9449374924419274,
++     "z": 7.90904258607753,
++   },
++   {
++     "scale": 0.7612987627508119,
++     "x": -51.41047408331616,
++     "y": 17.655712205253074,
++     "yaw": 5.411889221377455,
++     "z": 7.548791466493071,
++   },
++   {
++     "scale": 1.2017739821458235,
++     "x": -51.568831635887385,
++     "y": 17.803762628219555,
++     "yaw": 5.135723889777178,
++     "z": 6.370437600876039,
++   },
++   {
++     "scale": 0.9784341943450272,
++     "x": -50.735486718587765,
++     "y": 15.151272563554812,
++     "yaw": 2.6385513884962273,
++     "z": 27.536076291265857,
++   },
++   {
++     "scale": 0.8842698930529878,
++     "x": -50.54849149375099,
++     "y": 15.255903817899526,
++     "yaw": 4.214555681709544,
++     "z": 26.6952203738597,
++   },
++   {
++     "scale": 0.9588240918237716,
++     "x": -50.589674906099276,
++     "y": 15.38297917114105,
++     "yaw": 3.2396361417460406,
++     "z": 25.68125391663842,
++   },
++   {
++     "scale": 0.9633945866953582,
++     "x": -50.74432704456959,
++     "y": 15.486268544045743,
++     "yaw": 0.6682280366199296,
++     "z": 24.860359581911712,
++   },
++   {
++     "scale": 1.0609388937009498,
++     "x": -50.680947294752315,
++     "y": 15.558996001840566,
++     "yaw": 3.788447405869497,
++     "z": 24.277696581480466,
++   },
++   {
++     "scale": 0.9072425669291988,
++     "x": -50.691716150286,
++     "y": 15.610949085245375,
++     "yaw": 3.4400354523817125,
++     "z": 23.86298546331238,
++   },
++   {
++     "scale": 0.8930503629380837,
++     "x": -50.799459790152724,
++     "y": 15.650529919122345,
++     "yaw": 2.516918932941947,
++     "z": 23.549727057467848,
++   },
++   {
++     "scale": 1.0518273401539773,
++     "x": -50.55548139369944,
++     "y": 15.766329384117853,
++     "yaw": 0.22844429870770935,
++     "z": 22.618119616138763,
++   },
++   {
++     "scale": 0.8536616229685023,
++     "x": -50.946837849207014,
++     "y": 15.871160168142524,
++     "yaw": 4.160259035396283,
++     "z": 21.791312968715882,
++   },
++   {
++     "scale": 1.0144930786918849,
++     "x": -50.67774760613824,
++     "y": 15.907269298681058,
++     "yaw": 3.2560837677471115,
++     "z": 21.49559522938588,
++   },
++   {
++     "scale": 1.1725563169457018,
++     "x": -50.90258370773441,
++     "y": 15.98805125313811,
++     "yaw": 5.960586219895576,
++     "z": 20.856387195134197,
++   },
++   {
++     "scale": 1.0100321244681254,
++     "x": -50.768615094562676,
++     "y": 16.03919371414231,
++     "yaw": 0.5625693284020568,
++     "z": 20.44423727260969,
++   },
++   {
++     "scale": 1.1084399261744693,
++     "x": -50.97719746157361,
++     "y": 16.13917359196348,
++     "yaw": 2.711444754763234,
++     "z": 19.651235628991383,
++   },
++   {
++     "scale": 0.9974331106059253,
++     "x": -50.953963099653606,
++     "y": 16.194543859513942,
++     "yaw": 6.235909999093246,
++     "z": 19.208308247832704,
++   },
++   {
++     "scale": 0.9396254345774651,
++     "x": -50.67837659426715,
++     "y": 16.268996008858085,
++     "yaw": 0.5907068167842463,
++     "z": 18.60613146576501,
++   },
++   {
++     "scale": 0.8326799563365057,
++     "x": -50.792030542726025,
++     "y": 16.311193908425047,
++     "yaw": 6.238846836395736,
++     "z": 18.27212654718806,
++   },
++   {
++     "scale": 0.9211501863319427,
++     "x": -50.69326354654493,
++     "y": 16.399157120729797,
++     "yaw": 2.376156357021366,
++     "z": 17.566804211057715,
++   },
++   {
++     "scale": 0.877601632848382,
++     "x": -50.8123633591556,
++     "y": 16.45818594166776,
++     "yaw": 0.5979045712281814,
++     "z": 17.098500479621812,
++   },
++   {
++     "scale": 1.12055416055955,
++     "x": -51.07215579444906,
++     "y": 16.50080492083216,
++     "yaw": 0.014261798175425234,
++     "z": 16.765082146638715,
++   },
++   {
++     "scale": 1.1437276635551825,
++     "x": -51.017040806676505,
++     "y": 16.5251979136141,
++     "yaw": 3.1135293848934373,
++     "z": 16.56874032857855,
++   },
++   {
++     "scale": 0.9497419638792053,
++     "x": -51.003395523179876,
++     "y": 16.579567061981653,
++     "yaw": 4.468624962589188,
++     "z": 16.134069270898685,
++   },
++   {
++     "scale": 1.0692394336219877,
++     "x": -51.062578054906425,
++     "y": 16.731373188097496,
++     "yaw": 1.5219569939720765,
++     "z": 14.92303764960285,
++   },
++   {
++     "scale": 1.2480758294695988,
++     "x": -50.97233880365812,
++     "y": 16.857377412356435,
++     "yaw": 5.484547888771169,
++     "z": 13.914073581993023,
++   },
++   {
++     "scale": 0.8920188561314717,
++     "x": -51.02243651241892,
++     "y": 16.92210650744382,
++     "yaw": 3.797239463065398,
++     "z": 13.398369897312445,
++   },
++   {
++     "scale": 1.0286675356328487,
++     "x": -51.01666407152749,
++     "y": 17.171774187567646,
++     "yaw": 2.022858884740686,
++     "z": 11.403862037738671,
++   },
++   {
++     "scale": 1.1149728142190725,
++     "x": -51.09141409766846,
++     "y": 17.187418186815922,
++     "yaw": 3.1675095493611014,
++     "z": 11.280917267876044,
++   },
++   {
++     "scale": 1.2355074770748615,
++     "x": -51.18916472569339,
++     "y": 17.256602832966017,
++     "yaw": 0.5988243941367833,
++     "z": 10.730909774614128,
++   },
++   {
++     "scale": 0.9948844856116921,
++     "x": -51.0531184175982,
++     "y": 17.30135743981227,
++     "yaw": 5.324135650294699,
++     "z": 10.369732723725537,
++   },
++   {
++     "scale": 0.7722432997543365,
++     "x": -51.267894301271006,
++     "y": 17.335559070354794,
++     "yaw": 1.0269652483561644,
++     "z": 10.102332363561139,
++   },
++   {
++     "scale": 0.9268888636725023,
++     "x": -51.287076896917846,
++     "y": 17.45233540693298,
++     "yaw": 0.38684252908694305,
++     "z": 9.170037828076223,
++   },
++   {
++     "scale": 1.0414193056058139,
++     "x": -50.958926150129884,
++     "y": 17.487108221941163,
++     "yaw": 1.5343132725921067,
++     "z": 8.883405889458114,
++   },
++   {
++     "scale": 1.1508702778955922,
++     "x": -51.08202201194018,
++     "y": 17.570368732255883,
++     "yaw": 4.3019434837736945,
++     "z": 8.221644447949718,
++   },
++   {
++     "scale": 0.9051765585318208,
++     "x": -51.2454969453546,
++     "y": 17.70734420118388,
++     "yaw": 3.7523238403779975,
++     "z": 7.131896869983234,
++   },
++   {
++     "scale": 0.7969221380772069,
++     "x": -51.023087351185524,
++     "y": 17.84065868295729,
++     "yaw": 2.9961664118659552,
++     "z": 6.060969455235833,
++   },
++   {
++     "scale": 1.158620880334638,
++     "x": -51.15186730524988,
++     "y": 17.94468393290881,
++     "yaw": 1.8258514608535688,
++     "z": 5.233491484672486,
++   },
++   {
++     "scale": 0.8126149687450379,
++     "x": -50.15697961435194,
++     "y": 15.008105218899436,
++     "yaw": 6.116312263630367,
++     "z": 28.664047239898157,
++   },
++   {
++     "scale": 0.8460333127295598,
++     "x": -50.33860496000483,
++     "y": 15.049670650728512,
++     "yaw": 3.6822068117451687,
++     "z": 28.33693625382486,
++   },
++   {
++     "scale": 1.1912410088116303,
++     "x": -50.35805181398882,
++     "y": 15.130222257331479,
++     "yaw": 3.2015731579614135,
++     "z": 27.694014763490237,
++   },
++   {
++     "scale": 0.7893784103216603,
++     "x": -50.34359634696523,
++     "y": 15.205571765953213,
++     "yaw": 3.8160289678265475,
++     "z": 27.091730465454805,
++   },
++   {
++     "scale": 0.8425731430761516,
++     "x": -50.10689062246496,
++     "y": 15.33687415276654,
++     "yaw": 6.277451690888596,
++     "z": 26.036481237338272,
++   },
++   {
++     "scale": 1.0964609555667266,
++     "x": -50.09830836551083,
++     "y": 15.375373284576927,
++     "yaw": 4.307580901497628,
++     "z": 25.728717495756626,
++   },
++   {
++     "scale": 0.9726285856449977,
++     "x": -50.418417591414396,
++     "y": 15.46313793298323,
++     "yaw": 3.785548804856844,
++     "z": 25.03631143865482,
++   },
++   {
++     "scale": 0.7868520935298875,
++     "x": -50.260199165540655,
++     "y": 15.71379641146632,
++     "yaw": 3.3303237120702134,
++     "z": 23.029767761178352,
++   },
++   {
++     "scale": 1.2356956648873165,
++     "x": -50.2561396109206,
++     "y": 15.755086908757221,
++     "yaw": 1.4607347223101501,
++     "z": 22.69982884738487,
++   },
++   {
++     "scale": 0.7656191402347758,
++     "x": -50.2890430790693,
++     "y": 15.790814473642968,
++     "yaw": 4.771967287614613,
++     "z": 22.415326394901662,
++   },
++   {
++     "scale": 0.9118683990091085,
++     "x": -50.53198636700523,
++     "y": 15.87882584121544,
++     "yaw": 0.754237920533973,
++     "z": 21.718860279967174,
++   },
++   {
++     "scale": 0.9837217488093302,
++     "x": -50.35970838157019,
++     "y": 15.980232782417442,
++     "yaw": 3.7175869603046547,
++     "z": 20.904160939073183,
++   },
++   {
++     "scale": 1.07542414101772,
++     "x": -50.48342944526465,
++     "y": 16.02722279613372,
++     "yaw": 3.6807429105849523,
++     "z": 20.53214949346435,
++   },
++   {
++     "scale": 1.0260880889836699,
++     "x": -50.51116578989786,
++     "y": 16.164555536198897,
++     "yaw": 5.125285322671815,
++     "z": 19.43588300400017,
++   },
++   {
++     "scale": 1.0722718463512138,
++     "x": -50.2732020151835,
++     "y": 16.221094255638313,
++     "yaw": 1.2203729399456964,
++     "z": 18.977816614252188,
++   },
++   {
++     "scale": 0.9638457882683724,
++     "x": -50.47195668358191,
++     "y": 16.25130238508573,
++     "yaw": 0.6395454283884532,
++     "z": 18.74188744448836,
++   },
++   {
++     "scale": 0.8708936561597511,
++     "x": -50.51256756855062,
++     "y": 16.366290056332947,
++     "yaw": 1.0578508298131752,
++     "z": 17.824461811718315,
++   },
++   {
++     "scale": 1.1962910565780476,
++     "x": -50.68490252973959,
++     "y": 16.462480309966487,
++     "yaw": 4.792035142858477,
++     "z": 17.060751194237014,
++   },
++   {
++     "scale": 0.9565156905446202,
++     "x": -50.56115983521971,
++     "y": 16.493194427818526,
++     "yaw": 4.95672266433193,
++     "z": 16.81206098212408,
++   },
++   {
++     "scale": 0.8320368325803429,
++     "x": -50.35487153466448,
++     "y": 16.57721357605187,
++     "yaw": 2.238629284832503,
++     "z": 16.135338042350984,
++   },
++   {
++     "scale": 1.1786751582985744,
++     "x": -50.6413157521869,
++     "y": 16.651040237396955,
++     "yaw": 5.228574558568798,
++     "z": 15.553352350384955,
++   },
++   {
++     "scale": 1.2095314835896716,
++     "x": -50.51766624945151,
++     "y": 16.813184188876768,
++     "yaw": 4.76073237520113,
++     "z": 14.254801209258266,
++   },
++   {
++     "scale": 0.9785825471626595,
++     "x": -50.58283136727459,
++     "y": 16.90750778844813,
++     "yaw": 0.6190205326670185,
++     "z": 13.503103811254732,
++   },
++   {
++     "scale": 0.9560407778481022,
++     "x": -50.51896949596505,
++     "y": 16.936761497147383,
++     "yaw": 3.7944083069649537,
++     "z": 13.267698702102013,
++   },
++   {
++     "scale": 1.238289267406799,
++     "x": -50.77629111263431,
++     "y": 17.028007440222428,
++     "yaw": 2.773433204899569,
++     "z": 12.545778514260958,
++   },
++   {
++     "scale": 1.0897126756608486,
++     "x": -50.6240289409439,
++     "y": 17.078292068687734,
++     "yaw": 4.921002676976794,
++     "z": 12.139989113048863,
++   },
++   {
++     "scale": 1.2016325165750459,
++     "x": -50.450361978330875,
++     "y": 17.125659135938623,
++     "yaw": 2.603746487120953,
++     "z": 11.756927079655433,
++   },
++   {
++     "scale": 0.7543020808370784,
++     "x": -50.852244944397086,
++     "y": 17.266740926995407,
++     "yaw": 0.1093177106414392,
++     "z": 10.640822590235707,
++   },
++   {
++     "scale": 0.9346678120782599,
++     "x": -50.815652535887324,
++     "y": 17.275924982712603,
++     "yaw": 1.5400491564061194,
++     "z": 10.566471399747197,
++   },
++   {
++     "scale": 0.836411721073091,
++     "x": -50.81453013168007,
++     "y": 17.391821688320487,
++     "yaw": 5.440753076381444,
++     "z": 9.640655645271035,
++   },
++   {
++     "scale": 0.7831465313211083,
++     "x": -50.52322437265943,
++     "y": 17.539405066287145,
++     "yaw": 4.162358919710608,
++     "z": 8.453886464336026,
++   },
++   {
++     "scale": 0.8413943973137066,
++     "x": -50.54340711362022,
++     "y": 17.585409171751234,
++     "yaw": 0.7239536349804929,
++     "z": 8.086950142442543,
++   },
++   {
++     "scale": 1.036319460021332,
++     "x": -50.850770551600476,
++     "y": 17.703058713953943,
++     "yaw": 1.3298680454963456,
++     "z": 7.155466537968385,
++   },
++   {
++     "scale": 1.1353833168977872,
++     "x": -50.75322273287213,
++     "y": 17.734333271766083,
++     "yaw": 0.5240305948805434,
++     "z": 6.90300963368672,
++   },
++   {
++     "scale": 1.189556194934994,
++     "x": -50.8024887951257,
++     "y": 17.823260307777673,
++     "yaw": 0.5560383881107505,
++     "z": 6.193989417496406,
++   },
++   {
++     "scale": 1.0005487742600963,
++     "x": -50.63428821996504,
++     "y": 17.9227691481472,
++     "yaw": 1.625534758275997,
++     "z": 5.394567660671675,
++   },
++   {
++     "scale": 1.1407315792748705,
++     "x": -49.701282352569166,
++     "y": 15.00077392635867,
++     "yaw": 1.1303836218836762,
++     "z": 28.710279430070436,
++   },
++   {
++     "scale": 1.0754032750846818,
++     "x": -49.757997260740666,
++     "y": 15.044458800612484,
++     "yaw": 0.4377119942900683,
++     "z": 28.362858898735965,
++   },
++   {
++     "scale": 1.193216925021261,
++     "x": -49.84910803326616,
++     "y": 15.119123240583576,
++     "yaw": 0.2081686564315383,
++     "z": 27.76890386214286,
++   },
++   {
++     "scale": 0.9881043011555448,
++     "x": -49.871279170392455,
++     "y": 15.181616134918295,
++     "yaw": 1.9082115280066656,
++     "z": 27.270309881739855,
++   },
++   {
++     "scale": 1.2087395782582462,
++     "x": -50.00526094453764,
++     "y": 15.267733887874055,
++     "yaw": 1.7534655164998647,
++     "z": 26.586025141865132,
++   },
++   {
++     "scale": 0.8044072177726775,
++     "x": -49.64588057233925,
++     "y": 15.32774698365247,
++     "yaw": 2.4555805289912156,
++     "z": 26.096917650023016,
++   },
++   {
++     "scale": 0.9365308862179518,
++     "x": -49.71120744043944,
++     "y": 15.37555910416413,
++     "yaw": 4.215033681414436,
++     "z": 25.716761372271378,
++   },
++   {
++     "scale": 0.8492741541704163,
++     "x": -50.002138153361585,
++     "y": 15.455527602287475,
++     "yaw": 4.352197636855172,
++     "z": 25.085842305394358,
++   },
++   {
++     "scale": 1.0824528523953632,
++     "x": -49.71459623856367,
++     "y": 15.48641032499727,
++     "yaw": 3.6517564001404432,
++     "z": 24.83137275646147,
++   },
++   {
++     "scale": 0.8852947873529047,
++     "x": -50.02909628912596,
++     "y": 15.568664133921265,
++     "yaw": 2.817101123775098,
++     "z": 24.1828355954335,
++   },
++   {
++     "scale": 0.9081072397530079,
++     "x": -49.94964592393376,
++     "y": 15.670951889199205,
++     "yaw": 1.5416609907683474,
++     "z": 23.363610932019817,
++   },
++   {
++     "scale": 1.0501007173443213,
++     "x": -50.10584673292561,
++     "y": 15.703379911766387,
++     "yaw": 4.214142006512597,
++     "z": 23.108800233484686,
++   },
++   {
++     "scale": 1.0853668875060976,
++     "x": -50.15897785389953,
++     "y": 16.021418836235533,
++     "yaw": 2.9240960467373927,
++     "z": 20.569738069287357,
++   },
++   {
++     "scale": 1.2177462314721197,
++     "x": -49.9872041907596,
++     "y": 16.107163537770976,
++     "yaw": 0.3480930929373909,
++     "z": 19.880163558705167,
++   },
++   {
++     "scale": 0.9129844795679674,
++     "x": -49.925420141799776,
++     "y": 16.166006435698364,
++     "yaw": 2.4217264936461853,
++     "z": 19.40845533305093,
++   },
++   {
++     "scale": 1.2157647889107466,
++     "x": -49.90101870078456,
++     "y": 16.464304265601093,
++     "yaw": 4.187686917809107,
++     "z": 17.02498998544464,
++   },
++   {
++     "scale": 1.0396323285531253,
++     "x": -50.18760955943631,
++     "y": 16.559289028740018,
++     "yaw": 0.4745213684625377,
++     "z": 16.27399812945749,
++   },
++   {
++     "scale": 1.0265578016405925,
++     "x": -50.104584515690846,
++     "y": 16.625354666879865,
++     "yaw": 1.1345808040731615,
++     "z": 15.744020708495327,
++   },
++   {
++     "scale": 0.8918588517699391,
++     "x": -50.16387954368727,
++     "y": 16.691278807877097,
++     "yaw": 1.6933264054759263,
++     "z": 15.219020680530424,
++   },
++   {
++     "scale": 1.0590292768320069,
++     "x": -50.283130842630925,
++     "y": 16.815268257842398,
++     "yaw": 5.98112433015602,
++     "z": 14.231814589445719,
++   },
++   {
++     "scale": 1.218894476420246,
++     "x": -50.231911769321954,
++     "y": 16.871173684403765,
++     "yaw": 4.5852457182774815,
++     "z": 13.783856961322709,
++   },
++   {
++     "scale": 0.9319430101895705,
++     "x": -50.07214961866339,
++     "y": 16.8791468140902,
++     "yaw": 0.050467802026527404,
++     "z": 13.715849609720639,
++   },
++   {
++     "scale": 1.2267355471849442,
++     "x": -50.01178639917566,
++     "y": 16.9372420168831,
++     "yaw": 5.2302632780536005,
++     "z": 13.250153155399413,
++   },
++   {
++     "scale": 1.100510332151316,
++     "x": -50.088789341632406,
++     "y": 17.025164769333788,
++     "yaw": 2.6806738046410783,
++     "z": 12.549906370937958,
++   },
++   {
++     "scale": 1.0856293819379061,
++     "x": -50.39045644336383,
++     "y": 17.211560923967046,
++     "yaw": 4.593986703540318,
++     "z": 11.06912347085186,
++   },
++   {
++     "scale": 0.7759423048701137,
++     "x": -50.445843259985594,
++     "y": 17.22532116585644,
++     "yaw": 5.186316093968412,
++     "z": 10.960703073832386,
++   },
++   {
++     "scale": 1.021248045610264,
++     "x": -50.248198175731716,
++     "y": 17.34799727612408,
++     "yaw": 2.470663346051087,
++     "z": 9.975424134234776,
++   },
++   {
++     "scale": 1.0614948170259595,
++     "x": -50.28134078026062,
++     "y": 17.404167781805153,
++     "yaw": 4.033318328926331,
++     "z": 9.52762889007315,
++   },
++   {
++     "scale": 1.088124081492424,
++     "x": -50.31227585555666,
++     "y": 17.470133458205964,
++     "yaw": 1.433258821074292,
++     "z": 9.001529992507894,
++   },
++   {
++     "scale": 1.0499595905421302,
++     "x": -50.49042005764534,
++     "y": 17.52422536688391,
++     "yaw": 0.6827100273729738,
++     "z": 8.574255905558676,
++   },
++   {
++     "scale": 1.1719502251362428,
++     "x": -50.520864261907974,
++     "y": 17.567706821579485,
++     "yaw": 0.32011850194624586,
++     "z": 8.227747808510534,
++   },
++   {
++     "scale": 1.045948042650707,
++     "x": -50.34114284454961,
++     "y": 17.616021637967787,
++     "yaw": 2.014316227281856,
++     "z": 7.836953108990592,
++   },
++   {
++     "scale": 0.8049644707934931,
++     "x": -50.32041594496519,
++     "y": 17.681536615814547,
++     "yaw": 0.1971464771763875,
++     "z": 7.3130586637718356,
++   },
++   {
++     "scale": 0.8068626596359536,
++     "x": -50.18836953266586,
++     "y": 17.771927316917573,
++     "yaw": 5.59884376041871,
++     "z": 6.587449690144831,
++   },
++   {
++     "scale": 1.1898050382733345,
++     "x": -50.466153706185224,
++     "y": 17.804151388420724,
++     "yaw": 2.616374893373334,
++     "z": 6.337546874866209,
++   },
++   {
++     "scale": 0.9575037823524326,
++     "x": -50.2379429028467,
++     "y": 17.878272209886926,
++     "yaw": 6.06820909751756,
++     "z": 5.739304534200619,
++   },
++   {
++     "scale": 1.112304110196419,
++     "x": -50.233008961242774,
++     "y": 17.93760677378159,
++     "yaw": 2.4292282936691247,
++     "z": 5.265206092285666,
++   },
++   {
++     "scale": 0.9880321236560121,
++     "x": -49.31490278210663,
++     "y": 15.078294460882896,
++     "yaw": 6.226432201973524,
++     "z": 28.080590694926155,
++   },
++   {
++     "scale": 1.0614208506885916,
++     "x": -49.205190069780514,
++     "y": 15.138238731527235,
++     "yaw": 1.5028568605005657,
++     "z": 27.598787477233383,
++   },
++   {
++     "scale": 0.9017889568349347,
++     "x": -49.35209183691603,
++     "y": 15.194167360977735,
++     "yaw": 6.219857128369602,
++     "z": 27.156004054263132,
++   },
++   {
++     "scale": 0.8014617742737755,
++     "x": -49.37897528301508,
++     "y": 15.233837640646376,
++     "yaw": 3.8600799166910984,
++     "z": 26.839845129277485,
++   },
++   {
++     "scale": 1.1334814740112051,
++     "x": -49.25229474898396,
++     "y": 15.370298335235566,
++     "yaw": 2.7910540897372944,
++     "z": 25.746369982746046,
++   },
++   {
++     "scale": 1.1250017733545974,
++     "x": -49.39314434808625,
++     "y": 15.377146252710371,
++     "yaw": 5.921913610351874,
++     "z": 25.69547905022697,
++   },
++   {
++     "scale": 1.0176080693490803,
++     "x": -49.58376239519026,
++     "y": 15.515992502402515,
++     "yaw": 5.139876581702037,
++     "z": 24.59153114219769,
++   },
++   {
++     "scale": 1.178190698265098,
++     "x": -49.543137363296296,
++     "y": 15.541955543193035,
++     "yaw": 6.193417669482872,
++     "z": 24.383039391843916,
++   },
++   {
++     "scale": 1.0249522012891248,
++     "x": -49.32943445596695,
++     "y": 15.58764037807705,
++     "yaw": 1.8665889148977604,
++     "z": 24.012328473452037,
++   },
++   {
++     "scale": 0.8272076634457335,
++     "x": -49.715331120209754,
++     "y": 15.707831058348532,
++     "yaw": 5.596607292220832,
++     "z": 23.062682398995346,
++   },
++   {
++     "scale": 0.9434904844965786,
++     "x": -49.72782456964865,
++     "y": 15.80361403430579,
++     "yaw": 0.24523037665809086,
++     "z": 22.297905278997984,
++   },
++   {
++     "scale": 1.0010714794043452,
++     "x": -49.62428870147224,
++     "y": 16.022127344983165,
++     "yaw": 1.869289157385127,
++     "z": 20.54961989092893,
++   },
++   {
++     "scale": 0.8859251808607951,
++     "x": -49.53498841060426,
++     "y": 16.06859553215327,
++     "yaw": 0.20637560748099526,
++     "z": 20.176017107973912,
++   },
++   {
++     "scale": 0.7863106313161552,
++     "x": -49.52248672939723,
++     "y": 16.1221362639335,
++     "yaw": 0.755272390869529,
++     "z": 19.747995562376733,
++   },
++   {
++     "scale": 1.1111873945919797,
++     "x": -49.61120136956265,
++     "y": 16.13849859664915,
++     "yaw": 0.20097418477577306,
++     "z": 19.619691978902896,
++   },
++   {
++     "scale": 1.1219311747699976,
++     "x": -49.466384556059836,
++     "y": 16.239367908914573,
++     "yaw": 5.152468349171122,
++     "z": 18.81003205000325,
++   },
++   {
++     "scale": 1.174942089477554,
++     "x": -49.62822910257145,
++     "y": 16.32375173744513,
++     "yaw": 3.626858023045955,
++     "z": 18.140349567761483,
++   },
++   {
++     "scale": 1.2203965210355818,
++     "x": -49.61566040187415,
++     "y": 16.331965553585906,
++     "yaw": 2.398075900824063,
++     "z": 18.07439776598212,
++   },
++   {
++     "scale": 0.7815217681927606,
++     "x": -49.721815886717025,
++     "y": 16.39557642987929,
++     "yaw": 5.4252128165415305,
++     "z": 17.569143763637733,
++   },
++   {
++     "scale": 0.9352513026678935,
++     "x": -49.871817881246784,
++     "y": 16.45523101191502,
++     "yaw": 2.2508232336737035,
++     "z": 17.09667779605572,
++   },
++   {
++     "scale": 0.9314315840601921,
++     "x": -49.79825355251458,
++     "y": 16.68537859923672,
++     "yaw": 0.4193640742769815,
++     "z": 15.256268688960347,
++   },
++   {
++     "scale": 0.8065369831165299,
++     "x": -49.92668379552637,
++     "y": 16.734145568974782,
++     "yaw": 2.8554122857602007,
++     "z": 14.870189223366747,
++   },
++   {
++     "scale": 0.924986561643891,
++     "x": -49.87061506402881,
++     "y": 16.80179078269284,
++     "yaw": 2.9859160082097844,
++     "z": 14.328323270042514,
++   },
++   {
++     "scale": 1.2297152465907857,
++     "x": -49.97462586079746,
++     "y": 16.97094199338462,
++     "yaw": 0.8502753866627798,
++     "z": 12.979953152538176,
++   },
++   {
++     "scale": 1.1597259062109515,
++     "x": -49.8076082237252,
++     "y": 17.013552206614985,
++     "yaw": 3.9763049193918345,
++     "z": 12.635068801080362,
++   },
++   {
++     "scale": 1.147779067629017,
++     "x": -49.8287328701079,
++     "y": 17.10761076406343,
++     "yaw": 2.4211575896747655,
++     "z": 11.884299364458506,
++   },
++   {
++     "scale": 0.9319302338408306,
++     "x": -49.66858877247921,
++     "y": 17.13777706696419,
++     "yaw": 5.4323152355400754,
++     "z": 11.639003242265627,
++   },
++   {
++     "scale": 0.9002096274634823,
++     "x": -49.819365415535856,
++     "y": 17.2203200967866,
++     "yaw": 0.4233016733566455,
++     "z": 10.983723432534983,
++   },
++   {
++     "scale": 0.8340014482382685,
++     "x": -49.89989649550782,
++     "y": 17.261210015905093,
++     "yaw": 4.084617308340447,
++     "z": 10.659270528536648,
++   },
++   {
++     "scale": 0.8125643635867164,
++     "x": -49.68778922227753,
++     "y": 17.37751852606889,
++     "yaw": 2.0948884490840176,
++     "z": 9.724466500618256,
++   },
++   {
++     "scale": 0.9058156312676147,
++     "x": -50.06973287259416,
++     "y": 17.500841320026666,
++     "yaw": 3.3641496564622857,
++     "z": 8.749682473530275,
++   },
++   {
++     "scale": 0.8169130375608802,
++     "x": -49.8521385599191,
++     "y": 17.54641013755463,
++     "yaw": 5.111649040471642,
++     "z": 8.379799829072656,
++   },
++   {
++     "scale": 1.1234399566892534,
++     "x": -49.9629147700048,
++     "y": 17.617032774293328,
++     "yaw": 5.7377285507848415,
++     "z": 7.818658398798111,
++   },
++   {
++     "scale": 1.1621322982246056,
++     "x": -49.97207485474894,
++     "y": 17.706321259075775,
++     "yaw": 1.0341310950938725,
++     "z": 7.1056687719443925,
++   },
++   {
++     "scale": 0.8340444248169661,
++     "x": -49.85014103177548,
++     "y": 17.752604835049716,
++     "yaw": 3.5354606229259504,
++     "z": 6.73266149128346,
++   },
++   {
++     "scale": 0.8221647560130805,
++     "x": -49.902951746414885,
++     "y": 17.786633676697967,
++     "yaw": 0.36222810878039446,
++     "z": 6.462265442306789,
++   },
++   {
++     "scale": 0.9486321230651811,
++     "x": -49.7907986761152,
++     "y": 17.847782198828646,
++     "yaw": 0.1682394938845035,
++     "z": 5.970781320582219,
++   },
++   {
++     "scale": 1.1290901401080191,
++     "x": -48.94970524951779,
++     "y": 15.071572608745194,
++     "yaw": 2.6310488248300503,
++     "z": 28.12440378879602,
++   },
++   {
++     "scale": 1.2232384582748637,
++     "x": -49.11774542902714,
++     "y": 15.09548428831622,
++     "yaw": 4.944456685793261,
++     "z": 27.93794397871944,
++   },
++   {
++     "scale": 0.8869621023768559,
++     "x": -48.872224973110264,
++     "y": 15.205498396756596,
++     "yaw": 2.350590565977836,
++     "z": 27.05250914856125,
++   },
++   {
++     "scale": 1.1931541912490502,
++     "x": -49.06785329141442,
++     "y": 15.60568167133024,
++     "yaw": 5.450716298978228,
++     "z": 23.86113939328009,
++   },
++   {
++     "scale": 1.0900010293116793,
++     "x": -48.92215856214574,
++     "y": 15.667469253391028,
++     "yaw": 5.975434499003143,
++     "z": 23.363639870762157,
++   },
++   {
++     "scale": 0.9532705903984606,
++     "x": -49.15059188416694,
++     "y": 15.688703559990973,
++     "yaw": 0.9597359878276114,
++     "z": 23.200198704633202,
++   },
++   {
++     "scale": 1.1634851754643023,
++     "x": -49.105072031876006,
++     "y": 15.729581343301106,
++     "yaw": 6.06502474764232,
++     "z": 22.87243597519115,
++   },
++   {
++     "scale": 0.9250830662203953,
++     "x": -49.19410069630558,
++     "y": 15.81393782485975,
++     "yaw": 2.0269292641168963,
++     "z": 22.20100446910142,
++   },
++   {
++     "scale": 0.7763356328941882,
++     "x": -49.271726611280144,
++     "y": 15.842669051769189,
++     "yaw": 5.816033534833164,
++     "z": 21.97359881894709,
++   },
++   {
++     "scale": 0.7576526710763574,
++     "x": -49.34894493346411,
++     "y": 15.911684759811035,
++     "yaw": 3.6478081173700465,
++     "z": 21.42438964375113,
++   },
++   {
++     "scale": 1.167446485022083,
++     "x": -48.99355616731489,
++     "y": 15.98394466462778,
++     "yaw": 3.6980353527588647,
++     "z": 20.8375672357211,
++   },
++   {
++     "scale": 0.8532403407152742,
++     "x": -49.3718019325955,
++     "y": 16.060545294801706,
++     "yaw": 1.5558400389826188,
++     "z": 20.235909792342586,
++   },
++   {
++     "scale": 1.049588379682973,
++     "x": -49.0844568837783,
++     "y": 16.112582357332577,
++     "yaw": 1.4809881472494513,
++     "z": 19.812468060869755,
++   },
++   {
++     "scale": 1.0429355831583962,
++     "x": -49.32072980067042,
++     "y": 16.152264649921563,
++     "yaw": 0.2954260232568237,
++     "z": 19.50187465580098,
++   },
++   {
++     "scale": 1.1393147786147892,
++     "x": -49.07222518702224,
++     "y": 16.217483127349986,
++     "yaw": 1.5484203496256324,
++     "z": 18.974190508086004,
++   },
++   {
++     "scale": 1.0792100633261725,
++     "x": -49.34315522216161,
++     "y": 16.244395659933797,
++     "yaw": 4.116153032535656,
++     "z": 18.766538569726233,
++   },
++   {
++     "scale": 0.8789687609532848,
++     "x": -49.45033130838604,
++     "y": 16.558784674329218,
++     "yaw": 3.7506810448175396,
++     "z": 16.258096639561142,
++   },
++   {
++     "scale": 1.0442376465070993,
++     "x": -49.47374058424592,
++     "y": 16.577163441199808,
++     "yaw": 0.6130127933234175,
++     "z": 16.11191983697118,
++   },
++   {
++     "scale": 0.8601574193453416,
++     "x": -49.18798261448768,
++     "y": 16.651731487526558,
++     "yaw": 0.6017120861693188,
++     "z": 15.508546003867545,
++   },
++   {
++     "scale": 1.024428271339275,
++     "x": -49.29787022865173,
++     "y": 16.785132827155756,
++     "yaw": 5.9315153034666475,
++     "z": 14.4459067309228,
++   },
++   {
++     "scale": 0.8058971912832931,
++     "x": -49.510274729371645,
++     "y": 16.84135428436566,
++     "yaw": 6.109804762212526,
++     "z": 14.0025506264432,
++   },
++   {
++     "scale": 0.8658114053541794,
++     "x": -49.41002021287878,
++     "y": 16.88498613219708,
++     "yaw": 6.038779741289603,
++     "z": 13.65130982292472,
++   },
++   {
++     "scale": 1.1733581498265266,
++     "x": -49.595791472800414,
++     "y": 16.97464558001375,
++     "yaw": 4.383497739075779,
++     "z": 12.940130741457946,
++   },
++   {
++     "scale": 0.8674721444258466,
++     "x": -49.25685209251503,
++     "y": 17.036666582047474,
++     "yaw": 1.0819600957294444,
++     "z": 12.435547250036484,
++   },
++   {
++     "scale": 1.208584800013341,
++     "x": -49.35779414250385,
++     "y": 17.134461275627835,
++     "yaw": 3.3298419716837926,
++     "z": 11.657091297600784,
++   },
++   {
++     "scale": 1.1364634719211608,
++     "x": -49.54821243672231,
++     "y": 17.24006282213377,
++     "yaw": 6.254511242389693,
++     "z": 10.818691625318248,
++   },
++   {
++     "scale": 0.9262818738352507,
++     "x": -49.428352861202654,
++     "y": 17.28321033035172,
++     "yaw": 3.0341215420151886,
++     "z": 10.470790654911715,
++   },
++   {
++     "scale": 1.1841745204292238,
++     "x": -49.32218803429839,
++     "y": 17.481298473849893,
++     "yaw": 5.966496521580507,
++     "z": 8.885594538425092,
++   },
++   {
++     "scale": 1.2226128629408777,
++     "x": -49.52819557564612,
++     "y": 17.558157212415242,
++     "yaw": 3.137450310347427,
++     "z": 8.277212593422218,
++   },
++   {
++     "scale": 0.9012687766226009,
++     "x": -49.651448767758666,
++     "y": 17.62900108980248,
++     "yaw": 0.3654961287922598,
++     "z": 7.714641305109948,
++   },
++   {
++     "scale": 1.2328543635085225,
++     "x": -49.773969674604416,
++     "y": 17.79531516893767,
++     "yaw": 3.3940845898638465,
++     "z": 6.389433596447623,
++   },
++   {
++     "scale": 0.8808278297074139,
++     "x": -49.6164241696537,
++     "y": 17.920230859145523,
++     "yaw": 0.3942296875346009,
++     "z": 5.387351324628257,
++   },
++   {
++     "scale": 0.9917943329783157,
++     "x": -49.59296158864393,
++     "y": 17.93544407702284,
++     "yaw": 5.442129805179153,
++     "z": 5.2651944119869105,
++   },
++   {
++     "scale": 1.0027136681601405,
++     "x": -48.74008863480887,
++     "y": 15.06413821124006,
++     "yaw": 4.62861022062878,
++     "z": 28.178118150256786,
++   },
++   {
++     "scale": 1.2075590912718326,
++     "x": -48.725045761432,
++     "y": 15.126010360289365,
++     "yaw": 2.9760670439037455,
++     "z": 27.68347698182624,
++   },
++   {
++     "scale": 1.147820984129794,
++     "x": -48.707305502374,
++     "y": 15.222789810516407,
++     "yaw": 4.051348323193677,
++     "z": 26.90992368931312,
++   },
++   {
++     "scale": 1.114905919879675,
++     "x": -48.7783009343631,
++     "y": 15.253342697001063,
++     "yaw": 5.129737655329342,
++     "z": 26.667788218794463,
++   },
++   {
++     "scale": 1.126803366933018,
++     "x": -48.59565334668588,
++     "y": 15.317174164112657,
++     "yaw": 1.3253617984559258,
++     "z": 26.15296191197738,
++   },
++   {
++     "scale": 0.9496719865128398,
++     "x": -48.63601807773378,
++     "y": 15.368494916602504,
++     "yaw": 0.3452464694040946,
++     "z": 25.74410428168544,
++   },
++   {
++     "scale": 0.9436773265479133,
++     "x": -48.77399198052609,
++     "y": 15.455699962761718,
++     "yaw": 0.1894188669704045,
++     "z": 25.051243590049754,
++   },
++   {
++     "scale": 0.9318859388586134,
++     "x": -48.64268701007103,
++     "y": 15.507356114510912,
++     "yaw": 3.9141778285091267,
++     "z": 24.635062982845177,
++   },
++   {
++     "scale": 0.8630312674213201,
++     "x": -48.53348613613292,
++     "y": 15.571270808135159,
++     "yaw": 3.1088248319927825,
++     "z": 24.121559420284242,
++   },
++   {
++     "scale": 1.1458805354777724,
++     "x": -48.80575853962557,
++     "y": 15.577872111683245,
++     "yaw": 4.4777895811323365,
++     "z": 24.076192804158367,
++   },
++   {
++     "scale": 1.0535889585735276,
++     "x": -48.763853603083135,
++     "y": 15.713425721856765,
++     "yaw": 2.7685049674358404,
++     "z": 22.99225838560414,
++   },
++   {
++     "scale": 1.2179686836898327,
++     "x": -48.91220942274657,
++     "y": 15.726205535116605,
++     "yaw": 0.7995265668507336,
++     "z": 22.894185773429488,
++   },
++   {
++     "scale": 0.7897551129572093,
++     "x": -48.62868398932841,
++     "y": 15.827047352702357,
++     "yaw": 4.700941590823537,
++     "z": 22.08099433852758,
++   },
++   {
++     "scale": 1.2010582693619654,
++     "x": -48.78915385690104,
++     "y": 15.897679866291583,
++     "yaw": 5.276587307566799,
++     "z": 21.52112225828835,
++   },
++   {
++     "scale": 0.812553372583352,
++     "x": -48.85637906283435,
++     "y": 16.150286288745704,
++     "yaw": 3.8393467614148173,
++     "z": 19.505122271742444,
++   },
++   {
++     "scale": 0.905656393035315,
++     "x": -48.63539699746826,
++     "y": 16.182867598196026,
++     "yaw": 4.535368124698363,
++     "z": 19.23888807446314,
++   },
++   {
++     "scale": 0.7912820731289685,
++     "x": -48.66854903992487,
++     "y": 16.281246198376174,
++     "yaw": 4.943681919989727,
++     "z": 18.453937362663563,
++   },
++   {
++     "scale": 1.0006905944319442,
++     "x": -48.89860864597637,
++     "y": 16.36582624457078,
++     "yaw": 1.9676819479540792,
++     "z": 17.78453269929539,
++   },
++   {
++     "scale": 1.1804753505857661,
++     "x": -48.97619276244782,
++     "y": 16.514222746726592,
++     "yaw": 3.52200320294182,
++     "z": 16.60124000923455,
++   },
++   {
++     "scale": 1.0791510312119499,
++     "x": -48.947677430150634,
++     "y": 16.599166557227726,
++     "yaw": 2.6295724727740613,
++     "z": 15.92193866179311,
++   },
++   {
++     "scale": 1.1730700266780332,
++     "x": -48.90426716960923,
++     "y": 16.734128489193974,
++     "yaw": 5.465866263977938,
++     "z": 14.842690478476793,
++   },
++   {
++     "scale": 0.967330826097168,
++     "x": -48.825728898105154,
++     "y": 16.86054039213341,
++     "yaw": 5.213432765429479,
++     "z": 13.830790658298316,
++   },
++   {
++     "scale": 1.0874136085622013,
++     "x": -49.10106625873169,
++     "y": 16.917270535742865,
++     "yaw": 1.039214347746035,
++     "z": 13.385072172179681,
++   },
++   {
++     "scale": 0.9299765842733905,
++     "x": -49.09229162047356,
++     "y": 16.927739481348546,
++     "yaw": 5.47841543566131,
++     "z": 13.301209151943004,
++   },
++   {
++     "scale": 0.9935542504535988,
++     "x": -49.180623601394814,
++     "y": 17.023064465494826,
++     "yaw": 0.8915048112795204,
++     "z": 12.542140877099595,
++   },
++   {
++     "scale": 1.10355349839665,
++     "x": -48.986006140515826,
++     "y": 17.08539659330854,
++     "yaw": 2.516184976701152,
++     "z": 12.038972905900422,
++   },
++   {
++     "scale": 1.104050462716259,
++     "x": -49.080111952943724,
++     "y": 17.144403149688152,
++     "yaw": 4.15047444094865,
++     "z": 11.570171973408826,
++   },
++   {
++     "scale": 1.082908726297319,
++     "x": -49.15413841021714,
++     "y": 17.188926971401088,
++     "yaw": 1.4880372970119764,
++     "z": 11.216516297017828,
++   },
++   {
++     "scale": 1.1234914544038475,
++     "x": -49.016990640986336,
++     "y": 17.26497403929243,
++     "yaw": 3.8113306191614673,
++     "z": 10.605346937215279,
++   },
++   {
++     "scale": 0.9637461425736547,
++     "x": -49.24878558951826,
++     "y": 17.310336403595283,
++     "yaw": 5.8992805136268345,
++     "z": 10.24925575087748,
++   },
++   {
++     "scale": 0.9194732883479446,
++     "x": -49.02338063810714,
++     "y": 17.353613888204563,
++     "yaw": 3.321228539711206,
++     "z": 9.897465166430411,
++   },
++   {
++     "scale": 1.0374202518723905,
++     "x": -49.03707424779594,
++     "y": 17.402508870081512,
++     "yaw": 3.2754957426880713,
++     "z": 9.507262408491954,
++   },
++   {
++     "scale": 1.013981874100864,
++     "x": -49.104708701874785,
++     "y": 17.45683801899431,
++     "yaw": 0.008262853895316771,
++     "z": 9.075108879871392,
++   },
++   {
++     "scale": 0.8702544056577608,
++     "x": -49.28670194399254,
++     "y": 17.597871423373,
++     "yaw": 6.263438237686308,
++     "z": 7.953451523823054,
++   },
++   {
++     "scale": 0.9464701100951061,
++     "x": -49.21020243659294,
++     "y": 17.809822417004035,
++     "yaw": 5.713305475774307,
++     "z": 6.258321460221171,
++   },
++   {
++     "scale": 1.0641795737901703,
++     "x": -49.18301984931651,
++     "y": 17.874918394291306,
++     "yaw": 3.64654231287278,
++     "z": 5.7376009352950295,
++   },
++   {
++     "scale": 0.8707336004590616,
++     "x": -49.29538847486103,
++     "y": 17.939715771947522,
++     "yaw": 4.14269324697926,
++     "z": 5.223034865078701,
++   },
++   {
++     "scale": 1.0531527587445453,
++     "x": -48.13969374982452,
++     "y": 15.136793234350625,
++     "yaw": 1.511431604141628,
++     "z": 27.581506441872733,
++   },
++   {
++     "scale": 1.2001209267182276,
++     "x": -48.18607782307805,
++     "y": 15.343732540740167,
++     "yaw": 2.744645851733617,
++     "z": 25.929734011194586,
++   },
++   {
++     "scale": 0.7854945310391486,
++     "x": -48.268420022234324,
++     "y": 15.392821987636854,
++     "yaw": 2.8207588519970175,
++     "z": 25.539835885924816,
++   },
++   {
++     "scale": 1.156543885706924,
++     "x": -48.360467306515204,
++     "y": 15.48405006097164,
++     "yaw": 5.663195172890482,
++     "z": 24.813597478084823,
++   },
++   {
++     "scale": 1.1676633873721585,
++     "x": -48.45369571723265,
++     "y": 15.559364102524706,
++     "yaw": 3.4148655547658757,
++     "z": 24.21451180962378,
++   },
++   {
++     "scale": 1.1296152805443853,
++     "x": -48.47090646108802,
++     "y": 15.653383656882212,
++     "yaw": 6.1017202965477955,
++     "z": 23.463950472822543,
++   },
++   {
++     "scale": 0.8027055632555857,
++     "x": -48.40219076702124,
++     "y": 15.776490490324795,
++     "yaw": 0.42920343159999397,
++     "z": 22.478716443099906,
++   },
++   {
++     "scale": 1.2295862921746448,
++     "x": -48.2185943922712,
++     "y": 15.85578127548797,
++     "yaw": 6.113040868666492,
++     "z": 21.84037777654453,
++   },
++   {
++     "scale": 0.9405790942255408,
++     "x": -48.215227944918894,
++     "y": 15.909108144300987,
++     "yaw": 1.7946714349489077,
++     "z": 21.41431271428417,
++   },
++   {
++     "scale": 0.7857958372915164,
++     "x": -48.23730946468203,
++     "y": 16.019430827593897,
++     "yaw": 3.236888914718722,
++     "z": 20.53365432200128,
++   },
++   {
++     "scale": 0.7961953477934003,
++     "x": -48.40403511202979,
++     "y": 16.029970788862556,
++     "yaw": 2.560593053127213,
++     "z": 20.453969699983524,
++   },
++   {
++     "scale": 0.8976079741260037,
++     "x": -48.502888927100344,
++     "y": 16.213134267460553,
++     "yaw": 1.3504675280960516,
++     "z": 18.993535571882525,
++   },
++   {
++     "scale": 1.0717466737842187,
++     "x": -48.46047740567545,
++     "y": 16.248341595067178,
++     "yaw": 2.3161508016405565,
++     "z": 18.71115326674724,
++   },
++   {
++     "scale": 1.2023434296716005,
++     "x": -48.31452368644551,
++     "y": 16.30752141494304,
++     "yaw": 4.170468164281766,
++     "z": 18.234479746074463,
++   },
++   {
++     "scale": 1.1544320173561573,
++     "x": -48.4964538361906,
++     "y": 16.37741091735661,
++     "yaw": 2.7353892712341703,
++     "z": 17.68112214296095,
++   },
++   {
++     "scale": 0.7714585911016911,
++     "x": -48.71435361634957,
++     "y": 16.7063650275697,
++     "yaw": 4.654355148916952,
++     "z": 15.059331470734051,
++   },
++   {
++     "scale": 0.9716304851463065,
++     "x": -48.619906434108344,
++     "y": 16.796105751849247,
++     "yaw": 3.0518979057863778,
++     "z": 14.339930906227789,
++   },
++   {
++     "scale": 0.9104265918722376,
++     "x": -48.46705959371229,
++     "y": 16.872763207298703,
++     "yaw": 4.192757165119545,
++     "z": 13.723461229222204,
++   },
++   {
++     "scale": 1.216211876948364,
++     "x": -48.396362100300394,
++     "y": 16.922786358150187,
++     "yaw": 4.65022508833478,
++     "z": 13.321966443342541,
++   },
++   {
++     "scale": 0.8657868615118787,
++     "x": -48.793942527188165,
++     "y": 17.024391277995893,
++     "yaw": 3.620280213785225,
++     "z": 12.52109247945759,
++   },
++   {
++     "scale": 1.2304417189443484,
++     "x": -48.46915565660535,
++     "y": 17.03768051614752,
++     "yaw": 3.6252320130075386,
++     "z": 12.40616110870987,
++   },
++   {
++     "scale": 1.1694576762383804,
++     "x": -48.7422049722405,
++     "y": 17.170119635248557,
++     "yaw": 1.487842679168219,
++     "z": 11.355617938924087,
++   },
++   {
++     "scale": 1.2194575741887093,
++     "x": -48.78930629422467,
++     "y": 17.291468991711735,
++     "yaw": 4.875966849236656,
++     "z": 10.387553438772164,
++   },
++   {
++     "scale": 1.24950955377426,
++     "x": -48.63361683954341,
++     "y": 17.43262589230435,
++     "yaw": 0.31081287126651896,
++     "z": 9.255787405572814,
++   },
++   {
++     "scale": 0.8090818993514404,
++     "x": -48.77789847904185,
++     "y": 17.475247033534107,
++     "yaw": 0.2651541461744919,
++     "z": 8.919228384015629,
++   },
++   {
++     "scale": 1.0176638076081872,
++     "x": -48.7964339203682,
++     "y": 17.614774465421213,
++     "yaw": 5.719140074374472,
++     "z": 7.805185676848548,
++   },
++   {
++     "scale": 0.7642538433428854,
++     "x": -48.85682633969054,
++     "y": 17.628199618530925,
++     "yaw": 0.49542891088845775,
++     "z": 7.699577177790486,
++   },
++   {
++     "scale": 1.0735777182271704,
++     "x": -48.70828666188686,
++     "y": 17.676451670657848,
++     "yaw": 3.105032778632825,
++     "z": 7.310127727461465,
++   },
++   {
++     "scale": 1.026089457445778,
++     "x": -48.65806968665382,
++     "y": 17.76625066600973,
++     "yaw": 1.2049223672244682,
++     "z": 6.59145810437383,
++   },
++   {
++     "scale": 1.2189286241773516,
++     "x": -48.68490838699344,
++     "y": 17.82492542725522,
++     "yaw": 4.413154522011257,
++     "z": 6.123489904638868,
++   },
++   {
++     "scale": 0.915267150499858,
++     "x": -48.93318661005148,
++     "y": 17.878325785323977,
++     "yaw": 5.84438550602371,
++     "z": 5.703634652335025,
++   },
++   {
++     "scale": 1.083995852386579,
++     "x": -47.97917509753083,
++     "y": 15.438592259667349,
++     "yaw": 0.3166680238656982,
++     "z": 25.166399511459495,
++   },
++   {
++     "scale": 0.8628418946173042,
++     "x": -48.009446301224955,
++     "y": 15.779582593252417,
++     "yaw": 3.6694793556983947,
++     "z": 22.443395035346676,
++   },
++   {
++     "scale": 1.2115914738969877,
++     "x": -48.031551059156186,
++     "y": 15.839506450283807,
++     "yaw": 3.7600298388951954,
++     "z": 21.96532239288525,
++   },
++   {
++     "scale": 1.0277482963865623,
++     "x": -48.158123834073734,
++     "y": 15.995002841588576,
++     "yaw": 1.8584461183004548,
++     "z": 20.726643331774653,
++   },
++   {
++     "scale": 0.9992336212890223,
++     "x": -48.15315170801594,
++     "y": 16.094670785730706,
++     "yaw": 1.647224558108935,
++     "z": 19.930363350246914,
++   },
++   {
++     "scale": 0.8435172477038577,
++     "x": -48.088664197728804,
++     "y": 16.153979898791295,
++     "yaw": 3.5886164696289,
++     "z": 19.454859699880195,
++   },
++   {
++     "scale": 1.0715004808735102,
++     "x": -48.20305695732429,
++     "y": 16.1977428447688,
++     "yaw": 2.066018664873053,
++     "z": 19.108375173588005,
++   },
++   {
++     "scale": 0.7621078003430739,
++     "x": -48.1685415196784,
++     "y": 16.476414650515654,
++     "yaw": 1.5013098246317407,
++     "z": 16.881417233699274,
++   },
++   {
++     "scale": 1.1710122030926868,
++     "x": -48.18445712231127,
++     "y": 16.663967970421073,
++     "yaw": 5.871997247980736,
++     "z": 15.383675401906888,
++   },
++   {
++     "scale": 0.7725238143466413,
++     "x": -48.23743739954125,
++     "y": 16.72305400649784,
++     "yaw": 5.547536016662381,
++     "z": 14.913129384105076,
++   },
++   {
++     "scale": 0.8689665368292481,
++     "x": -48.2836281845575,
++     "y": 16.816297474503518,
++     "yaw": 3.2940077026312227,
++     "z": 14.169550848053655,
++   },
++   {
++     "scale": 1.2006279340712354,
++     "x": -48.318202755740316,
++     "y": 16.917444558604622,
++     "yaw": 4.433278298761619,
++     "z": 13.362524303725468,
++   },
++   {
++     "scale": 1.1942727862624452,
++     "x": -48.28065455495636,
++     "y": 16.97301089616958,
++     "yaw": 3.1564789568640768,
++     "z": 12.917646698592293,
++   },
++   {
++     "scale": 1.1998966183746234,
++     "x": -48.23759617543155,
++     "y": 17.018750934547278,
++     "yaw": 5.955158864041563,
++     "z": 12.551112537951155,
++   },
++   {
++     "scale": 1.2243596910266206,
++     "x": -48.3064502998204,
++     "y": 17.244024869182613,
++     "yaw": 4.197870417832759,
++     "z": 10.753489435276197,
++   },
++   {
++     "scale": 0.7768088959855959,
++     "x": -48.3478301398695,
++     "y": 17.28209685080219,
++     "yaw": 0.06263730258078701,
++     "z": 10.450489273292707,
++   },
++   {
++     "scale": 1.1317599184112623,
++     "x": -48.32608557184318,
++     "y": 17.399288356292526,
++     "yaw": 1.0049698361589587,
++     "z": 9.513778248916745,
++   },
++   {
++     "scale": 1.0341063117375597,
++     "x": -48.43829923218331,
++     "y": 17.602778082946315,
++     "yaw": 6.1441223143734645,
++     "z": 7.891337710489106,
++   },
++   {
++     "scale": 0.7957619919907302,
++     "x": -48.48342603298963,
++     "y": 17.669498277956155,
++     "yaw": 1.4026835274677298,
++     "z": 7.359597025423812,
++   },
++   {
++     "scale": 1.012764203012921,
++     "x": -48.51934302235722,
++     "y": 17.755756080744327,
++     "yaw": 0.6622604792472118,
++     "z": 6.671541382893731,
++   },
++   {
++     "scale": 1.2245467201573774,
++     "x": -51.65415850588122,
++     "y": 15.323855039116461,
++     "yaw": 3.1051672559143433,
++     "z": 26.182336084373702,
++   },
++   {
++     "scale": 1.00691345683299,
++     "x": -51.69548825870879,
++     "y": 15.36645251517184,
++     "yaw": 3.0310877820011926,
++     "z": 25.84318385130022,
++   },
++   {
++     "scale": 1.1088317520916462,
++     "x": -51.7294016703097,
++     "y": 15.416612834180706,
++     "yaw": 4.0196192334125875,
++     "z": 25.443418647037014,
++   },
++   {
++     "scale": 1.0263942795572802,
++     "x": -51.73694222002774,
++     "y": 15.689148853241932,
++     "yaw": 3.8392266777842807,
++     "z": 23.266594020262726,
++   },
++   {
++     "scale": 0.9036987435538322,
++     "x": -51.959601292432296,
++     "y": 15.924728379480078,
++     "yaw": 0.7797066220933362,
++     "z": 21.39079682035025,
++   },
++   {
++     "scale": 1.1770659446483478,
++     "x": -52.07548854629738,
++     "y": 16.678233584936244,
++     "yaw": 4.224324403496017,
++     "z": 15.374897722232168,
++   },
++   {
++     "scale": 1.166874022455886,
++     "x": -52.15021959256958,
++     "y": 17.132633466739208,
++     "yaw": 4.673711421789126,
++     "z": 11.747151171387483,
++   },
++   {
++     "scale": 1.2316378615796566,
++     "x": -52.180162966222326,
++     "y": 17.296874229074454,
++     "yaw": 2.8988537624720756,
++     "z": 10.435997776216006,
++   },
++   {
++     "scale": 0.9661898048361763,
++     "x": -52.19572984921217,
++     "y": 17.561024038784673,
++     "yaw": 5.059197205539323,
++     "z": 8.326377920852174,
++   },
++   {
++     "scale": 0.7822385714389384,
++     "x": -51.335759098764335,
++     "y": 15.167816008802038,
++     "yaw": 2.9036524146523432,
++     "z": 27.4201674928431,
++   },
++   {
++     "scale": 0.9347271809820086,
++     "x": -51.468091066829764,
++     "y": 15.245542261970694,
++     "yaw": 4.6593899014460325,
++     "z": 26.802867689444195,
++   },
++   {
++     "scale": 0.795332959620282,
++     "x": -51.263849749016934,
++     "y": 15.301406222407241,
++     "yaw": 2.350430331097696,
++     "z": 26.35109896770639,
++   },
++   {
++     "scale": 1.0244841540697962,
++     "x": -51.57365237100394,
++     "y": 15.406436693342403,
++     "yaw": 1.3525997326595016,
++     "z": 25.520492802014882,
++   },
++   {
++     "scale": 1.1783888661302626,
++     "x": -51.385276698243445,
++     "y": 15.56905405097641,
++     "yaw": 5.544560922589199,
++     "z": 24.216403926668367,
++   },
++   {
++     "scale": 0.8442733630072325,
++     "x": -51.329908196912264,
++     "y": 15.580207740538754,
++     "yaw": 4.474545209191223,
++     "z": 24.125810230067945,
++   },
++   {
++     "scale": 0.761876227450557,
++     "x": -51.58944876071365,
++     "y": 15.656868557550478,
++     "yaw": 5.719498517099336,
++     "z": 23.520460985551637,
++   },
++   {
++     "scale": 1.1741474766749889,
++     "x": -51.48835489708591,
++     "y": 15.71343058772618,
++     "yaw": 1.6864765227108145,
++     "z": 23.06590714458683,
++   },
++   {
++     "scale": 0.9881695691728964,
++     "x": -51.39934056609377,
++     "y": 15.754802476463373,
++     "yaw": 1.1117150419309587,
++     "z": 22.73301956366635,
++   },
++   {
++     "scale": 1.2128916473593563,
++     "x": -51.4190520971577,
++     "y": 15.885012573725543,
++     "yaw": 2.3726338433916774,
++     "z": 21.69342995708871,
++   },
++   {
++     "scale": 1.0986581698525697,
++     "x": -51.401154016917644,
++     "y": 15.934344093769322,
++     "yaw": 0.17839249791787468,
++     "z": 21.29888407645633,
++   },
++   {
++     "scale": 0.7961327960947528,
++     "x": -51.77391680979476,
++     "y": 16.030427360825705,
++     "yaw": 5.317685754202066,
++     "z": 20.541447667030752,
++   },
++   {
++     "scale": 1.0615110493963584,
++     "x": -51.716065028247066,
++     "y": 16.166185320867225,
++     "yaw": 5.3189484075737905,
++     "z": 19.45544343369199,
++   },
++   {
++     "scale": 0.8530283110449091,
++     "x": -51.44023632358337,
++     "y": 16.217262915114407,
++     "yaw": 3.0489245686778097,
++     "z": 19.039975741163868,
++   },
++   {
++     "scale": 0.9829038679599762,
++     "x": -51.852211164021355,
++     "y": 16.46059545627795,
++     "yaw": 2.454577050575169,
++     "z": 17.107364550102645,
++   },
++   {
++     "scale": 1.2000848966417834,
++     "x": -51.64081146232371,
++     "y": 16.481588309700598,
++     "yaw": 1.9123470438103556,
++     "z": 16.933957852132096,
++   },
++   {
++     "scale": 0.7942115863552317,
++     "x": -51.516480110679936,
++     "y": 16.534139578952455,
++     "yaw": 4.7976163538068874,
++     "z": 16.510815337909694,
++   },
++   {
++     "scale": 1.0955469235777855,
++     "x": -51.8931328574615,
++     "y": 16.5758735762327,
++     "yaw": 1.678068892590701,
++     "z": 16.18762447874719,
++   },
++   {
++     "scale": 1.1670046362560242,
++     "x": -51.61937713959378,
++     "y": 16.637207525211853,
++     "yaw": 4.091870258683513,
++     "z": 15.690286434497835,
++   },
++   {
++     "scale": 0.893659561756067,
++     "x": -51.88326024255508,
++     "y": 16.709699794079643,
++     "yaw": 4.516400486254373,
++     "z": 15.118348324923408,
++   },
++   {
++     "scale": 1.111795491189696,
++     "x": -51.6960080344636,
++     "y": 16.731060830969362,
++     "yaw": 6.175268732661091,
++     "z": 14.942654130606098,
++   },
++   {
++     "scale": 1.2209748530294746,
++     "x": -51.84333992313128,
++     "y": 16.907150560058653,
++     "yaw": 2.734089429021953,
++     "z": 13.540024703581825,
++   },
++   {
++     "scale": 0.8734243294456974,
++     "x": -52.00597964020481,
++     "y": 17.054619847715365,
++     "yaw": 3.3720837985168632,
++     "z": 12.366429435124768,
++   },
++   {
++     "scale": 1.0580166734289378,
++     "x": -51.8428209428612,
++     "y": 17.107560069451573,
++     "yaw": 5.274578734210228,
++     "z": 11.939131606377035,
++   },
++   {
++     "scale": 0.8772327288752422,
++     "x": -51.99830394801535,
++     "y": 17.22139838107396,
++     "yaw": 1.4473862692420718,
++     "z": 11.033988101741688,
++   },
++   {
++     "scale": 1.248197856475599,
++     "x": -52.016389992432075,
++     "y": 17.265146502212154,
++     "yaw": 2.2924983026361767,
++     "z": 10.685014987006685,
++   },
++   {
++     "scale": 0.9803968867054209,
++     "x": -51.69840912141933,
++     "y": 17.300633494043723,
++     "yaw": 2.4182291934095925,
++     "z": 10.392951488195006,
++   },
++   {
++     "scale": 1.2116040916880593,
++     "x": -51.864102663823566,
++     "y": 17.334121673030314,
++     "yaw": 4.103234882191413,
++     "z": 10.12992367490834,
++   },
++   {
++     "scale": 0.7722062354441732,
++     "x": -51.79490564493572,
++     "y": 17.49469173431862,
++     "yaw": 3.360826042637572,
++     "z": 8.84541423432174,
++   },
++   {
++     "scale": 1.2163741909898818,
++     "x": -51.93763345144841,
++     "y": 17.542611286847386,
++     "yaw": 0.1407699578052085,
++     "z": 8.466487001379242,
++   },
++   {
++     "scale": 1.1615085175726563,
++     "x": -51.8114640886169,
++     "y": 17.71484420899069,
++     "yaw": 2.687020126133699,
++     "z": 7.087275254217997,
++   },
++   {
++     "scale": 0.8489314002217725,
++     "x": -50.861337282427456,
++     "y": 15.063037216581872,
++     "yaw": 1.727716136551977,
++     "z": 28.24430752303445,
++   },
++   {
++     "scale": 0.9981756546767429,
++     "x": -51.08740646517646,
++     "y": 15.106965850817508,
++     "yaw": 0.9316572136625333,
++     "z": 27.899521072076936,
++   },
++   {
++     "scale": 0.7994552259333432,
++     "x": -50.84523918031411,
++     "y": 15.169924442784396,
++     "yaw": 1.5509226168722499,
++     "z": 27.39005402726449,
++   },
++   {
++     "scale": 1.0503262025304139,
++     "x": -50.95982487529241,
++     "y": 15.197215021844022,
++     "yaw": 3.4455913753282044,
++     "z": 27.175156288292317,
++   },
++   {
++     "scale": 1.1450841174228117,
++     "x": -50.95215609053969,
++     "y": 15.270182753656991,
++     "yaw": 1.6019830704193778,
++     "z": 26.59208056509014,
++   },
++   {
++     "scale": 0.7516008451348171,
++     "x": -51.05307763668594,
++     "y": 15.33703750189161,
++     "yaw": 5.729594338590825,
++     "z": 26.060773202738584,
++   },
++   {
++     "scale": 0.9517107288120314,
++     "x": -51.2299368594603,
++     "y": 15.477971476479434,
++     "yaw": 5.4986684568352215,
++     "z": 24.939772647332216,
++   },
++   {
++     "scale": 1.097222713404335,
++     "x": -50.91833236211116,
++     "y": 15.550424409273546,
++     "yaw": 2.900922397393309,
++     "z": 24.352587702660394,
++   },
++   {
++     "scale": 0.8643077118322253,
++     "x": -51.100606244473596,
++     "y": 15.579065336240456,
++     "yaw": 3.5598780144997475,
++     "z": 24.128733482081405,
++   },
++   {
++   
+ Test Files  12 failed | 22 passed (34)
+      Tests  47 failed | 140 passed | 2 expected fail (189)
+   Start at  20:13:59
+   Duration  2.77s (tests 85%, transform 10%, import 5%, worker 1%)
+
+  "scale": 1.222727649495937,
++     "x": -51.216651662250705,
++     "y": 15.721582060016226,
++     "yaw": 5.323225029140816,
++     "z": 22.993444320360176,
++   },
++   {
++     "scale": 0.7837624727981165,
++     "x": -51.302421601502964,
++     "y": 15.762149382696952,
++     "yaw": 0.5856548310801921,
++     "z": 22.671710990034033,
++   },
++   {
++     "scale": 1.0386597180040553,
++     "x": -51.183826452730926,
++     "y": 15.860867511795368,
++     "yaw": 1.238950609780214,
++     "z": 21.879940093027617,
++   },
++   {
++     "scale": 0.8700922593707219,
++     "x": -51.019672427276475,
++     "y": 15.902040668099653,
++     "yaw": 5.430138138409528,
++     "z": 21.54660840719548,
++   },
++   {
++     "scale": 0.9389006096171215,
++     "x": -51.18412954649534,
++     "y": 15.9859218303347,
++     "yaw": 1.9713939855467735,
++     "z": 20.881010613261346,
++   },
++   {
++     "scale": 0.9409503954229876,
++     "x": -51.114546652886986,
++     "y": 16.20900489271153,
++     "yaw": 3.284334459656111,
++     "z": 19.09713502976782,
++   },
++   {
++     "scale": 0.9584224128630012,
++     "x": -51.27891117948582,
++     "y": 16.2860925050918,
++     "yaw": 1.8524591743373506,
++     "z": 18.48580089486131,
++   },
++   {
++     "scale": 0.9126228112727404,
++     "x": -51.14324627037246,
++     "y": 16.427875024557576,
++     "yaw": 4.882289955682277,
++     "z": 17.349570068461567,
++   },
++   {
++     "scale": 0.8137621523346752,
++     "x": -51.21136483311301,
++     "y": 16.4914220350096,
++     "yaw": 1.853589970513836,
++     "z": 16.843796209976936,
++   },
++   {
++     "scale": 0.9068927908083424,
++     "x": -51.13309529568477,
++     "y": 16.54098224756308,
++     "yaw": 3.568115884680106,
++     "z": 16.4457919179153,
++   },
++   {
++     "scale": 0.995629015378654,
++     "x": -51.343449114978604,
++     "y": 16.606427640549374,
++     "yaw": 3.946031984619731,
++     "z": 15.928698472472604,
++   },
++   {
++     "scale": 1.0264804068719968,
++     "x": -51.338830514376866,
++     "y": 16.64194955046987,
++     "yaw": 0.6178904928191801,
++     "z": 15.644823481121145,
++   },
++   {
++     "scale": 0.8804653550032526,
++     "x": -51.3214796081989,
++     "y": 16.76770236886805,
++     "yaw": 4.080457748015206,
++     "z": 14.639837018086407,
++   },
++   {
++     "scale": 1.2043516353005543,
++     "x": -51.490656642891985,
++     "y": 16.818964049464558,
++     "yaw": 3.9561866900268288,
++     "z": 14.234929659240319,
++   },
++   {
++     "scale": 0.782172538805753,
++     "x": -51.43647761184684,
++     "y": 16.865870999719483,
++     "yaw": 2.337313149285851,
++     "z": 13.858771033301172,
++   },
++   {
++     "scale": 0.8580210186773911,
++     "x": -51.526637632910194,
++     "y": 16.944211035047193,
++     "yaw": 1.0881071941121945,
++     "z": 13.235424927094092,
++   },
++   {
++     "scale": 1.157522614696063,
++     "x": -51.29215569639532,
++     "y": 16.998560500435996,
++     "yaw": 3.545880884537387,
++     "z": 12.794942617177972,
++   },
++   {
++     "scale": 0.7893246132880449,
++     "x": -51.547507337152204,
++     "y": 17.207107593037655,
++     "yaw": 1.6217823894947756,
++     "z": 11.135962185999261,
++   },
++   {
++     "scale": 0.9773276339983568,
++     "x": -51.32253028304825,
++     "y": 17.30264808018692,
++     "yaw": 5.689297550582143,
++     "z": 10.366702594035091,
++   },
++   {
++     "scale": 0.8525222500320524,
++     "x": -51.67774161631487,
++     "y": 17.396038865006993,
++     "yaw": 3.238121742116646,
++     "z": 9.630291489875447,
++   },
++   {
++     "scale": 1.2249365823809057,
++     "x": -51.40056108765234,
++     "y": 17.5548437927966,
++     "yaw": 3.9607261935839446,
++     "z": 8.354263701998873,
++   },
++   {
++     "scale": 1.0892778191482648,
++     "x": -51.6509090428767,
++     "y": 17.724681893922387,
++     "yaw": 0.6381686703323826,
++     "z": 7.004354348754594,
++   },
++   {
++     "scale": 0.7773052100092173,
++     "x": -51.587523943133874,
++     "y": 17.75980035607936,
++     "yaw": 2.266425149658986,
++     "z": 6.722114641747458,
++   },
++   {
++     "scale": 0.8867185098351911,
++     "x": -51.77313008883584,
++     "y": 17.85989131416427,
++     "yaw": 2.94677476017398,
++     "z": 5.927598064243744,
++   },
++   {
++     "scale": 1.16418186458759,
++     "x": -51.40311118660939,
++     "y": 17.909127933869605,
++     "yaw": 1.8982044749213085,
++     "z": 5.524299868775802,
++   },
++   {
++     "scale": 1.2442185913678259,
++     "x": -51.63648110016288,
++     "y": 17.92935580095509,
++     "yaw": 6.01198534190389,
++     "z": 5.369022314199551,
++   },
++   {
++     "scale": 0.7554701291956007,
++     "x": -50.706010064460145,
++     "y": 15.109059095045087,
++     "yaw": 2.23722468305663,
++     "z": 27.872480960228536,
++   },
++   {
++     "scale": 1.201767552876845,
++     "x": -50.54198691107584,
++     "y": 15.178629333863501,
++     "yaw": 3.888711767516897,
++     "z": 27.312314575967463,
++   },
++   {
++     "scale": 1.0139413024298847,
++     "x": -50.76944467575203,
++     "y": 15.276986814045813,
++     "yaw": 1.0037398585254533,
++     "z": 26.53278653996877,
++   },
++   {
++     "scale": 1.057098409626633,
++     "x": -50.742970087847254,
++     "y": 15.353175634425133,
++     "yaw": 2.3343731857274252,
++     "z": 25.923472192088077,
++   },
++   {
++     "scale": 0.9134724682662636,
++     "x": -50.52913288027793,
++     "y": 15.45475151306018,
++     "yaw": 4.835406833989217,
++     "z": 25.106297230867504,
++   },
++   {
++     "scale": 0.7841115074697882,
++     "x": -50.79398639085477,
++     "y": 15.679089994484093,
++     "yaw": 2.290566231117643,
++     "z": 23.321440443995026,
++   },
++   {
++     "scale": 1.199439630494453,
++     "x": -50.55165871548246,
++     "y": 15.787378731789067,
++     "yaw": 5.352129744909677,
++     "z": 22.449873620287406,
++   },
++   {
++     "scale": 0.7565101807704195,
++     "x": -50.856377729094135,
++     "y": 15.947553067863918,
++     "yaw": 2.215573924118473,
++     "z": 21.17863820593201,
++   },
++   {
++     "scale": 0.8892881977371871,
++     "x": -50.615863587044515,
++     "y": 16.1078615566832,
++     "yaw": 3.360019647082246,
++     "z": 19.891586584337347,
++   },
++   {
++     "scale": 1.135593802551739,
++     "x": -50.67535598305423,
++     "y": 16.362662533938423,
++     "yaw": 4.645027021483003,
++     "z": 17.857839609217372,
++   },
++   {
++     "scale": 0.9602307180175558,
++     "x": -51.02281204117108,
++     "y": 16.628670654085,
++     "yaw": 5.639374643115518,
++     "z": 15.742353344104183,
++   },
++   {
++     "scale": 1.110564589384012,
++     "x": -50.86243318015306,
++     "y": 16.694092375808395,
++     "yaw": 3.616670131342229,
++     "z": 15.21542783678134,
++   },
++   {
++     "scale": 1.1675477682147175,
++     "x": -51.13361677243384,
++     "y": 16.781120220792946,
++     "yaw": 2.317396300834883,
++     "z": 14.527577099513426,
++   },
++   {
++     "scale": 1.1063178771873936,
++     "x": -50.83845138316232,
++     "y": 16.931734072114345,
++     "yaw": 4.314554514948049,
++     "z": 13.316492237924638,
++   },
++   {
++     "scale": 1.2306207190267742,
++     "x": -50.94181195219346,
++     "y": 16.981635238393206,
++     "yaw": 3.632912087153454,
++     "z": 12.920673937739375,
++   },
++   {
++     "scale": 1.0503387396456674,
++     "x": -50.965770055176534,
++     "y": 17.02906545199221,
++     "yaw": 2.5301344052937016,
++     "z": 12.542447685585836,
++   },
++   {
++     "scale": 1.0707228960236534,
++     "x": -51.125081460231996,
++     "y": 17.09708600830054,
++     "yaw": 0.9099894731713124,
++     "z": 12.003402942348746,
++   },
++   {
++     "scale": 1.2030371717410162,
++     "x": -51.20150097304727,
++     "y": 17.41131510484265,
++     "yaw": 3.7985089980037667,
++     "z": 9.495397097974495,
++   },
++   {
++     "scale": 1.2094030904117972,
++     "x": -51.1602274197096,
++     "y": 17.600701414141803,
++     "yaw": 6.0445710228854415,
++     "z": 7.981458929230217,
++   },
++   {
++     "scale": 1.098502051201649,
++     "x": -50.962625851247196,
++     "y": 17.62774572055787,
++     "yaw": 1.944408752886374,
++     "z": 7.760090123994495,
++   },
++   {
++     "scale": 1.1363437570398673,
++     "x": -51.02783180408531,
++     "y": 17.727209059987217,
++     "yaw": 0.13921354755733154,
++     "z": 6.967336007490895,
++   },
++   {
++     "scale": 1.1402036829385906,
++     "x": -51.14700229769406,
++     "y": 17.798629001842347,
++     "yaw": 3.1201012620213557,
++     "z": 6.400050759783831,
++   },
++   {
++     "scale": 0.8837015498429537,
++     "x": -51.11502543930732,
++     "y": 17.896640599751844,
++     "yaw": 3.487706393496328,
++     "z": 5.616267800133517,
++   },
++   {
++     "scale": 1.1355094884056598,
++     "x": -50.12389538133351,
++     "y": 15.083885645214469,
++     "yaw": 2.3667116569602697,
++     "z": 28.05781694002723,
++   },
++   {
++     "scale": 0.841347913723439,
++     "x": -50.27602434876053,
++     "y": 15.254589997034055,
++     "yaw": 2.9100676893257122,
++     "z": 26.69834389731053,
++   },
++   {
++     "scale": 0.8440663755172864,
++     "x": -50.08383968333192,
++     "y": 15.289325207786169,
++     "yaw": 2.819209111192664,
++     "z": 26.415679239528025,
++   },
++   {
++     "scale": 1.1125789937796071,
++     "x": -50.22579180901474,
++     "y": 15.512742102262564,
++     "yaw": 2.6876519019354115,
++     "z": 24.634861974058072,
++   },
++   {
++     "scale": 0.9490954229841009,
++     "x": -50.22568424060552,
++     "y": 15.556228889944032,
++     "yaw": 0.00414744882646252,
++     "z": 24.28748595411006,
++   },
++   {
++     "scale": 0.9118216446368024,
++     "x": -50.45620799993904,
++     "y": 15.57619182872586,
++     "yaw": 4.626395609889925,
++     "z": 24.134257043086517,
++   },
++   {
++     "scale": 1.0736207492882386,
++     "x": -50.232883380012254,
++     "y": 15.642126638500486,
++     "yaw": 6.104278012778372,
++     "z": 23.60152818131393,
++   },
++   {
++     "scale": 1.127923199092038,
++     "x": -50.22538918932864,
++     "y": 15.848965498502366,
++     "yaw": 4.611899586826665,
++     "z": 21.94909364403029,
++   },
++   {
++     "scale": 1.0382329525891691,
++     "x": -50.34526568628067,
++     "y": 15.959704634943048,
++     "yaw": 5.067047545794648,
++     "z": 21.067749557095475,
++   },
++   {
++     "scale": 0.9024631845531985,
++     "x": -50.419918881672174,
++     "y": 16.08142458118964,
++     "yaw": 1.5564440105633166,
++     "z": 20.097467295521973,
++   },
++   {
++     "scale": 0.85821659991052,
++     "x": -50.324999779000194,
++     "y": 16.276718887197784,
++     "yaw": 2.3154233027201636,
++     "z": 18.534886697965895,
++   },
++   {
++     "scale": 0.760791648295708,
++     "x": -50.5159874578917,
++     "y": 16.378694209863898,
++     "yaw": 4.943560410014062,
++     "z": 17.725469662701794,
++   },
++   {
++     "scale": 0.7543377258116379,
++     "x": -50.62287204906812,
++     "y": 16.55893639102578,
++     "yaw": 0.8522057728996864,
++     "z": 16.288581157961197,
++   },
++   {
++     "scale": 0.8456647314596921,
++     "x": -50.59570156254068,
++     "y": 16.70532106072642,
++     "yaw": 2.6025791633429463,
++     "z": 15.118523095852586,
++   },
++   {
++     "scale": 1.1952994582243264,
++     "x": -50.711281829773014,
++     "y": 16.748881318466736,
++     "yaw": 0.748155326598092,
++     "z": 14.773686961766042,
++   },
++   {
++     "scale": 0.8006700021214783,
++     "x": -50.6025998590639,
++     "y": 16.86920400041854,
++     "yaw": 0.23667449003107033,
++     "z": 13.809609476596256,
++   },
++   {
++     "scale": 1.0648749619722366,
++     "x": -50.42733900930179,
++     "y": 16.98649096166482,
++     "yaw": 1.2207274035333848,
++     "z": 12.867982527207129,
++   },
++   {
++     "scale": 0.8093975408701226,
++     "x": -50.80374196715243,
++     "y": 17.219451451743954,
++     "yaw": 5.272540311473167,
++     "z": 11.017261371727363,
++   },
++   {
++     "scale": 1.005520844599232,
++     "x": -50.639063539444436,
++     "y": 17.35560456258245,
++     "yaw": 4.189969007107287,
++     "z": 9.925217876253146,
++   },
++   {
++     "scale": 0.8231431528693065,
++     "x": -50.73830214805017,
++     "y": 17.451162797375584,
++     "yaw": 2.9412552126855296,
++     "z": 9.164578075798248,
++   },
++   {
++     "scale": 1.0605407956754789,
++     "x": -50.708591052618715,
++     "y": 17.511206288402903,
++     "yaw": 5.454185846195939,
++     "z": 8.684146749321902,
++   },
++   {
++     "scale": 0.8661113012349233,
++     "x": -50.55004870325581,
++     "y": 17.6603930643294,
++     "yaw": 3.7907003640799637,
++     "z": 7.488156950387984,
++   },
++   {
++     "scale": 0.8853922005509958,
++     "x": -50.66122399973705,
++     "y": 17.825536568730605,
++     "yaw": 5.337520214032646,
++     "z": 6.171990839183948,
++   },
++   {
++     "scale": 1.1088389814831316,
++     "x": -49.836658635742396,
++     "y": 15.171284260367974,
++     "yaw": 4.563828381085135,
++     "z": 27.351904328985977,
++   },
++   {
++     "scale": 1.0134068788029253,
++     "x": -49.66336577772893,
++     "y": 15.320774465159047,
++     "yaw": 5.712066074022535,
++     "z": 26.153087189621214,
++   },
++   {
++     "scale": 1.087114542722702,
++     "x": -49.901426003366,
++     "y": 15.60271261848975,
++     "yaw": 1.184715818569181,
++     "z": 23.90740266756398,
++   },
++   {
++     "scale": 1.2477578399702907,
++     "x": -49.98613391417601,
++     "y": 15.770396183000411,
++     "yaw": 5.654899874398004,
++     "z": 22.57023573846887,
++   },
++   {
++     "scale": 0.8475780339213088,
++     "x": -50.0611351965878,
++     "y": 15.781463221262674,
++     "yaw": 0.48100279043977884,
++     "z": 22.48386053949635,
++   },
++   {
++     "scale": 0.922876508324407,
++     "x": -50.10731884771084,
++     "y": 15.83526182505302,
++     "yaw": 0.2659989462552348,
++     "z": 22.05536565981994,
++   },
++   {
++     "scale": 0.7779199269134551,
++     "x": -50.09891245529175,
++     "y": 15.917338808509522,
++     "yaw": 4.491101107222258,
++     "z": 21.39950635954841,
++   },
++   {
++     "scale": 0.9209225698141381,
++     "x": -49.96621687294825,
++     "y": 15.960769246751443,
++     "yaw": 0.026274270565974377,
++     "z": 21.04899511108458,
++   },
++   {
++     "scale": 1.2036563757574186,
++     "x": -49.807036471423174,
++     "y": 16.029728591628373,
++     "yaw": 4.63664250693146,
++     "z": 20.493842779872303,
++   },
++   {
++     "scale": 0.8509361206088215,
++     "x": -49.87979679565518,
++     "y": 16.19417767354753,
++     "yaw": 0.22015740467959596,
++     "z": 19.182189654878915,
++   },
++   {
++     "scale": 0.8885594692546874,
++     "x": -49.8976520461174,
++     "y": 16.258010123891292,
++     "yaw": 1.1587821797004556,
++     "z": 18.67277827717944,
++   },
++   {
++     "scale": 1.1133168324595317,
++     "x": -49.957819950570496,
++     "y": 16.29940491162706,
++     "yaw": 0.07273843446490354,
++     "z": 18.343743098516875,
++   },
++   {
++     "scale": 1.2465987043688074,
++     "x": -50.244194565986334,
++     "y": 16.329026700311807,
++     "yaw": 5.212111163773751,
++     "z": 18.11486642203165,
++   },
++   {
++     "scale": 0.9079491066513583,
++     "x": -50.09707132821157,
++     "y": 16.386642040498554,
++     "yaw": 2.527074094779485,
++     "z": 17.65065678154566,
++   },
++   {
++     "scale": 1.065328262746334,
++     "x": -50.28114227830389,
++     "y": 16.486954089603387,
++     "yaw": 3.7570840031835995,
++     "z": 16.85433906453607,
++   },
++   {
++     "scale": 1.1219988795928657,
++     "x": -50.20507216798137,
++     "y": 16.606558967765885,
++     "yaw": 0.19141822833183048,
++     "z": 15.89687729633729,
++   },
++   {
++     "scale": 1.1842372684041038,
++     "x": -50.16503283606778,
++     "y": 16.7319240906043,
++     "yaw": 5.518647436879934,
++     "z": 14.894376842454477,
++   },
++   {
++     "scale": 0.869461034424603,
++     "x": -50.025205781538205,
++     "y": 17.02474059794331,
++     "yaw": 6.225113757295011,
++     "z": 12.551576339150843,
++   },
++   {
++     "scale": 1.0718440328491852,
++     "x": -50.38330986036894,
++     "y": 17.100834716134706,
++     "yaw": 1.8066972008760431,
++     "z": 11.953412975799187,
++   },
++   {
++     "scale": 0.9874231104040518,
++     "x": -50.37969587567849,
++     "y": 17.13508302764967,
++     "yaw": 2.668559843771698,
++     "z": 11.679739285526054,
++   },
++   {
++     "scale": 1.0444483916508034,
++     "x": -50.426657639408575,
++     "y": 17.303646218392533,
++     "yaw": 5.079932259683271,
++     "z": 10.334522910806882,
++   },
++   {
++     "scale": 0.9755444469628856,
++     "x": -50.371107012491365,
++     "y": 17.664140034117736,
++     "yaw": 2.356830934165648,
++     "z": 7.45339215724194,
++   },
++   {
++     "scale": 0.9877409464679658,
++     "x": -50.38733710685531,
++     "y": 17.87191908502718,
++     "yaw": 0.5284152193006071,
++     "z": 5.79408858985465,
++   },
++   {
++     "scale": 0.8246818515472114,
++     "x": -49.37839264126498,
++     "y": 15.020951246703044,
++     "yaw": 0.11924615236088865,
++     "z": 28.54036621069931,
++   },
++   {
++     "scale": 1.0940369069576263,
++     "x": -49.490684283155076,
++     "y": 15.051582669001073,
++     "yaw": 1.0224354673526035,
++     "z": 28.29872064864345,
++   },
++   {
++     "scale": 1.056648276397027,
++     "x": -49.307948794691185,
++     "y": 15.282225510815625,
++     "yaw": 1.7210840032912917,
++     "z": 26.4514012551912,
++   },
++   {
++     "scale": 0.9543912097578868,
++     "x": -49.42989909140451,
++     "y": 15.447536712000147,
++     "yaw": 5.733281225695901,
++     "z": 25.13419420337346,
++   },
++   {
++     "scale": 1.127950887894258,
++     "x": -49.61094529213386,
++     "y": 15.67187186825322,
++     "yaw": 2.1029117340517556,
++     "z": 23.34710132131874,
++   },
++   {
++     "scale": 0.8547974284738302,
++     "x": -49.562222761338916,
++     "y": 15.75663716290146,
++     "yaw": 0.07340778239164568,
++     "z": 22.668678042090693,
++   },
++   {
++     "scale": 1.0479788288939744,
++     "x": -49.75313557243726,
++     "y": 15.858230125694536,
++     "yaw": 4.887656467310456,
++     "z": 21.862316105984327,
++   },
++   {
++     "scale": 1.1832682579988614,
++     "x": -49.584529552223614,
++     "y": 15.910537964419927,
++     "yaw": 3.538631020951468,
++     "z": 21.439921141424016,
++   },
++   {
++     "scale": 0.8911705296486616,
++     "x": -49.512345345532935,
++     "y": 15.95086399166612,
++     "yaw": 4.7259023204124,
++     "z": 21.11584466117435,
++   },
++   {
++     "scale": 1.2256752189714462,
++     "x": -49.77523729017247,
++     "y": 16.185129498771857,
++     "yaw": 1.3214107332153422,
++     "z": 19.251639424924647,
++   },
++   {
++     "scale": 1.2321315791923553,
++     "x": -49.610763065302876,
++     "y": 16.508801620348823,
++     "yaw": 4.746730619491802,
++     "z": 16.661698258526208,
++   },
++   {
++     "scale": 0.7736650013830513,
++     "x": -49.738658220447604,
++     "y": 16.57449936157791,
++     "yaw": 0.5121667505780935,
++     "z": 16.140361746240735,
++   },
++   {
++     "scale": 1.0639217819552869,
++     "x": -49.908518256580464,
++     "y": 16.597326908097603,
++     "yaw": 1.0247430421466417,
++     "z": 15.962606772578209,
++   },
++   {
++     "scale": 0.7802438986254856,
++     "x": -49.5993578512452,
++     "y": 16.67323120889487,
++     "yaw": 0.06280079537948974,
++     "z": 15.347925902258542,
++   },
++   {
++     "scale": 0.8280938289826736,
++     "x": -49.81191010473236,
++     "y": 16.857449437095788,
++     "yaw": 1.067722412295638,
++     "z": 13.882134908652768,
++   },
++   {
++     "scale": 0.9146231453632936,
++     "x": -49.63288395495587,
++     "y": 16.89937239976134,
++     "yaw": 6.182590216327416,
++     "z": 13.542415565379617,
++   },
++   {
++     "scale": 1.160911371698603,
++     "x": -49.826945674947126,
++     "y": 17.050826266128567,
++     "yaw": 0.11672796125097828,
++     "z": 12.337845977327431,
++   },
++   {
++     "scale": 0.7785453400574625,
++     "x": -50.0657309651086,
++     "y": 17.31170959612355,
++     "yaw": 5.678891725046313,
++     "z": 10.260360347754183,
++   },
++   {
++     "scale": 1.1721576080890372,
++     "x": -49.90301242955323,
++     "y": 17.355127802025528,
++     "yaw": 0.9176585739687151,
++     "z": 9.909138801536832,
++   },
++   {
++     "scale": 1.0787681600777432,
++     "x": -49.77323275223981,
++     "y": 17.42930380065227,
++     "yaw": 2.970042666792829,
++     "z": 9.313114059926779,
++   },
++   {
++     "scale": 0.8654159381985664,
++     "x": -49.82863647748013,
++     "y": 17.642022565694063,
++     "yaw": 6.111645777321053,
++     "z": 7.615412325933941,
++   },
++   {
++     "scale": 0.9789595737820491,
++     "x": -49.973764103962935,
++     "y": 17.92480194584932,
++     "yaw": 3.4064072257568077,
++     "z": 5.360489090104807,
++   },
++   {
++     "scale": 0.9008783492026851,
++     "x": -48.89177053933875,
++     "y": 15.145204239455051,
++     "yaw": 6.24036672050501,
++     "z": 27.534667275768026,
++   },
++   {
++     "scale": 0.9005279386183247,
++     "x": -49.06754237505385,
++     "y": 15.237474831647706,
++     "yaw": 0.31354971450131086,
++     "z": 26.8023657262274,
++   },
++   {
++     "scale": 1.0057938472600654,
++     "x": -48.96993918166555,
++     "y": 15.280610200006052,
++     "yaw": 1.557272322094388,
++     "z": 26.45516008041799,
++   },
++   {
++     "scale": 0.8767958387034014,
++     "x": -49.245274198076004,
++     "y": 15.353891550772824,
++     "yaw": 2.178936027351583,
++     "z": 25.877237441515412,
++   },
++   {
++     "scale": 0.7993785666767508,
++     "x": -48.99254933042161,
++     "y": 15.406005642772651,
++     "yaw": 1.7221310781290187,
++     "z": 25.454113611386276,
++   },
++   {
++     "scale": 1.191514138597995,
++     "x": -48.98341661677517,
++     "y": 15.474725701496936,
++     "yaw": 0.06200801959148176,
++     "z": 24.904931107704684,
++   },
++   {
++     "scale": 0.7878767006332055,
++     "x": -49.05537075285906,
++     "y": 15.475435612164437,
++     "yaw": 5.96105023410363,
++     "z": 24.901206709107736,
++   },
++   {
++     "scale": 1.1083642190787941,
++     "x": -49.26197699024209,
++     "y": 15.567188095278107,
++     "yaw": 4.30561482591126,
++     "z": 24.173876680463508,
++   },
++   {
++     "scale": 0.9197198715992272,
++     "x": -49.225377089922404,
++     "y": 15.969490510900505,
++     "yaw": 1.7333924064542596,
++     "z": 20.95929580362348,
++   },
++   {
++     "scale": 1.1764482884900644,
++     "x": -49.071646659930195,
++     "y": 16.281555375060996,
++     "yaw": 1.4670823765211412,
++     "z": 18.462366088412857,
++   },
++   {
++     "scale": 1.179714934900403,
++     "x": -49.05901100072688,
++     "y": 16.33858746716287,
++     "yaw": 2.5399295532323585,
++     "z": 18.00645242728391,
++   },
++   {
++     "scale": 0.9750981027027592,
++     "x": -49.08129625072016,
++     "y": 16.414885500981473,
++     "yaw": 3.26604548646411,
++     "z": 17.397586636361687,
++   },
++   {
++     "scale": 1.0244723974028602,
++     "x": -49.33541364671916,
++     "y": 16.471434728521853,
++     "yaw": 3.757592223850173,
++     "z": 16.952741418675224,
++   },
++   {
++     "scale": 1.1844071556115523,
++     "x": -49.39714866686268,
++     "y": 16.497251607791988,
++     "yaw": 4.2675692581663665,
++     "z": 16.748185113944974,
++   },
++   {
++     "scale": 1.1445580637082458,
++     "x": -49.361452449148686,
++     "y": 16.701502369751687,
++     "yaw": 3.8531412406502477,
++     "z": 15.115665249157209,
++   },
++   {
++     "scale": 0.8437069001374766,
++     "x": -49.24747813050291,
++     "y": 16.748040622856934,
++     "yaw": 4.545197557585126,
++     "z": 14.740837123996045,
++   },
++   {
++     "scale": 1.1615804177708924,
++     "x": -49.59344273952934,
++     "y": 16.99063260462135,
++     "yaw": 0.38479555266787313,
++     "z": 12.812362877649596,
++   },
++   {
++     "scale": 1.2035115764010698,
++     "x": -49.36717565011227,
++     "y": 17.08306117655011,
++     "yaw": 1.9772745358667267,
++     "z": 12.06792871521809,
++   },
++   {
++     "scale": 1.0023006229894236,
++     "x": -49.461497952006965,
++     "y": 17.217925961094444,
++     "yaw": 1.6071756235329144,
++     "z": 10.993177760365107,
++   },
++   {
++     "scale": 0.8726110827410594,
++     "x": -49.287316536592385,
++     "y": 17.335141572752036,
++     "yaw": 5.4713475225115005,
++     "z": 10.05215323751287,
++   },
++   {
++     "scale": 1.1811013686237857,
++     "x": -49.479020519472584,
++     "y": 17.420426797389517,
++     "yaw": 4.061703082648115,
++     "z": 9.37607459478142,
++   },
++   {
++     "scale": 1.0733327101916075,
++     "x": -49.57690461476048,
++     "y": 17.45303515261039,
++     "yaw": 1.4498094233418806,
++     "z": 9.118243636535679,
++   },
++   {
++     "scale": 1.168934480054304,
++     "x": -49.448411155983734,
++     "y": 17.606556375033687,
++     "yaw": 4.576723066223386,
++     "z": 7.888444707558071,
++   },
++   {
++     "scale": 1.10783028206788,
++     "x": -49.4404820054458,
++     "y": 17.710748272447383,
++     "yaw": 0.7036939370484678,
++     "z": 7.055945764178444,
++   },
++   {
++     "scale": 1.2285385178402066,
++     "x": -49.49921562821592,
++     "y": 17.734537549549714,
++     "yaw": 5.153106915838559,
++     "z": 6.867503606924362,
++   },
++   {
++     "scale": 1.1666008507600054,
++     "x": -49.69309673077541,
++     "y": 17.83503701657755,
++     "yaw": 4.603277686021317,
++     "z": 6.069950854182258,
++   },
++   {
++     "scale": 1.2075365625787526,
++     "x": -48.58536588241526,
++     "y": 15.098586581775454,
++     "yaw": 3.873250461365721,
++     "z": 27.898758656967136,
++   },
++   {
++     "scale": 1.1694480332080275,
++     "x": -48.68320618862941,
++     "y": 15.401441623375286,
++     "yaw": 0.3582460267506942,
++     "z": 25.48220285189626,
++   },
++   {
++     "scale": 1.0624360705260187,
++     "x": -48.50837859361428,
++     "y": 15.643263048515655,
++     "yaw": 2.137512477894478,
++     "z": 23.54580726438578,
++   },
++   {
++     "scale": 0.7812487751943991,
++     "x": -48.91718839193473,
++     "y": 15.811031608795748,
++     "yaw": 5.370731887900742,
++     "z": 22.21673035806,
++   },
++   {
++     "scale": 1.1820486411452293,
++     "x": -48.70921172046545,
++     "y": 15.929370086709966,
++     "yaw": 5.494520345306869,
++     "z": 21.265819240521378,
++   },
++   {
++     "scale": 1.0439313391689211,
++     "x": -48.63187823800385,
++     "y": 15.97628762178356,
++     "yaw": 1.270310865729323,
++     "z": 20.88895124726391,
++   },
++   {
++     "scale": 1.2004600579384714,
++     "x": -48.64536036700338,
++     "y": 16.03191422502277,
++     "yaw": 5.715041642081174,
++     "z": 20.444971184859337,
++   },
++   {
++     "scale": 1.1563376913545653,
++     "x": -48.8556721356309,
++     "y": 16.079867553757502,
++     "yaw": 4.9293055680141045,
++     "z": 20.06760740448017,
++   },
++   {
++     "scale": 0.9668029800523072,
++     "x": -48.86023188997825,
++     "y": 16.23416233754251,
++     "yaw": 1.1990852480164522,
++     "z": 18.835225297652098,
++   },
++   {
++     "scale": 0.7583857014542446,
++     "x": -48.79332616485823,
++     "y": 16.405711127864198,
++     "yaw": 0.5047515523796103,
++     "z": 17.463086311134965,
++   },
++   {
++     "scale": 1.0812157850014046,
++     "x": -48.93337735055451,
++     "y": 16.469045797165016,
++     "yaw": 2.388025611194873,
++     "z": 16.96095570175683,
++   },
++   {
++     "scale": 0.9620473182294518,
++     "x": -49.05389302704705,
++     "y": 16.53402497123461,
++     "yaw": 4.69158261483605,
++     "z": 16.445160418432987,
++   },
++   {
++     "scale": 0.8533860540483147,
++     "x": -49.01032595144528,
++     "y": 16.66352735480759,
++     "yaw": 3.66923857254881,
++     "z": 15.409518532676817,
++   },
++   {
++     "scale": 1.2132169721880928,
++     "x": -48.94206723516197,
++     "y": 16.699036265863107,
++     "yaw": 3.0851667680480293,
++     "z": 15.124028578842985,
++   },
++   {
++     "scale": 1.2211741734063253,
++     "x": -48.87472724561388,
++     "y": 16.777681626880074,
++     "yaw": 4.100232558824022,
++     "z": 14.493989979375726,
++   },
++   {
++     "scale": 0.9771783550968394,
++     "x": -49.117445021180515,
++     "y": 17.06475009615533,
++     "yaw": 0.2563148732975823,
++     "z": 12.207448931755884,
++   },
++   {
++     "scale": 1.0708034647395834,
++     "x": -49.26868516164174,
++     "y": 17.492375472851563,
++     "yaw": 2.6717331530041935,
++     "z": 8.795666032887322,
++   },
++   {
++     "scale": 1.1271991325775161,
++     "x": -49.2226279986034,
++     "y": 17.574779187596867,
++     "yaw": 3.3911532648366784,
++     "z": 8.136181237822866,
++   },
++   {
++     "scale": 1.2163824817398563,
++     "x": -49.04100015077648,
++     "y": 17.65333667360246,
++     "yaw": 3.4927755231373534,
++     "z": 7.503757925380846,
++   },
++   {
++     "scale": 0.8388001599814743,
++     "x": -49.114915075189,
++     "y": 17.684990807482972,
++     "yaw": 2.100832296943425,
++     "z": 7.252901654812111,
++   },
++   {
++     "scale": 0.8792725530220196,
++     "x": -49.22445283157441,
++     "y": 17.749011368246283,
++     "yaw": 2.4946788213634585,
++     "z": 6.744464731921605,
++   },
++   {
++     "scale": 0.7700432512210682,
++     "x": -49.00167608113597,
++     "y": 17.90466217942303,
++     "yaw": 3.148805720397264,
++     "z": 5.495109690243756,
++   },
++   {
++     "scale": 1.2055643326602876,
++     "x": -48.14020461689378,
++     "y": 15.219733056810222,
++     "yaw": 5.323192742538806,
++     "z": 26.918998540854638,
++   },
++   {
++     "scale": 1.1186572491424158,
++     "x": -48.065434448386355,
++     "y": 15.272794894035906,
++     "yaw": 2.364509985731826,
++     "z": 26.493118822075417,
++   },
++   {
++     "scale": 1.179425492649898,
++     "x": -48.34049457937837,
++     "y": 15.29806502343854,
++     "yaw": 3.2820329062328866,
++     "z": 26.29870271432311,
++   },
++   {
++     "scale": 0.9403098881011829,
++     "x": -48.297075000425764,
++     "y": 15.427748278481886,
++     "yaw": 3.8276630944917645,
++     "z": 25.261620416444664,
++   },
++   {
++     "scale": 1.2328679466154426,
++     "x": -48.19512730847137,
++     "y": 15.598907570994925,
++     "yaw": 4.645922657967,
++     "z": 23.89164541848077,
++   },
++   {
++     "scale": 0.8337980734650046,
++     "x": -48.32083763563671,
++     "y": 15.711576808954124,
++     "yaw": 6.062921576151071,
++     "z": 22.995045637736837,
++   },
++   {
++     "scale": 0.8173108218470588,
++     "x": -48.470420517203394,
++     "y": 15.749439918901771,
++     "yaw": 6.2404933711748045,
++     "z": 22.69664128927757,
++   },
++   {
++     "scale": 1.1122127167182043,
++     "x": -48.34263564675916,
++     "y": 15.934567162359603,
++     "yaw": 4.7713841567648725,
++     "z": 21.21439196410967,
++   },
++   {
++     "scale": 0.8002324877306819,
++     "x": -48.313933506771576,
++     "y": 16.124016966181806,
++     "yaw": 5.471512728387274,
++     "z": 19.700294067678207,
++   },
++   {
++     "scale": 0.7730191984446719,
++     "x": -48.419069569657466,
++     "y": 16.12981900353916,
++     "yaw": 3.6388414228655144,
++     "z": 19.656790283222623,
++   },
++   {
++     "scale": 0.9006638777209446,
++     "x": -48.35499329326154,
++     "y": 16.37025800907286,
++     "yaw": 1.2661160973546683,
++     "z": 17.734435059215137,
++   },
++   {
++     "scale": 1.2224246697733179,
++     "x": -48.37592516245667,
++     "y": 16.461520965839735,
++     "yaw": 2.6814492741082083,
++     "z": 17.005994011945752,
++   },
++   {
++     "scale": 1.1808512299321592,
++     "x": -48.368455251814964,
++     "y": 16.51980368249351,
++     "yaw": 6.01202063626547,
++     "z": 16.54023073954939,
++   },
++   {
++     "scale": 1.1692711156792939,
++     "x": -48.453099107476106,
++     "y": 16.55884514814243,
++     "yaw": 2.1138363630035446,
++     "z": 16.23065628483364,
++   },
++   {
++     "scale": 0.9110404653474689,
++     "x": -48.33857031896221,
++     "y": 16.59216312193312,
++     "yaw": 2.5469309869958923,
++     "z": 15.961416961226837,
++   },
++   {
++     "scale": 1.1035334400366992,
++     "x": -48.45710673545955,
++     "y": 16.667738968820778,
++     "yaw": 0.6746716889782002,
++     "z": 15.360922521914986,
++   },
++   {
++     "scale": 0.9456942632095888,
++     "x": -48.63816299036614,
++     "y": 16.742397784220522,
++     "yaw": 2.943915700374092,
++     "z": 14.769442881104629,
++   },
++   {
++     "scale": 0.9181661405600607,
++     "x": -48.632470445740694,
++     "y": 16.972673754417336,
++     "yaw": 2.8253459237983987,
++     "z": 12.929847669477727,
++   },
++   {
++     "scale": 1.0590315461158752,
++     "x": -48.742362177410314,
++     "y": 17.084576101310084,
++     "yaw": 4.691073456438987,
++     "z": 12.038942903747385,
++   },
++   {
++     "scale": 1.2376677966676652,
++     "x": -48.554497567248404,
++     "y": 17.22377828527242,
++     "yaw": 4.498757154401639,
++     "z": 10.921921244234577,
++   },
++   {
++     "scale": 1.1864434648305178,
++     "x": -48.49465294369543,
++     "y": 17.255745249707253,
++     "yaw": 5.686049923648302,
++     "z": 10.66495259109764,
++   },
++   {
++     "scale": 1.0800285316072404,
++     "x": -48.63853018088477,
++     "y": 17.373530918732285,
++     "yaw": 4.563965617430151,
++     "z": 9.72796996131301,
++   },
++   {
++     "scale": 0.8370122115593404,
++     "x": -48.53458533855698,
++     "y": 17.394059104309417,
++     "yaw": 2.9549818330029347,
++     "z": 9.561182701062076,
++   },
++   {
++     "scale": 1.2165202158503234,
++     "x": -48.7740299679478,
++     "y": 17.537628266750836,
++     "yaw": 3.9890317800309503,
++     "z": 8.420823334312665,
++   },
++   {
++     "scale": 0.9001833240035921,
++     "x": -48.794909297657966,
++     "y": 17.83606032502139,
++     "yaw": 2.8751245904682436,
++     "z": 6.037515724686285,
++   },
++   {
++     "scale": 1.0473590148612857,
++     "x": -47.9563692996318,
++     "y": 15.26142113370588,
++     "yaw": 3.652132832368928,
++     "z": 26.581021597611333,
++   },
++   {
++     "scale": 0.8747667997376993,
++     "x": -47.90013266208507,
++     "y": 15.294210581306833,
++     "yaw": 2.8345545030298287,
++     "z": 26.317578854790305,
++   },
++   {
++     "scale": 0.9029983646469191,
++     "x": -47.99790620405696,
++     "y": 15.342006499075797,
++     "yaw": 1.331669795883624,
++     "z": 25.938431155308585,
++   },
++   {
++     "scale": 1.1301201258320361,
++     "x": -48.05522344390664,
++     "y": 15.403855719219427,
++     "yaw": 1.3495619876566576,
++     "z": 25.445931421279873,
++   },
++   {
++     "scale": 0.7785679544322193,
++     "x": -48.004662648495184,
++     "y": 15.597752483480145,
++     "yaw": 0.16073573062550148,
++     "z": 23.89572056601299,
++   },
++   {
++     "scale": 0.9748596178833395,
++     "x": -47.97754260402118,
++     "y": 15.690609112207312,
++     "yaw": 1.831154443801237,
++     "z": 23.15325036044298,
++   },
++   {
++     "scale": 1.0583650406915694,
++     "x": -48.07165950095188,
++     "y": 16.30602915660711,
++     "yaw": 2.435651782627509,
++     "z": 18.239833757434376,
++   },
++   {
++     "scale": 0.8325038175098598,
++     "x": -48.20390004981044,
++     "y": 16.33335322084604,
++     "yaw": 1.6625218609029984,
++     "z": 18.025144950865773,
++   },
++   {
++     "scale": 1.1723212322685868,
++     "x": -48.22939320539467,
++     "y": 16.585975439392495,
++     "yaw": 1.83738947965265,
++     "z": 16.00789283036153,
++   },
++   {
++     "scale": 1.0920422262279317,
++     "x": -48.41203989389018,
++     "y": 17.144211122370326,
++     "yaw": 0.5985912503454086,
++     "z": 11.553652986202318,
++   },
++ ]
+
+ ❯ tests/three-core/trees.test.ts:122:52
+    120|     const after = all(placeTrees(dem, land, route.project, noTrail, { …
+    121|     expect(after.length).toBeGreaterThan(500);
+    122|     expect(after.filter((t) => fromRoadM(t) < 20)).toEqual([]);
+       |                                                    ^
+    123|   });
+    124| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[38/47]⎯
+
+ FAIL  tests/three-core/visibility.test.ts > visibleFootprints (BL1) > lists what is in view and not behind terrain; skips what is behind the camera, out of frame or hidden
+Error: src/three-core/visibility.ts is not implemented yet
+ ❯ load tests/three-core/pending.ts:10:32
+      8| export async function load<T>(rel: string): Promise<T> {
+      9|   const path = resolve(ROOT, rel);
+     10|   if (!existsSync(path)) throw new Error(`${rel} is not implemented ye…
+       |                                ^
+     11|   return (await import(/* @vite-ignore */ path)) as T;
+     12| }
+ ❯ loadExports tests/three-core/pending.ts:16:21
+ ❯ tests/three-core/visibility.test.ts:13:41
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39/47]⎯
+
+ FAIL  tests/three-core/visibility.test.ts > visibleFootprints (BL1) > collects across the poses of a shot
+Error: src/three-core/visibility.ts is not implemented yet
+ ❯ load tests/three-core/pending.ts:10:32
+      8| export async function load<T>(rel: string): Promise<T> {
+      9|   const path = resolve(ROOT, rel);
+     10|   if (!existsSync(path)) throw new Error(`${rel} is not implemented ye…
+       |                                ^
+     11|   return (await import(/* @vite-ignore */ path)) as T;
+     12| }
+ ❯ loadExports tests/three-core/pending.ts:16:21
+ ❯ tests/three-core/visibility.test.ts:26:41
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[40/47]⎯
+
+ FAIL  tests/three-core/water-holes.test.ts > polygonsOf: one normaliser for holes (WA3) > reads holes from the geometry and from properties.inner_rings alike
+Error: src/three-core/water.ts does not export polygonsOf yet
+ ❯ loadExports tests/three-core/pending.ts:18:33
+     16|   const mod = await load<T>(rel);
+     17|   const missing = names.filter((n) => !(n in mod));
+     18|   if (missing.length > 0) throw new Error(`${rel} does not export ${mi…
+       |                                 ^
+     19|   return mod;
+     20| }
+ ❯ tests/three-core/water-holes.test.ts:23:28
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[41/47]⎯
+
+ FAIL  tests/three-core/water-holes.test.ts > polygonsOf: one normaliser for holes (WA3) > gives a Polygon and a one-part MultiPolygon the same result, without closing duplicates
+Error: src/three-core/water.ts does not export polygonsOf yet
+ ❯ loadExports tests/three-core/pending.ts:18:33
+     16|   const mod = await load<T>(rel);
+     17|   const missing = names.filter((n) => !(n in mod));
+     18|   if (missing.length > 0) throw new Error(`${rel} does not export ${mi…
+       |                                 ^
+     19|   return mod;
+     20| }
+ ❯ tests/three-core/water-holes.test.ts:32:28
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[42/47]⎯
+
+ FAIL  tests/three-core/water-holes.test.ts > polygonsOf: one normaliser for holes (WA3) > orients outer rings anticlockwise and holes clockwise
+Error: src/three-core/water.ts does not export polygonsOf yet
+ ❯ loadExports tests/three-core/pending.ts:18:33
+     16|   const mod = await load<T>(rel);
+     17|   const missing = names.filter((n) => !(n in mod));
+     18|   if (missing.length > 0) throw new Error(`${rel} does not export ${mi…
+       |                                 ^
+     19|   return mod;
+     20| }
+ ❯ tests/three-core/water-holes.test.ts:40:28
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[43/47]⎯
+
+ FAIL  tests/three-core/water-holes.test.ts > polygonsOf: one normaliser for holes (WA3) > gives each inner ring to the MultiPolygon part that contains it, and to no other part
+Error: src/three-core/water.ts does not export polygonsOf yet
+ ❯ loadExports tests/three-core/pending.ts:18:33
+     16|   const mod = await load<T>(rel);
+     17|   const missing = names.filter((n) => !(n in mod));
+     18|   if (missing.length > 0) throw new Error(`${rel} does not export ${mi…
+       |                                 ^
+     19|   return mod;
+     20| }
+ ❯ tests/three-core/water-holes.test.ts:48:28
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[44/47]⎯
+
+ FAIL  tests/three-core/water-holes.test.ts > waterBodies keeps holes and uses shared levels (WA3, WA5) > keeps the island as a hole and counts its area out
+AssertionError: the body keeps its polygons with holes: Target cannot be null or undefined.
+ ❯ tests/three-core/water-holes.test.ts:68:79
+     66|     const { waterBodies } = await load<Mod>("src/three-core/water.ts");
+     67|     const [b] = waterBodies([lakeWithIsland()], syntheticRoute().proje…
+     68|     expect(b?.polygons?.[0]?.holes, "the body keeps its polygons with …
+       |                                                                               ^
+     69|     expect(b.areaM2).toBeCloseTo(10_000 - 400, -2); // 100 m square mi…
+     70|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[45/47]⎯
+
+ FAIL  tests/three-core/water-holes.test.ts > waterBodies keeps holes and uses shared levels (WA3, WA5) > takes the surface from a shared level when one is given
+AssertionError: expected +0 to be close to 19.72, received difference is 19.72, but expected 5e-7
+ ❯ tests/three-core/water-holes.test.ts:75:24
+     73|     const { waterBodies } = await load<Mod>("src/three-core/water.ts");
+     74|     const [b] = waterBodies([lakeWithIsland()], syntheticRoute().proje…
+     75|     expect(b.surfaceY).toBeCloseTo(19.72, 6);
+       |                        ^
+     76|   });
+     77|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[46/47]⎯
+
+ FAIL  tests/three-core/water-holes.test.ts > waterBodies keeps holes and uses shared levels (WA3, WA5) > gives Llyn Trawsfynydd one level and the same islands in both windows that show it (real data)
+AssertionError: data/water-levels.json is not built yet (pipeline, ADR 42): expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/three-core/water-holes.test.ts:80:127
+     78|   it("gives Llyn Trawsfynydd one level and the same islands in both wi…
+     79|     const { waterBodies } = await load<Mod>("src/three-core/water.ts");
+     80|     expect(existsSync(resolve(ROOT, "data/water-levels.json")), "data/…
+       |                                                                                                                               ^
+     81|     const levels = Object.fromEntries(Object.entries(readJson<Record<s…
+     82|     const lake = (w: string) => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[47/47]⎯
+

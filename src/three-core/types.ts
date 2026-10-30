@@ -20,6 +20,8 @@ export type MeshArrays = {
   positions: Float32Array;
   indices: Uint32Array;
   colors?: Float32Array;
+  /** texture coordinates, two per vertex, where a view maps a texture (the photoreal layer) */
+  uvs?: Float32Array;
 };
 
 export type Projector = (lon: number, lat: number) => { x: number; y: number };

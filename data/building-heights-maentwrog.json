@@ -1,0 +1,86 @@
+{
+ "relation/6373660": {
+  "heightM": 6.0,
+  "source": "default"
+ },
+ "way/289027285": {
+  "heightM": 5.5,
+  "source": "lidar-dsm"
+ },
+ "way/289033757": {
+  "heightM": 4.7,
+  "source": "lidar-dsm"
+ },
+ "way/289033758": {
+  "heightM": 12.0,
+  "source": "lidar-dsm"
+ },
+ "way/289033934": {
+  "heightM": 6.7,
+  "source": "lidar-dsm"
+ },
+ "way/289033965": {
+  "heightM": 10.0,
+  "source": "lidar-dsm"
+ },
+ "way/357866903": {
+  "heightM": 6.5,
+  "source": "lidar-dsm"
+ },
+ "way/357866905": {
+  "heightM": 4.9,
+  "source": "lidar-dsm"
+ },
+ "way/371941151": {
+  "heightM": 6.1,
+  "source": "lidar-dsm"
+ },
+ "way/371941152": {
+  "heightM": 5.5,
+  "source": "lidar-dsm"
+ },
+ "way/371941153": {
+  "heightM": 2.9,
+  "source": "lidar-dsm"
+ },
+ "way/371941154": {
+  "heightM": 5.2,
+  "source": "lidar-dsm"
+ },
+ "way/371941155": {
+  "heightM": 3.5,
+  "source": "lidar-dsm"
+ },
+ "way/371941159": {
+  "heightM": 5.7,
+  "source": "lidar-dsm"
+ },
+ "way/372388116": {
+  "heightM": 3.2,
+  "source": "lidar-dsm"
+ },
+ "way/373575645": {
+  "heightM": 4.7,
+  "source": "lidar-dsm"
+ },
+ "way/373577738": {
+  "heightM": 8.3,
+  "source": "lidar-dsm"
+ },
+ "way/373577741": {
+  "heightM": 6.2,
+  "source": "lidar-dsm"
+ },
+ "way/373589754": {
+  "heightM": 6.2,
+  "source": "lidar-dsm"
+ },
+ "way/428585769": {
+  "heightM": 2.6,
+  "source": "lidar-dsm"
+ },
+ "way/428585780": {
+  "heightM": 4.3,
+  "source": "lidar-dsm"
+ }
+}

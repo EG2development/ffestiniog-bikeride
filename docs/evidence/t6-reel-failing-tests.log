@@ -1,0 +1,33 @@
+t6 (reel): failing tests before the change, with the reason each fails — 2026-10-25
+
+module missing    | reel-captions.test.ts                  | reel captions > RL17/RL22: the disclaimer and the attribution cover ev | Error: src/data/reel-captions.ts is not implemented yet
+module missing    | reel-captions.test.ts                  | reel captions > RL18: the concept card is fully visible for ≥ 5 s at t | Error: src/data/reel-captions.ts is not implemented yet
+module missing    | reel-captions.test.ts                  | reel captions > RL19: the heritage note never calls the line abandoned | Error: src/data/reel-captions.ts is not implemented yet
+module missing    | reel-captions.test.ts                  | reel captions > RL20/RL21: live station, private home and decommission | Error: src/data/reel-captions.ts is not implemented yet
+behaviour missing | reel-captions.test.ts                  | reel captions > ADR 36: no caption text is written inside a 3D composi | AssertionError: scenes3d/PocMaentwrog.tsx holds the text "Concept visualisation" (it belongs in reel-captions.ts): expected true to be false // Object
+module missing    | reel-timeline.test.ts                  | reel timeline (RL1, RL2) > is 2,700 frames at 30 fps | Error: src/data/reel-timeline.ts is not implemented yet
+module missing    | reel-timeline.test.ts                  | reel timeline (RL1, RL2) > matches the spec's 8-scene budget, contiguo | Error: src/data/reel-timeline.ts is not implemented yet
+behaviour missing | static-3d.test.ts                      | rendering rules > RL3: the reel and every section are registered lazil | AssertionError: src/scenes3d/Reel3D.tsx: expected false to be true // Object.is equality
+module missing    | three-core/atmosphere.test.ts          | atmosphere (RL11, RL12) > defines both section kinds with colours in r | Error: src/three-core/atmosphere.ts is not implemented yet
+module missing    | three-core/atmosphere.test.ts          | atmosphere (RL11, RL12) > the fog colour equals the horizon colour for | Error: src/three-core/atmosphere.ts is not implemented yet
+export missing    | three-core/camera.test.ts              | camera (CA1–CA4) > ADR 35: aerialOrbit and pullBack meet CA1–CA4 over  | Error: src/three-core/camera.ts does not export aerialOrbit, pullBack yet
+module missing    | three-core/cyclistModel.test.ts        | cyclistParts (RL16, C1) > builds a model inside C1's ranges from the d | Error: src/three-core/cyclistModel.ts is not implemented yet
+module missing    | three-core/cyclistModel.test.ts        | cyclistParts (RL16, C1) > keeps each leg's thigh and shin at their len | Error: src/three-core/cyclistModel.ts is not implemented yet
+data not built    | three-core/section-acceptance.test.ts  | window corridor > RL5/RL6: has a lidar DTM at its level that agrees wi | AssertionError: public/data/sections/corridor/dem.json (run the section pipeline for "corridor"): expected false to be true // Object.is equality
+data not built    | three-core/section-acceptance.test.ts  | window blaenau > RL5/RL6: has a lidar DTM at its level that agrees wit | AssertionError: public/data/sections/blaenau/dem.json (run the section pipeline for "blaenau"): expected false to be true // Object.is equality
+data not built    | three-core/section-acceptance.test.ts  | window vale-north > RL5/RL6: has a lidar DTM at its level that agrees  | AssertionError: public/data/sections/vale-north/dem.json (run the section pipeline for "vale-north"): expected false to be true // Object.is equality
+data not built    | three-core/section-acceptance.test.ts  | window vale-south > RL5/RL6: has a lidar DTM at its level that agrees  | AssertionError: public/data/sections/vale-south/dem.json (run the section pipeline for "vale-south"): expected false to be true // Object.is equality
+data not built    | three-core/section-acceptance.test.ts  | window maentwrog > RL5/RL6: has a lidar DTM at its level that agrees w | AssertionError: public/data/sections/maentwrog/dem.json (run the section pipeline for "maentwrog"): expected false to be true // Object.is equality
+data not built    | three-core/section-acceptance.test.ts  | window trawsfynydd > RL5/RL6: has a lidar DTM at its level that agrees | AssertionError: public/data/sections/trawsfynydd/dem.json (run the section pipeline for "trawsfynydd"): expected false to be true // Object.is equalit
+module missing    | three-core/sections.test.ts            | section configs (RL4) > every config has a known window, a km range on | Error: src/three-core/sections.ts is not implemented yet
+module missing    | three-core/sections.test.ts            | section configs (RL4) > ADR 40: the Maentwrog config reproduces the PO | Error: src/three-core/sections.ts is not implemented yet
+module missing    | three-core/shading.test.ts             | shadeTerrain (RL10) > leaves positions alone and keeps every colour ch | Error: src/three-core/shading.ts is not implemented yet
+module missing    | three-core/shading.test.ts             | shadeTerrain (RL10) > makes a steep node darker than a flat one of the | Error: src/three-core/shading.ts is not implemented yet
+module missing    | three-core/tileUv.test.ts              | tile UVs (RL6) > tileRange covers exactly the cached wide layer's tile | Error: src/three-core/tileUv.ts is not implemented yet
+module missing    | three-core/tileUv.test.ts              | tile UVs (RL6) > maps the range's north-west corner to (0, 1) and its  | Error: src/three-core/tileUv.ts is not implemented yet
+behaviour missing | three-core/trees.test.ts               | placeTrees > RL13: keeps near-zone woodland between 1 and 15 trees per | AssertionError: trees beyond the 300 m near zone: expected 371 to be +0 // Object.is equality
+module missing    | three-core/water.test.ts               | waterBodies (RL14) > keeps a 1 ha lake at the median height of its sho | Error: src/three-core/water.ts is not implemented yet
+module missing    | three-core/water.test.ts               | waterBodies (RL14) > ignores features that are not water polygons | Error: src/three-core/water.ts is not implemented yet
+
+Test Files  12 failed | 12 passed (24)
+      Tests  28 failed | 92 passed (120)

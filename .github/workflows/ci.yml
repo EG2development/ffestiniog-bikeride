@@ -35,10 +35,12 @@ jobs:
         with:
           python-version: "3.13"
 
+      # No install scripts, as package.json's allowScripts gives locally: the npm bundled with Node 24.13.1 (11.8.0)
+      # ignores allowScripts and ran esbuild's install script (t12, docs/evidence/t12-reel-v2-ci-local.log)
       - name: Install dependencies
-        run: npm ci
-      - name: Install the data pipeline's Python dependency
-        run: python -m pip install numpy==2.4.4
+        run: npm ci --ignore-scripts
+      - name: Install the data pipeline's and the still metrics' Python dependencies
+        run: python -m pip install numpy==2.4.4 pillow==12.1.0
       - name: Lint and type-check
         run: npm run lint
       - name: Unit, static and acceptance tests
@@ -48,6 +50,6 @@ jobs:
       - name: Pipeline self-test and compile check
         run: |
           python -I scripts/dem/bng.py
-          python -I -m py_compile scripts/build_poc_data.py scripts/dem/bng.py scripts/dem/cog.py scripts/osm/fetch_bbox.py
+          python -I -m py_compile scripts/build_poc_data.py scripts/build_section_data.py scripts/build_buildings.py scripts/still_metrics.py scripts/dem/bng.py scripts/dem/cog.py scripts/osm/fetch_bbox.py
       - name: Build (bundle)
         run: npm run build -- --out-dir=out/bundle --log=error
