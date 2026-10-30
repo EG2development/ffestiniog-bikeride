@@ -72,7 +72,9 @@ seeded draw (ADR 61), and the aerial sections over the corridor's OSM
 cover and lidar canopy, coloured by a Sentinel-2 image (`python3 scripts/build_imagery.py --section corridor`; the
 attribution carries the Copernicus notice). `--props='{"look":"concept"}'` renders the first look, unchanged. How it
 was chosen, what it costs and what is still generic: `docs/research-photoreal.md`, `docs/design-photoreal.md`,
-`docs/sop-3d.md`.
+`docs/sop-3d.md`. A native Blender build of the film is planned and specified, not built: `docs/blender-build-plan.md` (phases and
+readiness checklist), `docs/design-blender.md` (the export package, coordinate mapping, Blender 5.2 import recipes and
+render preset) and `docs/research-blender.md` (the verified research; ADR 62).
 
 Checks:
 - **CI** (`.github/workflows/ci.yml`) runs `npm run lint`, `npm test` (unit, static, docs

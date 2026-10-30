@@ -119,7 +119,9 @@ frame-based rendering under `@remotion/three` (ADRs 1, 17), the registers and th
   name) as the nearest match to ADR 18's 35° sun; `@dgreenheck/ez-tree` 1.1.0 (MIT, seeded, deterministic) as a
   procedural tree generator, whose bundled leaf images have no stated origin and would need replacing. No CC0 or CC BY
   rigged cyclist exists on Sketchfab, Poly Haven, Quaternius or Kenney, and Mixamo has no cycling clip, which confirms
-  the procedural rider (ADRs 14, 34) as the only licence-clean option short of building a rig.
+  the procedural rider (ADRs 14, 34) as the only licence-clean option short of building a rig. (Update, 30 October: a
+  CC BY 4.0 motion-capture dataset of cyclists pedalling exists, Zenodo 10668611, usable for leg timing under a rig;
+  see `docs/research-blender.md` §4.)
 - **AI-generated assets:** Hunyuan3D-2's licence excludes the United Kingdom (V, its LICENSE); TRELLIS.2 needs an
   NVIDIA GPU (V); Meshy's free tier outputs are CC BY 4.0 and Tripo's terms could not be fetched (V/I). None was used,
   and by the brief's rule none could be evidence of place. Text-to-image tools were not used for textures either: every

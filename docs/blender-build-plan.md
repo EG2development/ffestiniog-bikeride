@@ -1,6 +1,10 @@
 # Blender build plan: Blaenau Ffestiniog – Llan Ffestiniog – Trawsfynydd community reel
 
-Created: 2026-10-29. Updated: 2026-10-30. Status: proposed implementation plan; no Blender scenes or scripts have been built by these planning tasks.
+Created: 2026-10-29. Updated: 2026-10-30 (research for the build). Status: proposed implementation plan, ready to
+start; no Blender scenes or scripts have been built yet. The verified research is [research-blender.md](research-blender.md),
+the build specification (interchange package, coordinate mapping, Blender 5.2 import recipes, render preset, checks) is
+[design-blender.md](design-blender.md), and the decision is [ADR 62](adr/0062-blender-pipeline.md). Section 9 is the
+readiness checklist.
 
 Build a native Blender version of the existing route film, reusing the project's geographic data and animation logic. Start with the 20-second Maentwrog prototype, then expand to the 90-second reel. The intended improvement is a more convincing North Wales landscape, vegetation, people and lighting while preserving the railway alignment and the distinction between existing, approximate and proposed features. Show an inclusive shared-use route with children, teenagers, adults and older people of diverse genders and ethnic backgrounds walking and cycling.
 
@@ -39,7 +43,10 @@ The new version should invite feedback and further feasibility work, show the ra
 | Each window's `landcover.json`, `landcover.u8`, `osm.geojson` | Material masks and mapped landscape features |
 | `buildings.json`, `data/features-<window>.json`, `data/landmarks.json` | Footprints, heights, status, evidence and limitations |
 | `data/water-levels.json`, `src/three-core/water.ts` | Consistent water levels and outlines with islands/holes |
-| Maentwrog `canopy.json`, `canopy.f32`, `barriers.geojson` | Measured canopy heights and mapped walls/fences |
+| Every window's `canopy.json`, `canopy.f32`, `barriers.geojson`; the corridor's `imagery.json`/`imagery.u8` | Canopy heights sampled every 4 m (16 m in the corridor), mapped walls, hedges and fences, and the Sentinel-2 ground colour for the aerial scenes (ADR 60) |
+| `src/three-core/walkers.ts`, `people.ts` and the configs' `photo.people` | The reel's 24 seeded walkers, runners and pram pushers and the prototype's 3 walkers, with per-frame paths (ADRs 59, 61) |
+| `src/three-core/trees.ts`, `shading.ts`, `atmosphere.ts` | Canopy-cover trees for the aerials, the graded ground image, and `sunDirection` (export the vector, not the angles) |
+| `Reel3D` in the photo look, `out/previews/`, `docs/evidence/photo/` | The camera-for-camera comparison reference (ADR 60) |
 | `src/three-core/sections.ts`, `camera.ts`, `cyclistMotion.ts` | Scene assembly, seeded placements, camera poses and distance-based rider motion |
 | `src/data/reel-timeline.ts`, `reel-captions.ts` | Edit timing, captions, concept notices and attribution |
 | `public/3d/textures/`, `data/assets-3d.json` | Eight existing CC0 diffuse/normal texture pairs and their provenance |
@@ -49,10 +56,14 @@ Important findings from the current working tree:
 
 - The route configuration covers approximately **13.24 km**. There are five ground windows and one shared `corridor` window for the four aerial sections.
 - The stored ground terrain grids are **4 m samples**; the corridor grid is **16 m**. The underlying lidar source is 1 m, but that is not the resolution of the current meshes.
-- Only Maentwrog currently has canopy and barrier files. Other ground windows need those datasets generated if they use the same treatment.
+- Every window now has canopy and barrier files, and the corridor has OSM land cover, roads, water and a Sentinel-2
+  ground image (ADR 60). The 4 m and 16 m grids are **nearest-neighbour samples** of the 1 m lidar, not averages, so
+  the canopy heights undershoot crown tops (a median 0.81 of the cell's 1 m maximum at the Maentwrog bridge); close-up
+  trees come from the 1 m data ([design §7](design-blender.md#7-close-up-data-phase-3)).
 - The standalone Maentwrog concept section is 360 frames, but the reel takes its first **300 frames**. Exporting every section's configured length would make the master too long.
 - Some prose still says no textures have been downloaded; the actual texture files and asset register contain 16 JPGs. Use the files and register as the implementation evidence.
-- Blender was not found on `PATH` or in `/Applications` during this inspection. Installation/version verification is an implementation prerequisite.
+- Blender was not found on `PATH` or in `/Applications` (checked again on 30 October). The machine is an M4 Pro (20-core
+  GPU, 48 GB) with **about 5 GB of free disk**, which does not hold the reel's frames (section 7).
 
 ## 3. Architecture and interchange
 
@@ -74,7 +85,7 @@ Existing GIS files + pure TypeScript scene assembly
              Blender Video Sequencer master
 ```
 
-**Recommended transfer:** call the existing pure `buildSectionScene()` assembly from a Node-side exporter, then import its output with Blender Python. This preserves the already implemented trail flattening, road/bridge handling, water and seeded placement logic instead of independently rebuilding those calculations in Python.
+**Recommended transfer:** call the existing pure `buildSectionScene(cfg, inputs, "photo")` assembly from a Node-side exporter (as `scripts/gen-earthworks.ts` already runs it), then import its output with Blender Python. This preserves the already implemented trail flattening, road/bridge handling, water and seeded placement logic instead of independently rebuilding those calculations in Python. Build in the **photo** look: the default concept look leaves out the canopy trees, boundaries, grass, people and the aerial image. The package format, measured against glTF, Alembic and USD, is specified in [design §2](design-blender.md#2-the-interchange-package): a JSON manifest with raw binary sidecars imports an 810k-vertex terrain in 0.56 s and instances 50k trees in 0.03 s, where glTF makes 50,001 objects.
 
 The exporter needs a filesystem loader using the same boundary validators as `Scene3DDataProvider`; the React provider itself is not a Node entry point. Use synced `public/data/` inputs and verify their relationship to the authoritative `data/` records.
 
@@ -82,7 +93,7 @@ Define a project-owned interchange schema containing mesh positions/indices, UVs
 
 Add an authored population manifest for the additional people: character/rig and animation IDs, body and bicycle dimensions, activity, group membership, start time, route distance, direction, lateral position, speed profile and animation phase. Record casting coverage separately from geographic evidence: these are fictional people illustrating the proposal, not a claim about observed visitors or local population statistics. Keep the existing rider as the camera-comparison reference; additional people need their own motion schedules.
 
-Use Blender's [mesh API](https://docs.blender.org/api/current/bpy.types.Mesh.html?highlight=_sel) to create editable meshes. GLB can be used for individual third-party assets, but is not the primary scene contract: the project's custom shaders, geographic provenance and camera/rider functions need explicit translation.
+Use Blender's [mesh API](https://docs.blender.org/api/current/bpy.types.Mesh.html) with numpy `foreach_set` (not `from_pydata`, which is slow at millions of elements) to create editable meshes. GLB can be used for individual third-party assets, but is not the primary scene contract: the project's custom shaders, geographic provenance and camera/rider functions need explicit translation. **Blender 5.x breaks most published 4.x scripting**: `action.fcurves` is gone (use action slots and channelbags), Geometry Nodes modifier inputs moved in 5.2, `media_type` precedes `file_format`, the EEVEE identifier is `BLENDER_EEVEE`, and `sequences` is `strips` ([research §2.6](research-blender.md#26-python-api-what-breaks-and-what-is-fast)).
 
 ### Coordinate and frame contract
 
@@ -94,9 +105,9 @@ Blender Y = −10 × (Three Z − z0)
 Blender Z =  10 ×  Three Y
 ```
 
-This is a rotation and scale, preserving handedness. Apply it consistently to terrain, trail, instances, structures, camera positions/targets and light directions. Record the origin and inverse mapping; local axes are inherited from the existing route projection, not assumed to be geographic east/north. Keep vertical exaggeration at 1.
+This is a rotation and scale, preserving handedness (verified: a +90° rotation about X, the same mapping Blender's glTF importer applies). Apply it consistently to terrain, trail, instances, structures, camera positions/targets and light directions. Record the origin and inverse mapping; local axes are inherited from the existing route projection (Blender +X lies about 171° clockwise from true north), not assumed to be geographic east/north, and the route frame is not BNG: export control points carrying both. Keep vertical exaggeration at 1.
 
-Convert orientations using transformed bases or matrices/quaternions. Do not copy Three.js yaw/pitch values directly into Blender Euler fields. Preserve the camera's **vertical** field of view and aspect ratio; test the chosen Blender sensor-fit/lens settings against projected landmarks. Scale clipping distances to metres.
+Convert orientations using transformed bases or matrices/quaternions; a single yaw about three.js +Y carries over unchanged as a rotation about Blender +Z, but pitch and combined rotations do not. Preserve the camera's **vertical** field of view: set `sensor_fit = 'VERTICAL'` and `angle_y` (the default AUTO renders 45° as 38.5° at 16:9). Converted this way, 200 random poses projected within 0.0014 px of three.js. Scale clipping distances to metres. Recipes: [design §3](design-blender.md#3-coordinates-and-frames).
 
 Map source frame `f` to Blender frame `f + 1`. Use one camera per shot and camera markers at cuts, with linear baked animation within each shot, so interpolation never smooths across a hard cut. Maintain quaternion sign continuity and unwrapped wheel/crank angles. Match geometry and motion first with motion blur disabled; enable it only after subframe evaluation is validated.
 
@@ -105,7 +116,7 @@ Map source frame `f` to Blender frame `f + 1`. Use one camera per shot and camer
 ### Phase 1 — Freeze the reference and prepare Blender
 
 1. Record the current source files, data hashes, baseline frames, timeline and known geographic limitations. Include uncommitted inputs in the manifest; HEAD alone does not identify this working tree.
-2. Install and pin **Blender 5.2 LTS**, currently supported through July 2028, including the exact patch/build and required Python/API behavior. Verify local hardware and GPU support. [Official release announcement](https://www.blender.org/press/blender-5-2-lts-release/)
+2. Install and pin **Blender 5.2.3 LTS** (22 Oct 2026; 5.2 is supported through July 2028): the DMG `blender-5.2.3-macos-arm64.dmg` checked against its published sha256, or Homebrew `blender@lts` (the plain `blender` cask moves to 5.3 in November). Record it in `config/blender/toolchain.json`, with `bpy==5.2.3` (Blender as a Python module, arm64 Python 3.13) for headless tests. Select the GPU in the script (`compute_device_type = 'METAL'`, `refresh_devices()`; `--factory-startup` ignores saved preferences) and confirm MetalRT is in use. Test EEVEE with `blender -b` outside a login session. **Free disk first**: about 5 GB is free; plan an external volume for `out/blender/` or section-by-section encoding. [Official release announcement](https://www.blender.org/press/blender-5-2-lts-release/); details in [research §2](research-blender.md#2-platform-blender-on-the-m4-pro).
 3. Set Metric units, 30 fps, square pixels and 1920 × 1080. Create shared render presets and the section collection structure: `Terrain`, `ExistingFeatures`, `ProposedTrail`, `Vegetation`, `People` (with `Cyclists` and `Pedestrians`), `Dogs`, `CommunityAmenities`, `ActivityAreas`, `Cameras`, `Lighting`, `Reference`.
 4. Save comparison frames from the existing prototype at 0, 119, 120, 200, 359, 360, 400 and 599. These cover both shot boundaries and the rider/bridge views.
 5. Build a rough community animatic using existing renders, the section 8 storyboard and placeholder narration. Map every community requirement to a shot, asset or supporting concept view before detailed art work.
@@ -114,7 +125,7 @@ Map source frame `f` to Blender frame `f + 1`. Use one camera per shot and camer
 
 ### Phase 2 — Transfer Maentwrog as a plain blockout
 
-1. Export `PROTOTYPES["maentwrog-photo"]` using its current inputs, source IDs and 600-frame motion/camera samples.
+1. Export `PROTOTYPES["maentwrog-photo"]` in the photo look, using its current inputs, source IDs and 600-frame motion/camera samples, as the [design's package](design-blender.md#2-the-interchange-package) specifies (manifest, sidecars, hashes, control points).
 2. Import terrain, the flattened trail corridor, the 3 m proposed trail, roads, bridge, buildings and barriers with plain materials. Retain both bare-terrain and proposed-corridor references for checking earthworks.
 3. Import tree/grass placement points and height/scale attributes. Use simple placeholders initially.
 4. Compare at least ten corresponding control points across the section: route bends, bridge endpoints, terrain nodes and building corners. Check scale, orientation and heights.
@@ -139,7 +150,9 @@ Map source frame `f` to Blender frame `f + 1`. Use one camera per shot and camer
 
 Use [Geometry Nodes instances](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/instances.html) for vegetation, driven by exported points and attributes. Keep instances shared, use detailed assets near the camera and simpler assets in the distance, and keep quality changes consistent over a shot to avoid popping.
 
-Reuse the existing diffuse/normal pairs first. Set colour textures appropriately and normal maps to Non-Color; feed normals through a Normal Map node. Add roughness or higher-resolution assets only where close-up renders justify them, and register every new file. Blender documents [Non-Color data handling](https://docs.blender.org/manual/sl/latest/render/color_management/color_spaces.html).
+Reuse the existing diffuse/normal pairs first. Set colour textures appropriately and normal maps to Non-Color; feed normals through a Normal Map node. Add roughness or higher-resolution assets only where close-up renders justify them, and register every new file. Blender documents [Non-Color data handling](https://docs.blender.org/manual/en/5.2/render/color_management/color_spaces.html).
+
+The licence-checked shortlist is in [research §4](research-blender.md#4-assets-and-licences): MTree (GPL tool; the meshes are ours) for broadleaves, Poly Haven `fir_tree_01`/`pine_tree_01` (CC0) as conifer stand-ins, Poly Haven and ambientCG grass, moss and slate (CC0). Poly Haven has no oak, birch, rowan, ash, hawthorn, spruce or larch, and no CC0 or CC BY heather, bracken or rush was found: build those in Geometry Nodes or from the project's own photographs. Near the camera, place trees from a **1 m canopy model** (pit-filled, height-dependent local maxima, allometric crowns; [design §7](design-blender.md#7-close-up-data-phase-3)); the 1 m lidar was flown in winter (2020–23), so broadleaf crowns read low.
 
 Do not use procedural displacement to invent cuttings, rock formations or terrain relief. A finer mesh requires finer source sampling if it is meant to represent actual geography.
 
@@ -164,7 +177,7 @@ Include wheelchair users and people with different mobility needs, including ada
 
 1. Source or create licensed, compatible character rigs, walking cycles, bicycles and adapted equipment. Reuse rig families where proportions permit, with individual meshes, hair and clothing. Give children suitable proportions, rigs and bicycle sizes rather than scaling an adult uniformly. Check licences and register models, textures and animation clips.
 2. Retain one reference bicycle/rider calibrated to the current defaults: 0.68 m wheel diameter, 1.05 m wheelbase, approximately 1.7 m riding height. Additional people use their own dimensions, riding posture, mobility equipment and contact/root calibration; these defaults are not applied to children or every adult.
-3. Drive each cyclist's root from a distance-based path schedule. Preserve the existing rider's gradient-dependent speed and 0.5 m lateral offset for the comparison pass; author other riders' speeds, offsets, directions and start times separately. Derive wheel rotation from each bicycle's wheel radius and travelled distance. Start the reference rider at the existing 75 rpm cadence; vary others coherently with their pace.
+3. Start from the exported people (ADR 61: 24 seeded walkers, runners and pram pushers in the reel's ground scenes) and key each root from its exported per-frame path; play clips on NLA strips whose time follows distance (`start + (d − d0) / L_clip × cycle_frames`), so feet do not slide as the pace varies ([design §4](design-blender.md#4-import-recipes-blender-52-api)). Drive each cyclist's root from a distance-based path schedule. Preserve the existing rider's gradient-dependent speed and 0.5 m lateral offset for the comparison pass; author other riders' speeds, offsets, directions and start times separately. Derive wheel rotation from each bicycle's wheel radius and travelled distance. Start the reference rider at the existing 75 rpm cadence; vary others coherently with their pace.
 4. Use foot IK to the pedals, hands to the handlebars and a stable saddle/torso pose. Add steering and restrained body lean after basic contact passes. Match the rig and animation to conventional, electric, family and adapted cycles rather than forcing one motion onto every asset.
 5. Animate walkers with separate walk cycles, stride lengths, speeds, gait variation and phase offsets. Match root travel to footfall timing, handle slopes and prevent sliding or foot penetration. Add companion spacing, brief looks/gestures and relaxed pauses where the shot allows. Keep pushchair, wheelchair and mobility-aid movement in contact with the surface.
 6. Use deterministic schedules for individuals and groups. Account for body, bike and equipment widths when planning bidirectional passing and overtaking on the 3 m trail; slow, stagger or wait at narrow points. Keep children with their accompanying adults and avoid groups blocking the entire path. Bake the motion after checking interactions; complex crowd simulation is unnecessary for the initial cast size.
@@ -188,7 +201,7 @@ Prioritise believable anatomy, bicycle fit and movement before fine surface deta
 | R07 | Distinct people and riding styles | Vary faces, proportions, hair, everyday clothing, posture and movement across the agreed age/gender/ethnicity/body/mobility coverage. Use ordinary jackets and recreational bicycles alongside other appropriate equipment. Preserve individual identities through adjoining shots. |
 | R08 | Quality at actual viewing distance | Allocate detailed mesh, face/hair and clothing work to foreground riders; use lighter versions in distant/aerial shots. Evaluate silhouettes, contact, deformation and motion at final output size as well as in close inspection. Benchmark a populated shot before expanding the library. |
 
-**Suggested starting tools:** evaluate [MakeHuman's MPFB extension](https://extensions.blender.org/add-ons/mpfb/) for adjustable human meshes, materials, clothing assets and rig options, and [Blender Rigify](https://docs.blender.org/manual/en/5.2/addons/rigify/index.html) for the human control rig. Confirm compatibility with the pinned Blender build and register the licences of each chosen model, clothing, texture and animation asset. A generated rig still needs bicycle-specific fitting, targets, deformation checks and animation work. Blender's [Principled material documentation](https://docs.blender.org/manual/sr/5.2/render/shader_nodes/shader/principled.html) covers skin scattering and fabric sheen.
+**Suggested starting tools:** [MakeHuman's MPFB extension](https://extensions.blender.org/add-ons/mpfb/) (2.0.18, Blender 4.2+; its core assets are CC0, packs are licensed pack by pack) for adjustable human meshes, materials, clothing assets and rig options (default, `cmu_mb`, Mixamo, Rigify), and [Blender Rigify](https://docs.blender.org/manual/en/5.2/addons/rigify/index.html) for the human control rig. MPFB's ethnicity is a three-way blend, its CC0 skins are mostly light and its hair has nothing afro-textured and no headwear: plan to author textured hair, headwear and darker skin textures and review them with the community. Motion: 100STYLE walks and runs (CC BY 4.0), the CMU database (free, credit requested; MPFB's `cmu_mb` rig matches it) and, for pedalling timing, the "Dataset of Motion Capture of Cyclists" (CC BY 4.0, road and time-trial bikes, 60–110 rpm, no steering). Avoid CC BY-NC sets (Bandai Namco). No licence-clean pram-pushing clip exists: use a walk with hand IK. Register every model, clothing, texture and clip. A generated rig still needs bicycle-specific fitting, targets, deformation checks and animation work. Blender's [Principled material documentation](https://docs.blender.org/manual/en/5.2/render/shader_nodes/shader/principled.html) covers skin scattering and fabric sheen. Bikes, prams, wheelchairs and dogs: [research §4](research-blender.md#4-assets-and-licences) (no hand-cycle and no realistic CC0 rigged dog was found).
 
 Keep physical units consistent with the metre-scale Blender scene: wheel rotation in radians is travelled distance in metres divided by wheel radius in metres. Sample the actual trail surface at front/rear wheel contact positions to check bicycle height/pitch through bends and gradients. Foot targets must follow the corresponding pedals with appropriate offsets; the two cranks remain opposite. Avoid unwanted limb stretching and abrupt changes in the knee direction.
 
@@ -220,15 +233,15 @@ Preserve this exact shot structure from the current prototype:
 
 Use the existing camera samples, rather than reconstructing these paths from the descriptive distances alone. Stage the pilot's walkers, cyclists and family groups so the rider-eye and follow shots show shared use clearly without crowding the bridge or hiding the landscape. Build soft natural lighting, a consistent sun/sky direction, restrained atmospheric depth and an AgX-managed image. Check exposure and skin materials across the cast's skin tones. Add depth of field or motion blur only where readability benefits.
 
-Use EEVEE for quick iteration and evaluate Cycles for the final. On compatible Apple Silicon, test [Cycles Metal rendering](https://docs.blender.org/manual/sr/latest/render/cycles/gpu_rendering.html). Benchmark 10–20 representative final-quality frames across all three shots, including vegetation-heavy frames. Record median/slow-frame time, memory, denoising stability and output size before choosing the final preset. Existing Three.js draw-call ceilings do not translate into a Blender budget.
+Use EEVEE for quick iteration and evaluate Cycles for the final. On compatible Apple Silicon, test [Cycles Metal rendering](https://docs.blender.org/manual/en/5.2/render/cycles/gpu_rendering.html), starting from the [design's render preset](design-blender.md#5-render-preset) (fixed samples with a noise threshold, never a time limit; animated seed; the GPU denoiser, which must be switched on explicitly; Persistent Data). Benchmark 10–20 representative final-quality frames across all three shots, including vegetation-heavy frames, after a warm-up render (Cycles compiles optimised kernels in the background). Record median/slow-frame time, memory, denoising stability and output size before choosing the final preset. Existing Three.js draw-call ceilings do not translate into a Blender budget.
 
-Render lossless PNG sequences first; use scene-linear EXR only when the grading workflow requires it. Assemble captions in the Video Sequencer from exported caption data. Ensure AgX is applied once: display-referred PNG plates must not receive a second creative view transform during assembly. Image sequences support interrupted renders and later encoding. [Official output workflow](https://docs.blender.org/manual/en/latest/render/output/introduction.html)
+Render lossless PNG sequences first; use scene-linear EXR only when the grading workflow requires it. Assemble captions in the Video Sequencer from exported caption data, or render the existing Remotion captions alone as transparent ProRes 4444 and composite them, which keeps the tested caption rules. Ensure AgX is applied once: the assembly scene uses View = Standard, and in Remotion a ProRes section is read with `toneMapped={false}`. Never put thousands of frames in `public/`: Remotion's programmatic bundler copies it into every bundle. Image sequences support interrupted renders (`use_overwrite = False`, `use_placeholder = True`) and later encoding. [Official output workflow](https://docs.blender.org/manual/en/5.2/render/output/introduction.html)
 
 **Exit:** native `.blend`, full 600-frame render, 20-second MP4, matched reference stills, source manifest, pilot casting sheet and a concise visual/performance assessment of the populated scene. Review this result before expanding the art treatment to the corridor.
 
 ### Phase 6 — Expand to the existing 90-second film
 
-Build the remaining windows using the same importer, materials and assets. Generate canopy/boundary data for the other ground windows where required. Reuse one corridor environment for the four aerial sections; it needs its own vegetation/water treatment because the current aerial assembly omits those extras.
+Build the remaining windows using the same importer, materials and assets; their canopy and boundary data already exist (ADR 60). Reuse one corridor environment for the four aerial sections: in the photo look its export already carries canopy-cover trees (three to a 16 m node within 1.5 km of the line), roads, water, walls and the Sentinel-2 ground image, so the Blender aerials start from the same placements as the three.js reel.
 
 Prioritise Trawsfynydd after Maentwrog to prove the lake treatment, then Blaenau's slate/settlement landscape, Vale north/south, and the wide corridor views. Check that terrain coverage includes everything visible from the cameras; extend/rebuild source windows when necessary rather than filling missing hills with invented shapes. Topographic map tiles remain optional reference/overview material, not photographic aerial scenery.
 
@@ -269,6 +282,8 @@ out/blender/frames/             Per-section image sequences
 out/blender/master/             Video Sequencer project and encoded films
 docs/evidence/blender/          Comparison stills, measurements and review
 docs/blender-build-plan.md      This plan
+docs/design-blender.md          The build specification (package, mapping, import recipes, render preset, checks)
+docs/research-blender.md        The research behind it, with sources
 ```
 
 Keep generated scenes/renders out of routine source commits. Deliver the `.blend` files with packed or correctly linked dependencies and verify the handoff by opening them from a clean delivery directory. Keep modules under the repository's 500-line limit.
@@ -276,7 +291,7 @@ Keep generated scenes/renders out of routine source commits. Deliver the `.blend
 ## 6. Acceptance checks and known constraints
 
 - **Geography:** compare transformed control points, trail widths, levels, bridge/road relationships and building footprints against the exported source. Preserve source IDs, uncertainty and provenance.
-- **Animation:** check the whole pilot and representative bends/grades in every later section. Check shot transitions and first/last frames explicitly. Keep imported transforms reproducible; compare rendered images with a documented tolerance rather than promising byte-identical output across GPUs.
+- **Animation:** check the whole pilot and representative bends/grades in every later section. Check shot transitions and first/last frames explicitly. Keep imported transforms reproducible (two imports from one package must give identical arrays); compare rendered images with a documented tolerance (`oiiotool --fail 0.016 --failpercent 1`, as Blender's own render tests), because Cycles is not bit-repeatable even twice on one machine (issue #101726) and the denoiser is not temporally stable. The full list is [design §6](design-blender.md#6-checks).
 - **People and representation:** compare the casting sheet with the actual rendered shots. Confirm visible children, teenagers, adults and elderly people; men and women, boys and girls; a broad range of ethnic backgrounds and body types; and different mobility needs. Include walkers and cyclists across age groups where appropriate, with infants/young children accompanied or carried. Assess varied characters rather than repeated recolours, natural interactions and clear screen time.
 - **Shared-use movement:** check pedestrian foot contact, bicycle/equipment dimensions, family-group spacing, passing clearance, overtaking and stopping. No person, mobility aid, pushchair or bicycle may intersect another or leave the intended usable surface. Verify the populated scene's render time and memory budget.
 - **Cyclist realism:** verify phase 4 requirements R01–R08 and the 5–10-second character proof before expanding the cast. Check anatomy/deformation, individual bicycle fit, hands/feet/saddle contacts, pedalling/coasting, steering, material response and useful foreground detail at the final viewing resolution.
@@ -301,7 +316,7 @@ Pilot render hours ≈ measured seconds/frame × 600 / 3,600
 Full reel hours    ≈ measured seconds/frame × 2,700 / 3,600
 ```
 
-For illustration only, 30 seconds/frame is 5 hours for the pilot and 22.5 hours for the reel; 90 seconds/frame is 15 and 67.5 hours. Add startup, encoding and rerender allowance, and estimate disk use from measured bytes/frame. No paid assets, cloud rendering or new hosting are assumed.
+For illustration only, 30 seconds/frame is 5 hours for the pilot and 22.5 hours for the reel; 60 seconds/frame is 10 and 45 hours; 90 seconds/frame is 15 and 67.5 hours. For scale, Blender's Open Data benchmark (5.2.0) scores this M4 Pro's 20-core GPU at 2,904, about a quarter of an RTX 4090 (11,553) and half an M4 Max (5,867). Add startup, encoding and rerender allowance, and estimate disk use from measured bytes/frame: about 2–5 MB per 1080p PNG of path-traced foliage, so the pilot is about 2 GB and the reel 5–14 GB, more than this machine's free space. No paid assets, cloud rendering or new hosting are assumed; paid options (Botaniq trees, Human Generator) are listed in the research with prices for the owner to decide.
 
 **First implementation milestone:** a repeatable command that produces `out/blender/scenes/maentwrog-blockout.blend` from the current scene data, plus three camera-matched stills proving geography, scale and timing. Complete that before investing in detailed vegetation or character art.
 
@@ -385,6 +400,22 @@ Provide a workshop/paper-map route alongside digital feedback. Ask participants 
 6. **Phase 6: presentation and final edit.** Add the nine-beat community timeline, bilingual messaging, subtitles, transcript and editable feedback end card. Support existing/proposed/option views and matched-camera comparisons; an existing-condition view must preserve the railway and appropriate ground rather than reuse the proposed flattened trail as if already built.
 7. **Handoff.** Deliver the editable community scene assets, completed coverage/casting sheets, source/status records, working media/text files and end-card destination. Keep public release as a separately authorised action. Record maintenance, land/access, design and operating questions that the film intentionally leaves for the next stage.
 
+## 9. Readiness checklist
+
+Go/no-go before phase 2. Each line is a check on this machine, not a document.
+
+| # | Item | Done when |
+|---|---|---|
+| 1 | Disk | at least 20 GB free for the pilot (Blender, caches, exports, frames, encodes), or `out/blender/` on an external volume; the render script refuses to start below its estimate |
+| 2 | Blender | 5.2.3 installed from the checksum-verified DMG or `blender@lts`; `blender --version` recorded in `config/blender/toolchain.json` |
+| 3 | GPU | a 16-sample Cycles still renders on METAL with MetalRT and the GPU denoiser, from a `--factory-startup` script |
+| 4 | Headless tests | `bpy==5.2.3` in an arm64 Python 3.13 environment runs an empty pytest suite under `tests/blender/` |
+| 5 | EEVEE | `blender -b` renders an EEVEE frame outside a login session, or previews fall back to Cycles at low samples |
+| 6 | Benchmark | 10–20 frames of a plain Maentwrog blockout at the draft preset, after a warm-up: seconds per frame, peak memory, bytes per frame |
+| 7 | Assets | the shortlist's licences re-opened and copied into `data/assets-3d.json` entries before download; the unverified ones (Fab EULA, Mixamo, Rokoko, ActorCore) left out until verified |
+| 8 | Exporter | `src/blender/export.ts` writes the Maentwrog package; its hashes and the design §6 transfer and camera checks pass |
+| 9 | Owner decisions | paid assets (if any), an external disk, and whether captions are composited from Remotion or rebuilt in the Video Sequencer |
+
 ## Planning record
 
 Scope authorised: inspect the project, create this build plan, expand it to include people of all ages, genders and diverse ethnic backgrounds walking and cycling, and research additions for its community-project use. Changes made: this document and the linked community research note. Existing code, data, staged changes and renders are preserved. No software installation, asset purchase, infrastructure operation or render was performed for these planning tasks. Implementation sequencing follows the repository's one-writer rule; multi-file implementation should use its required isolated ownership and coordination workflow.
@@ -395,4 +426,6 @@ Cyclist realism update: added requirements R01–R08, MPFB/Rigify/material refer
 
 Dog-walker update: promoted dog walkers to main-scope content and added dog assets/rigs, gait and paw-contact animation, coordinated owners/leads, considerate cyclist interactions and acceptance checks. No models or scene code were changed by this document update.
 
-Evidence: the current working-tree inputs named above, ADRs 5, 35 and 54–58, `docs/research-photoreal.md`, and the inspected prototype frames 200/400. Official Blender references were checked on 2026-10-29; implementation must verify exact APIs against the pinned Blender build.
+Research update of 30 October 2026: three parallel research strands (platform, assets and licences, data pipeline), with the plan-steering claims re-checked on their primary pages, produced [research-blender.md](research-blender.md), the build specification [design-blender.md](design-blender.md) and [ADR 62](adr/0062-blender-pipeline.md). This plan was corrected where it predated ADRs 60 and 61 (data for every window, the aerial extras, the seeded people), where Blender 5.x changed its API, and where the manual links pointed at the Slovenian and Serbian manuals; the readiness checklist (section 9) was added. The export format, coordinate mapping and camera conversion were measured with Blender 5.2.3 as a Python module in a scratch environment, since deleted; nothing was installed permanently.
+
+Evidence: the current working-tree inputs named above, ADRs 5, 35 and 54–62, `docs/research-photoreal.md`, `docs/research-blender.md`, and the inspected prototype frames 200/400. Official Blender references were checked on 2026-10-29 and 2026-10-30; implementation must verify exact APIs against the pinned Blender build.
