@@ -225,7 +225,7 @@ one-line comment when you create it.
 - *Budgets.* Measure again after each track. If a frame exceeds RL24, lower that
   section's tree cap first (ADR 52).
 
-## The photoreal layer (ADRs 54–58; `docs/design-photoreal.md`; research in `docs/research-photoreal.md`)
+## The photoreal layer (ADRs 54–59; `docs/design-photoreal.md`; research in `docs/research-photoreal.md`)
 
 **Decision map.** ADR 54 the look as a layer and the prototype · 55 post-processing · 56 the rider's view · 57 canopy
 heights · 58 walls and hedges · 59 walkers.

@@ -2,7 +2,7 @@
 
 Date: 2026-10-25
 
-Scope: `src/three-core/occlusion.ts` (new), `src/three-core/trees.ts`, `src/three-core/sections.ts`
+Scope: `src/three-core/trees.ts` (`sightLines`), `src/three-core/sections.ts` (the planned `occlusion.ts` was not needed: see Consequences)
 
 ## Status
 

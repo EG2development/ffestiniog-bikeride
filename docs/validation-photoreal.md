@@ -6,7 +6,7 @@ The independent review's own report is `docs/evidence/photo/independent-review-2
 
 ## Photoreal prototype (ADRs 54–58, 2026-10-29)
 
-Builder's own record; the independent review of the V rows (spec X4) has not run for this iteration. Measurements
+Builder's own record; the independent review of the V rows (spec X4) ran the next day (below). Measurements
 bind to snapshot tree `ed4ded731c85` (dirty worktree of `mission/3d-reel`, HEAD `bb9c039`, untracked sha256
 `a95b2b610af5…`); edits after it were documentation only (this section, `docs/research-photoreal.md`, the design
 block line for `PHOTO_TRAIL_TINT`). Nothing committed, pushed or stashed; `tests/baselines/` untouched (X2).

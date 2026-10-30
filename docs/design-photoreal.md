@@ -1,4 +1,4 @@
-# Design: the photoreal layer (ADRs 54–58)
+# Design: the photoreal layer (ADRs 54–59)
 
 Status: written 2026-10-29 with the build. The research and the comparison of approaches are in
 `docs/research-photoreal.md`; what must be true is spec RN1–RN6, CA1–CA5 (CA3 as amended by ADR 56), H1–H4, L1–L2
@@ -39,7 +39,7 @@ src/three/photo/assetRoles.ts ─ role → public/3d file (registered in assets-
 
 | File | Kind | Interface |
 |---|---|---|
-| `src/three/photo/assetRoles.ts` | data + stand-ins | `TextureRole`, `RoleFiles`, `TEXTURE_ROLES` (empty until files are registered), `SKY_IMAGE` (null = procedural dome), `standInTextures(role)`, `TEXTURE_ROLE_NAMES` |
+| `src/three/photo/assetRoles.ts` | data + stand-ins | `TextureRole`, `RoleFiles`, `TEXTURE_ROLES` (the eight roles' registered files under `public/3d/textures/`), `SKY_IMAGE` (null = procedural dome), `standInTextures(role)` for a role whose file is missing, `TEXTURE_ROLE_NAMES` |
 | `src/data/PhotoAssetsProvider.tsx` | provider (load gate) | `PhotoAssetsProvider({ section })`, `usePhotoAssets(): { textures: PhotoTextures; sky: Texture \| null }`; the only file with a texture loader; errors name section and path (RD5) |
 | `src/three/photo/TerrainPhotoView.tsx` | view | `TerrainPhotoView({ mesh, land, textures, detailFadeM? })`; `splatWeights(land)` one-hot per node; `MeshStandardMaterial` with `onBeforeCompile`: four planar-mapped sets blended by weight and slope, two tile scales, vertex-colour tint, fade to the vertex colour beyond 600 m |
 | `src/three/photo/TrailPhotoView.tsx` | view | `TrailPhotoView({ ribbon, gravel, widthM })`: the ribbon's UVs (u across, v in 3 m units) rescaled to the gravel tile, under `TRAIL_COLOUR` |
@@ -62,7 +62,8 @@ src/three/photo/assetRoles.ts ─ role → public/3d file (registered in assets-
   `leaf_type`; `data/features-<w>.json` gains `barrier` entries (`barrier-<w>-<osm id>`).
 - `data/features-3d.json` gains `trees-canopy-maentwrog` (approximate, lidar-derived), `grass-maentwrog` (decorative) and
   `walkers-maentwrog` (decorative, kind `walker`, with a note that the use is conceptual).
-- `data/assets-3d.json`: one entry per file under `public/3d/` (none yet; the stand-ins are code).
+- `data/assets-3d.json`: one entry per file under `public/3d/` (16 Poly Haven CC0 files: a diffuse and a normal map for
+  each of eight roles, with sha256; `tests/static-3d.test.ts` ties the roles to the register).
 
 ## Checks
 
@@ -98,5 +99,5 @@ look, and is the honest cost. The video's per-frame time is in `docs/validation-
 |---|---|---|
 | K17 | A tall non-tree outside a footprint (pylon, chimney) becomes a field tree. | Footprints exclude buildings; others are rare in this window; review the aerial still. |
 | K18 | Alpha-cut sprites thin with distance (mipmapped alpha under the 0.5 test). | Acceptable at 1080p for this window; a distance-dependent alpha test is a view change. |
-| K19 | The stand-in textures are not the Vale's surfaces. | Replace by role with registered CC0 files (`docs/research-photoreal.md`); nothing else changes. |
+| K19 | The textures are photographs of similar surfaces, not the Vale's. | Replace a role's files in `data/assets-3d.json` and `assetRoles.ts` when a licensed local photograph exists; nothing else changes. |
 | K20 | Adding `photo` to a reel section moves its trees (ADR 57) and breaks its before stills. | Opt-in per config; capture new before stills first (ADR 45). |

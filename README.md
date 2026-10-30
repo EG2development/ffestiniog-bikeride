@@ -59,7 +59,7 @@ writes `out/reel.mp4`; `npm run still:reel -- --frame=<n>` renders one frame; ev
 also registered as `Section-<id>` for stills. Captions are data in `src/data/reel-captions.ts`
 and the frame budget in `src/data/reel-timeline.ts`.
 
-**Photoreal prototype (2026-10-29, ADRs 54–58).** `Poc3DMaentwrogPhoto` is a 20 s proof of a more lifelike look on
+**Photoreal prototype (2026-10-29, ADRs 54–59).** `Poc3DMaentwrogPhoto` is a 20 s proof of a more lifelike look on
 the Maentwrog window: an aerial establishing shot, the rider's own view at handlebar height, and a follow shot across
 the OSM bridge. It is the same scene and data with a `look: "photo"` layer: detail-textured terrain by land cover and
 slope, a gravel trail, stone bridge, card trees sized from the lidar canopy (`npm run data:canopy -- <window>`),
@@ -94,9 +94,8 @@ npm run dev
 ```
 
 Then open the **CyclingVision** composition in Remotion Studio. The 3D compositions are
-there too: `Poc3DMaentwrog`, `Reel3D` and `Section-intro` … `Section-closing` (there's also
-a leftover default `MyComp` composition from the initial `remotion create`
-scaffold — ignore it). Scene timing lives in one place,
+there too: `Poc3DMaentwrog`, `Reel3D`, `Section-intro` … `Section-closing` and
+`Poc3DMaentwrogPhoto`. Scene timing lives in one place,
 `src/data/timeline.ts`, so re-pacing the cut doesn't mean hunting through
 every scene file.
 

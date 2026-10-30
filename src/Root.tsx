@@ -1,5 +1,4 @@
 import { Composition } from "remotion";
-import { MyComposition } from "./Composition";
 import { CyclingVision } from "./CyclingVision";
 import { TOTAL_DURATION_IN_FRAMES, FPS } from "./data/timeline";
 
@@ -72,7 +71,6 @@ export const RemotionRoot: React.FC = () => {
           defaultProps={{ section: id, diagnostics: false, captions: "section" as const }}
         />
       ))}
-      <MyComposition />
     </>
   );
 };

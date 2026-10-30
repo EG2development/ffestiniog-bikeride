@@ -257,8 +257,9 @@ the trail-width source), `docs/design-3d.md` (the pure-core block and tests tabl
   measure). The lidar survey date is known (flown 2022-01-11); what grew or was felled since is not.
 - **Trawsfynydd power station:** about 54 m today; demolition to a lower profile (25 m or 29 m by different reports)
   has begun under Costain for Nuclear Restoration Services (V); any future landmark model must carry the date.
-- **Review:** the visual verdicts in `docs/validation-photoreal.md` for this iteration are the builder's own; the spec's
-  independent review (X4) of the V rows has not yet run for the photo look.
+- **Review:** the spec's independent review (X4) ran on 2026-10-30 (`docs/evidence/photo/independent-review-2026-10-30.md`):
+  6 PASS, 10 PARTIAL, 1 FAIL (perceived realism), 1 N/A; its findings and the same-day responses are in
+  `docs/validation-photoreal.md`.
 - **Walkers are conceptual and generic:** three sixteen-part figures (ADR 59) with no faces, bags or poles; the rider
   does not slow for them. **No second cyclist, no signs:** no source gives the trail's signage or wording
   (`docs/storyboard.md` forbids inventing it), so none is drawn; the brief's road-crossing treatments and rest points are
