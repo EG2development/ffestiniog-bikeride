@@ -1,3 +1,4 @@
+// Reel: shots per section from a spec, with aerial shots (docs/adr/0035-shot-specs.md).
 import type { CyclistPose } from "./cyclistMotion";
 import type { Trail } from "./trail";
 import type { Vec3 } from "./types";
@@ -95,6 +96,96 @@ export function followShot(p: { poseAt: (frame: number) => CyclistPose; backM: n
       target: [here[0] + hx * 0.5, here[1] + 0.1, here[2] + hz * 0.5],
       fovDeg: FOV_DEG,
     };
+  };
+}
+
+/**
+ * A first-person shot at handlebar height (docs/adr/0056-first-person-shot.md). The camera rides with the rider,
+ * `eyeHeightM` above the trail surface and `forwardM` ahead of the rider's centre, and looks at the trail `lookAheadM`
+ * ahead: bends turn the view as a rider's head turns, and the profile pitches it. The cadence adds a small bob and
+ * sway, pure functions of the pose's crank angle. The rider model is not drawn in these frames: the camera is the rider,
+ * so CA3's rider distance does not apply and the terrain clearance is 1 m (spec CA3 as amended by ADR 56).
+ */
+export function firstPersonShot(p: {
+  trail: Trail;
+  poseAt: (frame: number) => CyclistPose;
+  distAt: (frame: number) => number;
+  eyeHeightM: number;
+  lookAheadM: number;
+  forwardM?: number;
+  bobM?: number;
+  fovDeg?: number;
+}): Shot {
+  const forwardM = p.forwardM ?? 0.4;
+  const bobM = p.bobM ?? 0.012;
+  const fovDeg = p.fovDeg ?? FIRST_PERSON_FOV_DEG;
+  return (frame) => {
+    const pose = p.poseAt(frame);
+    const d = p.distAt(frame);
+    const [hx, hz] = headingXZ(p.trail, d);
+    // two pedal strokes per crank turn lift the body; one turn sways it
+    const bobUp = bobM * Math.sin(2 * pose.crankAngle);
+    const sway = 0.6 * bobM * Math.sin(pose.crankAngle);
+    // left of travel is (hz, -hx) in the XZ plane
+    const position: Vec3 = [
+      pose.position[0] + hx * (forwardM / 10) + hz * (sway / 10),
+      pose.position[1] + (p.eyeHeightM + bobUp) / 10,
+      pose.position[2] + hz * (forwardM / 10) - hx * (sway / 10),
+    ];
+    const ahead = p.trail.sampleAt(d + p.lookAheadM);
+    // the eye looks a little down at the surface ahead, as a rider's does
+    return { position, target: [ahead.x, ahead.y + (p.eyeHeightM - 0.45) / 10, ahead.z], fovDeg };
+  };
+}
+/** A wider lens for the rider's view: a head-mounted camera's field, inside CA4's 35–60°. */
+export const FIRST_PERSON_FOV_DEG = 52;
+
+/** An orbit around a point: the camera circles at a radius and height, looking at the centre (docs/adr/0035-shot-specs.md). */
+export function aerialOrbit(p: { centre: Vec3; radiusM: number; heightM: number; fromDeg: number; toDeg: number; frames: number }): Shot {
+  const progress = easedProgress(p.frames);
+  return (frame) => {
+    const u = progress[clampFrame(frame, p.frames)];
+    const a = (lerp(p.fromDeg, p.toDeg, u) * Math.PI) / 180;
+    return {
+      position: [p.centre[0] + Math.cos(a) * (p.radiusM / 10), p.centre[1] + p.heightM / 10, p.centre[2] + Math.sin(a) * (p.radiusM / 10)],
+      target: p.centre,
+      fovDeg: FOV_DEG,
+    };
+  };
+}
+
+/**
+ * A pull-back: the camera rises and backs away from a point along a fixed direction, keeping it in view. It starts as far back as it
+ * is high (a 45° look-down), never straight above the target, so the view direction turns slowly (CA2).
+ */
+export function pullBack(p: { from: Vec3; target: Vec3; startHeightM: number; endHeightM: number; backM: number; frames: number; back?: [number, number] }): Shot {
+  const progress = easedProgress(p.frames);
+  const [bx, bz] = p.back ?? [0, 1];
+  return (frame) => {
+    const u = progress[clampFrame(frame, p.frames)];
+    const back = lerp(p.startHeightM, p.backM, u) / 10;
+    return {
+      position: [p.from[0] + bx * back, p.from[1] + lerp(p.startHeightM, p.endHeightM, u) / 10, p.from[2] + bz * back],
+      target: p.target,
+      fovDeg: FOV_DEG,
+    };
+  };
+}
+
+/**
+ * Lifts a whole shot by one constant so it clears the terrain by minAboveM at every frame: a smooth path stays smooth (CA2),
+ * where a per-frame lift would follow every bump. Returns the shot unchanged when it already clears.
+ */
+export function liftClear(shot: Shot, heightAt: HeightAt, frames: number, minAboveM: number): Shot {
+  let lift = 0;
+  for (let f = 0; f < frames; f++) {
+    const p = shot(f).position;
+    lift = Math.max(lift, groundUnder(heightAt, p[0], p[2], f) + minAboveM / 10 - p[1]);
+  }
+  if (lift === 0) return shot;
+  return (f) => {
+    const pose = shot(f);
+    return { ...pose, position: [pose.position[0], pose.position[1] + lift, pose.position[2]] };
   };
 }
 

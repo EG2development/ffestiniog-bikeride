@@ -1,0 +1,20 @@
+{
+  "relation/3084421": {
+    "levelM": 197.26,
+    "samples": 3544,
+    "cogLevel": 2,
+    "retrieved": "2026-10-25"
+  },
+  "way/4684879": {
+    "levelM": 306.44,
+    "samples": 161,
+    "cogLevel": 2,
+    "retrieved": "2026-10-25"
+  },
+  "way/4685059": {
+    "levelM": 405.93,
+    "samples": 261,
+    "cogLevel": 2,
+    "retrieved": "2026-10-25"
+  }
+}

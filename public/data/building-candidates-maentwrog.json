@@ -1,0 +1,66 @@
+{
+  "section": "maentwrog",
+  "footprints": 40,
+  "posesSampled": 36,
+  "farM": 6000,
+  "upperBoundM": 60,
+  "unmeasured": 0,
+  "candidates": [
+    {
+      "id": "way/289027285",
+      "lon": -3.941311,
+      "lat": 52.934846,
+      "areaM2": 415,
+      "testedAtM": 5.5
+    },
+    {
+      "id": "way/289033758",
+      "lon": -3.937995,
+      "lat": 52.926526,
+      "areaM2": 78,
+      "testedAtM": 12
+    },
+    {
+      "id": "way/357866903",
+      "lon": -3.947665,
+      "lat": 52.926879,
+      "areaM2": 552,
+      "testedAtM": 6.5
+    },
+    {
+      "id": "way/357866905",
+      "lon": -3.947941,
+      "lat": 52.927031,
+      "areaM2": 341,
+      "testedAtM": 4.9
+    },
+    {
+      "id": "way/372388116",
+      "lon": -3.939469,
+      "lat": 52.933219,
+      "areaM2": 98,
+      "testedAtM": 3.2
+    },
+    {
+      "id": "way/373577738",
+      "lon": -3.942435,
+      "lat": 52.932868,
+      "areaM2": 197,
+      "testedAtM": 8.3
+    },
+    {
+      "id": "way/373577741",
+      "lon": -3.941961,
+      "lat": 52.93229,
+      "areaM2": 69,
+      "testedAtM": 6.2
+    },
+    {
+      "id": "way/428585769",
+      "lon": -3.950501,
+      "lat": 52.926125,
+      "areaM2": 448,
+      "testedAtM": 2.6
+    }
+  ]
+}

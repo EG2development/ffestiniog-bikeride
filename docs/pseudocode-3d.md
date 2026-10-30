@@ -5,6 +5,8 @@ implements `docs/spec-3d.md` (requirement ids in brackets) following
 `docs/design-3d.md` and the ADRs in `docs/adr/`. Section 6 traces every
 acceptance criterion to the logic that meets it and the logic that checks it.
 
+**The reel (mission `msn_44274a1de641722956fc9ce5`) has its own part: `docs/pseudocode-reel.md`** (kept separate so this file stays under 500 lines).
+
 **Where the shipped code differs (updated at t13, 2026-10-25).** This is the pre-implementation
 pseudocode. Where it disagrees with the code, the code and `docs/design-3d.md` are authoritative:
 

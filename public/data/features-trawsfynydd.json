@@ -1,0 +1,4549 @@
+[
+  {
+    "id": "terrain-trawsfynydd",
+    "kind": "terrain",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "lidar DTM at its 4 m overview; 1671 cells filled (water shore height or neighbour mean), see dem.json"
+  },
+  {
+    "id": "landcover-trawsfynydd",
+    "kind": "landcover",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "landuse/natural polygons in public/data/sections/trawsfynydd/osm.geojson"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ]
+  },
+  {
+    "id": "bridge-trawsfynydd-373584158",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373584158"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "fromKm": 11.9892,
+    "toKm": 11.9999,
+    "note": "position from OSM; generic deck and parapets"
+  },
+  {
+    "id": "overbridge-trawsfynydd-152470937",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/152470937"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "fromKm": 11.547,
+    "toKm": 11.568200000000001,
+    "note": "highway=service bridge over the line; deck removed from the trail profile (ADR 23)"
+  },
+  {
+    "id": "overbridge-trawsfynydd-120875922",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/120875922"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "fromKm": 13.1601,
+    "toKm": 13.1811,
+    "note": "highway=residential bridge over the line; deck removed from the trail profile (ADR 23)"
+  },
+  {
+    "id": "road-trawsfynydd-318888707",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318888707"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-318893148",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318893148"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-318893156",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318893156"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-318893157",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318893157"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-369299929",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/369299929"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-836042001",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/836042001"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-1227189292",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1227189292"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-33908749",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/33908749"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-33908806",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/33908806"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-108907132",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/108907132"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-108907182",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/108907182"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-152470938",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/152470938"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-289033926",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033926"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-289033927",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033927"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-289033928",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033928"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-289033929",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033929"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-318844271",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318844271"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-318844272",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318844272"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-318844273",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318844273"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-318844277",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318844277"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-318844278",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318844278"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-318844280",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318844280"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428585752",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428585752"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428585753",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428585753"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428585754",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428585754"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-1094217330",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1094217330"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-4246984",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/4246984"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-trawsfynydd-108907151",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/108907151"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=tertiary"
+  },
+  {
+    "id": "road-trawsfynydd-159025225",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159025225"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-159029125",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029125"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-159029132",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029132"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-224967869",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/224967869"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-trawsfynydd-230003692",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230003692"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-230003693",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230003693"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-230003694",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230003694"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-289027284",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027284"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-289027303",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027303"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-289033759",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033759"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-293110304",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/293110304"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-293110305",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/293110305"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-293110306",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/293110306"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-311744172",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/311744172"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-311744173",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/311744173"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-357873351",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357873351"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-357873359",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357873359"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-trawsfynydd-373577742",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373577742"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-373577744",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373577744"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-428585755",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428585755"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428585756",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428585756"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428585757",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428585757"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428585760",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428585760"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428585761",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428585761"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428585765",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428585765"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428585766",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428585766"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428585767",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428585767"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428585782",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428585782"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-945118076",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/945118076"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-945118077",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/945118077"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-945118078",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/945118078"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-1000256353",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1000256353"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-1000256356",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1000256356"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-1226993508",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1226993508"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-1226993510",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1226993510"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-1231939367",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231939367"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-1322700663",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1322700663"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-trawsfynydd-1322700664",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1322700664"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-trawsfynydd-5034119",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/5034119"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-28124676",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/28124676"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-118235062",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/118235062"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-118235063",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/118235063"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-118235065",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/118235065"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-118235069",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/118235069"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-118235071",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/118235071"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-118235442",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/118235442"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-120474616",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/120474616"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-120474617",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/120474617"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-120474618",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/120474618"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-120474812",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/120474812"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-120875923",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/120875923"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-trawsfynydd-120876105",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/120876105"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-224967861",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/224967861"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-trawsfynydd-224967865",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/224967865"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-trawsfynydd-224967877",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/224967877"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-263214176",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263214176"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-263214177",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263214177"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-263214178",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263214178"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-263214182",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263214182"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-263214185",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263214185"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-263214189",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263214189"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-290321007",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/290321007"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-trawsfynydd-290322358",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/290322358"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-314041156",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314041156"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-314041158",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314041158"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-314041159",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314041159"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-314046245",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314046245"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-314046246",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314046246"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-314046266",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314046266"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-314046267",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314046267"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-314046269",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314046269"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-314046270",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314046270"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-314046271",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314046271"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-314046272",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314046272"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-338704287",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338704287"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-428720083",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428720083"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-686443044",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/686443044"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-1071375702",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1071375702"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-1071375706",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1071375706"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-1071375708",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1071375708"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-1071375715",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1071375715"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-1071375718",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1071375718"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-1071375722",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1071375722"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-1349691825",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1349691825"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-trawsfynydd-33908905",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/33908905"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-152470934",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/152470934"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-trawsfynydd-152470935",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/152470935"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-152470936",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/152470936"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-152470937",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/152470937"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-224967866",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/224967866"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-trawsfynydd-230005911",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230005911"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-230005912",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230005912"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-230005913",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230005913"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-249643576",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/249643576"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-249643578",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/249643578"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-289033752",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033752"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-338686474",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338686474"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-361201360",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361201360"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-373584151",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373584151"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-373586022",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373586022"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-373586029",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373586029"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-373586030",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373586030"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-373586032",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373586032"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428798819",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428798819"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-1226983418",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1226983418"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-123459811",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/123459811"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-trawsfynydd-249640750",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/249640750"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-289024230",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024230"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-295736336",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295736336"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-295755413",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295755413"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-295755415",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295755415"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-295755419",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295755419"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-295755421",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295755421"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-trawsfynydd-357873358",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357873358"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-trawsfynydd-361181589",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361181589"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-363620996",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/363620996"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-364997730",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/364997730"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-373586034",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373586034"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-373594894",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373594894"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-373595258",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373595258"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-376246112",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/376246112"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-376246113",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/376246113"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-1231939365",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231939365"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-1231939366",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231939366"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-1231940672",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231940672"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-1231940673",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231940673"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-120875921",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/120875921"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-120875922",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/120875922"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-120875924",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/120875924"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-120876104",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/120876104"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-trawsfynydd-140225755",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/140225755"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=primary_link"
+  },
+  {
+    "id": "road-trawsfynydd-159024154",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159024154"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-trawsfynydd-206977886",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/206977886"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=primary"
+  },
+  {
+    "id": "road-trawsfynydd-338695778",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338695778"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428720098",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428720098"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428720105",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428720105"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428720109",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428720109"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428720110",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428720110"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-428720113",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428720113"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-428739921",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428739921"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428739929",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428739929"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428739931",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428739931"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428739942",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428739942"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-428739943",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428739943"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-428739944",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428739944"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-428739945",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428739945"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-428739949",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428739949"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428739950",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428739950"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-428787309",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428787309"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-1320162380",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1320162380"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-trawsfynydd-1320162381",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1320162381"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-trawsfynydd-1349691824",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1349691824"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-trawsfynydd-249641308",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/249641308"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-295744988",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295744988"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-trawsfynydd-373586028",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373586028"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-829619347",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/829619347"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-trawsfynydd-361199431",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361199431"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "water-trawsfynydd-428798789",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428798789"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "surface at the median DTM height along the shore; not a surveyed level (ADR 32)"
+  },
+  {
+    "id": "water-trawsfynydd-4684879",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/4684879"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "surface at the median DTM height along the shore; not a surveyed level (ADR 32)"
+  },
+  {
+    "id": "water-trawsfynydd-3084421",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "relation/3084421"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "surface at the median DTM height along the shore; not a surveyed level (ADR 32)"
+  },
+  {
+    "id": "earthwork-fill-11.510",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-trawsfynydd",
+      "Reel3D"
+    ],
+    "fromKm": 11.51,
+    "toKm": 11.51,
+    "note": "fill, up to 2.4 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-fill-11.720",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-trawsfynydd",
+      "Reel3D"
+    ],
+    "fromKm": 11.72,
+    "toKm": 11.72,
+    "note": "fill, up to 3.7 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-fill-11.863",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-trawsfynydd",
+      "Reel3D"
+    ],
+    "fromKm": 11.863,
+    "toKm": 11.863,
+    "note": "fill, up to 3.0 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-cut-12.696",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-trawsfynydd",
+      "Reel3D"
+    ],
+    "fromKm": 12.696,
+    "toKm": 12.696,
+    "note": "cut, up to 2.7 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-cut-12.705",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-trawsfynydd",
+      "Reel3D"
+    ],
+    "fromKm": 12.705,
+    "toKm": 12.705,
+    "note": "cut, up to 3.2 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-cut-12.714",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-trawsfynydd",
+      "Reel3D"
+    ],
+    "fromKm": 12.714,
+    "toKm": 12.714,
+    "note": "cut, up to 3.6 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-cut-12.723",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-trawsfynydd",
+      "Reel3D"
+    ],
+    "fromKm": 12.723,
+    "toKm": 12.723,
+    "note": "cut, up to 3.2 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-cut-12.732",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-trawsfynydd",
+      "Reel3D"
+    ],
+    "fromKm": 12.732,
+    "toKm": 12.735,
+    "note": "cut, up to 3.7 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-cut-12.744",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-trawsfynydd",
+      "Reel3D"
+    ],
+    "fromKm": 12.744,
+    "toKm": 12.744,
+    "note": "cut, up to 3.4 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-cut-12.753",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-trawsfynydd",
+      "Reel3D"
+    ],
+    "fromKm": 12.753,
+    "toKm": 12.753,
+    "note": "cut, up to 2.8 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "building-trawsfynydd-1071375699",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1071375699"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/1071375699",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2022-06-19",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 8.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-1071375701",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1071375701"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/1071375701",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2022-06-19",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 7.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-1071375703",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1071375703"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/1071375703",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2022-06-19",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 7.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-1071375709",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1071375709"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/1071375709",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2022-06-19",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "barn; height 5.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-1071375714",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1071375714"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/1071375714",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2022-06-19",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "barn; height 6.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-1228848458",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1228848458"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/1228848458",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2023-12-05",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 2.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-1228848459",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1228848459"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/1228848459",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2023-12-05",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 3.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-1322350577",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1322350577"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/1322350577",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2024-10-08",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 4.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-1322350579",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1322350579"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/1322350579",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2024-10-08",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 6.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-230005904",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230005904"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/230005904",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2013-07-15",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 5.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-230005905",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230005905"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/230005905",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2013-07-15",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 5.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-230005906",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230005906"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/230005906",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2013-07-15",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 5.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-230005908",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230005908"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/230005908",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2013-07-15",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 5.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-230005909",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230005909"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/230005909",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2013-07-15",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 5.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-230005910",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230005910"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/230005910",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2021-07-14",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 8.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-263214179",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263214179"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263214179",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-02-24",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 7.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-263214181",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263214181"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263214181",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-02-24",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 8.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-263214183",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263214183"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263214183",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-02-24",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 7.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-263214184",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263214184"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263214184",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-02-24",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 7.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-263214187",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263214187"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263214187",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-02-24",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 6.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-263214188",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263214188"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263214188",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-11-22",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 6.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-263214190",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263214190"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263214190",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-06-29",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 7.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-263486607",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263486607"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263486607",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-11-22",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 6.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-263486609",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263486609"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263486609",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-06-29",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "church; height 11.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-289033748",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033748"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/289033748",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-06-21",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 4.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-289033749",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033749"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/289033749",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-06-21",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 13.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-289033750",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033750"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/289033750",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-06-21",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 4.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-289033751",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033751"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/289033751",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-06-21",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 7.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-289033753",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033753"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/289033753",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-06-21",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 6.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-289033754",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033754"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/289033754",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-06-21",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 5.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-289033755",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033755"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/289033755",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-06-21",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 4.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-289033756",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033756"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/289033756",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-06-21",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 2.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-289033757",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033757"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/289033757",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2023-11-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 4.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-289033758",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033758"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/289033758",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-06-21",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 12.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-290322349",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/290322349"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/290322349",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-06-29",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "terrace; height 8.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-290322350",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/290322350"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/290322350",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-06-29",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "terrace; height 3.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-290322351",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/290322351"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/290322351",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-06-29",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "terrace; height 6.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-318844281",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318844281"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/318844281",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-12-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 5.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-318888704",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318888704"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/318888704",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-12-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 2.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-318893150",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318893150"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/318893150",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-12-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 4.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-318893151",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318893151"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/318893151",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-12-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 4.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-318893152",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318893152"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/318893152",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2023-12-05",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 6.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-318983148",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318983148"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/318983148",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-12-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 4.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-369300910",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/369300910"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/369300910",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2015-09-05",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 9.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-428720091",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428720091"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/428720091",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-02",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 4.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-428720093",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428720093"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/428720093",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-02",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 6.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-428720094",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428720094"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/428720094",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-02",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 6.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-428739940",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428739940"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/428739940",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-02",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 4.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-428739941",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428739941"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/428739941",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-02",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 4.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-428788777",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428788777"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/428788777",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-02",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 3.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-428798796",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428798796"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/428798796",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-02",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 4.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-428798798",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428798798"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/428798798",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-02",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 5.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-428798800",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428798800"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/428798800",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-02",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 6.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-428798802",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428798802"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/428798802",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-02",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 4.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-428800188",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428800188"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/428800188"
+      ],
+      "evidence": [
+        "map"
+      ],
+      "observedAt": "2016-07-02",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 6.0 m from default (approximate)"
+  },
+  {
+    "id": "building-trawsfynydd-6377654",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "relation/6377654"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/relation/6377654",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-02",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 2.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-686443070",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/686443070"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/686443070",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2019-04-28",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 7.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-trawsfynydd-955309009",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/955309009"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/955309009",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2021-06-17",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "industrial; height 6.2 m from lidar-dsm"
+  }
+]

@@ -1,0 +1,383 @@
+t11 (reel v2, mission msn_33e838999675db739df3c922) full test run, started 2026-10-26T00:07:35Z
+machine: Apple M4 Pro, 14 cores; Darwin 25.6.0
+node v24.13.1, npm 11.21.0, Python 3.13.5, numpy 2.4.4, Pillow 12.1.0
+git HEAD bb9c039 (worktree dirty: the 3D work is uncommitted)
+snapshot (scripts/snapshot.mjs): tree 41507f407cb520b4db459602c80f2b0a9790f44d (dirty true), untracked 178 files sha256 a2c3c79f4d7fc05329ae7333938a25c94a73592ddf87f2afc68b348a11e434e1
+
+== Lint and type-check
+== $ npm run lint
+
+> ffestiniog-bikeride@1.0.0 lint
+> eslint src && tsc
+
+== exit 0
+
+== Unit, static and acceptance tests (vitest, every test listed)
+== $ npx vitest run --reporter=verbose
+
+ RUN  v5.0.5 ~/ffestiniog-bikeride
+
+ ✓ tests/three-core/water-holes.test.ts > polygonsOf: one normaliser for holes (WA3) > reads holes from the geometry and from properties.inner_rings alike 4ms
+ ✓ tests/three-core/water-holes.test.ts > polygonsOf: one normaliser for holes (WA3) > gives a Polygon and a one-part MultiPolygon the same result, without closing duplicates 1ms
+ ✓ tests/three-core/water-holes.test.ts > polygonsOf: one normaliser for holes (WA3) > orients outer rings anticlockwise and holes clockwise 1ms
+ ✓ tests/three-core/water-holes.test.ts > polygonsOf: one normaliser for holes (WA3) > gives each inner ring to the MultiPolygon part that contains it, and to no other part 1ms
+ ✓ tests/three-core/water-holes.test.ts > waterBodies keeps holes and uses shared levels (WA3, WA5) > keeps the island as a hole and counts its area out 2ms
+ ✓ tests/three-core/water-holes.test.ts > waterBodies keeps holes and uses shared levels (WA3, WA5) > takes the surface from a shared level when one is given 1ms
+ ✓ tests/three-core/water-holes.test.ts > waterBodies keeps holes and uses shared levels (WA3, WA5) > gives Llyn Trawsfynydd one level and the same islands in both windows that show it (real data) 38ms
+ ✓ tests/three-core/buildings.test.ts > buildings on the ground (BL5) > bases a building at the lowest ground under its footprint 2ms
+ ✓ tests/three-core/buildings.test.ts > buildings on the ground (BL5) > has no floating wall and rises clear of the highest ground under it 2ms
+ ✓ tests/three-core/buildings.test.ts > buildings on the ground (BL5) > BL6: draws a building at its recorded height, the ridge of a gabled roof included 1ms
+ ✓ tests/three-core/buildings.test.ts > buildings stay clear of roads and of each other (BL7, BL8) > reports a line that runs through a footprint and none that runs around it 1ms
+ ✓ tests/three-core/buildings.test.ts > buildings stay clear of roads and of each other (BL7, BL8) > measures overlap as a share of the smaller footprint 4ms
+ ✓ tests/three-core/buildings.test.ts > drawing (BL10, BL14) > merges every building into at most 3 groups and draws approved or demolished ones apart 2ms
+ ✓ tests/three-core/buildings.test.ts > landmarks (BL9) > builds a church from its recorded dimensions, within 10 % 1ms
+ ✓ tests/three-core/buildings.test.ts > loading per section (BL11) > a section loads only its own buildings file 41ms
+ ✓ tests/three-core/buildings.test.ts > placing a section's buildings (BL3, BL5, BL9, BL10, BL16) > draws only registered ids, with the register's status, and merges landmarks with the rest 2ms
+ ✓ tests/three-core/buildings.test.ts > placing a section's buildings (BL3, BL5, BL9, BL10, BL16) > puts a church's tower at the west end of its footprint, on the ground, at its recorded size 2ms
+ ✓ tests/three-core/buildings.test.ts > roofs and walls fit the footprint (t10 M1, L2) > M1: draws a skewed quad flat, and a rectangle with a collinear extra node gabled 1ms
+ ✓ tests/three-core/buildings.test.ts > roofs and walls fit the footprint (t10 M1, L2) > L2: every wall reaches the ground where it dips between corners 2ms
+ ✓ tests/load-gate.test.ts > createLoadGate > RD3: holds the frame until the data has mounted, then releases once 30ms
+ ✓ tests/load-gate.test.ts > createLoadGate > RD3: an input change takes the new hold before it releases the old one, and clears the stale data 6ms
+ ✓ tests/load-gate.test.ts > createLoadGate > RD4: a request that settles after a newer one began neither sets data nor cancels the render 4ms
+ ✓ tests/load-gate.test.ts > createLoadGate > RD4: a failure after unmount does not cancel, and unmounting releases the hold 2ms
+ ✓ tests/load-gate.test.ts > createLoadGate > RD4: an aborted request is ignored 3ms
+ ✓ tests/load-gate.test.ts > createLoadGate > RD5: the current request's failure cancels the render with the section and the asset path 2ms
+ ✓ tests/load-gate.test.ts > the hold is taken while rendering, before any frame commits (RD1, RD2, RL26) > hold(key) takes the hold at once; start() then reuses it, and a new key holds before the old is released 2ms
+ ✓ tests/load-gate.test.ts > the hold is taken while rendering, before any frame commits (RD1, RD2, RL26) > useLoadGate takes the hold in the render body, not in an effect 0ms
+ ✓ tests/load-gate.test.ts > loads kept by key (t8: one corridor drape per tab, not one per aerial section) > loads a key once after it succeeds; a failure or an abort is not kept, so the next request loads again 10ms
+ ✓ tests/load-gate.test.ts > loads kept by key (t8: one corridor drape per tab, not one per aerial section) > the drape provider keeps its drapes by key 0ms
+ ✓ tests/load-gate.test.ts > the providers use the gate (RD3–RD5) > src/data/Scene3DDataProvider.tsx loads through the gate and names the section in its errors 0ms
+ ✓ tests/load-gate.test.ts > the providers use the gate (RD3–RD5) > src/data/MapDrapeProvider.tsx loads through the gate and names the section in its errors 0ms
+ ✓ tests/load-gate.test.ts > the providers use the gate (RD3–RD5) > src/data/RouteDataProvider.tsx loads through the gate and names the section in its errors 0ms
+ ✓ tests/load-gate.test.ts > errors name the section, not the data window (RD5; t10 R-L3) > Section3D passes its section id as the providers' error label 0ms
+ ✓ tests/water-geometry.test.ts > waterArrays (WA1, WA2) > faces every triangle up, whichever way the ring is wound 24ms
+ ✓ tests/water-geometry.test.ts > waterArrays (WA1, WA2) > leaves the island open: no triangle inside it, area = lake minus island 0ms
+ ✓ tests/water-geometry.test.ts > waterArrays (WA1, WA2) > faces Llyn Trawsfynydd up with its islands open (real data) 35ms
+ ✓ tests/water-geometry.test.ts > closed rings (t10 L1) > triangulates a ring that repeats its first point exactly as an open one 0ms
+ ✓ tests/three-core/corridor.test.ts > flattenCorridor > G5a: terrain under the 3 m ribbon sits 0.05 m (±0.03 m) below it, outside bridge spans 35ms
+ ✓ tests/three-core/corridor.test.ts > flattenCorridor > G5b: reports the 5 m hump as a cut and the 4 m hollow as a fill, deeper than 2 m 9ms
+ ✓ tests/three-core/corridor.test.ts > flattenCorridor > reports cut and fill depths in metres whatever the vertical exaggeration (review R3) 37ms
+ ✓ tests/three-core/corridor.test.ts > flattenCorridor > leaves terrain under the bridge span alone (the road passes beneath) 3ms
+ ✓ tests/three-core/corridor.test.ts > flattenCorridor > leaves terrain more than 15 m from the centreline alone 17ms
+(node:12527) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ ✓ tests/static-3d.test.ts > 3D source layout (ADRs 2–4) > has 3D views, a 3D scene and the 3D data provider 3ms
+ ✓ tests/static-3d.test.ts > 3D source layout (ADRs 2–4) > registers the POC composition in src/Root.tsx 0ms
+ ✓ tests/static-3d.test.ts > 3D source layout (ADRs 2–4) > ADR 24: src/Root.tsx loads 3D modules lazily, keeping them out of the 2D video's bundle 0ms
+ ✓ tests/static-3d.test.ts > 3D source layout (ADRs 2–4) > ADR 3: src/three-core imports nothing from React, three.js or Remotion 1ms
+ ✓ tests/static-3d.test.ts > 3D source layout (ADRs 2–4) > ADR 4: views inside the canvas don't read React context 2ms
+ ✓ tests/static-3d.test.ts > 3D source layout (ADRs 2–4) > every <ThreeCanvas> comes from @remotion/three 0ms
+ ✓ tests/static-3d.test.ts > rendering rules > RN1: no clocks, timers, useFrame or unseeded randomness in 3D code 2ms
+ ✓ tests/static-3d.test.ts > rendering rules > RN4: 3D still/render scripts pass --gl=angle; remotion.config.ts sets no GL renderer 0ms
+ ✓ tests/static-3d.test.ts > rendering rules > ADR 53: 3D video renders encode on the GPU at 10 Mbit/s; the 2D video and the config keep software encoding 0ms
+ ✓ tests/static-3d.test.ts > rendering rules > RN5a: every 3D file that loads data or assets gates the render, directly or through the load gate (ADR 43) 1ms
+ ✓ tests/static-3d.test.ts > rendering rules > RN5d: data providers report a failed load instead of hanging, and check the HTTP status (review R1; ADR 43) 0ms
+ ✓ tests/static-3d.test.ts > rendering rules > H2a/L2/G3: the overlays are logged from the page, not from a hard-coded list (review R2; ADR 36) 0ms
+ ✓ tests/static-3d.test.ts > rendering rules > RL3: the reel and every section are registered lazily, and the reel composition exists (ADR 28) 0ms
+ ✓ tests/static-3d.test.ts > rendering rules > RL30: the fetch scripts reach only the two allowlisted hosts 2ms
+ ✓ tests/static-3d.test.ts > rendering rules > RL31: no OSM tag value is rendered as on-screen text (ADR 38) 1ms
+ ✓ tests/static-3d.test.ts > rendering rules > t10 R8/R9: Section3D names an unknown section at its boundary; SkyDome disposes its material 0ms
+ ✓ tests/static-3d.test.ts > rendering rules > RN5c: data providers release their hold only after their children have mounted 0ms
+ ✓ tests/static-3d.test.ts > geography stays in data and in one projection > RG4: no hard-coded latitude/longitude in 3D source 1ms
+ ✓ tests/static-3d.test.ts > geography stays in data and in one projection > RG5: 3D scenes use the shared route model and define no projection of their own 4ms
+ ✓ tests/static-3d.test.ts > data and dependency rules > ADR 21: data:sync exists and every data/*.json|geojson matches its public/data copy 2ms
+ ✓ tests/static-3d.test.ts > data and dependency rules > ADR 22: three.js dependencies are pinned exactly 0ms
+ ✓ tests/static-3d.test.ts > data and dependency rules > RG2: tests/route.test.ts is unchanged since the 3D work began 1ms
+ ✓ tests/static-3d.test.ts > iteration 2 static rules > K14: Reel3D and the Root entries never pass a measurement mask 0ms
+ ✓ tests/static-3d.test.ts > iteration 2 static rules > CL14: no texture, HDR or environment loaders in 3D code 4ms
+ ✓ tests/static-3d.test.ts > iteration 2 static rules > CL6: Lighting takes its values from one source, LIGHTING in atmosphere.ts 0ms
+ ✓ tests/static-3d.test.ts > iteration 2 static rules > X2: tests/baselines is unchanged 62ms
+ ✓ tests/three-core/trees.test.ts > placeTrees > keeps every tree at least 2 m off a road carriageway (review R4) 42ms
+ ✓ tests/three-core/trees.test.ts > placeTrees > RL13: keeps near-zone woodland between 1 and 15 trees per 100 m² and plants none beyond 300 m (ADR 37) 47ms
+ ✓ tests/three-core/trees.test.ts > placeTrees > R2 (t10): caps trees per kind and spreads them over the whole woodland instead of filling the first rows 13ms
+ ✓ tests/three-core/trees.test.ts > placeTrees > stands trees on the terrain at the scene's vertical exaggeration (review R3) 10ms
+ ✓ tests/three-core/trees.test.ts > placeTrees keep-out corridor > places no tree within rM of a keep-out segment 15ms
+ ✓ tests/three-core/trees.test.ts > crown spheres enclose the crowns as drawn (CL5; t10 H1) > covers every point of the conifer cone, apex included 11ms
+ ✓ tests/three-core/trees.test.ts > crown spheres enclose the crowns as drawn (CL5; t10 H1) > covers the broadleaf crown's circumscribed ellipsoid 1ms
+ ✓ tests/overlays.test.ts > overlay style tokens > CL9: the safe area is the 5 % title-safe area of a 1920 × 1080 frame 31ms
+ ✓ tests/overlays.test.ts > overlay style tokens > CL11: caption, badge, attribution and legend text have at least 4.5:1 contrast against their box 1ms
+ ✓ tests/overlays.test.ts > overlay style tokens > CL12: captions are at least 28 px; the badge and the attribution at least 18 px 1ms
+ ✓ tests/overlays.test.ts > the legend (CL7, BL14) > t10 R-L4: hatching is named in ground scenes only, where it can be seen 1ms
+ ✓ tests/overlays.test.ts > the legend (CL7, BL14) > names exactly the styles a section draws, from curated text 6ms
+ ✓ tests/three-core/rng.test.ts > mulberry32 (RN1, RN2, ADR 11) > gives the same sequence for the same seed 1ms
+ ✓ tests/three-core/rng.test.ts > mulberry32 (RN1, RN2, ADR 11) > gives different sequences for different seeds 0ms
+ ✓ tests/three-core/rng.test.ts > mulberry32 (RN1, RN2, ADR 11) > stays in [0, 1) with a mean near 0.5 43ms
+ ✓ tests/three-core/trail.test.ts > buildTrail > G1: centreline equals project() at every route vertex in the section, and between them 8ms
+ ✓ tests/three-core/trail.test.ts > buildTrail > G4: surface follows the profile (within 0.1 units), 0.05 m above it 2ms
+ ✓ tests/three-core/trail.test.ts > buildTrail > TR1: the ribbon is the configured width, inside 2.5–4.0 m 10ms
+ ✓ tests/three-core/trail.test.ts > buildTrail > TR2: gradients come from the profile, and the maximum is reported 3ms
+ ✓ tests/three-core/trail.test.ts > buildTrail > is deterministic 3ms
+ ✓ tests/three-core/shading.test.ts > shadeTerrain (RL10) > leaves positions alone and keeps every colour channel in [0, 1] 15ms
+ ✓ tests/three-core/shading.test.ts > shadeTerrain (RL10) > makes a steep node darker than a flat one of the same class, and barely changes a flat grid 5ms
+ ✓ tests/three-core/camera.test.ts > camera (CA1–CA4) > CA1–CA4 hold at every frame of the two POC shots 32ms
+ ✓ tests/three-core/camera.test.ts > camera (CA1–CA4) > sequenceShots hands each shot its own local frames 2ms
+ ✓ tests/three-core/camera.test.ts > camera (CA1–CA4) > ADR 35: aerialOrbit and pullBack meet CA1–CA4 over a valley 16ms
+ ✓ tests/three-core/camera.test.ts > camera (CA1–CA4) > fails loudly when there is no terrain under the camera (review R7) 1ms
+ ✓ tests/three-core/camera.test.ts > camera (CA1–CA4) > withClearance lifts a camera out of the ground and away from the rider 0ms
+ ✓ tests/reel-captions.test.ts > reel captions > RL17/RL22: the disclaimer and the attribution cover every frame 2ms
+ ✓ tests/reel-captions.test.ts > reel captions > RL18: the concept card is fully visible for ≥ 5 s at the start or the end 3ms
+ ✓ tests/reel-captions.test.ts > reel captions > RL19: the heritage note never calls the line abandoned and lasts ≥ 4 s in scene 2 or 8 3ms
+ ✓ tests/reel-captions.test.ts > reel captions > RL20/RL21: live station, private home and decommissioning site sit in their scenes 1ms
+ ✓ tests/reel-captions.test.ts > reel captions > ADR 36: no caption text is written inside a 3D composition 0ms
+ ✓ tests/reel-captions.test.ts > section captionIds (t10 review R10) > every section's captionIds names a caption that overlaps the section's reel range 78ms
+ ✓ tests/reel-captions.test.ts > captions are on screen long enough to read (CL8) > in the reel 1ms
+ ✓ tests/reel-captions.test.ts > captions are on screen long enough to read (CL8) > in the proof of concept 6ms
+ ✓ tests/reel-captions.test.ts > captions are on screen long enough to read (CL8) > keeps the required statements however the text is shortened 2ms
+ ✓ tests/three-core/cyclist.test.ts > cyclist (C1–C7) > C1: proportions of the procedural bike and rider 1ms
+ ✓ tests/three-core/cyclist.test.ts > cyclist (C1–C7) > C2: speed is 12–25 km/h and lower uphill than downhill 1ms
+ ✓ tests/three-core/cyclist.test.ts > cyclist (C1–C7) > C2–C7 hold at every frame of a 12 s ride over gradients of −4 % to +6 % and a curve 16ms
+ ✓ tests/three-core/cyclist.test.ts > cyclist (C1–C7) > the distance table is deterministic 2ms
+ ✓ tests/three-core/tileUv.test.ts > tile UVs (RL6) > tileRange covers exactly the cached wide layer's tiles for its bounding box 4ms
+ ✓ tests/three-core/tileUv.test.ts > tile UVs (RL6) > maps the range's north-west corner to (0, 1) and its south-east corner to (1, 0) 2ms
+ ✓ tests/three-core/section-acceptance.test.ts > window corridor > RL5/RL6: has a lidar DTM at its level that agrees with the route's elevations over its km range (median ≤ 10 m, max ≤ 30 m) 6ms
+ ✓ tests/three-core/section-acceptance.test.ts > window corridor > RL8: the trail profile's steepest 5 m step is ≤ 4 % outside the listed dips 0ms
+ ✓ tests/three-core/section-acceptance.test.ts > window blaenau > RL5/RL6: has a lidar DTM at its level that agrees with the route's elevations over its km range (median ≤ 10 m, max ≤ 30 m) 1ms
+ ✓ tests/three-core/section-acceptance.test.ts > window blaenau > RL8: the trail profile's steepest 5 m step is ≤ 4 % outside the listed dips 0ms
+ ✓ tests/three-core/section-acceptance.test.ts > window vale-north > RL5/RL6: has a lidar DTM at its level that agrees with the route's elevations over its km range (median ≤ 10 m, max ≤ 30 m) 2ms
+ ✓ tests/three-core/section-acceptance.test.ts > window vale-north > RL8: the trail profile's steepest 5 m step is ≤ 4 % outside the listed dips 0ms
+ ✓ tests/three-core/section-acceptance.test.ts > window vale-south > RL5/RL6: has a lidar DTM at its level that agrees with the route's elevations over its km range (median ≤ 10 m, max ≤ 30 m) 5ms
+ ✓ tests/three-core/section-acceptance.test.ts > window vale-south > RL8: the trail profile's steepest 5 m step is ≤ 4 % outside the listed dips 2ms
+ ✓ tests/three-core/section-acceptance.test.ts > window maentwrog > RL5/RL6: has a lidar DTM at its level that agrees with the route's elevations over its km range (median ≤ 10 m, max ≤ 30 m) 1ms
+ ✓ tests/three-core/section-acceptance.test.ts > window maentwrog > RL8: the trail profile's steepest 5 m step is ≤ 4 % outside the listed dips 0ms
+ ✓ tests/three-core/section-acceptance.test.ts > window trawsfynydd > RL5/RL6: has a lidar DTM at its level that agrees with the route's elevations over its km range (median ≤ 10 m, max ≤ 30 m) 1ms
+ ✓ tests/three-core/section-acceptance.test.ts > window trawsfynydd > RL8: the trail profile's steepest 5 m step is ≤ 4 % outside the listed dips 0ms
+ ✓ tests/load-gate-hook.test.ts > useLoadGate in a component (RD3; t10 review) > the render with a new key never returns the old key's data, and it is already held 12ms
+ ✓ tests/load-gate-hook.test.ts > useLoadGate in a component (RD3; t10 review) > survives its effects being cleaned up and run again (React StrictMode or Activity) 3ms
+ ✓ tests/pipeline-python.test.ts > pipeline self-tests > WA3, WA4: build_section_data.py --self-test (holes per part, islands kept, Polygon = one-part MultiPolygon) 304ms
+ ✓ tests/three-core/cyclistModel.test.ts > cyclistParts (RL16, C1) > builds a model inside C1's ranges from the default dimensions 10ms
+ ✓ tests/three-core/cyclistModel.test.ts > cyclistParts (RL16, C1) > keeps each leg's thigh and shin at their lengths for every crank angle (feet on the pedals) 2ms
+ ✓ tests/three-core/visibility.test.ts > visibleFootprints (BL1) > lists what is in view and not behind terrain; skips what is behind the camera, out of frame or hidden 11ms
+ ✓ tests/three-core/visibility.test.ts > visibleFootprints (BL1) > collects across the poses of a shot 0ms
+ ✓ tests/three-core/positions.test.ts > register positions before the iteration (CL7) > every earlier entry still exists with the same source, category and km range 13ms
+ ✓ tests/three-core/unproject.test.ts > unproject (RG5, pseudocode §2.1) > is the exact inverse of project for every real route point 5ms
+ ✓ tests/docs.test.ts > docs match the shipped code (t13) > the design's interface block lists every export of src/three-core, and nothing that isn't exported 3ms
+ ✓ tests/docs.test.ts > docs match the shipped code (t13) > every npm script the docs mention exists in package.json 1ms
+ ✓ tests/docs.test.ts > docs match the shipped code (t13) > the design's tests table lists exactly the test files that exist 1ms
+ ✓ tests/three-core/dem.test.ts > heightAtBng (pseudocode §2.2) > returns node heights exactly at nodes 1ms
+ ✓ tests/three-core/dem.test.ts > heightAtBng (pseudocode §2.2) > interpolates bilinearly between nodes 0ms
+ ✓ tests/three-core/dem.test.ts > heightAtBng (pseudocode §2.2) > returns null outside the grid and next to nodata 0ms
+ ✓ tests/three-core/dem.test.ts > buildTerrainMesh (G1, G3, D8) > has one vertex per node and two triangles per cell 1ms
+ ✓ tests/three-core/dem.test.ts > buildTerrainMesh (G1, G3, D8) > places every node through the shared projection, at elevation / 10 3ms
+ ✓ tests/three-core/dem.test.ts > buildTerrainMesh (G1, G3, D8) > colours vertices by land-cover class 1ms
+ ✓ tests/reel-timeline.test.ts > reel timeline (RL1, RL2) > is 2,700 frames at 30 fps 2ms
+ ✓ tests/reel-timeline.test.ts > reel timeline (RL1, RL2) > matches the spec's 8-scene budget, contiguous and summing to 2,700 2ms
+ ✓ tests/registers.test.ts > validateFeatures (H1, ADR 20) > accepts a valid register 1ms
+ ✓ tests/registers.test.ts > validateFeatures (H1, ADR 20) > rejects a register that is not an array 0ms
+ ✓ tests/registers.test.ts > validateFeatures (H1, ADR 20) > rejects an unknown category and names the path 0ms
+ ✓ tests/registers.test.ts > validateFeatures (H1, ADR 20) > rejects duplicate ids 0ms
+ ✓ tests/registers.test.ts > validateFeatures (H1, ADR 20) > rejects an empty source ref 0ms
+ ✓ tests/registers.test.ts > validateFeatures (H1, ADR 20) > rejects a feature with no scenes 0ms
+ ✓ tests/registers.test.ts > validateAssets (L1, ADR 20) > accepts a valid register 0ms
+ ✓ tests/registers.test.ts > validateAssets (L1, ADR 20) > rejects an asset without attribution text 0ms
+ ✓ tests/registers.test.ts > data files read at render time (t9 security review) > accepts a plain file name from a data header 0ms
+ ✓ tests/registers.test.ts > data files read at render time (t9 security review) > rejects a header file name that is a path or not a name 0ms
+ ✓ tests/registers.test.ts > data files read at render time (t9 security review) > accepts a grid file with one value per cell 0ms
+ ✓ tests/registers.test.ts > data files read at render time (t9 security review) > rejects a grid file whose size doesn't match its header, or a bad grid size 0ms
+ ✓ tests/registers.test.ts > runtime data validators (review R8) > accepts a valid DEM header, trail profile and OSM lines 1ms
+ ✓ tests/registers.test.ts > runtime data validators (review R8) > rejects a DEM header with a missing or bad number, naming the field 0ms
+ ✓ tests/registers.test.ts > runtime data validators (review R8) > rejects a trail profile with uneven, unsorted or non-numeric arrays, or a bad span 0ms
+ ✓ tests/registers.test.ts > runtime data validators (review R8) > rejects OSM features without an id, tags or a geometry 0ms
+ ✓ tests/registers.test.ts > mergeRegisters (t10 review R6) > merges several register files into one validated list 0ms
+ ✓ tests/registers.test.ts > mergeRegisters (t10 review R6) > rejects an id that appears in two files 0ms
+ ✓ tests/registers-buildings.test.ts > building entries in the register > BL2: accepts a building with status and full provenance 1ms
+ ✓ tests/registers-buildings.test.ts > building entries in the register > BL2: rejects a building without provenance, naming the field 0ms
+ ✓ tests/registers-buildings.test.ts > building entries in the register > BL2: rejects a building whose provenance lacks a field 0ms
+ ✓ tests/registers-buildings.test.ts > building entries in the register > BL2: rejects an unknown status 0ms
+ ✓ tests/registers-buildings.test.ts > building entries in the register > BL3: a planning record alone cannot make a building existing, but can make it approved 0ms
+ ✓ tests/registers-buildings.test.ts > building entries in the register > BL4: an observation over 3 years older than the retrieval cannot have high confidence 0ms
+ ✓ tests/registers-buildings.test.ts > building entries in the register > BL4 (t9 F6): an impossible date, or an observation after the retrieval, is rejected 0ms
+ ✓ tests/registers-buildings.test.ts > building entries in the register > BL4 (t10 L4): 'over 3 years' is by the calendar, the same at every date 0ms
+ ✓ tests/registers-buildings.test.ts > building entries in the register > BL16: a building needs a real source type 0ms
+ ✓ tests/three-core/water-terrain.test.ts > window blaenau > WA7: no terrain node inside a lake, outside its islands, is above the water surface 7ms
+ ✓ tests/three-core/water-terrain.test.ts > window vale-north > WA7: no terrain node inside a lake, outside its islands, is above the water surface 36ms
+ ✓ tests/three-core/water-terrain.test.ts > window vale-south > WA7: no terrain node inside a lake, outside its islands, is above the water surface 2ms
+ ✓ tests/three-core/water-terrain.test.ts > window maentwrog > WA7: no terrain node inside a lake, outside its islands, is above the water surface 397ms
+ ✓ tests/three-core/atmosphere.test.ts > atmosphere (RL11) > defines both section kinds with colours in range and ADR 18's sun 1ms
+ ✓ tests/three-core/atmosphere.test.ts > atmosphere (RL11) > the fog colour equals the horizon colour for every kind 0ms
+ ✓ tests/three-core/atmosphere.test.ts > the aerial drape grade (CL6) > tints the map's neutral paper at its own luma and leaves coloured features alone 0ms
+ ✓ tests/three-core/roads.test.ts > buildRoadMesh > drops the parts of a road outside the terrain, leaving only finite vertices 2ms
+ ✓ tests/three-core/roads.test.ts > buildRoadMesh > drops a road entirely outside the terrain 0ms
+ ✓ tests/three-core/water.test.ts > waterBodies (RL14) > keeps a 1 ha lake at the median height of its shore and skips a 0.5 ha pond 2ms
+ ✓ tests/three-core/water.test.ts > waterBodies (RL14) > ignores features that are not water polygons 0ms
+ ✓ tests/three-core/water.test.ts > polygonsOf keeps a shore-touching island (t10 P-L6, mirroring the pipeline) > assigns an inner ring by most of its vertices, so a first vertex on the shore does not drop it 0ms
+ ✓ tests/three-core/bng.test.ts > British National Grid (ADR 8) > matches the OS Transverse Mercator worked example to 1 mm 1ms
+ ✓ tests/three-core/bng.test.ts > British National Grid (ADR 8) > inverts the worked example back to its latitude and longitude 0ms
+ ✓ tests/three-core/bng.test.ts > British National Grid (ADR 8) > round-trips WGS84 -> BNG -> WGS84 within 1 cm across the corridor 0ms
+ ✓ tests/three-core/bng.test.ts > British National Grid (ADR 8) > puts every station inside 150 m of its published SH grid reference 0ms
+ ✓ tests/three-core/occlusion.test.ts > trees do not hide the rider (CL5, real sections) > blaenau: no frame of a ground shot has a tree crown between the camera and the rider 451ms
+ ✓ tests/route.test.ts > buildRouteModel geo-projection > computes a plausible total length from real-world haversine distance 1ms
+ ✓ tests/route.test.ts > buildRouteModel geo-projection > pointAtT(0) and pointAtT(1) match the route's real start/end coordinates 0ms
+ ✓ tests/route.test.ts > buildRouteModel geo-projection > pointAtT is monotonic in distance along the route 0ms
+ ✓ tests/route.test.ts > buildRouteModel geo-projection > project() agrees with the route's own derived world-space points 0ms
+ ✓ tests/route.test.ts > buildRouteModel geo-projection > stations are snapped to a consistent position along the route (t in [0,1]) 0ms
+ ✓ tests/route.test.ts > buildRouteModel geo-projection > world-space (x,y) distance between endpoints matches the real haversine distance 0ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC terrain data (G2) > G2a/b: the DEM header names its source, licence and CRS, with spacing ≤ 30 m 3ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC terrain data (G2) > G2c: terrain agrees with the route's Copernicus elevations (median ≤ 5 m, max ≤ 30 m) 2ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC scene (G1, G4, C1–C7, CA1–CA4) > G1/G4: the trail follows the real centreline and the lidar profile 257ms
+ ✓ tests/pipeline-python.test.ts > pipeline self-tests > WA6, WA7, CL4: still_metrics.py --self-test (water coverage and specks, trail contrast, dilation) 221ms
+ ✓ tests/pipeline-python.test.ts > pipeline self-tests > BL6, BL17: build_buildings.py --self-test (DSM − DTM heights, tag allowlist) 184ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC scene (G1, G4, C1–C7, CA1–CA4) > C2–C7 hold at every POC frame, and the rider crosses the OSM bridge mid-shot 242ms
+ ✓ tests/pipeline-python.test.ts > Llyn Trawsfynydd's islands keep their terrain (WA4, real data) > no island cell is filled, and every island of 1,000 m² or more rises above the lake level 51ms
+ ✓ tests/three-core/sections.test.ts > section configs (RL4) > every config has a known window, a km range on the route and shots that fill its frames 6ms
+ ✓ tests/three-core/sections.test.ts > section configs (RL4) > ADR 40: the Maentwrog config reproduces the POC scene exactly 818ms
+ ✓ tests/three-core/occlusion.test.ts > trees do not hide the rider (CL5, real sections) > vale-north: no frame of a ground shot has a tree crown between the camera and the rider 474ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC scene (G1, G4, C1–C7, CA1–CA4) > CA1–CA4 hold at every POC frame 248ms
+ ✓ tests/three-core/sections.test.ts > sections after the t10 review > R1: draws every railway bridge the window's register holds 267ms
+ ✓ tests/three-core/sections.test.ts > sections after the t10 review > R4: a follow shot's rider clearance reads the rider at the section frame, not the shot's local frame 2ms
+ ✓ tests/three-core/sections.test.ts > sections after the t10 review > R3: followStartFrame is the number of frames before the first follow shot 0ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC geometry > every mesh the POC renders has finite positions and in-range indices 386ms
+ ✓ tests/three-core/occlusion.test.ts > trees do not hide the rider (CL5, real sections) > vale-south: no frame of a ground shot has a tree crown between the camera and the rider 466ms
+ ✓ tests/three-core/occlusion.test.ts > trees do not hide the rider (CL5, real sections) > maentwrog: no frame of a ground shot has a tree crown between the camera and the rider 381ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC geometry > roads lie on the rendered terrain, the camera's ground is the rendered terrain, and trees stand off the roads (review R4, R5) 470ms
+ ✓ tests/three-core/water-terrain.test.ts > window trawsfynydd > WA7: no terrain node inside a lake, outside its islands, is above the water surface 1552ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC registers (H1, G5b, G6, G7, L1, C8) > H1: the feature register validates and lists every id a 3D scene declares 1ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC registers (H1, G5b, G6, G7, L1, C8) > G5b: every implied cut or fill deeper than 2 m is registered as an approximate earthwork 256ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC registers (H1, G5b, G6, G7, L1, C8) > G6: every structure is backed by an OSM structure tag or a Coflein record 2ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC registers (H1, G5b, G6, G7, L1, C8) > G7: places, roads and water come from waypoints, OSM or the map tiles 1ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC registers (H1, G5b, G6, G7, L1, C8) > L1/C8: every 3D asset file is registered with a licence; the cyclist is an original 0ms
+ ✓ tests/three-core/occlusion.test.ts > trees do not hide the rider (CL5, real sections) > trawsfynydd: no frame of a ground shot has a tree crown between the camera and the rider 759ms
+ ✓ tests/three-core/buildings-real.test.ts > section blaenau > BL16: draws every listed building, and each resolves to a register entry with a real source 2ms
+ ✓ tests/three-core/buildings-real.test.ts > section blaenau > BL7: no trail or road vertex or segment lies inside a footprint 12ms
+ ✓ tests/three-core/buildings-real.test.ts > section blaenau > BL8: no two footprints overlap by more than 10 % of the smaller one 5ms
+ ✓ tests/three-core/buildings-real.test.ts > section blaenau > BL13: no decorative tree stands in a building or hangs its crown over one (crowns as drawn) 40ms
+ ✓ tests/three-core/buildings-real.test.ts > section blaenau > BL5 (t10 H2, L2): every drawn vertex is finite, and every wall reaches the ground all along its foot 0ms
+ ✓ tests/three-core/buildings-real.test.ts > section blaenau > BL10: merges the section's buildings into at most 3 draw groups 0ms
+ ✓ tests/three-core/buildings-real.test.ts > section vale-north > BL16: draws every listed building, and each resolves to a register entry with a real source 1ms
+ ✓ tests/three-core/buildings-real.test.ts > section vale-north > BL7: no trail or road vertex or segment lies inside a footprint 7ms
+ ✓ tests/three-core/buildings-real.test.ts > section vale-north > BL8: no two footprints overlap by more than 10 % of the smaller one 4ms
+ ✓ tests/three-core/buildings-real.test.ts > section vale-north > BL13: no decorative tree stands in a building or hangs its crown over one (crowns as drawn) 19ms
+ ✓ tests/three-core/buildings-real.test.ts > section vale-north > BL5 (t10 H2, L2): every drawn vertex is finite, and every wall reaches the ground all along its foot 0ms
+ ✓ tests/three-core/buildings-real.test.ts > section vale-north > BL10: merges the section's buildings into at most 3 draw groups 0ms
+ ✓ tests/three-core/buildings-real.test.ts > section vale-south > BL16: draws every listed building, and each resolves to a register entry with a real source 0ms
+ ✓ tests/three-core/buildings-real.test.ts > section vale-south > BL7: no trail or road vertex or segment lies inside a footprint 1ms
+ ✓ tests/three-core/buildings-real.test.ts > section vale-south > BL8: no two footprints overlap by more than 10 % of the smaller one 3ms
+ ✓ tests/three-core/buildings-real.test.ts > section vale-south > BL13: no decorative tree stands in a building or hangs its crown over one (crowns as drawn) 12ms
+ ✓ tests/three-core/buildings-real.test.ts > section vale-south > BL5 (t10 H2, L2): every drawn vertex is finite, and every wall reaches the ground all along its foot 0ms
+ ✓ tests/three-core/buildings-real.test.ts > section vale-south > BL10: merges the section's buildings into at most 3 draw groups 0ms
+ ✓ tests/three-core/buildings-real.test.ts > section maentwrog > BL16: draws every listed building, and each resolves to a register entry with a real source 0ms
+ ✓ tests/three-core/buildings-real.test.ts > section maentwrog > BL7: no trail or road vertex or segment lies inside a footprint 1ms
+ ✓ tests/three-core/buildings-real.test.ts > section maentwrog > BL8: no two footprints overlap by more than 10 % of the smaller one 0ms
+ ✓ tests/three-core/buildings-real.test.ts > section maentwrog > BL13: no decorative tree stands in a building or hangs its crown over one (crowns as drawn) 7ms
+ ✓ tests/three-core/buildings-real.test.ts > section maentwrog > BL5 (t10 H2, L2): every drawn vertex is finite, and every wall reaches the ground all along its foot 0ms
+ ✓ tests/three-core/buildings-real.test.ts > section maentwrog > BL10: merges the section's buildings into at most 3 draw groups 0ms
+ ✓ tests/three-core/buildings-real.test.ts > section trawsfynydd > BL16: draws every listed building, and each resolves to a register entry with a real source 1ms
+ ✓ tests/three-core/buildings-real.test.ts > section trawsfynydd > BL7: no trail or road vertex or segment lies inside a footprint 18ms
+ ✓ tests/three-core/buildings-real.test.ts > section trawsfynydd > BL8: no two footprints overlap by more than 10 % of the smaller one 3ms
+ ✓ tests/three-core/buildings-real.test.ts > section trawsfynydd > BL13: no decorative tree stands in a building or hangs its crown over one (crowns as drawn) 43ms
+ ✓ tests/three-core/buildings-real.test.ts > section trawsfynydd > BL5 (t10 H2, L2): every drawn vertex is finite, and every wall reaches the ground all along its foot 0ms
+ ✓ tests/three-core/buildings-real.test.ts > section trawsfynydd > BL10: merges the section's buildings into at most 3 draw groups 0ms
+ ✓ tests/three-core/buildings-real.test.ts > candidates at measured heights (BL1) > blaenau: every candidate was tested at its measured height, and exactly the candidates are built 1ms
+ ✓ tests/three-core/buildings-real.test.ts > candidates at measured heights (BL1) > vale-north: every candidate was tested at its measured height, and exactly the candidates are built 0ms
+ ✓ tests/three-core/buildings-real.test.ts > candidates at measured heights (BL1) > vale-south: every candidate was tested at its measured height, and exactly the candidates are built 0ms
+ ✓ tests/three-core/buildings-real.test.ts > candidates at measured heights (BL1) > maentwrog: every candidate was tested at its measured height, and exactly the candidates are built 0ms
+ ✓ tests/three-core/buildings-real.test.ts > candidates at measured heights (BL1) > trawsfynydd: every candidate was tested at its measured height, and exactly the candidates are built 0ms
+ ✓ tests/three-core/buildings-real.test.ts > validateBuildings (BL11, RD5) > rejects a file that is not a list of buildings, naming the file and the field 1ms
+ ✓ tests/three-core/buildings-real.test.ts > credits (BL15) > records ODbL for every footprint and OGL for every lidar height, and the on-screen credit carries both 3ms
+ ✓ tests/three-core/buildings-real.test.ts > validateTilesManifest (RD5, t9 F2) > names the manifest and the field when the structure is wrong 0ms
+ ✓ tests/three-core/buildings-real.test.ts > validateTilesManifest (RD5, t9 F2) > the real manifest passes 0ms
+
+ Test Files  37 passed (37)
+      Tests  254 passed | 2 expected fail (256)
+   Start at  00:07:38
+   Duration  2.78s (tests 73%, import 22%, transform 4%, worker 1%)
+
+== exit 0
+
+== Python: BNG transform self-test
+== $ python3 -I scripts/dem/bng.py
+bng.py self-test passed: OS worked example 651409.903 313177.27
+== exit 0
+
+== Python: section pipeline self-test (water rings, fill, register merge)
+== $ python3 -I scripts/build_section_data.py --self-test
+self-test: ok
+== exit 0
+
+== Python: buildings self-test (heights, tags, landmarks, dates)
+== $ python3 -I scripts/build_buildings.py --self-test
+self-test: ok
+== exit 0
+
+== Python: still metrics self-test
+== $ python3 -I scripts/still_metrics.py --self-test
+self-test: ok
+== exit 0
+
+== Python: compile every pipeline script
+== $ python3 -I -m py_compile scripts/build_poc_data.py scripts/build_section_data.py scripts/build_buildings.py scripts/still_metrics.py scripts/dem/bng.py scripts/dem/cog.py scripts/osm/fetch_bbox.py
+== exit 0
+
+== Dependency audit (fails on high or critical)
+== $ npm audit --audit-level=high
+found 0 vulnerabilities
+== exit 0
+
+== Build: bundle the project (into out/bundle, which git ignores)
+== $ npm run build -- --out-dir=out/bundle --log=error
+
+> ffestiniog-bikeride@1.0.0 build
+> remotion bundle --out-dir=out/bundle --log=error
+
+-------------
+Version mismatch:
+Extra packages with wrong versions:
+  - zod: installed 4.6.7, required 4.5.4
+    See: https://www.remotion.dev/docs/zod-types/
+
+You may experience breakages such as:
+- React context and hooks not working
+- Type errors and feature incompatibilities
+- Failed renders and unclear errors
+
+To resolve:
+- Make sure your package.json has all Remotion packages pointing to the same version.
+- Remove the `^` character in front of a version to pin a package.
+- For zod, install exact version 4.5.4 (run: npx remotion add zod).
+- Run `npx remotion versions --log=verbose` to see the path of the modules resolved.
+-------------
+
+== exit 0
+
+== 2D entry chunk: 1340444 B (pre-reel 1,333,784 B; RL25 limit +2 %)
+
+== Render checks: 2D regression and md5 (RG1, X1), POC and reel format, determinism, blank scans, budgets, fresh-process stills, overlays, tile counts, before/after stills and mask metrics
+== $ npm run test:render
+### Render checks 2026-10-26T00:19:13.850Z (darwin-arm64; snapshot tree 41507f407cb5, dirty, untracked 3e0149333248)
+| Check | Result | Detail |
+| RG1 CyclingVision unchanged | pass | 4 frames match |
+| RN2 POC deterministic | pass | frames 0, 180, 359 identical |
+| RN3/RN6 POC format and speed | pass | 1920x1080 30fps h264 360 frames, 0.02 s/frame |
+| RN5b no blank canvas in the full POC render | pass | 360 frames, canvas-centre luma 45.9–82.4 |
+| RN6 draw calls and triangles; H2a/H3/L2/G3 overlays visible | pass | f0: 65 calls, 1104318 tris; f45: 65 calls, 1104318 tris; f180: 65 calls, 1104318 tris; f210: 65 calls, 1104318 tris; f359: 65 calls, 1104318 tris |
+| RN5b terrain drawn at frame 0 | pass | 257 distinct colour bins |
+| RL1/RL24 reel format and speed | pass | 1920x1080 30fps h264 2700 frames in 31 s (0.0116 s/frame) |
+| RL26/RL27 no blank canvas in the full reel | pass | 2700 frames, canvas-centre luma 45.9–168.3 |
+| RL23 reel deterministic | pass | frames 0, 1349, 2699 identical |
+| RL24/BL12 reel draw calls and triangles per scene and before each cut, buildings on; RL17/RL22 overlays visible | pass | 20 stills, 19 distinct frames, measured (intro@100, heritage@350, overview@600, blaenau@900, vale-north@1200, vale-south@1500, maentwrog@1750, trawsfynydd@2050, closing@2600; cuts 239/479/779/1079/1349/1619/1919/2399); worst frame 2399: 64 calls, 1937530 tris; overlays visible |
+| RL10 terrain drawn in every scene still | pass | colour bins in the lower half: intro 1755, heritage 2109, overview 1426, blaenau 275, vale-north 231, vale-south 402, maentwrog 311, trawsfynydd 268, closing 2257 |
+| RL32 one preview still per scene in out/previews | pass | 9 stills in out/previews/ |
+| CL9/CL10 every overlay inside the title-safe area, at most 3 lines | pass | 80 boxes at 24 frames, max 2 lines |
+| RD6 no missing map tiles in the reel | pass | 16 MAP_DRAPE lines, all 0 missing |
+| RD1/RD2 fresh-process stills: first, middle and last frame of every section, and after each cut | pass | 43 fresh stills (9 sections x 3, 8 cuts x 2): centre luma >= 20, >= 4 colour bins |
+| X1 CyclingVision full render decodes to the pre-3D md5 | pass | decoded md5 adfca9a7f31577885e4ec84c1aca3f53 |
+| X2 visual baselines untouched | pass | git diff --quiet HEAD -- tests/baselines; no untracked file there |
+| CL1 before and after stills from one environment, after on this snapshot | pass | 139 after stills on 41507f407cb5; before b35021274ddf; 7 environment fields equal |
+| WA6/WA7 water drawn where expected, lit, with no terrain specks at two adjacent frames | pass | WA6 trawsfynydd_60 100.0 %, trawsfynydd_200 100.0 %; WA7 specks <= 0.11 % at 3 frames |
+| CL2/CL3 shade-side trees lifted 20 %, frame luma within 10 %, <= 1 % clipped | pass | CL2 x1.91-x3.72 (11 stills); CL3 max change 9.5 % (15 stills) |
+| CL4 trail distinct from nearby roads and terrain (dE76 >= 20) | pass | min dE terrain 25.6, roads 42.0 (11 stills) |
+| CL6 one look: aerial terrain hue and saturation within 15 % of the ground | pass | hue 84.9 vs 86.6 (2.0 %), saturation 0.404 vs 0.453 (10.9 %) |
+| BL13 landmarks on screen >= 2 s and >= 40 px | pass | no landmark is listed in any section, so no shot names one |
+== exit 0
+
+== Summary, finished 2026-10-26T00:19:13Z
+Lint and type-check: exit 0
+Unit, static and acceptance tests (vitest, every test listed): exit 0
+Python: BNG transform self-test: exit 0
+Python: section pipeline self-test (water rings, fill, register merge): exit 0
+Python: buildings self-test (heights, tags, landmarks, dates): exit 0
+Python: still metrics self-test: exit 0
+Python: compile every pipeline script: exit 0
+Dependency audit (fails on high or critical): exit 0
+Build: bundle the project (into out/bundle, which git ignores): exit 0
+Render checks: exit 0

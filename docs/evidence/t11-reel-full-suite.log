@@ -1,0 +1,331 @@
+t11 (reel) full test run, started 2026-10-25T14:34:39Z
+machine: Apple M4 Pro, 14 cores; Darwin 25.6.0
+node v24.13.1, npm 11.21.0, Python 3.13.5, numpy 2.4.4
+git HEAD bb9c039 (worktree dirty: the 3D work is uncommitted)
+source snapshot sha256 (src, public, scripts, tests, data, configs, lockfile): 64bb1678e95da7ca7bb71fabfeb5800f04395586a51d8e3ab1642b3e58cf8af3 over 350 files
+
+================================================================
+== Lint and type-check
+== $ npm run lint
+================================================================
+
+> ffestiniog-bikeride@1.0.0 lint
+> eslint src && tsc
+
+-- exit 0 after 2 s
+
+================================================================
+== Unit, static and acceptance tests (vitest, every test listed)
+== $ npx vitest run --reporter=verbose
+================================================================
+
+ RUN  v5.0.5 /Users/eray/ffestiniog-bikeride
+
+ ✓ tests/three-core/tileUv.test.ts > tile UVs (RL6) > tileRange covers exactly the cached wide layer's tiles for its bounding box 16ms
+ ✓ tests/three-core/tileUv.test.ts > tile UVs (RL6) > maps the range's north-west corner to (0, 1) and its south-east corner to (1, 0) 1ms
+ ✓ tests/three-core/cyclist.test.ts > cyclist (C1–C7) > C1: proportions of the procedural bike and rider 1ms
+ ✓ tests/three-core/cyclist.test.ts > cyclist (C1–C7) > C2: speed is 12–25 km/h and lower uphill than downhill 1ms
+ ✓ tests/three-core/cyclist.test.ts > cyclist (C1–C7) > C2–C7 hold at every frame of a 12 s ride over gradients of −4 % to +6 % and a curve 15ms
+ ✓ tests/three-core/cyclist.test.ts > cyclist (C1–C7) > the distance table is deterministic 2ms
+ ✓ tests/three-core/section-acceptance.test.ts > window corridor > RL5/RL6: has a lidar DTM at its level that agrees with the route's elevations over its km range (median ≤ 10 m, max ≤ 30 m) 7ms
+ ✓ tests/three-core/section-acceptance.test.ts > window blaenau > RL5/RL6: has a lidar DTM at its level that agrees with the route's elevations over its km range (median ≤ 10 m, max ≤ 30 m) 1ms
+ ✓ tests/three-core/section-acceptance.test.ts > window vale-north > RL5/RL6: has a lidar DTM at its level that agrees with the route's elevations over its km range (median ≤ 10 m, max ≤ 30 m) 2ms
+ ✓ tests/three-core/section-acceptance.test.ts > window vale-south > RL5/RL6: has a lidar DTM at its level that agrees with the route's elevations over its km range (median ≤ 10 m, max ≤ 30 m) 5ms
+ ✓ tests/three-core/section-acceptance.test.ts > window maentwrog > RL5/RL6: has a lidar DTM at its level that agrees with the route's elevations over its km range (median ≤ 10 m, max ≤ 30 m) 3ms
+ ✓ tests/three-core/section-acceptance.test.ts > window trawsfynydd > RL5/RL6: has a lidar DTM at its level that agrees with the route's elevations over its km range (median ≤ 10 m, max ≤ 30 m) 1ms
+ ✓ tests/three-core/shading.test.ts > shadeTerrain (RL10) > leaves positions alone and keeps every colour channel in [0, 1] 25ms
+ ✓ tests/three-core/shading.test.ts > shadeTerrain (RL10) > makes a steep node darker than a flat one of the same class, and barely changes a flat grid 4ms
+ ✓ tests/reel-captions.test.ts > reel captions > RL17/RL22: the disclaimer and the attribution cover every frame 6ms
+ ✓ tests/reel-captions.test.ts > reel captions > RL18: the concept card is fully visible for ≥ 5 s at the start or the end 0ms
+ ✓ tests/reel-captions.test.ts > reel captions > RL19: the heritage note never calls the line abandoned and lasts ≥ 4 s in scene 2 or 8 0ms
+ ✓ tests/reel-captions.test.ts > reel captions > RL20/RL21: live station, private home and decommissioning site sit in their scenes 0ms
+ ✓ tests/reel-captions.test.ts > reel captions > ADR 36: no caption text is written inside a 3D composition 0ms
+ ✓ tests/reel-captions.test.ts > section captionIds (t10 review R10) > every section's captionIds names a caption that overlaps the section's reel range 35ms
+ ✓ tests/three-core/trail.test.ts > buildTrail > G1: centreline equals project() at every route vertex in the section, and between them 5ms
+ ✓ tests/three-core/trail.test.ts > buildTrail > G4: surface follows the profile (within 0.1 units), 0.05 m above it 3ms
+ ✓ tests/three-core/trail.test.ts > buildTrail > TR1: the ribbon is the configured width, inside 2.5–4.0 m 18ms
+ ✓ tests/three-core/trail.test.ts > buildTrail > TR2: gradients come from the profile, and the maximum is reported 2ms
+ ✓ tests/three-core/trail.test.ts > buildTrail > is deterministic 15ms
+ ✓ tests/static-3d.test.ts > 3D source layout (ADRs 2–4) > has 3D views, a 3D scene and the 3D data provider 1ms
+ ✓ tests/static-3d.test.ts > 3D source layout (ADRs 2–4) > registers the POC composition in src/Root.tsx 0ms
+ ✓ tests/static-3d.test.ts > 3D source layout (ADRs 2–4) > ADR 24: src/Root.tsx loads 3D modules lazily, keeping them out of the 2D video's bundle 0ms
+ ✓ tests/static-3d.test.ts > 3D source layout (ADRs 2–4) > ADR 3: src/three-core imports nothing from React, three.js or Remotion 1ms
+ ✓ tests/static-3d.test.ts > 3D source layout (ADRs 2–4) > ADR 4: views inside the canvas don't read React context 1ms
+ ✓ tests/static-3d.test.ts > 3D source layout (ADRs 2–4) > every <ThreeCanvas> comes from @remotion/three 0ms
+ ✓ tests/static-3d.test.ts > rendering rules > RN1: no clocks, timers, useFrame or unseeded randomness in 3D code 3ms
+ ✓ tests/static-3d.test.ts > rendering rules > RN4: 3D still/render scripts pass --gl=angle; remotion.config.ts sets no GL renderer 1ms
+ ✓ tests/static-3d.test.ts > rendering rules > RN5a: every 3D file that loads data or assets gates the render with delayRender/continueRender 2ms
+ ✓ tests/static-3d.test.ts > rendering rules > RN5d: data providers report a failed load instead of hanging, and check the HTTP status (review R1) 0ms
+ ✓ tests/static-3d.test.ts > rendering rules > H2a/L2/G3: the overlays are logged from the page, not from a hard-coded list (review R2; ADR 36) 0ms
+ ✓ tests/static-3d.test.ts > rendering rules > RL3: the reel and every section are registered lazily, and the reel composition exists (ADR 28) 0ms
+ ✓ tests/static-3d.test.ts > rendering rules > RL30: the fetch scripts reach only the two allowlisted hosts 1ms
+ ✓ tests/static-3d.test.ts > rendering rules > RL31: no OSM tag value is rendered as on-screen text (ADR 38) 1ms
+ ✓ tests/static-3d.test.ts > rendering rules > t10 R8/R9: Section3D names an unknown section at its boundary; SkyDome disposes its material 0ms
+ ✓ tests/static-3d.test.ts > rendering rules > RN5c: data providers release their hold only after their children have mounted 0ms
+ ✓ tests/static-3d.test.ts > geography stays in data and in one projection > RG4: no hard-coded latitude/longitude in 3D source 1ms
+ ✓ tests/static-3d.test.ts > geography stays in data and in one projection > RG5: 3D scenes use the shared route model and define no projection of their own 1ms
+ ✓ tests/static-3d.test.ts > data and dependency rules > ADR 21: data:sync exists and every data/*.json|geojson matches its public/data copy 2ms
+ ✓ tests/static-3d.test.ts > data and dependency rules > ADR 22: three.js dependencies are pinned exactly 0ms
+ ✓ tests/static-3d.test.ts > data and dependency rules > RG2: tests/route.test.ts is unchanged since the 3D work began 0ms
+ ✓ tests/three-core/camera.test.ts > camera (CA1–CA4) > CA1–CA4 hold at every frame of the two POC shots 29ms
+ ✓ tests/three-core/camera.test.ts > camera (CA1–CA4) > sequenceShots hands each shot its own local frames 1ms
+ ✓ tests/three-core/camera.test.ts > camera (CA1–CA4) > ADR 35: aerialOrbit and pullBack meet CA1–CA4 over a valley 20ms
+ ✓ tests/three-core/camera.test.ts > camera (CA1–CA4) > fails loudly when there is no terrain under the camera (review R7) 1ms
+ ✓ tests/three-core/camera.test.ts > camera (CA1–CA4) > withClearance lifts a camera out of the ground and away from the rider 0ms
+ ✓ tests/three-core/rng.test.ts > mulberry32 (RN1, RN2, ADR 11) > gives the same sequence for the same seed 1ms
+ ✓ tests/three-core/rng.test.ts > mulberry32 (RN1, RN2, ADR 11) > gives different sequences for different seeds 0ms
+ ✓ tests/three-core/rng.test.ts > mulberry32 (RN1, RN2, ADR 11) > stays in [0, 1) with a mean near 0.5 72ms
+ ✓ tests/three-core/corridor.test.ts > flattenCorridor > G5a: terrain under the 3 m ribbon sits 0.05 m (±0.03 m) below it, outside bridge spans 35ms
+ ✓ tests/three-core/corridor.test.ts > flattenCorridor > G5b: reports the 5 m hump as a cut and the 4 m hollow as a fill, deeper than 2 m 16ms
+ ✓ tests/three-core/corridor.test.ts > flattenCorridor > reports cut and fill depths in metres whatever the vertical exaggeration (review R3) 9ms
+ ✓ tests/three-core/corridor.test.ts > flattenCorridor > leaves terrain under the bridge span alone (the road passes beneath) 3ms
+ ✓ tests/three-core/corridor.test.ts > flattenCorridor > leaves terrain more than 15 m from the centreline alone 16ms
+ ✓ tests/three-core/trees.test.ts > placeTrees > keeps every tree at least 2 m off a road carriageway (review R4) 40ms
+ ✓ tests/three-core/trees.test.ts > placeTrees > RL13: keeps near-zone woodland between 1 and 15 trees per 100 m² and plants none beyond 300 m (ADR 37) 76ms
+(node:67669) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ ✓ tests/registers.test.ts > validateFeatures (H1, ADR 20) > accepts a valid register 1ms
+ ✓ tests/registers.test.ts > validateFeatures (H1, ADR 20) > rejects a register that is not an array 0ms
+ ✓ tests/registers.test.ts > validateFeatures (H1, ADR 20) > rejects an unknown category and names the path 0ms
+ ✓ tests/registers.test.ts > validateFeatures (H1, ADR 20) > rejects duplicate ids 0ms
+ ✓ tests/registers.test.ts > validateFeatures (H1, ADR 20) > rejects an empty source ref 0ms
+ ✓ tests/registers.test.ts > validateFeatures (H1, ADR 20) > rejects a feature with no scenes 0ms
+ ✓ tests/registers.test.ts > validateAssets (L1, ADR 20) > accepts a valid register 0ms
+ ✓ tests/registers.test.ts > validateAssets (L1, ADR 20) > rejects an asset without attribution text 0ms
+ ✓ tests/registers.test.ts > data files read at render time (t9 security review) > accepts a plain file name from a data header 0ms
+ ✓ tests/registers.test.ts > data files read at render time (t9 security review) > rejects a header file name that is a path or not a name 0ms
+ ✓ tests/registers.test.ts > data files read at render time (t9 security review) > accepts a grid file with one value per cell 0ms
+ ✓ tests/registers.test.ts > data files read at render time (t9 security review) > rejects a grid file whose size doesn't match its header, or a bad grid size 0ms
+ ✓ tests/registers.test.ts > runtime data validators (review R8) > accepts a valid DEM header, trail profile and OSM lines 1ms
+ ✓ tests/registers.test.ts > runtime data validators (review R8) > rejects a DEM header with a missing or bad number, naming the field 0ms
+ ✓ tests/registers.test.ts > runtime data validators (review R8) > rejects a trail profile with uneven, unsorted or non-numeric arrays, or a bad span 0ms
+ ✓ tests/registers.test.ts > runtime data validators (review R8) > rejects OSM features without an id, tags or a geometry 0ms
+ ✓ tests/registers.test.ts > mergeRegisters (t10 review R6) > merges several register files into one validated list 0ms
+ ✓ tests/registers.test.ts > mergeRegisters (t10 review R6) > rejects an id that appears in two files 0ms
+ ✓ tests/three-core/cyclistModel.test.ts > cyclistParts (RL16, C1) > builds a model inside C1's ranges from the default dimensions 8ms
+ ✓ tests/three-core/cyclistModel.test.ts > cyclistParts (RL16, C1) > keeps each leg's thigh and shin at their lengths for every crank angle (feet on the pedals) 1ms
+ ✓ tests/docs.test.ts > docs match the shipped code (t13) > the design's interface block lists every export of src/three-core, and nothing that isn't exported 4ms
+ ✓ tests/docs.test.ts > docs match the shipped code (t13) > every npm script the docs mention exists in package.json 1ms
+ ✓ tests/docs.test.ts > docs match the shipped code (t13) > the design's tests table lists exactly the test files that exist 0ms
+ ✓ tests/three-core/dem.test.ts > heightAtBng (pseudocode §2.2) > returns node heights exactly at nodes 1ms
+ ✓ tests/three-core/dem.test.ts > heightAtBng (pseudocode §2.2) > interpolates bilinearly between nodes 0ms
+ ✓ tests/three-core/dem.test.ts > heightAtBng (pseudocode §2.2) > returns null outside the grid and next to nodata 0ms
+ ✓ tests/three-core/dem.test.ts > buildTerrainMesh (G1, G3, D8) > has one vertex per node and two triangles per cell 1ms
+ ✓ tests/three-core/dem.test.ts > buildTerrainMesh (G1, G3, D8) > places every node through the shared projection, at elevation / 10 2ms
+ ✓ tests/three-core/dem.test.ts > buildTerrainMesh (G1, G3, D8) > colours vertices by land-cover class 1ms
+ ✓ tests/three-core/trees.test.ts > placeTrees > R2 (t10): caps trees per kind and spreads them over the whole woodland instead of filling the first rows 9ms
+ ✓ tests/three-core/trees.test.ts > placeTrees > stands trees on the terrain at the scene's vertical exaggeration (review R3) 16ms
+ ✓ tests/reel-timeline.test.ts > reel timeline (RL1, RL2) > is 2,700 frames at 30 fps 2ms
+ ✓ tests/reel-timeline.test.ts > reel timeline (RL1, RL2) > matches the spec's 8-scene budget, contiguous and summing to 2,700 2ms
+ ✓ tests/three-core/water.test.ts > waterBodies (RL14) > keeps a 1 ha lake at the median height of its shore and skips a 0.5 ha pond 5ms
+ ✓ tests/three-core/water.test.ts > waterBodies (RL14) > ignores features that are not water polygons 1ms
+ ✓ tests/three-core/atmosphere.test.ts > atmosphere (RL11, RL12) > defines both section kinds with colours in range and ADR 18's sun 3ms
+ ✓ tests/three-core/atmosphere.test.ts > atmosphere (RL11, RL12) > the fog colour equals the horizon colour for every kind 1ms
+ ✓ tests/three-core/unproject.test.ts > unproject (RG5, pseudocode §2.1) > is the exact inverse of project for every real route point 5ms
+ ✓ tests/three-core/bng.test.ts > British National Grid (ADR 8) > matches the OS Transverse Mercator worked example to 1 mm 1ms
+ ✓ tests/three-core/bng.test.ts > British National Grid (ADR 8) > inverts the worked example back to its latitude and longitude 0ms
+ ✓ tests/three-core/bng.test.ts > British National Grid (ADR 8) > round-trips WGS84 -> BNG -> WGS84 within 1 cm across the corridor 0ms
+ ✓ tests/three-core/bng.test.ts > British National Grid (ADR 8) > puts every station inside 150 m of its published SH grid reference 0ms
+ ✓ tests/three-core/roads.test.ts > buildRoadMesh > drops the parts of a road outside the terrain, leaving only finite vertices 2ms
+ ✓ tests/three-core/roads.test.ts > buildRoadMesh > drops a road entirely outside the terrain 0ms
+ ✓ tests/route.test.ts > buildRouteModel geo-projection > computes a plausible total length from real-world haversine distance 1ms
+ ✓ tests/route.test.ts > buildRouteModel geo-projection > pointAtT(0) and pointAtT(1) match the route's real start/end coordinates 0ms
+ ✓ tests/route.test.ts > buildRouteModel geo-projection > pointAtT is monotonic in distance along the route 0ms
+ ✓ tests/route.test.ts > buildRouteModel geo-projection > project() agrees with the route's own derived world-space points 0ms
+ ✓ tests/route.test.ts > buildRouteModel geo-projection > stations are snapped to a consistent position along the route (t in [0,1]) 0ms
+ ✓ tests/route.test.ts > buildRouteModel geo-projection > world-space (x,y) distance between endpoints matches the real haversine distance 0ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC terrain data (G2) > G2a/b: the DEM header names its source, licence and CRS, with spacing ≤ 30 m 3ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC terrain data (G2) > G2c: terrain agrees with the route's Copernicus elevations (median ≤ 5 m, max ≤ 30 m) 2ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC scene (G1, G4, C1–C7, CA1–CA4) > G1/G4: the trail follows the real centreline and the lidar profile 244ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC scene (G1, G4, C1–C7, CA1–CA4) > C2–C7 hold at every POC frame, and the rider crosses the OSM bridge mid-shot 237ms
+ ✓ tests/three-core/sections.test.ts > section configs (RL4) > every config has a known window, a km range on the route and shots that fill its frames 11ms
+ ✓ tests/three-core/sections.test.ts > section configs (RL4) > ADR 40: the Maentwrog config reproduces the POC scene exactly 734ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC scene (G1, G4, C1–C7, CA1–CA4) > CA1–CA4 hold at every POC frame 249ms
+ ✓ tests/three-core/sections.test.ts > sections after the t10 review > R1: draws every railway bridge the window's register holds 247ms
+ ✓ tests/three-core/sections.test.ts > sections after the t10 review > R4: a follow shot's rider clearance reads the rider at the section frame, not the shot's local frame 3ms
+ ✓ tests/three-core/sections.test.ts > sections after the t10 review > R3: followStartFrame is the number of frames before the first follow shot 1ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC geometry > every mesh the POC renders has finite positions and in-range indices 359ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC geometry > roads lie on the rendered terrain, the camera's ground is the rendered terrain, and trees stand off the roads (review R4, R5) 425ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC registers (H1, G5b, G6, G7, L1, C8) > H1: the feature register validates and lists every id a 3D scene declares 1ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC registers (H1, G5b, G6, G7, L1, C8) > G5b: every implied cut or fill deeper than 2 m is registered as an approximate earthwork 219ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC registers (H1, G5b, G6, G7, L1, C8) > G6: every structure is backed by an OSM structure tag or a Coflein record 2ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC registers (H1, G5b, G6, G7, L1, C8) > G7: places, roads and water come from waypoints, OSM or the map tiles 1ms
+ ✓ tests/three-core/poc-acceptance.test.ts > POC registers (H1, G5b, G6, G7, L1, C8) > L1/C8: every 3D asset file is registered with a licence; the cyclist is an original 0ms
+
+ Test Files  24 passed (24)
+      Tests  128 passed (128)
+   Start at  14:34:42
+   Duration  2.02s (tests 84%, transform 8%, import 7%, worker 1%)
+
+-- exit 0 after 3 s
+
+================================================================
+== Python: BNG transform self-test
+== $ python3 -I scripts/dem/bng.py
+================================================================
+bng.py self-test passed: OS worked example 651409.903 313177.27
+-- exit 0 after 0 s
+
+================================================================
+== Python: compile every pipeline script
+== $ python3 -I -m py_compile scripts/build_poc_data.py scripts/dem/bng.py scripts/dem/cog.py scripts/osm/fetch_bbox.py
+================================================================
+-- exit 0 after 0 s
+
+================================================================
+== Dependency audit (fails on high or critical)
+== $ npm audit --audit-level=high
+================================================================
+found 0 vulnerabilities
+-- exit 0 after 0 s
+
+================================================================
+== Build: bundle the project (into out/bundle, which git ignores)
+== $ npm run build -- --out-dir=out/bundle --log=error
+================================================================
+
+> ffestiniog-bikeride@1.0.0 build
+> remotion bundle --out-dir=out/bundle --log=error
+
+-------------
+Version mismatch:
+Extra packages with wrong versions:
+  - zod: installed 4.6.7, required 4.5.4
+    See: https://www.remotion.dev/docs/zod-types/
+
+You may experience breakages such as:
+- React context and hooks not working
+- Type errors and feature incompatibilities
+- Failed renders and unclear errors
+
+To resolve:
+- Make sure your package.json has all Remotion packages pointing to the same version.
+- Remove the `^` character in front of a version to pin a package.
+- For zod, install exact version 4.5.4 (run: npx remotion add zod).
+- Run `npx remotion versions --log=verbose` to see the path of the modules resolved.
+-------------
+
+-- exit 0 after 2 s
+
+================================================================
+== Render checks (RG1, RN2, RN3, RN5b, RN6, H2a/L2/G3)
+== $ npm run test:render
+================================================================
+
+> ffestiniog-bikeride@1.0.0 test:render
+> node scripts/render-checks.mjs
+
+[Tab 0, node_modules/react-dom/cjs/react-dom-client.production.js:12669] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[Tab 0, node_modules/react-dom/cjs/react-dom-client.production.js:12669] THREE.BufferGeometry.toNonIndexed(): BufferGeometry is already non-indexed.
+[Tab 0, node_modules/react-dom/cjs/react-dom-client.production.js:12669] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[Tab 0, node_modules/react-dom/cjs/react-dom-client.production.js:12669] THREE.BufferGeometry.toNonIndexed(): BufferGeometry is already non-indexed.
+[Tab 0, node_modules/react-dom/cjs/react-dom-client.production.js:12669] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[Tab 0, node_modules/react-dom/cjs/react-dom-client.production.js:12669] THREE.BufferGeometry.toNonIndexed(): BufferGeometry is already non-indexed.
+[Tab 0, node_modules/react-dom/cjs/react-dom-client.production.js:12669] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[Tab 0, node_modules/react-dom/cjs/react-dom-client.production.js:12669] THREE.BufferGeometry.toNonIndexed(): BufferGeometry is already non-indexed.
+[Tab 0, node_modules/react-dom/cjs/react-dom-client.production.js:12669] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[Tab 0, node_modules/react-dom/cjs/react-dom-client.production.js:12669] THREE.BufferGeometry.toNonIndexed(): BufferGeometry is already non-indexed.
+<string>:4: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+
+### Render checks 2026-10-25T14:35:29.953Z (darwin-arm64)
+
+| Check | Result | Detail |
+|---|---|---|
+| RG1 CyclingVision unchanged | pass | 4 frames match |
+| RN2 POC deterministic | pass | frames 0, 180, 359 identical |
+| RN3/RN6 POC format and speed | pass | 1920x1080 30fps h264 360 frames, 0.02 s/frame |
+| RN5b no blank canvas in the full POC render | pass | 360 frames, canvas-centre luma 36.1–82.2 |
+| RN6 draw calls and triangles; H2a/H3/L2/G3 overlays visible | pass | f0: 63 calls, 1103965 tris; f45: 63 calls, 1103965 tris; f180: 63 calls, 1103965 tris; f210: 63 calls, 1103965 tris; f359: 63 calls, 1103965 tris |
+| RN5b terrain drawn at frame 0 | pass | 384 distinct colour bins |
+
+-- exit 0 after 43 s
+
+================================================================
+== Gate: the reel renders in full (Reel3D, 2,700 frames, --gl=angle)
+== $ npx remotion render src/index.ts Reel3D out/reel.mp4 --gl=angle --port=3517 --log=error
+================================================================
+-------------
+Version mismatch:
+Extra packages with wrong versions:
+  - zod: installed 4.6.7, required 4.5.4
+    See: https://www.remotion.dev/docs/zod-types/
+
+You may experience breakages such as:
+- React context and hooks not working
+- Type errors and feature incompatibilities
+- Failed renders and unclear errors
+
+To resolve:
+- Make sure your package.json has all Remotion packages pointing to the same version.
+- Remove the `^` character in front of a version to pin a package.
+- For zod, install exact version 4.5.4 (run: npx remotion add zod).
+- Run `npx remotion versions --log=verbose` to see the path of the modules resolved.
+-------------
+
+-- exit 0 after 33 s
+
+================================================================
+== Gate: the reel is 2,700 frames of 1920x1080 H.264 with no blank frame
+== $ bash -c 
+  ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=codec_name,width,height,r_frame_rate,nb_read_packets -of compact=p=0 out/reel.mp4
+  n=$(ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=nb_read_packets -of csv=p=0 out/reel.mp4)
+  blank=$(/private/tmp/claude-501/-Users-eray-ffestiniog-bikeride/bb3f26c8-7af5-483b-b78b-7ff809bf3730/scratchpad/bench/blank_frames.sh out/reel.mp4)
+  echo "frames $n; blank frames: ${blank:-none}"
+  [ "$n" = 2700 ] && [ -z "$blank" ]
+================================================================
+codec_name=h264|width=1920|height=1080|r_frame_rate=30/1|nb_read_packets=2700
+frames 2700; blank frames: none
+-- exit 0 after 3 s
+
+================================================================
+== Gate: CyclingVision still renders in full
+== $ npx remotion render src/index.ts CyclingVision out/cycling-vision.mp4 --port=3517 --log=error
+================================================================
+-------------
+Version mismatch:
+Extra packages with wrong versions:
+  - zod: installed 4.6.7, required 4.5.4
+    See: https://www.remotion.dev/docs/zod-types/
+
+You may experience breakages such as:
+- React context and hooks not working
+- Type errors and feature incompatibilities
+- Failed renders and unclear errors
+
+To resolve:
+- Make sure your package.json has all Remotion packages pointing to the same version.
+- Remove the `^` character in front of a version to pin a package.
+- For zod, install exact version 4.5.4 (run: npx remotion add zod).
+- Run `npx remotion versions --log=verbose` to see the path of the modules resolved.
+-------------
+
+-- exit 0 after 35 s
+
+================================================================
+== Gate: the full 2D render matches the pre-3D baseline (decoded md5 from the t8 benchmark)
+== $ bash -c 
+  md5=$(ffmpeg -v error -i out/cycling-vision.mp4 -map 0:v -f md5 - | sed "s/^MD5=//")
+  ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=codec_name,width,height,r_frame_rate,nb_read_packets -of compact=p=0 out/cycling-vision.mp4
+  echo "decoded md5 $md5 (baseline adfca9a7f31577885e4ec84c1aca3f53)"
+  [ "$md5" = "adfca9a7f31577885e4ec84c1aca3f53" ]
+================================================================
+codec_name=h264|width=1920|height=1080|r_frame_rate=30/1|nb_read_packets=3150
+decoded md5 adfca9a7f31577885e4ec84c1aca3f53 (baseline adfca9a7f31577885e4ec84c1aca3f53)
+-- exit 0 after 14 s
+
+================================================================
+== Summary, finished 2026-10-25T14:36:54Z
+================================================================
+PASS  exit 0  2 s  Lint and type-check
+PASS  exit 0  3 s  Unit, static and acceptance tests (vitest, every test listed)
+PASS  exit 0  0 s  Python: BNG transform self-test
+PASS  exit 0  0 s  Python: compile every pipeline script
+PASS  exit 0  0 s  Dependency audit (fails on high or critical)
+PASS  exit 0  2 s  Build: bundle the project (into out/bundle, which git ignores)
+PASS  exit 0  43 s  Render checks (RG1, RN2, RN3, RN5b, RN6, H2a/L2/G3)
+PASS  exit 0  33 s  Gate: the reel renders in full (Reel3D, 2,700 frames, --gl=angle)
+PASS  exit 0  3 s  Gate: the reel is 2,700 frames of 1920x1080 H.264 with no blank frame
+PASS  exit 0  35 s  Gate: CyclingVision still renders in full
+PASS  exit 0  14 s  Gate: the full 2D render matches the pre-3D baseline (decoded md5 from the t8 benchmark)
+overall: GREEN

@@ -2,7 +2,9 @@
 
 Status: written at task t3 of mission `msn_abdfd5eabd397f0f653da39f`, then updated at t13
 (2026-10-25) to match the shipped proof of concept, including the fixes from the t8
-benchmark, the t9 security review and the t10 code review. Implements
+benchmark, the t9 security review and the t10 code review. **Extended 2026-10-25
+for the 1:30 reel** (mission `msn_44274a1de641722956fc9ce5`, task t3): see "Reel
+design" at the end, decisions D23–D36. Implements
 `docs/spec-3d.md`; builds on `docs/adr/0001-use-remotion-three-threecanvas.md` and
 `docs/prior-art-3d.md`. Requirement ids (G1, RN2, …) refer to the spec.
 
@@ -57,7 +59,7 @@ decision, follow `docs/sop-3d.md`.
 | D15 | **Applying the camera without `useFrame`:** a `CameraRig` component sets the default camera's position, `lookAt` and FOV from props during render (via `useThree`). `ThreeCanvas` then calls `advance()`. Camera clearance (CA3) is measured against the rendered terrain, after corridor flattening, and a camera with no terrain under it throws instead of rendering NaN (review R5, R7). | RN1. Must be confirmed by the RN2 determinism check in the build. |
 | D16 | **Lighting:** one fixed directional "sun" (azimuth 200°, elevation 35°) with a shadow map (2048², frustum limited to about 300 m around the rider), a hemisphere fill light, linear fog towards a pale sky colour, and a flat sky background. No HDRI (licence and size). | Realism within the RN6 budget. |
 | D17 | **GL renderer: `--gl=angle` on 3D render commands only, not globally.** Measured 2026-10-25: two default renders of `CyclingVision` frame 2200 were byte-identical (sha256 `6a9065e5…`), while `--gl=angle` gave a different image (`a41e9d6e…`). A global `Config.setChromiumOpenGlRenderer('angle')` would therefore break RG1. **Spec RN4 is amended to match.** | RG1 vs RN4 conflict found by measurement. |
-| D18 | **Registers:** `data/features-3d.json` and `data/assets-3d.json` (schemas below) are validated by a small hand-written validator in `src/three-core/registers.ts`, so no new dependency is needed. | H1, G5–G8, L1. |
+| D18 | **Registers:** `data/features-3d.json` and `data/assets-3d.json` (schemas below; plus one `data/features-<id>.json` per reel window, ADR 29) are validated by a small hand-written validator in `src/three-core/registers.ts`, so no new dependency is needed. | H1, G5–G8, L1. |
 | D19 | **One copy direction:** `data/` is the source of truth, and `npm run data:sync` copies its JSON/GeoJSON into `public/data/`. A static test fails if any pair differs. Large generated binaries (`*.f32`, `*.u8`) live only in `public/data/`, with their provenance in a JSON header beside them. | Removes the manual-copy drift the README warns about. |
 | D21 | **Road-bridge decks are removed from the trail profile** (ADR 23). Found during the build: the lidar DTM keeps the A470 deck at km 8.56, which put a 26 % hump in the profile. Overbridge spans are interpolated like rail-over bridges, still flattened beneath, and not reported as earthworks. | Geographic accuracy; spec TR2. |
 | D22 | **Render-check diagnostics use Remotion's Node API** (`renderStill` with `onBrowserLog`). The CLI does not print the page's console output, so the draw-call, triangle and overlay logs can only be read this way. `@remotion/renderer` and `@remotion/bundler` are pinned dev dependencies at 4.0.538. | Spec RN6, H2a, L2. |
@@ -185,6 +187,7 @@ export type DemHeader = { cols: number; rows: number; spacingM: number; originE:
 export type LandCoverHeader = { legend: string[]; file: string };
 export type OsmLine = { properties: { id: string; tags: Record<string, string> }; geometry: { type: string; coordinates: unknown } };
 export function validateFeatures(x: unknown): Feature[];
+export function mergeRegisters(files: unknown[]): Feature[];   // several register files as one validated list: duplicate ids across files are caught
 export function validateAssets(x: unknown): Asset[];
 export function validateDemHeader(x: unknown, path: string): DemHeader;
 export function validateLandCoverHeader(x: unknown, path: string): LandCoverHeader;
@@ -195,6 +198,134 @@ export function expectGridBytes(buf: ArrayBuffer, grid: { cols: unknown; rows: u
 
 // rng.ts
 export function mulberry32(seed: number): () => number;     // deterministic; the only randomness allowed (RN1)
+
+// --- the reel (t7; ADRs 27–37) ---
+// sections.ts: configs and one assembly; poc.ts re-exports POC, PocInputs, PocScene, buildPocScene, buildPocExtras, OsmLine from here
+export type SectionKind = 'ground' | 'aerial';
+export type ShotSpec = { kind: 'drone-side' | 'follow' | 'aerial-orbit' | 'pull-back' | 'hold'; frames: number; /* fields per kind */ };
+export type SectionConfig = { id: string; title: string; kind: SectionKind; kmRange: [number, number]; window: string; frames: number; startDistM: number; shots: ShotSpec[]; captionIds: string[]; featureIds: string[]; ve: 1; maxTreesPerKind?: number };
+export type SectionScene = PocScene & { config: SectionConfig; roads: MeshArrays; bridges: MeshArrays[]; trees: TreePlacement; water: WaterBody[]; buildings: SectionBuildings };
+export const SECTIONS: Record<string, SectionConfig>;      // intro, heritage, overview, blaenau, vale-north, vale-south, maentwrog, trawsfynydd, closing
+export function shotsOf(cfg: SectionConfig, scene: { trail: Trail; riderAt: (f: number) => Vec3; heightAt: HeightAt; poseAt: (f: number) => CyclistPose }): Shot;
+export function buildSectionScene(cfg: SectionConfig, inputs: PocInputs & { osm: OsmLine[]; features: Feature[] }): SectionScene;
+export const followStartFrame: (cfg: SectionConfig) => number;   // frames before the first follow shot (the near plane moves in there)
+// atmosphere.ts (ADR 30)
+export type Rgb = [number, number, number];
+export type Atmosphere = { zenith: Rgb; horizon: Rgb; fogDensity: number; sunAzimuthDeg: number; sunElevationDeg: number };
+export const ATMOSPHERE: Record<SectionKind, Atmosphere>;
+export const fogColour: (kind: SectionKind) => Rgb;        // = ATMOSPHERE[kind].horizon (RL11)
+export function sunDirection(route: RouteModel, atmosphere: Atmosphere): Vec3;
+// shading.ts (ADR 31)
+export function shadeTerrain(mesh: MeshArrays, grid: DemGrid): MeshArrays;
+// water.ts (ADR 32)
+export type WaterBody = { id: string; polygons: WaterPolygon[]; surfaceY: number; areaM2: number };
+export type WaterPolygon = { outer: { x: number; z: number }[]; holes: { x: number; z: number }[][] };
+export function polygonsOf(geometry: { type: string; coordinates: unknown }, innerRings?: [number, number][][]): { outer: [number, number][]; holes: [number, number][][] }[];
+export function waterBodies(osm: OsmLine[], project: Projector, heightAt: HeightAt, minAreaM2: number, levels?: Record<string, number>, ve?: number): WaterBody[];
+// tileUv.ts (ADR 33)
+export type TileRange = { x0: number; x1: number; y0: number; y1: number };
+export type Bbox = { west: number; south: number; east: number; north: number };
+export function tileCoords(lon: number, lat: number, z: number): { tx: number; ty: number };
+export function tileRange(bbox: Bbox, z: number): TileRange;
+export function tileUvs(positions: Float32Array, unproject: (x: number, z: number) => { lon: number; lat: number }, range: TileRange, z: number): Float32Array;
+// cyclistModel.ts (ADR 34)
+export type PartMaterial = 'frame' | 'tyre' | 'rim' | 'rider' | 'helmet' | 'skin';
+export type Part = { kind: 'capsule' | 'sphere' | 'torus' | 'box'; a: Vec3; b?: Vec3; r: number; material: PartMaterial; name?: string; scale?: Vec3 };
+export function cyclistParts(dims: CyclistDims, crankAngle: number, wheelAngle: number): Part[];
+export function partsBounds(parts: Part[]): { min: Vec3; max: Vec3 };
+// camera.ts additions (ADR 35)
+export function aerialOrbit(p: { centre: Vec3; radiusM: number; heightM: number; fromDeg: number; toDeg: number; frames: number }): Shot;
+export function pullBack(p: { from: Vec3; target: Vec3; startHeightM: number; endHeightM: number; backM: number; frames: number; back?: [number, number] }): Shot;
+export function liftClear(shot: Shot, heightAt: HeightAt, frames: number, minAboveM: number): Shot; // one constant lift for a whole aerial shot
+// trees.ts (ADR 37): TreeOptions gains nearZoneM (300), densityPer100m2 (4) and an optional density band
+// --- iteration 2 (docs/design-reel-v2.md; ADRs 41–53) --- atmosphere.ts: light for every section, one source (ADR 46)
+export type Lighting = { hemiSky: string; hemiGround: string; hemiIntensity: number; sunColour: string; sunIntensity: number };
+export const LIGHTING: Record<SectionKind, Lighting>; // and the drape grade (CL6): only the map's paper takes the ground palette
+export type DrapeGrade = { tint: string; alpha: number; neutral: number; brightness: number }; export const DRAPE_GRADE: DrapeGrade;
+export function gradeDrapePixels(data: Uint8ClampedArray, grade: DrapeGrade): void;
+export const TREE_COLOURS: { trunk: string; conifer: string; broadleaf: string }; // trees.ts; TreeOptions gains keepOut and sightLines (ADR 47)
+export const CROWN_SHAPES: { conifer: { baseY: number; apexY: number; radius: number }; broadleaf: { centreY: number; radius: number; yScale: number } }; // as drawn; the spheres enclose them (t10)
+export const CROWN_SPHERES: { conifer: { y: number; r: number }[]; broadleaf: { y: number; r: number }[] }; export const TREE_FILL: number; // shade-side fill (CL2); TreeOptions.footprints keeps trees off buildings (BL13)
+// registers.ts: buildings carry status and provenance (ADR 51)
+export type FeatureStatus = "existing" | "construction" | "approved" | "demolished";
+export type FeatureProvenance = { urls: string[]; evidence: ("map" | "imagery" | "record" | "photo" | "lidar" | "planning")[]; observedAt: string; retrievedAt: string; licence: string; confidence: "high" | "medium" | "low" };
+// registers.ts: a section's buildings.json (BL11, RD5; heights capped at 200 m, t9) and the tile manifest (RD5, t9), checked at the boundary
+export type TilesManifest = { layers: { name?: string; zoom: number; tiles: { x: number; y: number; path: string }[] }[] };
+export function validateTilesManifest(x: unknown, path: string): TilesManifest;
+export type SectionBuilding = { id: string; osm?: string; footprint: [number, number][]; heightM: number; heightSource?: string; roof: "flat" | "gabled"; kind: "background" | "landmark"; status: FeatureStatus; landmark?: string; model?: LandmarkModel };
+export function validateBuildings(x: unknown, path: string): SectionBuilding[];
+// visibility.ts: candidate buildings, one list over all the shots' poses (ADR 49)
+export type Footprint = { id: string; ring: { x: number; z: number }[]; heightM: number };
+export function visibleFootprints(poses: CameraPose[], footprints: Footprint[], heightAt: HeightAt, opts?: { aspect?: number; far?: number; stepUnits?: number }): string[];
+// buildings.ts: merged buildings and procedural landmarks (ADR 50)
+export type BuildingStatus = FeatureStatus;
+export type BuildingRecord = { id: string; ring: { x: number; z: number }[]; heightM: number; roof: "flat" | "gabled"; status: BuildingStatus };
+export type BuildingGroup = { kind: "existing" | "translucent"; positions: Float32Array; normals: Float32Array; indices: Uint32Array };
+export function buildingBase(ring: { x: number; z: number }[], heightAt: HeightAt): number;
+export function buildingArrays(records: BuildingRecord[], heightAt: HeightAt, ve: number, landmarks?: LandmarkPlacement[]): { groups: BuildingGroup[] }; // the recorded height is the ridge (BL6)
+export function footprintOverlap(a: { x: number; z: number }[], b: { x: number; z: number }[]): number;
+export function segmentsInFootprints(lines: { x: number; z: number }[][], fps: { id: string; ring: { x: number; z: number }[] }[]): string[];
+export type LandmarkModel = { type: "church" | "station" | "block"; lengthM: number; widthM: number; heightM: number; towerHeightM?: number };
+export type LandmarkPart = { name: string; shape: "box" | "roof" | "pyramid"; centre: Vec3; size: Vec3 };
+export function landmarkParts(model: LandmarkModel): { parts: LandmarkPart[]; bounds: { min: Vec3; max: Vec3 } };
+// buildings.ts: registered ids only, with the register's status (BL3, BL16); landmarks on their footprint's axis, tower west (BL9)
+export type LandmarkPlacement = { id: string; model: LandmarkModel; origin: Vec3; yaw: number; status: BuildingStatus };
+export type SectionBuildingRecord = BuildingRecord & { kind: "background" | "landmark"; model?: LandmarkModel };
+export type SectionBuildings = { records: SectionBuildingRecord[]; groups: BuildingGroup[]; landmarks: LandmarkPlacement[]; landmarkGroups: BuildingGroup[] };
+export function sectionBuildings(list: SectionBuilding[], status: Map<string, BuildingStatus>, project: (lon: number, lat: number) => { x: number; y: number }, heightAt: HeightAt, ve: number): SectionBuildings;
+// --- photoreal layer (docs/design-photoreal.md; ADRs 54–58) ---
+// camera.ts (ADR 56): the rider's own view at handlebar height, bobbing with the crank angle; CA3 as amended (1 m over the ground, no rider distance)
+export function firstPersonShot(p: { trail: Trail; poseAt: (frame: number) => CyclistPose; distAt: (frame: number) => number; eyeHeightM: number; lookAheadM: number; forwardM?: number; bobM?: number; fovDeg?: number }): Shot;
+export const FIRST_PERSON_FOV_DEG: number; // 52
+// sections.ts: ShotSpec gains { kind: 'first-person'; eyeHeightM; lookAheadM; frames }; SectionConfig gains photo?: { canopyTrees; barriers; grassAlongM; grassBandM; walkers?: WalkerSpec[]; treeClearOfTrailM? }; PocScene gains distAt; SectionScene gains barriers, grass and walkers: WalkerTrack[]
+// grass.ts: GrassOptions gains groundAt?: (x, z) => number, the rendered ground the clumps stand on (RL15)
+export function shotSpecAt(cfg: SectionConfig, frame: number): ShotSpec; // the spec behind shotKindAt
+export function earthworksInRange(features: readonly Feature[], rangeM: [number, number]): [number, number] | null; // km range of the registered earthworks a drone shot flies over (G8)
+// atmosphere.ts: the photo look's close-shot shadow map (review 2026-10-30, RL12)
+export const SHADOW_PHOTO_CLOSE: { rangeM: number; normalBias: number; bias: number }; // 160 m, 6 cm, −0.0002
+// walkers.ts (ADR 59; spec C9): walkers a section config choreographs, under the rider's rules at walking ranges
+export type WalkerSpec = { startDistM: number; direction: 1 | -1; sideM: number; heightM: number; seed: number }; // sideM left of the route's direction, |sideM| ≤ 1 (C3)
+export type WalkerPose = { position: Vec3; yaw: number; phase: number }; // on the trail surface; one stride per 2π of phase
+export type WalkerMaterial = 'top' | 'legs' | 'skin' | 'hair' | 'shoe';
+export type WalkerPart = Omit<Part, 'material'> & { material: WalkerMaterial };
+export function walkerSpeedKmh(gradient: number): number;         // C9: clamp(4.5 − 30 × gradient, 3, 6), gradient in the walker's direction
+export const strideM: (heightM: number) => number;                // 0.8 × height
+export function walkerTable(trail: Trail, spec: WalkerSpec, frames: number, fps: number): Float64Array; // integrated once, in the walker's direction
+export function walkerPose(trail: Trail, table: Float64Array, frame: number, spec: WalkerSpec): WalkerPose;
+export function walkerParts(heightM: number, phase: number): WalkerPart[]; // 16 parts from Drillis–Contini fractions; a sole always on y = 0
+export function walkerColours(seed: number): Record<WalkerMaterial, string>;
+export const WALKER_PALETTE: Record<WalkerMaterial, readonly string[]>;
+export type WalkerTrack = { spec: WalkerSpec; table: Float64Array; poseAt: (frame: number) => WalkerPose };
+export function walkerTracks(trail: Trail, specs: readonly WalkerSpec[], frames: number, fps: number): WalkerTrack[]; // refuses a shared seed, |sideM| > 1, height outside 1.5–1.95
+// registers.ts (ADR 59): KINDS gains 'walker'
+export function shotKindAt(cfg: SectionConfig, frame: number): ShotSpec['kind'];
+export const PROTOTYPES: Record<string, SectionConfig>; // 'maentwrog-photo': 600 frames outside the reel (ADR 54)
+export function configById(id: string): SectionConfig;   // SECTIONS, then PROTOTYPES, else a named error
+// atmosphere.ts (ADR 54): the photo look's light and sky
+export const LIGHTING_PHOTO: Record<SectionKind, Lighting>;
+export const SKY_PHOTO: { environmentIntensity: number; cloudCover: number; cloudScale: number; sunGlow: number };
+// photoLook.ts (ADRs 54, 55): the look's numbers, tuned by render
+export const POST: { exposure: number; aoRadius: number; aoIntensity: number; vignette: number; saturation: number };
+export const PHOTO_TRAIL_TINT: string; // the buff the gravel is tinted with (paler than TRAIL_COLOUR, unlike any land cover)
+export const GRASS: { bladeWidthM: number; bladeHeightM: number; blades: number; base: string; tip: string };
+export const BARRIER_COLOURS: Record<BarrierKind, string>;
+// grass.ts (ADR 54): decorative clumps on grass-like cover within a band of the trail, by a seeded draw
+export type GrassClump = { x: number; y: number; z: number; yaw: number; scale: number; tint: number };
+export type GrassOptions = { seed: number; alongM: [number, number]; bandM: number; per100m2: number; clearOfTrailM: number; maxClumps: number; ve: number; classes: RegExp; tintScale: number };
+export function placeGrass(dem: DemGrid, land: LandCover, project: Projector, trail: Trail, options?: Partial<GrassOptions>): GrassClump[];
+// barriers.ts (ADR 58): OSM field boundaries as lofted boxes on the rendered ground, open for gapM either side of the trail
+export type BarrierKind = 'wall' | 'hedge' | 'fence';
+export type BarrierLine = { id: string; coords: [number, number][]; kind: BarrierKind; heightM?: number };
+export const BARRIER_SIZES: Record<BarrierKind, { widthM: number; heightM: number }>;
+export function barrierKind(tags: Record<string, string>): BarrierKind | null;
+export function barrierLines(osm: OsmLine[]): BarrierLine[];
+export type BarrierMeshes = Record<BarrierKind, MeshArrays>; // MeshArrays gains uvs?: Float32Array; the trail ribbon carries UVs too
+export function buildBarrierMeshes(lines: BarrierLine[], project: Projector, heightAt: HeightAt, opts: { ve: number; trail?: Trail; gapM?: number }): BarrierMeshes;
+// trees.ts (ADR 57): TreeOptions gains canopy?, minCanopyM (3) and fieldTreeM (6); TreeInstance gains tint? and variant?
+export const NOMINAL_TREE_HEIGHT_M: { conifer: number; broadleaf: number }; // the drawn crowns' heights per unit of scale
+// registers.ts (ADR 57): the canopy grid header, which must be the DEM's grid; KINDS gains 'barrier' (ADR 58)
+export type CanopyHeader = { cols: number; rows: number; spacingM: number; originE: number; originN: number; file: string };
+export function validateCanopyHeader(x: unknown, path: string, dem: Pick<DemHeader, 'cols' | 'rows' | 'spacingM' | 'originE' | 'originN'>): CanopyHeader;
 ```
 
 ### Runtime data: `src/data/Scene3DDataProvider.tsx` (new)
@@ -203,26 +334,29 @@ It wraps the 3D composition outside the canvas and fetches, behind one `delayRen
 - `public/data/dem-poc.json` and `landcover-poc.json`, in parallel;
 - then the DEM, source and land-cover binaries, `trail-profile-poc.json`, `osm-poc.geojson`, `features-3d.json` and `assets-3d.json`.
 
+With a `section` prop (every reel section) it loads `public/data/sections/<window>/` instead (`dem.json`, `landcover.json`, `trail-profile.json`, `osm.geojson`) and merges `features-3d.json` with `features-<window>.json` through `mergeRegisters` (D25, ADR 29).
+
 At this boundary it checks every file: the HTTP status, the headers (`validateDemHeader`, `validateLandCoverHeader`, with plain file names only), each binary's byte count against its grid (`expectGridBytes`), the profile, the OSM lines and both registers. An error goes to `cancelRender`, naming the file and field. It exposes `{ dem, land, profile, osm, features, assets }` through `useScene3DData()`.
 
 It releases its hold in an effect after its children have mounted, so `<ThreeCanvas>` has already registered its own hold (spec RN5c). `RouteDataProvider` follows the same rule. It's used only by 3D compositions, so the 2D video never loads the DEM.
 
 ### React layer
 
-- **`src/scenes3d/PocMaentwrog.tsx`** reads both providers outside the canvas. It builds the scene once with `useMemo` (`buildPocScene`, `buildPocExtras`, and the sun direction). Per frame it computes the pose and the camera, then renders:
+- **`src/scenes3d/PocMaentwrog.tsx`** is a one-line wrapper, `<Section3D section="maentwrog" captions="poc" />` (D36). **`Section3D.tsx`** reads both providers outside the canvas, builds the scene once with `useMemo` (`buildSectionScene` and the sun direction), computes the pose and the camera per frame, then renders:
 
   ```tsx
   <AbsoluteFill>
-    <ThreeCanvas width={1920} height={1080} shadows>{/* Lighting, CameraRig and the views below, props only */}</ThreeCanvas>
-    <Badge/>                    {/* "Concept visualisation — not an approved route", all frames */}
-    {ve !== 1 && <VeNote/>}     {/* "Heights exaggerated ×ve", all frames (G3) */}
-    <Label/> ×3                 {/* section title 0–149, "Proposed trail (concept)" 0–89, closing 300–359; from Caption.tsx */}
-    <Attribution/>              {/* lidar (OGL) and OSM (ODbL) credits, all frames */}
+    <ThreeCanvas width={1920} height={1080} shadows>{/* SkyDome, Lighting, CameraRig and the views below, props only */}</ThreeCanvas>
+    <CaptionOverlays captions={list} total={cfg.frames} ve={cfg.ve} />
+    {/* src/three/Overlays.tsx: a Badge "Concept visualisation — not an approved route" and the Attribution (lidar OGL,
+        OSM ODbL, OpenTopoMap CC-BY-SA) on all frames; a "Heights exaggerated ×ve" Badge when ve ≠ 1 (G3); Labels from
+        Caption.tsx for the rest. For the POC, list = POC_CAPTIONS: section title 0–149, "Proposed trail (concept)" 0–89,
+        closing 195–359 */}
     {diagnostics && <OverlayLog/>}
   </AbsoluteFill>
   ```
 
-  Each overlay carries a `data-overlay` marker. Labels get one through an `Overlay` wrapper with `display: contents`, which adds no box. With `diagnostics: true`, `OverlayLog` logs the markers found in the page after each commit, and `Diagnostics` logs `renderer.info`. The render checks read both (H2a, L2, G3, RN6). The module's default export is `Poc3DMaentwrog`, for `lazyComponent`. `FEATURE_IDS` lists the register ids the scene draws (H1).
+  Each overlay carries a `data-overlay` marker. Labels get one through an `Overlay` wrapper with `display: contents`, which adds no box. With `diagnostics: true`, `OverlayLog` logs the markers found in the page after each commit, and `Diagnostics` logs `renderer.info`. The render checks read both (H2a, L2, G3, RN6). `PocMaentwrog.tsx`'s default export is `Poc3DMaentwrog` and `Section3D.tsx`'s is `Section3D`, both for `lazyComponent`. `FEATURE_IDS` lists the register ids the scene draws (H1).
 
 - **`src/three/` views,** each `(props) → three objects`, with no data fetching and no `useFrame`:
   - `TerrainView({ mesh })`: one `BufferGeometry` with vertex colours (sRGB converted to linear).
@@ -234,7 +368,7 @@ It releases its hold in an effect after its children have mounted, so `<ThreeCan
   - `Lighting({ sunDirection, focus })`: D16; the shadow frustum follows `focus`, the rider.
   - `Diagnostics({ ve })`: logs `THREE_STATS` (draw calls, triangles, ve) after each render.
   - `useMeshGeometry(mesh)` (`geometry.ts`): a `BufferGeometry` per mesh, disposed on change.
-- **`src/Root.tsx`** registers `Poc3DMaentwrog` (360 frames) with `lazyComponent` and a `calculateMetadata` that imports `POC` dynamically; it imports no 3D module (ADR 24).
+- **`src/Root.tsx`** registers `Poc3DMaentwrog` (360 frames), `Reel3D` (2,700) and nine `Section-<id>` entries, all with `lazyComponent` and a `calculateMetadata` that imports `POC`, `reel-timeline` or `SECTIONS` dynamically; it imports no 3D module statically (ADR 24).
 
 ### Data pipeline: `scripts/` (committed; Python 3 stdlib + numpy)
 
@@ -264,15 +398,42 @@ It releases its hold in an effect after its children have mounted, so `<ThreeCan
 | `tests/three-core/trail.test.ts` | `buildTrail`: G1 (centreline = `project()`), G4, TR1, TR2. |
 | `tests/three-core/corridor.test.ts` | `flattenCorridor`: G5a, G5b, bridge spans, depths in metres whatever the ve (R3). |
 | `tests/three-core/cyclist.test.ts` | C1–C7 on every frame of a synthetic run. |
-| `tests/three-core/camera.test.ts` | CA1–CA4 on every frame; `sequenceShots`; `withClearance`; throws with no terrain (R7). |
+| `tests/three-core/camera.test.ts` | CA1–CA4 on every frame of the two POC shots; `sequenceShots`; `withClearance`; throws with no terrain (R7); ADR 35: `aerialOrbit` and `pullBack` meet CA1–CA4 over a synthetic valley. |
 | `tests/three-core/roads.test.ts` | `buildRoadMesh` drops the parts of a road off the terrain. |
-| `tests/three-core/trees.test.ts` | `placeTrees`: 2 m off carriageways (R4); ve (R3). |
+| `tests/three-core/trees.test.ts` | `placeTrees`: 2 m off carriageways (R4); RL13 near zone, 1–15 per 100 m² and none beyond 300 m (ADR 37); R2 per-kind cap spread over the whole woodland; ve (R3). |
 | `tests/three-core/rng.test.ts` | `mulberry32` determinism (RN1, RN2). |
 | `tests/three-core/poc-acceptance.test.ts` | On the real POC data: G2, G1, G4, C1–C7, CA1–CA4, finite geometry, roads on the rendered terrain and trees off them (R4, R5), H1, G5b, G6, G7, L1, C8. |
 | `tests/registers.test.ts` | Register validators (H1, L1); data-file names and grid sizes (t9); runtime data validators (R8). |
 | `tests/static-3d.test.ts` | RN1 (banned APIs in `src/three*/`, `src/scenes3d/`), RN4 (`--gl=angle` in 3D scripts, no global GL in config), RN5a (loaders gated by `delayRender`), RN5c (holds released after children mount), RN5d (load errors reported), overlays logged from the page (R2), ADR 24 (lazy 3D registration), RG4 (no lat/lon literals), RG5 (imports `src/data/route`), D19 (data/public copies identical). |
 | `tests/docs.test.ts` | This document's interface block matches the exports of `src/three-core`; every `npm run` script named in the docs exists; this table lists every test file. |
-| `scripts/render-checks.mjs` (`npm run test:render`) | RG1 (sha256 of `CyclingVision` stills 5/1200/2200/2900 vs `tests/baselines/cyclingvision.json`, captured before any 3D code), RN2 (POC frames 0/180/359 rendered twice), RN3 (`ffprobe`), RN5b (no blank canvas in any frame of the full render; terrain drawn at frame 0), RN6 (timings, `renderer.info`), H2(a), L2, G3. Results are appended to `docs/validation-3d.md`. |
+| `tests/reel-timeline.test.ts` | RL1, RL2: 2,700 frames at 30 fps; the nine sequences match the spec's 8-scene budget, contiguous and summing to 2,700. |
+| `tests/reel-captions.test.ts` | RL17–RL22: every caption's id, text, frame range and minimum duration; no caption text inside `src/scenes3d/` (ADR 36). |
+| `tests/three-core/sections.test.ts` | RL4: every `SECTIONS` config is complete; the Maentwrog config reproduces the POC scene (ADR 40). |
+| `tests/three-core/atmosphere.test.ts` | RL11, RL12, CL6: both section kinds defined; the fog colour equals the horizon colour (ADR 30); the drape grade tints only the map's neutral paper, at its own luma. |
+| `tests/three-core/shading.test.ts` | RL10: `shadeTerrain` keeps positions and colour ranges, darkens slopes, barely changes flat ground (ADR 31). |
+| `tests/three-core/water.test.ts` | RL14: `waterBodies` area filter, shore-height median, non-water ignored (ADR 32). |
+| `tests/three-core/tileUv.test.ts` | RL6: `tileRange` matches the cached wide layer; corner UVs (ADR 33). |
+| `tests/three-core/cyclistModel.test.ts` | RL16, C1: bounds of the built parts; thigh and shin lengths constant over the crank cycle (ADR 34). |
+| `tests/three-core/section-acceptance.test.ts` | RL5, RL6, RL8 per window on the real data: a DTM at the window's level agreeing with the route's elevations (median ≤ 10 m, max ≤ 30 m), the corridor mesh ≤ 400 k triangles, the per-window gradient limit, and the header's `source` and `crs`. |
+| `tests/three-core/water-holes.test.ts` | WA3, WA5: `polygonsOf` keeps holes from the geometry and `inner_rings` alike, orients rings, assigns each hole to its part; `waterBodies` keeps holes and uses shared levels; Llyn Trawsfynydd has one level and the same islands in both windows (ADRs 41, 42). |
+| `tests/water-geometry.test.ts` | WA1, WA2: `waterArrays` faces every triangle up for either winding, leaves islands open, keeps the area; real lake (ADR 41). |
+| `tests/three-core/water-terrain.test.ts` | WA7: no terrain node inside a lake, more than 0.1 m from its shore and outside its islands, rises above the lake's shared level; every drawn lake has one (t10). |
+| `tests/pipeline-python.test.ts` | WA3, WA4, WA6, WA7, CL4, BL6, BL17: the pipeline and still-metric self-tests; Llyn Trawsfynydd's islands rise above the lake level in the real DTM (ADRs 41, 42, 49). |
+| `tests/load-gate.test.ts` | RD3–RD5: one hold per input, taken while rendering (not in an effect), new hold before the old is released, stale and unmounted settles ignored, errors name section and asset; the providers use the gate; `memoOnSuccess` keeps only successful loads (ADR 43, t8). |
+| `tests/load-gate-hook.test.ts` | RD3: in a component, the render with a new input never returns the old input's data and is already held; effects run again after a cleanup still load (t10). |
+| `tests/three-core/occlusion.test.ts` | CL5: no drawn tree crown (exact cone, enclosing ellipsoid) between the camera and the rider in any frame of both ground shots in the five ground sections (ADR 47). |
+| `tests/overlays.test.ts` | CL7, CL9, CL11, CL12, BL14: safe-area tokens, 4.5:1 contrast over black and white frames, minimum text sizes (ADR 48); the legend names exactly the styles drawn. |
+| `tests/registers-buildings.test.ts` | BL2–BL4, BL16: building entries need status and provenance; planning alone is not "existing"; old observations cannot be high confidence; real source types (ADR 51). |
+| `tests/three-core/visibility.test.ts` | BL1: `visibleFootprints` lists footprints in view and not behind terrain (ADR 49). |
+| `tests/three-core/buildings.test.ts` | BL5, BL6, BL7–BL11, BL14: base on the lowest ground, no floating walls, drawn at the recorded height (gabled ridge included), no roads through, overlap share, ≤ 3 merged groups, translucent approved/demolished, landmark dimensions and placement (tower to the west), per-section loading (ADR 50). |
+| `tests/three-core/buildings-real.test.ts` | BL1, BL7, BL8, BL10, BL13, BL15, BL16 on the real sections: candidates tested at measured heights; drawn buildings resolve to sourced register entries, no trail or road through a footprint (one listed building on a dismantled stretch), no overlaps, ≤ 3 groups, no tree in or over a building, ODbL/OGL recorded and credited; `validateBuildings` names the file and field. |
+| `tests/three-core/positions.test.ts` | CL7: every register entry captured before the iteration keeps its source, category and km range (fixture `tests/fixtures/feature-positions-before.json`). |
+| `tests/three-core/first-person.test.ts` | ADRs 54, 56: the rider's view meets CA1, CA2, CA4 and CA3 as amended, bobs with the crank, plays at the section frame; the prototype config sits outside the reel and names the shot owning each frame. |
+| `tests/three-core/barriers.test.ts` | ADR 58: OSM tags to wall, hedge or fence; lofted boxes of each kind's size or the tagged height, embedded 0.3 m, on a slope, with UVs; the gap at the trail; stations off the terrain dropped. |
+| `tests/three-core/grass.test.ts` | ADR 54: clumps only on grass-like cover inside the band and clear of the ribbon, never on woodland; the stretch, the thinning band edge, determinism, the cap. |
+| `tests/three-core/trees-canopy.test.ts` | ADR 57: woodland draws unchanged, felled nodes skipped, scales from the measured height, field trees at canopy peaks outside woodland from their own stream; the canopy header must be the DEM's grid; `barrier` is a register kind (ADR 58). |
+| `tests/three-core/walkers.test.ts` | C9 (ADR 59): the walking pace, the figure's height and width at every gait phase with a sole on the ground, C2–C5 at every frame in both directions, the gait's advance, determinism, the palette, the boundary refusals; the prototype's choreography on the real Maentwrog trail (passes in the rider's view, every walker behind the follow camera, inside the window). |
+| `scripts/render-checks.mjs` (`npm run test:render`) | RG1 (sha256 of `CyclingVision` stills 5/1200/2200/2900 vs `tests/baselines/cyclingvision.json`, captured before any 3D code), RN2 (POC frames 0/180/359 rendered twice), RN3 (`ffprobe`), RN5b (no blank canvas in any frame of the full render; terrain drawn at frame 0), RN6 (timings, `renderer.info`), H2(a), L2, G3. The reel (ADR 39): RL1/RL24 full render, format and time; RL26/RL27 blank scan of all 2,700 frames; RL23 frames 0/1349/2699 twice; RL24 `renderer.info` at one frame per scene and at the last frame before each cut; RL17/RL22 overlays visible; RL32 one preview still per scene in `out/previews/`. Results are appended to `docs/validation-3d.md`. |
 
 ## Performance budget (RN6: ≤ 300 draw calls, ≤ 2 M triangles)
 
@@ -296,3 +457,9 @@ The measured figures exceed the estimate but stay well inside the RN6 budget. Th
 | K3 | Setting the camera in render without `useFrame` may not apply before `advance()`. | The RN2 double render detects it; the fallback is a `useLayoutEffect` that sets the camera, then calls `advance(0)`. |
 | K4 | Trail width primary source unconfirmed (TR1). | The ATAG 2021 PDF is too large for the fetch tool; read §11/appendix G locally before P5. |
 | K5 | The DTM has nodata in the box. | GLO-30 fallback per cell, recorded in `sourceIndex` and the register. |
+
+---
+
+# Reel design
+
+The reel design (mission `msn_44274a1de641722956fc9ce5`, decisions D23–D36, the shape of the reel, modules, risks K6–K11) is in `docs/design-reel.md`, moved there whole on 2026-10-29. The photoreal layer (ADRs 54–58) is designed in `docs/design-photoreal.md`.

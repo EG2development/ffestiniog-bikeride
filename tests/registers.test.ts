@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { dataFileName, expectGridBytes, validateAssets, validateDemHeader, validateFeatures, validateOsmLines, validateTrailProfile } from "../src/three-core/registers";
+import { dataFileName, expectGridBytes, mergeRegisters, validateAssets, validateDemHeader, validateFeatures, validateOsmLines, validateTrailProfile } from "../src/three-core/registers";
 
 const feature = (over: Record<string, unknown> = {}) => ({
   id: "trail",
@@ -103,3 +103,14 @@ describe("runtime data validators (review R8)", () => {
     expect(() => validateOsmLines({}, "o")).toThrow(/^o\.features:/);
   });
 });
+
+describe("mergeRegisters (t10 review R6)", () => {
+  const entry = (id: string) => ({ id, kind: "road", category: "approximate", source: { type: "osm", ref: `way/${id}` }, scenes: ["Reel3D"] });
+  it("merges several register files into one validated list", () => {
+    expect(mergeRegisters([[entry("a")], [entry("b")]]).map((f) => f.id)).toEqual(["a", "b"]);
+  });
+  it("rejects an id that appears in two files", () => {
+    expect(() => mergeRegisters([[entry("a")], [entry("a")]])).toThrow(/duplicate id "a"/);
+  });
+});
+

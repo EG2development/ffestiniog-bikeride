@@ -1,0 +1,1890 @@
+[
+ {
+  "id": "building-blaenau-181683804",
+  "osm": "way/181683804",
+  "footprint": [
+   [
+    -3.9309544,
+    52.9843352
+   ],
+   [
+    -3.9311728,
+    52.984359
+   ],
+   [
+    -3.9312209,
+    52.9843642
+   ],
+   [
+    -3.9313473,
+    52.984378
+   ],
+   [
+    -3.9313165,
+    52.9844523
+   ],
+   [
+    -3.9312295,
+    52.9844427
+   ],
+   [
+    -3.9311839,
+    52.9845638
+   ],
+   [
+    -3.9313017,
+    52.9845798
+   ],
+   [
+    -3.9312521,
+    52.9847308
+   ],
+   [
+    -3.9309892,
+    52.984701
+   ],
+   [
+    -3.9310174,
+    52.9846251
+   ],
+   [
+    -3.9309624,
+    52.9846154
+   ],
+   [
+    -3.9310268,
+    52.9844192
+   ],
+   [
+    -3.9309906,
+    52.9844143
+   ],
+   [
+    -3.9309841,
+    52.9844281
+   ],
+   [
+    -3.9309251,
+    52.9844209
+   ],
+   [
+    -3.9309544,
+    52.9843352
+   ]
+  ],
+  "heightM": 5.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "school"
+ },
+ {
+  "id": "building-blaenau-262605958",
+  "osm": "way/262605958",
+  "footprint": [
+   [
+    -3.9310502,
+    52.9897578
+   ],
+   [
+    -3.9311263,
+    52.9901018
+   ],
+   [
+    -3.9310124,
+    52.990111
+   ],
+   [
+    -3.9309362,
+    52.9897669
+   ],
+   [
+    -3.9310502,
+    52.9897578
+   ]
+  ],
+  "heightM": 7.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-262715029",
+  "osm": "way/262715029",
+  "footprint": [
+   [
+    -3.9277263,
+    52.9871027
+   ],
+   [
+    -3.9278082,
+    52.9867565
+   ],
+   [
+    -3.9279374,
+    52.9867676
+   ],
+   [
+    -3.9278555,
+    52.9871138
+   ],
+   [
+    -3.9277263,
+    52.9871027
+   ]
+  ],
+  "heightM": 6.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-262715060",
+  "osm": "way/262715060",
+  "footprint": [
+   [
+    -3.9319057,
+    52.99331
+   ],
+   [
+    -3.9320438,
+    52.9931703
+   ],
+   [
+    -3.9320559,
+    52.9930291
+   ],
+   [
+    -3.9319419,
+    52.9930282
+   ],
+   [
+    -3.9319312,
+    52.9931623
+   ],
+   [
+    -3.9318184,
+    52.9932782
+   ],
+   [
+    -3.9319057,
+    52.99331
+   ]
+  ],
+  "heightM": 7.7,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-262881812",
+  "osm": "way/262881812",
+  "footprint": [
+   [
+    -3.9282172,
+    52.9898933
+   ],
+   [
+    -3.9277854,
+    52.9897394
+   ],
+   [
+    -3.9277241,
+    52.9898017
+   ],
+   [
+    -3.9281559,
+    52.9899556
+   ],
+   [
+    -3.9282172,
+    52.9898933
+   ]
+  ],
+  "heightM": 8.3,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "terrace"
+ },
+ {
+  "id": "building-blaenau-263063610",
+  "osm": "way/263063610",
+  "footprint": [
+   [
+    -3.9291727,
+    52.9879016
+   ],
+   [
+    -3.9290961,
+    52.9876828
+   ],
+   [
+    -3.9289703,
+    52.9876988
+   ],
+   [
+    -3.9290469,
+    52.9879176
+   ],
+   [
+    -3.9291727,
+    52.9879016
+   ]
+  ],
+  "heightM": 4.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-263145012",
+  "osm": "way/263145012",
+  "footprint": [
+   [
+    -3.9290879,
+    52.990189
+   ],
+   [
+    -3.9289589,
+    52.9902176
+   ],
+   [
+    -3.9288761,
+    52.990236
+   ],
+   [
+    -3.928912,
+    52.9902947
+   ],
+   [
+    -3.9291238,
+    52.9902477
+   ],
+   [
+    -3.9290879,
+    52.990189
+   ]
+  ],
+  "heightM": 5.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-263145020",
+  "osm": "way/263145020",
+  "footprint": [
+   [
+    -3.9282223,
+    52.9915219
+   ],
+   [
+    -3.9282268,
+    52.9914363
+   ],
+   [
+    -3.9281172,
+    52.9914342
+   ],
+   [
+    -3.9281127,
+    52.9915198
+   ],
+   [
+    -3.9282223,
+    52.9915219
+   ]
+  ],
+  "heightM": 7.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-263145024",
+  "osm": "way/263145024",
+  "footprint": [
+   [
+    -3.9294932,
+    52.9908121
+   ],
+   [
+    -3.9293537,
+    52.9905554
+   ],
+   [
+    -3.9292625,
+    52.9904327
+   ],
+   [
+    -3.9291583,
+    52.9904601
+   ],
+   [
+    -3.9292464,
+    52.990578
+   ],
+   [
+    -3.929389,
+    52.9908314
+   ],
+   [
+    -3.9294932,
+    52.9908121
+   ]
+  ],
+  "heightM": 8.3,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "terrace"
+ },
+ {
+  "id": "building-blaenau-263145026",
+  "osm": "way/263145026",
+  "footprint": [
+   [
+    -3.9296753,
+    52.9932264
+   ],
+   [
+    -3.9299494,
+    52.9934355
+   ],
+   [
+    -3.9298545,
+    52.9934806
+   ],
+   [
+    -3.9295803,
+    52.9932714
+   ],
+   [
+    -3.9296753,
+    52.9932264
+   ]
+  ],
+  "heightM": 7.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-263145028",
+  "osm": "way/263145028",
+  "footprint": [
+   [
+    -3.9301298,
+    52.9935752
+   ],
+   [
+    -3.930381,
+    52.9937661
+   ],
+   [
+    -3.9302858,
+    52.9938115
+   ],
+   [
+    -3.9300346,
+    52.9936206
+   ],
+   [
+    -3.9301298,
+    52.9935752
+   ]
+  ],
+  "heightM": 8.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-264282414",
+  "osm": "way/264282414",
+  "footprint": [
+   [
+    -3.930107,
+    52.9935636
+   ],
+   [
+    -3.9299903,
+    52.9934765
+   ],
+   [
+    -3.929901,
+    52.9935199
+   ],
+   [
+    -3.9300176,
+    52.993607
+   ],
+   [
+    -3.930107,
+    52.9935636
+   ]
+  ],
+  "heightM": 8.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-264304402",
+  "osm": "way/264304402",
+  "footprint": [
+   [
+    -3.9282758,
+    52.9913741
+   ],
+   [
+    -3.9282438,
+    52.9912733
+   ],
+   [
+    -3.9281233,
+    52.9912872
+   ],
+   [
+    -3.9281554,
+    52.991388
+   ],
+   [
+    -3.9282758,
+    52.9913741
+   ]
+  ],
+  "heightM": 7.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-366515152",
+  "osm": "way/366515152",
+  "footprint": [
+   [
+    -3.9301441,
+    52.99092
+   ],
+   [
+    -3.930145,
+    52.991128
+   ],
+   [
+    -3.9302466,
+    52.9911279
+   ],
+   [
+    -3.9302457,
+    52.9909199
+   ],
+   [
+    -3.9301441,
+    52.99092
+   ]
+  ],
+  "heightM": 6.5,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "house"
+ },
+ {
+  "id": "building-blaenau-366515154",
+  "osm": "way/366515154",
+  "footprint": [
+   [
+    -3.93002,
+    52.9910328
+   ],
+   [
+    -3.9299624,
+    52.9911719
+   ],
+   [
+    -3.9300734,
+    52.9911885
+   ],
+   [
+    -3.930131,
+    52.9910495
+   ],
+   [
+    -3.93002,
+    52.9910328
+   ]
+  ],
+  "heightM": 4.7,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "house"
+ },
+ {
+  "id": "building-blaenau-372451116",
+  "osm": "way/372451116",
+  "footprint": [
+   [
+    -3.9274039,
+    52.9891805
+   ],
+   [
+    -3.9274464,
+    52.9892209
+   ],
+   [
+    -3.9274272,
+    52.9892324
+   ],
+   [
+    -3.9274922,
+    52.9892941
+   ],
+   [
+    -3.9274754,
+    52.9893005
+   ],
+   [
+    -3.9277014,
+    52.9895148
+   ],
+   [
+    -3.9278229,
+    52.9894684
+   ],
+   [
+    -3.9274862,
+    52.9891491
+   ],
+   [
+    -3.9274039,
+    52.9891805
+   ]
+  ],
+  "heightM": 8.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "terrace"
+ },
+ {
+  "id": "building-blaenau-372451117",
+  "osm": "way/372451117",
+  "footprint": [
+   [
+    -3.9277578,
+    52.9892358
+   ],
+   [
+    -3.9279798,
+    52.9894832
+   ],
+   [
+    -3.9281241,
+    52.9894363
+   ],
+   [
+    -3.9279021,
+    52.9891889
+   ],
+   [
+    -3.9277578,
+    52.9892358
+   ]
+  ],
+  "heightM": 11.0,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "terrace"
+ },
+ {
+  "id": "building-blaenau-372452391",
+  "osm": "way/372452391",
+  "footprint": [
+   [
+    -3.9303532,
+    52.9854347
+   ],
+   [
+    -3.9302614,
+    52.9856135
+   ],
+   [
+    -3.9304377,
+    52.9856463
+   ],
+   [
+    -3.9305295,
+    52.9854675
+   ],
+   [
+    -3.9303532,
+    52.9854347
+   ]
+  ],
+  "heightM": 7.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-372887504",
+  "osm": "way/372887504",
+  "footprint": [
+   [
+    -3.92832,
+    52.9914533
+   ],
+   [
+    -3.9283118,
+    52.9916106
+   ],
+   [
+    -3.9285042,
+    52.9916142
+   ],
+   [
+    -3.928509,
+    52.9915234
+   ],
+   [
+    -3.9286347,
+    52.9915258
+   ],
+   [
+    -3.9286399,
+    52.9914265
+   ],
+   [
+    -3.9284382,
+    52.9914227
+   ],
+   [
+    -3.9284365,
+    52.9914555
+   ],
+   [
+    -3.92832,
+    52.9914533
+   ]
+  ],
+  "heightM": 8.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-372888050",
+  "osm": "way/372888050",
+  "footprint": [
+   [
+    -3.9315211,
+    52.9932236
+   ],
+   [
+    -3.9314929,
+    52.9932599
+   ],
+   [
+    -3.9315439,
+    52.9932736
+   ],
+   [
+    -3.9315747,
+    52.9932381
+   ],
+   [
+    -3.9315211,
+    52.9932236
+   ]
+  ],
+  "heightM": 2.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-433048991",
+  "osm": "way/433048991",
+  "footprint": [
+   [
+    -3.9297293,
+    52.9882664
+   ],
+   [
+    -3.9293267,
+    52.9882828
+   ],
+   [
+    -3.9293341,
+    52.9883486
+   ],
+   [
+    -3.9297368,
+    52.9883321
+   ],
+   [
+    -3.9297293,
+    52.9882664
+   ]
+  ],
+  "heightM": 7.2,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-433048992",
+  "osm": "way/433048992",
+  "footprint": [
+   [
+    -3.9301575,
+    52.9882412
+   ],
+   [
+    -3.9305159,
+    52.9881479
+   ],
+   [
+    -3.9305609,
+    52.9882107
+   ],
+   [
+    -3.9302025,
+    52.988304
+   ],
+   [
+    -3.9301575,
+    52.9882412
+   ]
+  ],
+  "heightM": 7.2,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-433048994",
+  "osm": "way/433048994",
+  "footprint": [
+   [
+    -3.9286853,
+    52.9883098
+   ],
+   [
+    -3.9284898,
+    52.9883177
+   ],
+   [
+    -3.9284978,
+    52.9883694
+   ],
+   [
+    -3.928696,
+    52.9883615
+   ],
+   [
+    -3.9286853,
+    52.9883098
+   ]
+  ],
+  "heightM": 5.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "garages"
+ },
+ {
+  "id": "building-blaenau-433048995",
+  "osm": "way/433048995",
+  "footprint": [
+   [
+    -3.9291965,
+    52.9880055
+   ],
+   [
+    -3.929087,
+    52.9880963
+   ],
+   [
+    -3.9291893,
+    52.988141
+   ],
+   [
+    -3.9292988,
+    52.9880502
+   ],
+   [
+    -3.9291965,
+    52.9880055
+   ]
+  ],
+  "heightM": 7.6,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-433048996",
+  "osm": "way/433048996",
+  "footprint": [
+   [
+    -3.9296032,
+    52.9872063
+   ],
+   [
+    -3.9295998,
+    52.9873411
+   ],
+   [
+    -3.9297352,
+    52.9873423
+   ],
+   [
+    -3.9297386,
+    52.9872075
+   ],
+   [
+    -3.9296032,
+    52.9872063
+   ]
+  ],
+  "heightM": 7.2,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-433048997",
+  "osm": "way/433048997",
+  "footprint": [
+   [
+    -3.927642,
+    52.9889083
+   ],
+   [
+    -3.9277332,
+    52.9885737
+   ],
+   [
+    -3.9278545,
+    52.9885856
+   ],
+   [
+    -3.9277633,
+    52.9889203
+   ],
+   [
+    -3.927642,
+    52.9889083
+   ]
+  ],
+  "heightM": 4.6,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-433048999",
+  "osm": "way/433048999",
+  "footprint": [
+   [
+    -3.9280515,
+    52.988941
+   ],
+   [
+    -3.9280972,
+    52.9887793
+   ],
+   [
+    -3.9282066,
+    52.9887905
+   ],
+   [
+    -3.9281609,
+    52.9889522
+   ],
+   [
+    -3.9280515,
+    52.988941
+   ]
+  ],
+  "heightM": 4.7,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-433049000",
+  "osm": "way/433049000",
+  "footprint": [
+   [
+    -3.9308229,
+    52.9877905
+   ],
+   [
+    -3.9309792,
+    52.988122
+   ],
+   [
+    -3.9308446,
+    52.988145
+   ],
+   [
+    -3.9306883,
+    52.9878135
+   ],
+   [
+    -3.9308229,
+    52.9877905
+   ]
+  ],
+  "heightM": 7.4,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-433049002",
+  "osm": "way/433049002",
+  "footprint": [
+   [
+    -3.9295953,
+    52.9873889
+   ],
+   [
+    -3.9295855,
+    52.987526
+   ],
+   [
+    -3.929446,
+    52.9875224
+   ],
+   [
+    -3.9294558,
+    52.9873852
+   ],
+   [
+    -3.9295953,
+    52.9873889
+   ]
+  ],
+  "heightM": 7.4,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-433049003",
+  "osm": "way/433049003",
+  "footprint": [
+   [
+    -3.9294895,
+    52.9877675
+   ],
+   [
+    -3.9295462,
+    52.9878916
+   ],
+   [
+    -3.929416,
+    52.9879131
+   ],
+   [
+    -3.9293593,
+    52.9877891
+   ],
+   [
+    -3.9294895,
+    52.9877675
+   ]
+  ],
+  "heightM": 7.3,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-433049005",
+  "osm": "way/433049005",
+  "footprint": [
+   [
+    -3.9280617,
+    52.9889641
+   ],
+   [
+    -3.9277701,
+    52.9889365
+   ],
+   [
+    -3.9277507,
+    52.9890111
+   ],
+   [
+    -3.9280423,
+    52.9890387
+   ],
+   [
+    -3.9280617,
+    52.9889641
+   ]
+  ],
+  "heightM": 6.9,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-433049006",
+  "osm": "way/433049006",
+  "footprint": [
+   [
+    -3.9277657,
+    52.9885388
+   ],
+   [
+    -3.9277255,
+    52.9883588
+   ],
+   [
+    -3.9278383,
+    52.9883497
+   ],
+   [
+    -3.9278784,
+    52.9885297
+   ],
+   [
+    -3.9277657,
+    52.9885388
+   ]
+  ],
+  "heightM": 7.0,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-433049008",
+  "osm": "way/433049008",
+  "footprint": [
+   [
+    -3.9292914,
+    52.987706
+   ],
+   [
+    -3.929298,
+    52.9875688
+   ],
+   [
+    -3.9294294,
+    52.9875711
+   ],
+   [
+    -3.9294228,
+    52.9877083
+   ],
+   [
+    -3.9292914,
+    52.987706
+   ]
+  ],
+  "heightM": 6.9,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-433049013",
+  "osm": "way/433049013",
+  "footprint": [
+   [
+    -3.9300782,
+    52.9883118
+   ],
+   [
+    -3.9298137,
+    52.9883325
+   ],
+   [
+    -3.9298,
+    52.9882689
+   ],
+   [
+    -3.9300644,
+    52.9882481
+   ],
+   [
+    -3.9300782,
+    52.9883118
+   ]
+  ],
+  "heightM": 7.3,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-433049014",
+  "osm": "way/433049014",
+  "footprint": [
+   [
+    -3.928657,
+    52.9880768
+   ],
+   [
+    -3.9284705,
+    52.9880904
+   ],
+   [
+    -3.9284867,
+    52.9881707
+   ],
+   [
+    -3.9286732,
+    52.9881571
+   ],
+   [
+    -3.928657,
+    52.9880768
+   ]
+  ],
+  "heightM": 7.2,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-433049015",
+  "osm": "way/433049015",
+  "footprint": [
+   [
+    -3.92897,
+    52.9880647
+   ],
+   [
+    -3.9287806,
+    52.9880777
+   ],
+   [
+    -3.928795,
+    52.9881534
+   ],
+   [
+    -3.9289843,
+    52.9881404
+   ],
+   [
+    -3.92897,
+    52.9880647
+   ]
+  ],
+  "heightM": 7.6,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-433049016",
+  "osm": "way/433049016",
+  "footprint": [
+   [
+    -3.9296106,
+    52.9879881
+   ],
+   [
+    -3.929759,
+    52.9880598
+   ],
+   [
+    -3.9296705,
+    52.9881262
+   ],
+   [
+    -3.9295221,
+    52.9880545
+   ],
+   [
+    -3.9296106,
+    52.9879881
+   ]
+  ],
+  "heightM": 7.4,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-433049017",
+  "osm": "way/433049017",
+  "footprint": [
+   [
+    -3.9292715,
+    52.9882824
+   ],
+   [
+    -3.9288673,
+    52.9883012
+   ],
+   [
+    -3.9288761,
+    52.9883693
+   ],
+   [
+    -3.9292803,
+    52.9883505
+   ],
+   [
+    -3.9292715,
+    52.9882824
+   ]
+  ],
+  "heightM": 7.2,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-433049019",
+  "osm": "way/433049019",
+  "footprint": [
+   [
+    -3.9281389,
+    52.9886036
+   ],
+   [
+    -3.9287052,
+    52.9887257
+   ],
+   [
+    -3.9287436,
+    52.9886612
+   ],
+   [
+    -3.9281773,
+    52.9885391
+   ],
+   [
+    -3.9281389,
+    52.9886036
+   ]
+  ],
+  "heightM": 7.0,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-433049021",
+  "osm": "way/433049021",
+  "footprint": [
+   [
+    -3.9301997,
+    52.9880183
+   ],
+   [
+    -3.9304752,
+    52.9879457
+   ],
+   [
+    -3.9304268,
+    52.9878791
+   ],
+   [
+    -3.9301513,
+    52.9879517
+   ],
+   [
+    -3.9301997,
+    52.9880183
+   ]
+  ],
+  "heightM": 7.7,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "residential"
+ },
+ {
+  "id": "building-blaenau-433049022",
+  "osm": "way/433049022",
+  "footprint": [
+   [
+    -3.9282746,
+    52.9883069
+   ],
+   [
+    -3.9282144,
+    52.9882444
+   ],
+   [
+    -3.9281401,
+    52.9882702
+   ],
+   [
+    -3.9282003,
+    52.9883328
+   ],
+   [
+    -3.9282746,
+    52.9883069
+   ]
+  ],
+  "heightM": 3.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "garages"
+ },
+ {
+  "id": "building-blaenau-461933587",
+  "osm": "way/461933587",
+  "footprint": [
+   [
+    -3.9260214,
+    52.9869849
+   ],
+   [
+    -3.9260516,
+    52.9870005
+   ],
+   [
+    -3.9260616,
+    52.9869935
+   ],
+   [
+    -3.9260314,
+    52.9869779
+   ],
+   [
+    -3.9260214,
+    52.9869849
+   ]
+  ],
+  "heightM": 6.0,
+  "heightSource": "default",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-461933588",
+  "osm": "way/461933588",
+  "footprint": [
+   [
+    -3.9260686,
+    52.986961
+   ],
+   [
+    -3.9260964,
+    52.9869767
+   ],
+   [
+    -3.9261075,
+    52.9869697
+   ],
+   [
+    -3.9260796,
+    52.9869539
+   ],
+   [
+    -3.9260686,
+    52.986961
+   ]
+  ],
+  "heightM": 6.0,
+  "heightSource": "default",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-461947802",
+  "osm": "way/461947802",
+  "footprint": [
+   [
+    -3.92713,
+    52.9879919
+   ],
+   [
+    -3.92732,
+    52.9880755
+   ],
+   [
+    -3.927339,
+    52.9880598
+   ],
+   [
+    -3.9274076,
+    52.98809
+   ],
+   [
+    -3.9274713,
+    52.9880375
+   ],
+   [
+    -3.927397,
+    52.9880048
+   ],
+   [
+    -3.9274042,
+    52.9879989
+   ],
+   [
+    -3.92722,
+    52.9879178
+   ],
+   [
+    -3.92713,
+    52.9879919
+   ]
+  ],
+  "heightM": 5.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-611103117",
+  "osm": "way/611103117",
+  "footprint": [
+   [
+    -3.928277,
+    52.9897087
+   ],
+   [
+    -3.9284015,
+    52.9896883
+   ],
+   [
+    -3.9284156,
+    52.9897196
+   ],
+   [
+    -3.9285271,
+    52.9899666
+   ],
+   [
+    -3.9284026,
+    52.9899869
+   ],
+   [
+    -3.9282922,
+    52.9897424
+   ],
+   [
+    -3.928277,
+    52.9897087
+   ]
+  ],
+  "heightM": 8.9,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-611103118",
+  "osm": "way/611103118",
+  "footprint": [
+   [
+    -3.9282924,
+    52.9899672
+   ],
+   [
+    -3.9281893,
+    52.9899686
+   ],
+   [
+    -3.9281889,
+    52.9900397
+   ],
+   [
+    -3.9282951,
+    52.9900386
+   ],
+   [
+    -3.9282924,
+    52.9899672
+   ]
+  ],
+  "heightM": 7.3,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-611103119",
+  "osm": "way/611103119",
+  "footprint": [
+   [
+    -3.928203,
+    52.9902513
+   ],
+   [
+    -3.9283167,
+    52.9902487
+   ],
+   [
+    -3.9282951,
+    52.9900386
+   ],
+   [
+    -3.928181,
+    52.9900397
+   ],
+   [
+    -3.928203,
+    52.9902513
+   ]
+  ],
+  "heightM": 6.0,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "terrace"
+ },
+ {
+  "id": "building-blaenau-611125888",
+  "osm": "way/611125888",
+  "footprint": [
+   [
+    -3.9284026,
+    52.9899869
+   ],
+   [
+    -3.9285506,
+    52.9899592
+   ],
+   [
+    -3.9287169,
+    52.9901857
+   ],
+   [
+    -3.9285794,
+    52.9902232
+   ],
+   [
+    -3.9284026,
+    52.9899869
+   ]
+  ],
+  "heightM": 10.0,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-611125890",
+  "osm": "way/611125890",
+  "footprint": [
+   [
+    -3.9288416,
+    52.9899449
+   ],
+   [
+    -3.9287538,
+    52.9899467
+   ],
+   [
+    -3.92875,
+    52.9900008
+   ],
+   [
+    -3.9288404,
+    52.9900018
+   ],
+   [
+    -3.9288416,
+    52.9899449
+   ]
+  ],
+  "heightM": 2.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-611319027",
+  "osm": "way/611319027",
+  "footprint": [
+   [
+    -3.9288885,
+    52.9908523
+   ],
+   [
+    -3.9287942,
+    52.9908796
+   ],
+   [
+    -3.9284739,
+    52.9904674
+   ],
+   [
+    -3.9285661,
+    52.9904407
+   ],
+   [
+    -3.9288885,
+    52.9908523
+   ]
+  ],
+  "heightM": 6.2,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-611319030",
+  "osm": "way/611319030",
+  "footprint": [
+   [
+    -3.9291284,
+    52.9908218
+   ],
+   [
+    -3.9291372,
+    52.9909027
+   ],
+   [
+    -3.9292459,
+    52.9908984
+   ],
+   [
+    -3.9292371,
+    52.9908175
+   ],
+   [
+    -3.9291284,
+    52.9908218
+   ]
+  ],
+  "heightM": 6.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-611319031",
+  "osm": "way/611319031",
+  "footprint": [
+   [
+    -3.9284025,
+    52.9902354
+   ],
+   [
+    -3.928274,
+    52.9902708
+   ],
+   [
+    -3.9284323,
+    52.9904788
+   ],
+   [
+    -3.9284739,
+    52.9904674
+   ],
+   [
+    -3.9285661,
+    52.9904407
+   ],
+   [
+    -3.9284025,
+    52.9902354
+   ]
+  ],
+  "heightM": 6.5,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "terrace"
+ },
+ {
+  "id": "building-blaenau-611319033",
+  "osm": "way/611319033",
+  "footprint": [
+   [
+    -3.9291264,
+    52.9910163
+   ],
+   [
+    -3.9292752,
+    52.9910184
+   ],
+   [
+    -3.9292783,
+    52.9909197
+   ],
+   [
+    -3.9291312,
+    52.9909176
+   ],
+   [
+    -3.9291264,
+    52.9910163
+   ]
+  ],
+  "heightM": 9.9,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ },
+ {
+  "id": "building-blaenau-611319034",
+  "osm": "way/611319034",
+  "footprint": [
+   [
+    -3.9291184,
+    52.9912273
+   ],
+   [
+    -3.9291264,
+    52.9910163
+   ],
+   [
+    -3.9292752,
+    52.9910184
+   ],
+   [
+    -3.9292672,
+    52.9912293
+   ],
+   [
+    -3.9291184,
+    52.9912273
+   ]
+  ],
+  "heightM": 10.3,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "terrace"
+ },
+ {
+  "id": "building-blaenau-611319036",
+  "osm": "way/611319036",
+  "footprint": [
+   [
+    -3.9282182,
+    52.9894339
+   ],
+   [
+    -3.9282445,
+    52.9894775
+   ],
+   [
+    -3.9283763,
+    52.9894487
+   ],
+   [
+    -3.92835,
+    52.9894051
+   ],
+   [
+    -3.9282182,
+    52.9894339
+   ]
+  ],
+  "heightM": 6.1,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes"
+ }
+]

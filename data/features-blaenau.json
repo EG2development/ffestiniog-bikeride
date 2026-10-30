@@ -1,0 +1,7044 @@
+[
+  {
+    "id": "terrain-blaenau",
+    "kind": "terrain",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "lidar DTM at its 4 m overview; 17 cells filled (water shore height or neighbour mean), see dem.json"
+  },
+  {
+    "id": "landcover-blaenau",
+    "kind": "landcover",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "landuse/natural polygons in public/data/sections/blaenau/osm.geojson"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ]
+  },
+  {
+    "id": "bridge-blaenau-159027121",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159027121"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "fromKm": 0.2444,
+    "toKm": 0.2554,
+    "note": "position from OSM; generic deck and parapets"
+  },
+  {
+    "id": "bridge-blaenau-270497596",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270497596"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "fromKm": 0.438,
+    "toKm": 0.5461,
+    "note": "position from OSM; generic deck and parapets"
+  },
+  {
+    "id": "bridge-blaenau-461165102",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461165102"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "fromKm": 0.6109,
+    "toKm": 0.6247,
+    "note": "position from OSM; generic deck and parapets"
+  },
+  {
+    "id": "bridge-blaenau-270497589",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270497589"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "fromKm": 0.7457,
+    "toKm": 0.7559,
+    "note": "position from OSM; generic deck and parapets"
+  },
+  {
+    "id": "overbridge-blaenau-263141222",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263141222"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "fromKm": -0.0073,
+    "toKm": 0.013699999999999999,
+    "note": "highway=residential bridge over the line; deck removed from the trail profile (ADR 23)"
+  },
+  {
+    "id": "overbridge-blaenau-137155319",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/137155319"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "fromKm": 0.0475,
+    "toKm": 0.0685,
+    "note": "highway=residential bridge over the line; deck removed from the trail profile (ADR 23)"
+  },
+  {
+    "id": "overbridge-blaenau-137155315",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/137155315"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "fromKm": 0.10940000000000001,
+    "toKm": 0.1305,
+    "note": "highway=residential bridge over the line; deck removed from the trail profile (ADR 23)"
+  },
+  {
+    "id": "overbridge-blaenau-159027123",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159027123"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "fromKm": 1.5407,
+    "toKm": 1.5603,
+    "note": "highway=service bridge over the line; deck removed from the trail profile (ADR 23)"
+  },
+  {
+    "id": "road-blaenau-85628735",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/85628735"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-130438242",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/130438242"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-159027118",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159027118"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-159027122",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159027122"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-159027123",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159027123"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-270497576",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270497576"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-blaenau-270497609",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270497609"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-363577347",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/363577347"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372452373",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372452373"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372525036",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372525036"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-461164239",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461164239"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-461362625",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461362625"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-blaenau-461365590",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461365590"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-669220125",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/669220125"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-blaenau-29258205",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/29258205"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-29258230",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/29258230"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-29258235",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/29258235"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-29258238",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/29258238"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-41151711",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/41151711"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=tertiary"
+  },
+  {
+    "id": "road-blaenau-60954134",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/60954134"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-60954135",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/60954135"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-60954136",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/60954136"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-60954137",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/60954137"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-60954152",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/60954152"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-60954153",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/60954153"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-64682425",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/64682425"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-64682428",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/64682428"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-64682431",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/64682431"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=primary"
+  },
+  {
+    "id": "road-blaenau-64682432",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/64682432"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-64682433",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/64682433"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=primary"
+  },
+  {
+    "id": "road-blaenau-64682435",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/64682435"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=primary"
+  },
+  {
+    "id": "road-blaenau-64682439",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/64682439"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=primary"
+  },
+  {
+    "id": "road-blaenau-64682443",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/64682443"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-64683859",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/64683859"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-64683861",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/64683861"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-64683863",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/64683863"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-85628732",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/85628732"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-85628733",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/85628733"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-85628734",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/85628734"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-110994137",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/110994137"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-110994141",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/110994141"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-110994142",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/110994142"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-110994144",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/110994144"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-110994148",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/110994148"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-114886227",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/114886227"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-121297392",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/121297392"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-121297393",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/121297393"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-121297394",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/121297394"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-121297395",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/121297395"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-121297396",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/121297396"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-121297397",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/121297397"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-121297398",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/121297398"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-121297401",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/121297401"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-121297402",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/121297402"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-121297405",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/121297405"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-121297530",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/121297530"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-121297531",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/121297531"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-121297532",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/121297532"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-121297737",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/121297737"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-123008310",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/123008310"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-123008311",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/123008311"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-123008312",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/123008312"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-123008625",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/123008625"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-124388312",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/124388312"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-124388313",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/124388313"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-124388314",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/124388314"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-124388315",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/124388315"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-124388317",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/124388317"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-124388318",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/124388318"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-124388320",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/124388320"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-124388321",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/124388321"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-124388324",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/124388324"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-133888824",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/133888824"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-133888825",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/133888825"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-137155315",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/137155315"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-137155316",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/137155316"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-137155319",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/137155319"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-137155320",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/137155320"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-143065968",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/143065968"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-143065970",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/143065970"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-143065971",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/143065971"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-153411444",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/153411444"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=primary"
+  },
+  {
+    "id": "road-blaenau-153411446",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/153411446"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=primary"
+  },
+  {
+    "id": "road-blaenau-153411448",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/153411448"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-blaenau-153411459",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/153411459"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-blaenau-153411461",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/153411461"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-blaenau-153411465",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/153411465"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-blaenau-153411467",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/153411467"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-154286528",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/154286528"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=primary"
+  },
+  {
+    "id": "road-blaenau-230557555",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230557555"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-230562198",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230562198"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-230562199",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230562199"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-230562200",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230562200"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-230562202",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230562202"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-230562204",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230562204"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-230562205",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230562205"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-230562206",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230562206"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-230702955",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230702955"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-230702956",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230702956"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-230702957",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230702957"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-230702958",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230702958"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-230702959",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230702959"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-230702961",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230702961"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-230702962",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230702962"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-230702963",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230702963"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-230702964",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230702964"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-230702965",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230702965"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-230702966",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230702966"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-233416820",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/233416820"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-233416821",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/233416821"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-262547796",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262547796"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-262547798",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262547798"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-262605969",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262605969"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-262715031",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262715031"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-262715032",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262715032"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-262715033",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262715033"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-262715036",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262715036"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-262715040",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262715040"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-262715041",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262715041"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-262881808",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262881808"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-262881811",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262881811"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-263053573",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263053573"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-263063607",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263063607"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-263063609",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263063609"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-263136765",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263136765"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-263141215",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263141215"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-263141219",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263141219"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-263141221",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263141221"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-263141222",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263141222"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-263145014",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263145014"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-blaenau-263145018",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263145018"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-263810977",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263810977"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-264282410",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/264282410"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-264282415",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/264282415"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-264282417",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/264282417"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-264282423",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/264282423"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-264282425",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/264282425"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-264295509",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/264295509"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-264295510",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/264295510"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-264363248",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/264363248"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-264363254",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/264363254"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-blaenau-265883915",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/265883915"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-blaenau-270497587",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270497587"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-270497598",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270497598"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-270497600",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270497600"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-272200826",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/272200826"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-272200827",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/272200827"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-277769482",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/277769482"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-278203723",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/278203723"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-278203724",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/278203724"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-311200998",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/311200998"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-327667109",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/327667109"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372075167",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372075167"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372674925",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372674925"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372679038",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372679038"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372679039",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372679039"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372679040",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372679040"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372679041",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372679041"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372880031",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372880031"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372887498",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372887498"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372888026",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888026"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-372888029",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888029"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-372888031",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888031"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372888035",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888035"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372888036",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888036"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372888037",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888037"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372888038",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888038"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372888039",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888039"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372888040",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888040"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372888043",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888043"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372888044",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888044"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372888058",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888058"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372889138",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372889138"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372889141",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372889141"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372889146",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372889146"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-432805534",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/432805534"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-446488704",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/446488704"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-blaenau-446488705",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/446488705"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-blaenau-462109277",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462109277"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462109292",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462109292"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462109295",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462109295"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462112600",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462112600"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462126736",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126736"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-blaenau-462126760",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126760"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462126788",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126788"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462129398",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462129398"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462129399",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462129399"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462129401",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462129401"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462129402",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462129402"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462129403",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462129403"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462129404",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462129404"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462129405",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462129405"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462131915",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462131915"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-blaenau-462131916",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462131916"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462137139",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462137139"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-462151302",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462151302"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462151304",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462151304"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462180955",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462180955"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462631109",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462631109"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462631111",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462631111"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462631116",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462631116"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462738766",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462738766"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-462738767",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462738767"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-505661076",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/505661076"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-512614466",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/512614466"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-611651407",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/611651407"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-840401663",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/840401663"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-849956513",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/849956513"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-849956514",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/849956514"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-blaenau-849956515",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/849956515"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-849956516",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/849956516"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-849956517",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/849956517"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-849956518",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/849956518"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-blaenau-849956519",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/849956519"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-blaenau-849956520",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/849956520"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-1037412466",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037412466"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-1037412467",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037412467"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-1037412469",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037412469"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-1037432720",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037432720"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-1037435561",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037435561"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-1104501298",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1104501298"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-1105166170",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1105166170"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-1123460636",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1123460636"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-1123460637",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1123460637"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-1503467744",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1503467744"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-1503467754",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1503467754"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-1503467755",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1503467755"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-1503467802",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1503467802"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-1503467803",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1503467803"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-1503467804",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1503467804"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-1503606311",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1503606311"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-1503606323",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1503606323"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-1503606324",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1503606324"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-1503606325",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1503606325"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-1503606326",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1503606326"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-55068817",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/55068817"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-55068819",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/55068819"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-blaenau-55068823",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/55068823"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-blaenau-55068825",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/55068825"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-55068826",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/55068826"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-55068827",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/55068827"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-55068828",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/55068828"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-55068836",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/55068836"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-55068837",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/55068837"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-55068839",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/55068839"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-55068840",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/55068840"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-55068852",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/55068852"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-blaenau-60954177",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/60954177"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-60954191",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/60954191"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-60954201",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/60954201"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=tertiary"
+  },
+  {
+    "id": "road-blaenau-122929111",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/122929111"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-122929125",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/122929125"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-122929178",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/122929178"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-blaenau-122929229",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/122929229"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-122929230",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/122929230"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-122929232",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/122929232"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-122929237",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/122929237"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-143558234",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/143558234"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-159027120",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159027120"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-blaenau-181683521",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/181683521"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-181683522",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/181683522"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-181683670",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/181683670"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-181683671",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/181683671"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-blaenau-183360421",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/183360421"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-262547794",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262547794"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-262547799",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262547799"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-262715048",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262715048"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-262715052",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262715052"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-262715056",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262715056"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-262715059",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262715059"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-blaenau-263063608",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263063608"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-263136771",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263136771"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-263136773",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263136773"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-271932714",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271932714"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-271932717",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271932717"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-271932731",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271932731"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-blaenau-271932733",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271932733"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-271932737",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271932737"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-271932752",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271932752"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-271932757",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271932757"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-271932759",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271932759"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-363576248",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/363576248"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372452374",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372452374"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-372452375",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372452375"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372452378",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372452378"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372452379",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372452379"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372452380",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372452380"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372452394",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372452394"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-461164247",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461164247"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-461345099",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461345099"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-461345102",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461345102"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-461362576",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461362576"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-blaenau-461362600",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461362600"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=tertiary"
+  },
+  {
+    "id": "road-blaenau-461362621",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461362621"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-461365589",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461365589"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-461365591",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461365591"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-blaenau-461365592",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461365592"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-461995254",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461995254"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-461995263",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461995263"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-blaenau-461995266",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461995266"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-461997368",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461997368"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-461997369",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461997369"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-461997370",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461997370"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-461997371",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461997371"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-461997385",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461997385"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-461999066",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461999066"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462007902",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462007902"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462007903",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462007903"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-836401768",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/836401768"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-836401769",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/836401769"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-978250366",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/978250366"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=tertiary"
+  },
+  {
+    "id": "road-blaenau-978250367",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/978250367"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=tertiary"
+  },
+  {
+    "id": "road-blaenau-1104456103",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1104456103"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-1104456114",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1104456114"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-1193366778",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1193366778"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-55068829",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/55068829"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-114888123",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/114888123"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-114888125",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/114888125"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-121297399",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/121297399"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-121297736",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/121297736"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-121297738",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/121297738"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-137155313",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/137155313"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-143061597",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/143061597"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-143061598",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/143061598"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-143061601",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/143061601"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-143065480",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/143065480"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-143241737",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/143241737"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-143241861",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/143241861"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-262547795",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262547795"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-262715037",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262715037"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-blaenau-263136776",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263136776"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-264282420",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/264282420"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-270497581",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270497581"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-270497597",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270497597"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-blaenau-270497602",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270497602"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=trunk"
+  },
+  {
+    "id": "road-blaenau-372450289",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372450289"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372451109",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372451109"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-372451110",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372451110"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-372691354",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372691354"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-blaenau-372691355",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372691355"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=track"
+  },
+  {
+    "id": "road-blaenau-372887500",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372887500"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372887501",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372887501"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-372887503",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372887503"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-461164243",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461164243"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-461165098",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461165098"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-461165099",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461165099"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-461165100",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461165100"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-461867652",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461867652"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-461867674",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461867674"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-462007883",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462007883"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-462007884",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462007884"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-611125891",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/611125891"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-759858578",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/759858578"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=residential"
+  },
+  {
+    "id": "road-blaenau-1104486273",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1104486273"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-1104486274",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1104486274"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=unclassified"
+  },
+  {
+    "id": "road-blaenau-1104501294",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1104501294"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-1104501295",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1104501295"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-1104501296",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1104501296"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-1104501297",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1104501297"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-1104501299",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1104501299"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "road-blaenau-1104501300",
+    "kind": "road",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1104501300"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "highway=service"
+  },
+  {
+    "id": "water-blaenau-372679048",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372679048"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "surface at the median DTM height along the shore; not a surveyed level (ADR 32)"
+  },
+  {
+    "id": "water-blaenau-372679049",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372679049"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "surface at the median DTM height along the shore; not a surveyed level (ADR 32)"
+  },
+  {
+    "id": "water-blaenau-462131906",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462131906"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "surface at the median DTM height along the shore; not a surveyed level (ADR 32)"
+  },
+  {
+    "id": "water-blaenau-462131910",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462131910"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "surface at the median DTM height along the shore; not a surveyed level (ADR 32)"
+  },
+  {
+    "id": "water-blaenau-462131911",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462131911"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "surface at the median DTM height along the shore; not a surveyed level (ADR 32)"
+  },
+  {
+    "id": "water-blaenau-462131912",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462131912"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "surface at the median DTM height along the shore; not a surveyed level (ADR 32)"
+  },
+  {
+    "id": "water-blaenau-55068800",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/55068800"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "surface at the median DTM height along the shore; not a surveyed level (ADR 32)"
+  },
+  {
+    "id": "earthwork-cut-0.086",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-blaenau",
+      "Reel3D"
+    ],
+    "fromKm": 0.086,
+    "toKm": 0.086,
+    "note": "cut, up to 2.4 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-fill-0.278",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-blaenau",
+      "Reel3D"
+    ],
+    "fromKm": 0.278,
+    "toKm": 0.278,
+    "note": "fill, up to 2.4 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-fill-0.547",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-blaenau",
+      "Reel3D"
+    ],
+    "fromKm": 0.547,
+    "toKm": 0.547,
+    "note": "fill, up to 2.8 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-fill-0.571",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-blaenau",
+      "Reel3D"
+    ],
+    "fromKm": 0.571,
+    "toKm": 0.571,
+    "note": "fill, up to 2.3 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-fill-0.758",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-blaenau",
+      "Reel3D"
+    ],
+    "fromKm": 0.758,
+    "toKm": 0.758,
+    "note": "fill, up to 2.7 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-cut-0.850",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-blaenau",
+      "Reel3D"
+    ],
+    "fromKm": 0.85,
+    "toKm": 0.85,
+    "note": "cut, up to 2.1 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-cut-0.864",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-blaenau",
+      "Reel3D"
+    ],
+    "fromKm": 0.864,
+    "toKm": 0.864,
+    "note": "cut, up to 2.2 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-cut-0.948",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-blaenau",
+      "Reel3D"
+    ],
+    "fromKm": 0.948,
+    "toKm": 0.948,
+    "note": "cut, up to 2.3 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "earthwork-cut-0.969",
+    "kind": "earthwork",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
+    },
+    "scenes": [
+      "Section-blaenau",
+      "Reel3D"
+    ],
+    "fromKm": 0.969,
+    "toKm": 0.969,
+    "note": "cut, up to 2.4 m; DEM-derived, not a surveyed earthwork"
+  },
+  {
+    "id": "building-blaenau-181683804",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/181683804"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/181683804",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2022-12-19",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "school; height 5.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-262605958",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262605958"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/262605958",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-02-20",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 7.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-262715029",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262715029"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/262715029",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-02-21",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 6.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-262715060",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262715060"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/262715060",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-02-21",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 7.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-262881812",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/262881812"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/262881812",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2015-09-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "terrace; height 8.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-263063610",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263063610"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263063610",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-02-23",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 4.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-263145012",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263145012"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263145012",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-03-03",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 5.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-263145020",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263145020"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263145020",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-02-23",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 7.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-263145024",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263145024"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263145024",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2015-09-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "terrace; height 8.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-263145026",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263145026"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263145026",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2022-12-19",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 7.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-263145028",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263145028"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263145028",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2022-12-19",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 8.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-264282414",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/264282414"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/264282414",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2022-12-19",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 8.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-264304402",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/264304402"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/264304402",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2014-03-03",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 7.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-366515152",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/366515152"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/366515152",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2015-08-19",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "house; height 6.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-366515154",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/366515154"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/366515154",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2015-08-19",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "house; height 4.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-372451116",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372451116"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/372451116",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2015-09-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "terrace; height 8.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-372451117",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372451117"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/372451117",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2015-09-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "terrace; height 11.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-372452391",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372452391"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/372452391",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2015-09-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 7.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-372887504",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372887504"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/372887504",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2015-09-29",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 8.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-372888050",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888050"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/372888050",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2015-09-29",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 2.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433048991",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433048991"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433048991",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 7.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433048992",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433048992"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433048992",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 7.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433048994",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433048994"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433048994",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "garages; height 5.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433048995",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433048995"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433048995",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 7.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433048996",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433048996"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433048996",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 7.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433048997",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433048997"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433048997",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 4.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433048999",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433048999"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433048999",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 4.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433049000",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433049000"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433049000",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 7.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433049002",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433049002"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433049002",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 7.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433049003",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433049003"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433049003",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 7.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433049005",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433049005"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433049005",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 6.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433049006",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433049006"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433049006",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 7.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433049008",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433049008"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433049008",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 6.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433049013",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433049013"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433049013",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 7.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433049014",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433049014"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433049014",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 7.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433049015",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433049015"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433049015",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 7.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433049016",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433049016"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433049016",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 7.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433049017",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433049017"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433049017",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 7.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433049019",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433049019"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433049019",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 7.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433049021",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433049021"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433049021",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "residential; height 7.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-433049022",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/433049022"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/433049022",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-07-25",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "garages; height 3.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-461933587",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461933587"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/461933587"
+      ],
+      "evidence": [
+        "map"
+      ],
+      "observedAt": "2016-12-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 6.0 m from default (approximate)"
+  },
+  {
+    "id": "building-blaenau-461933588",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461933588"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/461933588"
+      ],
+      "evidence": [
+        "map"
+      ],
+      "observedAt": "2016-12-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 6.0 m from default (approximate)"
+  },
+  {
+    "id": "building-blaenau-461947802",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461947802"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/461947802",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2016-12-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 5.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-611103117",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/611103117"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/611103117",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2018-07-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 8.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-611103118",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/611103118"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/611103118",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2018-07-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 7.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-611103119",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/611103119"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/611103119",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2019-07-24",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "terrace; height 6.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-611125888",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/611125888"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/611125888",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2018-07-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 10.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-611125890",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/611125890"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/611125890",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2018-07-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 2.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-611319027",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/611319027"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/611319027",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2018-07-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 6.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-611319030",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/611319030"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/611319030",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2018-07-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 6.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-611319031",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/611319031"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/611319031",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2019-07-24",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "terrace; height 6.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-611319033",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/611319033"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/611319033",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2018-07-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 9.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-611319034",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/611319034"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/611319034",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2019-07-24",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "terrace; height 10.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-blaenau-611319036",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/611319036"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/611319036",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2018-07-26",
+      "retrievedAt": "2026-10-25",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 6.1 m from lidar-dsm"
+  }
+]

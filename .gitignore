@@ -26,3 +26,13 @@ agentdb.rvf.lock
 .codex/
 # Claude Flow runtime data
 # Environment variables
+
+# Local agent state, secrets, editor metadata and test caches
+.claude-flow/
+.swarm/
+.vitest/
+.idea/
+agentdb.rvf*
+ruvector.db*
+.claude/*.bak-*
+.env.*

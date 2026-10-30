@@ -8,6 +8,7 @@ Writes public/data/{dem-poc.json,dem-poc.f32,dem-poc-source.u8,landcover-poc.jso
 trail-profile-poc.json,osm-poc.geojson} and data/{features-3d.json,assets-3d.json}.
 Needs network access to the Welsh lidar COG and the OSM API. Python 3 + numpy.
 """
+# Reel: windows per section (docs/adr/0029-terrain-windows-per-section.md); water fill (docs/adr/0032-water-from-osm.md).
 import datetime
 import json
 import math
@@ -123,7 +124,7 @@ def point_in_ring(lons, lats, ring):
 def write_json(rel, obj, indent=None):
     path = os.path.join(ROOT, rel)
     with open(path, "w") as f:
-        json.dump(obj, f, indent=indent)
+        json.dump(obj, f, indent=indent, allow_nan=False)  # NaN is not JSON: browsers refuse it (t9 F1)
         f.write("\n")
     print("wrote", rel)
 
@@ -313,4 +314,6 @@ def main():
 
 
 if __name__ == "__main__":
+    if len(sys.argv) > 1:  # no options: an argument (even --help) must not start the networked build (t13)
+        sys.exit("usage: python3 scripts/build_poc_data.py   (no arguments; rebuilds the POC window over the network)")
     main()

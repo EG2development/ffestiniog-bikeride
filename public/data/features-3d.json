@@ -35,7 +35,7 @@
     "scenes": [
       "Poc3DMaentwrog"
     ],
-    "note": "follows the OSM centreline of the Bala and Festiniog Railway; width not yet checked against ATAG 2021"
+    "note": "follows the OSM centreline of the Bala and Festiniog Railway; 3.0 m is the Active Travel Act Guidance (Welsh Government, 2021) Table 11.5 recommended minimum for shared use routes carrying up to 300 pedestrians and 300 cyclists per hour (4.5 m above that), and the guidance's desirable minimum for a retained shared use path (absolute minimum 2.5 m); checked 2026-10-29 against the guidance PDF"
   },
   {
     "id": "trees",
@@ -62,6 +62,44 @@
     ]
   },
   {
+    "id": "trees-canopy-maentwrog",
+    "kind": "vegetation",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif minus the DTM (public/data/sections/maentwrog/canopy.json)"
+    },
+    "scenes": [
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "tree positions by seeded draw inside OSM woodland where the lidar canopy is at least 3 m, scaled to the measured canopy height; field trees at canopy peaks of 6 m or more outside woodland; species and crown form are generic (ADR 57); the lidar was flown 2022-01-11 (tile catalogue)"
+  },
+  {
+    "id": "grass-maentwrog",
+    "kind": "vegetation",
+    "category": "decorative",
+    "source": {
+      "type": "original",
+      "ref": "seeded clumps on OSM grass, heath and unclassified cover within 50 m of the trail, km 8.85-9.32"
+    },
+    "scenes": [
+      "Poc3DMaentwrogPhoto"
+    ]
+  },
+  {
+    "id": "walkers-maentwrog",
+    "kind": "walker",
+    "category": "decorative",
+    "source": {
+      "type": "original",
+      "ref": "three procedural figures choreographed in PROTOTYPES[\"maentwrog-photo\"].photo.walkers (ADR 59)"
+    },
+    "scenes": [
+      "Poc3DMaentwrogPhoto"
+    ],
+    "note": "conceptual: shows the proposed path in shared use (Active Travel Act guidance Table 11.5, 3 m); nobody is recorded walking the mothballed line, and no path exists there today"
+  },
+  {
     "id": "bridge-159029124",
     "kind": "structure",
     "category": "approximate",
@@ -70,7 +108,8 @@
       "ref": "way/159029124"
     },
     "scenes": [
-      "Poc3DMaentwrog"
+      "Poc3DMaentwrog",
+      "Poc3DMaentwrogPhoto"
     ],
     "fromKm": 9.149700000000001,
     "toKm": 9.168899999999999,
@@ -1172,7 +1211,8 @@
       "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
     },
     "scenes": [
-      "Poc3DMaentwrog"
+      "Poc3DMaentwrog",
+      "Poc3DMaentwrogPhoto"
     ],
     "fromKm": 8.602,
     "toKm": 8.602,
@@ -1187,7 +1227,8 @@
       "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
     },
     "scenes": [
-      "Poc3DMaentwrog"
+      "Poc3DMaentwrog",
+      "Poc3DMaentwrogPhoto"
     ],
     "fromKm": 8.865,
     "toKm": 8.865,
@@ -1202,7 +1243,8 @@
       "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
     },
     "scenes": [
-      "Poc3DMaentwrog"
+      "Poc3DMaentwrog",
+      "Poc3DMaentwrogPhoto"
     ],
     "fromKm": 9.009,
     "toKm": 9.009,

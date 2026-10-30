@@ -123,11 +123,14 @@ export function buildTrail(
 
   const half = opts.widthM / 2 / 10;
   const positions = new Float32Array(samples.length * 6);
+  // texture coordinates for a surface material (the photoreal layer): u across the ribbon, v along it in units of 3 m
+  const uvs = new Float32Array(samples.length * 4);
   samples.forEach((s, i) => {
     const l = Math.hypot(s.tangent[0], s.tangent[2]) || 1;
     const leftX = s.tangent[2] / l;
     const leftZ = -s.tangent[0] / l;
     positions.set([s.x + leftX * half, s.y, s.z + leftZ * half, s.x - leftX * half, s.y, s.z - leftZ * half], i * 6);
+    uvs.set([0, (s.distM - startM) / 3, 1, (s.distM - startM) / 3], i * 4);
   });
   const indices = new Uint32Array((samples.length - 1) * 6);
   for (let i = 0; i < samples.length - 1; i++) {
@@ -142,7 +145,7 @@ export function buildTrail(
   return {
     samples,
     sampleAt,
-    ribbon: { positions, indices },
+    ribbon: { positions, indices, uvs },
     maxGradient: samples.reduce((m, s) => Math.max(m, Math.abs(s.gradient)), 0),
   };
 }

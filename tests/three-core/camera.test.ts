@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { droneSideTrack, followShot, sequenceShots, withClearance, type Shot } from "../../src/three-core/camera";
 import type { Vec3 } from "../../src/three-core/types";
 import { expectCameraCriteria } from "./criteria";
+import { loadExports } from "./pending";
 import { analyticRider, analyticTrail, profileHeight, syntheticProfile } from "./fixtures";
 
 const FPS = 30;
@@ -42,6 +43,21 @@ describe("camera (CA1–CA4)", () => {
     expect(all(179)).toEqual(shotA(179));
     expect(all(180)).toEqual(shotB(0));
     expect(all(359)).toEqual(shotB(179));
+  });
+
+  it("ADR 35: aerialOrbit and pullBack meet CA1–CA4 over a valley", async () => {
+    type Shot = (f: number) => { position: Vec3; target: Vec3; fovDeg: number };
+    const cam = await loadExports<{
+      aerialOrbit: (p: { centre: Vec3; radiusM: number; heightM: number; fromDeg: number; toDeg: number; frames: number }) => Shot;
+      pullBack: (p: { from: Vec3; target: Vec3; startHeightM: number; endHeightM: number; backM: number; frames: number; back?: [number, number] }) => Shot;
+    }>("src/three-core/camera.ts", ["aerialOrbit", "pullBack"]);
+    const trail = analyticTrail(1000, syntheticProfile(1000));
+    const rider = analyticRider(trail, 100, FPS);
+    const centre = trail.sampleAt(500);
+    const orbit = withClearance(cam.aerialOrbit({ centre: [centre.x, centre.y, centre.z], radiusM: 250, heightM: 120, fromDeg: 0, toDeg: 120, frames: 240 }), valley, rider.riderAt, 20, 0);
+    // backing along the valley (the -x direction), as the sections do: across it, the clearance would climb the valley wall
+    const back = withClearance(cam.pullBack({ from: [centre.x, centre.y, centre.z], target: [centre.x, centre.y, centre.z], startHeightM: 40, endHeightM: 300, backM: 400, frames: 300, back: [-1, 0] }), valley, rider.riderAt, 20, 0);
+    expectCameraCriteria(sequenceShots([{ shot: orbit, frames: 240 }, { shot: back, frames: 300 }]), [[0, 240], [240, 540]], valley, rider.riderAt, FPS);
   });
 
   it("fails loudly when there is no terrain under the camera (review R7)", () => {

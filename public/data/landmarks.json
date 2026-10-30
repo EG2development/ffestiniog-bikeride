@@ -1,0 +1,21 @@
+[
+  {
+    "id": "utica-chapel",
+    "name": "Capel Utica (Welsh Independent chapel), near Gellilydan",
+    "osm": "way/373577738",
+    "featured": false,
+    "featuredNote": "28-31 px tall in the Maentwrog shots, about 400 m away (BL13 asks 40 px for 2 s): drawn as a sourced background building with its gabled roof, not as a landmark model",
+    "status": "existing",
+    "observedAt": "2015-10-03",
+    "confidence": "medium",
+    "licence": "evidence only, nothing reproduced: Coflein record (RCAHMW, Non-commercial Government Licence); Geograph photos 443457, 449941 (CC BY-SA 2.0)",
+    "sources": [
+      { "url": "https://www.openstreetmap.org/way/373577738", "kind": "map", "observedAt": "2015-10-03", "retrievedAt": "2026-10-25", "licence": "ODbL", "note": "footprint traced from aerial imagery, tagged as a place of worship" },
+      { "url": "https://coflein.gov.uk/en/site/8551/", "kind": "record", "observedAt": "2010-02-01", "retrievedAt": "2026-10-25", "licence": "Non-commercial Government Licence", "note": "NPRN 8551 at the footprint; built 1843, rebuilt 1897, gable-entry chapel; no closure or demolition recorded" },
+      { "url": "https://www.geograph.org.uk/photo/443457", "kind": "photo", "observedAt": "2007-05-23", "retrievedAt": "2026-10-25", "licence": "CC BY-SA 2.0", "note": "gabled slate-roofed stone chapel with its graveyard" },
+      { "url": "https://www.geograph.org.uk/photo/449941", "kind": "photo", "observedAt": "2007-05-20", "retrievedAt": "2026-10-25", "licence": "CC BY-SA 2.0", "note": "road-facing gable with porch; no tower or bellcote" }
+    ],
+    "model": { "type": "church", "roof": "gabled", "lengthM": 15.5, "widthM": 12.7, "heightM": 8.3, "approximate": [] },
+    "screened": "aidefence_scan safe=true, no threats; aidefence_has_pii false (2026-10-25, all fetched text)"
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "cols": 226,
+  "rows": 692,
+  "spacingM": 16,
+  "pixelSizeM": [
+    15.999916233875021,
+    15.999450662638193
+  ],
+  "originE": 268680.45715362707,
+  "originN": 346449.7356313946,
+  "crs": "EPSG:27700",
+  "nodata": -9999.0,
+  "fallbackCells": 0,
+  "file": "dem.f32",
+  "sourceFile": "dem-source.u8",
+  "source": "Welsh Government / NRW lidar DTM, 1 m, 32-bit COG (16 m overview level)",
+  "url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif",
+  "licence": "Open Government Licence (to confirm on the layer's metadata page; one catalogue lists 'Not Specified')",
+  "fill": {
+    "nodataBefore": 0,
+    "waterShoreHeight": 0,
+    "neighbourMean": 0,
+    "note": "filled cells have sourceIndex 1 and are approximate (ADR 32)"
+  },
+  "section": "corridor",
+  "kmRange": [
+    0.0,
+    13.24
+  ],
+  "retrieved": "2026-10-25",
+  "heightsMin": 11.3100004196167,
+  "heightsMax": 633.760009765625
+}

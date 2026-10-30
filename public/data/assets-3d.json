@@ -5,5 +5,117 @@
     "source": "Original procedural model built in this repository from three.js primitives (src/three/CyclistView.tsx, with motion from src/three-core/cyclistMotion.ts); no third-party geometry, textures or rigs (ADR 14)",
     "licence": "Original work of this project; no third-party licence applies",
     "attribution": "None required (original work)"
+  },
+  {
+    "path": "public/3d/textures/aerial_grass_rock/aerial_grass_rock_diff_1k.jpg",
+    "kind": "texture",
+    "source": "Poly Haven texture \"aerial_grass_rock\" (diffuse 1K JPG), https://polyhaven.com/a/aerial_grass_rock, fetched 2026-10-29 from https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/aerial_grass_rock/aerial_grass_rock_diff_1k.jpg, sha256 57b8041bfe0d0f01430e4dbaad45e7ddddf0a9fc97317f90dbc51f7b0d9e1b5d; role grass: upland grass with rock showing through, photogrammetry from above: the Vale's rough pasture",
+    "licence": "CC0 1.0 (Poly Haven, https://polyhaven.com/license)",
+    "attribution": "None required (CC0); credited as Poly Haven in the source register"
+  },
+  {
+    "path": "public/3d/textures/aerial_grass_rock/aerial_grass_rock_nor_gl_1k.jpg",
+    "kind": "texture",
+    "source": "Poly Haven texture \"aerial_grass_rock\" (normal, OpenGL 1K JPG), https://polyhaven.com/a/aerial_grass_rock, fetched 2026-10-29 from https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/aerial_grass_rock/aerial_grass_rock_nor_gl_1k.jpg, sha256 1aa3e23bff453f152e089b9f83aa36b4901651e019f7e2ca01d5331a9bbbda78; role grass: upland grass with rock showing through, photogrammetry from above: the Vale's rough pasture",
+    "licence": "CC0 1.0 (Poly Haven, https://polyhaven.com/license)",
+    "attribution": "None required (CC0); credited as Poly Haven in the source register"
+  },
+  {
+    "path": "public/3d/textures/brown_mud_leaves_01/brown_mud_leaves_01_diff_1k.jpg",
+    "kind": "texture",
+    "source": "Poly Haven texture \"brown_mud_leaves_01\" (diffuse 1K JPG), https://polyhaven.com/a/brown_mud_leaves_01, fetched 2026-10-29 from https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_mud_leaves_01/brown_mud_leaves_01_diff_1k.jpg, sha256 c598c555f13cd5328409fd5e2a45496a26e319e52299e3959042f1449c2f1b06; role heath: brown ground with leaf litter: the scrub and bracken edges",
+    "licence": "CC0 1.0 (Poly Haven, https://polyhaven.com/license)",
+    "attribution": "None required (CC0); credited as Poly Haven in the source register"
+  },
+  {
+    "path": "public/3d/textures/brown_mud_leaves_01/brown_mud_leaves_01_nor_gl_1k.jpg",
+    "kind": "texture",
+    "source": "Poly Haven texture \"brown_mud_leaves_01\" (normal, OpenGL 1K JPG), https://polyhaven.com/a/brown_mud_leaves_01, fetched 2026-10-29 from https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_mud_leaves_01/brown_mud_leaves_01_nor_gl_1k.jpg, sha256 8dd5166ddcc293cefd331d491ce6b9162bc9202ddd999ac1e4141697560d38e0; role heath: brown ground with leaf litter: the scrub and bracken edges",
+    "licence": "CC0 1.0 (Poly Haven, https://polyhaven.com/license)",
+    "attribution": "None required (CC0); credited as Poly Haven in the source register"
+  },
+  {
+    "path": "public/3d/textures/forrest_ground_01/forrest_ground_01_diff_1k.jpg",
+    "kind": "texture",
+    "source": "Poly Haven texture \"forrest_ground_01\" (diffuse 1K JPG), https://polyhaven.com/a/forrest_ground_01, fetched 2026-10-29 from https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/forrest_ground_01/forrest_ground_01_diff_1k.jpg, sha256 3dd6875cb3908e022a3c45ebbffa5e84c670ff2691fbbb6dc9ea4bff88523800; role woodFloor: needle and leaf litter: the plantation and woodland floor",
+    "licence": "CC0 1.0 (Poly Haven, https://polyhaven.com/license)",
+    "attribution": "None required (CC0); credited as Poly Haven in the source register"
+  },
+  {
+    "path": "public/3d/textures/forrest_ground_01/forrest_ground_01_nor_gl_1k.jpg",
+    "kind": "texture",
+    "source": "Poly Haven texture \"forrest_ground_01\" (normal, OpenGL 1K JPG), https://polyhaven.com/a/forrest_ground_01, fetched 2026-10-29 from https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/forrest_ground_01/forrest_ground_01_nor_gl_1k.jpg, sha256 32528a7cdee962cc0b248ee4023a74d0df175737ea90e1eb425122351e0bdab4; role woodFloor: needle and leaf litter: the plantation and woodland floor",
+    "licence": "CC0 1.0 (Poly Haven, https://polyhaven.com/license)",
+    "attribution": "None required (CC0); credited as Poly Haven in the source register"
+  },
+  {
+    "path": "public/3d/textures/lichen_rock/lichen_rock_diff_1k.jpg",
+    "kind": "texture",
+    "source": "Poly Haven texture \"lichen_rock\" (diffuse 1K JPG), https://polyhaven.com/a/lichen_rock, fetched 2026-10-29 from https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/lichen_rock/lichen_rock_diff_1k.jpg, sha256 780128a5757920a7e30c50042e8975e8333ef4ae5809b30bb5be6a2f9fec3ec5; role rock: lichened grey rock: steep ground and outcrops",
+    "licence": "CC0 1.0 (Poly Haven, https://polyhaven.com/license)",
+    "attribution": "None required (CC0); credited as Poly Haven in the source register"
+  },
+  {
+    "path": "public/3d/textures/lichen_rock/lichen_rock_nor_gl_1k.jpg",
+    "kind": "texture",
+    "source": "Poly Haven texture \"lichen_rock\" (normal, OpenGL 1K JPG), https://polyhaven.com/a/lichen_rock, fetched 2026-10-29 from https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/lichen_rock/lichen_rock_nor_gl_1k.jpg, sha256 a3510a296030a1e312ef589a872ae416f2d23203a7b7c0c9e3646e8109c6a61c; role rock: lichened grey rock: steep ground and outcrops",
+    "licence": "CC0 1.0 (Poly Haven, https://polyhaven.com/license)",
+    "attribution": "None required (CC0); credited as Poly Haven in the source register"
+  },
+  {
+    "path": "public/3d/textures/gravel_ground_01/gravel_ground_01_diff_1k.jpg",
+    "kind": "texture",
+    "source": "Poly Haven texture \"gravel_ground_01\" (diffuse 1K JPG), https://polyhaven.com/a/gravel_ground_01, fetched 2026-10-29 from https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/gravel_ground_01/gravel_ground_01_diff_1k.jpg, sha256 c3a12b0e3a9399913158dd5cfa1d67ede066970acd1f99e5b89969ac13f89089; role gravel: compacted gravel: the proposed trail surface, tinted buff",
+    "licence": "CC0 1.0 (Poly Haven, https://polyhaven.com/license)",
+    "attribution": "None required (CC0); credited as Poly Haven in the source register"
+  },
+  {
+    "path": "public/3d/textures/gravel_ground_01/gravel_ground_01_nor_gl_1k.jpg",
+    "kind": "texture",
+    "source": "Poly Haven texture \"gravel_ground_01\" (normal, OpenGL 1K JPG), https://polyhaven.com/a/gravel_ground_01, fetched 2026-10-29 from https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/gravel_ground_01/gravel_ground_01_nor_gl_1k.jpg, sha256 3a832b27276d1457031b164147434558bd245469dc27fd1ff6ae075bde0b12b2; role gravel: compacted gravel: the proposed trail surface, tinted buff",
+    "licence": "CC0 1.0 (Poly Haven, https://polyhaven.com/license)",
+    "attribution": "None required (CC0); credited as Poly Haven in the source register"
+  },
+  {
+    "path": "public/3d/textures/mossy_stone_wall/mossy_stone_wall_diff_1k.jpg",
+    "kind": "texture",
+    "source": "Poly Haven texture \"mossy_stone_wall\" (diffuse 1K JPG), https://polyhaven.com/a/mossy_stone_wall, fetched 2026-10-29 from https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/mossy_stone_wall/mossy_stone_wall_diff_1k.jpg, sha256 7240e55cfc662ea403600fc7d5143f72983fbe8098d55fc6ccae75d21421dce4; role stone: mossy stone wall: drystone field walls and the bridge parapets",
+    "licence": "CC0 1.0 (Poly Haven, https://polyhaven.com/license)",
+    "attribution": "None required (CC0); credited as Poly Haven in the source register"
+  },
+  {
+    "path": "public/3d/textures/mossy_stone_wall/mossy_stone_wall_nor_gl_1k.jpg",
+    "kind": "texture",
+    "source": "Poly Haven texture \"mossy_stone_wall\" (normal, OpenGL 1K JPG), https://polyhaven.com/a/mossy_stone_wall, fetched 2026-10-29 from https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/mossy_stone_wall/mossy_stone_wall_nor_gl_1k.jpg, sha256 e159e429269bc933743ee47051b4081261e6131e994242bf26e05ab0a0df4542; role stone: mossy stone wall: drystone field walls and the bridge parapets",
+    "licence": "CC0 1.0 (Poly Haven, https://polyhaven.com/license)",
+    "attribution": "None required (CC0); credited as Poly Haven in the source register"
+  },
+  {
+    "path": "public/3d/textures/bark_brown_02/bark_brown_02_diff_1k.jpg",
+    "kind": "texture",
+    "source": "Poly Haven texture \"bark_brown_02\" (diffuse 1K JPG), https://polyhaven.com/a/bark_brown_02, fetched 2026-10-29 from https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/bark_brown_02/bark_brown_02_diff_1k.jpg, sha256 920fa0bed0c9d78c1d530e99795113afd532d7db746de440f4a85d7c83ed0f1a; role bark: weathered bark: fence posts and rails",
+    "licence": "CC0 1.0 (Poly Haven, https://polyhaven.com/license)",
+    "attribution": "None required (CC0); credited as Poly Haven in the source register"
+  },
+  {
+    "path": "public/3d/textures/bark_brown_02/bark_brown_02_nor_gl_1k.jpg",
+    "kind": "texture",
+    "source": "Poly Haven texture \"bark_brown_02\" (normal, OpenGL 1K JPG), https://polyhaven.com/a/bark_brown_02, fetched 2026-10-29 from https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/bark_brown_02/bark_brown_02_nor_gl_1k.jpg, sha256 0d5e691e8ad8bcd093a3587887fda2a6b4a948b5708a4f256f7919584c6eb857; role bark: weathered bark: fence posts and rails",
+    "licence": "CC0 1.0 (Poly Haven, https://polyhaven.com/license)",
+    "attribution": "None required (CC0); credited as Poly Haven in the source register"
+  },
+  {
+    "path": "public/3d/textures/asphalt_02/asphalt_02_diff_1k.jpg",
+    "kind": "texture",
+    "source": "Poly Haven texture \"asphalt_02\" (diffuse 1K JPG), https://polyhaven.com/a/asphalt_02, fetched 2026-10-29 from https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_diff_1k.jpg, sha256 1aa5ce99f58a625c71d48cfc3e68b65ca85ccb00f39e045c0a928608a0ea25ed; role tarmac: worn asphalt: the roads (when a textured road view lands)",
+    "licence": "CC0 1.0 (Poly Haven, https://polyhaven.com/license)",
+    "attribution": "None required (CC0); credited as Poly Haven in the source register"
+  },
+  {
+    "path": "public/3d/textures/asphalt_02/asphalt_02_nor_gl_1k.jpg",
+    "kind": "texture",
+    "source": "Poly Haven texture \"asphalt_02\" (normal, OpenGL 1K JPG), https://polyhaven.com/a/asphalt_02, fetched 2026-10-29 from https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_nor_gl_1k.jpg, sha256 42a1c381b53204e83a982db2864479a30bc127bbdeebb1006f8ee51bff099df3; role tarmac: worn asphalt: the roads (when a textured road view lands)",
+    "licence": "CC0 1.0 (Poly Haven, https://polyhaven.com/license)",
+    "attribution": "None required (CC0); credited as Poly Haven in the source register"
   }
 ]

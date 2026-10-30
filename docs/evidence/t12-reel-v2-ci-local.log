@@ -1,0 +1,117 @@
+t12 (reel v2, mission msn_33e838999675db739df3c922) local CI verification, started 2026-10-26T00:22:40Z
+node v24.13.1, npm 11.21.0, Python 3.13.5; macOS (the hosted runner is ubuntu-24.04)
+source snapshot (scripts/snapshot.mjs): tree 994bf7b7cf4c56ed1ff949869cbd41905ffc8d3e, untracked 180 files sha256 a9eaa2a77a25c2e79ccb343b331a8b7f268c46d3903bab0c94d6bc85fa7b1c34
+
+== Static checks on .github/workflows/ci.yml
+  parses: yes; job 'checks' on ubuntu-24.04, timeout 20 min, 10 steps
+  triggers: ['pull_request', 'push', 'workflow_dispatch']; permissions: {'contents': 'read'}; concurrency: ci-${{ github.ref }}
+  - uses actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+  - uses actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+  - uses actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+  - run  Install dependencies
+  - run  Install the data pipeline's and the still metrics' Python dependencies
+  - run  Lint and type-check
+  - run  Unit, static and acceptance tests
+  - run  Dependency audit (fails on high or critical)
+  - run  Pipeline self-test and compile check
+  - run  Build (bundle)
+  result: PASS
+
+== Clean copy of the files git would ship (tool state .claude-flow/, .claude/, .agents/, .idea/ left out), as a git checkout
+  496 files copied; node_modules present: False; out present: False
+
+== Toolchain for the steps: npm 11.8.0 (the runner's), node v24.13.1
+
+== Step: Install dependencies
+  $ npm ci --ignore-scripts
+  added 393 packages, and audited 394 packages in 2s
+  
+  92 packages are looking for funding
+    run `npm fund` for details
+  
+  found 0 vulnerabilities
+  -- exit 0 after 2.8 s
+
+== Step: Install the data pipeline's and the still metrics' Python dependencies
+  $ python -m pip install numpy==2.4.4 pillow==12.1.0
+  Requirement already satisfied: numpy==2.4.4 in ~/miniconda3/lib/python3.13/site-packages (2.4.4)
+  Requirement already satisfied: pillow==12.1.0 in ~/miniconda3/lib/python3.13/site-packages (12.1.0)
+  
+  [notice] A new release of pip is available: 26.1.1 -> 26.2.2
+  [notice] To update, run: pip install --upgrade pip
+  -- exit 0 after 1.4 s
+
+== Step: Lint and type-check
+  $ npm run lint
+  > ffestiniog-bikeride@1.0.0 lint
+  > eslint src && tsc
+  -- exit 0 after 3.1 s
+
+== Step: Unit, static and acceptance tests
+  $ npm test
+  > ffestiniog-bikeride@1.0.0 test
+  > vitest run
+  
+  
+   RUN  v5.0.5 /private/tmp/claude-501/-Users-eray-ffestiniog-bikeride/bb3f26c8-7af5-483b-b78b-7ff809bf3730/scratchpad/t22/clean
+  
+  
+   Test Files  37 passed (37)
+        Tests  255 passed | 2 expected fail (257)
+     Start at  00:22:54
+     Duration  2.71s (tests 69%, import 18%, transform 12%, worker 1%)
+  
+  (node:30285) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+  Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+  (Use `node --trace-deprecation ...` to show where the warning was created)
+  -- exit 0 after 4.3 s
+
+== Step: Dependency audit (fails on high or critical)
+  $ npm audit --audit-level=high
+  found 0 vulnerabilities
+  -- exit 0 after 1.1 s
+
+== Step: Pipeline self-test and compile check
+  $ python -I scripts/dem/bng.py
+  $ python -I -m py_compile scripts/build_poc_data.py scripts/build_section_data.py scripts/build_buildings.py scripts/still_metrics.py scripts/dem/bng.py scripts/dem/cog.py scripts/osm/fetch_bbox.py
+  bng.py self-test passed: OS worked example 651409.903 313177.27
+  -- exit 0 after 0.2 s
+
+== Step: Build (bundle)
+  $ npm run build -- --out-dir=out/bundle --log=error
+  > ffestiniog-bikeride@1.0.0 build
+  > remotion bundle --out-dir=out/bundle --log=error
+  
+  
+  
+  
+  -------------
+  Version mismatch:
+  Extra packages with wrong versions:
+    - zod: installed 4.6.7, required 4.5.4
+      See: https://www.remotion.dev/docs/zod-types/
+  You may experience breakages such as:
+  - React context and hooks not working
+  - Type errors and feature incompatibilities
+  - Failed renders and unclear errors
+  To resolve:
+  - Make sure your package.json has all Remotion packages pointing to the same version.
+  - Remove the `^` character in front of a version to pin a package.
+  - For zod, install exact version 4.5.4 (run: npx remotion add zod).
+  - Run `npx remotion versions --log=verbose` to see the path of the modules resolved.
+  -------------
+  -- exit 0 after 4.4 s
+
+== Probe (outside the workflow): npm 11.8.0 with the workflow's install command; package.json allowScripts {esbuild: false}
+  npm version used: 11.8.0; exit 0
+  esbuild install script run: no
+
+== Summary, finished 2026-10-26T00:23:07Z
+  PASS    0.0 s  static checks on the workflow file
+  PASS    2.8 s  Install dependencies
+  PASS    1.4 s  Install the data pipeline's and the still metrics' Python dependencies
+  PASS    3.1 s  Lint and type-check
+  PASS    4.3 s  Unit, static and acceptance tests
+  PASS    1.1 s  Dependency audit (fails on high or critical)
+  PASS    0.2 s  Pipeline self-test and compile check
+  PASS    4.4 s  Build (bundle)
