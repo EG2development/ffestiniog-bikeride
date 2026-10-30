@@ -26,6 +26,8 @@ from osm.fetch_bbox import fetch_bbox, to_features  # noqa: E402
 TODAY = datetime.date.today().isoformat()
 BARRIERS = {"wall", "hedge", "fence", "retaining_wall", "city_wall"}
 KEEP_TAGS = ("barrier", "wall", "height", "natural", "leaf_type")
+# compositions outside the reel that draw a window's boundaries (the reel's own scenes come from SECTIONS)
+PHOTO_SCENES = {"maentwrog": ["Poc3DMaentwrogPhoto"]}
 
 
 def is_boundary(tags):
@@ -70,8 +72,8 @@ def merge_register(path, entries):
 
 def main(section):
     S = SECTIONS[section]
-    if S["kind"] != "ground":
-        raise SystemExit(f"{section} is an aerial window; barriers are drawn in ground windows only")
+    if S["kind"] != "ground" and not S.get("osm"):
+        raise SystemExit(f"{section} is an aerial window without OSM; its barriers would have nothing to stand beside")
     s0, s1 = S["km"]
     lons, lats, dist = load_route()
     sec = (dist >= s0) & (dist <= s1)
@@ -80,12 +82,12 @@ def main(section):
     lat_c = float(sa.mean())
     dlat, dlon = MARGIN_M / 111320, MARGIN_M / (111320 * math.cos(math.radians(lat_c)))
     lon0, lon1, lat0, lat1 = sl.min() - dlon, sl.max() + dlon, sa.min() - dlat, sa.max() + dlat
-    splits = 2 if (s1 - s0) <= 2200 else 3
+    splits = S.get("splits") or (2 if (s1 - s0) <= 2200 else 3)
     feats = boundary_features(to_features(*fetch_bbox(lon0, lat0, lon1, lat1, splits=splits)))
     rel = f"public/data/sections/{section}"
     write_json(f"{rel}/barriers.geojson", {"type": "FeatureCollection", "retrieved": TODAY, "section": section,
                                            "source": "OpenStreetMap contributors (ODbL), api.openstreetmap.org/api/0.6/map", "features": feats})
-    entries, kinds = register_entries(section, feats, S["scenes"] + [f"Poc3D{section.capitalize()}Photo"])
+    entries, kinds = register_entries(section, feats, S["scenes"] + PHOTO_SCENES.get(section, []))
     path = os.path.join(ROOT, f"data/features-{section}.json")
     write_json(f"data/features-{section}.json", merge_register(path, entries), indent=2)
     print(f"{section}: {len(feats)} boundaries {kinds}; register entries written to data/features-{section}.json (run npm run data:sync)")

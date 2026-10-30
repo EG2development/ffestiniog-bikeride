@@ -10,14 +10,14 @@
   ],
   "file": "landcover.u8",
   "counts": {
-    "water": 0,
-    "built-up": 0,
-    "quarry/rock/scree": 0,
-    "woodland": 0,
-    "heath/scrub": 0,
-    "grass/farmland": 0,
-    "other": 156392
+    "water": 14983,
+    "built-up": 5149,
+    "quarry/rock/scree": 5477,
+    "woodland": 22639,
+    "heath/scrub": 11356,
+    "grass/farmland": 24789,
+    "other": 71999
   },
-  "source": "none (aerial window: map-tile drape)",
-  "retrieved": "2026-10-25"
+  "source": "OpenStreetMap contributors (ODbL)",
+  "retrieved": "2026-10-30"
 }

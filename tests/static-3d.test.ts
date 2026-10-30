@@ -163,8 +163,9 @@ describe("rendering rules", () => {
   });
 
   it("RL30: the fetch scripts reach only the allowlisted hosts", () => {
-    // the lidar COGs, the OSM API, and (ADR 54) Poly Haven's CC0 download host; polyhaven.com is cited as the asset page
-    const allowed = ["dmwproductionblob.blob.core.windows.net", "api.openstreetmap.org", "dl.polyhaven.org", "polyhaven.com"];
+    // the lidar COGs, the OSM API, (ADR 54) Poly Haven's CC0 download host, polyhaven.com cited as the asset page, and
+    // (ADR 60) the Sentinel-2 scene: the Earth Search STAC API that names its file and the open-data bucket that holds it
+    const allowed = ["dmwproductionblob.blob.core.windows.net", "api.openstreetmap.org", "dl.polyhaven.org", "polyhaven.com", "earth-search.aws.element84.com", "sentinel-cogs.s3.us-west-2.amazonaws.com"];
     for (const f of readdirSync(resolve(ROOT, "scripts"), { recursive: true, encoding: "utf8" }).filter((n) => /\.(py|mjs|ts)$/.test(n))) {
       const src = read(`scripts/${f}`);
       for (const [, host] of src.matchAll(/https?:\/\/([A-Za-z0-9.-]+)/g)) {

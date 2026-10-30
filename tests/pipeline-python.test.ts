@@ -28,6 +28,13 @@ describe("pipeline self-tests", () => {
     const r = python("scripts/build_buildings.py", "--self-test");
     expect(r.status, r.out.split("\n").slice(-3).join("\n")).toBe(0);
   });
+
+  it("ADRs 57, 58, 60: build_canopy.py, fetch_barriers.py and build_imagery.py --self-test (canopy, boundaries, UTM and the TIFF predictor)", () => {
+    for (const script of ["scripts/build_canopy.py", "scripts/fetch_barriers.py", "scripts/build_imagery.py"]) {
+      const r = python(script, "--self-test");
+      expect(r.status, `${script}: ${r.out.split("\n").slice(-3).join("\n")}`).toBe(0);
+    }
+  });
 });
 
 type Header = { cols: number; rows: number; spacingM: number; originE: number; originN: number; nodata: number; file: string; sourceFile: string };

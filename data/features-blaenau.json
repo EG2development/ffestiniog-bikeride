@@ -7040,5 +7040,2119 @@
       "confidence": "medium"
     },
     "note": "yes; height 6.1 m from lidar-dsm"
+  },
+  {
+    "id": "barrier-blaenau-270497570",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270497570"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-270497571",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270497571"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-270497585",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270497585"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-270497605",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270497605"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-230557557",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230557557"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "hedge from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-230557560",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230557560"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "hedge from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-230557561",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230557561"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "hedge from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-230557562",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230557562"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "hedge from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-230557563",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/230557563"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "hedge from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-270487701",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270487701"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "retaining_wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-270487717",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270487717"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372674926",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372674926"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372679043",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372679043"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372679045",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372679045"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372679046",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372679046"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372679047",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372679047"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372888032",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888032"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372888033",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888033"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372888034",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888034"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372888060",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888060"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372888061",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888061"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372888066",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888066"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372888073",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888073"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372888074",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888074"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372888075",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372888075"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462109272",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462109272"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462109288",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462109288"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462109290",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462109290"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462109297",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462109297"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462109299",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462109299"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462109305",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462109305"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462109307",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462109307"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462109309",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462109309"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462112598",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462112598"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462112601",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462112601"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462112605",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462112605"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462126717",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126717"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462126720",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126720"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462126723",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126723"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462126725",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126725"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462126749",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126749"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462126758",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126758"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462126762",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126762"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462126764",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126764"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462126770",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126770"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462126772",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126772"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462126774",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126774"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462126778",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126778"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462126780",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126780"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462126782",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126782"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462126786",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126786"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462126790",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126790"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462129395",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462129395"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462129396",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462129396"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462129400",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462129400"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462131909",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462131909"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462131913",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462131913"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462133776",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462133776"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462133777",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462133777"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462137113",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462137113"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462137115",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462137115"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462137119",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462137119"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462137122",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462137122"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462137129",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462137129"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462151303",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462151303"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462151305",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462151305"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462151309",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462151309"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462151316",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462151316"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462151324",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462151324"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462631110",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462631110"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462631113",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462631113"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462631114",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462631114"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462631115",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462631115"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462631122",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462631122"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462631123",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462631123"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462631124",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462631124"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462631125",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462631125"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037412455",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037412455"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037412456",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037412456"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037412461",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037412461"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037412462",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037412462"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037412470",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037412470"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037412472",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037412472"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037432713",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037432713"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037432714",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037432714"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037432716",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037432716"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037432718",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037432718"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037432721",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037432721"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037435546",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037435546"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037435547",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037435547"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037435550",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037435550"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037435560",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037435560"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037435562",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037435562"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037435563",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037435563"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037435564",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037435564"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037435565",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037435565"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1037435566",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1037435566"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1503467734",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1503467734"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1503467735",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1503467735"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1503467736",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1503467736"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1503467737",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1503467737"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1503606312",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1503606312"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "retaining_wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1503606327",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1503606327"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372640265",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372640265"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372640266",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372640266"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372640267",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372640267"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372816775",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372816775"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372816780",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372816780"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-459074869",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/459074869"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-459074870",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/459074870"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-459074871",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/459074871"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-459074872",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/459074872"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-459076161",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/459076161"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-459076162",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/459076162"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-459076163",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/459076163"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461947805",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461947805"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461997375",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461997375"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461997376",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461997376"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461997386",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461997386"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461997388",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461997388"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461999069",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461999069"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461999071",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461999071"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461999073",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461999073"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461999074",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461999074"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "hedge from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461999076",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461999076"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "hedge from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461999077",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461999077"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "hedge from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461999082",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461999082"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461999083",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461999083"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461999084",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461999084"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461999085",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461999085"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-366515146",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/366515146"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "hedge from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372640264",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372640264"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372889147",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372889147"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372889148",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372889148"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372889149",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372889149"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-372889151",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372889151"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461859422",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461859422"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461859427",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461859427"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461859428",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461859428"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461859438",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461859438"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461867670",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461867670"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461867673",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461867673"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461884021",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461884021"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-461887472",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461887472"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462114170",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462114170"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462114172",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462114172"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462114173",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462114173"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462126734",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126734"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462126743",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126743"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-462126745",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462126745"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-blaenau-1195002442",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1195002442"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
   }
 ]

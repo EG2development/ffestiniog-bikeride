@@ -2696,5 +2696,425 @@
       "confidence": "medium"
     },
     "note": "school; height 7.3 m from lidar-dsm"
+  },
+  {
+    "id": "barrier-vale-south-89578700",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/89578700"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-89578702",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/89578702"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-89578703",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/89578703"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-89578704",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/89578704"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-461159634",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461159634"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-461159652",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461159652"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-461159653",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461159653"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-89578701",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/89578701"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-271407734",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271407734"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-271407741",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271407741"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-271841008",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271841008"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-271932753",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271932753"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-428367939",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428367939"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-271932744",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271932744"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-271932761",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271932761"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-361181584",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361181584"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-405979585",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/405979585"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-405979586",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/405979586"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-405979587",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/405979587"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "hedge from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-428367941",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428367941"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-428367942",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428367942"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-428367943",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428367943"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-428367944",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428367944"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-271964236",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271964236"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-271964237",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271964237"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-271964239",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271964239"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-271964240",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271964240"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-271964242",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271964242"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-338684640",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338684640"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-vale-south-338684641",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338684641"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
   }
 ]

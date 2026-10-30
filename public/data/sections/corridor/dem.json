@@ -10,7 +10,7 @@
   "originN": 346449.7356313946,
   "crs": "EPSG:27700",
   "nodata": -9999.0,
-  "fallbackCells": 0,
+  "fallbackCells": 434,
   "file": "dem.f32",
   "sourceFile": "dem-source.u8",
   "source": "Welsh Government / NRW lidar DTM, 1 m, 32-bit COG (16 m overview level)",
@@ -18,7 +18,7 @@
   "licence": "Open Government Licence (to confirm on the layer's metadata page; one catalogue lists 'Not Specified')",
   "fill": {
     "nodataBefore": 0,
-    "waterShoreHeight": 0,
+    "waterShoreHeight": 434,
     "neighbourMean": 0,
     "note": "filled cells have sourceIndex 1 and are approximate (ADR 32)"
   },
@@ -27,7 +27,7 @@
     0.0,
     13.24
   ],
-  "retrieved": "2026-10-25",
+  "retrieved": "2026-10-30",
   "heightsMin": 11.3100004196167,
   "heightsMax": 633.760009765625
 }

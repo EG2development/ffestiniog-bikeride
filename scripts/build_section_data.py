@@ -29,7 +29,7 @@ TODAY = datetime.date.today().isoformat()
 MARGIN_M = 600
 # level: the COG overview index (0 = 1 m, 1 = 2 m, 2 = 4 m, 3 = 8 m, 4 = 16 m); spacing: the nominal node spacing written to the header
 SECTIONS = {
-    "corridor": {"km": (0, 13240), "level": 4, "spacing": 16, "kind": "aerial", "scenes": ["Reel3D", "Section-intro", "Section-heritage", "Section-overview", "Section-closing"]},
+    "corridor": {"km": (0, 13240), "level": 4, "spacing": 16, "kind": "aerial", "osm": True, "splits": 6, "scenes": ["Reel3D", "Section-intro", "Section-heritage", "Section-overview", "Section-closing"]},
     "blaenau": {"km": (0, 1500), "level": 2, "spacing": 4, "kind": "ground", "scenes": ["Reel3D", "Section-blaenau"]},
     "vale-north": {"km": (1500, 4800), "level": 2, "spacing": 4, "kind": "ground", "scenes": ["Reel3D", "Section-vale-north"]},
     "vale-south": {"km": (4800, 7700), "level": 2, "spacing": 4, "kind": "ground", "scenes": ["Reel3D", "Section-vale-south"]},
@@ -216,9 +216,10 @@ def main(section, reuse_osm=False):
     ce, cn = wgs84_to_bng(np.array([lon0, lon0, lon1, lon1]), np.array([lat0, lat1, lat0, lat1]))
     emin, emax, nmin, nmax = float(ce.min()), float(ce.max()), float(cn.min()), float(cn.max())
 
-    # OSM for ground windows only (the corridor drapes the cached map tiles: ADR 33).
+    # OSM for the ground windows, and for the corridor's photo look, which draws land cover, roads and water instead of the
+    # map tiles (ADR 33 for the concept look; docs/adr/0060-reel-in-the-photo-look.md). `splits` cuts a large box for the API.
     feats = []
-    if S["kind"] == "ground":
+    if S["kind"] == "ground" or S.get("osm"):
         if reuse_osm:
             # the window's own allowlisted OSM, so every other feature stays byte-stable (spec CL7)
             feats = json.load(open(os.path.join(ROOT, out_rel, "osm.geojson")))["features"]
@@ -230,7 +231,7 @@ def main(section, reuse_osm=False):
                     print(f"restored {wid} from the OSM API")
                     feats.append(f)
         else:
-            splits = 2 if (s1 - s0) <= 2200 else 3
+            splits = S.get("splits") or (2 if (s1 - s0) <= 2200 else 3)
             feats = to_features(*fetch_bbox(lon0, lat0, lon1, lat1, splits=splits))
         feats = complete_water_relations(feats)
     polys = [(landcover_class(f["properties"]["tags"]), f) for f in feats if f["geometry"]["type"] in ("Polygon", "MultiPolygon")]
@@ -336,9 +337,9 @@ def main(section, reuse_osm=False):
         "source": f"lidar DTM {1 if plevel == 0 else S['spacing']} m along the OSM centreline", "retrieved": TODAY,
     })
 
-    # Land cover per node (ground windows); the corridor is draped with map tiles, so it is all "other".
+    # Land cover per node wherever OSM was fetched; without it a window is all "other".
     classes = np.full((rows, cols), LEGEND.index("other"), dtype=np.uint8)
-    if S["kind"] == "ground":
+    if feats:
         cc, rr = np.meshgrid(np.arange(cols), np.arange(rows))
         nlon, nlat = bng_to_wgs84(origin_e + cc * px, origin_n - rr * py)
         assigned = np.zeros((rows, cols), dtype=bool)
@@ -375,13 +376,14 @@ def main(section, reuse_osm=False):
     if section != "maentwrog":
         features.append({"id": f"terrain-{section}", "kind": "terrain", "category": "approximate", "source": {"type": "lidar-dtm", "ref": LIDAR_URL}, "scenes": scenes,
                          "note": f"lidar DTM at its {S['spacing']} m overview; {int(source.sum())} cells filled (water shore height or neighbour mean), see dem.json"})
-        if S["kind"] == "ground":
+        if feats:
             features.append({"id": f"landcover-{section}", "kind": "landcover", "category": "approximate",
                              "source": {"type": "osm", "ref": f"landuse/natural polygons in {out_rel}/osm.geojson"}, "scenes": scenes})
-        for b0, b1, wid in bridges:
+        # the line's structures are registered by the ground windows; an aerial window would draw them twice
+        for b0, b1, wid in (bridges if S["kind"] == "ground" else []):
             features.append({"id": f"bridge-{section}-{wid.split('/')[1]}", "kind": "structure", "category": "approximate", "source": {"type": "osm", "ref": wid},
                              "scenes": scenes, "fromKm": b0 / 1000, "toKm": b1 / 1000, "note": "position from OSM; generic deck and parapets"})
-        for o0, o1, wid, hw in overbridges:
+        for o0, o1, wid, hw in (overbridges if S["kind"] == "ground" else []):
             features.append({"id": f"overbridge-{section}-{wid.split('/')[1]}", "kind": "structure", "category": "approximate", "source": {"type": "osm", "ref": wid},
                              "scenes": scenes, "fromKm": o0 / 1000, "toKm": o1 / 1000, "note": f"highway={hw} bridge over the line; deck removed from the trail profile (ADR 23)"})
         for f in roads:

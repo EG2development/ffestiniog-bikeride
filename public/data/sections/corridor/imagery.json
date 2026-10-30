@@ -1,0 +1,32 @@
+{
+  "cols": 226,
+  "rows": 692,
+  "spacingM": 16,
+  "originE": 268680.45715362707,
+  "originN": 346449.7356313946,
+  "crs": "EPSG:27700",
+  "scale": 2,
+  "width": 451,
+  "height": 1383,
+  "file": "imagery.u8",
+  "bands": "R, G, B: Sentinel-2 L2A true-colour image (TCI), 8-bit values linear in reflectance, bilinear on the DEM grid at `scale` pixels per node spacing",
+  "scene": "S2C_30UVD_20250712_0_L2A",
+  "acquired": "2025-07-12T11:27:02.419000Z",
+  "cloudCover": 0.062564,
+  "resolutionM": 10.0,
+  "urls": [
+    "https://earth-search.aws.element84.com/v1/search (id S2C_30UVD_20250712_0_L2A)",
+    "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/30/U/VD/2025/7/S2C_30UVD_20250712_0_L2A/TCI.tif"
+  ],
+  "licence": "Sentinel Data Legal Notice: free, full and open use, including adaptation and distribution",
+  "notice": "Contains modified Copernicus Sentinel data 2025",
+  "retrieved": "2026-10-30",
+  "stats": {
+    "meanRgb": [
+      40.8,
+      60.0,
+      32.1
+    ],
+    "tilesRead": 2
+  }
+}

@@ -4545,5 +4545,1881 @@
       "confidence": "medium"
     },
     "note": "industrial; height 6.2 m from lidar-dsm"
+  },
+  {
+    "id": "barrier-trawsfynydd-318893167",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318893167"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-318893332",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318893332"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1229885249",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1229885249"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1230101917",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1230101917"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1230108427",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1230108427"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1230108428",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1230108428"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1230108429",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1230108429"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-318981829",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318981829"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-89573355",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/89573355"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-89573357",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/89573357"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361201366",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361201366"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-369340238",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/369340238"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-369340296",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/369340296"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-369340297",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/369340297"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1231927613",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231927613"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1231927614",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231927614"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1263484749",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1263484749"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "hedge from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-314046250",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314046250"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-314046251",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314046251"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-314046252",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314046252"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-314046253",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314046253"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-338704295",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338704295"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-428720079",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428720079"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-428798794",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428798794"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-428798810",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428798810"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-428798811",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428798811"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-428798812",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428798812"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1071375710",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1071375710"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1071375711",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1071375711"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-373584160",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373584160"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-373584162",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373584162"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-428789532",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428789532"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1084153521",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153521"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-288662076",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/288662076"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "city_wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-288662077",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/288662077"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "city_wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024227",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024227"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024228",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024228"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "city_wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024229",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024229"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024231",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024231"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024234",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024234"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024235",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024235"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024470",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024470"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024471",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024471"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024472",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024472"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024473",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024473"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024474",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024474"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024475",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024475"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024476",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024476"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024477",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024477"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024480",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024480"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024481",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024481"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024482",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024482"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "city_wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024483",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024483"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024485",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024485"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024486",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024486"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289027606",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027606"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289027607",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027607"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289027608",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027608"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289027609",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027609"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289027610",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027610"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289027611",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027611"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289029216",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289029216"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289029219",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289029219"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289029221",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289029221"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "city_wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289029223",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289029223"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289029224",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289029224"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289029226",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289029226"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289029228",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289029228"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289029230",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289029230"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289029231",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289029231"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-357880216",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357880216"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361196119",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361196119"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361196120",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361196120"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361196122",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361196122"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361196124",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361196124"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361196125",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361196125"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "city_wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361197009",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361197009"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361197010",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361197010"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361200007",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361200007"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361201361",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361201361"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361201362",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361201362"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361201363",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361201363"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361201364",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361201364"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361201365",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361201365"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361201370",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361201370"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361201801",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361201801"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361201802",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361201802"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361201803",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361201803"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361201804",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361201804"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-364829252",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/364829252"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-364829253",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/364829253"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-364829834",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/364829834"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-364829835",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/364829835"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-364829846",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/364829846"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-364831340",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/364831340"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-364831341",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/364831341"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-372402179",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372402179"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-372402185",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372402185"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-373575643",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373575643"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-373575644",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373575644"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-373589753",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373589753"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-428367953",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428367953"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-505661042",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/505661042"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1084153475",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153475"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1084153480",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153480"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1084153481",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153481"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1084153484",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153484"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1084153507",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153507"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1084153512",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153512"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1084153513",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153513"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1231927615",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231927615"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1231927616",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231927616"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1231927617",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231927617"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1231927618",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231927618"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1231939358",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231939358"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1231939359",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231939359"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1231939363",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231939363"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1231939364",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1231939364"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1233826936",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1233826936"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-373584149",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373584149"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-289024233",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289024233"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-364926055",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/364926055"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1084153520",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153520"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361196767",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361196767"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361199428",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361199428"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361199434",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361199434"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361199435",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361199435"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361199436",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361199436"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361199437",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361199437"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361199438",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361199438"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361199665",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361199665"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-361199666",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361199666"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1084153485",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153485"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "barrier-trawsfynydd-1084153493",
+    "kind": "barrier",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153493"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "wall from OSM; generic height, not surveyed"
   }
 ]

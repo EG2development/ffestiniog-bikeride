@@ -1,0 +1,26 @@
+{
+  "cols": 226,
+  "rows": 692,
+  "spacingM": 16,
+  "originE": 268680.45715362707,
+  "originN": 346449.7356313946,
+  "crs": "EPSG:27700",
+  "file": "canopy.f32",
+  "units": "metres above the DTM, 0 = no canopy or no data",
+  "maxM": 45.0,
+  "source": "Welsh Government / NRW lidar DSM minus DTM, 1 m, 32-bit COGs (16 m overview level)",
+  "urls": [
+    "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+    "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif"
+  ],
+  "licence": "Open Government Licence (to confirm on the layer's metadata page; one catalogue lists 'Not Specified')",
+  "surveyDate": "not published with the COG (design risk K16)",
+  "retrieved": "2026-10-30",
+  "stats": {
+    "cellsOver2m": 27287,
+    "share": 0.1745,
+    "p50OverTwo": 9.36,
+    "p95OverTwo": 22.08,
+    "max": 45.0
+  }
+}
