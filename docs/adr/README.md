@@ -71,3 +71,4 @@ tasks. ADRs 27–40 record the reel design (D23–D36, mission `msn_44274a1de641
 | [60. The reel in the photo look: every scene, its aerials coloured by a satellite image](0060-reel-in-the-photo-look.md) | Proposed | D55 (photoreal); amends ADRs 33, 54, 57, 58, 59 |
 | [61. Trail users at random: walkers, runners and prams, by a seeded draw that keeps the rider's rules](0061-trail-users-at-random.md) | Proposed | D56 (photoreal); amends ADRs 59, 60 |
 | [62. A Blender build fed by the project's own scene data, pinned to Blender 5.2.3 LTS](0062-blender-pipeline.md) | Proposed | `docs/design-blender.md`; research in `docs/research-blender.md` |
+| [63. Buildings up to date: every building near the line, checked against the latest OS release and the lidar](0063-buildings-up-to-date.md) | Proposed | Amends ADRs 49, 50, 51 |

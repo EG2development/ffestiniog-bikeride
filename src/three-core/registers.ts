@@ -30,9 +30,10 @@ const STATUSES = ["existing", "construction", "approved", "demolished"] as const
 const EVIDENCE = ["map", "imagery", "record", "photo", "lidar", "planning"] as const;
 const OBSERVATIONS: readonly string[] = ["map", "imagery", "record", "photo", "lidar"];
 export type FeatureProvenance = { urls: string[]; evidence: (typeof EVIDENCE)[number][]; observedAt: string; retrievedAt: string; licence: string; confidence: "high" | "medium" | "low" };
-const BUILDING_SOURCES: readonly string[] = ["osm", "coflein", "lidar-dtm"];
+/** "os": an OS OpenMap - Local outline that OSM lacks (docs/adr/0063-buildings-up-to-date.md). */
+const BUILDING_SOURCES: readonly string[] = ["osm", "os", "coflein", "lidar-dtm"];
 const CATEGORIES = ["verified", "approximate", "proposed", "decorative"] as const;
-const SOURCE_TYPES = ["osm", "lidar-dtm", "copernicus", "waypoints", "tiles", "original", "coflein"] as const;
+const SOURCE_TYPES = ["osm", "os", "lidar-dtm", "copernicus", "waypoints", "tiles", "original", "coflein"] as const;
 const ASSET_KINDS = ["model", "texture", "data"] as const;
 
 export type Feature = {
@@ -313,10 +314,12 @@ export function validateOsmLines(x: unknown, path: string): OsmLine[] {
 /** The tallest structure in the windows is about 54 m (Trawsfynydd's reactor halls): anything above this is a data error. */
 const MAX_BUILDING_M = 200;
 
-/** One building of a section's `buildings.json` (docs/adr/0049-buildings-from-sourced-data.md): an OSM footprint in lon/lat. */
+/** One building of a section's `buildings.json` (docs/adr/0049-buildings-from-sourced-data.md): an OSM footprint in lon/lat,
+ * or an OS outline OSM lacks (ADR 63). */
 export type SectionBuilding = {
   id: string;
   osm?: string;
+  os?: string;
   footprint: [number, number][];
   heightM: number;
   heightSource?: string;

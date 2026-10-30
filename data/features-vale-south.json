@@ -2553,151 +2553,6 @@
     "note": "fill, up to 2.6 m; DEM-derived, not a surveyed earthwork"
   },
   {
-    "id": "building-vale-south-263063605",
-    "kind": "building",
-    "category": "approximate",
-    "source": {
-      "type": "osm",
-      "ref": "way/263063605"
-    },
-    "scenes": [
-      "Reel3D",
-      "Section-vale-south"
-    ],
-    "status": "existing",
-    "provenance": {
-      "urls": [
-        "https://www.openstreetmap.org/way/263063605",
-        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
-      ],
-      "evidence": [
-        "lidar",
-        "map"
-      ],
-      "observedAt": "2014-02-23",
-      "retrievedAt": "2026-10-25",
-      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
-      "confidence": "medium"
-    },
-    "note": "yes; height 7.3 m from lidar-dsm"
-  },
-  {
-    "id": "building-vale-south-263176075",
-    "kind": "building",
-    "category": "approximate",
-    "source": {
-      "type": "osm",
-      "ref": "way/263176075"
-    },
-    "scenes": [
-      "Reel3D",
-      "Section-vale-south"
-    ],
-    "status": "existing",
-    "provenance": {
-      "urls": [
-        "https://www.openstreetmap.org/way/263176075",
-        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
-      ],
-      "evidence": [
-        "lidar",
-        "map"
-      ],
-      "observedAt": "2014-02-24",
-      "retrievedAt": "2026-10-25",
-      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
-      "confidence": "medium"
-    },
-    "note": "yes; height 7.0 m from lidar-dsm"
-  },
-  {
-    "id": "building-vale-south-371939661",
-    "kind": "building",
-    "category": "approximate",
-    "source": {
-      "type": "osm",
-      "ref": "way/371939661"
-    },
-    "scenes": [
-      "Reel3D",
-      "Section-vale-south"
-    ],
-    "status": "existing",
-    "provenance": {
-      "urls": [
-        "https://www.openstreetmap.org/way/371939661",
-        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
-      ],
-      "evidence": [
-        "lidar",
-        "map"
-      ],
-      "observedAt": "2015-09-22",
-      "retrievedAt": "2026-10-25",
-      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
-      "confidence": "medium"
-    },
-    "note": "yes; height 7.6 m from lidar-dsm"
-  },
-  {
-    "id": "building-vale-south-373593956",
-    "kind": "building",
-    "category": "approximate",
-    "source": {
-      "type": "osm",
-      "ref": "way/373593956"
-    },
-    "scenes": [
-      "Reel3D",
-      "Section-vale-south"
-    ],
-    "status": "existing",
-    "provenance": {
-      "urls": [
-        "https://www.openstreetmap.org/way/373593956",
-        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
-      ],
-      "evidence": [
-        "lidar",
-        "map"
-      ],
-      "observedAt": "2024-10-05",
-      "retrievedAt": "2026-10-25",
-      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
-      "confidence": "high"
-    },
-    "note": "church; height 6.9 m from lidar-dsm"
-  },
-  {
-    "id": "building-vale-south-373593957",
-    "kind": "building",
-    "category": "approximate",
-    "source": {
-      "type": "osm",
-      "ref": "way/373593957"
-    },
-    "scenes": [
-      "Reel3D",
-      "Section-vale-south"
-    ],
-    "status": "existing",
-    "provenance": {
-      "urls": [
-        "https://www.openstreetmap.org/way/373593957",
-        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
-      ],
-      "evidence": [
-        "lidar",
-        "map"
-      ],
-      "observedAt": "2015-10-03",
-      "retrievedAt": "2026-10-25",
-      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
-      "confidence": "medium"
-    },
-    "note": "school; height 7.3 m from lidar-dsm"
-  },
-  {
     "id": "barrier-vale-south-89578700",
     "kind": "barrier",
     "category": "approximate",
@@ -3116,5 +2971,5517 @@
       "Section-vale-south"
     ],
     "note": "wall from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "building-vale-south-1019662577",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1019662577"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/1019662577",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 7.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-1019662578",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1019662578"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/1019662578",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "map"
+      ],
+      "observedAt": "2022-01-09",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 6.0 m from default (approximate); not in OS OpenMap Local 2026-10-26"
+  },
+  {
+    "id": "building-vale-south-1376195584",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1376195584"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/1376195584",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "house; height 8.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-1376195585",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1376195585"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/1376195585",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2025-04-09",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "garage; height 2.4 m from lidar-dsm; not in OS OpenMap Local 2026-10-26"
+  },
+  {
+    "id": "building-vale-south-1391276014",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1391276014"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/1391276014",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 6.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-263063605",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263063605"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263063605",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 7.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-263176075",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263176075"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263176075",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 7.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-263176085",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/263176085"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/263176085",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "terrace; height 7.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-264295504",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/264295504"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/264295504",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 8.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-371939661",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/371939661"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/371939661",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 7.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-373593956",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373593956"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/373593956",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "church; height 6.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-373593957",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373593957"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/373593957",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "school; height 7.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-461133554",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461133554"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/461133554",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 5.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-461159632",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461159632"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/461159632",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 5.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-461159633",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461159633"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/461159633",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 5.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-023B9FBD-C99C-475A-808F-1948A58C2025",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/023B9FBD-C99C-475A-808F-1948A58C2025"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-0477FBD0-0623-4A2D-8FAF-7E73946BE036",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/0477FBD0-0623-4A2D-8FAF-7E73946BE036"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-06E54A72-5257-4CF1-B356-BFAA180167E0",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/06E54A72-5257-4CF1-B356-BFAA180167E0"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-07224CF7-E2DA-4239-9F7B-A2A919D21571",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/07224CF7-E2DA-4239-9F7B-A2A919D21571"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-08896BE1-17DA-425E-93D3-22D40FE1659E",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/08896BE1-17DA-425E-93D3-22D40FE1659E"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 9.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-0A0B390C-79A6-4C98-92CE-2E859E22E17F",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/0A0B390C-79A6-4C98-92CE-2E859E22E17F"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 10.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-0A8B2CCD-013D-49BE-A1D4-16C52513A13E",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/0A8B2CCD-013D-49BE-A1D4-16C52513A13E"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 8.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-0B4972F0-92B4-42F3-B2A6-E93294AD8976",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/0B4972F0-92B4-42F3-B2A6-E93294AD8976"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-0C6C5D15-829F-480D-B44D-BB951255C7DE",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/0C6C5D15-829F-480D-B44D-BB951255C7DE"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-0FAAC112-570C-4905-A89C-1D77538432C3",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/0FAAC112-570C-4905-A89C-1D77538432C3"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-1015D801-581B-438A-A61C-D2339B65803D",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/1015D801-581B-438A-A61C-D2339B65803D"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 8.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-104353E0-AD0A-4136-B752-AC25B5D28DA2",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/104353E0-AD0A-4136-B752-AC25B5D28DA2"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-10B678AB-A441-4A80-9BEA-B8B6C69EA351",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/10B678AB-A441-4A80-9BEA-B8B6C69EA351"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-128F0065-4280-4019-8DAB-E6D82999E94C",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/128F0065-4280-4019-8DAB-E6D82999E94C"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 8.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-1395551F-19A2-45A8-8D19-F7FCA81E59E8",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/1395551F-19A2-45A8-8D19-F7FCA81E59E8"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-14D93647-3C68-4AE1-97D1-597CED8A5C8C",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/14D93647-3C68-4AE1-97D1-597CED8A5C8C"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-160FB4CA-D122-482E-B4CF-7308E869DBF7",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/160FB4CA-D122-482E-B4CF-7308E869DBF7"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+        "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=5209",
+        "https://coflein.gov.uk/en/site/28181"
+      ],
+      "evidence": [
+        "lidar",
+        "map",
+        "record"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (Designated Historic Asset GIS Data, The Welsh Historic Environment Service (Cadw), 2026-10-30, licensed under the Open Government Licence); OGL (This site data is from the National Monuments Record of Wales (NMRW), produced by RCAHMW. \u00a9 Crown Database Right: RCAHMW, licensed under the Open Government Licence 3.0); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.4 m from lidar-dsm; listed grade II (Cadw 5209); NMRW 28181: house, building"
+  },
+  {
+    "id": "building-vale-south-os-164F90D2-AB85-4C8D-83A6-3D22093BD32B",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/164F90D2-AB85-4C8D-83A6-3D22093BD32B"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-166D448D-F565-4027-A0A5-4E9357D9AECA",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/166D448D-F565-4027-A0A5-4E9357D9AECA"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 8.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-17CCB157-0FCD-475C-9CE5-4C0B78DC0B1D",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/17CCB157-0FCD-475C-9CE5-4C0B78DC0B1D"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-1A06D6EC-2A67-4234-83FE-613671D58E86",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/1A06D6EC-2A67-4234-83FE-613671D58E86"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-1A825FA0-576F-41E4-BE86-F7C8DF5D1101",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/1A825FA0-576F-41E4-BE86-F7C8DF5D1101"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-1BD86A92-AF6E-437A-BA45-A770A1989066",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/1BD86A92-AF6E-437A-BA45-A770A1989066"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-1C5D3F8C-D939-4F89-8F8D-140DF14B655E",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/1C5D3F8C-D939-4F89-8F8D-140DF14B655E"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 10.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-1D84EECF-A52E-4858-B92A-1B776DFDD2DB",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/1D84EECF-A52E-4858-B92A-1B776DFDD2DB"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-1D8CC9D8-ABF2-4A0C-A711-86557F0BBAF6",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/1D8CC9D8-ABF2-4A0C-A711-86557F0BBAF6"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-1E4F1A4F-C311-403B-9B53-A644C99BE2C9",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/1E4F1A4F-C311-403B-9B53-A644C99BE2C9"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-1FD89CFA-1CE0-4FE1-813D-3FD9222810AF",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/1FD89CFA-1CE0-4FE1-813D-3FD9222810AF"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 8.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-1FEFB19A-0691-4F36-959F-FC99D8CA0263",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/1FEFB19A-0691-4F36-959F-FC99D8CA0263"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-20AF6495-4025-49B3-9053-D3A020D6418E",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/20AF6495-4025-49B3-9053-D3A020D6418E"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+        "https://coflein.gov.uk/en/site/41598"
+      ],
+      "evidence": [
+        "lidar",
+        "map",
+        "record"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (This site data is from the National Monuments Record of Wales (NMRW), produced by RCAHMW. \u00a9 Crown Database Right: RCAHMW, licensed under the Open Government Licence 3.0); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.1 m from lidar-dsm; NMRW 41598: barn, not recorded"
+  },
+  {
+    "id": "building-vale-south-os-220F8130-B8A2-4DF6-BD2D-4ABCDD6235E1",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/220F8130-B8A2-4DF6-BD2D-4ABCDD6235E1"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-245DB4A1-9AD3-49B4-8664-8054E50CCA3E",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/245DB4A1-9AD3-49B4-8664-8054E50CCA3E"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+        "https://coflein.gov.uk/en/site/8399"
+      ],
+      "evidence": [
+        "lidar",
+        "map",
+        "record"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (This site data is from the National Monuments Record of Wales (NMRW), produced by RCAHMW. \u00a9 Crown Database Right: RCAHMW, licensed under the Open Government Licence 3.0); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.7 m from lidar-dsm; NMRW 8399: chapel, documents"
+  },
+  {
+    "id": "building-vale-south-os-245F540B-A69D-4246-80A0-F9FDEB495E34",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/245F540B-A69D-4246-80A0-F9FDEB495E34"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 11.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-24F15D30-378B-4A8D-A5C0-9BF966E46A5E",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/24F15D30-378B-4A8D-A5C0-9BF966E46A5E"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-293CE50A-4C29-4981-B562-73C1CEB01B98",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/293CE50A-4C29-4981-B562-73C1CEB01B98"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-29CFAD42-D095-4AFD-AE6D-8916E09EA827",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/29CFAD42-D095-4AFD-AE6D-8916E09EA827"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 8.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-2BDDCCA2-D065-4980-857E-E8B508C2A03B",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/2BDDCCA2-D065-4980-857E-E8B508C2A03B"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-2C901211-183B-45DD-8585-494B368CF50F",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/2C901211-183B-45DD-8585-494B368CF50F"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-2CADAD4B-3858-442B-81A4-6F5F75E6473E",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/2CADAD4B-3858-442B-81A4-6F5F75E6473E"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-2EEE0672-13AF-4610-A404-F08C3D863C3F",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/2EEE0672-13AF-4610-A404-F08C3D863C3F"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 9.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-34669C14-A4D6-478E-B476-557F962AB7DE",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/34669C14-A4D6-478E-B476-557F962AB7DE"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 8.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-353C2966-B671-4C31-B628-2634EAA0694E",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/353C2966-B671-4C31-B628-2634EAA0694E"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-35507F37-433C-4A70-ABE2-07349CE7236E",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/35507F37-433C-4A70-ABE2-07349CE7236E"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-35861BB1-B8DA-4FF5-AD30-80E5E43CE58C",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/35861BB1-B8DA-4FF5-AD30-80E5E43CE58C"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-36DFAEB2-8A65-4BBA-BA7E-F7AC1CD5E16C",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/36DFAEB2-8A65-4BBA-BA7E-F7AC1CD5E16C"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-3932CD07-A194-4517-8ABC-A4FADE1ABCB3",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/3932CD07-A194-4517-8ABC-A4FADE1ABCB3"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 18.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-39A73A26-FD05-446E-A0E3-3BDC1B2D7D58",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/39A73A26-FD05-446E-A0E3-3BDC1B2D7D58"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-3B55397E-4A75-467D-AB58-3B48C018217F",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/3B55397E-4A75-467D-AB58-3B48C018217F"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-3BD92FA7-BD61-47E9-ABC1-BF8E8DA5B471",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/3BD92FA7-BD61-47E9-ABC1-BF8E8DA5B471"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-3DD595B5-B1C9-4B7E-A164-1AA6EEB3C658",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/3DD595B5-B1C9-4B7E-A164-1AA6EEB3C658"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+        "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=4775",
+        "https://coflein.gov.uk/en/site/28334"
+      ],
+      "evidence": [
+        "lidar",
+        "map",
+        "record"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (Designated Historic Asset GIS Data, The Welsh Historic Environment Service (Cadw), 2026-10-30, licensed under the Open Government Licence); OGL (This site data is from the National Monuments Record of Wales (NMRW), produced by RCAHMW. \u00a9 Crown Database Right: RCAHMW, licensed under the Open Government Licence 3.0); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.8 m from lidar-dsm; listed grade II (Cadw 4775); NMRW 28334: farmhouse, building"
+  },
+  {
+    "id": "building-vale-south-os-4050A6E2-F949-40F2-A230-AD4F42EFC1EA",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/4050A6E2-F949-40F2-A230-AD4F42EFC1EA"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 8.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-40BDA342-AE26-4934-8A67-A04594CA49E0",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/40BDA342-AE26-4934-8A67-A04594CA49E0"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-40F024E8-B63D-40F9-A0CC-B4666DF1F7E1",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/40F024E8-B63D-40F9-A0CC-B4666DF1F7E1"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-4194B1BE-9B80-4934-96AC-4BC7153C4935",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/4194B1BE-9B80-4934-96AC-4BC7153C4935"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-44107A97-2F28-48EB-961E-15E3BE31F265",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/44107A97-2F28-48EB-961E-15E3BE31F265"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-456F0D9B-9BF4-4924-AF6B-E0BF08026A4F",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/456F0D9B-9BF4-4924-AF6B-E0BF08026A4F"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-473A2E28-497D-42D2-BEB5-3E6284BBD74A",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/473A2E28-497D-42D2-BEB5-3E6284BBD74A"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-48D1354E-AAC3-4EAB-8C7E-8F15972067C6",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/48D1354E-AAC3-4EAB-8C7E-8F15972067C6"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (lidar flown 2022-01-11, Welsh Government; nothing standing on the footprint)",
+      "confidence": "medium"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.0 m from default (approximate); not in the lidar flown 2022-01-11 but in OS OpenMap Local 2026-10-26: built since the flight"
+  },
+  {
+    "id": "building-vale-south-os-4992AE94-1F7C-4730-A310-13DFA2C96B2C",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/4992AE94-1F7C-4730-A310-13DFA2C96B2C"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-49C72A94-2AA7-4628-8869-EAFE0193F21C",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/49C72A94-2AA7-4628-8869-EAFE0193F21C"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-4B020A11-1126-4E32-AC03-9C390F866205",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/4B020A11-1126-4E32-AC03-9C390F866205"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-4E0846CC-7966-48FA-876B-9250F30995D2",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/4E0846CC-7966-48FA-876B-9250F30995D2"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-4EDFC49A-AC0A-4CDB-917E-3E4CA4351805",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/4EDFC49A-AC0A-4CDB-917E-3E4CA4351805"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 8.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-51245858-6580-47FB-AD50-78BEE03DC436",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/51245858-6580-47FB-AD50-78BEE03DC436"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 8.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-5285CC4E-88FE-421E-9656-2906C44717B5",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/5285CC4E-88FE-421E-9656-2906C44717B5"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-535BCCAC-CF80-4964-AA00-60899F56D778",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/535BCCAC-CF80-4964-AA00-60899F56D778"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-548D6E1A-0CBA-4FF3-8874-00D27E5ACCB0",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/548D6E1A-0CBA-4FF3-8874-00D27E5ACCB0"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-558EBD28-D192-4103-8567-77405A83125C",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/558EBD28-D192-4103-8567-77405A83125C"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-56156ECE-C519-4B4F-8240-7778198C3D42",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/56156ECE-C519-4B4F-8240-7778198C3D42"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-5701AFAE-C30D-42EF-B267-7A5119F25B0D",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/5701AFAE-C30D-42EF-B267-7A5119F25B0D"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-5BB2B5F5-7F71-498E-9C14-EE7DF6776248",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/5BB2B5F5-7F71-498E-9C14-EE7DF6776248"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-5D8E5C30-D8DF-46BC-B902-C54CFF3AB696",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/5D8E5C30-D8DF-46BC-B902-C54CFF3AB696"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-61B849E6-363F-45DE-9A54-44EA81AC56CD",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/61B849E6-363F-45DE-9A54-44EA81AC56CD"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-63464DE8-18D3-406D-8A3B-E7A74DA543CF",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/63464DE8-18D3-406D-8A3B-E7A74DA543CF"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-6488EB4A-C686-47D4-8C02-574680B69E4B",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/6488EB4A-C686-47D4-8C02-574680B69E4B"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-672B676D-0495-4697-9D31-F0368B234BC1",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/672B676D-0495-4697-9D31-F0368B234BC1"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-67760EB2-836F-4C83-839A-C40802D05BC2",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/67760EB2-836F-4C83-839A-C40802D05BC2"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-69C772CD-37F0-4FC9-9C01-A988ECDD8139",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/69C772CD-37F0-4FC9-9C01-A988ECDD8139"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-69E50C67-6A99-4D82-8148-A88584D5721E",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/69E50C67-6A99-4D82-8148-A88584D5721E"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-6A594E87-C3DD-44F3-B701-CDE62410EE12",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/6A594E87-C3DD-44F3-B701-CDE62410EE12"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+        "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=4836",
+        "https://coflein.gov.uk/en/site/28229"
+      ],
+      "evidence": [
+        "lidar",
+        "map",
+        "record"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (Designated Historic Asset GIS Data, The Welsh Historic Environment Service (Cadw), 2026-10-30, licensed under the Open Government Licence); OGL (This site data is from the National Monuments Record of Wales (NMRW), produced by RCAHMW. \u00a9 Crown Database Right: RCAHMW, licensed under the Open Government Licence 3.0); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.2 m from lidar-dsm; listed grade II (Cadw 4836); NMRW 28229: farmhouse, building"
+  },
+  {
+    "id": "building-vale-south-os-6BF5F083-E673-4D2B-9F3D-1752A45D2879",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/6BF5F083-E673-4D2B-9F3D-1752A45D2879"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-6CF25742-6F4D-49A3-930F-A6E1723ED090",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/6CF25742-6F4D-49A3-930F-A6E1723ED090"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-6E97A32D-DC2C-4AB8-B114-5B907E95A9E3",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/6E97A32D-DC2C-4AB8-B114-5B907E95A9E3"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+        "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=5210",
+        "https://coflein.gov.uk/en/site/41577"
+      ],
+      "evidence": [
+        "lidar",
+        "map",
+        "record"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (Designated Historic Asset GIS Data, The Welsh Historic Environment Service (Cadw), 2026-10-30, licensed under the Open Government Licence); OGL (This site data is from the National Monuments Record of Wales (NMRW), produced by RCAHMW. \u00a9 Crown Database Right: RCAHMW, licensed under the Open Government Licence 3.0); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.9 m from lidar-dsm; listed grade II (Cadw 5210); NMRW 41577: cow shed; barn, not recorded"
+  },
+  {
+    "id": "building-vale-south-os-71977B01-3312-431B-A989-834B413EDE22",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/71977B01-3312-431B-A989-834B413EDE22"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-787CB73B-EFE2-4700-9115-1B2484A43EA3",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/787CB73B-EFE2-4700-9115-1B2484A43EA3"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-7B16FC25-7CC2-4BF0-B3E5-4DCB9695FB7B",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/7B16FC25-7CC2-4BF0-B3E5-4DCB9695FB7B"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 14.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-7C16D7B4-7B05-4FAB-A473-408F727BEF00",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/7C16D7B4-7B05-4FAB-A473-408F727BEF00"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-7C6C1F33-F117-4FE1-BB27-EAE5BFB23C45",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/7C6C1F33-F117-4FE1-BB27-EAE5BFB23C45"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-7DC460B6-DE7D-4091-A899-77382B74E154",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/7DC460B6-DE7D-4091-A899-77382B74E154"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (lidar flown 2022-01-11, Welsh Government; nothing standing on the footprint)",
+      "confidence": "medium"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.0 m from default (approximate); not in the lidar flown 2022-01-11 but in OS OpenMap Local 2026-10-26: built since the flight"
+  },
+  {
+    "id": "building-vale-south-os-7F5999A6-49A5-4971-B911-9ED17986170F",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/7F5999A6-49A5-4971-B911-9ED17986170F"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-8089AA52-B0C0-49DC-B0AE-22E042CD4339",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/8089AA52-B0C0-49DC-B0AE-22E042CD4339"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-80DEA8DC-A4A3-48E6-B9C5-60DABC45F2FB",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/80DEA8DC-A4A3-48E6-B9C5-60DABC45F2FB"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-814D2F22-04AF-40C7-8615-536223FC3AAB",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/814D2F22-04AF-40C7-8615-536223FC3AAB"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-8341DAD6-91D2-45B8-9378-01B9575C466D",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/8341DAD6-91D2-45B8-9378-01B9575C466D"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 11.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-83F8748C-30EE-4CD9-9876-3F725013FB45",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/83F8748C-30EE-4CD9-9876-3F725013FB45"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-845B5135-FA4A-4C73-9FC1-4B344DA846F0",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/845B5135-FA4A-4C73-9FC1-4B344DA846F0"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+        "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=4838",
+        "https://coflein.gov.uk/en/site/41640"
+      ],
+      "evidence": [
+        "lidar",
+        "map",
+        "record"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (Designated Historic Asset GIS Data, The Welsh Historic Environment Service (Cadw), 2026-10-30, licensed under the Open Government Licence); OGL (This site data is from the National Monuments Record of Wales (NMRW), produced by RCAHMW. \u00a9 Crown Database Right: RCAHMW, licensed under the Open Government Licence 3.0); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.4 m from lidar-dsm; listed grade II (Cadw 4838); NMRW 41640: stable, not recorded"
+  },
+  {
+    "id": "building-vale-south-os-85C93536-B0A1-4653-A6CD-13329114989F",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/85C93536-B0A1-4653-A6CD-13329114989F"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-867F0B65-1122-4974-BCF9-B6DC2F2BEF21",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/867F0B65-1122-4974-BCF9-B6DC2F2BEF21"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-8818F1F0-E450-4244-A3B0-C10EC8F3580E",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/8818F1F0-E450-4244-A3B0-C10EC8F3580E"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-89D89E3B-72DF-4F31-891C-D57A0046BADE",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/89D89E3B-72DF-4F31-891C-D57A0046BADE"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-8AEF2811-6582-4945-92A1-4B32EA336367",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/8AEF2811-6582-4945-92A1-4B32EA336367"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-8C6D2290-943E-460F-9C02-840B4E3CCFC4",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/8C6D2290-943E-460F-9C02-840B4E3CCFC4"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-8E885E2D-D381-42E9-9B68-30940C960A61",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/8E885E2D-D381-42E9-9B68-30940C960A61"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-930EFA34-F76A-4CE0-BA8E-0FA1C36BE581",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/930EFA34-F76A-4CE0-BA8E-0FA1C36BE581"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-9321DA47-8025-45E6-ACFB-4FC639AA1669",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/9321DA47-8025-45E6-ACFB-4FC639AA1669"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-9DD83A02-CFD5-4587-B414-639D7927F9D0",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/9DD83A02-CFD5-4587-B414-639D7927F9D0"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-A04DE514-BC63-4A7B-B6A4-2136BE98B00D",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/A04DE514-BC63-4A7B-B6A4-2136BE98B00D"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-A05D2B9B-D26D-43E1-93CF-C94139B9B2B3",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/A05D2B9B-D26D-43E1-93CF-C94139B9B2B3"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-A171C078-ADD7-40DE-BBE5-910C080AB17A",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/A171C078-ADD7-40DE-BBE5-910C080AB17A"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-A4916EBF-9004-4D96-8BC3-CB710E263F79",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/A4916EBF-9004-4D96-8BC3-CB710E263F79"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (lidar flown 2022-01-11, Welsh Government; nothing standing on the footprint)",
+      "confidence": "medium"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.0 m from default (approximate); not in the lidar flown 2022-01-11 but in OS OpenMap Local 2026-10-26: built since the flight"
+  },
+  {
+    "id": "building-vale-south-os-A4FBC877-0540-44CB-86E6-B81E4A0DCFF2",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/A4FBC877-0540-44CB-86E6-B81E4A0DCFF2"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-A75BB812-8948-4221-B0A6-B9796C60FCDA",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/A75BB812-8948-4221-B0A6-B9796C60FCDA"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-A76FC998-A2ED-4C1D-B2F9-6F5F2D01BF43",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/A76FC998-A2ED-4C1D-B2F9-6F5F2D01BF43"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 9.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-A9DF04CC-BA67-48D9-B818-B37EBA15B678",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/A9DF04CC-BA67-48D9-B818-B37EBA15B678"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-ABB98804-9AAD-4476-9BE6-11120C671DA2",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/ABB98804-9AAD-4476-9BE6-11120C671DA2"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-ADB0101A-BD51-4966-BC01-56925F691F19",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/ADB0101A-BD51-4966-BC01-56925F691F19"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-AE11ACE7-1AD7-40EE-8BF4-C398519152AE",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/AE11ACE7-1AD7-40EE-8BF4-C398519152AE"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-B1DFF29F-DEB4-47B9-9B73-FEDAA4D903BF",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/B1DFF29F-DEB4-47B9-9B73-FEDAA4D903BF"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 9.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-B26F8314-2FD6-439F-B488-26F698A02351",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/B26F8314-2FD6-439F-B488-26F698A02351"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-B32A0E06-F777-496F-BB3C-8288B1F701B9",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/B32A0E06-F777-496F-BB3C-8288B1F701B9"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-B57DB800-7C4A-4E11-B618-61C065967261",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/B57DB800-7C4A-4E11-B618-61C065967261"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (lidar flown 2022-01-11, Welsh Government; nothing standing on the footprint)",
+      "confidence": "medium"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.0 m from default (approximate); not in the lidar flown 2022-01-11 but in OS OpenMap Local 2026-10-26: built since the flight"
+  },
+  {
+    "id": "building-vale-south-os-B7670607-BCF2-4135-99D2-53865F5AC947",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/B7670607-BCF2-4135-99D2-53865F5AC947"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-B8907C46-89B2-469B-B477-EF6F5FE3A25A",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/B8907C46-89B2-469B-B477-EF6F5FE3A25A"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-B95C8195-04D5-443B-88D5-B853D7868B1A",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/B95C8195-04D5-443B-88D5-B853D7868B1A"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-BD887923-C21A-4FF5-8E64-B71E9919C430",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/BD887923-C21A-4FF5-8E64-B71E9919C430"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-C05A6507-A52C-488E-99BA-AAAFBFFF3D45",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/C05A6507-A52C-488E-99BA-AAAFBFFF3D45"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-C1544EAC-8C18-4F2C-814C-97FAF13CA171",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/C1544EAC-8C18-4F2C-814C-97FAF13CA171"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-C1D80C67-0ABA-4F15-A8E7-71E6F9FC7579",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/C1D80C67-0ABA-4F15-A8E7-71E6F9FC7579"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-C278E863-BDE2-4EF8-B02C-A2FCA9961DC8",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/C278E863-BDE2-4EF8-B02C-A2FCA9961DC8"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-C41D8831-8461-425F-8127-35AF369E7279",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/C41D8831-8461-425F-8127-35AF369E7279"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-C44E156A-70BE-4732-8443-BEA1A071A558",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/C44E156A-70BE-4732-8443-BEA1A071A558"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-C4AEF247-70D0-462B-9A5E-99F581712E14",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/C4AEF247-70D0-462B-9A5E-99F581712E14"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-C846806D-01A4-4781-8DCB-2F884C96FD9B",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/C846806D-01A4-4781-8DCB-2F884C96FD9B"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-CA3917E3-E4DE-4DE0-8E85-FA2B683F2F8A",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/CA3917E3-E4DE-4DE0-8E85-FA2B683F2F8A"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-CAF16A5C-CA3B-41BB-84D5-D78F8D99765E",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/CAF16A5C-CA3B-41BB-84D5-D78F8D99765E"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-CB2E6838-22C3-4CE8-97B7-84916415FF66",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/CB2E6838-22C3-4CE8-97B7-84916415FF66"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 16.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-CB7C5A63-CCD8-4A65-A70A-335DD1FFD091",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/CB7C5A63-CCD8-4A65-A70A-335DD1FFD091"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-CBC7D9DE-09A8-42F5-98C1-6AF5D0F69F64",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/CBC7D9DE-09A8-42F5-98C1-6AF5D0F69F64"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-CC71C8D8-1184-4726-9FA3-A6A8B0B489E7",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/CC71C8D8-1184-4726-9FA3-A6A8B0B489E7"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-CD0E4218-8B18-4608-9CAE-69B5511C7A8F",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/CD0E4218-8B18-4608-9CAE-69B5511C7A8F"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-D12A1760-6E82-452C-BAE6-927207CC688C",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/D12A1760-6E82-452C-BAE6-927207CC688C"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-D172D4FE-8650-4E91-8447-1D773FC06716",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/D172D4FE-8650-4E91-8447-1D773FC06716"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 8.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-D4CD5EB1-6386-4254-8688-CD29D633C64F",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/D4CD5EB1-6386-4254-8688-CD29D633C64F"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-D8B4BCE2-2296-49EE-84CE-47AD04AFF638",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/D8B4BCE2-2296-49EE-84CE-47AD04AFF638"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-DB7807A1-232A-4B94-A045-D1FF6C4F8611",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/DB7807A1-232A-4B94-A045-D1FF6C4F8611"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-DCF20E10-0725-4E20-9490-93F4E08EF31B",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/DCF20E10-0725-4E20-9490-93F4E08EF31B"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-DD4BED91-9132-40FE-BE10-844EAF4D4179",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/DD4BED91-9132-40FE-BE10-844EAF4D4179"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-DD83191B-45E1-424A-BBDE-33D84D3F344D",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/DD83191B-45E1-424A-BBDE-33D84D3F344D"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-DD958093-C37D-4339-8D74-A54303C4BCD5",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/DD958093-C37D-4339-8D74-A54303C4BCD5"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (lidar flown 2022-01-11, Welsh Government; nothing standing on the footprint)",
+      "confidence": "medium"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.0 m from default (approximate); not in the lidar flown 2022-01-11 but in OS OpenMap Local 2026-10-26: built since the flight"
+  },
+  {
+    "id": "building-vale-south-os-DE200F3B-EB66-48BE-BA34-1AFBD986A988",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/DE200F3B-EB66-48BE-BA34-1AFBD986A988"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-DE949443-05F5-45F5-82B0-1DEE44CC2121",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/DE949443-05F5-45F5-82B0-1DEE44CC2121"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-DF8F3748-41D0-4720-876B-84932147E14C",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/DF8F3748-41D0-4720-876B-84932147E14C"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-E0D12201-0AA4-41DB-9B93-77EEC373A227",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/E0D12201-0AA4-41DB-9B93-77EEC373A227"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-E20B95B3-3D3D-415D-8931-330476D48FD4",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/E20B95B3-3D3D-415D-8931-330476D48FD4"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-E24C48D8-07D0-4434-820C-602EBA102A19",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/E24C48D8-07D0-4434-820C-602EBA102A19"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-E26C1DC9-7887-489F-849F-5057D45ADA05",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/E26C1DC9-7887-489F-849F-5057D45ADA05"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-E39B4640-24C8-4B40-B5E4-A97321EDAA53",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/E39B4640-24C8-4B40-B5E4-A97321EDAA53"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-E4558087-9901-47D4-B4E1-0DC42CD6FDE0",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/E4558087-9901-47D4-B4E1-0DC42CD6FDE0"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-E6B8E95C-D436-4641-B0B9-C1DEBA6F0EFD",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/E6B8E95C-D436-4641-B0B9-C1DEBA6F0EFD"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-E7B6DF38-6A72-486E-B118-DDCF8E727C98",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/E7B6DF38-6A72-486E-B118-DDCF8E727C98"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-E7C502B6-F37C-4E61-BB67-036564362540",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/E7C502B6-F37C-4E61-BB67-036564362540"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-ECB76AA0-96C5-473E-80D0-6BA654257455",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/ECB76AA0-96C5-473E-80D0-6BA654257455"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-EDFE3D76-D2F0-422A-9B27-314280D32DFC",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/EDFE3D76-D2F0-422A-9B27-314280D32DFC"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (lidar flown 2022-01-11, Welsh Government; nothing standing on the footprint)",
+      "confidence": "medium"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.0 m from default (approximate); not in the lidar flown 2022-01-11 but in OS OpenMap Local 2026-10-26: built since the flight"
+  },
+  {
+    "id": "building-vale-south-os-F0019376-12ED-4C0A-82D2-F0F10192C39C",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/F0019376-12ED-4C0A-82D2-F0F10192C39C"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-F0B78A96-066C-4397-8AE0-2A939BA6388A",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/F0B78A96-066C-4397-8AE0-2A939BA6388A"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (lidar flown 2022-01-11, Welsh Government; nothing standing on the footprint)",
+      "confidence": "medium"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.0 m from default (approximate); not in the lidar flown 2022-01-11 but in OS OpenMap Local 2026-10-26: built since the flight"
+  },
+  {
+    "id": "building-vale-south-os-F11D90AB-7A9B-462F-8629-B561D832D96D",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/F11D90AB-7A9B-462F-8629-B561D832D96D"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-F26D5FB0-0FD9-4D26-AD98-952AA6C6C265",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/F26D5FB0-0FD9-4D26-AD98-952AA6C6C265"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-F4A51F3A-E7D5-42F2-A28A-C729E6194797",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/F4A51F3A-E7D5-42F2-A28A-C729E6194797"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-F4ECCB1C-BFD7-401B-908E-1850D1768201",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/F4ECCB1C-BFD7-401B-908E-1850D1768201"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-F59BBAE8-20F5-4426-815B-CDA0B0D54C44",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/F59BBAE8-20F5-4426-815B-CDA0B0D54C44"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-F63CD6C8-5771-4D18-B2B6-3E642D717D0B",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/F63CD6C8-5771-4D18-B2B6-3E642D717D0B"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-F928F6A5-3933-4A67-BADF-69BDCBE592A8",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/F928F6A5-3933-4A67-BADF-69BDCBE592A8"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-FB35887F-03EF-4E9E-88EC-3344E9B1F664",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/FB35887F-03EF-4E9E-88EC-3344E9B1F664"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-vale-south-os-FD76568D-8CDB-4A37-8249-DB66D66CD93F",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/FD76568D-8CDB-4A37-8249-DB66D66CD93F"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.6 m from lidar-dsm"
   }
 ]

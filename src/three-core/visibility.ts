@@ -14,16 +14,21 @@ const norm = (a: Vec3): Vec3 => {
   return [a[0] / l, a[1] / l, a[2] / l];
 };
 
-/** Ids of the footprints whose mid-height centre is inside a pose's frustum and not behind terrain, in any pose. */
+/** Ids of the footprints with a sample point inside a pose's frustum and not behind terrain, in any pose: the mid-height
+ * centre, and up to eight of the footprint's corners at roof height, so a large building partly in frame counts
+ * (ADR 63: the reactor halls' centres lay outside the frames that showed their roofs). */
 export function visibleFootprints(poses: Pose[], footprints: Footprint[], heightAt: HeightAt, opts: { aspect?: number; far?: number; stepUnits?: number } = {}): string[] {
   const aspect = opts.aspect ?? 16 / 9;
   const far = opts.far ?? 2600;
   const step = opts.stepUnits ?? 1; // 10 m
   const seen = new Set<string>();
-  const centres = footprints.map((f) => {
+  const centres = footprints.flatMap((f) => {
     const cx = f.ring.reduce((a, p) => a + p.x, 0) / f.ring.length;
     const cz = f.ring.reduce((a, p) => a + p.z, 0) / f.ring.length;
-    return { id: f.id, q: [cx, heightAt(cx, cz) + f.heightM / 20, cz] as Vec3 };
+    const base = heightAt(cx, cz);
+    const every = Math.max(1, Math.ceil(f.ring.length / 8));
+    const corners = f.ring.filter((_, i) => i % every === 0).map((p) => ({ id: f.id, q: [p.x, base + f.heightM / 10, p.z] as Vec3 }));
+    return [{ id: f.id, q: [cx, base + f.heightM / 20, cz] as Vec3 }, ...corners];
   });
   for (const pose of poses) {
     const fwd = norm(sub(pose.target, pose.position));

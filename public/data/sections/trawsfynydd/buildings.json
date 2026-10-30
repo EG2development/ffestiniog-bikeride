@@ -49,7 +49,51 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2022-06-19"
+ },
+ {
+  "id": "building-trawsfynydd-1071375700",
+  "osm": "way/1071375700",
+  "footprint": [
+   [
+    -3.9199339,
+    52.9042132
+   ],
+   [
+    -3.9198781,
+    52.9042356
+   ],
+   [
+    -3.919833,
+    52.9041944
+   ],
+   [
+    -3.9198046,
+    52.9041692
+   ],
+   [
+    -3.9198605,
+    52.9041467
+   ],
+   [
+    -3.9199339,
+    52.9042132
+   ]
+  ],
+  "heightM": 3.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "garage",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2022-06-19"
  },
  {
   "id": "building-trawsfynydd-1071375701",
@@ -81,7 +125,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2022-06-19"
  },
  {
   "id": "building-trawsfynydd-1071375703",
@@ -129,7 +177,91 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2022-06-19"
+ },
+ {
+  "id": "building-trawsfynydd-1071375704",
+  "osm": "way/1071375704",
+  "footprint": [
+   [
+    -3.9196548,
+    52.9044241
+   ],
+   [
+    -3.9196179,
+    52.9044406
+   ],
+   [
+    -3.9196682,
+    52.9044816
+   ],
+   [
+    -3.9197052,
+    52.9044651
+   ],
+   [
+    -3.9196548,
+    52.9044241
+   ]
+  ],
+  "heightM": 6.0,
+  "heightSource": "default",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "shed",
+  "lidar": "absent",
+  "lidarFlown": "2022-03-01",
+  "osMap": "absent",
+  "mapEditedAt": "2022-06-19"
+ },
+ {
+  "id": "building-trawsfynydd-1071375705",
+  "osm": "way/1071375705",
+  "footprint": [
+   [
+    -3.9196871,
+    52.9047119
+   ],
+   [
+    -3.9195232,
+    52.9047745
+   ],
+   [
+    -3.9196522,
+    52.9048974
+   ],
+   [
+    -3.9197167,
+    52.9048728
+   ],
+   [
+    -3.9197624,
+    52.9049163
+   ],
+   [
+    -3.9198617,
+    52.9048784
+   ],
+   [
+    -3.9196871,
+    52.9047119
+   ]
+  ],
+  "heightM": 4.1,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "barn",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2022-06-19"
  },
  {
   "id": "building-trawsfynydd-1071375709",
@@ -161,7 +293,11 @@
   "roof": "gabled",
   "kind": "background",
   "status": "existing",
-  "type": "barn"
+  "type": "barn",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2022-06-19"
  },
  {
   "id": "building-trawsfynydd-1071375714",
@@ -193,7 +329,67 @@
   "roof": "gabled",
   "kind": "background",
   "status": "existing",
-  "type": "barn"
+  "type": "barn",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2022-06-19"
+ },
+ {
+  "id": "building-trawsfynydd-1071375719",
+  "osm": "way/1071375719",
+  "footprint": [
+   [
+    -3.9228657,
+    52.9019861
+   ],
+   [
+    -3.9227005,
+    52.9020466
+   ],
+   [
+    -3.9226868,
+    52.9020516
+   ],
+   [
+    -3.922744,
+    52.9021084
+   ],
+   [
+    -3.9227892,
+    52.9021534
+   ],
+   [
+    -3.9228207,
+    52.9021419
+   ],
+   [
+    -3.9229353,
+    52.9022558
+   ],
+   [
+    -3.9230828,
+    52.9022017
+   ],
+   [
+    -3.922913,
+    52.9020331
+   ],
+   [
+    -3.9228657,
+    52.9019861
+   ]
+  ],
+  "heightM": 9.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2022-06-19"
  },
  {
   "id": "building-trawsfynydd-1228848458",
@@ -225,7 +421,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "absent",
+  "mapEditedAt": "2023-12-05"
  },
  {
   "id": "building-trawsfynydd-1228848459",
@@ -257,7 +457,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "absent",
+  "mapEditedAt": "2023-12-05"
  },
  {
   "id": "building-trawsfynydd-1322350577",
@@ -321,7 +525,87 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2024-10-08"
+ },
+ {
+  "id": "building-trawsfynydd-1322350578",
+  "osm": "way/1322350578",
+  "footprint": [
+   [
+    -3.9227125,
+    52.9082657
+   ],
+   [
+    -3.9228165,
+    52.9083929
+   ],
+   [
+    -3.9228285,
+    52.9083893
+   ],
+   [
+    -3.922899,
+    52.9084757
+   ],
+   [
+    -3.9229645,
+    52.9084562
+   ],
+   [
+    -3.9229562,
+    52.9084461
+   ],
+   [
+    -3.9231087,
+    52.9084008
+   ],
+   [
+    -3.9230604,
+    52.9083417
+   ],
+   [
+    -3.9229089,
+    52.9083868
+   ],
+   [
+    -3.9228953,
+    52.9083702
+   ],
+   [
+    -3.9229782,
+    52.9083455
+   ],
+   [
+    -3.9229526,
+    52.9083142
+   ],
+   [
+    -3.9228869,
+    52.9083337
+   ],
+   [
+    -3.9228081,
+    52.9082373
+   ],
+   [
+    -3.9227125,
+    52.9082657
+   ]
+  ],
+  "heightM": 4.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2024-10-08"
  },
  {
   "id": "building-trawsfynydd-1322350579",
@@ -361,7 +645,58 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2024-10-08"
+ },
+ {
+  "id": "building-trawsfynydd-159024152",
+  "osm": "way/159024152",
+  "footprint": [
+   [
+    -3.9136329,
+    52.9059724
+   ],
+   [
+    -3.9135678,
+    52.9060176
+   ],
+   [
+    -3.9138366,
+    52.9061582
+   ],
+   [
+    -3.9139872,
+    52.9060534
+   ],
+   [
+    -3.9139086,
+    52.9060123
+   ],
+   [
+    -3.913823,
+    52.9060718
+   ],
+   [
+    -3.9136329,
+    52.9059724
+   ]
+  ],
+  "heightM": 4.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2018-11-14",
+  "nmrw": [
+   41341
+  ]
  },
  {
   "id": "building-trawsfynydd-230005904",
@@ -393,7 +728,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2013-07-15"
  },
  {
   "id": "building-trawsfynydd-230005905",
@@ -441,7 +780,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2013-07-15"
  },
  {
   "id": "building-trawsfynydd-230005906",
@@ -473,7 +816,47 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2013-07-15"
+ },
+ {
+  "id": "building-trawsfynydd-230005907",
+  "osm": "way/230005907",
+  "footprint": [
+   [
+    -3.929245,
+    52.9212115
+   ],
+   [
+    -3.9294086,
+    52.9211598
+   ],
+   [
+    -3.929364,
+    52.9211085
+   ],
+   [
+    -3.9292004,
+    52.9211602
+   ],
+   [
+    -3.929245,
+    52.9212115
+   ]
+  ],
+  "heightM": 4.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2013-07-15"
  },
  {
   "id": "building-trawsfynydd-230005908",
@@ -509,7 +892,14 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2013-07-15",
+  "nmrw": [
+   28287
+  ]
  },
  {
   "id": "building-trawsfynydd-230005909",
@@ -549,7 +939,20 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2013-07-15",
+  "listed": [
+   {
+    "record": 4847,
+    "grade": "II"
+   }
+  ],
+  "nmrw": [
+   28287
+  ]
  },
  {
   "id": "building-trawsfynydd-230005910",
@@ -585,7 +988,17 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2021-07-14",
+  "listed": [
+   {
+    "record": 4847,
+    "grade": "II"
+   }
+  ]
  },
  {
   "id": "building-trawsfynydd-263214179",
@@ -633,7 +1046,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-02-24"
  },
  {
   "id": "building-trawsfynydd-263214181",
@@ -665,7 +1082,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-02-24"
  },
  {
   "id": "building-trawsfynydd-263214183",
@@ -697,7 +1118,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-02-24"
  },
  {
   "id": "building-trawsfynydd-263214184",
@@ -729,7 +1154,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-02-24"
  },
  {
   "id": "building-trawsfynydd-263214187",
@@ -761,7 +1190,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-02-24"
  },
  {
   "id": "building-trawsfynydd-263214188",
@@ -793,7 +1226,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-11-22"
  },
  {
   "id": "building-trawsfynydd-263214190",
@@ -841,7 +1278,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-06-29"
  },
  {
   "id": "building-trawsfynydd-263486607",
@@ -873,7 +1314,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-11-22"
  },
  {
   "id": "building-trawsfynydd-263486609",
@@ -905,7 +1350,11 @@
   "roof": "gabled",
   "kind": "background",
   "status": "existing",
-  "type": "church"
+  "type": "church",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-06-29"
  },
  {
   "id": "building-trawsfynydd-289033748",
@@ -937,7 +1386,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-06-21"
  },
  {
   "id": "building-trawsfynydd-289033749",
@@ -969,7 +1422,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-06-21"
  },
  {
   "id": "building-trawsfynydd-289033750",
@@ -1017,7 +1474,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-06-21"
  },
  {
   "id": "building-trawsfynydd-289033751",
@@ -1057,7 +1518,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-06-21"
  },
  {
   "id": "building-trawsfynydd-289033753",
@@ -1089,7 +1554,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-06-21"
  },
  {
   "id": "building-trawsfynydd-289033754",
@@ -1121,7 +1590,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-06-21"
  },
  {
   "id": "building-trawsfynydd-289033755",
@@ -1153,7 +1626,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-06-21"
  },
  {
   "id": "building-trawsfynydd-289033756",
@@ -1185,7 +1662,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-06-21"
  },
  {
   "id": "building-trawsfynydd-289033757",
@@ -1217,7 +1698,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2023-11-26"
  },
  {
   "id": "building-trawsfynydd-289033758",
@@ -1249,7 +1734,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "absent",
+  "mapEditedAt": "2014-06-21"
  },
  {
   "id": "building-trawsfynydd-290322349",
@@ -1289,7 +1778,11 @@
   "roof": "gabled",
   "kind": "background",
   "status": "existing",
-  "type": "terrace"
+  "type": "terrace",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-06-29"
  },
  {
   "id": "building-trawsfynydd-290322350",
@@ -1321,7 +1814,11 @@
   "roof": "gabled",
   "kind": "background",
   "status": "existing",
-  "type": "terrace"
+  "type": "terrace",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-06-29"
  },
  {
   "id": "building-trawsfynydd-290322351",
@@ -1385,7 +1882,91 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "terrace"
+  "type": "terrace",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-06-29"
+ },
+ {
+  "id": "building-trawsfynydd-290322352",
+  "osm": "way/290322352",
+  "footprint": [
+   [
+    -3.9236917,
+    52.90195
+   ],
+   [
+    -3.9236215,
+    52.9020142
+   ],
+   [
+    -3.9239536,
+    52.9021426
+   ],
+   [
+    -3.9240217,
+    52.9020809
+   ],
+   [
+    -3.9236917,
+    52.90195
+   ]
+  ],
+  "heightM": 7.0,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "terrace",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-06-29"
+ },
+ {
+  "id": "building-trawsfynydd-290322353",
+  "osm": "way/290322353",
+  "footprint": [
+   [
+    -3.9238113,
+    52.9017041
+   ],
+   [
+    -3.924278,
+    52.9018778
+   ],
+   [
+    -3.9242126,
+    52.9019418
+   ],
+   [
+    -3.9237822,
+    52.9017816
+   ],
+   [
+    -3.9238078,
+    52.9017566
+   ],
+   [
+    -3.9237715,
+    52.901743
+   ],
+   [
+    -3.9238113,
+    52.9017041
+   ]
+  ],
+  "heightM": 7.0,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "terrace",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-06-29"
  },
  {
   "id": "building-trawsfynydd-318844281",
@@ -1417,7 +1998,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "absent",
+  "mapEditedAt": "2014-12-25"
  },
  {
   "id": "building-trawsfynydd-318888704",
@@ -1453,7 +2038,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-12-25"
  },
  {
   "id": "building-trawsfynydd-318893150",
@@ -1493,7 +2082,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-12-26"
  },
  {
   "id": "building-trawsfynydd-318893151",
@@ -1533,7 +2126,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-12-26"
  },
  {
   "id": "building-trawsfynydd-318893152",
@@ -1581,7 +2178,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2023-12-05"
  },
  {
   "id": "building-trawsfynydd-318983148",
@@ -1617,7 +2218,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-12-26"
  },
  {
   "id": "building-trawsfynydd-369300910",
@@ -1649,7 +2254,399 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2015-09-05"
+ },
+ {
+  "id": "building-trawsfynydd-372388116",
+  "osm": "way/372388116",
+  "footprint": [
+   [
+    -3.9393832,
+    52.933248
+   ],
+   [
+    -3.9394803,
+    52.9331757
+   ],
+   [
+    -3.9395065,
+    52.9331561
+   ],
+   [
+    -3.9395932,
+    52.9331984
+   ],
+   [
+    -3.9394699,
+    52.9332903
+   ],
+   [
+    -3.9393832,
+    52.933248
+   ]
+  ],
+  "heightM": 3.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2015-10-03"
+ },
+ {
+  "id": "building-trawsfynydd-373575645",
+  "osm": "way/373575645",
+  "footprint": [
+   [
+    -3.9340726,
+    52.9286589
+   ],
+   [
+    -3.9341957,
+    52.9285546
+   ],
+   [
+    -3.9340425,
+    52.9284889
+   ],
+   [
+    -3.9339789,
+    52.9285428
+   ],
+   [
+    -3.9340429,
+    52.9285703
+   ],
+   [
+    -3.9339834,
+    52.9286207
+   ],
+   [
+    -3.9340726,
+    52.9286589
+   ]
+  ],
+  "heightM": 4.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "absent",
+  "mapEditedAt": "2015-10-03"
+ },
+ {
+  "id": "building-trawsfynydd-373577738",
+  "osm": "way/373577738",
+  "footprint": [
+   [
+    -3.9424838,
+    52.9328024
+   ],
+   [
+    -3.942569,
+    52.9329048
+   ],
+   [
+    -3.9423621,
+    52.9329673
+   ],
+   [
+    -3.9422769,
+    52.9328649
+   ],
+   [
+    -3.9424838,
+    52.9328024
+   ]
+  ],
+  "heightM": 8.3,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2015-10-03",
+  "nmrw": [
+   8551
+  ],
+  "curated": "utica-chapel"
+ },
+ {
+  "id": "building-trawsfynydd-373577741",
+  "osm": "way/373577741",
+  "footprint": [
+   [
+    -3.9419692,
+    52.9322463
+   ],
+   [
+    -3.941878,
+    52.9322764
+   ],
+   [
+    -3.9419492,
+    52.9323549
+   ],
+   [
+    -3.9420404,
+    52.9323248
+   ],
+   [
+    -3.9419692,
+    52.9322463
+   ]
+  ],
+  "heightM": 6.2,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "house",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2015-10-03"
+ },
+ {
+  "id": "building-trawsfynydd-373586023",
+  "osm": "way/373586023",
+  "footprint": [
+   [
+    -3.9182084,
+    52.9219936
+   ],
+   [
+    -3.9183044,
+    52.9220972
+   ],
+   [
+    -3.9186865,
+    52.9219683
+   ],
+   [
+    -3.9185905,
+    52.9218648
+   ],
+   [
+    -3.9182084,
+    52.9219936
+   ]
+  ],
+  "heightM": 4.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2015-10-03"
+ },
+ {
+  "id": "building-trawsfynydd-373586024",
+  "osm": "way/373586024",
+  "footprint": [
+   [
+    -3.9188069,
+    52.9219058
+   ],
+   [
+    -3.9186412,
+    52.9220677
+   ],
+   [
+    -3.9188853,
+    52.9221586
+   ],
+   [
+    -3.9190578,
+    52.9219901
+   ],
+   [
+    -3.9190054,
+    52.9219706
+   ],
+   [
+    -3.9190769,
+    52.9219007
+   ],
+   [
+    -3.9187707,
+    52.9217868
+   ],
+   [
+    -3.9186925,
+    52.9218632
+   ],
+   [
+    -3.9188069,
+    52.9219058
+   ]
+  ],
+  "heightM": 5.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2015-10-03"
+ },
+ {
+  "id": "building-trawsfynydd-373586025",
+  "osm": "way/373586025",
+  "footprint": [
+   [
+    -3.9190189,
+    52.9222113
+   ],
+   [
+    -3.9189105,
+    52.9223047
+   ],
+   [
+    -3.9190801,
+    52.9223762
+   ],
+   [
+    -3.9193504,
+    52.9221429
+   ],
+   [
+    -3.919135,
+    52.9220522
+   ],
+   [
+    -3.918973,
+    52.9221919
+   ],
+   [
+    -3.9190189,
+    52.9222113
+   ]
+  ],
+  "heightM": 4.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2015-10-03"
+ },
+ {
+  "id": "building-trawsfynydd-373586026",
+  "osm": "way/373586026",
+  "footprint": [
+   [
+    -3.9195055,
+    52.9217149
+   ],
+   [
+    -3.9192303,
+    52.9218933
+   ],
+   [
+    -3.9192802,
+    52.9219213
+   ],
+   [
+    -3.9195555,
+    52.9217429
+   ],
+   [
+    -3.9195055,
+    52.9217149
+   ]
+  ],
+  "heightM": 4.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2015-10-03"
+ },
+ {
+  "id": "building-trawsfynydd-373586027",
+  "osm": "way/373586027",
+  "footprint": [
+   [
+    -3.9194619,
+    52.9216237
+   ],
+   [
+    -3.9193616,
+    52.9217009
+   ],
+   [
+    -3.9194051,
+    52.9217214
+   ],
+   [
+    -3.9193025,
+    52.9218004
+   ],
+   [
+    -3.9192615,
+    52.9217811
+   ],
+   [
+    -3.9191465,
+    52.9218696
+   ],
+   [
+    -3.9190695,
+    52.9218332
+   ],
+   [
+    -3.9192225,
+    52.9217155
+   ],
+   [
+    -3.9192079,
+    52.9217086
+   ],
+   [
+    -3.9193728,
+    52.9215816
+   ],
+   [
+    -3.9194619,
+    52.9216237
+   ]
+  ],
+  "heightM": 5.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2015-10-03"
  },
  {
   "id": "building-trawsfynydd-428720091",
@@ -1681,7 +2678,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2016-07-02"
  },
  {
   "id": "building-trawsfynydd-428720093",
@@ -1721,7 +2722,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2016-07-02"
  },
  {
   "id": "building-trawsfynydd-428720094",
@@ -1761,7 +2766,63 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2016-07-02"
+ },
+ {
+  "id": "building-trawsfynydd-428739924",
+  "osm": "way/428739924",
+  "footprint": [
+   [
+    -3.9096935,
+    52.9069053
+   ],
+   [
+    -3.909692,
+    52.9069855
+   ],
+   [
+    -3.9098958,
+    52.9069868
+   ],
+   [
+    -3.9098963,
+    52.9069596
+   ],
+   [
+    -3.9099221,
+    52.9069598
+   ],
+   [
+    -3.9099228,
+    52.9069224
+   ],
+   [
+    -3.9098976,
+    52.9069222
+   ],
+   [
+    -3.9098979,
+    52.9069067
+   ],
+   [
+    -3.9096935,
+    52.9069053
+   ]
+  ],
+  "heightM": 5.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "house",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2016-07-02"
  },
  {
   "id": "building-trawsfynydd-428739940",
@@ -1793,7 +2854,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2016-07-02"
  },
  {
   "id": "building-trawsfynydd-428739941",
@@ -1825,7 +2890,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2016-07-02"
  },
  {
   "id": "building-trawsfynydd-428788777",
@@ -1941,7 +3010,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "absent",
+  "mapEditedAt": "2016-07-02"
  },
  {
   "id": "building-trawsfynydd-428798796",
@@ -1973,7 +3046,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2016-07-02"
  },
  {
   "id": "building-trawsfynydd-428798798",
@@ -2005,7 +3082,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2016-07-02"
  },
  {
   "id": "building-trawsfynydd-428798800",
@@ -2069,7 +3150,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2016-07-02"
  },
  {
   "id": "building-trawsfynydd-428798802",
@@ -2133,7 +3218,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2016-07-02"
  },
  {
   "id": "building-trawsfynydd-428800188",
@@ -2189,7 +3278,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "absent",
+  "lidarFlown": "2022-03-01",
+  "osMap": "absent",
+  "mapEditedAt": "2016-07-02"
  },
  {
   "id": "building-trawsfynydd-6377654",
@@ -2221,7 +3314,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "absent",
+  "mapEditedAt": "2016-07-02"
  },
  {
   "id": "building-trawsfynydd-686443070",
@@ -2253,7 +3350,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2019-04-28"
  },
  {
   "id": "building-trawsfynydd-955309009",
@@ -2285,6 +3386,3053 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "industrial"
+  "type": "industrial",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2021-06-17"
+ },
+ {
+  "id": "building-trawsfynydd-os-006FA51E-7FBC-43CF-9539-6E60A5E475E7",
+  "os": "os/006FA51E-7FBC-43CF-9539-6E60A5E475E7",
+  "footprint": [
+   [
+    -3.9229699,
+    52.904735
+   ],
+   [
+    -3.9230971,
+    52.9047352
+   ],
+   [
+    -3.9230967,
+    52.9048187
+   ],
+   [
+    -3.9229696,
+    52.9048185
+   ],
+   [
+    -3.9229699,
+    52.904735
+   ]
+  ],
+  "heightM": 7.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-02279620-04D3-4799-A811-321E10E27519",
+  "os": "os/02279620-04D3-4799-A811-321E10E27519",
+  "footprint": [
+   [
+    -3.9287307,
+    52.9193354
+   ],
+   [
+    -3.9286822,
+    52.9193197
+   ],
+   [
+    -3.9287522,
+    52.9192409
+   ],
+   [
+    -3.9288007,
+    52.9192566
+   ],
+   [
+    -3.9287307,
+    52.9193354
+   ]
+  ],
+  "heightM": 8.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-037E2926-B7E4-4DC8-B542-7A75A27B9DB2",
+  "os": "os/037E2926-B7E4-4DC8-B542-7A75A27B9DB2",
+  "footprint": [
+   [
+    -3.934853,
+    52.9243472
+   ],
+   [
+    -3.9348715,
+    52.9243906
+   ],
+   [
+    -3.9347774,
+    52.9244053
+   ],
+   [
+    -3.9347589,
+    52.9243619
+   ],
+   [
+    -3.934853,
+    52.9243472
+   ]
+  ],
+  "heightM": 11.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-04FD26CF-681E-4599-9536-F74E6332E0C1",
+  "os": "os/04FD26CF-681E-4599-9536-F74E6332E0C1",
+  "footprint": [
+   [
+    -3.9182472,
+    52.9218315
+   ],
+   [
+    -3.9183991,
+    52.921763
+   ],
+   [
+    -3.9184887,
+    52.9218357
+   ],
+   [
+    -3.918337,
+    52.9219041
+   ],
+   [
+    -3.9182472,
+    52.9218315
+   ]
+  ],
+  "heightM": 8.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-07767A85-5780-422C-B42A-4F31F53FB320",
+  "os": "os/07767A85-5780-422C-B42A-4F31F53FB320",
+  "footprint": [
+   [
+    -3.9229446,
+    52.9026057
+   ],
+   [
+    -3.9228019,
+    52.9026005
+   ],
+   [
+    -3.9228161,
+    52.9024578
+   ],
+   [
+    -3.9229588,
+    52.9024629
+   ],
+   [
+    -3.9229446,
+    52.9026057
+   ]
+  ],
+  "heightM": 6.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-07BA416D-DCBA-4B9C-96ED-6BA5FC55F2EF",
+  "os": "os/07BA416D-DCBA-4B9C-96ED-6BA5FC55F2EF",
+  "footprint": [
+   [
+    -3.9143884,
+    52.9059161
+   ],
+   [
+    -3.9143069,
+    52.9059641
+   ],
+   [
+    -3.9141751,
+    52.9058824
+   ],
+   [
+    -3.9142566,
+    52.9058343
+   ],
+   [
+    -3.9143884,
+    52.9059161
+   ]
+  ],
+  "heightM": 7.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-07F7C779-B959-4CC3-8D74-F95B6B9A73AA",
+  "os": "os/07F7C779-B959-4CC3-8D74-F95B6B9A73AA",
+  "footprint": [
+   [
+    -3.9136857,
+    52.9055233
+   ],
+   [
+    -3.9139276,
+    52.9056076
+   ],
+   [
+    -3.9138763,
+    52.9056617
+   ],
+   [
+    -3.9136345,
+    52.9055764
+   ],
+   [
+    -3.9136857,
+    52.9055233
+   ]
+  ],
+  "heightM": 6.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26",
+  "nmrw": [
+   12066
+  ]
+ },
+ {
+  "id": "building-trawsfynydd-os-0BDB4E11-EE83-46F9-B236-433207852D45",
+  "os": "os/0BDB4E11-EE83-46F9-B236-433207852D45",
+  "footprint": [
+   [
+    -3.9228758,
+    52.905773
+   ],
+   [
+    -3.9228073,
+    52.905887
+   ],
+   [
+    -3.9226521,
+    52.9058546
+   ],
+   [
+    -3.9227182,
+    52.9057398
+   ],
+   [
+    -3.9228758,
+    52.905773
+   ]
+  ],
+  "heightM": 4.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-0C381E45-813E-4E11-BB54-855B9F0CC4DF",
+  "os": "os/0C381E45-813E-4E11-BB54-855B9F0CC4DF",
+  "footprint": [
+   [
+    -3.9128823,
+    52.9066692
+   ],
+   [
+    -3.9129502,
+    52.9066293
+   ],
+   [
+    -3.9130734,
+    52.9067059
+   ],
+   [
+    -3.9130054,
+    52.9067458
+   ],
+   [
+    -3.9128823,
+    52.9066692
+   ]
+  ],
+  "heightM": 4.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-0CBA441C-29CD-431E-898D-24ADC43E423B",
+  "os": "os/0CBA441C-29CD-431E-898D-24ADC43E423B",
+  "footprint": [
+   [
+    -3.9199986,
+    52.9046337
+   ],
+   [
+    -3.9199381,
+    52.9046641
+   ],
+   [
+    -3.9198582,
+    52.904606
+   ],
+   [
+    -3.9199187,
+    52.9045756
+   ],
+   [
+    -3.9199986,
+    52.9046337
+   ]
+  ],
+  "heightM": 15.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-0D4CB712-DB25-446E-8FB6-51E245B0C838",
+  "os": "os/0D4CB712-DB25-446E-8FB6-51E245B0C838",
+  "footprint": [
+   [
+    -3.9230175,
+    52.903745
+   ],
+   [
+    -3.9231348,
+    52.9037407
+   ],
+   [
+    -3.9231428,
+    52.9038203
+   ],
+   [
+    -3.9230255,
+    52.9038246
+   ],
+   [
+    -3.9230175,
+    52.903745
+   ]
+  ],
+  "heightM": 8.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-0EAD7663-40EE-4C6B-86FA-11F8C76EE13C",
+  "os": "os/0EAD7663-40EE-4C6B-86FA-11F8C76EE13C",
+  "footprint": [
+   [
+    -3.9210035,
+    52.9037128
+   ],
+   [
+    -3.9209149,
+    52.903674
+   ],
+   [
+    -3.9209955,
+    52.9036067
+   ],
+   [
+    -3.9210841,
+    52.9036456
+   ],
+   [
+    -3.9210035,
+    52.9037128
+   ]
+  ],
+  "heightM": 7.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-103160AA-B378-44EB-AC78-FEAAB13A3980",
+  "os": "os/103160AA-B378-44EB-AC78-FEAAB13A3980",
+  "footprint": [
+   [
+    -3.9234393,
+    52.9058402
+   ],
+   [
+    -3.9235107,
+    52.9056531
+   ],
+   [
+    -3.9236397,
+    52.9056714
+   ],
+   [
+    -3.9235684,
+    52.9058579
+   ],
+   [
+    -3.9234393,
+    52.9058402
+   ]
+  ],
+  "heightM": 5.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-125063D5-9243-4F3C-A18F-247F54FC6C56",
+  "os": "os/125063D5-9243-4F3C-A18F-247F54FC6C56",
+  "footprint": [
+   [
+    -3.9293048,
+    52.9213786
+   ],
+   [
+    -3.929279,
+    52.9213471
+   ],
+   [
+    -3.9294266,
+    52.9213031
+   ],
+   [
+    -3.9294524,
+    52.9213346
+   ],
+   [
+    -3.9293048,
+    52.9213786
+   ]
+  ],
+  "heightM": 3.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-12865C50-F268-4E3A-B44C-FFC2C7385BC8",
+  "os": "os/12865C50-F268-4E3A-B44C-FFC2C7385BC8",
+  "footprint": [
+   [
+    -3.923482,
+    52.9031778
+   ],
+   [
+    -3.9234757,
+    52.903076
+   ],
+   [
+    -3.9236189,
+    52.9030728
+   ],
+   [
+    -3.9236252,
+    52.9031746
+   ],
+   [
+    -3.923482,
+    52.9031778
+   ]
+  ],
+  "heightM": 3.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-1618532C-AD94-4CB4-881A-390FC0CC5198",
+  "os": "os/1618532C-AD94-4CB4-881A-390FC0CC5198",
+  "footprint": [
+   [
+    -3.920706,
+    52.919168
+   ],
+   [
+    -3.9208299,
+    52.9193325
+   ],
+   [
+    -3.9207123,
+    52.9193648
+   ],
+   [
+    -3.9205883,
+    52.9192004
+   ],
+   [
+    -3.920706,
+    52.919168
+   ]
+  ],
+  "heightM": 4.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-1B0E0A51-EC89-45F8-BC2F-348A506E3733",
+  "os": "os/1B0E0A51-EC89-45F8-BC2F-348A506E3733",
+  "footprint": [
+   [
+    -3.9144905,
+    52.9076321
+   ],
+   [
+    -3.9144213,
+    52.9075463
+   ],
+   [
+    -3.9145897,
+    52.9074973
+   ],
+   [
+    -3.9146583,
+    52.907582
+   ],
+   [
+    -3.9144905,
+    52.9076321
+   ]
+  ],
+  "heightM": 3.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-21E80A94-6957-4928-A64C-5F07B8A810AE",
+  "os": "os/21E80A94-6957-4928-A64C-5F07B8A810AE",
+  "footprint": [
+   [
+    -3.9229695,
+    52.9043623
+   ],
+   [
+    -3.923112,
+    52.9043665
+   ],
+   [
+    -3.9231042,
+    52.9044611
+   ],
+   [
+    -3.9229617,
+    52.9044568
+   ],
+   [
+    -3.9229695,
+    52.9043623
+   ]
+  ],
+  "heightM": 7.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-2472C2B7-E211-42D1-8510-385DDFEED536",
+  "os": "os/2472C2B7-E211-42D1-8510-385DDFEED536",
+  "footprint": [
+   [
+    -3.9208153,
+    52.9039893
+   ],
+   [
+    -3.9207867,
+    52.9040198
+   ],
+   [
+    -3.9207011,
+    52.9039905
+   ],
+   [
+    -3.9207297,
+    52.90396
+   ],
+   [
+    -3.9208153,
+    52.9039893
+   ]
+  ],
+  "heightM": 2.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-25720A5F-D49C-44D4-B751-A798F68CC724",
+  "os": "os/25720A5F-D49C-44D4-B751-A798F68CC724",
+  "footprint": [
+   [
+    -3.9235272,
+    52.9033793
+   ],
+   [
+    -3.9235219,
+    52.9033216
+   ],
+   [
+    -3.9236351,
+    52.9033179
+   ],
+   [
+    -3.9236404,
+    52.9033755
+   ],
+   [
+    -3.9235272,
+    52.9033793
+   ]
+  ],
+  "heightM": 3.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-282BA60F-C153-47ED-8658-F555C607423F",
+  "os": "os/282BA60F-C153-47ED-8658-F555C607423F",
+  "footprint": [
+   [
+    -3.923702,
+    52.9034284
+   ],
+   [
+    -3.9237386,
+    52.9034608
+   ],
+   [
+    -3.9236553,
+    52.9034952
+   ],
+   [
+    -3.9236188,
+    52.9034627
+   ],
+   [
+    -3.923702,
+    52.9034284
+   ]
+  ],
+  "heightM": 2.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-2FB07409-5813-4F0C-AC78-6A34ECDD3F0B",
+  "os": "os/2FB07409-5813-4F0C-AC78-6A34ECDD3F0B",
+  "footprint": [
+   [
+    -3.9215153,
+    52.9032068
+   ],
+   [
+    -3.921429,
+    52.903271
+   ],
+   [
+    -3.9213484,
+    52.9032351
+   ],
+   [
+    -3.9215464,
+    52.903076
+   ],
+   [
+    -3.9216254,
+    52.9031129
+   ],
+   [
+    -3.9216143,
+    52.9031722
+   ],
+   [
+    -3.921662,
+    52.9032169
+   ],
+   [
+    -3.9215659,
+    52.9032543
+   ],
+   [
+    -3.9215153,
+    52.9032068
+   ]
+  ],
+  "heightM": 6.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-3068462C-BAF4-483D-A85F-C91037EC52CD",
+  "os": "os/3068462C-BAF4-483D-A85F-C91037EC52CD",
+  "footprint": [
+   [
+    -3.9225802,
+    52.9029963
+   ],
+   [
+    -3.9224267,
+    52.9030079
+   ],
+   [
+    -3.9224096,
+    52.9029259
+   ],
+   [
+    -3.9225632,
+    52.9029143
+   ],
+   [
+    -3.9225802,
+    52.9029963
+   ]
+  ],
+  "heightM": 7.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-333C2A1E-4C91-46D9-A478-1234AA0231E0",
+  "os": "os/333C2A1E-4C91-46D9-A478-1234AA0231E0",
+  "footprint": [
+   [
+    -3.9226821,
+    52.9054689
+   ],
+   [
+    -3.9227547,
+    52.9053246
+   ],
+   [
+    -3.922916,
+    52.9053543
+   ],
+   [
+    -3.9228434,
+    52.9054987
+   ],
+   [
+    -3.9226821,
+    52.9054689
+   ]
+  ],
+  "heightM": 4.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-34913688-3BA2-4950-839A-64E561CCFEBD",
+  "os": "os/34913688-3BA2-4950-839A-64E561CCFEBD",
+  "footprint": [
+   [
+    -3.9231329,
+    52.9042322
+   ],
+   [
+    -3.923123,
+    52.9043297
+   ],
+   [
+    -3.9228852,
+    52.9043209
+   ],
+   [
+    -3.9228951,
+    52.9042235
+   ],
+   [
+    -3.9231329,
+    52.9042322
+   ]
+  ],
+  "heightM": 9.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-35B002BD-93C2-4582-ABC0-6340CFB5A05E",
+  "os": "os/35B002BD-93C2-4582-ABC0-6340CFB5A05E",
+  "footprint": [
+   [
+    -3.9229646,
+    52.9033356
+   ],
+   [
+    -3.9230979,
+    52.9033311
+   ],
+   [
+    -3.923125,
+    52.9036201
+   ],
+   [
+    -3.9229424,
+    52.9036264
+   ],
+   [
+    -3.9229153,
+    52.9033373
+   ],
+   [
+    -3.9228105,
+    52.9033393
+   ],
+   [
+    -3.9227932,
+    52.9030815
+   ],
+   [
+    -3.9230744,
+    52.903075
+   ],
+   [
+    -3.9230863,
+    52.9032475
+   ],
+   [
+    -3.9229602,
+    52.903251
+   ],
+   [
+    -3.9229646,
+    52.9033356
+   ]
+  ],
+  "heightM": 8.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-38C0DB4A-86D8-46DF-809C-840245C352AB",
+  "os": "os/38C0DB4A-86D8-46DF-809C-840245C352AB",
+  "footprint": [
+   [
+    -3.9235374,
+    52.9044301
+   ],
+   [
+    -3.9235406,
+    52.9043952
+   ],
+   [
+    -3.923657,
+    52.9043992
+   ],
+   [
+    -3.9236538,
+    52.904434
+   ],
+   [
+    -3.9235374,
+    52.9044301
+   ]
+  ],
+  "heightM": 3.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-39CC82CB-FDA0-4748-8686-89E8BC7D6087",
+  "os": "os/39CC82CB-FDA0-4748-8686-89E8BC7D6087",
+  "footprint": [
+   [
+    -3.9152453,
+    52.9056627
+   ],
+   [
+    -3.9155895,
+    52.9055797
+   ],
+   [
+    -3.9156253,
+    52.9056378
+   ],
+   [
+    -3.9151541,
+    52.9057536
+   ],
+   [
+    -3.9150691,
+    52.9056357
+   ],
+   [
+    -3.9152008,
+    52.905601
+   ],
+   [
+    -3.9152453,
+    52.9056627
+   ]
+  ],
+  "heightM": 7.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-3D132971-E482-4FBF-A161-7685C20144DB",
+  "os": "os/3D132971-E482-4FBF-A161-7685C20144DB",
+  "footprint": [
+   [
+    -3.9147614,
+    52.907526
+   ],
+   [
+    -3.9147445,
+    52.9075035
+   ],
+   [
+    -3.9149468,
+    52.9074483
+   ],
+   [
+    -3.9149637,
+    52.9074708
+   ],
+   [
+    -3.9147614,
+    52.907526
+   ]
+  ],
+  "heightM": 2.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-4612161D-4A4E-4B0A-BE00-0D4DC24E2431",
+  "os": "os/4612161D-4A4E-4B0A-BE00-0D4DC24E2431",
+  "footprint": [
+   [
+    -3.9233581,
+    52.9049653
+   ],
+   [
+    -3.923472,
+    52.9049445
+   ],
+   [
+    -3.9235098,
+    52.9050202
+   ],
+   [
+    -3.923396,
+    52.905041
+   ],
+   [
+    -3.9233581,
+    52.9049653
+   ]
+  ],
+  "heightM": 7.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-4819F99F-7D4B-4680-B983-29E0054D3C8A",
+  "os": "os/4819F99F-7D4B-4680-B983-29E0054D3C8A",
+  "footprint": [
+   [
+    -3.915213,
+    52.9068244
+   ],
+   [
+    -3.9152708,
+    52.9068008
+   ],
+   [
+    -3.9153458,
+    52.906868
+   ],
+   [
+    -3.9152879,
+    52.9068916
+   ],
+   [
+    -3.915213,
+    52.9068244
+   ]
+  ],
+  "heightM": 2.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-4B758AE7-4B33-4300-B159-F3258C5AB979",
+  "os": "os/4B758AE7-4B33-4300-B159-F3258C5AB979",
+  "footprint": [
+   [
+    -3.9149316,
+    52.9079603
+   ],
+   [
+    -3.9146295,
+    52.9077615
+   ],
+   [
+    -3.9147281,
+    52.9077153
+   ],
+   [
+    -3.9150199,
+    52.9079077
+   ],
+   [
+    -3.9149316,
+    52.9079603
+   ]
+  ],
+  "heightM": 5.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-50EE3254-870A-4E5B-8ED8-EFD15ED82677",
+  "os": "os/50EE3254-870A-4E5B-8ED8-EFD15ED82677",
+  "footprint": [
+   [
+    -3.9182597,
+    52.9158023
+   ],
+   [
+    -3.9181293,
+    52.9158001
+   ],
+   [
+    -3.9181398,
+    52.9155754
+   ],
+   [
+    -3.9182702,
+    52.9155776
+   ],
+   [
+    -3.9182597,
+    52.9158023
+   ]
+  ],
+  "heightM": 6.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-50F0E3E1-01FF-4DFE-ACC6-671EFA29E4E0",
+  "os": "os/50F0E3E1-01FF-4DFE-ACC6-671EFA29E4E0",
+  "footprint": [
+   [
+    -3.9241383,
+    52.9034046
+   ],
+   [
+    -3.9243219,
+    52.9033958
+   ],
+   [
+    -3.9243407,
+    52.9035382
+   ],
+   [
+    -3.9241573,
+    52.9035471
+   ],
+   [
+    -3.9241383,
+    52.9034046
+   ]
+  ],
+  "heightM": 6.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-5204FB0F-1C63-4E65-9A55-2B2DFB22B097",
+  "os": "os/5204FB0F-1C63-4E65-9A55-2B2DFB22B097",
+  "footprint": [
+   [
+    -3.9129295,
+    52.9056505
+   ],
+   [
+    -3.9124828,
+    52.9055087
+   ],
+   [
+    -3.9125691,
+    52.9054087
+   ],
+   [
+    -3.9130192,
+    52.9055515
+   ],
+   [
+    -3.9129295,
+    52.9056505
+   ]
+  ],
+  "heightM": 7.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-538D57A3-1F8B-4FE6-B313-58BBD94D13E3",
+  "os": "os/538D57A3-1F8B-4FE6-B313-58BBD94D13E3",
+  "footprint": [
+   [
+    -3.9207518,
+    52.9017741
+   ],
+   [
+    -3.920593,
+    52.9018255
+   ],
+   [
+    -3.9205139,
+    52.9017383
+   ],
+   [
+    -3.9206723,
+    52.9016857
+   ],
+   [
+    -3.9207518,
+    52.9017741
+   ]
+  ],
+  "heightM": 8.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-5AF3D191-65A4-4458-B5B6-1CFB9C37F7C5",
+  "os": "os/5AF3D191-65A4-4458-B5B6-1CFB9C37F7C5",
+  "footprint": [
+   [
+    -3.9159105,
+    52.9056139
+   ],
+   [
+    -3.9157951,
+    52.905613
+   ],
+   [
+    -3.9157977,
+    52.9054962
+   ],
+   [
+    -3.9159131,
+    52.9054972
+   ],
+   [
+    -3.9159113,
+    52.9055772
+   ],
+   [
+    -3.9160368,
+    52.905546
+   ],
+   [
+    -3.9160717,
+    52.9055971
+   ],
+   [
+    -3.9159408,
+    52.9056298
+   ],
+   [
+    -3.9159105,
+    52.9056139
+   ]
+  ],
+  "heightM": 3.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-5D89AB4C-F89D-401F-9A64-BB651E277910",
+  "os": "os/5D89AB4C-F89D-401F-9A64-BB651E277910",
+  "footprint": [
+   [
+    -3.9135787,
+    52.9065712
+   ],
+   [
+    -3.9136405,
+    52.9066029
+   ],
+   [
+    -3.9135829,
+    52.9066438
+   ],
+   [
+    -3.9135213,
+    52.9066122
+   ],
+   [
+    -3.9135787,
+    52.9065712
+   ]
+  ],
+  "heightM": 3.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-619DAB28-79B7-41CC-A3BD-0ED3DE5ECFFA",
+  "os": "os/619DAB28-79B7-41CC-A3BD-0ED3DE5ECFFA",
+  "footprint": [
+   [
+    -3.9233658,
+    52.9046629
+   ],
+   [
+    -3.9232404,
+    52.9046502
+   ],
+   [
+    -3.9232712,
+    52.9045381
+   ],
+   [
+    -3.9233967,
+    52.9045508
+   ],
+   [
+    -3.9233658,
+    52.9046629
+   ]
+  ],
+  "heightM": 5.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-63E643EB-03E4-4DEC-A965-A550CD3C9F35",
+  "os": "os/63E643EB-03E4-4DEC-A965-A550CD3C9F35",
+  "footprint": [
+   [
+    -3.919276,
+    52.905572
+   ],
+   [
+    -3.9193507,
+    52.9055516
+   ],
+   [
+    -3.9194851,
+    52.9057318
+   ],
+   [
+    -3.9194104,
+    52.9057522
+   ],
+   [
+    -3.919276,
+    52.905572
+   ]
+  ],
+  "heightM": 14.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-64A13AE9-3DC2-41E2-8182-63D756D8A3A3",
+  "os": "os/64A13AE9-3DC2-41E2-8182-63D756D8A3A3",
+  "footprint": [
+   [
+    -3.9137217,
+    52.9067729
+   ],
+   [
+    -3.9138063,
+    52.9067589
+   ],
+   [
+    -3.9138325,
+    52.9068165
+   ],
+   [
+    -3.9137479,
+    52.9068305
+   ],
+   [
+    -3.9137217,
+    52.9067729
+   ]
+  ],
+  "heightM": 4.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-6B2A0F1B-CE88-4AC6-8264-58DC99F0D02E",
+  "os": "os/6B2A0F1B-CE88-4AC6-8264-58DC99F0D02E",
+  "footprint": [
+   [
+    -3.9230791,
+    52.9028539
+   ],
+   [
+    -3.9230874,
+    52.9030408
+   ],
+   [
+    -3.9228804,
+    52.9030442
+   ],
+   [
+    -3.9228722,
+    52.9028573
+   ],
+   [
+    -3.9230791,
+    52.9028539
+   ]
+  ],
+  "heightM": 8.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-6CB3FA36-2D73-4212-9818-9FD539792C2E",
+  "os": "os/6CB3FA36-2D73-4212-9818-9FD539792C2E",
+  "footprint": [
+   [
+    -3.9233278,
+    52.9045027
+   ],
+   [
+    -3.9233373,
+    52.9044151
+   ],
+   [
+    -3.9234839,
+    52.9044209
+   ],
+   [
+    -3.9234742,
+    52.9045085
+   ],
+   [
+    -3.9233278,
+    52.9045027
+   ]
+  ],
+  "heightM": 7.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-6E27E19E-AE0D-49CF-BAE2-FC69CBA77B43",
+  "os": "os/6E27E19E-AE0D-49CF-BAE2-FC69CBA77B43",
+  "footprint": [
+   [
+    -3.9133491,
+    52.9064454
+   ],
+   [
+    -3.9134056,
+    52.9064774
+   ],
+   [
+    -3.9133492,
+    52.9065139
+   ],
+   [
+    -3.9132925,
+    52.906482
+   ],
+   [
+    -3.9133491,
+    52.9064454
+   ]
+  ],
+  "heightM": 4.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-7646C804-FB48-4BA9-AC98-C44C6F2C2B1E",
+  "os": "os/7646C804-FB48-4BA9-AC98-C44C6F2C2B1E",
+  "footprint": [
+   [
+    -3.9127672,
+    52.9064824
+   ],
+   [
+    -3.9128249,
+    52.9064419
+   ],
+   [
+    -3.9130418,
+    52.9065552
+   ],
+   [
+    -3.9129825,
+    52.9065967
+   ],
+   [
+    -3.9127672,
+    52.9064824
+   ]
+  ],
+  "heightM": 6.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-778A6FA2-A31F-4628-BC20-9F149EEB149C",
+  "os": "os/778A6FA2-A31F-4628-BC20-9F149EEB149C",
+  "footprint": [
+   [
+    -3.9206322,
+    52.9172966
+   ],
+   [
+    -3.9208651,
+    52.9172109
+   ],
+   [
+    -3.9209321,
+    52.9172844
+   ],
+   [
+    -3.9207133,
+    52.9173652
+   ],
+   [
+    -3.9206322,
+    52.9172966
+   ]
+  ],
+  "heightM": 5.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-7AF31639-7EEA-4806-AB8D-CBF369D2D169",
+  "os": "os/7AF31639-7EEA-4806-AB8D-CBF369D2D169",
+  "footprint": [
+   [
+    -3.9206409,
+    52.9041375
+   ],
+   [
+    -3.9207243,
+    52.9041722
+   ],
+   [
+    -3.9206191,
+    52.9042646
+   ],
+   [
+    -3.9205355,
+    52.9042297
+   ],
+   [
+    -3.9206409,
+    52.9041375
+   ]
+  ],
+  "heightM": 2.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-7CD24EDC-7E58-4709-BBA8-3C1674483E79",
+  "os": "os/7CD24EDC-7E58-4709-BBA8-3C1674483E79",
+  "footprint": [
+   [
+    -3.9212858,
+    52.9032545
+   ],
+   [
+    -3.9214043,
+    52.9032911
+   ],
+   [
+    -3.9213382,
+    52.9033693
+   ],
+   [
+    -3.9212197,
+    52.9033327
+   ],
+   [
+    -3.9212858,
+    52.9032545
+   ]
+  ],
+  "heightM": 4.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-7F1B89B3-D93A-4E47-9D7B-9A693241F712",
+  "os": "os/7F1B89B3-D93A-4E47-9D7B-9A693241F712",
+  "footprint": [
+   [
+    -3.9153895,
+    52.9058375
+   ],
+   [
+    -3.9153596,
+    52.9057903
+   ],
+   [
+    -3.9154391,
+    52.9057719
+   ],
+   [
+    -3.915469,
+    52.9058192
+   ],
+   [
+    -3.9153895,
+    52.9058375
+   ]
+  ],
+  "heightM": 3.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-80374F25-91C9-4A3E-82BA-DE04FE53863F",
+  "os": "os/80374F25-91C9-4A3E-82BA-DE04FE53863F",
+  "footprint": [
+   [
+    -3.9149527,
+    52.9067114
+   ],
+   [
+    -3.9151169,
+    52.9068411
+   ],
+   [
+    -3.9150082,
+    52.9068914
+   ],
+   [
+    -3.914844,
+    52.9067617
+   ],
+   [
+    -3.9149527,
+    52.9067114
+   ]
+  ],
+  "heightM": 5.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-829D0C57-5A00-42DC-B7D8-C2AFB274C9C9",
+  "os": "os/829D0C57-5A00-42DC-B7D8-C2AFB274C9C9",
+  "footprint": [
+   [
+    -3.9186264,
+    52.9213895
+   ],
+   [
+    -3.918804,
+    52.9212086
+   ],
+   [
+    -3.9188894,
+    52.921239
+   ],
+   [
+    -3.9187115,
+    52.9214199
+   ],
+   [
+    -3.9186264,
+    52.9213895
+   ]
+  ],
+  "heightM": 4.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-862A916A-B620-491C-84C4-298E1DBF91A2",
+  "os": "os/862A916A-B620-491C-84C4-298E1DBF91A2",
+  "footprint": [
+   [
+    -3.9150991,
+    52.9066932
+   ],
+   [
+    -3.915144,
+    52.9066765
+   ],
+   [
+    -3.9152084,
+    52.9067396
+   ],
+   [
+    -3.9151634,
+    52.9067563
+   ],
+   [
+    -3.9150991,
+    52.9066932
+   ]
+  ],
+  "heightM": 2.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-8F36B6DB-154E-4E4C-A166-D124F09C1511",
+  "os": "os/8F36B6DB-154E-4E4C-A166-D124F09C1511",
+  "footprint": [
+   [
+    -3.9178458,
+    52.9155711
+   ],
+   [
+    -3.9179847,
+    52.9152233
+   ],
+   [
+    -3.9180754,
+    52.9152389
+   ],
+   [
+    -3.9181278,
+    52.9152878
+   ],
+   [
+    -3.9180948,
+    52.9153651
+   ],
+   [
+    -3.9180086,
+    52.9155965
+   ],
+   [
+    -3.9178458,
+    52.9155711
+   ]
+  ],
+  "heightM": 5.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-932DBF80-4F0B-490A-B245-C22870DF0F30",
+  "os": "os/932DBF80-4F0B-490A-B245-C22870DF0F30",
+  "footprint": [
+   [
+    -3.9244735,
+    52.9032043
+   ],
+   [
+    -3.9243979,
+    52.9032355
+   ],
+   [
+    -3.9242663,
+    52.9031189
+   ],
+   [
+    -3.9243419,
+    52.9030877
+   ],
+   [
+    -3.9244735,
+    52.9032043
+   ]
+  ],
+  "heightM": 4.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-9A36DB62-4313-40D8-BE7B-F33255DC116C",
+  "os": "os/9A36DB62-4313-40D8-BE7B-F33255DC116C",
+  "footprint": [
+   [
+    -3.9132396,
+    52.9061932
+   ],
+   [
+    -3.9139574,
+    52.9065845
+   ],
+   [
+    -3.9138475,
+    52.9066512
+   ],
+   [
+    -3.9131441,
+    52.906259
+   ],
+   [
+    -3.9132396,
+    52.9061932
+   ]
+  ],
+  "heightM": 7.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-9BB4E684-1F74-40AE-BE1B-EDCD5A4D527C",
+  "os": "os/9BB4E684-1F74-40AE-BE1B-EDCD5A4D527C",
+  "footprint": [
+   [
+    -3.920905,
+    52.9016598
+   ],
+   [
+    -3.9208351,
+    52.9016854
+   ],
+   [
+    -3.920785,
+    52.9016356
+   ],
+   [
+    -3.920855,
+    52.9016099
+   ],
+   [
+    -3.920905,
+    52.9016598
+   ]
+  ],
+  "heightM": 9.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-9FCCB969-468A-4BEB-B38E-93728F490F17",
+  "os": "os/9FCCB969-468A-4BEB-B38E-93728F490F17",
+  "footprint": [
+   [
+    -3.9149093,
+    52.9083605
+   ],
+   [
+    -3.9149601,
+    52.9084178
+   ],
+   [
+    -3.9147701,
+    52.9084795
+   ],
+   [
+    -3.9147193,
+    52.9084223
+   ],
+   [
+    -3.9149093,
+    52.9083605
+   ]
+  ],
+  "heightM": 4.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-A46258C8-524F-425D-8B23-3C20256AF4A2",
+  "os": "os/A46258C8-524F-425D-8B23-3C20256AF4A2",
+  "footprint": [
+   [
+    -3.9131542,
+    52.9066402
+   ],
+   [
+    -3.9132103,
+    52.9066711
+   ],
+   [
+    -3.9131376,
+    52.9067192
+   ],
+   [
+    -3.9130815,
+    52.9066883
+   ],
+   [
+    -3.9131542,
+    52.9066402
+   ]
+  ],
+  "heightM": 3.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-A48A9D8A-3A2D-4B6C-A128-1328DD86C3DC",
+  "os": "os/A48A9D8A-3A2D-4B6C-A128-1328DD86C3DC",
+  "footprint": [
+   [
+    -3.9231338,
+    52.9037189
+   ],
+   [
+    -3.9230151,
+    52.9037232
+   ],
+   [
+    -3.923007,
+    52.9036427
+   ],
+   [
+    -3.9231258,
+    52.9036383
+   ],
+   [
+    -3.9231338,
+    52.9037189
+   ]
+  ],
+  "heightM": 8.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-A5A194BB-12EF-4557-897B-16DFC3C1D49E",
+  "os": "os/A5A194BB-12EF-4557-897B-16DFC3C1D49E",
+  "footprint": [
+   [
+    -3.9233725,
+    52.9050761
+   ],
+   [
+    -3.9235236,
+    52.9050558
+   ],
+   [
+    -3.9235669,
+    52.9051729
+   ],
+   [
+    -3.9234158,
+    52.9051934
+   ],
+   [
+    -3.9233725,
+    52.9050761
+   ]
+  ],
+  "heightM": 4.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-A9209D0B-9F2F-4B32-8622-633728AC93DF",
+  "os": "os/A9209D0B-9F2F-4B32-8622-633728AC93DF",
+  "footprint": [
+   [
+    -3.9247024,
+    52.9030656
+   ],
+   [
+    -3.9245963,
+    52.902988
+   ],
+   [
+    -3.9247359,
+    52.9029174
+   ],
+   [
+    -3.9248437,
+    52.9029958
+   ],
+   [
+    -3.9247024,
+    52.9030656
+   ]
+  ],
+  "heightM": 11.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-ADB0D24B-BAB3-4172-A401-15D53126F8F5",
+  "os": "os/ADB0D24B-BAB3-4172-A401-15D53126F8F5",
+  "footprint": [
+   [
+    -3.9230134,
+    52.9038534
+   ],
+   [
+    -3.923153,
+    52.9038497
+   ],
+   [
+    -3.9231645,
+    52.9040088
+   ],
+   [
+    -3.9230249,
+    52.9040125
+   ],
+   [
+    -3.9230134,
+    52.9038534
+   ]
+  ],
+  "heightM": 7.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-AF15A598-FAB1-45FB-9777-F868FC3BC731",
+  "os": "os/AF15A598-FAB1-45FB-9777-F868FC3BC731",
+  "footprint": [
+   [
+    -3.9132398,
+    52.9064525
+   ],
+   [
+    -3.9130751,
+    52.9063608
+   ],
+   [
+    -3.9131329,
+    52.9063228
+   ],
+   [
+    -3.9132956,
+    52.9064134
+   ],
+   [
+    -3.9132398,
+    52.9064525
+   ]
+  ],
+  "heightM": 4.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-B0093A81-442E-41F2-A170-DAD652FDA1A7",
+  "os": "os/B0093A81-442E-41F2-A170-DAD652FDA1A7",
+  "footprint": [
+   [
+    -3.9211979,
+    52.919706
+   ],
+   [
+    -3.9210674,
+    52.9197516
+   ],
+   [
+    -3.9208755,
+    52.919551
+   ],
+   [
+    -3.9210062,
+    52.9195054
+   ],
+   [
+    -3.9211979,
+    52.919706
+   ]
+  ],
+  "heightM": 5.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-B4E3049B-6D01-4C1A-9B67-EF1F3C12609E",
+  "os": "os/B4E3049B-6D01-4C1A-9B67-EF1F3C12609E",
+  "footprint": [
+   [
+    -3.9134821,
+    52.9141833
+   ],
+   [
+    -3.9136595,
+    52.9141372
+   ],
+   [
+    -3.9137185,
+    52.91422
+   ],
+   [
+    -3.913541,
+    52.9142662
+   ],
+   [
+    -3.9134821,
+    52.9141833
+   ]
+  ],
+  "heightM": 3.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-BD5B0CC0-AFFB-473D-B874-2F55D306CD35",
+  "os": "os/BD5B0CC0-AFFB-473D-B874-2F55D306CD35",
+  "footprint": [
+   [
+    -3.9239862,
+    52.9038747
+   ],
+   [
+    -3.9239805,
+    52.9038325
+   ],
+   [
+    -3.9240685,
+    52.9038282
+   ],
+   [
+    -3.924074,
+    52.9038704
+   ],
+   [
+    -3.9239862,
+    52.9038747
+   ]
+  ],
+  "heightM": 2.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-BF690008-63CA-492F-8586-568D73555E34",
+  "os": "os/BF690008-63CA-492F-8586-568D73555E34",
+  "footprint": [
+   [
+    -3.9150285,
+    52.9056422
+   ],
+   [
+    -3.9150966,
+    52.9057369
+   ],
+   [
+    -3.9144366,
+    52.905914
+   ],
+   [
+    -3.9143491,
+    52.9058175
+   ],
+   [
+    -3.9150285,
+    52.9056422
+   ]
+  ],
+  "heightM": 7.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-C11CC847-59C3-4F7C-BC27-B561851394BE",
+  "os": "os/C11CC847-59C3-4F7C-BC27-B561851394BE",
+  "footprint": [
+   [
+    -3.9187463,
+    52.9214534
+   ],
+   [
+    -3.9189408,
+    52.9212571
+   ],
+   [
+    -3.9190613,
+    52.9213006
+   ],
+   [
+    -3.918865,
+    52.9214971
+   ],
+   [
+    -3.9187463,
+    52.9214534
+   ]
+  ],
+  "heightM": 12.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-C41BFC4F-99E3-42B8-BFC8-09B194B1C6FF",
+  "os": "os/C41BFC4F-99E3-42B8-BFC8-09B194B1C6FF",
+  "footprint": [
+   [
+    -3.9234891,
+    52.9046693
+   ],
+   [
+    -3.9234144,
+    52.9046612
+   ],
+   [
+    -3.9234318,
+    52.9046019
+   ],
+   [
+    -3.9235065,
+    52.9046099
+   ],
+   [
+    -3.9234891,
+    52.9046693
+   ]
+  ],
+  "heightM": 2.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-CD433FFC-DA5C-4BCB-A097-1F0614D0B84A",
+  "os": "os/CD433FFC-DA5C-4BCB-A097-1F0614D0B84A",
+  "footprint": [
+   [
+    -3.9193172,
+    52.921521
+   ],
+   [
+    -3.9192584,
+    52.9215433
+   ],
+   [
+    -3.9191914,
+    52.9214785
+   ],
+   [
+    -3.9192502,
+    52.9214563
+   ],
+   [
+    -3.9193172,
+    52.921521
+   ]
+  ],
+  "heightM": 14.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-CF7B0F63-F267-407D-8CCE-44AE78236357",
+  "os": "os/CF7B0F63-F267-407D-8CCE-44AE78236357",
+  "footprint": [
+   [
+    -3.9236647,
+    52.9037197
+   ],
+   [
+    -3.9236681,
+    52.9037529
+   ],
+   [
+    -3.9235679,
+    52.9037566
+   ],
+   [
+    -3.9235645,
+    52.9037234
+   ],
+   [
+    -3.9236647,
+    52.9037197
+   ]
+  ],
+  "heightM": 2.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-D0BC9D13-C1E4-4B23-9167-31267D452987",
+  "os": "os/D0BC9D13-C1E4-4B23-9167-31267D452987",
+  "footprint": [
+   [
+    -3.9248228,
+    52.9031478
+   ],
+   [
+    -3.9248708,
+    52.9031774
+   ],
+   [
+    -3.9248013,
+    52.9032188
+   ],
+   [
+    -3.9247533,
+    52.9031891
+   ],
+   [
+    -3.9248228,
+    52.9031478
+   ]
+  ],
+  "heightM": 9.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-DC833E71-036B-4406-82AF-9136B8C6473F",
+  "os": "os/DC833E71-036B-4406-82AF-9136B8C6473F",
+  "footprint": [
+   [
+    -3.9236006,
+    52.9029805
+   ],
+   [
+    -3.9236013,
+    52.9030263
+   ],
+   [
+    -3.9235155,
+    52.9030268
+   ],
+   [
+    -3.9235148,
+    52.9029811
+   ],
+   [
+    -3.9236006,
+    52.9029805
+   ]
+  ],
+  "heightM": 6.0,
+  "heightSource": "default",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "absent",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-E17537F9-C9BA-4D17-B296-FBB5929F37F0",
+  "os": "os/E17537F9-C9BA-4D17-B296-FBB5929F37F0",
+  "footprint": [
+   [
+    -3.9249589,
+    52.9230713
+   ],
+   [
+    -3.9250041,
+    52.9230215
+   ],
+   [
+    -3.9251696,
+    52.9230763
+   ],
+   [
+    -3.9251244,
+    52.9231261
+   ],
+   [
+    -3.9249589,
+    52.9230713
+   ]
+  ],
+  "heightM": 4.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-E25DD8F7-2CE7-4B5E-AA07-8109AFF64119",
+  "os": "os/E25DD8F7-2CE7-4B5E-AA07-8109AFF64119",
+  "footprint": [
+   [
+    -3.9247098,
+    52.9031838
+   ],
+   [
+    -3.9246316,
+    52.9032194
+   ],
+   [
+    -3.9245365,
+    52.9031431
+   ],
+   [
+    -3.9246146,
+    52.9031075
+   ],
+   [
+    -3.9247098,
+    52.9031838
+   ]
+  ],
+  "heightM": 8.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-EC76D8BE-01D5-4230-827F-A46B2C9A1519",
+  "os": "os/EC76D8BE-01D5-4230-827F-A46B2C9A1519",
+  "footprint": [
+   [
+    -3.9245842,
+    52.9046343
+   ],
+   [
+    -3.924862,
+    52.9047853
+   ],
+   [
+    -3.9247823,
+    52.904839
+   ],
+   [
+    -3.9245043,
+    52.904688
+   ],
+   [
+    -3.9245842,
+    52.9046343
+   ]
+  ],
+  "heightM": 5.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-F0321832-9744-4720-9A1E-08EC58DFC9B3",
+  "os": "os/F0321832-9744-4720-9A1E-08EC58DFC9B3",
+  "footprint": [
+   [
+    -3.9152963,
+    52.907035
+   ],
+   [
+    -3.9152541,
+    52.9070519
+   ],
+   [
+    -3.9151347,
+    52.9069432
+   ],
+   [
+    -3.9151769,
+    52.9069262
+   ],
+   [
+    -3.9152963,
+    52.907035
+   ]
+  ],
+  "heightM": 2.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-F0BCE6A9-85A7-47C8-B138-87C714C50743",
+  "os": "os/F0BCE6A9-85A7-47C8-B138-87C714C50743",
+  "footprint": [
+   [
+    -3.9184006,
+    52.9146551
+   ],
+   [
+    -3.9194759,
+    52.9144986
+   ],
+   [
+    -3.9195296,
+    52.9146434
+   ],
+   [
+    -3.9184597,
+    52.9148009
+   ],
+   [
+    -3.9184006,
+    52.9146551
+   ]
+  ],
+  "heightM": 5.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-F8EA9C59-9FFA-4E16-B2CB-8A151E842B8C",
+  "os": "os/F8EA9C59-9FFA-4E16-B2CB-8A151E842B8C",
+  "footprint": [
+   [
+    -3.942776,
+    52.9322481
+   ],
+   [
+    -3.9430282,
+    52.9324994
+   ],
+   [
+    -3.942903,
+    52.9325458
+   ],
+   [
+    -3.9428038,
+    52.9324471
+   ],
+   [
+    -3.9426933,
+    52.9324847
+   ],
+   [
+    -3.9426438,
+    52.9324354
+   ],
+   [
+    -3.9427622,
+    52.932392
+   ],
+   [
+    -3.9426613,
+    52.9322887
+   ],
+   [
+    -3.942776,
+    52.9322481
+   ]
+  ],
+  "heightM": 5.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-F90B3684-4728-4F78-A324-F04AACC4105B",
+  "os": "os/F90B3684-4728-4F78-A324-F04AACC4105B",
+  "footprint": [
+   [
+    -3.9231948,
+    52.9027628
+   ],
+   [
+    -3.9232142,
+    52.9026203
+   ],
+   [
+    -3.9234221,
+    52.9026303
+   ],
+   [
+    -3.923402,
+    52.902772
+   ],
+   [
+    -3.9231948,
+    52.9027628
+   ]
+  ],
+  "heightM": 7.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-F9985870-724B-4773-95E9-0197EB5A0BBA",
+  "os": "os/F9985870-724B-4773-95E9-0197EB5A0BBA",
+  "footprint": [
+   [
+    -3.9181277,
+    52.915828
+   ],
+   [
+    -3.9181494,
+    52.9159706
+   ],
+   [
+    -3.9179314,
+    52.915982
+   ],
+   [
+    -3.9179111,
+    52.9158395
+   ],
+   [
+    -3.9181277,
+    52.915828
+   ]
+  ],
+  "heightM": 4.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-trawsfynydd-os-FF5BF0D7-DE36-4724-832A-2101C9AB2DA0",
+  "os": "os/FF5BF0D7-DE36-4724-832A-2101C9AB2DA0",
+  "footprint": [
+   [
+    -3.9152402,
+    52.9085102
+   ],
+   [
+    -3.9151767,
+    52.9085329
+   ],
+   [
+    -3.9151128,
+    52.9084674
+   ],
+   [
+    -3.9151764,
+    52.9084447
+   ],
+   [
+    -3.9152402,
+    52.9085102
+   ]
+  ],
+  "heightM": 2.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
  }
 ]

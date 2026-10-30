@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import { footprintOverlap, segmentsInFootprints } from "../../src/three-core/buildings";
 import { validateBuildings, validateFeatures, type OsmLine } from "../../src/three-core/registers";
@@ -16,7 +18,16 @@ const GROUND = Object.values(SECTIONS).filter((c) => c.kind === "ground").map((c
 // 4.9 m tall in the lidar DSM, near km 10.93) as railway=dismantled (way 1344840040, edited 2024-12-22): the building
 // is real and a trail on the alignment would have to pass round it. Kept and listed, never moved or dropped (spec BL7
 // as amended at t7). The test fails if this list goes stale or another building appears on the line.
-const ON_TRACKBED: Record<string, string[]> = { trawsfynydd: ["building-trawsfynydd-289033748"] };
+// ADR 63 adds two that OSM lacks: OS OpenMap Local (2026-10) outlines of about 175 and 260 m² near km 11.60–11.66
+// (52.9193 N, 3.9207 W), 4.6 and 5.2 m in the lidar, with 40–56 m of the centreline inside them.
+const ON_TRACKBED: Record<string, string[]> = {
+  trawsfynydd: ["building-trawsfynydd-289033748", "building-trawsfynydd-os-1618532C-AD94-4CB4-881A-390FC0CC5198", "building-trawsfynydd-os-B0093A81-442E-41F2-A170-DAD652FDA1A7"],
+};
+// Buildings a mapped road runs under. The Blaenau terrace way 461995265 (building=terrace, edited 2016-12-27, 7.7 m in
+// the lidar) has a carriage arch: OSM maps a service road through it as way 461997371 (tunnel=yes), and its approach,
+// way 461997369, ends inside the outline. The windows overlap, so both list it. Kept and listed, as ON_TRACKBED is
+// (ADR 63 built every footprint near the line); the test fails if the list goes stale or another road meets a building.
+const OVER_A_ROAD: Record<string, string[]> = { blaenau: ["building-blaenau-461995265"], "vale-north": ["building-vale-north-461995265"] };
 
 function inputs(id: string) {
   const w = `public/data/sections/${id}`;
@@ -46,7 +57,7 @@ describe.each(GROUND)("section %s", (id) => {
     for (const r of records) {
       const f = byId.get(r.id);
       expect(f?.kind, `${r.id} in the register`).toBe("building");
-      expect(["osm", "coflein", "lidar-dtm"], r.id).toContain(f!.source.type);
+      expect(["osm", "os", "coflein", "lidar-dtm"], r.id).toContain(f!.source.type);
       expect(f!.provenance!.urls.length, r.id).toBeGreaterThan(0);
       expect(r.status, r.id).toBe(f!.status);
     }
@@ -59,7 +70,7 @@ describe.each(GROUND)("section %s", (id) => {
       .filter((f) => roadRefs.has(f.properties.id) && f.geometry.type === "LineString")
       .map((f) => (f.geometry.coordinates as [number, number][]).map(([lon, lat]) => data.route.project(lon, lat)).map((p) => ({ x: p.x, z: p.y })));
     expect(segmentsInFootprints(trail, records).sort(), "trail").toEqual(ON_TRACKBED[id] ?? []);
-    expect(segmentsInFootprints(roads, records), "roads").toEqual([]);
+    expect(segmentsInFootprints(roads, records).sort(), "roads").toEqual(OVER_A_ROAD[id] ?? []);
   });
 
   it("BL8: no two footprints overlap by more than 10 % of the smaller one", () => {
@@ -127,8 +138,19 @@ describe("candidates at measured heights (BL1)", () => {
     const heights = readJson<Record<string, { heightM: number }>>(`data/building-heights-${id}.json`);
     expect(c.unmeasured).toBe(0);
     for (const k of c.candidates) expect(k.testedAtM, k.id).toBe(heights[k.id]?.heightM);
-    const built = readJson<{ osm: string }[]>(`public/data/sections/${id}/buildings.json`).map((b) => b.osm).sort();
+    const built = readJson<{ osm?: string; os?: string }[]>(`public/data/sections/${id}/buildings.json`).map((b) => b.osm ?? b.os).sort();
     expect(built).toEqual(c.candidates.map((k) => k.id).sort());
+  });
+
+  it.each([...GROUND, "corridor"])("%s: a demolished building is recorded with its evidence and never drawn (ADR 63)", (id) => {
+    const path = `data/buildings-removed-${id}.json`;
+    const removed = existsSync(resolve(process.cwd(), path)) ? validateFeatures(readJson<unknown>(path)) : [];
+    const built = new Set(readJson<{ osm?: string; os?: string }[]>(`public/data/sections/${id}/buildings.json`).map((b) => b.osm ?? b.os));
+    for (const r of removed) {
+      expect(r.status, r.id).toBe("demolished");
+      expect(built.has(r.source.ref), r.id).toBe(false);
+      expect(r.provenance!.evidence.length, r.id).toBeGreaterThan(1); // a map and a dated observation that it has gone
+    }
   });
 });
 
@@ -148,16 +170,16 @@ describe("validateBuildings (BL11, RD5)", () => {
 });
 
 describe("credits (BL15)", () => {
-  it("records ODbL for every footprint and OGL for every lidar height, and the on-screen credit carries both", () => {
-    for (const id of GROUND) {
+  it("records ODbL for every OSM footprint, OS's notice for every OS one, OGL for every lidar height, and the on-screen credit carries them", () => {
+    for (const id of [...GROUND, "corridor"]) {
       for (const f of validateFeatures(readJson<unknown>(`data/features-${id}.json`)).filter((x) => x.kind === "building")) {
-        expect(f.provenance!.licence, f.id).toMatch(/ODbL/);
+        expect(f.provenance!.licence, f.id).toMatch(f.source.type === "os" ? /OGL \(OS OpenMap - Local: Contains OS data © Crown copyright and database right \d{4}\)/ : /ODbL/);
         if (f.provenance!.evidence.includes("lidar")) expect(f.provenance!.licence, f.id).toMatch(/OGL/);
       }
     }
     for (const list of [CAPTIONS, POC_CAPTIONS]) {
       const credit = list.find((c) => c.position === "attribution")!.text;
-      for (const need of ["OpenStreetMap", "ODbL", "OGL", "DSM"]) expect(credit, need).toContain(need);
+      for (const need of ["OpenStreetMap", "ODbL", "OGL", "DSM", "Contains OS data © Crown copyright and database right"]) expect(credit, need).toContain(need);
     }
   });
 });

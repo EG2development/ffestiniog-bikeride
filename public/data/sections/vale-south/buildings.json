@@ -1,5 +1,353 @@
 [
  {
+  "id": "building-vale-south-1019662577",
+  "osm": "way/1019662577",
+  "footprint": [
+   [
+    -3.9334725,
+    52.9609283
+   ],
+   [
+    -3.9336379,
+    52.9610667
+   ],
+   [
+    -3.9337023,
+    52.9610389
+   ],
+   [
+    -3.9336938,
+    52.9610318
+   ],
+   [
+    -3.9336897,
+    52.9610283
+   ],
+   [
+    -3.9339555,
+    52.9609136
+   ],
+   [
+    -3.9339596,
+    52.960917
+   ],
+   [
+    -3.9340379,
+    52.9608832
+   ],
+   [
+    -3.9340978,
+    52.9609336
+   ],
+   [
+    -3.9340804,
+    52.9609412
+   ],
+   [
+    -3.9341796,
+    52.9610246
+   ],
+   [
+    -3.9340936,
+    52.9610617
+   ],
+   [
+    -3.9340266,
+    52.9610053
+   ],
+   [
+    -3.9337207,
+    52.9611375
+   ],
+   [
+    -3.9338127,
+    52.9612144
+   ],
+   [
+    -3.9336938,
+    52.961266
+   ],
+   [
+    -3.9333497,
+    52.9609782
+   ],
+   [
+    -3.9332785,
+    52.9610091
+   ],
+   [
+    -3.9332233,
+    52.960963
+   ],
+   [
+    -3.9332945,
+    52.9609321
+   ],
+   [
+    -3.9332744,
+    52.9609154
+   ],
+   [
+    -3.9333635,
+    52.9608767
+   ],
+   [
+    -3.9333861,
+    52.9608669
+   ],
+   [
+    -3.9333916,
+    52.9608715
+   ],
+   [
+    -3.9334475,
+    52.9608472
+   ],
+   [
+    -3.93341,
+    52.9608158
+   ],
+   [
+    -3.9335574,
+    52.9607519
+   ],
+   [
+    -3.9335491,
+    52.960745
+   ],
+   [
+    -3.93355,
+    52.9607447
+   ],
+   [
+    -3.9334993,
+    52.9607023
+   ],
+   [
+    -3.9336245,
+    52.960648
+   ],
+   [
+    -3.9336751,
+    52.9606903
+   ],
+   [
+    -3.9336983,
+    52.9606803
+   ],
+   [
+    -3.9337585,
+    52.9607307
+   ],
+   [
+    -3.9337676,
+    52.9607267
+   ],
+   [
+    -3.9338444,
+    52.960791
+   ],
+   [
+    -3.9337985,
+    52.9608109
+   ],
+   [
+    -3.9338037,
+    52.9608153
+   ],
+   [
+    -3.9337425,
+    52.9608419
+   ],
+   [
+    -3.9337373,
+    52.9608375
+   ],
+   [
+    -3.9335417,
+    52.9609223
+   ],
+   [
+    -3.9335228,
+    52.9609065
+   ],
+   [
+    -3.9334725,
+    52.9609283
+   ]
+  ],
+  "heightM": 7.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "confirmed",
+  "mapEditedAt": "2022-01-09"
+ },
+ {
+  "id": "building-vale-south-1019662578",
+  "osm": "way/1019662578",
+  "footprint": [
+   [
+    -3.9333549,
+    52.9608322
+   ],
+   [
+    -3.9333094,
+    52.9608519
+   ],
+   [
+    -3.9332771,
+    52.9608249
+   ],
+   [
+    -3.9333226,
+    52.9608052
+   ],
+   [
+    -3.9333549,
+    52.9608322
+   ]
+  ],
+  "heightM": 6.0,
+  "heightSource": "default",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "unmeasured",
+  "lidarFlown": "2022-01-11",
+  "osMap": "absent",
+  "mapEditedAt": "2022-01-09"
+ },
+ {
+  "id": "building-vale-south-1376195584",
+  "osm": "way/1376195584",
+  "footprint": [
+   [
+    -3.9292503,
+    52.9631406
+   ],
+   [
+    -3.9290505,
+    52.9630973
+   ],
+   [
+    -3.9290798,
+    52.9630421
+   ],
+   [
+    -3.9292891,
+    52.963085
+   ],
+   [
+    -3.9292503,
+    52.9631406
+   ]
+  ],
+  "heightM": 8.0,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "house",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "confirmed",
+  "mapEditedAt": "2026-07-11"
+ },
+ {
+  "id": "building-vale-south-1376195585",
+  "osm": "way/1376195585",
+  "footprint": [
+   [
+    -3.9288832,
+    52.9630364
+   ],
+   [
+    -3.9288539,
+    52.9630789
+   ],
+   [
+    -3.9289029,
+    52.9630908
+   ],
+   [
+    -3.9289303,
+    52.9630483
+   ],
+   [
+    -3.9288832,
+    52.9630364
+   ]
+  ],
+  "heightM": 2.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "garage",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "absent",
+  "mapEditedAt": "2025-04-09"
+ },
+ {
+  "id": "building-vale-south-1391276014",
+  "osm": "way/1391276014",
+  "footprint": [
+   [
+    -3.9306294,
+    52.9548037
+   ],
+   [
+    -3.9304396,
+    52.9548266
+   ],
+   [
+    -3.9304192,
+    52.9547653
+   ],
+   [
+    -3.9307706,
+    52.9547229
+   ],
+   [
+    -3.930791,
+    52.9547842
+   ],
+   [
+    -3.9306829,
+    52.9547973
+   ],
+   [
+    -3.9306887,
+    52.9548146
+   ],
+   [
+    -3.9306352,
+    52.9548211
+   ],
+   [
+    -3.9306294,
+    52.9548037
+   ]
+  ],
+  "heightM": 6.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "confirmed",
+  "mapEditedAt": "2025-06-01"
+ },
+ {
   "id": "building-vale-south-263063605",
   "osm": "way/263063605",
   "footprint": [
@@ -29,7 +377,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-02-23"
  },
  {
   "id": "building-vale-south-263176075",
@@ -61,7 +413,83 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-02-24"
+ },
+ {
+  "id": "building-vale-south-263176085",
+  "osm": "way/263176085",
+  "footprint": [
+   [
+    -3.9318923,
+    52.9609604
+   ],
+   [
+    -3.9315058,
+    52.9611959
+   ],
+   [
+    -3.9314275,
+    52.9611493
+   ],
+   [
+    -3.931814,
+    52.9609138
+   ],
+   [
+    -3.9318923,
+    52.9609604
+   ]
+  ],
+  "heightM": 7.2,
+  "heightSource": "lidar-dsm",
+  "roof": "gabled",
+  "kind": "background",
+  "status": "existing",
+  "type": "terrace",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "confirmed",
+  "mapEditedAt": "2023-09-28"
+ },
+ {
+  "id": "building-vale-south-264295504",
+  "osm": "way/264295504",
+  "footprint": [
+   [
+    -3.9303041,
+    52.960854
+   ],
+   [
+    -3.9299437,
+    52.9610658
+   ],
+   [
+    -3.9298596,
+    52.9610139
+   ],
+   [
+    -3.93022,
+    52.960802
+   ],
+   [
+    -3.9303041,
+    52.960854
+   ]
+  ],
+  "heightM": 8.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "confirmed",
+  "mapEditedAt": "2014-03-03"
  },
  {
   "id": "building-vale-south-371939661",
@@ -93,7 +521,11 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes"
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-03-01",
+  "osMap": "confirmed",
+  "mapEditedAt": "2015-09-22"
  },
  {
   "id": "building-vale-south-373593956",
@@ -133,7 +565,11 @@
   "roof": "gabled",
   "kind": "background",
   "status": "existing",
-  "type": "church"
+  "type": "church",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "confirmed",
+  "mapEditedAt": "2024-10-05"
  },
  {
   "id": "building-vale-south-373593957",
@@ -245,6 +681,6605 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "school"
+  "type": "school",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "confirmed",
+  "mapEditedAt": "2015-10-03"
+ },
+ {
+  "id": "building-vale-south-461133554",
+  "osm": "way/461133554",
+  "footprint": [
+   [
+    -3.9272184,
+    52.9617779
+   ],
+   [
+    -3.92732,
+    52.9618595
+   ],
+   [
+    -3.9274108,
+    52.9618185
+   ],
+   [
+    -3.9273091,
+    52.9617369
+   ],
+   [
+    -3.9272184,
+    52.9617779
+   ]
+  ],
+  "heightM": 5.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "confirmed",
+  "mapEditedAt": "2016-12-22"
+ },
+ {
+  "id": "building-vale-south-461159632",
+  "osm": "way/461159632",
+  "footprint": [
+   [
+    -3.9356678,
+    52.9578171
+   ],
+   [
+    -3.9356855,
+    52.9579107
+   ],
+   [
+    -3.9350936,
+    52.9579513
+   ],
+   [
+    -3.9350759,
+    52.9578577
+   ],
+   [
+    -3.9356678,
+    52.9578171
+   ]
+  ],
+  "heightM": 5.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "confirmed",
+  "mapEditedAt": "2016-12-22"
+ },
+ {
+  "id": "building-vale-south-461159633",
+  "osm": "way/461159633",
+  "footprint": [
+   [
+    -3.9359346,
+    52.9580557
+   ],
+   [
+    -3.9359452,
+    52.958195
+   ],
+   [
+    -3.9360666,
+    52.9581917
+   ],
+   [
+    -3.9360561,
+    52.9580524
+   ],
+   [
+    -3.9359346,
+    52.9580557
+   ]
+  ],
+  "heightM": 5.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "confirmed",
+  "mapEditedAt": "2016-12-22"
+ },
+ {
+  "id": "building-vale-south-os-023B9FBD-C99C-475A-808F-1948A58C2025",
+  "os": "os/023B9FBD-C99C-475A-808F-1948A58C2025",
+  "footprint": [
+   [
+    -3.9223824,
+    52.9630004
+   ],
+   [
+    -3.9224388,
+    52.9627936
+   ],
+   [
+    -3.9226287,
+    52.9628121
+   ],
+   [
+    -3.9225723,
+    52.9630189
+   ],
+   [
+    -3.9223824,
+    52.9630004
+   ]
+  ],
+  "heightM": 6.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-0477FBD0-0623-4A2D-8FAF-7E73946BE036",
+  "os": "os/0477FBD0-0623-4A2D-8FAF-7E73946BE036",
+  "footprint": [
+   [
+    -3.9317479,
+    52.9597152
+   ],
+   [
+    -3.9311622,
+    52.9593311
+   ],
+   [
+    -3.9313095,
+    52.9592488
+   ],
+   [
+    -3.9319124,
+    52.95965
+   ],
+   [
+    -3.9319396,
+    52.9596961
+   ],
+   [
+    -3.9318247,
+    52.9597146
+   ],
+   [
+    -3.9317479,
+    52.9597152
+   ]
+  ],
+  "heightM": 7.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-06E54A72-5257-4CF1-B356-BFAA180167E0",
+  "os": "os/06E54A72-5257-4CF1-B356-BFAA180167E0",
+  "footprint": [
+   [
+    -3.9309885,
+    52.960071
+   ],
+   [
+    -3.9311262,
+    52.9599905
+   ],
+   [
+    -3.9311846,
+    52.960027
+   ],
+   [
+    -3.9309384,
+    52.960175
+   ],
+   [
+    -3.9307754,
+    52.960074
+   ],
+   [
+    -3.9308844,
+    52.9600088
+   ],
+   [
+    -3.9309885,
+    52.960071
+   ]
+  ],
+  "heightM": 3.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-07224CF7-E2DA-4239-9F7B-A2A919D21571",
+  "os": "os/07224CF7-E2DA-4239-9F7B-A2A919D21571",
+  "footprint": [
+   [
+    -3.9331845,
+    52.9607323
+   ],
+   [
+    -3.9330066,
+    52.9608296
+   ],
+   [
+    -3.9329318,
+    52.9607778
+   ],
+   [
+    -3.933034,
+    52.960723
+   ],
+   [
+    -3.9329062,
+    52.960637
+   ],
+   [
+    -3.9329818,
+    52.9605961
+   ],
+   [
+    -3.9331845,
+    52.9607323
+   ]
+  ],
+  "heightM": 7.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-08896BE1-17DA-425E-93D3-22D40FE1659E",
+  "os": "os/08896BE1-17DA-425E-93D3-22D40FE1659E",
+  "footprint": [
+   [
+    -3.9401277,
+    52.9523756
+   ],
+   [
+    -3.9405456,
+    52.952265
+   ],
+   [
+    -3.9405963,
+    52.9523351
+   ],
+   [
+    -3.9401787,
+    52.9524457
+   ],
+   [
+    -3.9401277,
+    52.9523756
+   ]
+  ],
+  "heightM": 9.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-0A0B390C-79A6-4C98-92CE-2E859E22E17F",
+  "os": "os/0A0B390C-79A6-4C98-92CE-2E859E22E17F",
+  "footprint": [
+   [
+    -3.9334155,
+    52.9592512
+   ],
+   [
+    -3.9334339,
+    52.959338
+   ],
+   [
+    -3.9332099,
+    52.9593554
+   ],
+   [
+    -3.9331914,
+    52.9592685
+   ],
+   [
+    -3.9334155,
+    52.9592512
+   ]
+  ],
+  "heightM": 10.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-0A8B2CCD-013D-49BE-A1D4-16C52513A13E",
+  "os": "os/0A8B2CCD-013D-49BE-A1D4-16C52513A13E",
+  "footprint": [
+   [
+    -3.9344765,
+    52.9594429
+   ],
+   [
+    -3.9351343,
+    52.9592932
+   ],
+   [
+    -3.9351849,
+    52.9593793
+   ],
+   [
+    -3.9345301,
+    52.9595284
+   ],
+   [
+    -3.9344765,
+    52.9594429
+   ]
+  ],
+  "heightM": 8.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-0B4972F0-92B4-42F3-B2A6-E93294AD8976",
+  "os": "os/0B4972F0-92B4-42F3-B2A6-E93294AD8976",
+  "footprint": [
+   [
+    -3.932951,
+    52.9590655
+   ],
+   [
+    -3.9330004,
+    52.9590081
+   ],
+   [
+    -3.933197,
+    52.9590697
+   ],
+   [
+    -3.9331476,
+    52.9591272
+   ],
+   [
+    -3.932951,
+    52.9590655
+   ]
+  ],
+  "heightM": 6.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-0C6C5D15-829F-480D-B44D-BB951255C7DE",
+  "os": "os/0C6C5D15-829F-480D-B44D-BB951255C7DE",
+  "footprint": [
+   [
+    -3.9294741,
+    52.9604362
+   ],
+   [
+    -3.929578,
+    52.9603639
+   ],
+   [
+    -3.9296892,
+    52.9604222
+   ],
+   [
+    -3.9295852,
+    52.9604945
+   ],
+   [
+    -3.9294741,
+    52.9604362
+   ]
+  ],
+  "heightM": 7.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-0FAAC112-570C-4905-A89C-1D77538432C3",
+  "os": "os/0FAAC112-570C-4905-A89C-1D77538432C3",
+  "footprint": [
+   [
+    -3.9296408,
+    52.9606592
+   ],
+   [
+    -3.9296952,
+    52.9606181
+   ],
+   [
+    -3.929808,
+    52.9606725
+   ],
+   [
+    -3.9297534,
+    52.9607136
+   ],
+   [
+    -3.9296408,
+    52.9606592
+   ]
+  ],
+  "heightM": 7.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-1015D801-581B-438A-A61C-D2339B65803D",
+  "os": "os/1015D801-581B-438A-A61C-D2339B65803D",
+  "footprint": [
+   [
+    -3.9314629,
+    52.9598501
+   ],
+   [
+    -3.9309284,
+    52.9595074
+   ],
+   [
+    -3.9310652,
+    52.9594292
+   ],
+   [
+    -3.9316041,
+    52.9597652
+   ],
+   [
+    -3.9314629,
+    52.9598501
+   ]
+  ],
+  "heightM": 8.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-104353E0-AD0A-4136-B752-AC25B5D28DA2",
+  "os": "os/104353E0-AD0A-4136-B752-AC25B5D28DA2",
+  "footprint": [
+   [
+    -3.9345064,
+    52.9591143
+   ],
+   [
+    -3.9344409,
+    52.9591212
+   ],
+   [
+    -3.9344169,
+    52.959038
+   ],
+   [
+    -3.9344824,
+    52.9590311
+   ],
+   [
+    -3.9345064,
+    52.9591143
+   ]
+  ],
+  "heightM": 5.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-10B678AB-A441-4A80-9BEA-B8B6C69EA351",
+  "os": "os/10B678AB-A441-4A80-9BEA-B8B6C69EA351",
+  "footprint": [
+   [
+    -3.924672,
+    52.9496916
+   ],
+   [
+    -3.9245885,
+    52.9497237
+   ],
+   [
+    -3.9245205,
+    52.9496589
+   ],
+   [
+    -3.9246041,
+    52.9496269
+   ],
+   [
+    -3.924672,
+    52.9496916
+   ]
+  ],
+  "heightM": 2.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-17",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-128F0065-4280-4019-8DAB-E6D82999E94C",
+  "os": "os/128F0065-4280-4019-8DAB-E6D82999E94C",
+  "footprint": [
+   [
+    -3.9324744,
+    52.9591624
+   ],
+   [
+    -3.9321263,
+    52.9588919
+   ],
+   [
+    -3.932256,
+    52.9588313
+   ],
+   [
+    -3.9326116,
+    52.9590999
+   ],
+   [
+    -3.9324744,
+    52.9591624
+   ]
+  ],
+  "heightM": 8.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-1395551F-19A2-45A8-8D19-F7FCA81E59E8",
+  "os": "os/1395551F-19A2-45A8-8D19-F7FCA81E59E8",
+  "footprint": [
+   [
+    -3.9319524,
+    52.9592559
+   ],
+   [
+    -3.9320007,
+    52.9592927
+   ],
+   [
+    -3.9319139,
+    52.9593342
+   ],
+   [
+    -3.9318657,
+    52.9592974
+   ],
+   [
+    -3.9319524,
+    52.9592559
+   ]
+  ],
+  "heightM": 2.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-14D93647-3C68-4AE1-97D1-597CED8A5C8C",
+  "os": "os/14D93647-3C68-4AE1-97D1-597CED8A5C8C",
+  "footprint": [
+   [
+    -3.925032,
+    52.9601027
+   ],
+   [
+    -3.9249318,
+    52.9600807
+   ],
+   [
+    -3.9249507,
+    52.9600495
+   ],
+   [
+    -3.9251937,
+    52.9601102
+   ],
+   [
+    -3.9250998,
+    52.9602411
+   ],
+   [
+    -3.9249597,
+    52.9602047
+   ],
+   [
+    -3.925032,
+    52.9601027
+   ]
+  ],
+  "heightM": 4.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-160FB4CA-D122-482E-B4CF-7308E869DBF7",
+  "os": "os/160FB4CA-D122-482E-B4CF-7308E869DBF7",
+  "footprint": [
+   [
+    -3.9222231,
+    52.9516917
+   ],
+   [
+    -3.9223007,
+    52.9517328
+   ],
+   [
+    -3.9222111,
+    52.9517945
+   ],
+   [
+    -3.9221335,
+    52.9517534
+   ],
+   [
+    -3.9222231,
+    52.9516917
+   ]
+  ],
+  "heightM": 6.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26",
+  "listed": [
+   {
+    "record": 5209,
+    "grade": "II"
+   }
+  ],
+  "nmrw": [
+   28181
+  ]
+ },
+ {
+  "id": "building-vale-south-os-164F90D2-AB85-4C8D-83A6-3D22093BD32B",
+  "os": "os/164F90D2-AB85-4C8D-83A6-3D22093BD32B",
+  "footprint": [
+   [
+    -3.9278156,
+    52.9454635
+   ],
+   [
+    -3.9277072,
+    52.9453583
+   ],
+   [
+    -3.9278259,
+    52.9453137
+   ],
+   [
+    -3.9279343,
+    52.9454188
+   ],
+   [
+    -3.9278156,
+    52.9454635
+   ]
+  ],
+  "heightM": 4.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-17",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-166D448D-F565-4027-A0A5-4E9357D9AECA",
+  "os": "os/166D448D-F565-4027-A0A5-4E9357D9AECA",
+  "footprint": [
+   [
+    -3.9334939,
+    52.9592315
+   ],
+   [
+    -3.9348554,
+    52.9591267
+   ],
+   [
+    -3.9348676,
+    52.9591485
+   ],
+   [
+    -3.9350625,
+    52.9590967
+   ],
+   [
+    -3.9351116,
+    52.9591623
+   ],
+   [
+    -3.9349144,
+    52.9592156
+   ],
+   [
+    -3.9335108,
+    52.9593215
+   ],
+   [
+    -3.9334939,
+    52.9592315
+   ]
+  ],
+  "heightM": 8.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-17CCB157-0FCD-475C-9CE5-4C0B78DC0B1D",
+  "os": "os/17CCB157-0FCD-475C-9CE5-4C0B78DC0B1D",
+  "footprint": [
+   [
+    -3.9320625,
+    52.9606888
+   ],
+   [
+    -3.9321263,
+    52.9607508
+   ],
+   [
+    -3.9320014,
+    52.9607977
+   ],
+   [
+    -3.9319376,
+    52.9607358
+   ],
+   [
+    -3.9320625,
+    52.9606888
+   ]
+  ],
+  "heightM": 7.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-1A06D6EC-2A67-4234-83FE-613671D58E86",
+  "os": "os/1A06D6EC-2A67-4234-83FE-613671D58E86",
+  "footprint": [
+   [
+    -3.9292383,
+    52.9611227
+   ],
+   [
+    -3.9291468,
+    52.9610828
+   ],
+   [
+    -3.9293725,
+    52.96091
+   ],
+   [
+    -3.9294748,
+    52.9609586
+   ],
+   [
+    -3.9295844,
+    52.9608903
+   ],
+   [
+    -3.9296547,
+    52.9609324
+   ],
+   [
+    -3.9294808,
+    52.9610414
+   ],
+   [
+    -3.9294014,
+    52.960995
+   ],
+   [
+    -3.9292383,
+    52.9611227
+   ]
+  ],
+  "heightM": 7.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-1A825FA0-576F-41E4-BE86-F7C8DF5D1101",
+  "os": "os/1A825FA0-576F-41E4-BE86-F7C8DF5D1101",
+  "footprint": [
+   [
+    -3.9403913,
+    52.9516616
+   ],
+   [
+    -3.940418,
+    52.9515815
+   ],
+   [
+    -3.9407424,
+    52.9516209
+   ],
+   [
+    -3.9407158,
+    52.951701
+   ],
+   [
+    -3.9403913,
+    52.9516616
+   ]
+  ],
+  "heightM": 6.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-1BD86A92-AF6E-437A-BA45-A770A1989066",
+  "os": "os/1BD86A92-AF6E-437A-BA45-A770A1989066",
+  "footprint": [
+   [
+    -3.9324534,
+    52.9599165
+   ],
+   [
+    -3.9321368,
+    52.9600716
+   ],
+   [
+    -3.9320756,
+    52.9600217
+   ],
+   [
+    -3.9323791,
+    52.9598721
+   ],
+   [
+    -3.9324534,
+    52.9599165
+   ]
+  ],
+  "heightM": 6.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-1C5D3F8C-D939-4F89-8F8D-140DF14B655E",
+  "os": "os/1C5D3F8C-D939-4F89-8F8D-140DF14B655E",
+  "footprint": [
+   [
+    -3.9321135,
+    52.9475635
+   ],
+   [
+    -3.9320996,
+    52.947526
+   ],
+   [
+    -3.9322535,
+    52.9475053
+   ],
+   [
+    -3.9322674,
+    52.9475428
+   ],
+   [
+    -3.9321135,
+    52.9475635
+   ]
+  ],
+  "heightM": 10.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-17",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-1D84EECF-A52E-4858-B92A-1B776DFDD2DB",
+  "os": "os/1D84EECF-A52E-4858-B92A-1B776DFDD2DB",
+  "footprint": [
+   [
+    -3.9304037,
+    52.9605013
+   ],
+   [
+    -3.9303507,
+    52.9605335
+   ],
+   [
+    -3.9302871,
+    52.9604953
+   ],
+   [
+    -3.9303399,
+    52.9604631
+   ],
+   [
+    -3.9304037,
+    52.9605013
+   ]
+  ],
+  "heightM": 2.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-1D8CC9D8-ABF2-4A0C-A711-86557F0BBAF6",
+  "os": "os/1D8CC9D8-ABF2-4A0C-A711-86557F0BBAF6",
+  "footprint": [
+   [
+    -3.9318242,
+    52.9580977
+   ],
+   [
+    -3.931752,
+    52.9580098
+   ],
+   [
+    -3.9318992,
+    52.9579657
+   ],
+   [
+    -3.9317907,
+    52.9578373
+   ],
+   [
+    -3.9319201,
+    52.9577965
+   ],
+   [
+    -3.9320684,
+    52.9579682
+   ],
+   [
+    -3.9319098,
+    52.9580166
+   ],
+   [
+    -3.9319991,
+    52.9581252
+   ],
+   [
+    -3.931628,
+    52.9582536
+   ],
+   [
+    -3.9315647,
+    52.9581862
+   ],
+   [
+    -3.9318242,
+    52.9580977
+   ]
+  ],
+  "heightM": 6.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-1E4F1A4F-C311-403B-9B53-A644C99BE2C9",
+  "os": "os/1E4F1A4F-C311-403B-9B53-A644C99BE2C9",
+  "footprint": [
+   [
+    -3.9294226,
+    52.9596286
+   ],
+   [
+    -3.9293598,
+    52.9596886
+   ],
+   [
+    -3.9293205,
+    52.9596736
+   ],
+   [
+    -3.929232,
+    52.9596756
+   ],
+   [
+    -3.9290919,
+    52.9595716
+   ],
+   [
+    -3.9292331,
+    52.9595021
+   ],
+   [
+    -3.9293835,
+    52.9596137
+   ],
+   [
+    -3.9294226,
+    52.9596286
+   ]
+  ],
+  "heightM": 7.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-1FD89CFA-1CE0-4FE1-813D-3FD9222810AF",
+  "os": "os/1FD89CFA-1CE0-4FE1-813D-3FD9222810AF",
+  "footprint": [
+   [
+    -3.9271518,
+    52.9613599
+   ],
+   [
+    -3.9270006,
+    52.961247
+   ],
+   [
+    -3.9271107,
+    52.9611932
+   ],
+   [
+    -3.9272621,
+    52.9613061
+   ],
+   [
+    -3.9271518,
+    52.9613599
+   ]
+  ],
+  "heightM": 8.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-1FEFB19A-0691-4F36-959F-FC99D8CA0263",
+  "os": "os/1FEFB19A-0691-4F36-959F-FC99D8CA0263",
+  "footprint": [
+   [
+    -3.9326723,
+    52.9593259
+   ],
+   [
+    -3.9325151,
+    52.95919
+   ],
+   [
+    -3.9327008,
+    52.9591174
+   ],
+   [
+    -3.9328417,
+    52.9592417
+   ],
+   [
+    -3.9326723,
+    52.9593259
+   ]
+  ],
+  "heightM": 6.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-20AF6495-4025-49B3-9053-D3A020D6418E",
+  "os": "os/20AF6495-4025-49B3-9053-D3A020D6418E",
+  "footprint": [
+   [
+    -3.924109,
+    52.9492377
+   ],
+   [
+    -3.9245072,
+    52.9492204
+   ],
+   [
+    -3.9245263,
+    52.9493837
+   ],
+   [
+    -3.9241281,
+    52.9494001
+   ],
+   [
+    -3.924109,
+    52.9492377
+   ]
+  ],
+  "heightM": 6.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-17",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26",
+  "nmrw": [
+   41598
+  ]
+ },
+ {
+  "id": "building-vale-south-os-220F8130-B8A2-4DF6-BD2D-4ABCDD6235E1",
+  "os": "os/220F8130-B8A2-4DF6-BD2D-4ABCDD6235E1",
+  "footprint": [
+   [
+    -3.9287865,
+    52.9597721
+   ],
+   [
+    -3.9288477,
+    52.9598359
+   ],
+   [
+    -3.9286803,
+    52.9598945
+   ],
+   [
+    -3.9286191,
+    52.9598306
+   ],
+   [
+    -3.9287865,
+    52.9597721
+   ]
+  ],
+  "heightM": 5.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-245DB4A1-9AD3-49B4-8664-8054E50CCA3E",
+  "os": "os/245DB4A1-9AD3-49B4-8664-8054E50CCA3E",
+  "footprint": [
+   [
+    -3.9315119,
+    52.9600149
+   ],
+   [
+    -3.9316889,
+    52.9599132
+   ],
+   [
+    -3.9317411,
+    52.9599464
+   ],
+   [
+    -3.9315625,
+    52.9600482
+   ],
+   [
+    -3.9315119,
+    52.9600149
+   ]
+  ],
+  "heightM": 6.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26",
+  "nmrw": [
+   8399
+  ]
+ },
+ {
+  "id": "building-vale-south-os-245F540B-A69D-4246-80A0-F9FDEB495E34",
+  "os": "os/245F540B-A69D-4246-80A0-F9FDEB495E34",
+  "footprint": [
+   [
+    -3.932653,
+    52.959785
+   ],
+   [
+    -3.93269,
+    52.9598163
+   ],
+   [
+    -3.9326149,
+    52.9598486
+   ],
+   [
+    -3.9325779,
+    52.9598174
+   ],
+   [
+    -3.932653,
+    52.959785
+   ]
+  ],
+  "heightM": 11.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-24F15D30-378B-4A8D-A5C0-9BF966E46A5E",
+  "os": "os/24F15D30-378B-4A8D-A5C0-9BF966E46A5E",
+  "footprint": [
+   [
+    -3.9346823,
+    52.9589837
+   ],
+   [
+    -3.9346936,
+    52.959033
+   ],
+   [
+    -3.9345976,
+    52.959041
+   ],
+   [
+    -3.9345863,
+    52.9589917
+   ],
+   [
+    -3.9346823,
+    52.9589837
+   ]
+  ],
+  "heightM": 4.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-293CE50A-4C29-4981-B562-73C1CEB01B98",
+  "os": "os/293CE50A-4C29-4981-B562-73C1CEB01B98",
+  "footprint": [
+   [
+    -3.9331535,
+    52.9612024
+   ],
+   [
+    -3.9330725,
+    52.9612208
+   ],
+   [
+    -3.9330147,
+    52.9611282
+   ],
+   [
+    -3.9330958,
+    52.9611098
+   ],
+   [
+    -3.9331535,
+    52.9612024
+   ]
+  ],
+  "heightM": 7.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-29CFAD42-D095-4AFD-AE6D-8916E09EA827",
+  "os": "os/29CFAD42-D095-4AFD-AE6D-8916E09EA827",
+  "footprint": [
+   [
+    -3.9294618,
+    52.9623575
+   ],
+   [
+    -3.9296258,
+    52.9624401
+   ],
+   [
+    -3.9295617,
+    52.9624868
+   ],
+   [
+    -3.9293939,
+    52.9624048
+   ],
+   [
+    -3.9294618,
+    52.9623575
+   ]
+  ],
+  "heightM": 8.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-2BDDCCA2-D065-4980-857E-E8B508C2A03B",
+  "os": "os/2BDDCCA2-D065-4980-857E-E8B508C2A03B",
+  "footprint": [
+   [
+    -3.9407485,
+    52.9517669
+   ],
+   [
+    -3.9407555,
+    52.951682
+   ],
+   [
+    -3.940969,
+    52.9516885
+   ],
+   [
+    -3.9409621,
+    52.9517733
+   ],
+   [
+    -3.9407485,
+    52.9517669
+   ]
+  ],
+  "heightM": 6.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-2C901211-183B-45DD-8585-494B368CF50F",
+  "os": "os/2C901211-183B-45DD-8585-494B368CF50F",
+  "footprint": [
+   [
+    -3.9311758,
+    52.9598592
+   ],
+   [
+    -3.9310074,
+    52.9597489
+   ],
+   [
+    -3.9310817,
+    52.9597091
+   ],
+   [
+    -3.9312517,
+    52.95982
+   ],
+   [
+    -3.9311758,
+    52.9598592
+   ]
+  ],
+  "heightM": 3.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-2CADAD4B-3858-442B-81A4-6F5F75E6473E",
+  "os": "os/2CADAD4B-3858-442B-81A4-6F5F75E6473E",
+  "footprint": [
+   [
+    -3.9322033,
+    52.9595762
+   ],
+   [
+    -3.932364,
+    52.9595106
+   ],
+   [
+    -3.9324464,
+    52.9595797
+   ],
+   [
+    -3.9322897,
+    52.959647
+   ],
+   [
+    -3.9322033,
+    52.9595762
+   ]
+  ],
+  "heightM": 5.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-2EEE0672-13AF-4610-A404-F08C3D863C3F",
+  "os": "os/2EEE0672-13AF-4610-A404-F08C3D863C3F",
+  "footprint": [
+   [
+    -3.9232084,
+    52.9607848
+   ],
+   [
+    -3.9233181,
+    52.9607792
+   ],
+   [
+    -3.9233359,
+    52.9609085
+   ],
+   [
+    -3.9232261,
+    52.960914
+   ],
+   [
+    -3.9232084,
+    52.9607848
+   ]
+  ],
+  "heightM": 9.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-34669C14-A4D6-478E-B476-557F962AB7DE",
+  "os": "os/34669C14-A4D6-478E-B476-557F962AB7DE",
+  "footprint": [
+   [
+    -3.9304948,
+    52.9612226
+   ],
+   [
+    -3.9303632,
+    52.9612744
+   ],
+   [
+    -3.9302713,
+    52.9611893
+   ],
+   [
+    -3.9304027,
+    52.9611375
+   ],
+   [
+    -3.9304948,
+    52.9612226
+   ]
+  ],
+  "heightM": 8.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-353C2966-B671-4C31-B628-2634EAA0694E",
+  "os": "os/353C2966-B671-4C31-B628-2634EAA0694E",
+  "footprint": [
+   [
+    -3.9314115,
+    52.9591733
+   ],
+   [
+    -3.9314797,
+    52.9591314
+   ],
+   [
+    -3.9315563,
+    52.9591766
+   ],
+   [
+    -3.9314882,
+    52.9592186
+   ],
+   [
+    -3.9314115,
+    52.9591733
+   ]
+  ],
+  "heightM": 3.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-35507F37-433C-4A70-ABE2-07349CE7236E",
+  "os": "os/35507F37-433C-4A70-ABE2-07349CE7236E",
+  "footprint": [
+   [
+    -3.9335251,
+    52.9596388
+   ],
+   [
+    -3.9333717,
+    52.9596643
+   ],
+   [
+    -3.9333037,
+    52.9595152
+   ],
+   [
+    -3.9334571,
+    52.9594897
+   ],
+   [
+    -3.9335251,
+    52.9596388
+   ]
+  ],
+  "heightM": 4.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-35861BB1-B8DA-4FF5-AD30-80E5E43CE58C",
+  "os": "os/35861BB1-B8DA-4FF5-AD30-80E5E43CE58C",
+  "footprint": [
+   [
+    -3.9324977,
+    52.961186
+   ],
+   [
+    -3.9325663,
+    52.9612349
+   ],
+   [
+    -3.9323871,
+    52.9613267
+   ],
+   [
+    -3.9323183,
+    52.9612778
+   ],
+   [
+    -3.9324977,
+    52.961186
+   ]
+  ],
+  "heightM": 7.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-36DFAEB2-8A65-4BBA-BA7E-F7AC1CD5E16C",
+  "os": "os/36DFAEB2-8A65-4BBA-BA7E-F7AC1CD5E16C",
+  "footprint": [
+   [
+    -3.934506,
+    52.9556129
+   ],
+   [
+    -3.9345544,
+    52.9556518
+   ],
+   [
+    -3.9343841,
+    52.955729
+   ],
+   [
+    -3.9343358,
+    52.9556901
+   ],
+   [
+    -3.934506,
+    52.9556129
+   ]
+  ],
+  "heightM": 3.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-3932CD07-A194-4517-8ABC-A4FADE1ABCB3",
+  "os": "os/3932CD07-A194-4517-8ABC-A4FADE1ABCB3",
+  "footprint": [
+   [
+    -3.9400175,
+    52.9520615
+   ],
+   [
+    -3.9400948,
+    52.952059
+   ],
+   [
+    -3.9401042,
+    52.9521697
+   ],
+   [
+    -3.9400269,
+    52.9521722
+   ],
+   [
+    -3.9400175,
+    52.9520615
+   ]
+  ],
+  "heightM": 18.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-39A73A26-FD05-446E-A0E3-3BDC1B2D7D58",
+  "os": "os/39A73A26-FD05-446E-A0E3-3BDC1B2D7D58",
+  "footprint": [
+   [
+    -3.929759,
+    52.9608961
+   ],
+   [
+    -3.9296895,
+    52.9608542
+   ],
+   [
+    -3.9298119,
+    52.9607805
+   ],
+   [
+    -3.9298812,
+    52.9608224
+   ],
+   [
+    -3.929759,
+    52.9608961
+   ]
+  ],
+  "heightM": 2.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-3B55397E-4A75-467D-AB58-3B48C018217F",
+  "os": "os/3B55397E-4A75-467D-AB58-3B48C018217F",
+  "footprint": [
+   [
+    -3.9315868,
+    52.9627363
+   ],
+   [
+    -3.9316616,
+    52.9626766
+   ],
+   [
+    -3.9317987,
+    52.9627393
+   ],
+   [
+    -3.9317239,
+    52.962799
+   ],
+   [
+    -3.9315868,
+    52.9627363
+   ]
+  ],
+  "heightM": 6.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-3BD92FA7-BD61-47E9-ABC1-BF8E8DA5B471",
+  "os": "os/3BD92FA7-BD61-47E9-ABC1-BF8E8DA5B471",
+  "footprint": [
+   [
+    -3.9328205,
+    52.9614793
+   ],
+   [
+    -3.9327244,
+    52.9614611
+   ],
+   [
+    -3.932771,
+    52.9613713
+   ],
+   [
+    -3.9328671,
+    52.9613895
+   ],
+   [
+    -3.9328205,
+    52.9614793
+   ]
+  ],
+  "heightM": 7.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-3DD595B5-B1C9-4B7E-A164-1AA6EEB3C658",
+  "os": "os/3DD595B5-B1C9-4B7E-A164-1AA6EEB3C658",
+  "footprint": [
+   [
+    -3.9321431,
+    52.9476263
+   ],
+   [
+    -3.9317783,
+    52.9476944
+   ],
+   [
+    -3.9316991,
+    52.9475396
+   ],
+   [
+    -3.9318984,
+    52.9475022
+   ],
+   [
+    -3.9319538,
+    52.947611
+   ],
+   [
+    -3.9321192,
+    52.9475804
+   ],
+   [
+    -3.9321431,
+    52.9476263
+   ]
+  ],
+  "heightM": 7.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-17",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26",
+  "listed": [
+   {
+    "record": 4775,
+    "grade": "II"
+   }
+  ],
+  "nmrw": [
+   28334
+  ]
+ },
+ {
+  "id": "building-vale-south-os-4050A6E2-F949-40F2-A230-AD4F42EFC1EA",
+  "os": "os/4050A6E2-F949-40F2-A230-AD4F42EFC1EA",
+  "footprint": [
+   [
+    -3.9311027,
+    52.9592914
+   ],
+   [
+    -3.9310079,
+    52.9592307
+   ],
+   [
+    -3.9311737,
+    52.9591372
+   ],
+   [
+    -3.9312681,
+    52.959198
+   ],
+   [
+    -3.9311027,
+    52.9592914
+   ]
+  ],
+  "heightM": 8.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-40BDA342-AE26-4934-8A67-A04594CA49E0",
+  "os": "os/40BDA342-AE26-4934-8A67-A04594CA49E0",
+  "footprint": [
+   [
+    -3.9368887,
+    52.9491497
+   ],
+   [
+    -3.9371821,
+    52.9491894
+   ],
+   [
+    -3.9371379,
+    52.9493081
+   ],
+   [
+    -3.9368446,
+    52.9492684
+   ],
+   [
+    -3.9368887,
+    52.9491497
+   ]
+  ],
+  "heightM": 5.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-17",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-40F024E8-B63D-40F9-A0CC-B4666DF1F7E1",
+  "os": "os/40F024E8-B63D-40F9-A0CC-B4666DF1F7E1",
+  "footprint": [
+   [
+    -3.9332903,
+    52.9613267
+   ],
+   [
+    -3.9331412,
+    52.9613557
+   ],
+   [
+    -3.9330794,
+    52.9612397
+   ],
+   [
+    -3.9332285,
+    52.9612107
+   ],
+   [
+    -3.9332903,
+    52.9613267
+   ]
+  ],
+  "heightM": 7.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-4194B1BE-9B80-4934-96AC-4BC7153C4935",
+  "os": "os/4194B1BE-9B80-4934-96AC-4BC7153C4935",
+  "footprint": [
+   [
+    -3.9244662,
+    52.9535076
+   ],
+   [
+    -3.9249409,
+    52.9535389
+   ],
+   [
+    -3.9249243,
+    52.9536326
+   ],
+   [
+    -3.9244479,
+    52.9536036
+   ],
+   [
+    -3.9244662,
+    52.9535076
+   ]
+  ],
+  "heightM": 7.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-44107A97-2F28-48EB-961E-15E3BE31F265",
+  "os": "os/44107A97-2F28-48EB-961E-15E3BE31F265",
+  "footprint": [
+   [
+    -3.9308664,
+    52.9595119
+   ],
+   [
+    -3.9307059,
+    52.9594095
+   ],
+   [
+    -3.9308837,
+    52.9593085
+   ],
+   [
+    -3.9310435,
+    52.959411
+   ],
+   [
+    -3.9308664,
+    52.9595119
+   ]
+  ],
+  "heightM": 7.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-456F0D9B-9BF4-4924-AF6B-E0BF08026A4F",
+  "os": "os/456F0D9B-9BF4-4924-AF6B-E0BF08026A4F",
+  "footprint": [
+   [
+    -3.9290817,
+    52.9627961
+   ],
+   [
+    -3.9291459,
+    52.9628108
+   ],
+   [
+    -3.9291124,
+    52.9628638
+   ],
+   [
+    -3.9290482,
+    52.962849
+   ],
+   [
+    -3.9290817,
+    52.9627961
+   ]
+  ],
+  "heightM": 6.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-473A2E28-497D-42D2-BEB5-3E6284BBD74A",
+  "os": "os/473A2E28-497D-42D2-BEB5-3E6284BBD74A",
+  "footprint": [
+   [
+    -3.9282925,
+    52.9595029
+   ],
+   [
+    -3.9281745,
+    52.9596302
+   ],
+   [
+    -3.9280613,
+    52.959592
+   ],
+   [
+    -3.9281792,
+    52.9594647
+   ],
+   [
+    -3.9282925,
+    52.9595029
+   ]
+  ],
+  "heightM": 7.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-48D1354E-AAC3-4EAB-8C7E-8F15972067C6",
+  "os": "os/48D1354E-AAC3-4EAB-8C7E-8F15972067C6",
+  "footprint": [
+   [
+    -3.9264306,
+    52.9608147
+   ],
+   [
+    -3.9262894,
+    52.9607133
+   ],
+   [
+    -3.926398,
+    52.9606581
+   ],
+   [
+    -3.9265392,
+    52.9607595
+   ],
+   [
+    -3.9264306,
+    52.9608147
+   ]
+  ],
+  "heightM": 6.0,
+  "heightSource": "default",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "absent",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-4992AE94-1F7C-4730-A310-13DFA2C96B2C",
+  "os": "os/4992AE94-1F7C-4730-A310-13DFA2C96B2C",
+  "footprint": [
+   [
+    -3.9297393,
+    52.961194
+   ],
+   [
+    -3.9295696,
+    52.9610968
+   ],
+   [
+    -3.9296563,
+    52.9610417
+   ],
+   [
+    -3.9298259,
+    52.9611388
+   ],
+   [
+    -3.9297393,
+    52.961194
+   ]
+  ],
+  "heightM": 5.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-49C72A94-2AA7-4628-8869-EAFE0193F21C",
+  "os": "os/49C72A94-2AA7-4628-8869-EAFE0193F21C",
+  "footprint": [
+   [
+    -3.9252731,
+    52.9603916
+   ],
+   [
+    -3.9251552,
+    52.9604058
+   ],
+   [
+    -3.9251191,
+    52.960297
+   ],
+   [
+    -3.9252369,
+    52.9602827
+   ],
+   [
+    -3.9252731,
+    52.9603916
+   ]
+  ],
+  "heightM": 4.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-4B020A11-1126-4E32-AC03-9C390F866205",
+  "os": "os/4B020A11-1126-4E32-AC03-9C390F866205",
+  "footprint": [
+   [
+    -3.9297955,
+    52.9584128
+   ],
+   [
+    -3.9299202,
+    52.9582997
+   ],
+   [
+    -3.9300703,
+    52.9583606
+   ],
+   [
+    -3.9299457,
+    52.9584735
+   ],
+   [
+    -3.9297955,
+    52.9584128
+   ]
+  ],
+  "heightM": 5.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-4E0846CC-7966-48FA-876B-9250F30995D2",
+  "os": "os/4E0846CC-7966-48FA-876B-9250F30995D2",
+  "footprint": [
+   [
+    -3.9325177,
+    52.9589155
+   ],
+   [
+    -3.9324484,
+    52.9588832
+   ],
+   [
+    -3.9325307,
+    52.9588188
+   ],
+   [
+    -3.9326002,
+    52.9588512
+   ],
+   [
+    -3.9325177,
+    52.9589155
+   ]
+  ],
+  "heightM": 3.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-4EDFC49A-AC0A-4CDB-917E-3E4CA4351805",
+  "os": "os/4EDFC49A-AC0A-4CDB-917E-3E4CA4351805",
+  "footprint": [
+   [
+    -3.9311376,
+    52.9603283
+   ],
+   [
+    -3.9310122,
+    52.9602491
+   ],
+   [
+    -3.9311391,
+    52.9601766
+   ],
+   [
+    -3.9312634,
+    52.9602551
+   ],
+   [
+    -3.9311376,
+    52.9603283
+   ]
+  ],
+  "heightM": 8.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-51245858-6580-47FB-AD50-78BEE03DC436",
+  "os": "os/51245858-6580-47FB-AD50-78BEE03DC436",
+  "footprint": [
+   [
+    -3.931801,
+    52.9604874
+   ],
+   [
+    -3.9317333,
+    52.9604222
+   ],
+   [
+    -3.9320256,
+    52.9603138
+   ],
+   [
+    -3.9321491,
+    52.9604241
+   ],
+   [
+    -3.9320584,
+    52.9604646
+   ],
+   [
+    -3.9320013,
+    52.9604117
+   ],
+   [
+    -3.931801,
+    52.9604874
+   ]
+  ],
+  "heightM": 8.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-5285CC4E-88FE-421E-9656-2906C44717B5",
+  "os": "os/5285CC4E-88FE-421E-9656-2906C44717B5",
+  "footprint": [
+   [
+    -3.9316869,
+    52.9590712
+   ],
+   [
+    -3.9316438,
+    52.9591339
+   ],
+   [
+    -3.9314606,
+    52.9590881
+   ],
+   [
+    -3.9315037,
+    52.9590253
+   ],
+   [
+    -3.9316869,
+    52.9590712
+   ]
+  ],
+  "heightM": 3.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-535BCCAC-CF80-4964-AA00-60899F56D778",
+  "os": "os/535BCCAC-CF80-4964-AA00-60899F56D778",
+  "footprint": [
+   [
+    -3.9283328,
+    52.945621
+   ],
+   [
+    -3.9281359,
+    52.9455156
+   ],
+   [
+    -3.9282485,
+    52.9454449
+   ],
+   [
+    -3.9283749,
+    52.9453886
+   ],
+   [
+    -3.9285586,
+    52.94553
+   ],
+   [
+    -3.928434,
+    52.9455885
+   ],
+   [
+    -3.9284093,
+    52.9455693
+   ],
+   [
+    -3.9283328,
+    52.945621
+   ]
+  ],
+  "heightM": 4.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-17",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-548D6E1A-0CBA-4FF3-8874-00D27E5ACCB0",
+  "os": "os/548D6E1A-0CBA-4FF3-8874-00D27E5ACCB0",
+  "footprint": [
+   [
+    -3.9270388,
+    52.9603194
+   ],
+   [
+    -3.9269909,
+    52.9602555
+   ],
+   [
+    -3.9272352,
+    52.9601886
+   ],
+   [
+    -3.9272831,
+    52.9602525
+   ],
+   [
+    -3.9270388,
+    52.9603194
+   ]
+  ],
+  "heightM": 4.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-558EBD28-D192-4103-8567-77405A83125C",
+  "os": "os/558EBD28-D192-4103-8567-77405A83125C",
+  "footprint": [
+   [
+    -3.9292331,
+    52.960947
+   ],
+   [
+    -3.9291567,
+    52.9610055
+   ],
+   [
+    -3.9290093,
+    52.9609354
+   ],
+   [
+    -3.9290857,
+    52.9608769
+   ],
+   [
+    -3.9292331,
+    52.960947
+   ]
+  ],
+  "heightM": 7.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-56156ECE-C519-4B4F-8240-7778198C3D42",
+  "os": "os/56156ECE-C519-4B4F-8240-7778198C3D42",
+  "footprint": [
+   [
+    -3.9238667,
+    52.9606368
+   ],
+   [
+    -3.9225114,
+    52.9606821
+   ],
+   [
+    -3.9225027,
+    52.9605736
+   ],
+   [
+    -3.923852,
+    52.9605289
+   ],
+   [
+    -3.9238667,
+    52.9606368
+   ]
+  ],
+  "heightM": 6.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-5701AFAE-C30D-42EF-B267-7A5119F25B0D",
+  "os": "os/5701AFAE-C30D-42EF-B267-7A5119F25B0D",
+  "footprint": [
+   [
+    -3.9284491,
+    52.9555721
+   ],
+   [
+    -3.9284722,
+    52.9556146
+   ],
+   [
+    -3.9283325,
+    52.9556423
+   ],
+   [
+    -3.9283093,
+    52.9555998
+   ],
+   [
+    -3.9284491,
+    52.9555721
+   ]
+  ],
+  "heightM": 3.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-5BB2B5F5-7F71-498E-9C14-EE7DF6776248",
+  "os": "os/5BB2B5F5-7F71-498E-9C14-EE7DF6776248",
+  "footprint": [
+   [
+    -3.9283646,
+    52.9556877
+   ],
+   [
+    -3.9284232,
+    52.9557967
+   ],
+   [
+    -3.9280528,
+    52.9558704
+   ],
+   [
+    -3.9279974,
+    52.9557594
+   ],
+   [
+    -3.9283646,
+    52.9556877
+   ]
+  ],
+  "heightM": 6.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-5D8E5C30-D8DF-46BC-B902-C54CFF3AB696",
+  "os": "os/5D8E5C30-D8DF-46BC-B902-C54CFF3AB696",
+  "footprint": [
+   [
+    -3.9291874,
+    52.9626144
+   ],
+   [
+    -3.9292192,
+    52.9625612
+   ],
+   [
+    -3.9293102,
+    52.9625812
+   ],
+   [
+    -3.9292783,
+    52.9626343
+   ],
+   [
+    -3.9291874,
+    52.9626144
+   ]
+  ],
+  "heightM": 3.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-61B849E6-363F-45DE-9A54-44EA81AC56CD",
+  "os": "os/61B849E6-363F-45DE-9A54-44EA81AC56CD",
+  "footprint": [
+   [
+    -3.9281119,
+    52.9619158
+   ],
+   [
+    -3.9280718,
+    52.9618806
+   ],
+   [
+    -3.9281598,
+    52.961844
+   ],
+   [
+    -3.9281999,
+    52.9618792
+   ],
+   [
+    -3.9281119,
+    52.9619158
+   ]
+  ],
+  "heightM": 4.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-63464DE8-18D3-406D-8A3B-E7A74DA543CF",
+  "os": "os/63464DE8-18D3-406D-8A3B-E7A74DA543CF",
+  "footprint": [
+   [
+    -3.9306687,
+    52.9601774
+   ],
+   [
+    -3.9306977,
+    52.9601971
+   ],
+   [
+    -3.9305668,
+    52.9602675
+   ],
+   [
+    -3.9305378,
+    52.9602478
+   ],
+   [
+    -3.9306687,
+    52.9601774
+   ]
+  ],
+  "heightM": 2.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-6488EB4A-C686-47D4-8C02-574680B69E4B",
+  "os": "os/6488EB4A-C686-47D4-8C02-574680B69E4B",
+  "footprint": [
+   [
+    -3.9309709,
+    52.9596325
+   ],
+   [
+    -3.9310335,
+    52.9596775
+   ],
+   [
+    -3.9309475,
+    52.9597211
+   ],
+   [
+    -3.9308849,
+    52.9596761
+   ],
+   [
+    -3.9309709,
+    52.9596325
+   ]
+  ],
+  "heightM": 2.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-672B676D-0495-4697-9D31-F0368B234BC1",
+  "os": "os/672B676D-0495-4697-9D31-F0368B234BC1",
+  "footprint": [
+   [
+    -3.9282628,
+    52.9457183
+   ],
+   [
+    -3.9284551,
+    52.9456233
+   ],
+   [
+    -3.9285278,
+    52.9456797
+   ],
+   [
+    -3.9283371,
+    52.945774
+   ],
+   [
+    -3.9282628,
+    52.9457183
+   ]
+  ],
+  "heightM": 6.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-17",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-67760EB2-836F-4C83-839A-C40802D05BC2",
+  "os": "os/67760EB2-836F-4C83-839A-C40802D05BC2",
+  "footprint": [
+   [
+    -3.9278004,
+    52.9596448
+   ],
+   [
+    -3.927883,
+    52.9597058
+   ],
+   [
+    -3.9276831,
+    52.9598043
+   ],
+   [
+    -3.9276005,
+    52.9597432
+   ],
+   [
+    -3.9278004,
+    52.9596448
+   ]
+  ],
+  "heightM": 7.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-69C772CD-37F0-4FC9-9C01-A988ECDD8139",
+  "os": "os/69C772CD-37F0-4FC9-9C01-A988ECDD8139",
+  "footprint": [
+   [
+    -3.9305786,
+    52.9603169
+   ],
+   [
+    -3.9306451,
+    52.9603564
+   ],
+   [
+    -3.9305463,
+    52.960417
+   ],
+   [
+    -3.9304797,
+    52.9603774
+   ],
+   [
+    -3.9305786,
+    52.9603169
+   ]
+  ],
+  "heightM": 2.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-69E50C67-6A99-4D82-8148-A88584D5721E",
+  "os": "os/69E50C67-6A99-4D82-8148-A88584D5721E",
+  "footprint": [
+   [
+    -3.9279262,
+    52.9555158
+   ],
+   [
+    -3.928013,
+    52.9554947
+   ],
+   [
+    -3.9280552,
+    52.9555577
+   ],
+   [
+    -3.9279685,
+    52.9555788
+   ],
+   [
+    -3.9279262,
+    52.9555158
+   ]
+  ],
+  "heightM": 4.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-6A594E87-C3DD-44F3-B701-CDE62410EE12",
+  "os": "os/6A594E87-C3DD-44F3-B701-CDE62410EE12",
+  "footprint": [
+   [
+    -3.9247466,
+    52.9493872
+   ],
+   [
+    -3.9248557,
+    52.9493696
+   ],
+   [
+    -3.9249122,
+    52.949498
+   ],
+   [
+    -3.9248032,
+    52.9495155
+   ],
+   [
+    -3.9247466,
+    52.9493872
+   ]
+  ],
+  "heightM": 7.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-17",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26",
+  "listed": [
+   {
+    "record": 4836,
+    "grade": "II"
+   }
+  ],
+  "nmrw": [
+   28229
+  ]
+ },
+ {
+  "id": "building-vale-south-os-6BF5F083-E673-4D2B-9F3D-1752A45D2879",
+  "os": "os/6BF5F083-E673-4D2B-9F3D-1752A45D2879",
+  "footprint": [
+   [
+    -3.9323041,
+    52.9597681
+   ],
+   [
+    -3.9327862,
+    52.9595667
+   ],
+   [
+    -3.9328666,
+    52.9596269
+   ],
+   [
+    -3.9323865,
+    52.9598358
+   ],
+   [
+    -3.9323041,
+    52.9597681
+   ]
+  ],
+  "heightM": 7.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-6CF25742-6F4D-49A3-930F-A6E1723ED090",
+  "os": "os/6CF25742-6F4D-49A3-930F-A6E1723ED090",
+  "footprint": [
+   [
+    -3.9325732,
+    52.9616775
+   ],
+   [
+    -3.9327145,
+    52.9617741
+   ],
+   [
+    -3.9326345,
+    52.9618168
+   ],
+   [
+    -3.9324932,
+    52.9617193
+   ],
+   [
+    -3.9325732,
+    52.9616775
+   ]
+  ],
+  "heightM": 7.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-6E97A32D-DC2C-4AB8-B114-5B907E95A9E3",
+  "os": "os/6E97A32D-DC2C-4AB8-B114-5B907E95A9E3",
+  "footprint": [
+   [
+    -3.9225778,
+    52.951608
+   ],
+   [
+    -3.9225271,
+    52.951676
+   ],
+   [
+    -3.9224079,
+    52.9516436
+   ],
+   [
+    -3.9224585,
+    52.9515756
+   ],
+   [
+    -3.9225778,
+    52.951608
+   ]
+  ],
+  "heightM": 7.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26",
+  "listed": [
+   {
+    "record": 5210,
+    "grade": "II"
+   }
+  ],
+  "nmrw": [
+   41577
+  ]
+ },
+ {
+  "id": "building-vale-south-os-71977B01-3312-431B-A989-834B413EDE22",
+  "os": "os/71977B01-3312-431B-A989-834B413EDE22",
+  "footprint": [
+   [
+    -3.9287538,
+    52.9559271
+   ],
+   [
+    -3.9286397,
+    52.9559509
+   ],
+   [
+    -3.9285809,
+    52.9558481
+   ],
+   [
+    -3.9286951,
+    52.9558244
+   ],
+   [
+    -3.9287538,
+    52.9559271
+   ]
+  ],
+  "heightM": 5.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-787CB73B-EFE2-4700-9115-1B2484A43EA3",
+  "os": "os/787CB73B-EFE2-4700-9115-1B2484A43EA3",
+  "footprint": [
+   [
+    -3.9291779,
+    52.9622017
+   ],
+   [
+    -3.9294006,
+    52.9621626
+   ],
+   [
+    -3.9294545,
+    52.9622748
+   ],
+   [
+    -3.9292319,
+    52.9623139
+   ],
+   [
+    -3.9291779,
+    52.9622017
+   ]
+  ],
+  "heightM": 5.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-7B16FC25-7CC2-4BF0-B3E5-4DCB9695FB7B",
+  "os": "os/7B16FC25-7CC2-4BF0-B3E5-4DCB9695FB7B",
+  "footprint": [
+   [
+    -3.9405908,
+    52.9520945
+   ],
+   [
+    -3.9405168,
+    52.952109
+   ],
+   [
+    -3.9404518,
+    52.9519886
+   ],
+   [
+    -3.9405257,
+    52.951974
+   ],
+   [
+    -3.9405908,
+    52.9520945
+   ]
+  ],
+  "heightM": 14.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-7C16D7B4-7B05-4FAB-A473-408F727BEF00",
+  "os": "os/7C16D7B4-7B05-4FAB-A473-408F727BEF00",
+  "footprint": [
+   [
+    -3.9248186,
+    52.9605544
+   ],
+   [
+    -3.924795,
+    52.96049
+   ],
+   [
+    -3.925099,
+    52.9604495
+   ],
+   [
+    -3.9251226,
+    52.9605139
+   ],
+   [
+    -3.9248186,
+    52.9605544
+   ]
+  ],
+  "heightM": 7.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-7C6C1F33-F117-4FE1-BB27-EAE5BFB23C45",
+  "os": "os/7C6C1F33-F117-4FE1-BB27-EAE5BFB23C45",
+  "footprint": [
+   [
+    -3.9308879,
+    52.9611614
+   ],
+   [
+    -3.9308375,
+    52.9611289
+   ],
+   [
+    -3.9309043,
+    52.9610911
+   ],
+   [
+    -3.9309547,
+    52.9611235
+   ],
+   [
+    -3.9308879,
+    52.9611614
+   ]
+  ],
+  "heightM": 2.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-7DC460B6-DE7D-4091-A899-77382B74E154",
+  "os": "os/7DC460B6-DE7D-4091-A899-77382B74E154",
+  "footprint": [
+   [
+    -3.9267039,
+    52.9608709
+   ],
+   [
+    -3.9268188,
+    52.9609535
+   ],
+   [
+    -3.9267103,
+    52.9610086
+   ],
+   [
+    -3.9265954,
+    52.9609261
+   ],
+   [
+    -3.9267039,
+    52.9608709
+   ]
+  ],
+  "heightM": 6.0,
+  "heightSource": "default",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "absent",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-7F5999A6-49A5-4971-B911-9ED17986170F",
+  "os": "os/7F5999A6-49A5-4971-B911-9ED17986170F",
+  "footprint": [
+   [
+    -3.9282565,
+    52.9621649
+   ],
+   [
+    -3.9284712,
+    52.9622178
+   ],
+   [
+    -3.9284173,
+    52.9622977
+   ],
+   [
+    -3.9282026,
+    52.9622448
+   ],
+   [
+    -3.9282565,
+    52.9621649
+   ]
+  ],
+  "heightM": 6.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-8089AA52-B0C0-49DC-B0AE-22E042CD4339",
+  "os": "os/8089AA52-B0C0-49DC-B0AE-22E042CD4339",
+  "footprint": [
+   [
+    -3.9268798,
+    52.9602926
+   ],
+   [
+    -3.926934,
+    52.9603627
+   ],
+   [
+    -3.9267431,
+    52.9604164
+   ],
+   [
+    -3.9266891,
+    52.9603463
+   ],
+   [
+    -3.9268798,
+    52.9602926
+   ]
+  ],
+  "heightM": 6.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-80DEA8DC-A4A3-48E6-B9C5-60DABC45F2FB",
+  "os": "os/80DEA8DC-A4A3-48E6-B9C5-60DABC45F2FB",
+  "footprint": [
+   [
+    -3.9283682,
+    52.9619962
+   ],
+   [
+    -3.9284123,
+    52.9620309
+   ],
+   [
+    -3.9283239,
+    52.9620719
+   ],
+   [
+    -3.9282797,
+    52.9620371
+   ],
+   [
+    -3.9283682,
+    52.9619962
+   ]
+  ],
+  "heightM": 3.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-814D2F22-04AF-40C7-8615-536223FC3AAB",
+  "os": "os/814D2F22-04AF-40C7-8615-536223FC3AAB",
+  "footprint": [
+   [
+    -3.9330622,
+    52.9593079
+   ],
+   [
+    -3.9331566,
+    52.9593048
+   ],
+   [
+    -3.9331622,
+    52.9593667
+   ],
+   [
+    -3.9330677,
+    52.9593699
+   ],
+   [
+    -3.9330622,
+    52.9593079
+   ]
+  ],
+  "heightM": 5.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-8341DAD6-91D2-45B8-9378-01B9575C466D",
+  "os": "os/8341DAD6-91D2-45B8-9378-01B9575C466D",
+  "footprint": [
+   [
+    -3.9343611,
+    52.9600218
+   ],
+   [
+    -3.9341141,
+    52.9601299
+   ],
+   [
+    -3.934046,
+    52.9600726
+   ],
+   [
+    -3.9342915,
+    52.9599645
+   ],
+   [
+    -3.9343611,
+    52.9600218
+   ]
+  ],
+  "heightM": 11.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-83F8748C-30EE-4CD9-9876-3F725013FB45",
+  "os": "os/83F8748C-30EE-4CD9-9876-3F725013FB45",
+  "footprint": [
+   [
+    -3.9310364,
+    52.9603935
+   ],
+   [
+    -3.9303677,
+    52.960805
+   ],
+   [
+    -3.9302497,
+    52.9607356
+   ],
+   [
+    -3.9309199,
+    52.9603251
+   ],
+   [
+    -3.9310364,
+    52.9603935
+   ]
+  ],
+  "heightM": 7.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-845B5135-FA4A-4C73-9FC1-4B344DA846F0",
+  "os": "os/845B5135-FA4A-4C73-9FC1-4B344DA846F0",
+  "footprint": [
+   [
+    -3.931487,
+    52.9477478
+   ],
+   [
+    -3.9314113,
+    52.9475709
+   ],
+   [
+    -3.9316442,
+    52.9475337
+   ],
+   [
+    -3.9316702,
+    52.947594
+   ],
+   [
+    -3.931549,
+    52.9476131
+   ],
+   [
+    -3.9316004,
+    52.94773
+   ],
+   [
+    -3.931487,
+    52.9477478
+   ]
+  ],
+  "heightM": 7.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-17",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26",
+  "listed": [
+   {
+    "record": 4838,
+    "grade": "II"
+   }
+  ],
+  "nmrw": [
+   41640
+  ]
+ },
+ {
+  "id": "building-vale-south-os-85C93536-B0A1-4653-A6CD-13329114989F",
+  "os": "os/85C93536-B0A1-4653-A6CD-13329114989F",
+  "footprint": [
+   [
+    -3.9318258,
+    52.9583286
+   ],
+   [
+    -3.9319904,
+    52.9582145
+   ],
+   [
+    -3.9320697,
+    52.9582563
+   ],
+   [
+    -3.931905,
+    52.9583696
+   ],
+   [
+    -3.9318258,
+    52.9583286
+   ]
+  ],
+  "heightM": 4.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-867F0B65-1122-4974-BCF9-B6DC2F2BEF21",
+  "os": "os/867F0B65-1122-4974-BCF9-B6DC2F2BEF21",
+  "footprint": [
+   [
+    -3.9294945,
+    52.9617979
+   ],
+   [
+    -3.9295684,
+    52.9617361
+   ],
+   [
+    -3.9296779,
+    52.9617838
+   ],
+   [
+    -3.9296041,
+    52.9618456
+   ],
+   [
+    -3.9294945,
+    52.9617979
+   ]
+  ],
+  "heightM": 5.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-8818F1F0-E450-4244-A3B0-C10EC8F3580E",
+  "os": "os/8818F1F0-E450-4244-A3B0-C10EC8F3580E",
+  "footprint": [
+   [
+    -3.9216602,
+    52.9533994
+   ],
+   [
+    -3.9217051,
+    52.9533282
+   ],
+   [
+    -3.9218643,
+    52.9533648
+   ],
+   [
+    -3.9218193,
+    52.953436
+   ],
+   [
+    -3.9216602,
+    52.9533994
+   ]
+  ],
+  "heightM": 5.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-89D89E3B-72DF-4F31-891C-D57A0046BADE",
+  "os": "os/89D89E3B-72DF-4F31-891C-D57A0046BADE",
+  "footprint": [
+   [
+    -3.9324821,
+    52.9601348
+   ],
+   [
+    -3.9325898,
+    52.9602067
+   ],
+   [
+    -3.9324103,
+    52.9603052
+   ],
+   [
+    -3.932303,
+    52.9602332
+   ],
+   [
+    -3.9324821,
+    52.9601348
+   ]
+  ],
+  "heightM": 5.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-8AEF2811-6582-4945-92A1-4B32EA336367",
+  "os": "os/8AEF2811-6582-4945-92A1-4B32EA336367",
+  "footprint": [
+   [
+    -3.9321442,
+    52.9595292
+   ],
+   [
+    -3.9320655,
+    52.9594689
+   ],
+   [
+    -3.9321836,
+    52.9594128
+   ],
+   [
+    -3.9322623,
+    52.9594731
+   ],
+   [
+    -3.9321442,
+    52.9595292
+   ]
+  ],
+  "heightM": 2.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-8C6D2290-943E-460F-9C02-840B4E3CCFC4",
+  "os": "os/8C6D2290-943E-460F-9C02-840B4E3CCFC4",
+  "footprint": [
+   [
+    -3.9245647,
+    52.949614
+   ],
+   [
+    -3.924461,
+    52.9496177
+   ],
+   [
+    -3.9244441,
+    52.9494428
+   ],
+   [
+    -3.9245478,
+    52.9494391
+   ],
+   [
+    -3.9245647,
+    52.949614
+   ]
+  ],
+  "heightM": 4.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-17",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-8E885E2D-D381-42E9-9B68-30940C960A61",
+  "os": "os/8E885E2D-D381-42E9-9B68-30940C960A61",
+  "footprint": [
+   [
+    -3.9294677,
+    52.9607646
+   ],
+   [
+    -3.92952,
+    52.9607228
+   ],
+   [
+    -3.9296348,
+    52.9607752
+   ],
+   [
+    -3.9295824,
+    52.9608169
+   ],
+   [
+    -3.9294677,
+    52.9607646
+   ]
+  ],
+  "heightM": 7.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-930EFA34-F76A-4CE0-BA8E-0FA1C36BE581",
+  "os": "os/930EFA34-F76A-4CE0-BA8E-0FA1C36BE581",
+  "footprint": [
+   [
+    -3.931746,
+    52.9607867
+   ],
+   [
+    -3.9317158,
+    52.9607609
+   ],
+   [
+    -3.9318054,
+    52.9607226
+   ],
+   [
+    -3.9318355,
+    52.9607484
+   ],
+   [
+    -3.931746,
+    52.9607867
+   ]
+  ],
+  "heightM": 2.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-9321DA47-8025-45E6-ACFB-4FC639AA1669",
+  "os": "os/9321DA47-8025-45E6-ACFB-4FC639AA1669",
+  "footprint": [
+   [
+    -3.933015,
+    52.9596563
+   ],
+   [
+    -3.9329195,
+    52.9595842
+   ],
+   [
+    -3.9330738,
+    52.9595114
+   ],
+   [
+    -3.9331734,
+    52.959588
+   ],
+   [
+    -3.933015,
+    52.9596563
+   ]
+  ],
+  "heightM": 6.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-9DD83A02-CFD5-4587-B414-639D7927F9D0",
+  "os": "os/9DD83A02-CFD5-4587-B414-639D7927F9D0",
+  "footprint": [
+   [
+    -3.9303938,
+    52.9609313
+   ],
+   [
+    -3.9311316,
+    52.9604912
+   ],
+   [
+    -3.9312492,
+    52.960564
+   ],
+   [
+    -3.9305083,
+    52.9610018
+   ],
+   [
+    -3.9303938,
+    52.9609313
+   ]
+  ],
+  "heightM": 7.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-A04DE514-BC63-4A7B-B6A4-2136BE98B00D",
+  "os": "os/A04DE514-BC63-4A7B-B6A4-2136BE98B00D",
+  "footprint": [
+   [
+    -3.9319469,
+    52.9575393
+   ],
+   [
+    -3.9320578,
+    52.9575603
+   ],
+   [
+    -3.9319978,
+    52.9576762
+   ],
+   [
+    -3.9318868,
+    52.9576552
+   ],
+   [
+    -3.9319469,
+    52.9575393
+   ]
+  ],
+  "heightM": 5.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-A05D2B9B-D26D-43E1-93CF-C94139B9B2B3",
+  "os": "os/A05D2B9B-D26D-43E1-93CF-C94139B9B2B3",
+  "footprint": [
+   [
+    -3.9328381,
+    52.9612844
+   ],
+   [
+    -3.9327609,
+    52.9613122
+   ],
+   [
+    -3.932672,
+    52.9612219
+   ],
+   [
+    -3.9327492,
+    52.9611941
+   ],
+   [
+    -3.9328381,
+    52.9612844
+   ]
+  ],
+  "heightM": 7.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-A171C078-ADD7-40DE-BBE5-910C080AB17A",
+  "os": "os/A171C078-ADD7-40DE-BBE5-910C080AB17A",
+  "footprint": [
+   [
+    -3.9314475,
+    52.9600205
+   ],
+   [
+    -3.9315411,
+    52.9600812
+   ],
+   [
+    -3.9314174,
+    52.9601518
+   ],
+   [
+    -3.9313228,
+    52.9600916
+   ],
+   [
+    -3.9314475,
+    52.9600205
+   ]
+  ],
+  "heightM": 7.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-A4916EBF-9004-4D96-8BC3-CB710E263F79",
+  "os": "os/A4916EBF-9004-4D96-8BC3-CB710E263F79",
+  "footprint": [
+   [
+    -3.92656,
+    52.9607747
+   ],
+   [
+    -3.926675,
+    52.9608573
+   ],
+   [
+    -3.9265664,
+    52.9609124
+   ],
+   [
+    -3.9264515,
+    52.9608299
+   ],
+   [
+    -3.92656,
+    52.9607747
+   ]
+  ],
+  "heightM": 6.0,
+  "heightSource": "default",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "absent",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-A4FBC877-0540-44CB-86E6-B81E4A0DCFF2",
+  "os": "os/A4FBC877-0540-44CB-86E6-B81E4A0DCFF2",
+  "footprint": [
+   [
+    -3.9275162,
+    52.9600324
+   ],
+   [
+    -3.9275658,
+    52.9600979
+   ],
+   [
+    -3.9274323,
+    52.9601348
+   ],
+   [
+    -3.9273826,
+    52.9600694
+   ],
+   [
+    -3.9275162,
+    52.9600324
+   ]
+  ],
+  "heightM": 6.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-A75BB812-8948-4221-B0A6-B9796C60FCDA",
+  "os": "os/A75BB812-8948-4221-B0A6-B9796C60FCDA",
+  "footprint": [
+   [
+    -3.9326819,
+    52.9614938
+   ],
+   [
+    -3.9327427,
+    52.961539
+   ],
+   [
+    -3.9326097,
+    52.9616044
+   ],
+   [
+    -3.9325487,
+    52.9615592
+   ],
+   [
+    -3.9326819,
+    52.9614938
+   ]
+  ],
+  "heightM": 7.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-A76FC998-A2ED-4C1D-B2F9-6F5F2D01BF43",
+  "os": "os/A76FC998-A2ED-4C1D-B2F9-6F5F2D01BF43",
+  "footprint": [
+   [
+    -3.9294999,
+    52.9626972
+   ],
+   [
+    -3.9293716,
+    52.9628958
+   ],
+   [
+    -3.9291883,
+    52.9628528
+   ],
+   [
+    -3.9293141,
+    52.962654
+   ],
+   [
+    -3.9294999,
+    52.9626972
+   ]
+  ],
+  "heightM": 9.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-A9DF04CC-BA67-48D9-B818-B37EBA15B678",
+  "os": "os/A9DF04CC-BA67-48D9-B818-B37EBA15B678",
+  "footprint": [
+   [
+    -3.9277591,
+    52.964969
+   ],
+   [
+    -3.9278214,
+    52.9648826
+   ],
+   [
+    -3.9280165,
+    52.9649341
+   ],
+   [
+    -3.9279533,
+    52.9650205
+   ],
+   [
+    -3.9277591,
+    52.964969
+   ]
+  ],
+  "heightM": 6.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-ABB98804-9AAD-4476-9BE6-11120C671DA2",
+  "os": "os/ABB98804-9AAD-4476-9BE6-11120C671DA2",
+  "footprint": [
+   [
+    -3.9327422,
+    52.9607332
+   ],
+   [
+    -3.9328157,
+    52.9606925
+   ],
+   [
+    -3.932911,
+    52.9607553
+   ],
+   [
+    -3.9328375,
+    52.960796
+   ],
+   [
+    -3.9327422,
+    52.9607332
+   ]
+  ],
+  "heightM": 3.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-ADB0101A-BD51-4966-BC01-56925F691F19",
+  "os": "os/ADB0101A-BD51-4966-BC01-56925F691F19",
+  "footprint": [
+   [
+    -3.9313653,
+    52.9608618
+   ],
+   [
+    -3.9312282,
+    52.9609481
+   ],
+   [
+    -3.9311576,
+    52.9609042
+   ],
+   [
+    -3.931294,
+    52.9608185
+   ],
+   [
+    -3.9313653,
+    52.9608618
+   ]
+  ],
+  "heightM": 3.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-AE11ACE7-1AD7-40EE-8BF4-C398519152AE",
+  "os": "os/AE11ACE7-1AD7-40EE-8BF4-C398519152AE",
+  "footprint": [
+   [
+    -3.9322326,
+    52.9604631
+   ],
+   [
+    -3.9322866,
+    52.9604388
+   ],
+   [
+    -3.9323371,
+    52.9604797
+   ],
+   [
+    -3.9322829,
+    52.960504
+   ],
+   [
+    -3.9322326,
+    52.9604631
+   ]
+  ],
+  "heightM": 2.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-B1DFF29F-DEB4-47B9-9B73-FEDAA4D903BF",
+  "os": "os/B1DFF29F-DEB4-47B9-9B73-FEDAA4D903BF",
+  "footprint": [
+   [
+    -3.9320642,
+    52.9602893
+   ],
+   [
+    -3.9322013,
+    52.9602227
+   ],
+   [
+    -3.9323164,
+    52.9603035
+   ],
+   [
+    -3.9321724,
+    52.9603734
+   ],
+   [
+    -3.9320642,
+    52.9602893
+   ]
+  ],
+  "heightM": 9.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-B26F8314-2FD6-439F-B488-26F698A02351",
+  "os": "os/B26F8314-2FD6-439F-B488-26F698A02351",
+  "footprint": [
+   [
+    -3.9299706,
+    52.9605086
+   ],
+   [
+    -3.9300378,
+    52.9604665
+   ],
+   [
+    -3.9301198,
+    52.9605143
+   ],
+   [
+    -3.9300526,
+    52.9605564
+   ],
+   [
+    -3.9299706,
+    52.9605086
+   ]
+  ],
+  "heightM": 2.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-B32A0E06-F777-496F-BB3C-8288B1F701B9",
+  "os": "os/B32A0E06-F777-496F-BB3C-8288B1F701B9",
+  "footprint": [
+   [
+    -3.9256267,
+    52.960269
+   ],
+   [
+    -3.9256822,
+    52.9603552
+   ],
+   [
+    -3.9254146,
+    52.960418
+   ],
+   [
+    -3.9253591,
+    52.9603318
+   ],
+   [
+    -3.9256267,
+    52.960269
+   ]
+  ],
+  "heightM": 5.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-B57DB800-7C4A-4E11-B618-61C065967261",
+  "os": "os/B57DB800-7C4A-4E11-B618-61C065967261",
+  "footprint": [
+   [
+    -3.9274531,
+    52.9609996
+   ],
+   [
+    -3.9275696,
+    52.9610866
+   ],
+   [
+    -3.9274719,
+    52.9611343
+   ],
+   [
+    -3.9273553,
+    52.9610474
+   ],
+   [
+    -3.9274531,
+    52.9609996
+   ]
+  ],
+  "heightM": 6.0,
+  "heightSource": "default",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "absent",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-B7670607-BCF2-4135-99D2-53865F5AC947",
+  "os": "os/B7670607-BCF2-4135-99D2-53865F5AC947",
+  "footprint": [
+   [
+    -3.9281195,
+    52.9626681
+   ],
+   [
+    -3.9281501,
+    52.9627108
+   ],
+   [
+    -3.9279351,
+    52.962767
+   ],
+   [
+    -3.9279044,
+    52.9627243
+   ],
+   [
+    -3.9281195,
+    52.9626681
+   ]
+  ],
+  "heightM": 3.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-B8907C46-89B2-469B-B477-EF6F5FE3A25A",
+  "os": "os/B8907C46-89B2-469B-B477-EF6F5FE3A25A",
+  "footprint": [
+   [
+    -3.9322653,
+    52.9611914
+   ],
+   [
+    -3.9320553,
+    52.9612892
+   ],
+   [
+    -3.9320013,
+    52.9612478
+   ],
+   [
+    -3.9322128,
+    52.9611491
+   ],
+   [
+    -3.9322653,
+    52.9611914
+   ]
+  ],
+  "heightM": 4.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-B95C8195-04D5-443B-88D5-B853D7868B1A",
+  "os": "os/B95C8195-04D5-443B-88D5-B853D7868B1A",
+  "footprint": [
+   [
+    -3.9301541,
+    52.9602949
+   ],
+   [
+    -3.930247,
+    52.9603565
+   ],
+   [
+    -3.930062,
+    52.9604568
+   ],
+   [
+    -3.929971,
+    52.9603959
+   ],
+   [
+    -3.9301541,
+    52.9602949
+   ]
+  ],
+  "heightM": 5.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-BD887923-C21A-4FF5-8E64-B71E9919C430",
+  "os": "os/BD887923-C21A-4FF5-8E64-B71E9919C430",
+  "footprint": [
+   [
+    -3.9346249,
+    52.959858
+   ],
+   [
+    -3.9343591,
+    52.9599756
+   ],
+   [
+    -3.9342982,
+    52.9599243
+   ],
+   [
+    -3.934564,
+    52.9598076
+   ],
+   [
+    -3.9346249,
+    52.959858
+   ]
+  ],
+  "heightM": 4.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-C05A6507-A52C-488E-99BA-AAAFBFFF3D45",
+  "os": "os/C05A6507-A52C-488E-99BA-AAAFBFFF3D45",
+  "footprint": [
+   [
+    -3.9188283,
+    52.9476468
+   ],
+   [
+    -3.9190149,
+    52.9476413
+   ],
+   [
+    -3.9190309,
+    52.9478431
+   ],
+   [
+    -3.9188445,
+    52.9478485
+   ],
+   [
+    -3.9188283,
+    52.9476468
+   ]
+  ],
+  "heightM": 4.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-17",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-C1544EAC-8C18-4F2C-814C-97FAF13CA171",
+  "os": "os/C1544EAC-8C18-4F2C-814C-97FAF13CA171",
+  "footprint": [
+   [
+    -3.9294629,
+    52.9604642
+   ],
+   [
+    -3.9295588,
+    52.960517
+   ],
+   [
+    -3.9294009,
+    52.9606228
+   ],
+   [
+    -3.9293023,
+    52.9605713
+   ],
+   [
+    -3.9294629,
+    52.9604642
+   ]
+  ],
+  "heightM": 7.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-C1D80C67-0ABA-4F15-A8E7-71E6F9FC7579",
+  "os": "os/C1D80C67-0ABA-4F15-A8E7-71E6F9FC7579",
+  "footprint": [
+   [
+    -3.9301378,
+    52.9605866
+   ],
+   [
+    -3.9301794,
+    52.9605615
+   ],
+   [
+    -3.9302498,
+    52.9606039
+   ],
+   [
+    -3.9302082,
+    52.9606291
+   ],
+   [
+    -3.9301378,
+    52.9605866
+   ]
+  ],
+  "heightM": 2.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-C278E863-BDE2-4EF8-B02C-A2FCA9961DC8",
+  "os": "os/C278E863-BDE2-4EF8-B02C-A2FCA9961DC8",
+  "footprint": [
+   [
+    -3.9320837,
+    52.9585917
+   ],
+   [
+    -3.932028,
+    52.9586532
+   ],
+   [
+    -3.9319208,
+    52.9586177
+   ],
+   [
+    -3.9319766,
+    52.9585562
+   ],
+   [
+    -3.9320837,
+    52.9585917
+   ]
+  ],
+  "heightM": 3.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-C41D8831-8461-425F-8127-35AF369E7279",
+  "os": "os/C41D8831-8461-425F-8127-35AF369E7279",
+  "footprint": [
+   [
+    -3.9315059,
+    52.9605784
+   ],
+   [
+    -3.9314256,
+    52.9605048
+   ],
+   [
+    -3.9316075,
+    52.9604326
+   ],
+   [
+    -3.9316875,
+    52.9605063
+   ],
+   [
+    -3.9315059,
+    52.9605784
+   ]
+  ],
+  "heightM": 7.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-C44E156A-70BE-4732-8443-BEA1A071A558",
+  "os": "os/C44E156A-70BE-4732-8443-BEA1A071A558",
+  "footprint": [
+   [
+    -3.9303617,
+    52.9602491
+   ],
+   [
+    -3.9302237,
+    52.9601543
+   ],
+   [
+    -3.9303096,
+    52.960109
+   ],
+   [
+    -3.9304479,
+    52.9602047
+   ],
+   [
+    -3.9303617,
+    52.9602491
+   ]
+  ],
+  "heightM": 5.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-C4AEF247-70D0-462B-9A5E-99F581712E14",
+  "os": "os/C4AEF247-70D0-462B-9A5E-99F581712E14",
+  "footprint": [
+   [
+    -3.929258,
+    52.9620017
+   ],
+   [
+    -3.9293304,
+    52.9619345
+   ],
+   [
+    -3.929468,
+    52.9619885
+   ],
+   [
+    -3.9293958,
+    52.9620556
+   ],
+   [
+    -3.929258,
+    52.9620017
+   ]
+  ],
+  "heightM": 5.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-C846806D-01A4-4781-8DCB-2F884C96FD9B",
+  "os": "os/C846806D-01A4-4781-8DCB-2F884C96FD9B",
+  "footprint": [
+   [
+    -3.9285665,
+    52.9623615
+   ],
+   [
+    -3.9285927,
+    52.9624205
+   ],
+   [
+    -3.9284564,
+    52.9624425
+   ],
+   [
+    -3.9284302,
+    52.9623835
+   ],
+   [
+    -3.9285665,
+    52.9623615
+   ]
+  ],
+  "heightM": 3.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-CA3917E3-E4DE-4DE0-8E85-FA2B683F2F8A",
+  "os": "os/CA3917E3-E4DE-4DE0-8E85-FA2B683F2F8A",
+  "footprint": [
+   [
+    -3.9255905,
+    52.9534308
+   ],
+   [
+    -3.9255783,
+    52.9535318
+   ],
+   [
+    -3.9252877,
+    52.953519
+   ],
+   [
+    -3.9252999,
+    52.9534181
+   ],
+   [
+    -3.9255905,
+    52.9534308
+   ]
+  ],
+  "heightM": 4.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-CAF16A5C-CA3B-41BB-84D5-D78F8D99765E",
+  "os": "os/CAF16A5C-CA3B-41BB-84D5-D78F8D99765E",
+  "footprint": [
+   [
+    -3.9297221,
+    52.9606004
+   ],
+   [
+    -3.9297745,
+    52.9605594
+   ],
+   [
+    -3.9298876,
+    52.9606121
+   ],
+   [
+    -3.9298352,
+    52.960653
+   ],
+   [
+    -3.9297221,
+    52.9606004
+   ]
+  ],
+  "heightM": 7.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-CB2E6838-22C3-4CE8-97B7-84916415FF66",
+  "os": "os/CB2E6838-22C3-4CE8-97B7-84916415FF66",
+  "footprint": [
+   [
+    -3.939967,
+    52.9522242
+   ],
+   [
+    -3.9399959,
+    52.9522506
+   ],
+   [
+    -3.9398713,
+    52.9523004
+   ],
+   [
+    -3.9398424,
+    52.952274
+   ],
+   [
+    -3.939967,
+    52.9522242
+   ]
+  ],
+  "heightM": 16.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-CB7C5A63-CCD8-4A65-A70A-335DD1FFD091",
+  "os": "os/CB7C5A63-CCD8-4A65-A70A-335DD1FFD091",
+  "footprint": [
+   [
+    -3.9293237,
+    52.9618786
+   ],
+   [
+    -3.9293848,
+    52.961823
+   ],
+   [
+    -3.9296077,
+    52.9619123
+   ],
+   [
+    -3.9295466,
+    52.9619679
+   ],
+   [
+    -3.9293237,
+    52.9618786
+   ]
+  ],
+  "heightM": 6.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-CBC7D9DE-09A8-42F5-98C1-6AF5D0F69F64",
+  "os": "os/CBC7D9DE-09A8-42F5-98C1-6AF5D0F69F64",
+  "footprint": [
+   [
+    -3.922277,
+    52.9518632
+   ],
+   [
+    -3.9223763,
+    52.9517723
+   ],
+   [
+    -3.9224852,
+    52.9518158
+   ],
+   [
+    -3.922386,
+    52.9519066
+   ],
+   [
+    -3.922277,
+    52.9518632
+   ]
+  ],
+  "heightM": 4.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-CC71C8D8-1184-4726-9FA3-A6A8B0B489E7",
+  "os": "os/CC71C8D8-1184-4726-9FA3-A6A8B0B489E7",
+  "footprint": [
+   [
+    -3.935504,
+    52.9586127
+   ],
+   [
+    -3.9353625,
+    52.9586315
+   ],
+   [
+    -3.9353146,
+    52.9584999
+   ],
+   [
+    -3.9354561,
+    52.9584812
+   ],
+   [
+    -3.935504,
+    52.9586127
+   ]
+  ],
+  "heightM": 4.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-CD0E4218-8B18-4608-9CAE-69B5511C7A8F",
+  "os": "os/CD0E4218-8B18-4608-9CAE-69B5511C7A8F",
+  "footprint": [
+   [
+    -3.9301663,
+    52.9610993
+   ],
+   [
+    -3.9302109,
+    52.9610705
+   ],
+   [
+    -3.9303164,
+    52.9611302
+   ],
+   [
+    -3.9302719,
+    52.961159
+   ],
+   [
+    -3.9301663,
+    52.9610993
+   ]
+  ],
+  "heightM": 5.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-D12A1760-6E82-452C-BAE6-927207CC688C",
+  "os": "os/D12A1760-6E82-452C-BAE6-927207CC688C",
+  "footprint": [
+   [
+    -3.9339159,
+    52.9594648
+   ],
+   [
+    -3.9339369,
+    52.9595144
+   ],
+   [
+    -3.934069,
+    52.9594939
+   ],
+   [
+    -3.9340893,
+    52.9595446
+   ],
+   [
+    -3.9338462,
+    52.9595785
+   ],
+   [
+    -3.933789,
+    52.9594404
+   ],
+   [
+    -3.9340592,
+    52.9594039
+   ],
+   [
+    -3.9340745,
+    52.959445
+   ],
+   [
+    -3.9339159,
+    52.9594648
+   ]
+  ],
+  "heightM": 7.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-D172D4FE-8650-4E91-8447-1D773FC06716",
+  "os": "os/D172D4FE-8650-4E91-8447-1D773FC06716",
+  "footprint": [
+   [
+    -3.9327835,
+    52.9593656
+   ],
+   [
+    -3.9328025,
+    52.9592753
+   ],
+   [
+    -3.9330068,
+    52.959291
+   ],
+   [
+    -3.9329877,
+    52.9593812
+   ],
+   [
+    -3.9327835,
+    52.9593656
+   ]
+  ],
+  "heightM": 8.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-D4CD5EB1-6386-4254-8688-CD29D633C64F",
+  "os": "os/D4CD5EB1-6386-4254-8688-CD29D633C64F",
+  "footprint": [
+   [
+    -3.929556,
+    52.9626244
+   ],
+   [
+    -3.9294444,
+    52.9625997
+   ],
+   [
+    -3.9294875,
+    52.9625288
+   ],
+   [
+    -3.929599,
+    52.9625535
+   ],
+   [
+    -3.929556,
+    52.9626244
+   ]
+  ],
+  "heightM": 7.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-D8B4BCE2-2296-49EE-84CE-47AD04AFF638",
+  "os": "os/D8B4BCE2-2296-49EE-84CE-47AD04AFF638",
+  "footprint": [
+   [
+    -3.9397177,
+    52.9514766
+   ],
+   [
+    -3.9393601,
+    52.9513717
+   ],
+   [
+    -3.9394128,
+    52.9513062
+   ],
+   [
+    -3.9392829,
+    52.9512681
+   ],
+   [
+    -3.9392296,
+    52.9513333
+   ],
+   [
+    -3.9390091,
+    52.9512689
+   ],
+   [
+    -3.9391163,
+    52.9511368
+   ],
+   [
+    -3.9398202,
+    52.9513444
+   ],
+   [
+    -3.9397177,
+    52.9514766
+   ]
+  ],
+  "heightM": 5.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-DB7807A1-232A-4B94-A045-D1FF6C4F8611",
+  "os": "os/DB7807A1-232A-4B94-A045-D1FF6C4F8611",
+  "footprint": [
+   [
+    -3.9262909,
+    52.9603934
+   ],
+   [
+    -3.9264404,
+    52.9603516
+   ],
+   [
+    -3.9265245,
+    52.9604614
+   ],
+   [
+    -3.926375,
+    52.9605031
+   ],
+   [
+    -3.9262909,
+    52.9603934
+   ]
+  ],
+  "heightM": 7.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-DCF20E10-0725-4E20-9490-93F4E08EF31B",
+  "os": "os/DCF20E10-0725-4E20-9490-93F4E08EF31B",
+  "footprint": [
+   [
+    -3.9293514,
+    52.9581805
+   ],
+   [
+    -3.9292422,
+    52.9582795
+   ],
+   [
+    -3.9293571,
+    52.9583258
+   ],
+   [
+    -3.9292932,
+    52.9583837
+   ],
+   [
+    -3.9290868,
+    52.9583008
+   ],
+   [
+    -3.92926,
+    52.9581438
+   ],
+   [
+    -3.9293514,
+    52.9581805
+   ]
+  ],
+  "heightM": 6.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-DD4BED91-9132-40FE-BE10-844EAF4D4179",
+  "os": "os/DD4BED91-9132-40FE-BE10-844EAF4D4179",
+  "footprint": [
+   [
+    -3.928035,
+    52.9599781
+   ],
+   [
+    -3.9281698,
+    52.9599224
+   ],
+   [
+    -3.9282845,
+    52.9600233
+   ],
+   [
+    -3.9281497,
+    52.9600792
+   ],
+   [
+    -3.928035,
+    52.9599781
+   ]
+  ],
+  "heightM": 6.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-DD83191B-45E1-424A-BBDE-33D84D3F344D",
+  "os": "os/DD83191B-45E1-424A-BBDE-33D84D3F344D",
+  "footprint": [
+   [
+    -3.9277847,
+    52.9618406
+   ],
+   [
+    -3.9278229,
+    52.9617959
+   ],
+   [
+    -3.9280677,
+    52.9618719
+   ],
+   [
+    -3.9280294,
+    52.9619167
+   ],
+   [
+    -3.9277847,
+    52.9618406
+   ]
+  ],
+  "heightM": 4.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-DD958093-C37D-4339-8D74-A54303C4BCD5",
+  "os": "os/DD958093-C37D-4339-8D74-A54303C4BCD5",
+  "footprint": [
+   [
+    -3.9273213,
+    52.961479
+   ],
+   [
+    -3.9271835,
+    52.961376
+   ],
+   [
+    -3.9272938,
+    52.9613222
+   ],
+   [
+    -3.9274316,
+    52.9614251
+   ],
+   [
+    -3.9273213,
+    52.961479
+   ]
+  ],
+  "heightM": 6.0,
+  "heightSource": "default",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "absent",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-DE200F3B-EB66-48BE-BA34-1AFBD986A988",
+  "os": "os/DE200F3B-EB66-48BE-BA34-1AFBD986A988",
+  "footprint": [
+   [
+    -3.9325773,
+    52.9606585
+   ],
+   [
+    -3.9322871,
+    52.9608181
+   ],
+   [
+    -3.9322043,
+    52.9607632
+   ],
+   [
+    -3.9324937,
+    52.9606034
+   ],
+   [
+    -3.9325773,
+    52.9606585
+   ]
+  ],
+  "heightM": 7.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-DE949443-05F5-45F5-82B0-1DEE44CC2121",
+  "os": "os/DE949443-05F5-45F5-82B0-1DEE44CC2121",
+  "footprint": [
+   [
+    -3.9277642,
+    52.9601343
+   ],
+   [
+    -3.9279119,
+    52.960093
+   ],
+   [
+    -3.9279782,
+    52.9601793
+   ],
+   [
+    -3.9278305,
+    52.9602206
+   ],
+   [
+    -3.9277642,
+    52.9601343
+   ]
+  ],
+  "heightM": 7.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-DF8F3748-41D0-4720-876B-84932147E14C",
+  "os": "os/DF8F3748-41D0-4720-876B-84932147E14C",
+  "footprint": [
+   [
+    -3.9332161,
+    52.9615034
+   ],
+   [
+    -3.9331266,
+    52.9614969
+   ],
+   [
+    -3.9331487,
+    52.9613865
+   ],
+   [
+    -3.9332381,
+    52.9613929
+   ],
+   [
+    -3.9332161,
+    52.9615034
+   ]
+  ],
+  "heightM": 7.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-E0D12201-0AA4-41DB-9B93-77EEC373A227",
+  "os": "os/E0D12201-0AA4-41DB-9B93-77EEC373A227",
+  "footprint": [
+   [
+    -3.9297178,
+    52.9607207
+   ],
+   [
+    -3.9296657,
+    52.9607634
+   ],
+   [
+    -3.9295551,
+    52.9607141
+   ],
+   [
+    -3.9296072,
+    52.9606714
+   ],
+   [
+    -3.9297178,
+    52.9607207
+   ]
+  ],
+  "heightM": 7.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-E20B95B3-3D3D-415D-8931-330476D48FD4",
+  "os": "os/E20B95B3-3D3D-415D-8931-330476D48FD4",
+  "footprint": [
+   [
+    -3.9290196,
+    52.9596707
+   ],
+   [
+    -3.9290657,
+    52.9597222
+   ],
+   [
+    -3.9289234,
+    52.9597686
+   ],
+   [
+    -3.9288773,
+    52.959717
+   ],
+   [
+    -3.9290196,
+    52.9596707
+   ]
+  ],
+  "heightM": 5.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-E24C48D8-07D0-4434-820C-602EBA102A19",
+  "os": "os/E24C48D8-07D0-4434-820C-602EBA102A19",
+  "footprint": [
+   [
+    -3.9320757,
+    52.9586782
+   ],
+   [
+    -3.9321339,
+    52.9586084
+   ],
+   [
+    -3.9322791,
+    52.9586526
+   ],
+   [
+    -3.9322209,
+    52.9587224
+   ],
+   [
+    -3.9320757,
+    52.9586782
+   ]
+  ],
+  "heightM": 3.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-E26C1DC9-7887-489F-849F-5057D45ADA05",
+  "os": "os/E26C1DC9-7887-489F-849F-5057D45ADA05",
+  "footprint": [
+   [
+    -3.9366649,
+    52.9489849
+   ],
+   [
+    -3.9367811,
+    52.9490199
+   ],
+   [
+    -3.9365766,
+    52.9492717
+   ],
+   [
+    -3.9364619,
+    52.9492385
+   ],
+   [
+    -3.9366649,
+    52.9489849
+   ]
+  ],
+  "heightM": 5.7,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-17",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-E39B4640-24C8-4B40-B5E4-A97321EDAA53",
+  "os": "os/E39B4640-24C8-4B40-B5E4-A97321EDAA53",
+  "footprint": [
+   [
+    -3.9306876,
+    52.9594631
+   ],
+   [
+    -3.9304571,
+    52.959589
+   ],
+   [
+    -3.9304048,
+    52.959555
+   ],
+   [
+    -3.9306366,
+    52.9594276
+   ],
+   [
+    -3.9306876,
+    52.9594631
+   ]
+  ],
+  "heightM": 3.0,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-E4558087-9901-47D4-B4E1-0DC42CD6FDE0",
+  "os": "os/E4558087-9901-47D4-B4E1-0DC42CD6FDE0",
+  "footprint": [
+   [
+    -3.9341406,
+    52.9595394
+   ],
+   [
+    -3.934118,
+    52.9594705
+   ],
+   [
+    -3.9343716,
+    52.9594403
+   ],
+   [
+    -3.934394,
+    52.9595092
+   ],
+   [
+    -3.9341406,
+    52.9595394
+   ]
+  ],
+  "heightM": 4.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-E6B8E95C-D436-4641-B0B9-C1DEBA6F0EFD",
+  "os": "os/E6B8E95C-D436-4641-B0B9-C1DEBA6F0EFD",
+  "footprint": [
+   [
+    -3.9268685,
+    52.9607394
+   ],
+   [
+    -3.9270491,
+    52.9606406
+   ],
+   [
+    -3.927151,
+    52.9607088
+   ],
+   [
+    -3.9269703,
+    52.9608078
+   ],
+   [
+    -3.9268685,
+    52.9607394
+   ]
+  ],
+  "heightM": 5.9,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-E7B6DF38-6A72-486E-B118-DDCF8E727C98",
+  "os": "os/E7B6DF38-6A72-486E-B118-DDCF8E727C98",
+  "footprint": [
+   [
+    -3.9319467,
+    52.9585428
+   ],
+   [
+    -3.9318872,
+    52.9586108
+   ],
+   [
+    -3.9316996,
+    52.9585509
+   ],
+   [
+    -3.9317589,
+    52.958483
+   ],
+   [
+    -3.9319467,
+    52.9585428
+   ]
+  ],
+  "heightM": 4.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-E7C502B6-F37C-4E61-BB67-036564362540",
+  "os": "os/E7C502B6-F37C-4E61-BB67-036564362540",
+  "footprint": [
+   [
+    -3.9234101,
+    52.9609344
+   ],
+   [
+    -3.9234146,
+    52.960971
+   ],
+   [
+    -3.9232526,
+    52.9609783
+   ],
+   [
+    -3.9232481,
+    52.9609416
+   ],
+   [
+    -3.9234101,
+    52.9609344
+   ]
+  ],
+  "heightM": 3.1,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-ECB76AA0-96C5-473E-80D0-6BA654257455",
+  "os": "os/ECB76AA0-96C5-473E-80D0-6BA654257455",
+  "footprint": [
+   [
+    -3.9308731,
+    52.9595387
+   ],
+   [
+    -3.9309063,
+    52.9595602
+   ],
+   [
+    -3.9308025,
+    52.9596188
+   ],
+   [
+    -3.9307692,
+    52.9595973
+   ],
+   [
+    -3.9308731,
+    52.9595387
+   ]
+  ],
+  "heightM": 2.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-EDFE3D76-D2F0-422A-9B27-314280D32DFC",
+  "os": "os/EDFE3D76-D2F0-422A-9B27-314280D32DFC",
+  "footprint": [
+   [
+    -3.9251596,
+    52.9534926
+   ],
+   [
+    -3.925225,
+    52.9534763
+   ],
+   [
+    -3.9253012,
+    52.9535876
+   ],
+   [
+    -3.9252358,
+    52.9536039
+   ],
+   [
+    -3.9251596,
+    52.9534926
+   ]
+  ],
+  "heightM": 6.0,
+  "heightSource": "default",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "absent",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-F0019376-12ED-4C0A-82D2-F0F10192C39C",
+  "os": "os/F0019376-12ED-4C0A-82D2-F0F10192C39C",
+  "footprint": [
+   [
+    -3.933342,
+    52.9591331
+   ],
+   [
+    -3.9332827,
+    52.959115
+   ],
+   [
+    -3.9333241,
+    52.9590656
+   ],
+   [
+    -3.9333834,
+    52.9590837
+   ],
+   [
+    -3.933342,
+    52.9591331
+   ]
+  ],
+  "heightM": 3.2,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-F0B78A96-066C-4397-8AE0-2A939BA6388A",
+  "os": "os/F0B78A96-066C-4397-8AE0-2A939BA6388A",
+  "footprint": [
+   [
+    -3.9276026,
+    52.9611111
+   ],
+   [
+    -3.9277192,
+    52.9611981
+   ],
+   [
+    -3.9276214,
+    52.9612459
+   ],
+   [
+    -3.9275048,
+    52.9611589
+   ],
+   [
+    -3.9276026,
+    52.9611111
+   ]
+  ],
+  "heightM": 6.0,
+  "heightSource": "default",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "absent",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-F11D90AB-7A9B-462F-8629-B561D832D96D",
+  "os": "os/F11D90AB-7A9B-462F-8629-B561D832D96D",
+  "footprint": [
+   [
+    -3.929552,
+    52.9608322
+   ],
+   [
+    -3.9294698,
+    52.960898
+   ],
+   [
+    -3.9293555,
+    52.9608458
+   ],
+   [
+    -3.9294377,
+    52.9607801
+   ],
+   [
+    -3.929552,
+    52.9608322
+   ]
+  ],
+  "heightM": 7.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-F26D5FB0-0FD9-4D26-AD98-952AA6C6C265",
+  "os": "os/F26D5FB0-0FD9-4D26-AD98-952AA6C6C265",
+  "footprint": [
+   [
+    -3.9285271,
+    52.9598436
+   ],
+   [
+    -3.9285799,
+    52.9598856
+   ],
+   [
+    -3.928388,
+    52.9599745
+   ],
+   [
+    -3.9283348,
+    52.9599321
+   ],
+   [
+    -3.9285271,
+    52.9598436
+   ]
+  ],
+  "heightM": 6.3,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-F4A51F3A-E7D5-42F2-A28A-C729E6194797",
+  "os": "os/F4A51F3A-E7D5-42F2-A28A-C729E6194797",
+  "footprint": [
+   [
+    -3.931654,
+    52.9605473
+   ],
+   [
+    -3.9317031,
+    52.9605259
+   ],
+   [
+    -3.931764,
+    52.9605767
+   ],
+   [
+    -3.9317149,
+    52.9605982
+   ],
+   [
+    -3.931654,
+    52.9605473
+   ]
+  ],
+  "heightM": 2.8,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-F4ECCB1C-BFD7-401B-908E-1850D1768201",
+  "os": "os/F4ECCB1C-BFD7-401B-908E-1850D1768201",
+  "footprint": [
+   [
+    -3.9299053,
+    52.960775
+   ],
+   [
+    -3.9298632,
+    52.9607492
+   ],
+   [
+    -3.9299913,
+    52.9606727
+   ],
+   [
+    -3.9300335,
+    52.9606985
+   ],
+   [
+    -3.9299053,
+    52.960775
+   ]
+  ],
+  "heightM": 2.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-F59BBAE8-20F5-4426-815B-CDA0B0D54C44",
+  "os": "os/F59BBAE8-20F5-4426-815B-CDA0B0D54C44",
+  "footprint": [
+   [
+    -3.9312575,
+    52.9613329
+   ],
+   [
+    -3.9311092,
+    52.9614158
+   ],
+   [
+    -3.9310022,
+    52.961346
+   ],
+   [
+    -3.9311504,
+    52.9612631
+   ],
+   [
+    -3.9312575,
+    52.9613329
+   ]
+  ],
+  "heightM": 4.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-F63CD6C8-5771-4D18-B2B6-3E642D717D0B",
+  "os": "os/F63CD6C8-5771-4D18-B2B6-3E642D717D0B",
+  "footprint": [
+   [
+    -3.9293476,
+    52.9629282
+   ],
+   [
+    -3.9293059,
+    52.9629984
+   ],
+   [
+    -3.9291853,
+    52.9629723
+   ],
+   [
+    -3.9292271,
+    52.962902
+   ],
+   [
+    -3.9293476,
+    52.9629282
+   ]
+  ],
+  "heightM": 7.5,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-F928F6A5-3933-4A67-BADF-69BDCBE592A8",
+  "os": "os/F928F6A5-3933-4A67-BADF-69BDCBE592A8",
+  "footprint": [
+   [
+    -3.9329298,
+    52.9617718
+   ],
+   [
+    -3.9328673,
+    52.9617276
+   ],
+   [
+    -3.93299,
+    52.9616642
+   ],
+   [
+    -3.9330525,
+    52.9617084
+   ],
+   [
+    -3.9329298,
+    52.9617718
+   ]
+  ],
+  "heightM": 7.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-FB35887F-03EF-4E9E-88EC-3344E9B1F664",
+  "os": "os/FB35887F-03EF-4E9E-88EC-3344E9B1F664",
+  "footprint": [
+   [
+    -3.929634,
+    52.9608877
+   ],
+   [
+    -3.929667,
+    52.9608675
+   ],
+   [
+    -3.9297563,
+    52.9609208
+   ],
+   [
+    -3.9297233,
+    52.960941
+   ],
+   [
+    -3.929634,
+    52.9608877
+   ]
+  ],
+  "heightM": 3.4,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
+ },
+ {
+  "id": "building-vale-south-os-FD76568D-8CDB-4A37-8249-DB66D66CD93F",
+  "os": "os/FD76568D-8CDB-4A37-8249-DB66D66CD93F",
+  "footprint": [
+   [
+    -3.9322351,
+    52.9605302
+   ],
+   [
+    -3.9321857,
+    52.9605541
+   ],
+   [
+    -3.9321256,
+    52.9605089
+   ],
+   [
+    -3.9321749,
+    52.9604849
+   ],
+   [
+    -3.9322351,
+    52.9605302
+   ]
+  ],
+  "heightM": 2.6,
+  "heightSource": "lidar-dsm",
+  "roof": "flat",
+  "kind": "background",
+  "status": "existing",
+  "type": "yes",
+  "lidar": "present",
+  "lidarFlown": "2022-01-11",
+  "osMap": "source",
+  "mapEditedAt": "2026-10-26"
  }
 ]

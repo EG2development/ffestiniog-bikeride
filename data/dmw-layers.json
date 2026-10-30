@@ -1,0 +1,3329 @@
+{
+ "lidarTiles": [
+  {
+   "tile": "SH6835",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    268000,
+    335000,
+    269000,
+    336000
+   ]
+  },
+  {
+   "tile": "SH6836",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    268000,
+    336000,
+    269000,
+    337000
+   ]
+  },
+  {
+   "tile": "SH6837",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    268000,
+    337000,
+    269000,
+    338000
+   ]
+  },
+  {
+   "tile": "SH6838",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    268000,
+    338000,
+    269000,
+    339000
+   ]
+  },
+  {
+   "tile": "SH6839",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    268000,
+    339000,
+    269000,
+    340000
+   ]
+  },
+  {
+   "tile": "SH6840",
+   "flown": "2022-01-17",
+   "delivery": "27",
+   "box": [
+    268000,
+    340000,
+    269000,
+    341000
+   ]
+  },
+  {
+   "tile": "SH6841",
+   "flown": "2022-01-11",
+   "delivery": "27",
+   "box": [
+    268000,
+    341000,
+    269000,
+    342000
+   ]
+  },
+  {
+   "tile": "SH6842",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    268000,
+    342000,
+    269000,
+    343000
+   ]
+  },
+  {
+   "tile": "SH6843",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    268000,
+    343000,
+    269000,
+    344000
+   ]
+  },
+  {
+   "tile": "SH6844",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    268000,
+    344000,
+    269000,
+    345000
+   ]
+  },
+  {
+   "tile": "SH6845",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    268000,
+    345000,
+    269000,
+    346000
+   ]
+  },
+  {
+   "tile": "SH6846",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    268000,
+    346000,
+    269000,
+    347000
+   ]
+  },
+  {
+   "tile": "SH6935",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    269000,
+    335000,
+    270000,
+    336000
+   ]
+  },
+  {
+   "tile": "SH6936",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    269000,
+    336000,
+    270000,
+    337000
+   ]
+  },
+  {
+   "tile": "SH6937",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    269000,
+    337000,
+    270000,
+    338000
+   ]
+  },
+  {
+   "tile": "SH6938",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    269000,
+    338000,
+    270000,
+    339000
+   ]
+  },
+  {
+   "tile": "SH6939",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    269000,
+    339000,
+    270000,
+    340000
+   ]
+  },
+  {
+   "tile": "SH6940",
+   "flown": "2022-01-17",
+   "delivery": "27",
+   "box": [
+    269000,
+    340000,
+    270000,
+    341000
+   ]
+  },
+  {
+   "tile": "SH6941",
+   "flown": "2022-01-11",
+   "delivery": "27",
+   "box": [
+    269000,
+    341000,
+    270000,
+    342000
+   ]
+  },
+  {
+   "tile": "SH6942",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    269000,
+    342000,
+    270000,
+    343000
+   ]
+  },
+  {
+   "tile": "SH6943",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    269000,
+    343000,
+    270000,
+    344000
+   ]
+  },
+  {
+   "tile": "SH6944",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    269000,
+    344000,
+    270000,
+    345000
+   ]
+  },
+  {
+   "tile": "SH6945",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    269000,
+    345000,
+    270000,
+    346000
+   ]
+  },
+  {
+   "tile": "SH6946",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    269000,
+    346000,
+    270000,
+    347000
+   ]
+  },
+  {
+   "tile": "SH7035",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    270000,
+    335000,
+    271000,
+    336000
+   ]
+  },
+  {
+   "tile": "SH7036",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    270000,
+    336000,
+    271000,
+    337000
+   ]
+  },
+  {
+   "tile": "SH7037",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    270000,
+    337000,
+    271000,
+    338000
+   ]
+  },
+  {
+   "tile": "SH7038",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    270000,
+    338000,
+    271000,
+    339000
+   ]
+  },
+  {
+   "tile": "SH7039",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    270000,
+    339000,
+    271000,
+    340000
+   ]
+  },
+  {
+   "tile": "SH7040",
+   "flown": "2022-01-17",
+   "delivery": "27",
+   "box": [
+    270000,
+    340000,
+    271000,
+    341000
+   ]
+  },
+  {
+   "tile": "SH7041",
+   "flown": "2022-01-11",
+   "delivery": "27",
+   "box": [
+    270000,
+    341000,
+    271000,
+    342000
+   ]
+  },
+  {
+   "tile": "SH7042",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    270000,
+    342000,
+    271000,
+    343000
+   ]
+  },
+  {
+   "tile": "SH7043",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    270000,
+    343000,
+    271000,
+    344000
+   ]
+  },
+  {
+   "tile": "SH7044",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    270000,
+    344000,
+    271000,
+    345000
+   ]
+  },
+  {
+   "tile": "SH7045",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    270000,
+    345000,
+    271000,
+    346000
+   ]
+  },
+  {
+   "tile": "SH7046",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    270000,
+    346000,
+    271000,
+    347000
+   ]
+  },
+  {
+   "tile": "SH7135",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    271000,
+    335000,
+    272000,
+    336000
+   ]
+  },
+  {
+   "tile": "SH7136",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    271000,
+    336000,
+    272000,
+    337000
+   ]
+  },
+  {
+   "tile": "SH7137",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    271000,
+    337000,
+    272000,
+    338000
+   ]
+  },
+  {
+   "tile": "SH7138",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    271000,
+    338000,
+    272000,
+    339000
+   ]
+  },
+  {
+   "tile": "SH7139",
+   "flown": "2022-03-01",
+   "delivery": "27",
+   "box": [
+    271000,
+    339000,
+    272000,
+    340000
+   ]
+  },
+  {
+   "tile": "SH7140",
+   "flown": "2022-01-17",
+   "delivery": "27",
+   "box": [
+    271000,
+    340000,
+    272000,
+    341000
+   ]
+  },
+  {
+   "tile": "SH7141",
+   "flown": "2022-01-11",
+   "delivery": "27",
+   "box": [
+    271000,
+    341000,
+    272000,
+    342000
+   ]
+  },
+  {
+   "tile": "SH7142",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    271000,
+    342000,
+    272000,
+    343000
+   ]
+  },
+  {
+   "tile": "SH7143",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    271000,
+    343000,
+    272000,
+    344000
+   ]
+  },
+  {
+   "tile": "SH7144",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    271000,
+    344000,
+    272000,
+    345000
+   ]
+  },
+  {
+   "tile": "SH7145",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    271000,
+    345000,
+    272000,
+    346000
+   ]
+  },
+  {
+   "tile": "SH7146",
+   "flown": "2022-01-11",
+   "delivery": "20",
+   "box": [
+    271000,
+    346000,
+    272000,
+    347000
+   ]
+  }
+ ],
+ "archiveTiles": [
+  {
+   "id": "D0073115",
+   "tile": "SH6836",
+   "flown": "2007-02-04",
+   "resolutionM": 1.0,
+   "coverPercent": 5.775,
+   "dsm": "https://lle.blob.core.windows.net/lidar/1m_res_SH63_2007_dsm.zip",
+   "dtm": "https://lle.blob.core.windows.net/lidar/1m_res_SH63_2007_dtm.zip",
+   "box": [
+    268000,
+    336000,
+    270000,
+    338000
+   ]
+  },
+  {
+   "id": "D0073120",
+   "tile": "SH6838",
+   "flown": "2007-02-04",
+   "resolutionM": 1.0,
+   "coverPercent": 74.925,
+   "dsm": "https://lle.blob.core.windows.net/lidar/1m_res_SH63_2007_dsm.zip",
+   "dtm": "https://lle.blob.core.windows.net/lidar/1m_res_SH63_2007_dtm.zip",
+   "box": [
+    268000,
+    338000,
+    270000,
+    340000
+   ]
+  },
+  {
+   "id": "D0073125",
+   "tile": "SH6840",
+   "flown": "2007-02-04",
+   "resolutionM": 1.0,
+   "coverPercent": 99.8,
+   "dsm": "https://lle.blob.core.windows.net/lidar/1m_res_SH64_2007_dsm.zip",
+   "dtm": "https://lle.blob.core.windows.net/lidar/1m_res_SH64_2007_dtm.zip",
+   "box": [
+    268000,
+    340000,
+    270000,
+    342000
+   ]
+  },
+  {
+   "id": "D0073130",
+   "tile": "SH6842",
+   "flown": "2007-02-04",
+   "resolutionM": 1.0,
+   "coverPercent": 99.925,
+   "dsm": "https://lle.blob.core.windows.net/lidar/1m_res_SH64_2007_dsm.zip",
+   "dtm": "https://lle.blob.core.windows.net/lidar/1m_res_SH64_2007_dtm.zip",
+   "box": [
+    268000,
+    342000,
+    270000,
+    344000
+   ]
+  },
+  {
+   "id": "D0073135",
+   "tile": "SH6844",
+   "flown": "2007-02-04",
+   "resolutionM": 1.0,
+   "coverPercent": 96.25,
+   "dsm": "https://lle.blob.core.windows.net/lidar/1m_res_SH64_2007_dsm.zip",
+   "dtm": "https://lle.blob.core.windows.net/lidar/1m_res_SH64_2007_dtm.zip",
+   "box": [
+    268000,
+    344000,
+    270000,
+    346000
+   ]
+  },
+  {
+   "id": "D0073139",
+   "tile": "SH6846",
+   "flown": "2007-02-04",
+   "resolutionM": 1.0,
+   "coverPercent": 89.275,
+   "dsm": "https://lle.blob.core.windows.net/lidar/1m_res_SH64_2007_dsm.zip",
+   "dtm": "https://lle.blob.core.windows.net/lidar/1m_res_SH64_2007_dtm.zip",
+   "box": [
+    268000,
+    346000,
+    270000,
+    348000
+   ]
+  },
+  {
+   "id": "D0073121",
+   "tile": "SH7038",
+   "flown": "2007-02-04",
+   "resolutionM": 1.0,
+   "coverPercent": 19.05,
+   "dsm": "https://lle.blob.core.windows.net/lidar/1m_res_SH73_2007_dsm.zip",
+   "dtm": "https://lle.blob.core.windows.net/lidar/1m_res_SH73_2007_dtm.zip",
+   "box": [
+    270000,
+    338000,
+    272000,
+    340000
+   ]
+  },
+  {
+   "id": "D0073126",
+   "tile": "SH7040",
+   "flown": "2007-02-04",
+   "resolutionM": 1.0,
+   "coverPercent": 99.7,
+   "dsm": "https://lle.blob.core.windows.net/lidar/1m_res_SH74_2007_dsm.zip",
+   "dtm": "https://lle.blob.core.windows.net/lidar/1m_res_SH74_2007_dtm.zip",
+   "box": [
+    270000,
+    340000,
+    272000,
+    342000
+   ]
+  },
+  {
+   "id": "D0073131",
+   "tile": "SH7042",
+   "flown": "2007-02-04",
+   "resolutionM": 1.0,
+   "coverPercent": 99.85,
+   "dsm": "https://lle.blob.core.windows.net/lidar/1m_res_SH74_2007_dsm.zip",
+   "dtm": "https://lle.blob.core.windows.net/lidar/1m_res_SH74_2007_dtm.zip",
+   "box": [
+    270000,
+    342000,
+    272000,
+    344000
+   ]
+  },
+  {
+   "id": "D0073136",
+   "tile": "SH7044",
+   "flown": "2007-02-04",
+   "resolutionM": 1.0,
+   "coverPercent": 98.525,
+   "dsm": "https://lle.blob.core.windows.net/lidar/1m_res_SH74_2007_dsm.zip",
+   "dtm": "https://lle.blob.core.windows.net/lidar/1m_res_SH74_2007_dtm.zip",
+   "box": [
+    270000,
+    344000,
+    272000,
+    346000
+   ]
+  },
+  {
+   "id": "D0073140",
+   "tile": "SH7046",
+   "flown": "2007-02-04",
+   "resolutionM": 1.0,
+   "coverPercent": 76.3,
+   "dsm": "https://lle.blob.core.windows.net/lidar/1m_res_SH74_2007_dsm.zip",
+   "dtm": "https://lle.blob.core.windows.net/lidar/1m_res_SH74_2007_dtm.zip",
+   "box": [
+    270000,
+    346000,
+    272000,
+    348000
+   ]
+  },
+  {
+   "id": "D0115349",
+   "tile": "SH6834",
+   "flown": "2009-03-16",
+   "resolutionM": 1.0,
+   "coverPercent": 75.44,
+   "dsm": "https://lle.blob.core.windows.net/lidar/1m_res_SH63_2009_dsm.zip",
+   "dtm": "https://lle.blob.core.windows.net/lidar/1m_res_SH63_2009_dtm.zip",
+   "box": [
+    268000,
+    334000,
+    270000,
+    336000
+   ]
+  },
+  {
+   "id": "D0115350",
+   "tile": "SH6836",
+   "flown": "2009-03-16",
+   "resolutionM": 1.0,
+   "coverPercent": 61.38,
+   "dsm": "https://lle.blob.core.windows.net/lidar/1m_res_SH63_2009_dsm.zip",
+   "dtm": "https://lle.blob.core.windows.net/lidar/1m_res_SH63_2009_dtm.zip",
+   "box": [
+    268000,
+    336000,
+    270000,
+    338000
+   ]
+  },
+  {
+   "id": "D0115351",
+   "tile": "SH6838",
+   "flown": "2009-03-16",
+   "resolutionM": 1.0,
+   "coverPercent": 27.74,
+   "dsm": "https://lle.blob.core.windows.net/lidar/1m_res_SH63_2009_dsm.zip",
+   "dtm": "https://lle.blob.core.windows.net/lidar/1m_res_SH63_2009_dtm.zip",
+   "box": [
+    268000,
+    338000,
+    270000,
+    340000
+   ]
+  },
+  {
+   "id": "D0115353",
+   "tile": "SH7034",
+   "flown": "2009-03-16",
+   "resolutionM": 1.0,
+   "coverPercent": 88.18,
+   "dsm": "https://lle.blob.core.windows.net/lidar/1m_res_SH73_2009_dsm.zip",
+   "dtm": "https://lle.blob.core.windows.net/lidar/1m_res_SH73_2009_dtm.zip",
+   "box": [
+    270000,
+    334000,
+    272000,
+    336000
+   ]
+  },
+  {
+   "id": "D0115354",
+   "tile": "SH7036",
+   "flown": "2009-03-16",
+   "resolutionM": 1.0,
+   "coverPercent": 89.76,
+   "dsm": "https://lle.blob.core.windows.net/lidar/1m_res_SH73_2009_dsm.zip",
+   "dtm": "https://lle.blob.core.windows.net/lidar/1m_res_SH73_2009_dtm.zip",
+   "box": [
+    270000,
+    336000,
+    272000,
+    338000
+   ]
+  },
+  {
+   "id": "D0115355",
+   "tile": "SH7038",
+   "flown": "2009-03-16",
+   "resolutionM": 1.0,
+   "coverPercent": 46.85,
+   "dsm": "https://lle.blob.core.windows.net/lidar/1m_res_SH73_2009_dsm.zip",
+   "dtm": "https://lle.blob.core.windows.net/lidar/1m_res_SH73_2009_dtm.zip",
+   "box": [
+    270000,
+    338000,
+    272000,
+    340000
+   ]
+  }
+ ],
+ "listed": [
+  {
+   "record": 4688,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1951-04-24",
+   "e": 270036.0,
+   "n": 341899.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=4688"
+  },
+  {
+   "record": 4689,
+   "grade": "II",
+   "class": "Commercial",
+   "designated": "1951-04-24",
+   "e": 270045.0,
+   "n": 341906.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=4689"
+  },
+  {
+   "record": 4693,
+   "grade": "II",
+   "class": "Transport",
+   "designated": "1951-04-24",
+   "e": 270551.0,
+   "n": 342919.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=4693"
+  },
+  {
+   "record": 4707,
+   "grade": "II",
+   "class": "Industrial",
+   "designated": "1974-01-23",
+   "e": 270875.0,
+   "n": 345382.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=4707"
+  },
+  {
+   "record": 4775,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1952-04-28",
+   "e": 270293.0,
+   "n": 340661.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=4775"
+  },
+  {
+   "record": 4836,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1966-11-30",
+   "e": 270774.0,
+   "n": 340855.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=4836"
+  },
+  {
+   "record": 4838,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1966-11-30",
+   "e": 270320.0,
+   "n": 340660.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=4838"
+  },
+  {
+   "record": 4847,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1966-11-30",
+   "e": 270371.0,
+   "n": 337703.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=4847"
+  },
+  {
+   "record": 5189,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1975-11-03",
+   "e": 270774.0,
+   "n": 345252.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=5189"
+  },
+  {
+   "record": 5203,
+   "grade": "II",
+   "class": "Commercial",
+   "designated": "1984-09-11",
+   "e": 270054.0,
+   "n": 341918.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=5203"
+  },
+  {
+   "record": 5208,
+   "grade": "II",
+   "class": "Miscellaneous",
+   "designated": "1988-06-28",
+   "e": 270251.0,
+   "n": 345925.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=5208"
+  },
+  {
+   "record": 5209,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1988-10-05",
+   "e": 270955.0,
+   "n": 341104.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=5209"
+  },
+  {
+   "record": 5210,
+   "grade": "II",
+   "class": "Agriculture and Subsistence",
+   "designated": "1988-10-05",
+   "e": 270941.0,
+   "n": 341098.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=5210"
+  },
+  {
+   "record": 16829,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1996-02-01",
+   "e": 270026.0,
+   "n": 341896.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16829"
+  },
+  {
+   "record": 16830,
+   "grade": "II",
+   "class": "Commercial",
+   "designated": "1996-02-01",
+   "e": 270028.0,
+   "n": 341951.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16830"
+  },
+  {
+   "record": 16832,
+   "grade": "II",
+   "class": "Transport",
+   "designated": "1996-02-01",
+   "e": 270081.0,
+   "n": 341960.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16832"
+  },
+  {
+   "record": 16834,
+   "grade": "II",
+   "class": "Religious, Ritual and Funerary",
+   "designated": "1996-02-01",
+   "e": 270145.0,
+   "n": 342110.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16834"
+  },
+  {
+   "record": 16835,
+   "grade": "II",
+   "class": "Transport",
+   "designated": "1996-02-01",
+   "e": 270676.0,
+   "n": 342362.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16835"
+  },
+  {
+   "record": 16851,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1996-02-01",
+   "e": 269850.0,
+   "n": 345993.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16851"
+  },
+  {
+   "record": 16852,
+   "grade": "II",
+   "class": "Miscellaneous",
+   "designated": "1996-02-01",
+   "e": 270109.0,
+   "n": 345956.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16852"
+  },
+  {
+   "record": 16853,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1996-02-01",
+   "e": 270314.0,
+   "n": 346036.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16853"
+  },
+  {
+   "record": 16854,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1996-02-01",
+   "e": 270309.0,
+   "n": 346039.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16854"
+  },
+  {
+   "record": 16856,
+   "grade": "II",
+   "class": "Transport",
+   "designated": "1996-02-01",
+   "e": 270684.0,
+   "n": 345310.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16856"
+  },
+  {
+   "record": 16857,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1975-11-03",
+   "e": 270780.0,
+   "n": 345261.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16857"
+  },
+  {
+   "record": 16858,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1975-11-03",
+   "e": 270782.0,
+   "n": 345266.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16858"
+  },
+  {
+   "record": 16859,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1975-11-03",
+   "e": 270785.0,
+   "n": 345270.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16859"
+  },
+  {
+   "record": 16860,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1975-11-03",
+   "e": 270787.0,
+   "n": 345274.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16860"
+  },
+  {
+   "record": 16861,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1975-11-03",
+   "e": 270789.0,
+   "n": 345278.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16861"
+  },
+  {
+   "record": 16862,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1975-11-03",
+   "e": 270791.0,
+   "n": 345280.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16862"
+  },
+  {
+   "record": 16865,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1996-02-01",
+   "e": 271103.0,
+   "n": 343075.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16865"
+  },
+  {
+   "record": 16898,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1996-02-01",
+   "e": 270544.0,
+   "n": 344802.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16898"
+  },
+  {
+   "record": 16899,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1996-02-01",
+   "e": 270543.0,
+   "n": 344795.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16899"
+  },
+  {
+   "record": 16900,
+   "grade": "II",
+   "class": "Religious, Ritual and Funerary",
+   "designated": "1996-02-01",
+   "e": 270543.0,
+   "n": 344781.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16900"
+  },
+  {
+   "record": 16901,
+   "grade": "II",
+   "class": "Religious, Ritual and Funerary",
+   "designated": "1996-02-01",
+   "e": 270542.0,
+   "n": 344789.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16901"
+  },
+  {
+   "record": 16902,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "1996-02-01",
+   "e": 270450.0,
+   "n": 343758.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=16902"
+  },
+  {
+   "record": 83991,
+   "grade": "II",
+   "class": "Agriculture and Subsistence",
+   "designated": "2005-02-25",
+   "e": 269283.0,
+   "n": 339136.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=83991"
+  },
+  {
+   "record": 83995,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "2005-02-25",
+   "e": 269276.0,
+   "n": 339150.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=83995"
+  },
+  {
+   "record": 84009,
+   "grade": "II",
+   "class": "Transport",
+   "designated": "2005-02-25",
+   "e": 269367.0,
+   "n": 339357.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=84009"
+  },
+  {
+   "record": 87802,
+   "grade": "II",
+   "class": "Industrial",
+   "designated": "2020-09-11",
+   "e": 270597.0,
+   "n": 345633.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=87802"
+  },
+  {
+   "record": 87946,
+   "grade": "II",
+   "class": "Domestic",
+   "designated": "2024-10-31",
+   "e": 270462.0,
+   "n": 345793.0,
+   "url": "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=87946"
+  }
+ ],
+ "sites": [
+  {
+   "nprn": 8369,
+   "type": "CHAPEL",
+   "period": "20th Century; 19th Century; Multiperiod",
+   "evidence": "Building",
+   "e": 270710.0,
+   "n": 345149.0,
+   "url": "https://coflein.gov.uk/en/site/8369"
+  },
+  {
+   "nprn": 8370,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270350.0,
+   "n": 341858.0,
+   "url": "https://coflein.gov.uk/en/site/8370"
+  },
+  {
+   "nprn": 8377,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270510.0,
+   "n": 344408.0,
+   "url": "https://coflein.gov.uk/en/site/8377"
+  },
+  {
+   "nprn": 8378,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270350.0,
+   "n": 345798.0,
+   "url": "https://coflein.gov.uk/en/site/8378"
+  },
+  {
+   "nprn": 8384,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 270970.0,
+   "n": 344278.0,
+   "url": "https://coflein.gov.uk/en/site/8384"
+  },
+  {
+   "nprn": 8386,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 270266.0,
+   "n": 345749.0,
+   "url": "https://coflein.gov.uk/en/site/8386"
+  },
+  {
+   "nprn": 8389,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270420.0,
+   "n": 345878.0,
+   "url": "https://coflein.gov.uk/en/site/8389"
+  },
+  {
+   "nprn": 8390,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 270000.0,
+   "n": 344998.0,
+   "url": "https://coflein.gov.uk/en/site/8390"
+  },
+  {
+   "nprn": 8393,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270530.0,
+   "n": 344868.0,
+   "url": "https://coflein.gov.uk/en/site/8393"
+  },
+  {
+   "nprn": 8394,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 269890.0,
+   "n": 345748.0,
+   "url": "https://coflein.gov.uk/en/site/8394"
+  },
+  {
+   "nprn": 8395,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 270060.0,
+   "n": 341978.0,
+   "url": "https://coflein.gov.uk/en/site/8395"
+  },
+  {
+   "nprn": 8396,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270550.0,
+   "n": 344248.0,
+   "url": "https://coflein.gov.uk/en/site/8396"
+  },
+  {
+   "nprn": 8399,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 270340.0,
+   "n": 342028.0,
+   "url": "https://coflein.gov.uk/en/site/8399"
+  },
+  {
+   "nprn": 8400,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 269990.0,
+   "n": 345968.0,
+   "url": "https://coflein.gov.uk/en/site/8400"
+  },
+  {
+   "nprn": 8402,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270552.0,
+   "n": 344353.0,
+   "url": "https://coflein.gov.uk/en/site/8402"
+  },
+  {
+   "nprn": 8403,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 271540.0,
+   "n": 343058.0,
+   "url": "https://coflein.gov.uk/en/site/8403"
+  },
+  {
+   "nprn": 8404,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270220.0,
+   "n": 345668.0,
+   "url": "https://coflein.gov.uk/en/site/8404"
+  },
+  {
+   "nprn": 8405,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 270000.0,
+   "n": 344998.0,
+   "url": "https://coflein.gov.uk/en/site/8405"
+  },
+  {
+   "nprn": 8406,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270140.0,
+   "n": 342098.0,
+   "url": "https://coflein.gov.uk/en/site/8406"
+  },
+  {
+   "nprn": 8409,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 269980.0,
+   "n": 346018.0,
+   "url": "https://coflein.gov.uk/en/site/8409"
+  },
+  {
+   "nprn": 8410,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270641.0,
+   "n": 345540.0,
+   "url": "https://coflein.gov.uk/en/site/8410"
+  },
+  {
+   "nprn": 8412,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270370.0,
+   "n": 346048.0,
+   "url": "https://coflein.gov.uk/en/site/8412"
+  },
+  {
+   "nprn": 8414,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 270638.0,
+   "n": 345039.0,
+   "url": "https://coflein.gov.uk/en/site/8414"
+  },
+  {
+   "nprn": 8415,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 270260.0,
+   "n": 345818.0,
+   "url": "https://coflein.gov.uk/en/site/8415"
+  },
+  {
+   "nprn": 8551,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 269540.0,
+   "n": 339038.0,
+   "url": "https://coflein.gov.uk/en/site/8551"
+  },
+  {
+   "nprn": 11649,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 271150.0,
+   "n": 342628.0,
+   "url": "https://coflein.gov.uk/en/site/11649"
+  },
+  {
+   "nprn": 12066,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 271380.0,
+   "n": 335958.0,
+   "url": "https://coflein.gov.uk/en/site/12066"
+  },
+  {
+   "nprn": 12067,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 271230.0,
+   "n": 335938.0,
+   "url": "https://coflein.gov.uk/en/site/12067"
+  },
+  {
+   "nprn": 12071,
+   "type": "CHURCH",
+   "period": "19th Century",
+   "evidence": "Documents",
+   "e": 270533.0,
+   "n": 344627.0,
+   "url": "https://coflein.gov.uk/en/site/12071"
+  },
+  {
+   "nprn": 12072,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 270410.0,
+   "n": 344408.0,
+   "url": "https://coflein.gov.uk/en/site/12072"
+  },
+  {
+   "nprn": 12076,
+   "type": "CHAPEL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 271540.0,
+   "n": 343048.0,
+   "url": "https://coflein.gov.uk/en/site/12076"
+  },
+  {
+   "nprn": 23096,
+   "type": "FOLLY",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 270455.0,
+   "n": 341130.0,
+   "url": "https://coflein.gov.uk/en/site/23096"
+  },
+  {
+   "nprn": 24166,
+   "type": "BRIDGE",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270760.0,
+   "n": 342918.0,
+   "url": "https://coflein.gov.uk/en/site/24166"
+  },
+  {
+   "nprn": 24513,
+   "type": "PILLOW MOUND",
+   "period": "Post Medieval; Medieval",
+   "evidence": "Not recorded",
+   "e": 270500.0,
+   "n": 343188.0,
+   "url": "https://coflein.gov.uk/en/site/24513"
+  },
+  {
+   "nprn": 28181,
+   "type": "HOUSE",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270955.0,
+   "n": 341102.0,
+   "url": "https://coflein.gov.uk/en/site/28181"
+  },
+  {
+   "nprn": 28229,
+   "type": "FARMHOUSE",
+   "period": "16th Century",
+   "evidence": "Building",
+   "e": 270774.0,
+   "n": 340853.0,
+   "url": "https://coflein.gov.uk/en/site/28229"
+  },
+  {
+   "nprn": 28287,
+   "type": "FARMHOUSE",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 270350.0,
+   "n": 337688.0,
+   "url": "https://coflein.gov.uk/en/site/28287"
+  },
+  {
+   "nprn": 28334,
+   "type": "FARMHOUSE",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270294.0,
+   "n": 340660.0,
+   "url": "https://coflein.gov.uk/en/site/28334"
+  },
+  {
+   "nprn": 28566,
+   "type": "HOUSE",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270054.0,
+   "n": 341916.0,
+   "url": "https://coflein.gov.uk/en/site/28566"
+  },
+  {
+   "nprn": 28576,
+   "type": "HOUSE",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270045.0,
+   "n": 341904.0,
+   "url": "https://coflein.gov.uk/en/site/28576"
+  },
+  {
+   "nprn": 28620,
+   "type": "WOOLLEN MILL; SLATE PROCESSING WORKS",
+   "period": "19th Century",
+   "evidence": "Building",
+   "e": 270870.0,
+   "n": 345378.0,
+   "url": "https://coflein.gov.uk/en/site/28620"
+  },
+  {
+   "nprn": 28632,
+   "type": "DWELLING",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270028.0,
+   "n": 341949.0,
+   "url": "https://coflein.gov.uk/en/site/28632"
+  },
+  {
+   "nprn": 28766,
+   "type": "DWELLING",
+   "period": "Medieval",
+   "evidence": "Building",
+   "e": 270690.0,
+   "n": 345218.0,
+   "url": "https://coflein.gov.uk/en/site/28766"
+  },
+  {
+   "nprn": 28785,
+   "type": "HOUSE",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 269100.0,
+   "n": 339748.0,
+   "url": "https://coflein.gov.uk/en/site/28785"
+  },
+  {
+   "nprn": 28880,
+   "type": "HOUSE",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270313.0,
+   "n": 346034.0,
+   "url": "https://coflein.gov.uk/en/site/28880"
+  },
+  {
+   "nprn": 28882,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval",
+   "evidence": "Complex",
+   "e": 270785.0,
+   "n": 345266.0,
+   "url": "https://coflein.gov.uk/en/site/28882"
+  },
+  {
+   "nprn": 32367,
+   "type": "SPRING",
+   "period": "Medieval",
+   "evidence": "Topography",
+   "e": 270560.0,
+   "n": 343758.0,
+   "url": "https://coflein.gov.uk/en/site/32367"
+  },
+  {
+   "nprn": 33327,
+   "type": "CORN DRYING KILN",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 269190.0,
+   "n": 339598.0,
+   "url": "https://coflein.gov.uk/en/site/33327"
+  },
+  {
+   "nprn": 34934,
+   "type": "RAILWAY STATION",
+   "period": "19th Century",
+   "evidence": "Complex",
+   "e": 270255.0,
+   "n": 345926.0,
+   "url": "https://coflein.gov.uk/en/site/34934"
+  },
+  {
+   "nprn": 34939,
+   "type": "RAILWAY",
+   "period": "Post Medieval",
+   "evidence": "Not recorded",
+   "e": 270350.0,
+   "n": 345998.0,
+   "url": "https://coflein.gov.uk/en/site/34939"
+  },
+  {
+   "nprn": 40004,
+   "type": "CORN MILL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 269170.0,
+   "n": 339598.0,
+   "url": "https://coflein.gov.uk/en/site/40004"
+  },
+  {
+   "nprn": 41298,
+   "type": "RAILWAY STATION",
+   "period": "20th Century; Modern",
+   "evidence": "Complex",
+   "e": 270005.0,
+   "n": 345900.0,
+   "url": "https://coflein.gov.uk/en/site/41298"
+  },
+  {
+   "nprn": 41314,
+   "type": "RAILWAY STATION",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 270424.0,
+   "n": 341929.0,
+   "url": "https://coflein.gov.uk/en/site/41314"
+  },
+  {
+   "nprn": 41328,
+   "type": "RAILWAY HALT",
+   "period": "Post Medieval",
+   "evidence": "Not recorded",
+   "e": 270440.0,
+   "n": 344478.0,
+   "url": "https://coflein.gov.uk/en/site/41328"
+  },
+  {
+   "nprn": 41341,
+   "type": "RAILWAY STATION",
+   "period": "Post Medieval",
+   "evidence": "Not recorded",
+   "e": 271400.0,
+   "n": 335998.0,
+   "url": "https://coflein.gov.uk/en/site/41341"
+  },
+  {
+   "nprn": 41343,
+   "type": "RAILWAY HALT",
+   "period": "Post Medieval",
+   "evidence": "Not recorded",
+   "e": 269870.0,
+   "n": 338408.0,
+   "url": "https://coflein.gov.uk/en/site/41343"
+  },
+  {
+   "nprn": 41443,
+   "type": "SIGNAL BOX",
+   "period": "19th Century",
+   "evidence": "Documents",
+   "e": 270473.0,
+   "n": 341975.0,
+   "url": "https://coflein.gov.uk/en/site/41443"
+  },
+  {
+   "nprn": 41577,
+   "type": "COW SHED; BARN",
+   "period": "Post Medieval",
+   "evidence": "Not recorded",
+   "e": 270941.0,
+   "n": 341096.0,
+   "url": "https://coflein.gov.uk/en/site/41577"
+  },
+  {
+   "nprn": 41598,
+   "type": "BARN",
+   "period": "Post Medieval",
+   "evidence": "Not recorded",
+   "e": 270790.0,
+   "n": 340838.0,
+   "url": "https://coflein.gov.uk/en/site/41598"
+  },
+  {
+   "nprn": 41640,
+   "type": "STABLE",
+   "period": "Post Medieval",
+   "evidence": "Not recorded",
+   "e": 270320.0,
+   "n": 340658.0,
+   "url": "https://coflein.gov.uk/en/site/41640"
+  },
+  {
+   "nprn": 41672,
+   "type": "OUTBUILDING",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 270740.0,
+   "n": 336718.0,
+   "url": "https://coflein.gov.uk/en/site/41672"
+  },
+  {
+   "nprn": 43884,
+   "type": "CHURCH",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 270000.0,
+   "n": 344998.0,
+   "url": "https://coflein.gov.uk/en/site/43884"
+  },
+  {
+   "nprn": 54641,
+   "type": "SCHOOL; CHURCH",
+   "period": "19th Century",
+   "evidence": "Documents",
+   "e": 269175.0,
+   "n": 339543.0,
+   "url": "https://coflein.gov.uk/en/site/54641"
+  },
+  {
+   "nprn": 89414,
+   "type": "FARMSTEAD",
+   "period": "Post Medieval; Medieval",
+   "evidence": "Ruin",
+   "e": 270440.0,
+   "n": 338348.0,
+   "url": "https://coflein.gov.uk/en/site/89414"
+  },
+  {
+   "nprn": 89433,
+   "type": "SETTLEMENT",
+   "period": "Prehistoric",
+   "evidence": "Earthwork",
+   "e": 271320.0,
+   "n": 337128.0,
+   "url": "https://coflein.gov.uk/en/site/89433"
+  },
+  {
+   "nprn": 89480,
+   "type": "ROAD; ROAD",
+   "period": "Roman",
+   "evidence": "Earthwork",
+   "e": 271060.0,
+   "n": 337938.0,
+   "url": "https://coflein.gov.uk/en/site/89480"
+  },
+  {
+   "nprn": 300116,
+   "type": "HOUSE",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 270900.0,
+   "n": 343798.0,
+   "url": "https://coflein.gov.uk/en/site/300116"
+  },
+  {
+   "nprn": 302995,
+   "type": "HUT CIRCLE",
+   "period": "Iron Age",
+   "evidence": "Documents",
+   "e": 270120.0,
+   "n": 345138.0,
+   "url": "https://coflein.gov.uk/en/site/302995"
+  },
+  {
+   "nprn": 303423,
+   "type": "ROAD; ROAD",
+   "period": "Roman",
+   "evidence": "Documents",
+   "e": 269540.0,
+   "n": 339528.0,
+   "url": "https://coflein.gov.uk/en/site/303423"
+  },
+  {
+   "nprn": 305760,
+   "type": "TOWN",
+   "period": "General",
+   "evidence": "Complex",
+   "e": 270090.0,
+   "n": 345738.0,
+   "url": "https://coflein.gov.uk/en/site/305760"
+  },
+  {
+   "nprn": 307116,
+   "type": "HOUSE",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 270450.0,
+   "n": 342748.0,
+   "url": "https://coflein.gov.uk/en/site/307116"
+  },
+  {
+   "nprn": 309124,
+   "type": "VILLAGE",
+   "period": "General",
+   "evidence": "Documents",
+   "e": 270330.0,
+   "n": 342028.0,
+   "url": "https://coflein.gov.uk/en/site/309124"
+  },
+  {
+   "nprn": 403829,
+   "type": "HUT CIRCLE SETTLEMENT",
+   "period": "Prehistoric",
+   "evidence": "Earthwork",
+   "e": 271200.0,
+   "n": 343228.0,
+   "url": "https://coflein.gov.uk/en/site/403829"
+  },
+  {
+   "nprn": 406797,
+   "type": "WORKSHOP",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Documents",
+   "e": 270540.0,
+   "n": 344788.0,
+   "url": "https://coflein.gov.uk/en/site/406797"
+  },
+  {
+   "nprn": 408827,
+   "type": "SCHOOL",
+   "period": "20th Century",
+   "evidence": "Building",
+   "e": 270038.0,
+   "n": 345872.0,
+   "url": "https://coflein.gov.uk/en/site/408827"
+  },
+  {
+   "nprn": 409339,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval",
+   "evidence": "Complex",
+   "e": 270117.0,
+   "n": 342006.0,
+   "url": "https://coflein.gov.uk/en/site/409339"
+  },
+  {
+   "nprn": 410592,
+   "type": "FARMHOUSE",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270535.0,
+   "n": 345487.0,
+   "url": "https://coflein.gov.uk/en/site/410592"
+  },
+  {
+   "nprn": 410593,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270605.0,
+   "n": 345489.0,
+   "url": "https://coflein.gov.uk/en/site/410593"
+  },
+  {
+   "nprn": 410594,
+   "type": "HOUSING ESTATE",
+   "period": "Modern",
+   "evidence": "Building",
+   "e": 270430.0,
+   "n": 345405.0,
+   "url": "https://coflein.gov.uk/en/site/410594"
+  },
+  {
+   "nprn": 410595,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270480.0,
+   "n": 345364.0,
+   "url": "https://coflein.gov.uk/en/site/410595"
+  },
+  {
+   "nprn": 410596,
+   "type": "HOUSE",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270385.0,
+   "n": 345620.0,
+   "url": "https://coflein.gov.uk/en/site/410596"
+  },
+  {
+   "nprn": 410597,
+   "type": "CARPENTERS WORKSHOP",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270597.0,
+   "n": 345629.0,
+   "url": "https://coflein.gov.uk/en/site/410597"
+  },
+  {
+   "nprn": 410598,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270167.0,
+   "n": 345950.0,
+   "url": "https://coflein.gov.uk/en/site/410598"
+  },
+  {
+   "nprn": 410599,
+   "type": "COTTAGE",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270747.0,
+   "n": 345572.0,
+   "url": "https://coflein.gov.uk/en/site/410599"
+  },
+  {
+   "nprn": 410600,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270352.0,
+   "n": 345601.0,
+   "url": "https://coflein.gov.uk/en/site/410600"
+  },
+  {
+   "nprn": 410601,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270463.0,
+   "n": 345788.0,
+   "url": "https://coflein.gov.uk/en/site/410601"
+  },
+  {
+   "nprn": 410602,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270451.0,
+   "n": 345788.0,
+   "url": "https://coflein.gov.uk/en/site/410602"
+  },
+  {
+   "nprn": 410603,
+   "type": "GATE POST",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Other Structure",
+   "e": 270581.0,
+   "n": 345797.0,
+   "url": "https://coflein.gov.uk/en/site/410603"
+  },
+  {
+   "nprn": 410604,
+   "type": "BUILDING; BUILDING; BUILDING",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270706.0,
+   "n": 345598.0,
+   "url": "https://coflein.gov.uk/en/site/410604"
+  },
+  {
+   "nprn": 410616,
+   "type": "HOUSE",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270476.0,
+   "n": 343894.0,
+   "url": "https://coflein.gov.uk/en/site/410616"
+  },
+  {
+   "nprn": 410617,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270504.0,
+   "n": 344271.0,
+   "url": "https://coflein.gov.uk/en/site/410617"
+  },
+  {
+   "nprn": 410618,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270506.0,
+   "n": 344294.0,
+   "url": "https://coflein.gov.uk/en/site/410618"
+  },
+  {
+   "nprn": 410621,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270507.0,
+   "n": 344296.0,
+   "url": "https://coflein.gov.uk/en/site/410621"
+  },
+  {
+   "nprn": 410622,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270510.0,
+   "n": 344310.0,
+   "url": "https://coflein.gov.uk/en/site/410622"
+  },
+  {
+   "nprn": 410623,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270547.0,
+   "n": 344500.0,
+   "url": "https://coflein.gov.uk/en/site/410623"
+  },
+  {
+   "nprn": 410624,
+   "type": "TERRACED HOUSING",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270531.0,
+   "n": 344501.0,
+   "url": "https://coflein.gov.uk/en/site/410624"
+  },
+  {
+   "nprn": 410625,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270551.0,
+   "n": 344510.0,
+   "url": "https://coflein.gov.uk/en/site/410625"
+  },
+  {
+   "nprn": 410626,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270530.0,
+   "n": 344489.0,
+   "url": "https://coflein.gov.uk/en/site/410626"
+  },
+  {
+   "nprn": 410627,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270467.0,
+   "n": 344574.0,
+   "url": "https://coflein.gov.uk/en/site/410627"
+  },
+  {
+   "nprn": 410628,
+   "type": "TERRACED HOUSING",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270491.0,
+   "n": 344521.0,
+   "url": "https://coflein.gov.uk/en/site/410628"
+  },
+  {
+   "nprn": 410629,
+   "type": "TERRACED HOUSING",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270435.0,
+   "n": 344621.0,
+   "url": "https://coflein.gov.uk/en/site/410629"
+  },
+  {
+   "nprn": 410636,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270568.0,
+   "n": 344637.0,
+   "url": "https://coflein.gov.uk/en/site/410636"
+  },
+  {
+   "nprn": 410637,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270555.0,
+   "n": 344558.0,
+   "url": "https://coflein.gov.uk/en/site/410637"
+  },
+  {
+   "nprn": 410638,
+   "type": "HOUSE",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270569.0,
+   "n": 344671.0,
+   "url": "https://coflein.gov.uk/en/site/410638"
+  },
+  {
+   "nprn": 410639,
+   "type": "TERRACED HOUSING",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270543.0,
+   "n": 344677.0,
+   "url": "https://coflein.gov.uk/en/site/410639"
+  },
+  {
+   "nprn": 410640,
+   "type": "SLATE FENCE",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270657.0,
+   "n": 344995.0,
+   "url": "https://coflein.gov.uk/en/site/410640"
+  },
+  {
+   "nprn": 410641,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270683.0,
+   "n": 345023.0,
+   "url": "https://coflein.gov.uk/en/site/410641"
+  },
+  {
+   "nprn": 410642,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270742.0,
+   "n": 345208.0,
+   "url": "https://coflein.gov.uk/en/site/410642"
+  },
+  {
+   "nprn": 410645,
+   "type": "TERRACED HOUSING",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270782.0,
+   "n": 345261.0,
+   "url": "https://coflein.gov.uk/en/site/410645"
+  },
+  {
+   "nprn": 410646,
+   "type": "TERRACED HOUSING",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270760.0,
+   "n": 345230.0,
+   "url": "https://coflein.gov.uk/en/site/410646"
+  },
+  {
+   "nprn": 410647,
+   "type": "HOUSE",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270735.0,
+   "n": 345243.0,
+   "url": "https://coflein.gov.uk/en/site/410647"
+  },
+  {
+   "nprn": 410649,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270734.0,
+   "n": 345290.0,
+   "url": "https://coflein.gov.uk/en/site/410649"
+  },
+  {
+   "nprn": 410650,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270704.0,
+   "n": 345300.0,
+   "url": "https://coflein.gov.uk/en/site/410650"
+  },
+  {
+   "nprn": 410651,
+   "type": "TERRACED HOUSING",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270665.0,
+   "n": 345377.0,
+   "url": "https://coflein.gov.uk/en/site/410651"
+  },
+  {
+   "nprn": 410656,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270645.0,
+   "n": 345426.0,
+   "url": "https://coflein.gov.uk/en/site/410656"
+  },
+  {
+   "nprn": 410660,
+   "type": "TERRACED HOUSING",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 269827.0,
+   "n": 345877.0,
+   "url": "https://coflein.gov.uk/en/site/410660"
+  },
+  {
+   "nprn": 410661,
+   "type": "TERRACED HOUSING",
+   "period": "Modern",
+   "evidence": "Building",
+   "e": 269923.0,
+   "n": 345839.0,
+   "url": "https://coflein.gov.uk/en/site/410661"
+  },
+  {
+   "nprn": 410662,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 269917.0,
+   "n": 345755.0,
+   "url": "https://coflein.gov.uk/en/site/410662"
+  },
+  {
+   "nprn": 410663,
+   "type": "SLATE FENCE",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270003.0,
+   "n": 345800.0,
+   "url": "https://coflein.gov.uk/en/site/410663"
+  },
+  {
+   "nprn": 410664,
+   "type": "TERRACED HOUSING",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270184.0,
+   "n": 345809.0,
+   "url": "https://coflein.gov.uk/en/site/410664"
+  },
+  {
+   "nprn": 410665,
+   "type": "TERRACED HOUSING",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270203.0,
+   "n": 345790.0,
+   "url": "https://coflein.gov.uk/en/site/410665"
+  },
+  {
+   "nprn": 410666,
+   "type": "HOTEL",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270171.0,
+   "n": 345884.0,
+   "url": "https://coflein.gov.uk/en/site/410666"
+  },
+  {
+   "nprn": 410667,
+   "type": "SHOP",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270211.0,
+   "n": 345871.0,
+   "url": "https://coflein.gov.uk/en/site/410667"
+  },
+  {
+   "nprn": 410668,
+   "type": "SHOPPING PARADE",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270301.0,
+   "n": 345828.0,
+   "url": "https://coflein.gov.uk/en/site/410668"
+  },
+  {
+   "nprn": 410669,
+   "type": "SHOP",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270258.0,
+   "n": 345845.0,
+   "url": "https://coflein.gov.uk/en/site/410669"
+  },
+  {
+   "nprn": 410670,
+   "type": "SHOP",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270254.0,
+   "n": 345832.0,
+   "url": "https://coflein.gov.uk/en/site/410670"
+  },
+  {
+   "nprn": 410672,
+   "type": "SHOP",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270290.0,
+   "n": 345830.0,
+   "url": "https://coflein.gov.uk/en/site/410672"
+  },
+  {
+   "nprn": 410673,
+   "type": "SHOP",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270303.0,
+   "n": 345827.0,
+   "url": "https://coflein.gov.uk/en/site/410673"
+  },
+  {
+   "nprn": 410675,
+   "type": "WORKSHOP",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270343.0,
+   "n": 345852.0,
+   "url": "https://coflein.gov.uk/en/site/410675"
+  },
+  {
+   "nprn": 410677,
+   "type": "HOUSE",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270314.0,
+   "n": 345863.0,
+   "url": "https://coflein.gov.uk/en/site/410677"
+  },
+  {
+   "nprn": 410678,
+   "type": "TERRACED HOUSING",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270344.0,
+   "n": 345872.0,
+   "url": "https://coflein.gov.uk/en/site/410678"
+  },
+  {
+   "nprn": 410680,
+   "type": "TERRACED HOUSING",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270318.0,
+   "n": 346059.0,
+   "url": "https://coflein.gov.uk/en/site/410680"
+  },
+  {
+   "nprn": 410706,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270381.0,
+   "n": 346087.0,
+   "url": "https://coflein.gov.uk/en/site/410706"
+  },
+  {
+   "nprn": 410707,
+   "type": "TERRACED HOUSE",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270418.0,
+   "n": 346051.0,
+   "url": "https://coflein.gov.uk/en/site/410707"
+  },
+  {
+   "nprn": 410708,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270418.0,
+   "n": 346024.0,
+   "url": "https://coflein.gov.uk/en/site/410708"
+  },
+  {
+   "nprn": 410710,
+   "type": "HOUSE",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270427.0,
+   "n": 345976.0,
+   "url": "https://coflein.gov.uk/en/site/410710"
+  },
+  {
+   "nprn": 410712,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Mechanical Structure",
+   "e": 270333.0,
+   "n": 345935.0,
+   "url": "https://coflein.gov.uk/en/site/410712"
+  },
+  {
+   "nprn": 410713,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270416.0,
+   "n": 345864.0,
+   "url": "https://coflein.gov.uk/en/site/410713"
+  },
+  {
+   "nprn": 410714,
+   "type": "HOUSE",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270321.0,
+   "n": 345789.0,
+   "url": "https://coflein.gov.uk/en/site/410714"
+  },
+  {
+   "nprn": 410715,
+   "type": "TERRACED HOUSING",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270315.0,
+   "n": 345772.0,
+   "url": "https://coflein.gov.uk/en/site/410715"
+  },
+  {
+   "nprn": 410716,
+   "type": "TERRACED HOUSING",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270301.0,
+   "n": 345774.0,
+   "url": "https://coflein.gov.uk/en/site/410716"
+  },
+  {
+   "nprn": 410717,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270297.0,
+   "n": 345723.0,
+   "url": "https://coflein.gov.uk/en/site/410717"
+  },
+  {
+   "nprn": 410721,
+   "type": "TERRACED HOUSING",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Building",
+   "e": 270261.0,
+   "n": 345718.0,
+   "url": "https://coflein.gov.uk/en/site/410721"
+  },
+  {
+   "nprn": 410722,
+   "type": "TERRACED HOUSING",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270253.0,
+   "n": 345818.0,
+   "url": "https://coflein.gov.uk/en/site/410722"
+  },
+  {
+   "nprn": 410737,
+   "type": "TERRACED HOUSING",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270203.0,
+   "n": 345622.0,
+   "url": "https://coflein.gov.uk/en/site/410737"
+  },
+  {
+   "nprn": 410738,
+   "type": "TERRACED HOUSING",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270328.0,
+   "n": 345724.0,
+   "url": "https://coflein.gov.uk/en/site/410738"
+  },
+  {
+   "nprn": 410740,
+   "type": "DAY CENTRE",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270129.0,
+   "n": 345687.0,
+   "url": "https://coflein.gov.uk/en/site/410740"
+  },
+  {
+   "nprn": 411886,
+   "type": "PUBLIC PARK",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 269855.0,
+   "n": 345814.0,
+   "url": "https://coflein.gov.uk/en/site/411886"
+  },
+  {
+   "nprn": 415496,
+   "type": "ROAD; ROAD",
+   "period": "19th Century",
+   "evidence": "Other Structure",
+   "e": 270841.0,
+   "n": 345513.0,
+   "url": "https://coflein.gov.uk/en/site/415496"
+  },
+  {
+   "nprn": 415762,
+   "type": "RAILWAY VIADUCT",
+   "period": "19th Century",
+   "evidence": "Documents",
+   "e": 270575.0,
+   "n": 345575.0,
+   "url": "https://coflein.gov.uk/en/site/415762"
+  },
+  {
+   "nprn": 415927,
+   "type": "SETTLEMENT",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Documents",
+   "e": 270703.0,
+   "n": 345575.0,
+   "url": "https://coflein.gov.uk/en/site/415927"
+  },
+  {
+   "nprn": 415928,
+   "type": "SETTLEMENT",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Documents",
+   "e": 270842.0,
+   "n": 345566.0,
+   "url": "https://coflein.gov.uk/en/site/415928"
+  },
+  {
+   "nprn": 415938,
+   "type": "ROAD BRIDGE",
+   "period": "Post Medieval; 18th Century; 19th Century",
+   "evidence": "Documents",
+   "e": 270550.0,
+   "n": 342919.0,
+   "url": "https://coflein.gov.uk/en/site/415938"
+  },
+  {
+   "nprn": 416027,
+   "type": "TERRACED HOUSING",
+   "period": "19th Century",
+   "evidence": "Documents",
+   "e": 270279.0,
+   "n": 346004.0,
+   "url": "https://coflein.gov.uk/en/site/416027"
+  },
+  {
+   "nprn": 416047,
+   "type": "LEVEL CROSSING",
+   "period": "Modern",
+   "evidence": "Documents",
+   "e": 270589.0,
+   "n": 344974.0,
+   "url": "https://coflein.gov.uk/en/site/416047"
+  },
+  {
+   "nprn": 416053,
+   "type": "TERRACED HOUSING",
+   "period": "19th Century",
+   "evidence": "Documents",
+   "e": 270587.0,
+   "n": 345814.0,
+   "url": "https://coflein.gov.uk/en/site/416053"
+  },
+  {
+   "nprn": 416058,
+   "type": "RAILWAY BRIDGE",
+   "period": "19th Century",
+   "evidence": "Documents",
+   "e": 270201.0,
+   "n": 345811.0,
+   "url": "https://coflein.gov.uk/en/site/416058"
+  },
+  {
+   "nprn": 416061,
+   "type": "HOUSE",
+   "period": "19th Century",
+   "evidence": "Documents",
+   "e": 270503.0,
+   "n": 345834.0,
+   "url": "https://coflein.gov.uk/en/site/416061"
+  },
+  {
+   "nprn": 416063,
+   "type": "LAUNDRETTE",
+   "period": "Modern",
+   "evidence": "Documents",
+   "e": 269974.0,
+   "n": 345988.0,
+   "url": "https://coflein.gov.uk/en/site/416063"
+  },
+  {
+   "nprn": 416065,
+   "type": "SCHOOL",
+   "period": "19th Century",
+   "evidence": "Documents",
+   "e": 270568.0,
+   "n": 344693.0,
+   "url": "https://coflein.gov.uk/en/site/416065"
+  },
+  {
+   "nprn": 416248,
+   "type": "RAILWAY BRIDGE",
+   "period": "19th Century",
+   "evidence": "Other Structure",
+   "e": 270243.0,
+   "n": 345780.0,
+   "url": "https://coflein.gov.uk/en/site/416248"
+  },
+  {
+   "nprn": 416251,
+   "type": "SHOP",
+   "period": "19th Century",
+   "evidence": "Documents",
+   "e": 270623.0,
+   "n": 345431.0,
+   "url": "https://coflein.gov.uk/en/site/416251"
+  },
+  {
+   "nprn": 416253,
+   "type": "RAILWAY BRIDGE",
+   "period": "19th Century",
+   "evidence": "Other Structure",
+   "e": 270304.0,
+   "n": 345758.0,
+   "url": "https://coflein.gov.uk/en/site/416253"
+  },
+  {
+   "nprn": 416254,
+   "type": "CHEMISTS SHOP",
+   "period": "19th Century",
+   "evidence": "Building",
+   "e": 269889.0,
+   "n": 345986.0,
+   "url": "https://coflein.gov.uk/en/site/416254"
+  },
+  {
+   "nprn": 416255,
+   "type": "LIBRARY",
+   "period": "19th Century",
+   "evidence": "Building",
+   "e": 269874.0,
+   "n": 345974.0,
+   "url": "https://coflein.gov.uk/en/site/416255"
+  },
+  {
+   "nprn": 416935,
+   "type": "CINEMA",
+   "period": "20th Century",
+   "evidence": "Documents",
+   "e": 270217.0,
+   "n": 345808.0,
+   "url": "https://coflein.gov.uk/en/site/416935"
+  },
+  {
+   "nprn": 417368,
+   "type": "ROAD; ROAD",
+   "period": "19th Century",
+   "evidence": "Complex",
+   "e": 269935.0,
+   "n": 345921.0,
+   "url": "https://coflein.gov.uk/en/site/417368"
+  },
+  {
+   "nprn": 417371,
+   "type": "LANDSCAPE; LANDSCAPE; LANDSCAPE; LANDSCAPE",
+   "period": "General",
+   "evidence": "Topography",
+   "e": 270500.0,
+   "n": 345783.0,
+   "url": "https://coflein.gov.uk/en/site/417371"
+  },
+  {
+   "nprn": 417372,
+   "type": "YARD",
+   "period": "19th Century",
+   "evidence": "Building",
+   "e": 270457.0,
+   "n": 345830.0,
+   "url": "https://coflein.gov.uk/en/site/417372"
+  },
+  {
+   "nprn": 417373,
+   "type": "HOUSE",
+   "period": "19th Century",
+   "evidence": "Documents",
+   "e": 269891.0,
+   "n": 345935.0,
+   "url": "https://coflein.gov.uk/en/site/417373"
+  },
+  {
+   "nprn": 418037,
+   "type": "TOILET; RAILWAY STATION",
+   "period": "19th Century; Post Medieval",
+   "evidence": "Building",
+   "e": 270263.0,
+   "n": 345971.0,
+   "url": "https://coflein.gov.uk/en/site/418037"
+  },
+  {
+   "nprn": 419315,
+   "type": "SCHOOL",
+   "period": "19th Century",
+   "evidence": "Documents",
+   "e": 270109.0,
+   "n": 345949.0,
+   "url": "https://coflein.gov.uk/en/site/419315"
+  },
+  {
+   "nprn": 421265,
+   "type": "WINDER HOUSE; COUNTER BALANCE INCLINE",
+   "period": "19th Century",
+   "evidence": "Ruin",
+   "e": 270652.0,
+   "n": 346075.0,
+   "url": "https://coflein.gov.uk/en/site/421265"
+  },
+  {
+   "nprn": 421309,
+   "type": "FARMSTEAD",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 270023.0,
+   "n": 341832.0,
+   "url": "https://coflein.gov.uk/en/site/421309"
+  },
+  {
+   "nprn": 421436,
+   "type": "CHURCH",
+   "period": "20th Century",
+   "evidence": "Documents",
+   "e": 270193.0,
+   "n": 345878.0,
+   "url": "https://coflein.gov.uk/en/site/421436"
+  },
+  {
+   "nprn": 421533,
+   "type": "CHURCH",
+   "period": "19th Century",
+   "evidence": "Building",
+   "e": 269826.0,
+   "n": 345960.0,
+   "url": "https://coflein.gov.uk/en/site/421533"
+  },
+  {
+   "nprn": 421805,
+   "type": "SIGNAL BOX",
+   "period": "Post Medieval; 19th Century",
+   "evidence": "Documents",
+   "e": 269425.0,
+   "n": 339867.0,
+   "url": "https://coflein.gov.uk/en/site/421805"
+  },
+  {
+   "nprn": 421946,
+   "type": "HOSPITAL",
+   "period": "Post Medieval",
+   "evidence": "Building",
+   "e": 270219.0,
+   "n": 345557.0,
+   "url": "https://coflein.gov.uk/en/site/421946"
+  },
+  {
+   "nprn": 423375,
+   "type": "FARM",
+   "period": "Post Medieval",
+   "evidence": "Documents",
+   "e": 271045.0,
+   "n": 337077.0,
+   "url": "https://coflein.gov.uk/en/site/423375"
+  },
+  {
+   "nprn": 536869,
+   "type": "DRAINAGE DITCH",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270889.0,
+   "n": 341548.0,
+   "url": "https://coflein.gov.uk/en/site/536869"
+  },
+  {
+   "nprn": 536879,
+   "type": "PEAT STAND",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270798.0,
+   "n": 341789.0,
+   "url": "https://coflein.gov.uk/en/site/536879"
+  },
+  {
+   "nprn": 536882,
+   "type": "QUARRY",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270739.0,
+   "n": 341708.0,
+   "url": "https://coflein.gov.uk/en/site/536882"
+  },
+  {
+   "nprn": 536883,
+   "type": "QUARRY",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270715.0,
+   "n": 341715.0,
+   "url": "https://coflein.gov.uk/en/site/536883"
+  },
+  {
+   "nprn": 536884,
+   "type": "QUARRY",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270707.0,
+   "n": 341691.0,
+   "url": "https://coflein.gov.uk/en/site/536884"
+  },
+  {
+   "nprn": 536885,
+   "type": "QUARRY",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270774.0,
+   "n": 341651.0,
+   "url": "https://coflein.gov.uk/en/site/536885"
+  },
+  {
+   "nprn": 536886,
+   "type": "QUARRY",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270802.0,
+   "n": 341643.0,
+   "url": "https://coflein.gov.uk/en/site/536886"
+  },
+  {
+   "nprn": 536887,
+   "type": "QUARRY",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270681.0,
+   "n": 341700.0,
+   "url": "https://coflein.gov.uk/en/site/536887"
+  },
+  {
+   "nprn": 537392,
+   "type": "QUARRY",
+   "period": "Modern",
+   "evidence": "Earthwork",
+   "e": 270709.0,
+   "n": 344671.0,
+   "url": "https://coflein.gov.uk/en/site/537392"
+  },
+  {
+   "nprn": 537393,
+   "type": "SHELTER",
+   "period": "Modern",
+   "evidence": "Ruin",
+   "e": 270710.0,
+   "n": 344678.0,
+   "url": "https://coflein.gov.uk/en/site/537393"
+  },
+  {
+   "nprn": 537394,
+   "type": "TRACKWAY",
+   "period": "Modern",
+   "evidence": "Earthwork",
+   "e": 270683.0,
+   "n": 344723.0,
+   "url": "https://coflein.gov.uk/en/site/537394"
+  },
+  {
+   "nprn": 537395,
+   "type": "QUARRY",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270661.0,
+   "n": 344675.0,
+   "url": "https://coflein.gov.uk/en/site/537395"
+  },
+  {
+   "nprn": 537396,
+   "type": "WALL",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270681.0,
+   "n": 344647.0,
+   "url": "https://coflein.gov.uk/en/site/537396"
+  },
+  {
+   "nprn": 537397,
+   "type": "QUARRY",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270673.0,
+   "n": 344611.0,
+   "url": "https://coflein.gov.uk/en/site/537397"
+  },
+  {
+   "nprn": 537398,
+   "type": "QUARRY",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270665.0,
+   "n": 344619.0,
+   "url": "https://coflein.gov.uk/en/site/537398"
+  },
+  {
+   "nprn": 537399,
+   "type": "PEAT STAND",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270726.0,
+   "n": 344602.0,
+   "url": "https://coflein.gov.uk/en/site/537399"
+  },
+  {
+   "nprn": 537400,
+   "type": "SHELTER",
+   "period": "Modern",
+   "evidence": "Other Structure",
+   "e": 270729.0,
+   "n": 344629.0,
+   "url": "https://coflein.gov.uk/en/site/537400"
+  },
+  {
+   "nprn": 537401,
+   "type": "QUARRY",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270760.0,
+   "n": 344515.0,
+   "url": "https://coflein.gov.uk/en/site/537401"
+  },
+  {
+   "nprn": 537402,
+   "type": "TRACKWAY",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270747.0,
+   "n": 344503.0,
+   "url": "https://coflein.gov.uk/en/site/537402"
+  },
+  {
+   "nprn": 537403,
+   "type": "TRACKWAY",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270692.0,
+   "n": 344486.0,
+   "url": "https://coflein.gov.uk/en/site/537403"
+  },
+  {
+   "nprn": 537404,
+   "type": "QUARRY",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270787.0,
+   "n": 344492.0,
+   "url": "https://coflein.gov.uk/en/site/537404"
+  },
+  {
+   "nprn": 537405,
+   "type": "PIT",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270778.0,
+   "n": 344479.0,
+   "url": "https://coflein.gov.uk/en/site/537405"
+  },
+  {
+   "nprn": 537406,
+   "type": "PIT",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270761.0,
+   "n": 344443.0,
+   "url": "https://coflein.gov.uk/en/site/537406"
+  },
+  {
+   "nprn": 537407,
+   "type": "TRACKWAY",
+   "period": "Modern",
+   "evidence": "Earthwork",
+   "e": 270815.0,
+   "n": 344459.0,
+   "url": "https://coflein.gov.uk/en/site/537407"
+  },
+  {
+   "nprn": 537408,
+   "type": "TRACKWAY",
+   "period": "Modern",
+   "evidence": "Earthwork",
+   "e": 270834.0,
+   "n": 344469.0,
+   "url": "https://coflein.gov.uk/en/site/537408"
+  },
+  {
+   "nprn": 537409,
+   "type": "BUILDING; BUILDING; BUILDING",
+   "period": "Modern",
+   "evidence": "Ruin",
+   "e": 270747.0,
+   "n": 344928.0,
+   "url": "https://coflein.gov.uk/en/site/537409"
+  },
+  {
+   "nprn": 537410,
+   "type": "INCLINED PLANE",
+   "period": "Modern",
+   "evidence": "Earthwork",
+   "e": 270715.0,
+   "n": 344864.0,
+   "url": "https://coflein.gov.uk/en/site/537410"
+  },
+  {
+   "nprn": 537411,
+   "type": "INCLINED PLANE",
+   "period": "Modern",
+   "evidence": "Other Structure",
+   "e": 270740.0,
+   "n": 344847.0,
+   "url": "https://coflein.gov.uk/en/site/537411"
+  },
+  {
+   "nprn": 537412,
+   "type": "TRACKWAY",
+   "period": "Modern",
+   "evidence": "Earthwork",
+   "e": 270743.0,
+   "n": 344835.0,
+   "url": "https://coflein.gov.uk/en/site/537412"
+  },
+  {
+   "nprn": 537413,
+   "type": "TRACKWAY",
+   "period": "Modern",
+   "evidence": "Earthwork",
+   "e": 270703.0,
+   "n": 344815.0,
+   "url": "https://coflein.gov.uk/en/site/537413"
+  },
+  {
+   "nprn": 537414,
+   "type": "SPOIL HEAP",
+   "period": "Modern",
+   "evidence": "Earthwork",
+   "e": 270683.0,
+   "n": 344818.0,
+   "url": "https://coflein.gov.uk/en/site/537414"
+  },
+  {
+   "nprn": 537431,
+   "type": "LOADING BAY",
+   "period": "Modern",
+   "evidence": "Other Structure",
+   "e": 270718.0,
+   "n": 345077.0,
+   "url": "https://coflein.gov.uk/en/site/537431"
+  },
+  {
+   "nprn": 537432,
+   "type": "QUARRY",
+   "period": "Modern",
+   "evidence": "Earthwork",
+   "e": 270809.0,
+   "n": 344977.0,
+   "url": "https://coflein.gov.uk/en/site/537432"
+  },
+  {
+   "nprn": 537433,
+   "type": "WALL",
+   "period": "Post Medieval",
+   "evidence": "Other Structure",
+   "e": 270780.0,
+   "n": 344976.0,
+   "url": "https://coflein.gov.uk/en/site/537433"
+  },
+  {
+   "nprn": 537434,
+   "type": "TRAMWAY",
+   "period": "Modern",
+   "evidence": "Earthwork",
+   "e": 270757.0,
+   "n": 345088.0,
+   "url": "https://coflein.gov.uk/en/site/537434"
+  },
+  {
+   "nprn": 537435,
+   "type": "SPOIL HEAP",
+   "period": "Modern",
+   "evidence": "Earthwork",
+   "e": 270768.0,
+   "n": 345070.0,
+   "url": "https://coflein.gov.uk/en/site/537435"
+  },
+  {
+   "nprn": 537436,
+   "type": "QUARRY",
+   "period": "Modern",
+   "evidence": "Earthwork",
+   "e": 270823.0,
+   "n": 345048.0,
+   "url": "https://coflein.gov.uk/en/site/537436"
+  },
+  {
+   "nprn": 537437,
+   "type": "WINDER HOUSE",
+   "period": "Modern",
+   "evidence": "Other Structure",
+   "e": 270803.0,
+   "n": 345032.0,
+   "url": "https://coflein.gov.uk/en/site/537437"
+  },
+  {
+   "nprn": 537438,
+   "type": "INCLINED PLANE",
+   "period": "Modern",
+   "evidence": "Other Structure",
+   "e": 270789.0,
+   "n": 345050.0,
+   "url": "https://coflein.gov.uk/en/site/537438"
+  },
+  {
+   "nprn": 537439,
+   "type": "QUARRY",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270780.0,
+   "n": 344987.0,
+   "url": "https://coflein.gov.uk/en/site/537439"
+  },
+  {
+   "nprn": 537440,
+   "type": "QUARRY",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270784.0,
+   "n": 344996.0,
+   "url": "https://coflein.gov.uk/en/site/537440"
+  },
+  {
+   "nprn": 537441,
+   "type": "QUARRY",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270786.0,
+   "n": 345012.0,
+   "url": "https://coflein.gov.uk/en/site/537441"
+  },
+  {
+   "nprn": 537442,
+   "type": "WINDER HOUSE",
+   "period": "Modern",
+   "evidence": "Other Structure",
+   "e": 270836.0,
+   "n": 345105.0,
+   "url": "https://coflein.gov.uk/en/site/537442"
+  },
+  {
+   "nprn": 537443,
+   "type": "INCLINED PLANE",
+   "period": "Modern",
+   "evidence": "Other Structure",
+   "e": 270816.0,
+   "n": 345101.0,
+   "url": "https://coflein.gov.uk/en/site/537443"
+  },
+  {
+   "nprn": 537444,
+   "type": "TRACKWAY",
+   "period": "Modern",
+   "evidence": "Earthwork",
+   "e": 270810.0,
+   "n": 345105.0,
+   "url": "https://coflein.gov.uk/en/site/537444"
+  },
+  {
+   "nprn": 537445,
+   "type": "FIELD BOUNDARY",
+   "period": "Post Medieval",
+   "evidence": "Other Structure",
+   "e": 270813.0,
+   "n": 345117.0,
+   "url": "https://coflein.gov.uk/en/site/537445"
+  },
+  {
+   "nprn": 537446,
+   "type": "SHEEP FOLD",
+   "period": "Post Medieval",
+   "evidence": "Other Structure",
+   "e": 270813.0,
+   "n": 345115.0,
+   "url": "https://coflein.gov.uk/en/site/537446"
+  },
+  {
+   "nprn": 537447,
+   "type": "QUARRY",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270821.0,
+   "n": 345112.0,
+   "url": "https://coflein.gov.uk/en/site/537447"
+  },
+  {
+   "nprn": 537448,
+   "type": "QUARRY",
+   "period": "Modern",
+   "evidence": "Earthwork",
+   "e": 270840.0,
+   "n": 345152.0,
+   "url": "https://coflein.gov.uk/en/site/537448"
+  },
+  {
+   "nprn": 537449,
+   "type": "INCLINED PLANE",
+   "period": "Post Medieval",
+   "evidence": "Other Structure",
+   "e": 270902.0,
+   "n": 345250.0,
+   "url": "https://coflein.gov.uk/en/site/537449"
+  },
+  {
+   "nprn": 537450,
+   "type": "QUARRY",
+   "period": "Post Medieval",
+   "evidence": "Complex",
+   "e": 270823.0,
+   "n": 345048.0,
+   "url": "https://coflein.gov.uk/en/site/537450"
+  },
+  {
+   "nprn": 537451,
+   "type": "SHEEP FOLD",
+   "period": "Post Medieval",
+   "evidence": "Other Structure",
+   "e": 270996.0,
+   "n": 345289.0,
+   "url": "https://coflein.gov.uk/en/site/537451"
+  },
+  {
+   "nprn": 537490,
+   "type": "BANK AND DITCH",
+   "period": "Modern",
+   "evidence": "Earthwork",
+   "e": 270921.0,
+   "n": 345593.0,
+   "url": "https://coflein.gov.uk/en/site/537490"
+  },
+  {
+   "nprn": 537497,
+   "type": "TRACKWAY",
+   "period": "Post Medieval",
+   "evidence": "Earthwork",
+   "e": 270650.0,
+   "n": 344736.0,
+   "url": "https://coflein.gov.uk/en/site/537497"
+  },
+  {
+   "nprn": 537498,
+   "type": "QUARRY",
+   "period": "Post Medieval",
+   "evidence": "Complex",
+   "e": 270708.0,
+   "n": 344671.0,
+   "url": "https://coflein.gov.uk/en/site/537498"
+  },
+  {
+   "nprn": 701046,
+   "type": "POLICE STATION; HOSTEL; CINEMA",
+   "period": "20th Century; 21st Century",
+   "evidence": "Building",
+   "e": 270343.0,
+   "n": 345898.0,
+   "url": "https://coflein.gov.uk/en/site/701046"
+  },
+  {
+   "nprn": 701048,
+   "type": "RECREATIONAL; VICARAGE",
+   "period": "19th Century",
+   "evidence": "Building",
+   "e": 269849.0,
+   "n": 345993.0,
+   "url": "https://coflein.gov.uk/en/site/701048"
+  },
+  {
+   "nprn": 701049,
+   "type": "SECONDARY SCHOOL",
+   "period": "19th Century",
+   "evidence": "Building",
+   "e": 270017.0,
+   "n": 345590.0,
+   "url": "https://coflein.gov.uk/en/site/701049"
+  },
+  {
+   "nprn": 703017,
+   "type": "ROAD",
+   "period": "19th Century",
+   "evidence": null,
+   "e": 270780.0,
+   "n": 345838.0,
+   "url": "https://coflein.gov.uk/en/site/703017"
+  },
+  {
+   "nprn": 703018,
+   "type": "ROAD",
+   "period": "19th Century",
+   "evidence": null,
+   "e": 270780.0,
+   "n": 345838.0,
+   "url": "https://coflein.gov.uk/en/site/703018"
+  },
+  {
+   "nprn": 710099,
+   "type": "GAS WORKS",
+   "period": "19th Century",
+   "evidence": "Documents",
+   "e": 270465.0,
+   "n": 345722.0,
+   "url": "https://coflein.gov.uk/en/site/710099"
+  }
+ ],
+ "retrievedAt": "2026-10-30",
+ "source": "https://datamap.gov.wales/geoserver/ows",
+ "layers": {
+  "lidarTiles": "geonode:welsh_government_lidar_tile_catalogue_2020_2023",
+  "archiveTiles": "inspire-nrw:NRW_LIDAR_ARCHIVE_TILE_CATALOGUE",
+  "listed": "inspire-wg:Cadw_ListedBuildings",
+  "sites": "geonode:rcahmw_nmrw_terrestrialsites_rcahmw_bng"
+ },
+ "licence": "OGL v3 (all four layers)",
+ "attribution": {
+  "lidarTiles": "Welsh Government lidar tile catalogue 2020-2023, OGL v3",
+  "archiveTiles": "Contains Natural Resources Wales information \u00a9 Natural Resources Wales and Database Right, OGL v3",
+  "listed": "Designated Historic Asset GIS Data, The Welsh Historic Environment Service (Cadw), 2026-10-30, licensed under the Open Government Licence",
+  "sites": "This site data is from the National Monuments Record of Wales (NMRW), produced by RCAHMW. \u00a9 Crown Database Right: RCAHMW, licensed under the Open Government Licence 3.0"
+ },
+ "bufferM": 400
+}

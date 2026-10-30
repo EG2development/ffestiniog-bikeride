@@ -5,11 +5,11 @@
 export type CaptionPosition = "top-left" | "bottom-left" | "bottom-center" | "badge" | "attribution";
 export type Caption = { id: string; text: string; from: number; to: number; position: CaptionPosition; scene?: string };
 
-const ATTRIBUTION =
-  "Welsh Government / NRW lidar DTM and DSM (OGL) · Map data © OpenStreetMap contributors (ODbL) · Map tiles © OpenTopoMap (CC-BY-SA) · DEM- and OSM-derived, not survey-grade";
+// buildings OSM lacks come from OS OpenMap - Local, whose OGL notice is quoted as OS sets it (ADR 63)
+const OS_NOTICE = "Contains OS data © Crown copyright and database right 2026";
+const ATTRIBUTION = `Welsh Government / NRW lidar DTM and DSM (OGL) · Map data © OpenStreetMap contributors (ODbL) · ${OS_NOTICE} · Map tiles © OpenTopoMap (CC-BY-SA) · DEM- and map-derived, not survey-grade`;
 // the photo look draws no map tiles; its aerial ground is a Sentinel-2 image, whose notice the licence asks for (ADR 60)
-const PHOTO_ATTRIBUTION =
-  "Welsh Government / NRW lidar DTM and DSM (OGL) · Map data © OpenStreetMap contributors (ODbL) · Contains modified Copernicus Sentinel data 2025 · DEM- and OSM-derived, not survey-grade";
+const PHOTO_ATTRIBUTION = `Welsh Government / NRW lidar DTM and DSM (OGL) · Map data © OpenStreetMap contributors (ODbL) · ${OS_NOTICE} · Contains modified Copernicus Sentinel data 2025 · DEM- and map-derived, not survey-grade`;
 const DISCLAIMER = "Concept visualisation — not an approved route";
 
 /** The reel (2,700 frames). */

@@ -356,7 +356,8 @@ function extras(cfg: SectionConfig, inputs: ExtraInputs, scene: PocScene, look: 
   // Roads sit on whichever is higher: the bare DTM keeps the decks over the line, the rendered ground the corridor's fill.
   const roadBase: HeightAt = (x, z) => Math.max(scene.bareHeightAt(x, z), scene.heightAt(x, z));
   // only buildings the register lists, with its status (spec BL3, BL16); they stand on the rendered ground (BL5)
-  const buildings = sectionBuildings(inputs.buildings ?? [], buildingStatus(inputs.features), inputs.route.project, scene.heightAt, cfg.ve);
+  // (an aerial scene in the concept look shows its towns on the map drape; the photo look builds them, ADR 63)
+  const buildings = sectionBuildings(drawsCover ? (inputs.buildings ?? []) : [], buildingStatus(inputs.features), inputs.route.project, scene.heightAt, cfg.ve);
   const footprints = buildings.records.map((r) => r.ring);
   const lines = photo?.barriers && inputs.barriers ? barrierLines(inputs.barriers) : [];
   // no tree stands in a wall or hedge: each boundary is a keep-out corridor for the placer

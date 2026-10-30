@@ -193,9 +193,19 @@ one-line comment when you create it.
    changes. Maentwrog's earthworks live in `data/features-3d.json` (ADR 40). This needs network
    access to the lidar COG and the OSM API (water relations, and overbridge ways an older
    `osm.geojson` lacks). It writes `data/water-levels.json` (ADR 42).
-3. Building data, in two passes per ground window, so the list is tested at measured heights:
-   `npm run data:candidates -- --section <id>`, then `python3 scripts/build_buildings.py --section <id>`,
-   then both again, then `npm run data:sync`. The first candidate pass tests unmeasured footprints
+3. Building data, in two passes per window (the five ground windows and the corridor), so the list is tested at
+   measured heights. First compare the window with the latest OS OpenMap Local release:
+   `npm run data:os-buildings -- <id>` (add `--zip <file>` to reuse a downloaded SH tile; ADR 63). It writes the OS
+   outlines OSM lacks to `data/os-buildings-<id>.geojson` and the comparison to `data/building-currency-<id>.json`.
+   Once for the route, `python3 scripts/fetch_dmw.py` fetches DataMapWales's lidar flight days, listed buildings and
+   NMRW sites (`data/dmw-layers.json`); after the first height pass, `python3 scripts/fetch_dmw.py --history` checks
+   the 2007/2009 lidar on every footprint the 2022 lidar did not see (`data/lidar-history.json`), and the last
+   `build_buildings.py` pass uses both.
+   Then `npm run data:candidates -- --section <id>`, then `python3 scripts/build_buildings.py --section <id>`,
+   then both again, then `npm run data:sync`. Re-run all of it after each OS release (April and October) and when
+   the OSM data is re-fetched; `build_buildings.py` prints the buildings neither the lidar nor OS shows. Then
+   `python3 scripts/find_lidar_structures.py` lists building-like structures in the 1 m lidar within 300 m of the
+   line that no map has (`data/lidar-structures.json`, a review list; nothing is drawn from it). The first candidate pass tests unmeasured footprints
    at a 60 m upper bound. `build_buildings.py` measures them and keeps every height in
    `data/building-heights-<id>.json`. The second pass keeps only what the shots see at those
    heights. `build_buildings.py` needs network access to the OSM API, for building ways and

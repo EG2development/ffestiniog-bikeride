@@ -1,4 +1,764 @@
 {
+ "os/023B9FBD-C99C-475A-808F-1948A58C2025": {
+  "heightM": 6.3,
+  "source": "lidar-dsm"
+ },
+ "os/0473C435-02EF-4C9B-9303-0C2E9656B9CE": {
+  "heightM": 2.0,
+  "source": "lidar-dsm"
+ },
+ "os/0477FBD0-0623-4A2D-8FAF-7E73946BE036": {
+  "heightM": 7.5,
+  "source": "lidar-dsm"
+ },
+ "os/0678F284-2E14-486D-9F2C-41E3C13D0650": {
+  "heightM": 3.4,
+  "source": "lidar-dsm"
+ },
+ "os/06E54A72-5257-4CF1-B356-BFAA180167E0": {
+  "heightM": 3.1,
+  "source": "lidar-dsm"
+ },
+ "os/07224CF7-E2DA-4239-9F7B-A2A919D21571": {
+  "heightM": 7.6,
+  "source": "lidar-dsm"
+ },
+ "os/08896BE1-17DA-425E-93D3-22D40FE1659E": {
+  "heightM": 9.5,
+  "source": "lidar-dsm"
+ },
+ "os/0A0B390C-79A6-4C98-92CE-2E859E22E17F": {
+  "heightM": 10.0,
+  "source": "lidar-dsm"
+ },
+ "os/0A6B55FB-4069-4F25-BB98-F594CFA6BBE7": {
+  "heightM": 6.9,
+  "source": "lidar-dsm"
+ },
+ "os/0A8B2CCD-013D-49BE-A1D4-16C52513A13E": {
+  "heightM": 8.8,
+  "source": "lidar-dsm"
+ },
+ "os/0AC61B89-0853-4F4E-90CF-5E391B953188": {
+  "heightM": 6.0,
+  "source": "default"
+ },
+ "os/0B4972F0-92B4-42F3-B2A6-E93294AD8976": {
+  "heightM": 6.1,
+  "source": "lidar-dsm"
+ },
+ "os/0C6C5D15-829F-480D-B44D-BB951255C7DE": {
+  "heightM": 7.4,
+  "source": "lidar-dsm"
+ },
+ "os/0FAAC112-570C-4905-A89C-1D77538432C3": {
+  "heightM": 7.4,
+  "source": "lidar-dsm"
+ },
+ "os/1015D801-581B-438A-A61C-D2339B65803D": {
+  "heightM": 8.0,
+  "source": "lidar-dsm"
+ },
+ "os/104353E0-AD0A-4136-B752-AC25B5D28DA2": {
+  "heightM": 5.7,
+  "source": "lidar-dsm"
+ },
+ "os/10B678AB-A441-4A80-9BEA-B8B6C69EA351": {
+  "heightM": 2.8,
+  "source": "lidar-dsm"
+ },
+ "os/128F0065-4280-4019-8DAB-E6D82999E94C": {
+  "heightM": 8.0,
+  "source": "lidar-dsm"
+ },
+ "os/1395551F-19A2-45A8-8D19-F7FCA81E59E8": {
+  "heightM": 2.7,
+  "source": "lidar-dsm"
+ },
+ "os/14D93647-3C68-4AE1-97D1-597CED8A5C8C": {
+  "heightM": 4.9,
+  "source": "lidar-dsm"
+ },
+ "os/160FB4CA-D122-482E-B4CF-7308E869DBF7": {
+  "heightM": 6.4,
+  "source": "lidar-dsm"
+ },
+ "os/164F90D2-AB85-4C8D-83A6-3D22093BD32B": {
+  "heightM": 4.4,
+  "source": "lidar-dsm"
+ },
+ "os/166D448D-F565-4027-A0A5-4E9357D9AECA": {
+  "heightM": 8.1,
+  "source": "lidar-dsm"
+ },
+ "os/17CCB157-0FCD-475C-9CE5-4C0B78DC0B1D": {
+  "heightM": 7.6,
+  "source": "lidar-dsm"
+ },
+ "os/1A06D6EC-2A67-4234-83FE-613671D58E86": {
+  "heightM": 7.5,
+  "source": "lidar-dsm"
+ },
+ "os/1A825FA0-576F-41E4-BE86-F7C8DF5D1101": {
+  "heightM": 6.1,
+  "source": "lidar-dsm"
+ },
+ "os/1BD86A92-AF6E-437A-BA45-A770A1989066": {
+  "heightM": 6.2,
+  "source": "lidar-dsm"
+ },
+ "os/1C5D3F8C-D939-4F89-8F8D-140DF14B655E": {
+  "heightM": 10.2,
+  "source": "lidar-dsm"
+ },
+ "os/1D84EECF-A52E-4858-B92A-1B776DFDD2DB": {
+  "heightM": 2.7,
+  "source": "lidar-dsm"
+ },
+ "os/1D8CC9D8-ABF2-4A0C-A711-86557F0BBAF6": {
+  "heightM": 6.7,
+  "source": "lidar-dsm"
+ },
+ "os/1E4F1A4F-C311-403B-9B53-A644C99BE2C9": {
+  "heightM": 7.2,
+  "source": "lidar-dsm"
+ },
+ "os/1FD89CFA-1CE0-4FE1-813D-3FD9222810AF": {
+  "heightM": 8.6,
+  "source": "lidar-dsm"
+ },
+ "os/1FEFB19A-0691-4F36-959F-FC99D8CA0263": {
+  "heightM": 6.2,
+  "source": "lidar-dsm"
+ },
+ "os/20AF6495-4025-49B3-9053-D3A020D6418E": {
+  "heightM": 6.1,
+  "source": "lidar-dsm"
+ },
+ "os/220F8130-B8A2-4DF6-BD2D-4ABCDD6235E1": {
+  "heightM": 5.0,
+  "source": "lidar-dsm"
+ },
+ "os/245DB4A1-9AD3-49B4-8664-8054E50CCA3E": {
+  "heightM": 6.7,
+  "source": "lidar-dsm"
+ },
+ "os/245F540B-A69D-4246-80A0-F9FDEB495E34": {
+  "heightM": 11.0,
+  "source": "lidar-dsm"
+ },
+ "os/24F15D30-378B-4A8D-A5C0-9BF966E46A5E": {
+  "heightM": 4.2,
+  "source": "lidar-dsm"
+ },
+ "os/293CE50A-4C29-4981-B562-73C1CEB01B98": {
+  "heightM": 7.3,
+  "source": "lidar-dsm"
+ },
+ "os/29CFAD42-D095-4AFD-AE6D-8916E09EA827": {
+  "heightM": 8.1,
+  "source": "lidar-dsm"
+ },
+ "os/2BDDCCA2-D065-4980-857E-E8B508C2A03B": {
+  "heightM": 6.5,
+  "source": "lidar-dsm"
+ },
+ "os/2C901211-183B-45DD-8585-494B368CF50F": {
+  "heightM": 3.4,
+  "source": "lidar-dsm"
+ },
+ "os/2CADAD4B-3858-442B-81A4-6F5F75E6473E": {
+  "heightM": 5.5,
+  "source": "lidar-dsm"
+ },
+ "os/2EEE0672-13AF-4610-A404-F08C3D863C3F": {
+  "heightM": 9.4,
+  "source": "lidar-dsm"
+ },
+ "os/34669C14-A4D6-478E-B476-557F962AB7DE": {
+  "heightM": 8.0,
+  "source": "lidar-dsm"
+ },
+ "os/353C2966-B671-4C31-B628-2634EAA0694E": {
+  "heightM": 3.0,
+  "source": "lidar-dsm"
+ },
+ "os/35507F37-433C-4A70-ABE2-07349CE7236E": {
+  "heightM": 4.6,
+  "source": "lidar-dsm"
+ },
+ "os/35861BB1-B8DA-4FF5-AD30-80E5E43CE58C": {
+  "heightM": 7.3,
+  "source": "lidar-dsm"
+ },
+ "os/36DFAEB2-8A65-4BBA-BA7E-F7AC1CD5E16C": {
+  "heightM": 3.5,
+  "source": "lidar-dsm"
+ },
+ "os/3932CD07-A194-4517-8ABC-A4FADE1ABCB3": {
+  "heightM": 18.1,
+  "source": "lidar-dsm"
+ },
+ "os/39A73A26-FD05-446E-A0E3-3BDC1B2D7D58": {
+  "heightM": 2.6,
+  "source": "lidar-dsm"
+ },
+ "os/3B55397E-4A75-467D-AB58-3B48C018217F": {
+  "heightM": 6.5,
+  "source": "lidar-dsm"
+ },
+ "os/3BD92FA7-BD61-47E9-ABC1-BF8E8DA5B471": {
+  "heightM": 7.3,
+  "source": "lidar-dsm"
+ },
+ "os/3DD595B5-B1C9-4B7E-A164-1AA6EEB3C658": {
+  "heightM": 7.8,
+  "source": "lidar-dsm"
+ },
+ "os/4050A6E2-F949-40F2-A230-AD4F42EFC1EA": {
+  "heightM": 8.7,
+  "source": "lidar-dsm"
+ },
+ "os/40BDA342-AE26-4934-8A67-A04594CA49E0": {
+  "heightM": 5.2,
+  "source": "lidar-dsm"
+ },
+ "os/40F024E8-B63D-40F9-A0CC-B4666DF1F7E1": {
+  "heightM": 7.1,
+  "source": "lidar-dsm"
+ },
+ "os/4194B1BE-9B80-4934-96AC-4BC7153C4935": {
+  "heightM": 7.2,
+  "source": "lidar-dsm"
+ },
+ "os/44107A97-2F28-48EB-961E-15E3BE31F265": {
+  "heightM": 7.0,
+  "source": "lidar-dsm"
+ },
+ "os/456F0D9B-9BF4-4924-AF6B-E0BF08026A4F": {
+  "heightM": 6.8,
+  "source": "lidar-dsm"
+ },
+ "os/457B71CE-230A-4B33-953A-22C547FB0940": {
+  "heightM": 4.2,
+  "source": "lidar-dsm"
+ },
+ "os/473A2E28-497D-42D2-BEB5-3E6284BBD74A": {
+  "heightM": 7.2,
+  "source": "lidar-dsm"
+ },
+ "os/48D1354E-AAC3-4EAB-8C7E-8F15972067C6": {
+  "heightM": 6.0,
+  "source": "default"
+ },
+ "os/4992AE94-1F7C-4730-A310-13DFA2C96B2C": {
+  "heightM": 5.7,
+  "source": "lidar-dsm"
+ },
+ "os/49C72A94-2AA7-4628-8869-EAFE0193F21C": {
+  "heightM": 4.9,
+  "source": "lidar-dsm"
+ },
+ "os/4B020A11-1126-4E32-AC03-9C390F866205": {
+  "heightM": 5.6,
+  "source": "lidar-dsm"
+ },
+ "os/4E0846CC-7966-48FA-876B-9250F30995D2": {
+  "heightM": 3.1,
+  "source": "lidar-dsm"
+ },
+ "os/4EDFC49A-AC0A-4CDB-917E-3E4CA4351805": {
+  "heightM": 8.4,
+  "source": "lidar-dsm"
+ },
+ "os/51245858-6580-47FB-AD50-78BEE03DC436": {
+  "heightM": 8.1,
+  "source": "lidar-dsm"
+ },
+ "os/5285CC4E-88FE-421E-9656-2906C44717B5": {
+  "heightM": 3.3,
+  "source": "lidar-dsm"
+ },
+ "os/535BCCAC-CF80-4964-AA00-60899F56D778": {
+  "heightM": 4.4,
+  "source": "lidar-dsm"
+ },
+ "os/548D6E1A-0CBA-4FF3-8874-00D27E5ACCB0": {
+  "heightM": 4.8,
+  "source": "lidar-dsm"
+ },
+ "os/558EBD28-D192-4103-8567-77405A83125C": {
+  "heightM": 7.0,
+  "source": "lidar-dsm"
+ },
+ "os/56156ECE-C519-4B4F-8240-7778198C3D42": {
+  "heightM": 6.3,
+  "source": "lidar-dsm"
+ },
+ "os/5701AFAE-C30D-42EF-B267-7A5119F25B0D": {
+  "heightM": 3.7,
+  "source": "lidar-dsm"
+ },
+ "os/5BB2B5F5-7F71-498E-9C14-EE7DF6776248": {
+  "heightM": 6.7,
+  "source": "lidar-dsm"
+ },
+ "os/5D8E5C30-D8DF-46BC-B902-C54CFF3AB696": {
+  "heightM": 3.9,
+  "source": "lidar-dsm"
+ },
+ "os/61B849E6-363F-45DE-9A54-44EA81AC56CD": {
+  "heightM": 4.0,
+  "source": "lidar-dsm"
+ },
+ "os/63464DE8-18D3-406D-8A3B-E7A74DA543CF": {
+  "heightM": 2.5,
+  "source": "lidar-dsm"
+ },
+ "os/6488EB4A-C686-47D4-8C02-574680B69E4B": {
+  "heightM": 2.2,
+  "source": "lidar-dsm"
+ },
+ "os/672B676D-0495-4697-9D31-F0368B234BC1": {
+  "heightM": 6.0,
+  "source": "lidar-dsm"
+ },
+ "os/67760EB2-836F-4C83-839A-C40802D05BC2": {
+  "heightM": 7.0,
+  "source": "lidar-dsm"
+ },
+ "os/69C772CD-37F0-4FC9-9C01-A988ECDD8139": {
+  "heightM": 2.6,
+  "source": "lidar-dsm"
+ },
+ "os/69E50C67-6A99-4D82-8148-A88584D5721E": {
+  "heightM": 4.2,
+  "source": "lidar-dsm"
+ },
+ "os/6A594E87-C3DD-44F3-B701-CDE62410EE12": {
+  "heightM": 7.2,
+  "source": "lidar-dsm"
+ },
+ "os/6BF5F083-E673-4D2B-9F3D-1752A45D2879": {
+  "heightM": 7.7,
+  "source": "lidar-dsm"
+ },
+ "os/6CF25742-6F4D-49A3-930F-A6E1723ED090": {
+  "heightM": 7.8,
+  "source": "lidar-dsm"
+ },
+ "os/6E97A32D-DC2C-4AB8-B114-5B907E95A9E3": {
+  "heightM": 7.9,
+  "source": "lidar-dsm"
+ },
+ "os/713F864B-BD85-4EA1-AB4D-4BF78FB188BB": {
+  "heightM": 2.3,
+  "source": "lidar-dsm"
+ },
+ "os/71977B01-3312-431B-A989-834B413EDE22": {
+  "heightM": 5.9,
+  "source": "lidar-dsm"
+ },
+ "os/71B32BE5-1517-4C33-930B-4B107EFBBE40": {
+  "heightM": 3.4,
+  "source": "lidar-dsm"
+ },
+ "os/787CB73B-EFE2-4700-9115-1B2484A43EA3": {
+  "heightM": 5.2,
+  "source": "lidar-dsm"
+ },
+ "os/7B16FC25-7CC2-4BF0-B3E5-4DCB9695FB7B": {
+  "heightM": 14.6,
+  "source": "lidar-dsm"
+ },
+ "os/7C16D7B4-7B05-4FAB-A473-408F727BEF00": {
+  "heightM": 7.1,
+  "source": "lidar-dsm"
+ },
+ "os/7C3A986A-7514-48EA-B90B-36238BCAADE0": {
+  "heightM": 5.8,
+  "source": "lidar-dsm"
+ },
+ "os/7C6C1F33-F117-4FE1-BB27-EAE5BFB23C45": {
+  "heightM": 2.2,
+  "source": "lidar-dsm"
+ },
+ "os/7DC460B6-DE7D-4091-A899-77382B74E154": {
+  "heightM": 6.0,
+  "source": "default"
+ },
+ "os/7F5999A6-49A5-4971-B911-9ED17986170F": {
+  "heightM": 6.1,
+  "source": "lidar-dsm"
+ },
+ "os/8089AA52-B0C0-49DC-B0AE-22E042CD4339": {
+  "heightM": 6.9,
+  "source": "lidar-dsm"
+ },
+ "os/80DEA8DC-A4A3-48E6-B9C5-60DABC45F2FB": {
+  "heightM": 3.8,
+  "source": "lidar-dsm"
+ },
+ "os/814D2F22-04AF-40C7-8615-536223FC3AAB": {
+  "heightM": 5.2,
+  "source": "lidar-dsm"
+ },
+ "os/8341DAD6-91D2-45B8-9378-01B9575C466D": {
+  "heightM": 11.4,
+  "source": "lidar-dsm"
+ },
+ "os/83F8748C-30EE-4CD9-9876-3F725013FB45": {
+  "heightM": 7.6,
+  "source": "lidar-dsm"
+ },
+ "os/845B5135-FA4A-4C73-9FC1-4B344DA846F0": {
+  "heightM": 7.4,
+  "source": "lidar-dsm"
+ },
+ "os/85C93536-B0A1-4653-A6CD-13329114989F": {
+  "heightM": 4.8,
+  "source": "lidar-dsm"
+ },
+ "os/867F0B65-1122-4974-BCF9-B6DC2F2BEF21": {
+  "heightM": 5.2,
+  "source": "lidar-dsm"
+ },
+ "os/8818F1F0-E450-4244-A3B0-C10EC8F3580E": {
+  "heightM": 5.7,
+  "source": "lidar-dsm"
+ },
+ "os/89D89E3B-72DF-4F31-891C-D57A0046BADE": {
+  "heightM": 5.7,
+  "source": "lidar-dsm"
+ },
+ "os/8AEF2811-6582-4945-92A1-4B32EA336367": {
+  "heightM": 2.5,
+  "source": "lidar-dsm"
+ },
+ "os/8C6D2290-943E-460F-9C02-840B4E3CCFC4": {
+  "heightM": 4.5,
+  "source": "lidar-dsm"
+ },
+ "os/8E885E2D-D381-42E9-9B68-30940C960A61": {
+  "heightM": 7.5,
+  "source": "lidar-dsm"
+ },
+ "os/930EFA34-F76A-4CE0-BA8E-0FA1C36BE581": {
+  "heightM": 2.4,
+  "source": "lidar-dsm"
+ },
+ "os/9321DA47-8025-45E6-ACFB-4FC639AA1669": {
+  "heightM": 6.9,
+  "source": "lidar-dsm"
+ },
+ "os/9DD83A02-CFD5-4587-B414-639D7927F9D0": {
+  "heightM": 7.5,
+  "source": "lidar-dsm"
+ },
+ "os/A04DE514-BC63-4A7B-B6A4-2136BE98B00D": {
+  "heightM": 5.2,
+  "source": "lidar-dsm"
+ },
+ "os/A05D2B9B-D26D-43E1-93CF-C94139B9B2B3": {
+  "heightM": 7.5,
+  "source": "lidar-dsm"
+ },
+ "os/A171C078-ADD7-40DE-BBE5-910C080AB17A": {
+  "heightM": 7.1,
+  "source": "lidar-dsm"
+ },
+ "os/A4916EBF-9004-4D96-8BC3-CB710E263F79": {
+  "heightM": 6.0,
+  "source": "default"
+ },
+ "os/A4FBC877-0540-44CB-86E6-B81E4A0DCFF2": {
+  "heightM": 6.6,
+  "source": "lidar-dsm"
+ },
+ "os/A75BB812-8948-4221-B0A6-B9796C60FCDA": {
+  "heightM": 7.4,
+  "source": "lidar-dsm"
+ },
+ "os/A76FC998-A2ED-4C1D-B2F9-6F5F2D01BF43": {
+  "heightM": 9.6,
+  "source": "lidar-dsm"
+ },
+ "os/A9DF04CC-BA67-48D9-B818-B37EBA15B678": {
+  "heightM": 6.5,
+  "source": "lidar-dsm"
+ },
+ "os/ABB98804-9AAD-4476-9BE6-11120C671DA2": {
+  "heightM": 3.3,
+  "source": "lidar-dsm"
+ },
+ "os/ADB0101A-BD51-4966-BC01-56925F691F19": {
+  "heightM": 3.3,
+  "source": "lidar-dsm"
+ },
+ "os/AE11ACE7-1AD7-40EE-8BF4-C398519152AE": {
+  "heightM": 2.4,
+  "source": "lidar-dsm"
+ },
+ "os/B1DFF29F-DEB4-47B9-9B73-FEDAA4D903BF": {
+  "heightM": 9.9,
+  "source": "lidar-dsm"
+ },
+ "os/B26F8314-2FD6-439F-B488-26F698A02351": {
+  "heightM": 2.9,
+  "source": "lidar-dsm"
+ },
+ "os/B32A0E06-F777-496F-BB3C-8288B1F701B9": {
+  "heightM": 5.7,
+  "source": "lidar-dsm"
+ },
+ "os/B57DB800-7C4A-4E11-B618-61C065967261": {
+  "heightM": 6.0,
+  "source": "default"
+ },
+ "os/B7670607-BCF2-4135-99D2-53865F5AC947": {
+  "heightM": 3.5,
+  "source": "lidar-dsm"
+ },
+ "os/B8907C46-89B2-469B-B477-EF6F5FE3A25A": {
+  "heightM": 4.7,
+  "source": "lidar-dsm"
+ },
+ "os/B95C8195-04D5-443B-88D5-B853D7868B1A": {
+  "heightM": 5.4,
+  "source": "lidar-dsm"
+ },
+ "os/B9A34666-A837-42D5-8A3E-6F0161C11AC4": {
+  "heightM": 2.2,
+  "source": "lidar-dsm"
+ },
+ "os/BD887923-C21A-4FF5-8E64-B71E9919C430": {
+  "heightM": 4.5,
+  "source": "lidar-dsm"
+ },
+ "os/C05A6507-A52C-488E-99BA-AAAFBFFF3D45": {
+  "heightM": 4.7,
+  "source": "lidar-dsm"
+ },
+ "os/C1544EAC-8C18-4F2C-814C-97FAF13CA171": {
+  "heightM": 7.4,
+  "source": "lidar-dsm"
+ },
+ "os/C1D80C67-0ABA-4F15-A8E7-71E6F9FC7579": {
+  "heightM": 2.6,
+  "source": "lidar-dsm"
+ },
+ "os/C278E863-BDE2-4EF8-B02C-A2FCA9961DC8": {
+  "heightM": 3.3,
+  "source": "lidar-dsm"
+ },
+ "os/C41D8831-8461-425F-8127-35AF369E7279": {
+  "heightM": 7.9,
+  "source": "lidar-dsm"
+ },
+ "os/C44E156A-70BE-4732-8443-BEA1A071A558": {
+  "heightM": 5.1,
+  "source": "lidar-dsm"
+ },
+ "os/C4AEF247-70D0-462B-9A5E-99F581712E14": {
+  "heightM": 5.5,
+  "source": "lidar-dsm"
+ },
+ "os/C846806D-01A4-4781-8DCB-2F884C96FD9B": {
+  "heightM": 3.7,
+  "source": "lidar-dsm"
+ },
+ "os/CA3917E3-E4DE-4DE0-8E85-FA2B683F2F8A": {
+  "heightM": 4.4,
+  "source": "lidar-dsm"
+ },
+ "os/CAF16A5C-CA3B-41BB-84D5-D78F8D99765E": {
+  "heightM": 7.4,
+  "source": "lidar-dsm"
+ },
+ "os/CB2E6838-22C3-4CE8-97B7-84916415FF66": {
+  "heightM": 16.5,
+  "source": "lidar-dsm"
+ },
+ "os/CB7C5A63-CCD8-4A65-A70A-335DD1FFD091": {
+  "heightM": 6.1,
+  "source": "lidar-dsm"
+ },
+ "os/CBC7D9DE-09A8-42F5-98C1-6AF5D0F69F64": {
+  "heightM": 4.8,
+  "source": "lidar-dsm"
+ },
+ "os/CC71C8D8-1184-4726-9FA3-A6A8B0B489E7": {
+  "heightM": 4.5,
+  "source": "lidar-dsm"
+ },
+ "os/CD0E4218-8B18-4608-9CAE-69B5511C7A8F": {
+  "heightM": 5.5,
+  "source": "lidar-dsm"
+ },
+ "os/D12A1760-6E82-452C-BAE6-927207CC688C": {
+  "heightM": 7.6,
+  "source": "lidar-dsm"
+ },
+ "os/D172D4FE-8650-4E91-8447-1D773FC06716": {
+  "heightM": 8.8,
+  "source": "lidar-dsm"
+ },
+ "os/D195DB13-FE8C-41BC-B96E-1FACAD7B2DC4": {
+  "heightM": 3.2,
+  "source": "lidar-dsm"
+ },
+ "os/D4CD5EB1-6386-4254-8688-CD29D633C64F": {
+  "heightM": 7.4,
+  "source": "lidar-dsm"
+ },
+ "os/D8B4BCE2-2296-49EE-84CE-47AD04AFF638": {
+  "heightM": 5.5,
+  "source": "lidar-dsm"
+ },
+ "os/D94895EE-7EB7-4E39-B0B8-EE0C726EC2BD": {
+  "heightM": 6.4,
+  "source": "lidar-dsm"
+ },
+ "os/DB7807A1-232A-4B94-A045-D1FF6C4F8611": {
+  "heightM": 7.4,
+  "source": "lidar-dsm"
+ },
+ "os/DCF20E10-0725-4E20-9490-93F4E08EF31B": {
+  "heightM": 6.1,
+  "source": "lidar-dsm"
+ },
+ "os/DD4BED91-9132-40FE-BE10-844EAF4D4179": {
+  "heightM": 6.9,
+  "source": "lidar-dsm"
+ },
+ "os/DD83191B-45E1-424A-BBDE-33D84D3F344D": {
+  "heightM": 4.6,
+  "source": "lidar-dsm"
+ },
+ "os/DD958093-C37D-4339-8D74-A54303C4BCD5": {
+  "heightM": 6.0,
+  "source": "default"
+ },
+ "os/DE200F3B-EB66-48BE-BA34-1AFBD986A988": {
+  "heightM": 7.0,
+  "source": "lidar-dsm"
+ },
+ "os/DE949443-05F5-45F5-82B0-1DEE44CC2121": {
+  "heightM": 7.6,
+  "source": "lidar-dsm"
+ },
+ "os/DF247C9F-8B5C-4E86-A5E5-1BED14759A23": {
+  "heightM": 3.9,
+  "source": "lidar-dsm"
+ },
+ "os/DF8F3748-41D0-4720-876B-84932147E14C": {
+  "heightM": 7.3,
+  "source": "lidar-dsm"
+ },
+ "os/E0D12201-0AA4-41DB-9B93-77EEC373A227": {
+  "heightM": 7.5,
+  "source": "lidar-dsm"
+ },
+ "os/E20B95B3-3D3D-415D-8931-330476D48FD4": {
+  "heightM": 5.5,
+  "source": "lidar-dsm"
+ },
+ "os/E24C48D8-07D0-4434-820C-602EBA102A19": {
+  "heightM": 3.0,
+  "source": "lidar-dsm"
+ },
+ "os/E26C1DC9-7887-489F-849F-5057D45ADA05": {
+  "heightM": 5.7,
+  "source": "lidar-dsm"
+ },
+ "os/E39B4640-24C8-4B40-B5E4-A97321EDAA53": {
+  "heightM": 3.0,
+  "source": "lidar-dsm"
+ },
+ "os/E4558087-9901-47D4-B4E1-0DC42CD6FDE0": {
+  "heightM": 4.2,
+  "source": "lidar-dsm"
+ },
+ "os/E6B8E95C-D436-4641-B0B9-C1DEBA6F0EFD": {
+  "heightM": 5.9,
+  "source": "lidar-dsm"
+ },
+ "os/E7B6DF38-6A72-486E-B118-DDCF8E727C98": {
+  "heightM": 4.4,
+  "source": "lidar-dsm"
+ },
+ "os/E7C502B6-F37C-4E61-BB67-036564362540": {
+  "heightM": 3.1,
+  "source": "lidar-dsm"
+ },
+ "os/ECB76AA0-96C5-473E-80D0-6BA654257455": {
+  "heightM": 2.2,
+  "source": "lidar-dsm"
+ },
+ "os/EDFE3D76-D2F0-422A-9B27-314280D32DFC": {
+  "heightM": 6.0,
+  "source": "default"
+ },
+ "os/F0019376-12ED-4C0A-82D2-F0F10192C39C": {
+  "heightM": 3.2,
+  "source": "lidar-dsm"
+ },
+ "os/F0B78A96-066C-4397-8AE0-2A939BA6388A": {
+  "heightM": 6.0,
+  "source": "default"
+ },
+ "os/F11D90AB-7A9B-462F-8629-B561D832D96D": {
+  "heightM": 7.4,
+  "source": "lidar-dsm"
+ },
+ "os/F26D5FB0-0FD9-4D26-AD98-952AA6C6C265": {
+  "heightM": 6.3,
+  "source": "lidar-dsm"
+ },
+ "os/F4A51F3A-E7D5-42F2-A28A-C729E6194797": {
+  "heightM": 2.8,
+  "source": "lidar-dsm"
+ },
+ "os/F4ECCB1C-BFD7-401B-908E-1850D1768201": {
+  "heightM": 2.6,
+  "source": "lidar-dsm"
+ },
+ "os/F59BBAE8-20F5-4426-815B-CDA0B0D54C44": {
+  "heightM": 4.6,
+  "source": "lidar-dsm"
+ },
+ "os/F63CD6C8-5771-4D18-B2B6-3E642D717D0B": {
+  "heightM": 7.5,
+  "source": "lidar-dsm"
+ },
+ "os/F928F6A5-3933-4A67-BADF-69BDCBE592A8": {
+  "heightM": 7.4,
+  "source": "lidar-dsm"
+ },
+ "os/FB35887F-03EF-4E9E-88EC-3344E9B1F664": {
+  "heightM": 3.4,
+  "source": "lidar-dsm"
+ },
+ "os/FD76568D-8CDB-4A37-8249-DB66D66CD93F": {
+  "heightM": 2.6,
+  "source": "lidar-dsm"
+ },
+ "way/1019662577": {
+  "heightM": 7.5,
+  "source": "lidar-dsm"
+ },
+ "way/1019662578": {
+  "heightM": 6.0,
+  "source": "default"
+ },
+ "way/1376195584": {
+  "heightM": 8.0,
+  "source": "lidar-dsm"
+ },
+ "way/1376195585": {
+  "heightM": 2.4,
+  "source": "lidar-dsm"
+ },
  "way/1391276014": {
   "heightM": 6.3,
   "source": "lidar-dsm"
@@ -11,6 +771,14 @@
   "heightM": 7.0,
   "source": "lidar-dsm"
  },
+ "way/263176085": {
+  "heightM": 7.2,
+  "source": "lidar-dsm"
+ },
+ "way/264295504": {
+  "heightM": 8.3,
+  "source": "lidar-dsm"
+ },
  "way/371939661": {
   "heightM": 7.6,
   "source": "lidar-dsm"
@@ -21,6 +789,18 @@
  },
  "way/373593957": {
   "heightM": 7.3,
+  "source": "lidar-dsm"
+ },
+ "way/461133554": {
+  "heightM": 5.3,
+  "source": "lidar-dsm"
+ },
+ "way/461159632": {
+  "heightM": 5.0,
+  "source": "lidar-dsm"
+ },
+ "way/461159633": {
+  "heightM": 5.7,
   "source": "lidar-dsm"
  }
 }

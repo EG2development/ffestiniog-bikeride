@@ -1,0 +1,169 @@
+[
+ {
+  "id": "building-corridor-231036167",
+  "kind": "building",
+  "category": "approximate",
+  "source": {
+   "type": "osm",
+   "ref": "way/231036167"
+  },
+  "scenes": [
+   "Reel3D",
+   "Section-intro",
+   "Section-heritage",
+   "Section-overview",
+   "Section-closing"
+  ],
+  "status": "demolished",
+  "provenance": {
+   "urls": [
+    "https://www.openstreetmap.org/way/231036167",
+    "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+    "https://democracy.gwynedd.llyw.cymru/ieDecisionDetails.aspx?ID=692",
+    "https://www.ordnancesurvey.co.uk/products/os-open-map-local"
+   ],
+   "evidence": [
+    "lidar",
+    "map",
+    "planning"
+   ],
+   "observedAt": "2026-10-26",
+   "retrievedAt": "2026-10-30",
+   "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (lidar flown 2022-01-11, Welsh Government; nothing standing on the footprint); OGL v3 (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026; lidar DSM); evidence only, nothing reproduced: Gwynedd Council decision record (licence not stated)",
+   "confidence": "high"
+  },
+  "note": "yes; height 6.0 m from default (approximate); demolition and six new dwellings approved 2021-01-11 (Gwynedd C20/0538/03/LL); no structure in the 2020-23 lidar; OS OpenMap Local 2026-10 shows a smaller building of about 390 m2 on the site, drawn from OS as the replacement",
+  "footprint": [
+   [
+    -3.9348068,
+    52.9924226
+   ],
+   [
+    -3.9348171,
+    52.9922894
+   ],
+   [
+    -3.9350196,
+    52.992295
+   ],
+   [
+    -3.9350174,
+    52.9923233
+   ],
+   [
+    -3.9350554,
+    52.9923244
+   ],
+   [
+    -3.9350537,
+    52.9923455
+   ],
+   [
+    -3.9351637,
+    52.9923486
+   ],
+   [
+    -3.9351672,
+    52.992304
+   ],
+   [
+    -3.9356943,
+    52.9923187
+   ],
+   [
+    -3.9356826,
+    52.9924702
+   ],
+   [
+    -3.935149,
+    52.9924553
+   ],
+   [
+    -3.9351555,
+    52.992371
+   ],
+   [
+    -3.9350585,
+    52.9923683
+   ],
+   [
+    -3.935056,
+    52.9924003
+   ],
+   [
+    -3.9350209,
+    52.9923993
+   ],
+   [
+    -3.9350197,
+    52.9924145
+   ],
+   [
+    -3.9349553,
+    52.9924127
+   ],
+   [
+    -3.9349542,
+    52.9924267
+   ],
+   [
+    -3.9348068,
+    52.9924226
+   ]
+  ]
+ },
+ {
+  "id": "building-corridor-428787293",
+  "kind": "building",
+  "category": "approximate",
+  "source": {
+   "type": "osm",
+   "ref": "way/428787293"
+  },
+  "scenes": [
+   "Reel3D",
+   "Section-intro",
+   "Section-heritage",
+   "Section-overview",
+   "Section-closing"
+  ],
+  "status": "demolished",
+  "provenance": {
+   "urls": [
+    "https://www.openstreetmap.org/way/428787293",
+    "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+   ],
+   "evidence": [
+    "lidar",
+    "map"
+   ],
+   "observedAt": "2026-10-26",
+   "retrievedAt": "2026-10-30",
+   "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (lidar flown 2022-03-01, Welsh Government; nothing standing on the footprint)",
+   "confidence": "medium"
+  },
+  "note": "yes; height 6.0 m from default (approximate); stood in the lidar flown 2009-03-16 (3.7 m), gone in the lidar flown 2022-03-01 and in OS OpenMap Local 2026-10-26: demolished between",
+  "footprint": [
+   [
+    -3.9117688,
+    52.9057842
+   ],
+   [
+    -3.9118179,
+    52.9057049
+   ],
+   [
+    -3.9120373,
+    52.9057544
+   ],
+   [
+    -3.9119882,
+    52.9058337
+   ],
+   [
+    -3.9117688,
+    52.9057842
+   ]
+  ]
+ }
+]

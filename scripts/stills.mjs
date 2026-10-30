@@ -28,7 +28,7 @@ export const FRAMES = {
   closing: [150],
 };
 const GROUND = ["blaenau", "vale-north", "vale-south", "maentwrog", "trawsfynydd"];
-// extras for the water checks, all without captions so no caption box lies over the water: the frame itself (`clean`),
+// extras for the water checks, all without captions or legend so no overlay box lies over the water: the frame itself (`clean`),
 // the frame with the water hidden (WA6), and the next lake-shore frame (WA7)
 export const NOWATER = (id) => GROUND.includes(id);
 export const NEXT_FRAME = { trawsfynydd: [60] };
@@ -64,7 +64,7 @@ for (const [id, frames] of Object.entries(FRAMES)) {
       made.push({ id, frame: f, mask: m, file, sha256: sha256(file) });
     }
     if (NOWATER(id)) {
-      for (const [m, props] of [["clean", { ...base, captions: "none" }], ["nowater", { ...base, captions: "none", hide: "water" }]]) {
+      for (const [m, props] of [["clean", { ...base, captions: "none", legend: false }], ["nowater", { ...base, captions: "none", legend: false, hide: "water" }]]) {
         const file = join(dir, `${id}_${f}_${m}.png`);
         still(id, f, file, props);
         made.push({ id, frame: f, mask: m, file, sha256: sha256(file) });
@@ -72,7 +72,7 @@ for (const [id, frames] of Object.entries(FRAMES)) {
     }
     if ((NEXT_FRAME[id] ?? []).includes(f)) {
       for (const [m, file] of [[null, join(dir, `${id}_${f + 1}.png`)], ["water", join(dir, `${id}_${f + 1}_water.png`)]]) {
-        still(id, f + 1, file, m ? { ...base, captions: "none", mask: m } : { ...base, captions: "none" });
+        still(id, f + 1, file, m ? { ...base, captions: "none", mask: m } : { ...base, captions: "none", legend: false });
         made.push({ id, frame: f + 1, mask: m, extra: true, file, sha256: sha256(file) });
       }
     }

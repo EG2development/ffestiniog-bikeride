@@ -47,7 +47,8 @@ export const FEATURE_IDS = ["terrain-lidar", "landcover-osm", "trail-proposed", 
 /** `concept` is the reel's first look; `photo` adds the photoreal layer's views, extras and post pass (ADRs 54, 60). */
 export type { Look };
 // `mask` and `hide` are for the render checks only (docs/adr/0044-mask-renders-for-measurement.md): never set by Reel3D or Root
-type Props = { section: string; diagnostics?: boolean; captions?: "none" | "base" | "section" | "poc" | "photo"; look?: Look; mask?: Mask; hide?: "water" };
+// `legend: false` leaves the legend out too, for the caption-free frames the water checks measure (spec WA7)
+type Props = { section: string; diagnostics?: boolean; captions?: "none" | "base" | "section" | "poc" | "photo"; look?: Look; mask?: Mask; hide?: "water"; legend?: boolean };
 
 /** The section's or prototype's config, or a named error at the boundary (review R8). */
 function configOf(section: string): SectionConfig {
@@ -72,7 +73,7 @@ function sectionCaptions(cfg: SectionConfig, look: Look): Caption[] {
  * photograph's brightness more strongly than on the ground and fading to it over 1.5 km (the camera is 150–600 m up). */
 const AERIAL_TERRAIN = { detailFadeM: 1500, tileScale: 4, detailStrength: 0.75 };
 
-const Scene: React.FC<Props & { drape: MapDrape | null; photoAssets: PhotoAssets | null }> = ({ section, diagnostics = false, captions = "none", look = "concept", mask, hide, drape, photoAssets }) => {
+const Scene: React.FC<Props & { drape: MapDrape | null; photoAssets: PhotoAssets | null }> = ({ section, diagnostics = false, captions = "none", look = "concept", mask, hide, legend = true, drape, photoAssets }) => {
   const frame = useCurrentFrame();
   const route = useRouteData();
   const data = useScene3DData();
@@ -136,7 +137,7 @@ const Scene: React.FC<Props & { drape: MapDrape | null; photoAssets: PhotoAssets
         {diagnostics && !photo ? <Diagnostics ve={cfg.ve} /> : null}
       </ThreeCanvas>
       {mask ? null : <CaptionOverlays captions={list} total={cfg.frames} ve={cfg.ve} />}
-      {mask ? null : (
+      {mask || !legend ? null : (
         <Legend
           lines={
             photo

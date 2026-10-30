@@ -17,5 +17,99 @@
     ],
     "model": { "type": "church", "roof": "gabled", "lengthM": 15.5, "widthM": 12.7, "heightM": 8.3, "approximate": [] },
     "screened": "aidefence_scan safe=true, no threats; aidefence_has_pii false (2026-10-25, all fetched text)"
+  },
+  {
+    "id": "trawsfynydd-reactor-north",
+    "name": "Trawsfynydd power station, northern reactor building",
+    "osm": "way/289033763",
+    "featured": false,
+    "featuredNote": "drawn as a sourced background building at its lidar height; outside every ground frame, seen from the aerial scenes",
+    "status": "existing",
+    "statusNote": "standing at about 54 m (lidar 90th percentile 54.3 m); lowering to about 25 m contracted to Costain on 2025-10-07 for about four years; enabling works (scaffolding, hoists) since 2026-10-08, tower cranes due early 2027; not yet lowered",
+    "observedAt": "2026-10-08",
+    "confidence": "high",
+    "licence": "gov.uk news (OGL v3); evidence only, nothing reproduced: Coflein record (RCAHMW, Non-commercial Government Licence)",
+    "sources": [
+      { "url": "https://www.gov.uk/government/news/trawsfynydd-takes-next-step-towards-reactor-height-reduction", "kind": "record", "observedAt": "2026-10-08", "retrievedAt": "2026-10-30", "licence": "OGL v3", "note": "NRS hands the reactor area to Costain; scaffolding, hoists and electrics so far; crawler cranes later in 2026, two tower cranes in early 2027" },
+      { "url": "https://www.gov.uk/government/news/major-decommissioning-contract-awarded-at-trawsfynydd-site", "kind": "record", "observedAt": "2025-10-07", "retrievedAt": "2026-10-30", "licence": "OGL v3", "note": "contract to reduce both reactor buildings from about 54 m to about 25 m, about four years" },
+      { "url": "https://coflein.gov.uk/en/site/301092", "kind": "record", "retrievedAt": "2026-10-30", "licence": "Non-commercial Government Licence", "note": "NPRN 301092: the reactor buildings remain on the site" },
+      { "url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif", "kind": "lidar", "retrievedAt": "2026-10-30", "licence": "OGL v3", "note": "median 53.3 m, 90th percentile 54.3 m above the DTM inside the footprint (2020-23 flights)" }
+    ],
+    "model": { "roof": "flat" },
+    "screened": "aidefence_scan safe=true, no threats; aidefence_has_pii false (2026-10-30, all fetched text)"
+  },
+  {
+    "id": "trawsfynydd-reactor-south",
+    "name": "Trawsfynydd power station, southern reactor building",
+    "osm": "way/289033764",
+    "featured": false,
+    "featuredNote": "drawn as a sourced background building at its lidar height; outside every ground frame, seen from the aerial scenes",
+    "status": "existing",
+    "statusNote": "standing at about 54 m (lidar 90th percentile 54.2 m); lowering to about 25 m contracted to Costain on 2025-10-07 for about four years; enabling works (scaffolding, hoists) since 2026-10-08, tower cranes due early 2027; not yet lowered",
+    "observedAt": "2026-10-08",
+    "confidence": "high",
+    "licence": "gov.uk news (OGL v3); evidence only, nothing reproduced: Coflein record (RCAHMW, Non-commercial Government Licence)",
+    "sources": [
+      { "url": "https://www.gov.uk/government/news/trawsfynydd-takes-next-step-towards-reactor-height-reduction", "kind": "record", "observedAt": "2026-10-08", "retrievedAt": "2026-10-30", "licence": "OGL v3", "note": "NRS hands the reactor area to Costain; scaffolding, hoists and electrics so far; crawler cranes later in 2026, two tower cranes in early 2027" },
+      { "url": "https://www.gov.uk/government/news/major-decommissioning-contract-awarded-at-trawsfynydd-site", "kind": "record", "observedAt": "2025-10-07", "retrievedAt": "2026-10-30", "licence": "OGL v3", "note": "contract to reduce both reactor buildings from about 54 m to about 25 m, about four years" },
+      { "url": "https://coflein.gov.uk/en/site/301092", "kind": "record", "retrievedAt": "2026-10-30", "licence": "Non-commercial Government Licence", "note": "NPRN 301092: the reactor buildings remain on the site" },
+      { "url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif", "kind": "lidar", "retrievedAt": "2026-10-30", "licence": "OGL v3", "note": "median 53.2 m, 90th percentile 54.2 m above the DTM inside the footprint (2020-23 flights)" }
+    ],
+    "model": { "roof": "flat" },
+    "screened": "aidefence_scan safe=true, no threats; aidefence_has_pii false (2026-10-30, all fetched text)"
+  },
+  {
+    "id": "trawsfynydd-cleared-site-west",
+    "name": "Trawsfynydd power station, cleared footprint (turbine hall or administration complex)",
+    "osm": "way/289033932",
+    "featured": false,
+    "status": "demolished",
+    "statusNote": "still mapped in OSM, but no structure in the 2020-23 lidar (90th percentile 1.3 m) and no building in OS OpenMap Local 2026-10; the turbine hall was demolished in 2006 and the administration complex in 2017; which of them stood here is unconfirmed",
+    "observedAt": "2026-10-26",
+    "confidence": "medium",
+    "licence": "OGL v3 (OS OpenMap - Local: Contains OS data © Crown copyright and database right 2026; lidar DSM); evidence only, nothing reproduced: NRS Site Stakeholder Group page (licence not stated)",
+    "sources": [
+      { "url": "https://www.ordnancesurvey.co.uk/products/os-open-map-local", "kind": "map", "observedAt": "2026-10-26", "retrievedAt": "2026-10-30", "licence": "OGL v3", "note": "no building outline on the footprint in the 2026-10 release" },
+      { "url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif", "kind": "lidar", "retrievedAt": "2026-10-30", "licence": "OGL v3", "note": "90th percentile 1.3 m above the DTM inside the footprint: nothing standing (2020-23 flights)" },
+      { "url": "https://nrsssg.com/site/trawsfynydd/", "kind": "record", "retrievedAt": "2026-10-30", "licence": "not stated", "note": "turbine hall demolished 2006, administration complex 2017 (undated page)" }
+    ],
+    "model": { "roof": "flat" },
+    "screened": "aidefence_scan safe=true, no threats; aidefence_has_pii false (2026-10-30, all fetched text)"
+  },
+  {
+    "id": "trawsfynydd-cleared-site-east",
+    "name": "Trawsfynydd power station, cleared footprint (turbine hall or administration complex)",
+    "osm": "way/289033933",
+    "featured": false,
+    "status": "demolished",
+    "statusNote": "still mapped in OSM, but no structure in the 2020-23 lidar (90th percentile 0.1 m) and no building in OS OpenMap Local 2026-10; the turbine hall was demolished in 2006 and the administration complex in 2017; which of them stood here is unconfirmed",
+    "observedAt": "2026-10-26",
+    "confidence": "medium",
+    "licence": "OGL v3 (OS OpenMap - Local: Contains OS data © Crown copyright and database right 2026; lidar DSM); evidence only, nothing reproduced: NRS Site Stakeholder Group page (licence not stated)",
+    "sources": [
+      { "url": "https://www.ordnancesurvey.co.uk/products/os-open-map-local", "kind": "map", "observedAt": "2026-10-26", "retrievedAt": "2026-10-30", "licence": "OGL v3", "note": "no building outline on the footprint in the 2026-10 release" },
+      { "url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif", "kind": "lidar", "retrievedAt": "2026-10-30", "licence": "OGL v3", "note": "90th percentile 0.1 m above the DTM inside the footprint: nothing standing (2020-23 flights)" },
+      { "url": "https://nrsssg.com/site/trawsfynydd/", "kind": "record", "retrievedAt": "2026-10-30", "licence": "not stated", "note": "turbine hall demolished 2006, administration complex 2017 (undated page)" }
+    ],
+    "model": { "roof": "flat" },
+    "screened": "aidefence_scan safe=true, no threats; aidefence_has_pii false (2026-10-30, all fetched text)"
+  },
+  {
+    "id": "blaenau-wynne-road-health-centre",
+    "name": "Former health centre, Wynne Road, Blaenau Ffestiniog",
+    "osm": "way/231036167",
+    "featured": false,
+    "status": "demolished",
+    "statusNote": "demolition and six new dwellings approved 2021-01-11 (Gwynedd C20/0538/03/LL); no structure in the 2020-23 lidar; OS OpenMap Local 2026-10 shows a smaller building of about 390 m2 on the site, drawn from OS as the replacement",
+    "observedAt": "2026-10-26",
+    "confidence": "high",
+    "licence": "OGL v3 (OS OpenMap - Local: Contains OS data © Crown copyright and database right 2026; lidar DSM); evidence only, nothing reproduced: Gwynedd Council decision record (licence not stated)",
+    "sources": [
+      { "url": "https://democracy.gwynedd.llyw.cymru/ieDecisionDetails.aspx?ID=692", "kind": "planning", "observedAt": "2021-01-11", "retrievedAt": "2026-10-30", "licence": "not stated", "note": "C20/0538/03/LL: demolish the existing building and construct 6 new dwellings; committee report 2020-12-07, approved 2021-01-11" },
+      { "url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif", "kind": "lidar", "retrievedAt": "2026-10-30", "licence": "OGL v3", "note": "no structure on the 835 m2 footprint (2020-23 flights)" },
+      { "url": "https://www.ordnancesurvey.co.uk/products/os-open-map-local", "kind": "map", "observedAt": "2026-10-26", "retrievedAt": "2026-10-30", "licence": "OGL v3", "note": "a different, smaller outline (about 390 m2) on the site in the 2026-10 release" }
+    ],
+    "model": { "roof": "flat" },
+    "screened": "aidefence_scan safe=true, no threats; aidefence_has_pii false (2026-10-30, all fetched text)"
   }
 ]

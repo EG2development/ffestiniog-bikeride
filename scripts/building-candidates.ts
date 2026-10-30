@@ -1,5 +1,6 @@
-// Lists the OSM building footprints each ground section's shots actually see (spec BL1; docs/adr/0049-buildings-from-sourced-data.md),
-// with the same TypeScript core the video renders with. Only these are built or researched.
+// Lists the OSM (and OS-only) building footprints each section's shots actually see (spec BL1; docs/adr/0049-buildings-from-sourced-data.md),
+// with the same TypeScript core the video renders with. Only these are built or researched. A window several sections
+// share (the corridor: the four aerial scenes, which draw buildings in the photo look, ADR 63) takes every section's poses.
 //   npm run data:candidates -- --section <window>   → data/building-candidates-<window>.json
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
@@ -13,8 +14,8 @@ const ROOT = resolve(process.cwd());
 const read = (rel: string) => readFileSync(resolve(ROOT, rel));
 const json = <T>(rel: string): T => JSON.parse(read(rel).toString("utf8")) as T;
 const section = process.argv[process.argv.indexOf("--section") + 1];
-const cfg = Object.values(SECTIONS).find((c) => c.window === section && c.kind === "ground");
-if (!section || !cfg) throw new Error(`--section <ground window> required: ${Object.values(SECTIONS).filter((c) => c.kind === "ground").map((c) => c.window).join(", ")}`);
+const cfgs = Object.values(SECTIONS).filter((c) => c.window === section);
+if (!section || cfgs.length === 0) throw new Error(`--section <window> required: ${[...new Set(Object.values(SECTIONS).map((c) => c.window))].join(", ")}`);
 
 const route = buildRouteModel(json("data/railway-route.geojson"), json("data/waypoints.json"), json("data/elevation-profile.json"), { tileSize: 256, layers: [] });
 const dir = `public/data/sections/${section}`;
@@ -24,10 +25,17 @@ const dem = { ...header, heights: new Float32Array(f32.buffer.slice(f32.byteOffs
 const landMeta = json<{ legend: string[]; file: string }>(`${dir}/landcover.json`);
 const land = { legend: landMeta.legend, classes: new Uint8Array(read(`${dir}/${landMeta.file}`)) };
 const osm = json<{ features: OsmLine[] }>(`${dir}/osm.geojson`).features;
-const scene = buildSectionScene(cfg, { route, dem, land, profile: json<TrailProfile>(`${dir}/trail-profile.json`), osm, features: [] });
+const scenes = cfgs.map((cfg) => ({ cfg, scene: buildSectionScene(cfg, { route, dem, land, profile: json<TrailProfile>(`${dir}/trail-profile.json`), osm, features: [] }) }));
+const scene = scenes[0].scene; // every scene on a window shares its terrain, so any gives the ground
 
 type LonLat = [number, number];
-const buildings = osm.filter((f) => f.properties.tags.building && (f.geometry.type === "Polygon" || f.geometry.type === "MultiPolygon"));
+// with the OS outlines OSM lacks (ids os/<OS id>; scripts/fetch_os_buildings.py, ADR 63), tested the same way
+const osPath = `data/os-buildings-${section}.geojson`;
+const osOnly = existsSync(resolve(ROOT, osPath)) ? json<{ features: OsmLine[] }>(osPath).features : [];
+// less the demolished ones build_buildings.py recorded: the reel shows what stands (ADR 63)
+const removedPath = `data/buildings-removed-${section}.json`;
+const removed = new Set(existsSync(resolve(ROOT, removedPath)) ? json<{ source: { ref: string } }[]>(removedPath).map((r) => r.source.ref) : []);
+const buildings = [...osm, ...osOnly].filter((f) => f.properties.tags.building && (f.geometry.type === "Polygon" || f.geometry.type === "MultiPolygon") && !removed.has(f.properties.id));
 const outerOf = (f: OsmLine): LonLat[] => (f.geometry.type === "Polygon" ? (f.geometry.coordinates as LonLat[][])[0] : (f.geometry.coordinates as LonLat[][][])[0][0]);
 // Each footprint is tested at its measured height (written by build_buildings.py), or at an upper bound until it has
 // one: a tall building whose base is behind a rise still shows its roof. Two passes give the list at measured heights:
@@ -46,8 +54,14 @@ const footprints = buildings.map((f) => ({
 // a footprint that runs off the terrain window has no ground there, so it is never built (BL5; t10 H2)
 const onTerrain = (f: (typeof footprints)[number]) => f.ring.every((p) => Number.isFinite(scene.heightAt(p.x, p.z)));
 const offTerrain = footprints.filter((f) => !onTerrain(f)).map((f) => f.id);
-const poses = Array.from({ length: Math.ceil(cfg.frames / 10) }, (_, k) => scene.shot(k * 10));
+const poses = scenes.flatMap(({ cfg, scene: s }) => Array.from({ length: Math.ceil(cfg.frames / 10) }, (_, k) => s.shot(k * 10)));
 const seen = new Set(visibleFootprints(poses, footprints.filter(onTerrain), scene.heightAt, { far: 600 }));
+// and every footprint near the line, seen or not, so the route's own buildings exist for any shot (ADR 63)
+const NEAR_LINE_M = 300;
+const samples = scene.trail.samples.filter((_, i) => i % 5 === 0);
+const nearLine = (f: (typeof footprints)[number]) => f.ring.some((p) => samples.some((s) => Math.hypot(s.x - p.x, s.z - p.z) * 10 <= NEAR_LINE_M));
+const near = new Set(footprints.filter(onTerrain).filter(nearLine).map((f) => f.id));
+for (const id of near) seen.add(id);
 const area = (r: LonLat[]) => {
   const lat0 = (r[0][1] * Math.PI) / 180;
   const m = r.map(([lon, lat]) => [lon * 111_320 * Math.cos(lat0), lat * 110_540]);
@@ -63,6 +77,6 @@ const candidates = buildings
   })
   .sort((a, b) => a.id.localeCompare(b.id));
 const unmeasured = candidates.filter((c) => !measured[c.id]).length;
-writeFileSync(resolve(ROOT, `data/building-candidates-${section}.json`), JSON.stringify({ section, footprints: buildings.length, posesSampled: poses.length, farM: 6000, upperBoundM: UPPER_M, unmeasured, candidates }, null, 2) + "\n");
+writeFileSync(resolve(ROOT, `data/building-candidates-${section}.json`), JSON.stringify({ section, footprints: buildings.length, osOnly: osOnly.length, posesSampled: poses.length, farM: 6000, upperBoundM: UPPER_M, nearLineM: NEAR_LINE_M, nearLine: near.size, unmeasured, candidates }, null, 2) + "\n");
 if (offTerrain.length) console.log(`${section}: ${offTerrain.length} footprints run off the terrain window and are left out`);
-console.log(`${section}: ${candidates.length} of ${buildings.length} footprints visible in ${poses.length} sampled poses; ${unmeasured} tested at the ${UPPER_M} m upper bound${unmeasured ? " (run build_buildings.py, then this again)" : ""}`);
+console.log(`${section}: ${candidates.length} of ${buildings.length} footprints (${near.size} within ${NEAR_LINE_M} m of the line, the rest seen in ${poses.length} sampled poses); ${unmeasured} tested at the ${UPPER_M} m upper bound${unmeasured ? " (run build_buildings.py, then this again)" : ""}`);

@@ -1,0 +1,53 @@
+[
+ {
+  "id": "building-trawsfynydd-428787293",
+  "kind": "building",
+  "category": "approximate",
+  "source": {
+   "type": "osm",
+   "ref": "way/428787293"
+  },
+  "scenes": [
+   "Reel3D",
+   "Section-trawsfynydd"
+  ],
+  "status": "demolished",
+  "provenance": {
+   "urls": [
+    "https://www.openstreetmap.org/way/428787293",
+    "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+   ],
+   "evidence": [
+    "lidar",
+    "map"
+   ],
+   "observedAt": "2026-10-26",
+   "retrievedAt": "2026-10-30",
+   "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (lidar flown 2022-03-01, Welsh Government; nothing standing on the footprint)",
+   "confidence": "medium"
+  },
+  "note": "yes; height 6.0 m from default (approximate); stood in the lidar flown 2009-03-16 (3.7 m), gone in the lidar flown 2022-03-01 and in OS OpenMap Local 2026-10-26: demolished between",
+  "footprint": [
+   [
+    -3.9117688,
+    52.9057842
+   ],
+   [
+    -3.9118179,
+    52.9057049
+   ],
+   [
+    -3.9120373,
+    52.9057544
+   ],
+   [
+    -3.9119882,
+    52.9058337
+   ],
+   [
+    -3.9117688,
+    52.9057842
+   ]
+  ]
+ }
+]

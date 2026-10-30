@@ -1,242 +1,5 @@
 [
   {
-    "id": "building-maentwrog-289027285",
-    "kind": "building",
-    "category": "approximate",
-    "source": {
-      "type": "osm",
-      "ref": "way/289027285"
-    },
-    "scenes": [
-      "Reel3D",
-      "Section-maentwrog"
-    ],
-    "status": "existing",
-    "provenance": {
-      "urls": [
-        "https://www.openstreetmap.org/way/289027285",
-        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
-      ],
-      "evidence": [
-        "lidar",
-        "map"
-      ],
-      "observedAt": "2014-06-21",
-      "retrievedAt": "2026-10-25",
-      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
-      "confidence": "medium"
-    },
-    "note": "yes; height 5.5 m from lidar-dsm"
-  },
-  {
-    "id": "building-maentwrog-289033758",
-    "kind": "building",
-    "category": "approximate",
-    "source": {
-      "type": "osm",
-      "ref": "way/289033758"
-    },
-    "scenes": [
-      "Reel3D",
-      "Section-maentwrog"
-    ],
-    "status": "existing",
-    "provenance": {
-      "urls": [
-        "https://www.openstreetmap.org/way/289033758",
-        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
-      ],
-      "evidence": [
-        "lidar",
-        "map"
-      ],
-      "observedAt": "2014-06-21",
-      "retrievedAt": "2026-10-25",
-      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
-      "confidence": "medium"
-    },
-    "note": "yes; height 12.0 m from lidar-dsm"
-  },
-  {
-    "id": "building-maentwrog-357866903",
-    "kind": "building",
-    "category": "approximate",
-    "source": {
-      "type": "osm",
-      "ref": "way/357866903"
-    },
-    "scenes": [
-      "Reel3D",
-      "Section-maentwrog"
-    ],
-    "status": "existing",
-    "provenance": {
-      "urls": [
-        "https://www.openstreetmap.org/way/357866903",
-        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
-      ],
-      "evidence": [
-        "lidar",
-        "map"
-      ],
-      "observedAt": "2015-07-01",
-      "retrievedAt": "2026-10-25",
-      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
-      "confidence": "medium"
-    },
-    "note": "industrial; height 6.5 m from lidar-dsm"
-  },
-  {
-    "id": "building-maentwrog-357866905",
-    "kind": "building",
-    "category": "approximate",
-    "source": {
-      "type": "osm",
-      "ref": "way/357866905"
-    },
-    "scenes": [
-      "Reel3D",
-      "Section-maentwrog"
-    ],
-    "status": "existing",
-    "provenance": {
-      "urls": [
-        "https://www.openstreetmap.org/way/357866905",
-        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
-      ],
-      "evidence": [
-        "lidar",
-        "map"
-      ],
-      "observedAt": "2015-07-01",
-      "retrievedAt": "2026-10-25",
-      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
-      "confidence": "medium"
-    },
-    "note": "industrial; height 4.9 m from lidar-dsm"
-  },
-  {
-    "id": "building-maentwrog-372388116",
-    "kind": "building",
-    "category": "approximate",
-    "source": {
-      "type": "osm",
-      "ref": "way/372388116"
-    },
-    "scenes": [
-      "Reel3D",
-      "Section-maentwrog"
-    ],
-    "status": "existing",
-    "provenance": {
-      "urls": [
-        "https://www.openstreetmap.org/way/372388116",
-        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
-      ],
-      "evidence": [
-        "lidar",
-        "map"
-      ],
-      "observedAt": "2015-10-03",
-      "retrievedAt": "2026-10-25",
-      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
-      "confidence": "medium"
-    },
-    "note": "yes; height 3.2 m from lidar-dsm"
-  },
-  {
-    "id": "building-maentwrog-373577738",
-    "kind": "building",
-    "category": "verified",
-    "source": {
-      "type": "osm",
-      "ref": "way/373577738"
-    },
-    "scenes": [
-      "Reel3D",
-      "Section-maentwrog"
-    ],
-    "status": "existing",
-    "provenance": {
-      "urls": [
-        "https://www.openstreetmap.org/way/373577738",
-        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
-        "https://coflein.gov.uk/en/site/8551/",
-        "https://www.geograph.org.uk/photo/443457",
-        "https://www.geograph.org.uk/photo/449941"
-      ],
-      "evidence": [
-        "lidar",
-        "map",
-        "photo",
-        "record"
-      ],
-      "observedAt": "2015-10-03",
-      "retrievedAt": "2026-10-25",
-      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM); evidence only, nothing reproduced: Coflein record (RCAHMW, Non-commercial Government Licence); Geograph photos 443457, 449941 (CC BY-SA 2.0)",
-      "confidence": "medium"
-    },
-    "note": "yes; height 8.3 m from lidar-dsm"
-  },
-  {
-    "id": "building-maentwrog-373577741",
-    "kind": "building",
-    "category": "approximate",
-    "source": {
-      "type": "osm",
-      "ref": "way/373577741"
-    },
-    "scenes": [
-      "Reel3D",
-      "Section-maentwrog"
-    ],
-    "status": "existing",
-    "provenance": {
-      "urls": [
-        "https://www.openstreetmap.org/way/373577741",
-        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
-      ],
-      "evidence": [
-        "lidar",
-        "map"
-      ],
-      "observedAt": "2015-10-03",
-      "retrievedAt": "2026-10-25",
-      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
-      "confidence": "medium"
-    },
-    "note": "house; height 6.2 m from lidar-dsm"
-  },
-  {
-    "id": "building-maentwrog-428585769",
-    "kind": "building",
-    "category": "approximate",
-    "source": {
-      "type": "osm",
-      "ref": "way/428585769"
-    },
-    "scenes": [
-      "Reel3D",
-      "Section-maentwrog"
-    ],
-    "status": "existing",
-    "provenance": {
-      "urls": [
-        "https://www.openstreetmap.org/way/428585769",
-        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
-      ],
-      "evidence": [
-        "lidar",
-        "map"
-      ],
-      "observedAt": "2016-07-01",
-      "retrievedAt": "2026-10-25",
-      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
-      "confidence": "medium"
-    },
-    "note": "yes; height 2.6 m from lidar-dsm"
-  },
-  {
     "id": "barrier-maentwrog-89573355",
     "kind": "barrier",
     "category": "approximate",
@@ -880,5 +643,1287 @@
       "Poc3DMaentwrogPhoto"
     ],
     "note": "fence from OSM; generic height, not surveyed"
+  },
+  {
+    "id": "building-maentwrog-1325489517",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1325489517"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/1325489517",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 5.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-1325489518",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1325489518"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/1325489518",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 4.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-1325489519",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1325489519"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/1325489519",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+        "https://coflein.gov.uk/en/site/54641"
+      ],
+      "evidence": [
+        "lidar",
+        "map",
+        "record"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (This site data is from the National Monuments Record of Wales (NMRW), produced by RCAHMW. \u00a9 Crown Database Right: RCAHMW, licensed under the Open Government Licence 3.0); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "detached; height 6.7 m from lidar-dsm; NMRW 54641: school; church, documents"
+  },
+  {
+    "id": "building-maentwrog-159029731",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029731"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/159029731",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 4.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-289027285",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289027285"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/289027285",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 5.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-289033757",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033757"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/289033757",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 4.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-289033758",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/289033758"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/289033758",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2022-03-01",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 12.0 m from lidar-dsm; not in OS OpenMap Local 2026-10-26"
+  },
+  {
+    "id": "building-maentwrog-311744187",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/311744187"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/311744187",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 5.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-357866903",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357866903"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/357866903",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "industrial; height 6.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-357866905",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357866905"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/357866905",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "industrial; height 4.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-371939661",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/371939661"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/371939661",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 7.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-371941159",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/371941159"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/371941159",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "house; height 5.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-372388116",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372388116"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/372388116",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 3.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-373575645",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373575645"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/373575645",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2022-03-01",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 4.7 m from lidar-dsm; not in OS OpenMap Local 2026-10-26"
+  },
+  {
+    "id": "building-maentwrog-373577738",
+    "kind": "building",
+    "category": "verified",
+    "source": {
+      "type": "osm",
+      "ref": "way/373577738"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/373577738",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+        "https://coflein.gov.uk/en/site/8551",
+        "https://coflein.gov.uk/en/site/8551/",
+        "https://www.geograph.org.uk/photo/443457",
+        "https://www.geograph.org.uk/photo/449941"
+      ],
+      "evidence": [
+        "lidar",
+        "map",
+        "photo",
+        "record"
+      ],
+      "observedAt": "2015-10-03",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (This site data is from the National Monuments Record of Wales (NMRW), produced by RCAHMW. \u00a9 Crown Database Right: RCAHMW, licensed under the Open Government Licence 3.0); OGL (height, Welsh Government lidar DSM/DTM); evidence only, nothing reproduced: Coflein record (RCAHMW, Non-commercial Government Licence); Geograph photos 443457, 449941 (CC BY-SA 2.0)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 8.3 m from lidar-dsm; NMRW 8551: chapel, building"
+  },
+  {
+    "id": "building-maentwrog-373577741",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373577741"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/373577741",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "house; height 6.2 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-373593541",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373593541"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/373593541",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 4.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-428585769",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428585769"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/428585769",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2022-03-01",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "medium"
+    },
+    "note": "yes; height 2.6 m from lidar-dsm; not in OS OpenMap Local 2026-10-26"
+  },
+  {
+    "id": "building-maentwrog-517533166",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/517533166"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.openstreetmap.org/way/517533166",
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+        "https://coflein.gov.uk/en/site/28785"
+      ],
+      "evidence": [
+        "lidar",
+        "map",
+        "record"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (still standing); OGL (This site data is from the National Monuments Record of Wales (NMRW), produced by RCAHMW. \u00a9 Crown Database Right: RCAHMW, licensed under the Open Government Licence 3.0); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "yes; height 6.7 m from lidar-dsm; NMRW 28785: house, documents"
+  },
+  {
+    "id": "building-maentwrog-os-0A508E86-7DB1-4895-AF6F-B47DA0DC5DFE",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/0A508E86-7DB1-4895-AF6F-B47DA0DC5DFE"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-os-0DAD8785-8AAB-46EF-A18C-A55FEA14452D",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/0DAD8785-8AAB-46EF-A18C-A55FEA14452D"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-os-1C5D3F8C-D939-4F89-8F8D-140DF14B655E",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/1C5D3F8C-D939-4F89-8F8D-140DF14B655E"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 8.9 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-os-20B2C2C1-EB0A-4D69-B6BC-0E718A80F669",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/20B2C2C1-EB0A-4D69-B6BC-0E718A80F669"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-os-31A84A87-0479-4E1C-B4ED-8692EDFBCFE0",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/31A84A87-0479-4E1C-B4ED-8692EDFBCFE0"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-os-34CD3895-957C-46AE-8E7C-C62D01ED3343",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/34CD3895-957C-46AE-8E7C-C62D01ED3343"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.1 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-os-3DD595B5-B1C9-4B7E-A164-1AA6EEB3C658",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/3DD595B5-B1C9-4B7E-A164-1AA6EEB3C658"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+        "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=4775",
+        "https://coflein.gov.uk/en/site/28334"
+      ],
+      "evidence": [
+        "lidar",
+        "map",
+        "record"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (Designated Historic Asset GIS Data, The Welsh Historic Environment Service (Cadw), 2026-10-30, licensed under the Open Government Licence); OGL (This site data is from the National Monuments Record of Wales (NMRW), produced by RCAHMW. \u00a9 Crown Database Right: RCAHMW, licensed under the Open Government Licence 3.0); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.5 m from lidar-dsm; listed grade II (Cadw 4775); NMRW 28334: farmhouse, building"
+  },
+  {
+    "id": "building-maentwrog-os-4054FBDC-741E-42B1-B3AE-00BF43743EFF",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/4054FBDC-741E-42B1-B3AE-00BF43743EFF"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-os-71F4623F-A6DE-4D38-B26F-C73D3A6AC75A",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/71F4623F-A6DE-4D38-B26F-C73D3A6AC75A"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 7.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-os-78AB444A-A209-459B-AAD5-EDB9DD162EB2",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/78AB444A-A209-459B-AAD5-EDB9DD162EB2"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-os-7CA83FFD-FE2A-487E-AA37-E3D662CCD583",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/7CA83FFD-FE2A-487E-AA37-E3D662CCD583"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-os-7E2289B5-C5BD-43F4-8CAB-9D043F687650",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/7E2289B5-C5BD-43F4-8CAB-9D043F687650"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+        "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=83991"
+      ],
+      "evidence": [
+        "lidar",
+        "map",
+        "record"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (Designated Historic Asset GIS Data, The Welsh Historic Environment Service (Cadw), 2026-10-30, licensed under the Open Government Licence); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.3 m from lidar-dsm; listed grade II (Cadw 83991)"
+  },
+  {
+    "id": "building-maentwrog-os-80D3AD77-7FDA-499D-906C-C60C5B71EFE5",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/80D3AD77-7FDA-499D-906C-C60C5B71EFE5"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+        "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=83995"
+      ],
+      "evidence": [
+        "lidar",
+        "map",
+        "record"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (Designated Historic Asset GIS Data, The Welsh Historic Environment Service (Cadw), 2026-10-30, licensed under the Open Government Licence); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.3 m from lidar-dsm; listed grade II (Cadw 83995)"
+  },
+  {
+    "id": "building-maentwrog-os-8D331BA5-E24F-4A9D-962D-8A4CBA76674E",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/8D331BA5-E24F-4A9D-962D-8A4CBA76674E"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.3 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-os-95C68323-7059-4DD4-B7CD-1B708F09367B",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/95C68323-7059-4DD4-B7CD-1B708F09367B"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.4 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-os-A423D174-371B-471C-8E19-2BAF8D27A1C6",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/A423D174-371B-471C-8E19-2BAF8D27A1C6"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-os-A7E1EF23-303D-487B-83D3-D491EC76EF42",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/A7E1EF23-303D-487B-83D3-D491EC76EF42"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 2.8 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-os-A8549ADE-256B-44C5-BD58-FE75001E1787",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/A8549ADE-256B-44C5-BD58-FE75001E1787"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.0 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-os-B612991B-B808-4A6E-8679-7B95BD13A713",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/B612991B-B808-4A6E-8679-7B95BD13A713"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 3.7 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-os-CE0121DF-CB8B-4CD7-9CD3-0EAC931FA355",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/CE0121DF-CB8B-4CD7-9CD3-0EAC931FA355"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.6 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-os-D96CCA2A-C331-4F6E-8411-54280D3789F0",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/D96CCA2A-C331-4F6E-8411-54280D3789F0"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-os-DD46ECBC-CE26-4F55-8CA5-CC52137A0FF2",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/DD46ECBC-CE26-4F55-8CA5-CC52137A0FF2"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+        "https://coflein.gov.uk/en/site/33327"
+      ],
+      "evidence": [
+        "lidar",
+        "map",
+        "record"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (This site data is from the National Monuments Record of Wales (NMRW), produced by RCAHMW. \u00a9 Crown Database Right: RCAHMW, licensed under the Open Government Licence 3.0); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 4.8 m from lidar-dsm; NMRW 33327: corn drying kiln, building"
+  },
+  {
+    "id": "building-maentwrog-os-DF008E15-8D6B-4FFF-8973-1152743D4B52",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/DF008E15-8D6B-4FFF-8973-1152743D4B52"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 6.5 m from lidar-dsm"
+  },
+  {
+    "id": "building-maentwrog-os-F8EA9C59-9FFA-4E16-B2CB-8A151E842B8C",
+    "kind": "building",
+    "category": "approximate",
+    "source": {
+      "type": "os",
+      "ref": "os/F8EA9C59-9FFA-4E16-B2CB-8A151E842B8C"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-maentwrog"
+    ],
+    "status": "existing",
+    "provenance": {
+      "urls": [
+        "https://www.ordnancesurvey.co.uk/products/os-open-map-local",
+        "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      ],
+      "evidence": [
+        "lidar",
+        "map"
+      ],
+      "observedAt": "2026-10-26",
+      "retrievedAt": "2026-10-30",
+      "licence": "OGL (OS OpenMap - Local: Contains OS data \u00a9 Crown copyright and database right 2026) (footprint); OGL (height, Welsh Government lidar DSM/DTM)",
+      "confidence": "high"
+    },
+    "note": "OS outline, generalised; not in OSM; yes; height 5.4 m from lidar-dsm"
   }
 ]
