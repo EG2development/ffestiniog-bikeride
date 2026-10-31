@@ -7,12 +7,12 @@ import { placeGrass, type GrassClump } from "./grass";
 import { sectionBuildings, type BuildingStatus, type SectionBuildings } from "./buildings";
 import { aerialOrbit, droneSideTrack, firstPersonShot, followShot, liftClear, pullBack, sequenceShots, withClearance, type HeightAt, type Shot } from "./camera";
 import { cyclistPose, defaultCyclistDims, distanceTable, type CyclistDims } from "./cyclistMotion";
-import { buildTerrainMesh, heightAtBng } from "./dem";
+import { buildTerrainMesh, heightAtBng, meshHeightAtBng } from "./dem";
 import type { Feature, OsmLine, SectionBuilding } from "./registers";
-import { buildRoadMesh, type RoadLine } from "./roads";
+import { buildRoadMesh, buildRoadStructures, type RoadLine } from "./roads";
 import { IMAGERY_GRADE } from "./photoLook";
 import { imageryNodeColours, imageryPixels, shadeTerrain, type GroundImage } from "./shading";
-import { buildTrail, flattenCorridor, TRAIL_WIDTH_M, type CutFill, type Trail, type TrailProfile } from "./trail";
+import { buildTrail, centrelineIndex, flattenCorridor, TRAIL_WIDTH_M, type CutFill, type Trail, type TrailProfile } from "./trail";
 import { placeTrees, type TreePlacement } from "./trees";
 import type { DemGrid, LandCover, MeshArrays, Vec3 } from "./types";
 import { placePeople, type PeopleOptions } from "./people";
@@ -205,6 +205,8 @@ export type PocScene = {
   distAt: (frame: number) => number;
   /** the rendered ground: the terrain after corridor flattening (camera clearance) */
   heightAt: HeightAt;
+  /** the rendered ground on the mesh's own triangles, which the roads drape on exactly */
+  surfaceAt: HeightAt;
   /** the bare DTM, which keeps road decks over the line */
   bareHeightAt: HeightAt;
   shot: Shot;
@@ -212,7 +214,7 @@ export type PocScene = {
 
 /** The ground's photograph for the photo look's terrain (ADR 60): graded sRGB RGBA pixels on the DEM's grid. */
 export type SceneImage = { width: number; height: number; scale: number; rgba: Uint8Array; cols: number; rows: number };
-export type SectionScene = PocScene & { groundImage?: SceneImage; config: SectionConfig; roads: MeshArrays; bridges: MeshArrays[]; trees: TreePlacement; water: WaterBody[]; buildings: SectionBuildings; barriers: BarrierMeshes; grass: GrassClump[]; walkers: WalkerTrack[] };
+export type SectionScene = PocScene & { groundImage?: SceneImage; config: SectionConfig; roads: MeshArrays; roadStructures: MeshArrays; bridges: MeshArrays[]; trees: TreePlacement; water: WaterBody[]; buildings: SectionBuildings; barriers: BarrierMeshes; grass: GrassClump[]; walkers: WalkerTrack[] };
 
 /** The ground scene of a section: trail, flattened and shaded terrain, rider table, heights and shots. */
 function groundScene(cfg: SectionConfig, inputs: PocInputs): PocScene {
@@ -235,15 +237,16 @@ function groundScene(cfg: SectionConfig, inputs: PocInputs): PocScene {
   // Heights in world units. The rendered ground is the flattened mesh, whose vertices are the DEM's
   // nodes row by row, read with the DEM's own bilinear lookup; the bare DTM still has the road decks.
   const groundGrid: DemGrid = { ...dem, heights: Float32Array.from({ length: dem.cols * dem.rows }, (_, k) => terrain.positions[k * 3 + 1]) };
-  const lookup = (grid: DemGrid, toWorld: (h: number) => number): HeightAt => (x, z) => {
+  const lookup = (grid: DemGrid, toWorld: (h: number) => number, sample = heightAtBng): HeightAt => (x, z) => {
     const { lon, lat } = route.unproject(x, z);
     const { e, n } = wgs84ToBng(lon, lat);
-    const h = heightAtBng(grid, e, n);
+    const h = sample(grid, e, n);
     return h === null ? -Infinity : toWorld(h);
   };
   const heightAt = lookup(groundGrid, (h) => h);
+  const surfaceAt = lookup(groundGrid, (h) => h, meshHeightAtBng);
   const bareHeightAt = lookup(dem, (h) => (h / 10) * cfg.ve);
-  const scene = { trail, terrain, cutFill: flattened.cutFill, dims, table, riderAt, distAt, heightAt, bareHeightAt, shot: (() => ({ position: [0, 0, 0] as Vec3, target: [0, 0, 0] as Vec3, fovDeg: 45 })) as Shot };
+  const scene = { trail, terrain, cutFill: flattened.cutFill, dims, table, riderAt, distAt, heightAt, surfaceAt, bareHeightAt, shot: (() => ({ position: [0, 0, 0] as Vec3, target: [0, 0, 0] as Vec3, fovDeg: 45 })) as Shot };
   scene.shot = shotsOf(cfg, { ...scene, poseAt });
   return scene;
 }
@@ -332,6 +335,9 @@ function sightLines(cfg: SectionConfig, scene: PocScene): { a: Vec3; b: Vec3 }[]
 
 type ExtraInputs = PocInputs & { osm: OsmLine[]; features: Feature[]; bridgeIds?: string[]; waterLevels?: Record<string, number>; buildings?: SectionBuilding[]; canopy?: Float32Array; barriers?: OsmLine[]; imagery?: GroundImage };
 
+/** Half the opening a road's structure leaves over the trail: its 3 m width, then 2.5 m either side. */
+const TRAIL_CLEARANCE_M = TRAIL_WIDTH_M / 2 + 2.5;
+
 const NO_BARRIERS = (): BarrierMeshes => {
   const empty = () => ({ positions: new Float32Array(0), indices: new Uint32Array(0), uvs: new Float32Array(0) });
   return { wall: empty(), hedge: empty(), fence: empty() };
@@ -345,7 +351,7 @@ function extras(cfg: SectionConfig, inputs: ExtraInputs, scene: PocScene, look: 
   const roadRefs = new Set(inputs.features.filter((f) => f.kind === "road").map((f) => f.source.ref));
   const roads: RoadLine[] = inputs.osm
     .filter((f) => drawsCover && roadRefs.has(f.properties.id) && f.geometry.type === "LineString")
-    .map((f) => ({ coords: f.geometry.coordinates as [number, number][], highway: f.properties.tags.highway }));
+    .map((f) => ({ coords: f.geometry.coordinates as [number, number][], highway: f.properties.tags.highway, ...(f.properties.tags.bridge && f.properties.tags.bridge !== "no" && { bridge: true }) }));
   // every railway bridge the registers hold is drawn (their spans are left unflattened by the corridor); the POC's tests pass explicit ids (review R1)
   // only bridges inside this section's km range: the merged registers also hold other windows' structures, and a span
   // outside the trail would be built at its clamped end as a stray deck
@@ -354,7 +360,15 @@ function extras(cfg: SectionConfig, inputs: ExtraInputs, scene: PocScene, look: 
     .filter((f) => f.kind === "structure" && f.id.startsWith("bridge-") && (inputs.bridgeIds ? inputs.bridgeIds.includes(f.id) : true) && inRange(f))
     .map((f) => buildBridgeMesh(scene.trail, [f.fromKm! * 1000, f.toKm! * 1000]));
   // Roads sit on whichever is higher: the bare DTM keeps the decks over the line, the rendered ground the corridor's fill.
-  const roadBase: HeightAt = (x, z) => Math.max(scene.bareHeightAt(x, z), scene.heightAt(x, z));
+  // Where the corridor's cut leaves a road above the ground it keeps its real level on a generic structure: walls beside
+  // the cut, and a deck over the trail's clearance (the A470 crosses the line twice, on overbridges both times).
+  const roadBase: HeightAt = (x, z) => Math.max(scene.bareHeightAt(x, z), scene.surfaceAt(x, z));
+  const nearTrail = centrelineIndex(scene.trail, TRAIL_CLEARANCE_M / 10);
+  const roadGround = {
+    groundAt: scene.surfaceAt,
+    openAt: (x: number, z: number) => (nearTrail(x, z)?.lateral ?? Infinity) <= TRAIL_CLEARANCE_M / 10,
+    ve: cfg.ve,
+  };
   // only buildings the register lists, with its status (spec BL3, BL16); they stand on the rendered ground (BL5)
   // (an aerial scene in the concept look shows its towns on the map drape; the photo look builds them, ADR 63)
   const buildings = sectionBuildings(drawsCover ? (inputs.buildings ?? []) : [], buildingStatus(inputs.features), inputs.route.project, scene.heightAt, cfg.ve);
@@ -368,6 +382,7 @@ function extras(cfg: SectionConfig, inputs: ExtraInputs, scene: PocScene, look: 
   const canopy = photo?.canopyTrees ? inputs.canopy : undefined;
   return {
     roads: buildRoadMesh(roads, inputs.route.project, roadBase),
+    roadStructures: buildRoadStructures(roads, inputs.route.project, roadBase, roadGround),
     bridges,
     // an aerial shot has no rider to keep in view, so its trees need no sight lines
     trees:

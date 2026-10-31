@@ -119,22 +119,29 @@ class Builder {
   }
 }
 
+/** A footprint's vertical frame, in world units: the anticlockwise ring, its base (the lowest ground under it), its
+ * recorded top (a DSM height reaches the ridge) and the lowest its eaves may sit, 2 m above its highest ground (BL5). */
+export function buildingShell(r: BuildingRecord, heightAt: HeightAt, ve: number): { ring: XZ[]; base: number; top: number; minEaves: number } {
+  const ring = anticlockwise(r.ring);
+  const base = buildingBase(ring, heightAt);
+  const c = centroid(ring);
+  const highest = Math.max(heightAt(c.x, c.z), ...ring.map((p) => heightAt(p.x, p.z)));
+  return { ring, base, top: base + (r.heightM / 10) * ve, minEaves: highest + 0.2 };
+}
+
 /** Walls from the lowest ground under each footprint to its top, with a flat or gabled roof, merged into at most one
  * group per look: existing (and under construction), and translucent for approved or demolished (spec BL10, BL14). */
 export function buildingArrays(records: BuildingRecord[], heightAt: HeightAt, ve: number, landmarks: LandmarkPlacement[] = []): { groups: BuildingGroup[] } {
   const builders = { existing: new Builder(), translucent: new Builder() };
   const look = (status: BuildingStatus) => builders[status === "approved" || status === "demolished" ? "translucent" : "existing"];
   for (const r of records) {
-    const ring = anticlockwise(r.ring);
+    const { ring, base, top, minEaves } = buildingShell(r, heightAt, ve);
     const b = look(r.status);
-    const base = buildingBase(ring, heightAt);
-    const c = centroid(ring);
-    const highest = Math.max(heightAt(c.x, c.z), ...ring.map((p) => heightAt(p.x, p.z)));
     const rect = r.roof === "gabled" ? rectangleAxes(ring) : null;
     // the recorded height is the top (a DSM height reaches the ridge): a gabled roof sits inside it, not on it (BL6)
-    const hW = (r.heightM / 10) * ve;
+    const hW = top - base;
     const rise = rect ? Math.min(0.4 * rect.lv, 0.35 * hW) : 0;
-    const eaves = Math.max(base + hW - rise, highest + 0.2); // never buried: 2 m above the highest ground (BL5)
+    const eaves = Math.max(top - rise, minEaves); // never buried: 2 m above the highest ground (BL5)
     ring.forEach((a, k) => {
       const d = ring[(k + 1) % ring.length];
       const out: Vec3 = [d.z - a.z, 0, -(d.x - a.x)]; // anticlockwise ring: the outward side of edge a→d

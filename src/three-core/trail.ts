@@ -159,8 +159,8 @@ export type CutFill = {
 
 type Foot = { distM: number; lateral: number; interior: boolean };
 
-/** Nearest point on the centreline polyline, using a uniform hash of the segments. */
-function centrelineIndex(trail: Trail, reach: number) {
+/** Nearest point on the centreline polyline within `reach`, using a uniform hash of the segments. */
+export function centrelineIndex(trail: Trail, reach: number) {
   const segs = trail.samples.slice(0, -1).map((a, i) => [a, trail.samples[i + 1]] as const);
   const cell = 1;
   const grid = new Map<string, number[]>();

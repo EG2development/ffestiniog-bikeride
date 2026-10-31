@@ -125,7 +125,8 @@ const Scene: React.FC<Props & { drape: MapDrape | null; photoAssets: PhotoAssets
         {drape ? <MapDrapeView mesh={scene.terrain} drape={drape} unproject={route.unproject} mask={mask} /> : photo ? <TerrainPhotoView mesh={scene.terrain} land={data.land} textures={photoAssets!.textures} image={scene.groundImage} {...(cfg.kind === "aerial" && AERIAL_TERRAIN)} /> : <TerrainView mesh={scene.terrain} mask={mask} />}
         <RoadView mesh={scene.roads} mask={mask} tarmac={photo ? photoAssets!.textures.tarmac : undefined} />
         {photo ? <TrailPhotoView ribbon={scene.trail.ribbon} gravel={photoAssets!.textures.gravel} widthM={TRAIL_WIDTH_M} /> : <TrailView ribbon={scene.trail.ribbon} mask={mask} />}
-        {scene.bridges.map((mesh, i) => (photo ? <BridgePhotoView key={i} mesh={mesh} stone={photoAssets!.textures.stone} /> : <BridgeView key={i} mesh={mesh} mask={mask} />))}
+        {/* the railway's bridges, then the walls and decks under roads that stand clear of the ground */}
+        {[...scene.bridges, ...(scene.roadStructures.indices.length > 0 ? [scene.roadStructures] : [])].map((mesh, i) => (photo ? <BridgePhotoView key={i} mesh={mesh} stone={photoAssets!.textures.stone} /> : <BridgeView key={i} mesh={mesh} mask={mask} />))}
         {hide === "water" ? null : <WaterView bodies={scene.water} frame={frame} mask={mask} photo={photo} />}
         <BuildingsView groups={scene.buildings.groups} landmarkGroups={scene.buildings.landmarkGroups} mask={mask} stone={photo ? photoAssets!.textures.stone : undefined} />
         {look === "photo" ? <BarriersView meshes={scene.barriers} mask={mask} textures={photoAssets ? { wall: photoAssets.textures.stone, hedge: photoAssets.textures.hedge, fence: photoAssets.textures.bark } : undefined} /> : null}

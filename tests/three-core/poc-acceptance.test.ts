@@ -2,7 +2,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import { wgs84ToBng } from "../../src/three-core/bng";
-import { heightAtBng } from "../../src/three-core/dem";
+import { heightAtBng, meshHeightAtBng } from "../../src/three-core/dem";
 import { buildPocExtras, buildPocScene, POC, type OsmLine, type PocInputs } from "../../src/three-core/poc";
 import { validateAssets, validateFeatures, type Feature } from "../../src/three-core/registers";
 import { roadWidthM } from "../../src/three-core/roads";
@@ -142,16 +142,17 @@ describe("POC geometry", () => {
     const extras = buildPocExtras({ ...base, osm, features: feats, bridgeIds: FEATURE_IDS }, scene);
     // the rendered ground: the flattened mesh's heights on the DEM grid (its vertices are the grid nodes, row by row)
     const ground: DemGrid = { ...base.dem, heights: Float32Array.from({ length: base.dem.cols * base.dem.rows }, (_, k) => scene.terrain.positions[k * 3 + 1]) };
-    const groundAt = (x: number, z: number) => {
+    const groundAt = (x: number, z: number, sample = heightAtBng) => {
       const { lon, lat } = base.route.unproject(x, z);
       const { e, n } = wgs84ToBng(lon, lat);
-      return heightAtBng(ground, e, n);
+      return sample(ground, e, n);
     };
 
+    // the roads drape on the mesh's own triangles, which is what renders
     const rp = extras.roads.positions;
     const buried: string[] = [];
     for (let i = 0; i < rp.length; i += 3) {
-      const g = groundAt(rp[i], rp[i + 2]);
+      const g = groundAt(rp[i], rp[i + 2], meshHeightAtBng);
       if (g !== null && rp[i + 1] - g < 0.02) buried.push(`(${rp[i].toFixed(1)}, ${rp[i + 2].toFixed(1)}): ${((rp[i + 1] - g) * 10).toFixed(2)} m`);
     }
     expect(buried.slice(0, 5), `${buried.length} road vertices less than 0.2 m above the rendered terrain`).toEqual([]);

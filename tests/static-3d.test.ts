@@ -166,14 +166,17 @@ describe("rendering rules", () => {
     // the lidar COGs, the OSM API, (ADR 54) Poly Haven's CC0 download host, polyhaven.com cited as the asset page, and
     // (ADR 60) the Sentinel-2 scene: the Earth Search STAC API that names its file and the open-data bucket that holds it;
     // (ADR 63) the OS Downloads API, which redirects to a signed copy of OS OpenMap - Local; DataMapWales's WFS and the
-    // NRW lidar archive it lists (read by byte range)
-    const allowed = ["dmwproductionblob.blob.core.windows.net", "api.openstreetmap.org", "dl.polyhaven.org", "polyhaven.com", "earth-search.aws.element84.com", "sentinel-cogs.s3.us-west-2.amazonaws.com", "api.os.uk", "datamap.gov.wales"];
+    // NRW lidar archive it lists (read by byte range); (ADR 62) the Blender build's CC0 assets: Poly Haven's API, which
+    // names each file, and the MakeHuman system asset pack
+    const allowed = ["dmwproductionblob.blob.core.windows.net", "api.openstreetmap.org", "dl.polyhaven.org", "polyhaven.com", "earth-search.aws.element84.com", "sentinel-cogs.s3.us-west-2.amazonaws.com", "api.os.uk", "datamap.gov.wales", "api.polyhaven.com", "files.makehumancommunity.org"];
     for (const f of readdirSync(resolve(ROOT, "scripts"), { recursive: true, encoding: "utf8" }).filter((n) => /\.(py|mjs|ts)$/.test(n))) {
       const src = read(`scripts/${f}`);
       for (const [, host] of src.matchAll(/https?:\/\/([A-Za-z0-9.-]+)/g)) {
         if (/^(www\.)?remotion\.dev$|^github\.com$|^threejsresources\.com$/.test(host)) continue; // documentation links
         if (host === "www.openstreetmap.org" && !/urlopen\([^)]*www\.openstreetmap/.test(src)) continue; // cited in register provenance, never fetched (ADR 49)
         if (host === "www.ordnancesurvey.co.uk" && !/urlopen\([^)]*ordnancesurvey/.test(src)) continue; // the product page, cited, never fetched (ADR 63)
+        if (host === "static.makehumancommunity.org" && !/fetch\([^)]*static\.makehuman/.test(src)) continue; // the licence page, cited in the register
+
         expect(allowed, `${f}: ${host}`).toContain(host);
       }
     }

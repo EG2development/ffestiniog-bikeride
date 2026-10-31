@@ -98,6 +98,7 @@ export function tmInverse(e: number, n: number): { lat: number; lon: number };
 
 // dem.ts
 export function heightAtBng(grid: DemGrid, e: number, n: number): number | null; // bilinear; null outside or at nodata
+export function meshHeightAtBng(grid: DemGrid, e: number, n: number): number | null; // on the terrain mesh's own triangles
 export function buildTerrainMesh(grid: DemGrid, land: LandCover, project: Projector, ve: number): MeshArrays;
 export const colourForClass: (name: string) => [number, number, number];         // land-cover palette (sRGB)
 
@@ -114,6 +115,8 @@ export type CutFill = { fromKm: number; toKm: number; kind: 'cut' | 'fill'; maxD
 export function flattenCorridor(mesh: MeshArrays, trail: Trail, opts: { widthM: number; shoulderM: number;
   spacingM: number; bridges: [number, number][]; noReport?: [number, number][]; ve?: number }):
   { mesh: MeshArrays; cutFill: CutFill[] };            // G5; depths in real metres whatever ve
+export function centrelineIndex(trail: Trail, reach: number):
+  (x: number, z: number) => { distM: number; lateral: number; interior: boolean } | null; // nearest centreline point within reach
 
 // cyclistMotion.ts
 export type CyclistDims = { wheelDiameterM: number; wheelbaseM: number; ridingHeightM: number; lengthM: number; lateralOffsetM: number };
@@ -137,11 +140,16 @@ export function withClearance(shot: Shot, heightAt: HeightAt, riderAt: (frame: n
 export function sequenceShots(shots: { shot: Shot; frames: number }[]): Shot; // each shot sees its own local frames
 
 // roads.ts: OSM roads draped on the terrain (D10)
-export type RoadLine = { coords: [number, number][]; highway: string };  // lon/lat
+export type RoadLine = { coords: [number, number][]; highway: string; bridge?: boolean };  // lon/lat; OSM bridge=*
+export type RoadGround = { groundAt: HeightAt; openAt: (x: number, z: number) => boolean; ve: number };
 export const roadWidthM: (highway: string) => number;                    // typical width by class, not surveyed
 export function buildRoadMesh(roads: RoadLine[], project: Projector, heightAt: HeightAt): MeshArrays;
-//   resampled every 4 m; 3 vertices per cross-section (left, centre, right), each 0.3 m above heightAt;
-//   parts of a road off the terrain are dropped
+//   ways of one class meeting end to end are joined first; resampled every 4 m; 3 vertices per cross-section
+//   (left, centre, right), each 0.3 m above heightAt; a bridge way's deck runs straight between its ends where the
+//   DTM drops lower; parts of a road off the terrain are dropped
+export function buildRoadStructures(roads: RoadLine[], project: Projector, heightAt: HeightAt, ground: RoadGround): MeshArrays;
+//   generic masonry wherever a road stands more than 0.6 m above groundAt: walls to the ground, a deck where openAt
+//   (the trail's clearance) or a bridge way's span, parapets over 2 m; position from the data, form generic (ADR 12)
 
 // bridge.ts (D10)
 export function buildBridgeMesh(trail: Trail, span: [number, number],
@@ -162,12 +170,14 @@ export type PocInputs = { route: RouteModel; dem: DemGrid; land: LandCover; prof
 export type PocScene = { trail: Trail; terrain: MeshArrays; cutFill: CutFill[]; dims: CyclistDims; table: Float64Array;
   riderAt: (frame: number) => Vec3;
   heightAt: HeightAt;      // the rendered ground, after corridor flattening: camera clearance (CA3)
+  surfaceAt: HeightAt;     // the same ground on the mesh's own triangles, which the roads drape on
   bareHeightAt: HeightAt;  // the bare DTM, which keeps road decks over the line
   shot: Shot };
 export function buildPocScene(inputs: PocInputs): PocScene;
 export function buildPocExtras(inputs: PocInputs & { osm: OsmLine[]; features: Feature[]; bridgeIds: string[] },
   scene: PocScene): { roads: MeshArrays; bridges: MeshArrays[]; trees: TreePlacement };
-//   roads drape on max(bareHeightAt, heightAt); trees keep 2 m off them; only register entries are drawn (H1, G6, G7)
+//   roads drape on max(bareHeightAt, surfaceAt), keeping their real level over the corridor's cut on a structure
+//   (a section's roadStructures); trees keep 2 m off them; only register entries are drawn (H1, G6, G7)
 
 // registers.ts (D18): the registers, plus the runtime data checked at the boundary (t9, review R8).
 // Every validator throws an error that names the JSON path of the first problem.
@@ -204,7 +214,7 @@ export function mulberry32(seed: number): () => number;     // deterministic; th
 export type SectionKind = 'ground' | 'aerial';
 export type ShotSpec = { kind: 'drone-side' | 'follow' | 'aerial-orbit' | 'pull-back' | 'hold'; frames: number; /* fields per kind */ };
 export type SectionConfig = { id: string; title: string; kind: SectionKind; kmRange: [number, number]; window: string; frames: number; startDistM: number; shots: ShotSpec[]; captionIds: string[]; featureIds: string[]; ve: 1; maxTreesPerKind?: number };
-export type SectionScene = PocScene & { config: SectionConfig; roads: MeshArrays; bridges: MeshArrays[]; trees: TreePlacement; water: WaterBody[]; buildings: SectionBuildings };
+export type SectionScene = PocScene & { config: SectionConfig; roads: MeshArrays; roadStructures: MeshArrays; bridges: MeshArrays[]; trees: TreePlacement; water: WaterBody[]; buildings: SectionBuildings };
 export const SECTIONS: Record<string, SectionConfig>;      // intro, heritage, overview, blaenau, vale-north, vale-south, maentwrog, trawsfynydd, closing
 export function shotsOf(cfg: SectionConfig, scene: { trail: Trail; riderAt: (f: number) => Vec3; heightAt: HeightAt; poseAt: (f: number) => CyclistPose }): Shot;
 export function buildSectionScene(cfg: SectionConfig, inputs: PocInputs & { osm: OsmLine[]; features: Feature[] }): SectionScene;
@@ -262,6 +272,7 @@ export type BuildingStatus = FeatureStatus;
 export type BuildingRecord = { id: string; ring: { x: number; z: number }[]; heightM: number; roof: "flat" | "gabled"; status: BuildingStatus };
 export type BuildingGroup = { kind: "existing" | "translucent"; positions: Float32Array; normals: Float32Array; indices: Uint32Array };
 export function buildingBase(ring: { x: number; z: number }[], heightAt: HeightAt): number;
+export function buildingShell(r: BuildingRecord, heightAt: HeightAt, ve: number): { ring: { x: number; z: number }[]; base: number; top: number; minEaves: number }; // what the walls stand on and reach; exported to Blender
 export function buildingArrays(records: BuildingRecord[], heightAt: HeightAt, ve: number, landmarks?: LandmarkPlacement[]): { groups: BuildingGroup[] }; // the recorded height is the ridge (BL6)
 export function footprintOverlap(a: { x: number; z: number }[], b: { x: number; z: number }[]): number;
 export function segmentsInFootprints(lines: { x: number; z: number }[][], fps: { id: string; ring: { x: number; z: number }[] }[]): string[];
@@ -422,6 +433,8 @@ It releases its hold in an effect after its children have mounted, so `<ThreeCan
 | File | Checks |
 |---|---|
 | `tests/route.test.ts` | The existing 2D projection tests, unchanged (RG2). |
+| `tests/blender/export.test.ts` | The Blender transfer (docs/blender-build-plan.md): the Three.js→Blender coordinate contract, and the Maentwrog prototype package matching its source within 0.05 m, repeatably. |
+| `tests/blender/reel.test.ts` | The reel's Blender export: nine scenes, 2,700 frames, the concept badge and credits kept, aerial and ground scenes as the three.js reel draws them. |
 | `tests/three-core/bng.test.ts` | OS worked example; WGS84→BNG→WGS84 round trip < 0.01 m. |
 | `tests/three-core/unproject.test.ts` | `unproject` inverts `project` (RG5). |
 | `tests/three-core/dem.test.ts` | `heightAtBng`; `buildTerrainMesh` (G1, G3, D8). |
@@ -429,7 +442,7 @@ It releases its hold in an effect after its children have mounted, so `<ThreeCan
 | `tests/three-core/corridor.test.ts` | `flattenCorridor`: G5a, G5b, bridge spans, depths in metres whatever the ve (R3). |
 | `tests/three-core/cyclist.test.ts` | C1–C7 on every frame of a synthetic run. |
 | `tests/three-core/camera.test.ts` | CA1–CA4 on every frame of the two POC shots; `sequenceShots`; `withClearance`; throws with no terrain (R7); ADR 35: `aerialOrbit` and `pullBack` meet CA1–CA4 over a synthetic valley. |
-| `tests/three-core/roads.test.ts` | `buildRoadMesh` drops the parts of a road off the terrain. |
+| `tests/three-core/roads.test.ts` | `buildRoadMesh` drops the parts of a road off the terrain, joins ways end to end and carries bridge decks over dips; `buildRoadStructures` walls raised roads and spans the trail; on the real Maentwrog data the A470 overbridge keeps its deck level and no raised road floats. |
 | `tests/three-core/trees.test.ts` | `placeTrees`: 2 m off carriageways (R4); RL13 near zone, 1–15 per 100 m² and none beyond 300 m (ADR 37); R2 per-kind cap spread over the whole woodland; ve (R3). |
 | `tests/three-core/rng.test.ts` | `mulberry32` determinism (RN1, RN2). |
 | `tests/three-core/poc-acceptance.test.ts` | On the real POC data: G2, G1, G4, C1–C7, CA1–CA4, finite geometry, roads on the rendered terrain and trees off them (R4, R5), H1, G5b, G6, G7, L1, C8. |

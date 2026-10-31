@@ -21,6 +21,26 @@ export function heightAtBng(grid: DemGrid, e: number, n: number): number | null 
   return h00 * (1 - u) * (1 - v) + h01 * u * (1 - v) + h10 * (1 - u) * v + h11 * u * v;
 }
 
+/** Height in metres at a BNG point on buildTerrainMesh's own triangles (each cell split along its south-west to
+ * north-east diagonal), so a ribbon draped on it neither floats nor sinks where the bilinear surface bulges; null as above. */
+export function meshHeightAtBng(grid: DemGrid, e: number, n: number): number | null {
+  const fx = (e - grid.originE) / grid.spacingM;
+  const fy = (grid.originN - n) / grid.spacingM;
+  if (!(fx >= 0 && fy >= 0 && fx <= grid.cols - 1 && fy <= grid.rows - 1)) return null;
+  const c = Math.min(Math.floor(fx), grid.cols - 2);
+  const r = Math.min(Math.floor(fy), grid.rows - 2);
+  const u = fx - c;
+  const v = fy - r;
+  const at = (rr: number, cc: number) => grid.heights[rr * grid.cols + cc];
+  const h00 = at(r, c);
+  const h01 = at(r, c + 1);
+  const h10 = at(r + 1, c);
+  const h11 = at(r + 1, c + 1);
+  if ([h00, h01, h10, h11].some((h) => h === grid.nodata)) return null;
+  // triangles (r,c) (r+1,c) (r,c+1) and (r,c+1) (r+1,c) (r+1,c+1), as the mesh's indices
+  return u + v <= 1 ? h00 + u * (h01 - h00) + v * (h10 - h00) : h11 + (1 - u) * (h10 - h11) + (1 - v) * (h01 - h11);
+}
+
 // Natural tones for North Wales land cover, matched by keyword in the legend.
 const PALETTE: [RegExp, [number, number, number]][] = [
   [/water|lake|reservoir|river/, [0.36, 0.5, 0.56]],
