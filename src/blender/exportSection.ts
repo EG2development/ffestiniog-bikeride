@@ -123,6 +123,7 @@ function buildManifest(side: Sidecars, root: string, sources: SourceFile[], scen
     meshRef(side, origin, "terrain", "Terrain", "terrain", scene.terrain),
     meshRef(side, origin, "trail", "ProposedTrail", "trail", scene.trail.ribbon),
     meshRef(side, origin, "roads", "ExistingFeatures", "road", scene.roads),
+    meshRef(side, origin, "road-markings", "ExistingFeatures", "road-marking", scene.roadMarkings),
     meshRef(side, origin, "bridge-roads", "ExistingFeatures", "bridge", scene.roadStructures),
     ...scene.bridges.map((b, i) => meshRef(side, origin, `bridge-${i}`, "ExistingFeatures", "bridge", b)),
     ...scene.buildings.groups.map((g) => meshRef(side, origin, `buildings-${g.kind}`, "ExistingFeatures", `building-${g.kind}`, groupMesh(g))),

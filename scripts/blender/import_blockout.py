@@ -26,7 +26,8 @@ COLLECTIONS = [
 SUB_COLLECTIONS = {"People": ["Cyclists", "Pedestrians"]}
 # role -> (base colour, roughness); plain stand-ins until the material phase
 PLAIN = {
-    "trail": ((0.55, 0.50, 0.42, 1), 0.9), "road": ((0.12, 0.12, 0.13, 1), 0.9), "bridge": ((0.45, 0.43, 0.40, 1), 0.8),
+    "trail": ((0.55, 0.50, 0.42, 1), 0.9), "road": ((0.12, 0.12, 0.13, 1), 0.9), "road-marking": ((0.85, 0.85, 0.82, 1), 0.6),
+    "bridge": ((0.45, 0.43, 0.40, 1), 0.8),
     "building-existing": ((0.62, 0.58, 0.52, 1), 0.8), "building-translucent": ((0.80, 0.30, 0.25, 1), 0.8),
     "barrier-wall": ((0.40, 0.38, 0.35, 1), 0.9), "barrier-hedge": ((0.15, 0.30, 0.12, 1), 0.9), "barrier-fence": ((0.45, 0.33, 0.22, 1), 0.9),
     "conifer": ((0.08, 0.20, 0.09, 1), 0.9), "broadleaf": ((0.17, 0.30, 0.10, 1), 0.9), "grass": ((0.30, 0.38, 0.14, 1), 0.9),
@@ -233,11 +234,13 @@ def build_section(pkg_dir, prefix="", samples=64, dressed=False):
         me = mesh_from_arrays(n(ref["name"]), pos, idx, colors, uvs)
         obj = link(bpy.data.objects.new(n(ref["name"]), me), colls[ref["collection"]])
         role = ref["role"]
-        if not ground and (role in ("trail", "road") or ref["name"] == "bridge-roads"):
+        if not ground and role == "trail":
             # the aerial windows' terrain is 16 m samples, which pokes through a ribbon laid 5 cm above the profile; from 100-600 m up 0.6 m is invisible
-            # (the roads' own walls and decks rise with them, so their parapets stay at the carriageway's edge)
+            # (the roads need no lift: they are graded into and seated on that ground, src/three-core/roads.ts seatRoads)
             obj.location.z = AERIAL_LIFT_M
         if dressed and landscape.material_for(role, not ground):
+            if role == "road":  # the export's metre UVs, across and along, which the asphalt reads
+                me.uv_layers["UV"].name = "metres"
             obj.data.materials.append(landscape.material_for(role, not ground))
             if role.startswith(("bridge", "building", "barrier")):
                 landscape.wall_uvs(me)

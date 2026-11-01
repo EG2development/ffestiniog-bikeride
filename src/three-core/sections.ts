@@ -9,7 +9,7 @@ import { aerialOrbit, droneSideTrack, firstPersonShot, followShot, liftClear, pu
 import { cyclistPose, defaultCyclistDims, distanceTable, type CyclistDims } from "./cyclistMotion";
 import { buildTerrainMesh, heightAtBng, meshHeightAtBng } from "./dem";
 import type { Feature, OsmLine, SectionBuilding } from "./registers";
-import { buildRoadMesh, buildRoadStructures, type RoadLine } from "./roads";
+import { buildRoadMarkings, buildRoadMesh, buildRoadStructures, gradeToRoads, layRoads, seatRoads, type RoadLayout, type RoadLine } from "./roads";
 import { IMAGERY_GRADE } from "./photoLook";
 import { imageryNodeColours, imageryPixels, shadeTerrain, type GroundImage } from "./shading";
 import { buildTrail, centrelineIndex, flattenCorridor, TRAIL_WIDTH_M, type CutFill, type Trail, type TrailProfile } from "./trail";
@@ -203,21 +203,23 @@ export type PocScene = {
   riderAt: (frame: number) => Vec3;
   /** the rider's distance along the route at a frame (the table, clamped) */
   distAt: (frame: number) => number;
-  /** the rendered ground: the terrain after corridor flattening (camera clearance) */
+  /** the rendered ground: the terrain after corridor flattening and grading to the roads (camera clearance) */
   heightAt: HeightAt;
-  /** the rendered ground on the mesh's own triangles, which the roads drape on exactly */
+  /** the rendered ground on the mesh's own triangles */
   surfaceAt: HeightAt;
   /** the bare DTM, which keeps road decks over the line */
   bareHeightAt: HeightAt;
+  /** the roads the ground was graded to, laid on the ground before it was */
+  roadLayout?: RoadLayout;
   shot: Shot;
 };
 
 /** The ground's photograph for the photo look's terrain (ADR 60): graded sRGB RGBA pixels on the DEM's grid. */
 export type SceneImage = { width: number; height: number; scale: number; rgba: Uint8Array; cols: number; rows: number };
-export type SectionScene = PocScene & { groundImage?: SceneImage; config: SectionConfig; roads: MeshArrays; roadStructures: MeshArrays; bridges: MeshArrays[]; trees: TreePlacement; water: WaterBody[]; buildings: SectionBuildings; barriers: BarrierMeshes; grass: GrassClump[]; walkers: WalkerTrack[] };
+export type SectionScene = PocScene & { groundImage?: SceneImage; config: SectionConfig; roads: MeshArrays; roadMarkings: MeshArrays; roadStructures: MeshArrays; bridges: MeshArrays[]; trees: TreePlacement; water: WaterBody[]; buildings: SectionBuildings; barriers: BarrierMeshes; grass: GrassClump[]; walkers: WalkerTrack[] };
 
-/** The ground scene of a section: trail, flattened and shaded terrain, rider table, heights and shots. */
-function groundScene(cfg: SectionConfig, inputs: PocInputs): PocScene {
+/** The ground scene of a section: trail, flattened and shaded terrain (graded to `roads`), rider table, heights and shots. */
+function groundScene(cfg: SectionConfig, inputs: PocInputs, roads: RoadLine[] = []): PocScene {
   const { route, dem, land, profile } = inputs;
   const trail = buildTrail(route, profile, { startKm: cfg.kmRange[0], endKm: cfg.kmRange[1] }, { widthM: TRAIL_WIDTH_M, ve: cfg.ve });
   const flattened = flattenCorridor(buildTerrainMesh(dem, land, route.project, cfg.ve), trail, {
@@ -228,7 +230,7 @@ function groundScene(cfg: SectionConfig, inputs: PocInputs): PocScene {
     noReport: profile.overbridges ?? [],
     ve: cfg.ve,
   });
-  const terrain = shadeTerrain(flattened.mesh, dem);
+  let terrain = shadeTerrain(flattened.mesh, dem);
   const dims = defaultCyclistDims();
   const table = distanceTable(trail, cfg.startDistM, cfg.frames, POC.fps);
   const poseAt = (f: number) => cyclistPose(trail, table, f, POC.fps, dims);
@@ -236,17 +238,50 @@ function groundScene(cfg: SectionConfig, inputs: PocInputs): PocScene {
   const distAt = (f: number) => table[Math.min(table.length - 1, Math.max(0, f))];
   // Heights in world units. The rendered ground is the flattened mesh, whose vertices are the DEM's
   // nodes row by row, read with the DEM's own bilinear lookup; the bare DTM still has the road decks.
-  const groundGrid: DemGrid = { ...dem, heights: Float32Array.from({ length: dem.cols * dem.rows }, (_, k) => terrain.positions[k * 3 + 1]) };
   const lookup = (grid: DemGrid, toWorld: (h: number) => number, sample = heightAtBng): HeightAt => (x, z) => {
     const { lon, lat } = route.unproject(x, z);
     const { e, n } = wgs84ToBng(lon, lat);
     const h = sample(grid, e, n);
     return h === null ? -Infinity : toWorld(h);
   };
+  const groundOf = (mesh: MeshArrays): DemGrid => ({ ...dem, heights: Float32Array.from({ length: dem.cols * dem.rows }, (_, k) => mesh.positions[k * 3 + 1]) });
+  const bareHeightAt = lookup(dem, (h) => (h / 10) * cfg.ve);
+  // the roads keep their real level (the bare DTM's, or the trail's grading where that is higher) and the ground is
+  // graded to them, except in the trail's own corridor (docs/design-3d.md D10)
+  let roadLayout: RoadLayout | undefined;
+  if (roads.length > 0) {
+    const flat = lookup(groundOf(terrain), (h) => h, meshHeightAtBng);
+    // the trail's formation and one grid cell: beyond it an existing road keeps its real level and the ground between
+    // is graded to it as a bank (the proposed trail does not lift a road beside it onto its own level)
+    const reach = (TRAIL_WIDTH_M / 2 + 1 + dem.spacingM) / 10;
+    const nearTrail = centrelineIndex(trail, reach);
+    // a road the line crosses on one of its bridges passes under the span on its own level (from the bare DTM either
+    // side and the lidar's ground under the span, not raised to the trail's grading), and its ground is graded to it
+    const spans = profile.bridges ?? [];
+    const underSpan = (x: number, z: number) => {
+      const foot = nearTrail(x, z);
+      const i = foot && foot.lateral <= reach ? spans.findIndex(([a, b]) => foot.distM >= a && foot.distM <= b) : -1;
+      if (i < 0) return null;
+      const ground = profile.bridgeGroundM?.[i];
+      return { lateral: foot!.lateral, ...(ground != null && { ground: (ground / 10) * cfg.ve }) };
+    };
+    const keep = (x: number, z: number) => (nearTrail(x, z)?.lateral ?? Infinity) <= reach && !underSpan(x, z);
+    roadLayout = layRoads(roads, route.project, (x, z) => Math.max(bareHeightAt(x, z), flat(x, z)), { ve: cfg.ve, keep, under: underSpan });
+    // where the grid cannot be graded level with every road (two roads too close for its cells, a junction's mouth),
+    // a road is seated on the ground graded to it, and the ground graded again to the seated road: its verges and
+    // banks follow it up instead of leaving it on a wall
+    const ungraded = terrain.positions;
+    const surface = (positions: Float32Array) => lookup(groundOf({ ...terrain, positions }), (h) => h, meshHeightAtBng);
+    for (let pass = 0; pass < 2; pass++) {
+      const graded = gradeToRoads(ungraded, roadLayout, { spacingM: dem.spacingM, keep });
+      roadLayout = seatRoads(roadLayout, surface(graded));
+      terrain = { ...terrain, positions: graded };
+    }
+  }
+  const groundGrid = groundOf(terrain);
   const heightAt = lookup(groundGrid, (h) => h);
   const surfaceAt = lookup(groundGrid, (h) => h, meshHeightAtBng);
-  const bareHeightAt = lookup(dem, (h) => (h / 10) * cfg.ve);
-  const scene = { trail, terrain, cutFill: flattened.cutFill, dims, table, riderAt, distAt, heightAt, surfaceAt, bareHeightAt, shot: (() => ({ position: [0, 0, 0] as Vec3, target: [0, 0, 0] as Vec3, fovDeg: 45 })) as Shot };
+  const scene = { trail, terrain, cutFill: flattened.cutFill, dims, table, riderAt, distAt, heightAt, surfaceAt, bareHeightAt, ...(roadLayout && { roadLayout }), shot: (() => ({ position: [0, 0, 0] as Vec3, target: [0, 0, 0] as Vec3, fovDeg: 45 })) as Shot };
   scene.shot = shotsOf(cfg, { ...scene, poseAt });
   return scene;
 }
@@ -343,15 +378,22 @@ const NO_BARRIERS = (): BarrierMeshes => {
   return { wall: empty(), hedge: empty(), fence: empty() };
 };
 
+/** An aerial scene in the concept look shows roads and water on its map drape (ADR 33); the photo look draws them. */
+const drawsCoverIn = (cfg: SectionConfig, look: Look) => cfg.kind === "ground" || (look === "photo" && cfg.photo !== undefined);
+
+/** The register's roads that a section draws, with their OSM bridge tags. */
+function roadLines(cfg: SectionConfig, inputs: Pick<ExtraInputs, "osm" | "features">, look: Look): RoadLine[] {
+  const roadRefs = new Set(inputs.features.filter((f) => f.kind === "road").map((f) => f.source.ref));
+  return inputs.osm
+    .filter((f) => drawsCoverIn(cfg, look) && roadRefs.has(f.properties.id) && f.geometry.type === "LineString")
+    .map((f) => ({ coords: f.geometry.coordinates as [number, number][], highway: f.properties.tags.highway, ...(f.properties.tags.bridge && f.properties.tags.bridge !== "no" && { bridge: true }) }));
+}
+
 function extras(cfg: SectionConfig, inputs: ExtraInputs, scene: PocScene, look: Look) {
   // the photoreal layer's sourced extras, only in the photo look and where the config asks (ADRs 54, 60)
   const photo = look === "photo" ? cfg.photo : undefined;
-  // an aerial scene in the concept look shows roads and water on its map drape (ADR 33); the photo look draws them
-  const drawsCover = cfg.kind === "ground" || photo !== undefined;
-  const roadRefs = new Set(inputs.features.filter((f) => f.kind === "road").map((f) => f.source.ref));
-  const roads: RoadLine[] = inputs.osm
-    .filter((f) => drawsCover && roadRefs.has(f.properties.id) && f.geometry.type === "LineString")
-    .map((f) => ({ coords: f.geometry.coordinates as [number, number][], highway: f.properties.tags.highway, ...(f.properties.tags.bridge && f.properties.tags.bridge !== "no" && { bridge: true }) }));
+  const drawsCover = drawsCoverIn(cfg, look);
+  const roads = roadLines(cfg, inputs, look);
   // every railway bridge the registers hold is drawn (their spans are left unflattened by the corridor); the POC's tests pass explicit ids (review R1)
   // only bridges inside this section's km range: the merged registers also hold other windows' structures, and a span
   // outside the trail would be built at its clamped end as a stray deck
@@ -359,10 +401,10 @@ function extras(cfg: SectionConfig, inputs: ExtraInputs, scene: PocScene, look: 
   const bridges = inputs.features
     .filter((f) => f.kind === "structure" && f.id.startsWith("bridge-") && (inputs.bridgeIds ? inputs.bridgeIds.includes(f.id) : true) && inRange(f))
     .map((f) => buildBridgeMesh(scene.trail, [f.fromKm! * 1000, f.toKm! * 1000]));
-  // Roads sit on whichever is higher: the bare DTM keeps the decks over the line, the rendered ground the corridor's fill.
-  // Where the corridor's cut leaves a road above the ground it keeps its real level on a generic structure: walls beside
-  // the cut, and a deck over the trail's clearance (the A470 crosses the line twice, on overbridges both times).
-  const roadBase: HeightAt = (x, z) => Math.max(scene.bareHeightAt(x, z), scene.surfaceAt(x, z));
+  // The roads as the ground was graded to them (a scene built without them lays them on its ground as it is). Where
+  // the trail's corridor leaves a road above the ground it keeps its level on a generic structure: a deck over the
+  // trail's clearance (the A470 crosses the line twice, on overbridges both times) and walls either side of it.
+  const layout = scene.roadLayout ?? layRoads(roads, inputs.route.project, (x, z) => Math.max(scene.bareHeightAt(x, z), scene.surfaceAt(x, z)), { ve: cfg.ve, drape: true });
   const nearTrail = centrelineIndex(scene.trail, TRAIL_CLEARANCE_M / 10);
   const roadGround = {
     groundAt: scene.surfaceAt,
@@ -381,8 +423,9 @@ function extras(cfg: SectionConfig, inputs: ExtraInputs, scene: PocScene, look: 
   });
   const canopy = photo?.canopyTrees ? inputs.canopy : undefined;
   return {
-    roads: buildRoadMesh(roads, inputs.route.project, roadBase),
-    roadStructures: buildRoadStructures(roads, inputs.route.project, roadBase, roadGround),
+    roads: buildRoadMesh(layout),
+    roadMarkings: buildRoadMarkings(layout),
+    roadStructures: buildRoadStructures(layout, roadGround),
     bridges,
     // an aerial shot has no rider to keep in view, so its trees need no sight lines
     trees:
@@ -431,7 +474,7 @@ const buildingStatus = (features: Feature[]) => new Map<string, BuildingStatus>(
 
 /** A section's scene in a look: the concept look ignores the config's photo extras (ADR 60). */
 export function buildSectionScene(cfg: SectionConfig, inputs: Omit<ExtraInputs, "bridgeIds">, look: Look = "concept"): SectionScene {
-  const scene = groundScene(cfg, inputs);
+  const scene = groundScene(cfg, inputs, roadLines(cfg, inputs, look));
   // the terrain's vertices are the DEM's nodes row by row, so the image's node colours replace the land cover's one for one
   let groundImage: SceneImage | undefined;
   if (look === "photo" && cfg.photo?.imagery) {

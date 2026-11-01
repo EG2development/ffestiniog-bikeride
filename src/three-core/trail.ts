@@ -14,6 +14,8 @@ export type TrailProfile = {
   smoothingM: number;
   /** [startM, endM] distance ranges carried on bridges */
   bridges?: [number, number][];
+  /** per bridge, the lowest 1 m lidar ground under its span (metres; null where it has none): what passes beneath */
+  bridgeGroundM?: (number | null)[];
   /** [startM, endM] distance ranges under road bridges (the DTM's deck was removed from the profile) */
   overbridges?: [number, number][];
 };

@@ -139,17 +139,37 @@ export function withClearance(shot: Shot, heightAt: HeightAt, riderAt: (frame: n
   minAboveM: number, minFromRiderM: number): Shot;    // CA3; this and droneSideTrack throw if no terrain is under the camera
 export function sequenceShots(shots: { shot: Shot; frames: number }[]): Shot; // each shot sees its own local frames
 
-// roads.ts: OSM roads draped on the terrain (D10)
+// roads.ts: OSM roads as smooth carriageways, the ground graded to them (D10)
 export type RoadLine = { coords: [number, number][]; highway: string; bridge?: boolean };  // lon/lat; OSM bridge=*
 export type RoadGround = { groundAt: HeightAt; openAt: (x: number, z: number) => boolean; ve: number };
+export type RoadLayout = { runs: Run[]; ve: number };  // each run: highway, half-width, cross-sections (centre, level, along)
 export const roadWidthM: (highway: string) => number;                    // typical width by class, not surveyed
-export function buildRoadMesh(roads: RoadLine[], project: Projector, heightAt: HeightAt): MeshArrays;
-//   ways of one class meeting end to end are joined first; resampled every 4 m; 3 vertices per cross-section
-//   (left, centre, right), each 0.3 m above heightAt; a bridge way's deck runs straight between its ends where the
-//   DTM drops lower; parts of a road off the terrain are dropped
-export function buildRoadStructures(roads: RoadLine[], project: Projector, heightAt: HeightAt, ground: RoadGround): MeshArrays;
-//   generic masonry wherever a road stands more than 0.6 m above groundAt: walls to the ground, a deck where openAt
-//   (the trail's clearance) or a bridge way's span, parapets over 2 m; position from the data, form generic (ADR 12)
+export function layRoads(roads: RoadLine[], project: Projector, heightAt: HeightAt,
+  opts: { ve: number; keep?: (x: number, z: number) => boolean;
+    under?: (x: number, z: number) => { lateral: number; ground?: number } | null; drape?: boolean }): RoadLayout;
+//   ways of one class meeting end to end are joined first; a centripetal Catmull-Rom curve through the OSM nodes,
+//   every 2 m; the long profile is heightAt smoothed along the road (Gaussian, 6 m), 5 cm over the graded ground; a
+//   bridge way's deck runs straight between its ends where the DTM drops lower; a road ending on another eases into
+//   its level over 20 m; where keep (the trail's formation and one grid cell, not graded) the carriageway clears
+//   heightAt; where under (the line's own bridge over it) it dips to the 1 m lidar's ground under the span
+//   (trail-profile.json bridgeGroundM) where it crosses the line, eased over 16 m; parts of a road off the terrain
+//   are dropped
+export function buildRoadMesh(layout: RoadLayout): MeshArrays;
+//   3 vertices per cross-section (left, centre, right), level across with a 1 in 40 crown; uvs in metres (across, along)
+export function buildRoadMarkings(layout: RoadLayout): MeshArrays;
+//   typical UK lines (TSM ch. 5), 100 mm, 1.5 cm over the surface: a centre line of 4 m marks and 8 m gaps where the
+//   carriageway is 5.5 m or wider, solid edge lines 0.25 m in on trunk and primary roads
+export function gradeToRoads(positions: Float32Array, layout: RoadLayout,
+  opts: { spacingM: number; keep: (x: number, z: number) => boolean }): Float32Array;
+//   earthworks: the ground under a carriageway and its verge (at least the grid's diagonal, 16 m grids included)
+//   15 cm under the surface, the highest road where carriageways cross; beyond, into the band between 1 in 2 batters
+//   (cutting or embankment) out to 20 m; not where keep, nor under a bridge's span; new positions, the input's unchanged
+export function seatRoads(layout: RoadLayout, groundAt: HeightAt): RoadLayout;
+//   each road raised onto the graded ground wherever it still rises above a cross-section (two roads too close for
+//   the grid, a junction's mouth), 5 cm clear, eased over 6 m either way; groundScene grades, seats and grades again
+export function buildRoadStructures(layout: RoadLayout, ground: RoadGround): MeshArrays;
+//   generic masonry wherever a road stands more than 0.6 m above groundAt: a deck where openAt (the trail's
+//   clearance) or a bridge way's span, walls to the ground beside it, parapets over 2 m; form generic (ADR 12)
 
 // bridge.ts (D10)
 export function buildBridgeMesh(trail: Trail, span: [number, number],
@@ -169,15 +189,17 @@ export const POC: { compositionId: 'Poc3DMaentwrog'; fps: 30; frames: 360; secti
 export type PocInputs = { route: RouteModel; dem: DemGrid; land: LandCover; profile: TrailProfile };
 export type PocScene = { trail: Trail; terrain: MeshArrays; cutFill: CutFill[]; dims: CyclistDims; table: Float64Array;
   riderAt: (frame: number) => Vec3;
-  heightAt: HeightAt;      // the rendered ground, after corridor flattening: camera clearance (CA3)
-  surfaceAt: HeightAt;     // the same ground on the mesh's own triangles, which the roads drape on
+  heightAt: HeightAt;      // the rendered ground, after corridor flattening and road grading: camera clearance (CA3)
+  surfaceAt: HeightAt;     // the same ground on the mesh's own triangles
   bareHeightAt: HeightAt;  // the bare DTM, which keeps road decks over the line
+  roadLayout?: RoadLayout; // a section's roads, laid on max(bareHeightAt, the flattened ground) before grading to them
   shot: Shot };
 export function buildPocScene(inputs: PocInputs): PocScene;
 export function buildPocExtras(inputs: PocInputs & { osm: OsmLine[]; features: Feature[]; bridgeIds: string[] },
   scene: PocScene): { roads: MeshArrays; bridges: MeshArrays[]; trees: TreePlacement };
-//   roads drape on max(bareHeightAt, surfaceAt), keeping their real level over the corridor's cut on a structure
-//   (a section's roadStructures); trees keep 2 m off them; only register entries are drawn (H1, G6, G7)
+//   roads lie on max(bareHeightAt, surfaceAt) (a section grades its ground to them first), keeping their real level
+//   over the corridor's cut on a structure (a section's roadStructures); trees keep 2 m off them; only register
+//   entries are drawn (H1, G6, G7)
 
 // registers.ts (D18): the registers, plus the runtime data checked at the boundary (t9, review R8).
 // Every validator throws an error that names the JSON path of the first problem.
@@ -214,7 +236,7 @@ export function mulberry32(seed: number): () => number;     // deterministic; th
 export type SectionKind = 'ground' | 'aerial';
 export type ShotSpec = { kind: 'drone-side' | 'follow' | 'aerial-orbit' | 'pull-back' | 'hold'; frames: number; /* fields per kind */ };
 export type SectionConfig = { id: string; title: string; kind: SectionKind; kmRange: [number, number]; window: string; frames: number; startDistM: number; shots: ShotSpec[]; captionIds: string[]; featureIds: string[]; ve: 1; maxTreesPerKind?: number };
-export type SectionScene = PocScene & { config: SectionConfig; roads: MeshArrays; roadStructures: MeshArrays; bridges: MeshArrays[]; trees: TreePlacement; water: WaterBody[]; buildings: SectionBuildings };
+export type SectionScene = PocScene & { config: SectionConfig; roads: MeshArrays; roadMarkings: MeshArrays; roadStructures: MeshArrays; bridges: MeshArrays[]; trees: TreePlacement; water: WaterBody[]; buildings: SectionBuildings };
 export const SECTIONS: Record<string, SectionConfig>;      // intro, heritage, overview, blaenau, vale-north, vale-south, maentwrog, trawsfynydd, closing
 export function shotsOf(cfg: SectionConfig, scene: { trail: Trail; riderAt: (f: number) => Vec3; heightAt: HeightAt; poseAt: (f: number) => CyclistPose }): Shot;
 export function buildSectionScene(cfg: SectionConfig, inputs: PocInputs & { osm: OsmLine[]; features: Feature[] }): SectionScene;
@@ -442,7 +464,7 @@ It releases its hold in an effect after its children have mounted, so `<ThreeCan
 | `tests/three-core/corridor.test.ts` | `flattenCorridor`: G5a, G5b, bridge spans, depths in metres whatever the ve (R3). |
 | `tests/three-core/cyclist.test.ts` | C1–C7 on every frame of a synthetic run. |
 | `tests/three-core/camera.test.ts` | CA1–CA4 on every frame of the two POC shots; `sequenceShots`; `withClearance`; throws with no terrain (R7); ADR 35: `aerialOrbit` and `pullBack` meet CA1–CA4 over a synthetic valley. |
-| `tests/three-core/roads.test.ts` | `buildRoadMesh` drops the parts of a road off the terrain, joins ways end to end and carries bridge decks over dips; `buildRoadStructures` walls raised roads and spans the trail; on the real Maentwrog data the A470 overbridge keeps its deck level and no raised road floats. |
+| `tests/three-core/roads.test.ts` | `buildRoadMesh` drops the parts of a road off the terrain, joins ways end to end, rounds corners through the OSM nodes, smooths the profile, crowns the cross-section and carries bridge decks over dips; a road under the line's bridge dips to the lidar's ground there (not a stream's far below); `seatRoads` raises a road onto ground left above it, eased, never lower; `gradeToRoads` grades verges, cuttings and banks (on 16 m grids too) and leaves the trail's corridor and bridge spans alone; `buildRoadMarkings` paints centre and edge lines; `buildRoadStructures` walls raised roads and spans the trail; on the real Maentwrog data the A470 overbridge keeps its deck level, the lane the line bridges at km 9.159 passes 2.5 m or more under the trail with no wall beside it, no raised road floats, roads are not buried and structures stand only at the bridges; at Trawsfynydd the A470 stays within 1 m of the lidar beside the trail. |
 | `tests/three-core/trees.test.ts` | `placeTrees`: 2 m off carriageways (R4); RL13 near zone, 1–15 per 100 m² and none beyond 300 m (ADR 37); R2 per-kind cap spread over the whole woodland; ve (R3). |
 | `tests/three-core/rng.test.ts` | `mulberry32` determinism (RN1, RN2). |
 | `tests/three-core/poc-acceptance.test.ts` | On the real POC data: G2, G1, G4, C1–C7, CA1–CA4, finite geometry, roads on the rendered terrain and trees off them (R4, R5), H1, G5b, G6, G7, L1, C8. |

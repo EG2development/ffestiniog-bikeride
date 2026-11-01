@@ -19,6 +19,7 @@ import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+from bridge_ground import span_ground  # noqa: E402
 from build_poc_data import (LEGEND, LIDAR_URL, PROFILE_PAD_M, ROAD_CLASSES, ROOT, along, distance_of,  # noqa: E402
                             interpolate_spans, landcover_class, load_route, point_in_ring, write_json)
 from dem.bng import bng_to_wgs84, wgs84_to_bng  # noqa: E402
@@ -322,6 +323,7 @@ def main(section, reuse_osm=False):
         # nodata on the centreline (a bridge over water, say): bridge it from the neighbours
         good = ~np.isnan(raw)
         raw = np.interp(ds, ds[good], raw[good])
+    ground = span_ground(ds, raw, [(b0, b1) for b0, b1, _ in bridges])  # what passes under each span (bridge_ground.py)
     on_bridge = np.zeros(ds.shape, dtype=bool)
     spans = [(b0 - 5, b1 + 5) for b0, b1, _ in bridges] + [(o0, o1) for o0, o1, _, _ in overbridges]
     interpolate_spans(ds, raw, on_bridge, spans)
@@ -332,7 +334,7 @@ def main(section, reuse_osm=False):
     keep = (ds % 5 == 0)
     write_json(f"{out_rel}/trail-profile.json", {
         "distanceM": [float(d) for d in ds[keep]], "elevationM": [round(float(h), 3) for h in smooth[keep]],
-        "smoothingM": 25, "noiseStdM": round(noise, 3), "bridges": [[b0, b1] for b0, b1, _ in bridges], "bridgeWays": [w for _, _, w in bridges],
+        "smoothingM": 25, "noiseStdM": round(noise, 3), "bridges": [[b0, b1] for b0, b1, _ in bridges], "bridgeWays": [w for _, _, w in bridges], "bridgeGroundM": ground,
         "overbridges": [[o0, o1] for o0, o1, _, _ in overbridges], "overbridgeWays": [w for _, _, w, _ in overbridges],
         "source": f"lidar DTM {1 if plevel == 0 else S['spacing']} m along the OSM centreline", "retrieved": TODAY,
     })

@@ -295,7 +295,14 @@ export function validateTrailProfile(x: unknown, path: string): TrailProfile {
       return [pair[0], pair[1]] as [number, number];
     });
   };
-  return { distanceM, elevationM, smoothingM: finiteNumber(x.smoothingM, `${path}.smoothingM`), bridges: spans("bridges"), overbridges: spans("overbridges") };
+  const bridges = spans("bridges");
+  let bridgeGroundM: (number | null)[] | undefined;
+  if (x.bridgeGroundM !== undefined) {
+    const v = x.bridgeGroundM;
+    if (!Array.isArray(v) || v.length !== (bridges?.length ?? 0)) fail(`${path}.bridgeGroundM`, `expected one level (or null) per bridge, ${bridges?.length ?? 0}`);
+    bridgeGroundM = v.map((g: unknown, i: number) => (g === null ? null : finiteNumber(g, `${path}.bridgeGroundM[${i}]`)));
+  }
+  return { distanceM, elevationM, smoothingM: finiteNumber(x.smoothingM, `${path}.smoothingM`), bridges, ...(bridgeGroundM && { bridgeGroundM }), overbridges: spans("overbridges") };
 }
 
 export function validateOsmLines(x: unknown, path: string): OsmLine[] {

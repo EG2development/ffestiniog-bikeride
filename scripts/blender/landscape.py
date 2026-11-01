@@ -375,8 +375,9 @@ def material_for(role, aerial):
         return terrain_material("terrain-aerial" if aerial else "terrain-ground", aerial)
     if role == "trail":
         return surface_material("trail-gravel", "trail", TILE_M["trail"], rough_scale=1.1, centre=(0.20, 0.19, 0.17))  # compacted grey slate dust
-    if role == "road":
-        return surface_material("road-asphalt", "road", TILE_M["road"], centre=(0.055, 0.055, 0.058))  # weathered asphalt
+    if role in ("road", "road-marking"):
+        import roadway  # the carriageways' asphalt (on their metre UVs) and paint
+        return roadway.road_material() if role == "road" else roadway.marking_material()
     if role == "bridge":
         return surface_material("bridge-stone", "stone-wall", TILE_M["stone-wall"], box=True)
     if role == "building-existing":
