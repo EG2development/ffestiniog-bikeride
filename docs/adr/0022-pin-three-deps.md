@@ -10,11 +10,13 @@ Proposed
 
 ## Context
 
-`@remotion/three` is version-locked to `remotion`, and `@react-three/fiber` 9.8.2 needs react ≥19 <19.4 and three ≥0.156 (installed react is 19.2.3).
+`@remotion/three` is version-locked to `remotion`, and `@react-three/fiber` 9.8.2 needs react ≥19 <19.4 and three ≥0.156 (installed react is 19.3.1).
 
 ## Decision
 
-Pin `three` 0.186.1, `@react-three/fiber` 9.8.2, `@remotion/three` 4.0.538 and `@types/three` 0.186.0 (dev). Don't add `@react-three/drei`.
+Pin `three` 0.186.1, `@react-three/fiber` 9.8.2, `@remotion/three` 4.0.539 and `@types/three` 0.186.0 (dev). Don't add `@react-three/drei`.
+
+2026-11-01: Remotion moved from 4.0.538 to its 4.0.539 patch, with react 19.3.1; three stays on 0.186.1 (0.187.0 not yet assessed).
 
 ## Consequences
 

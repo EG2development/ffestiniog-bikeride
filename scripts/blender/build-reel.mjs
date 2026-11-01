@@ -33,6 +33,6 @@ const findBlender = () => {
 const blender = findBlender();
 mkdirSync(resolve(root, "out/blender/reel"), { recursive: true });
 run("npm", ["run", "blender:export", "--", "reel"], "export");
-run(blender, ["--background", "--factory-startup", "--python", "scripts/blender/build_reel.py", "--", "out/blender/exports", master, percent, samples, ...(dressed ? ["--dressed"] : [])], "master build");
+run(blender, ["--background", "--factory-startup", "--python-exit-code", "1", "--python", "scripts/blender/build_reel.py", "--", "out/blender/exports", master, percent, samples, ...(dressed ? ["--dressed"] : [])], "master build");
 if (process.argv.includes("--render")) run(blender, ["--background", master, "-a"], "render");
 console.log(`built ${master}`);

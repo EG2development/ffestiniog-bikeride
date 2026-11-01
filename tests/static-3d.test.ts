@@ -167,8 +167,9 @@ describe("rendering rules", () => {
     // (ADR 60) the Sentinel-2 scene: the Earth Search STAC API that names its file and the open-data bucket that holds it;
     // (ADR 63) the OS Downloads API, which redirects to a signed copy of OS OpenMap - Local; DataMapWales's WFS and the
     // NRW lidar archive it lists (read by byte range); (ADR 62) the Blender build's CC0 assets: Poly Haven's API, which
-    // names each file, and the MakeHuman system asset pack
-    const allowed = ["dmwproductionblob.blob.core.windows.net", "api.openstreetmap.org", "dl.polyhaven.org", "polyhaven.com", "earth-search.aws.element84.com", "sentinel-cogs.s3.us-west-2.amazonaws.com", "api.os.uk", "datamap.gov.wales", "api.polyhaven.com", "files.makehumancommunity.org"];
+    // names each file, and the MakeHuman system asset pack; the Wikimedia Commons API for the photographic reference
+    // catalogue (data/source-register.md), whose thumbnails photo_match.py fetches by the URLs the catalogue records
+    const allowed = ["dmwproductionblob.blob.core.windows.net", "api.openstreetmap.org", "dl.polyhaven.org", "polyhaven.com", "earth-search.aws.element84.com", "sentinel-cogs.s3.us-west-2.amazonaws.com", "api.os.uk", "datamap.gov.wales", "api.polyhaven.com", "files.makehumancommunity.org", "commons.wikimedia.org"];
     for (const f of readdirSync(resolve(ROOT, "scripts"), { recursive: true, encoding: "utf8" }).filter((n) => /\.(py|mjs|ts)$/.test(n))) {
       const src = read(`scripts/${f}`);
       for (const [, host] of src.matchAll(/https?:\/\/([A-Za-z0-9.-]+)/g)) {
@@ -233,7 +234,7 @@ describe("data and dependency rules", () => {
     const { dependencies: deps, devDependencies: dev } = pkg();
     expect(deps["three"]).toBe("0.186.1");
     expect(deps["@react-three/fiber"]).toBe("9.8.2");
-    expect(deps["@remotion/three"]).toBe("4.0.538");
+    expect(deps["@remotion/three"]).toBe("4.0.539");
     expect(dev["@types/three"]).toBe("0.186.0");
     expect(deps["@react-three/drei"]).toBeUndefined();
   });

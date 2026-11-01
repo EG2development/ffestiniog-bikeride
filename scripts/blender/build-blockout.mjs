@@ -29,7 +29,7 @@ const findBlender = () => {
 
 const blender = findBlender();
 run("npm", ["run", "blender:export", "--", "maentwrog-photo"], "export");
-run(blender, ["--background", "--factory-startup", "--python", "scripts/blender/import_blockout.py", "--", pkg, blend, ...(dressed ? ["32", "--dressed"] : [])], "import");
+run(blender, ["--background", "--factory-startup", "--python-exit-code", "1", "--python", "scripts/blender/import_blockout.py", "--", pkg, blend, ...(dressed ? ["32", "--dressed"] : [])], "import");
 if (process.argv.includes("--stills")) {
   for (const f of STILLS) run(blender, ["--background", blend, "--render-output", dressed ? "//../stills/dressed_" : "//../stills/blockout_", "--render-format", "PNG", "--render-frame", String(f)], `render frame ${f}`);
 }
