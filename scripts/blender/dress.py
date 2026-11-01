@@ -7,6 +7,7 @@ import numpy as np
 
 import bike
 import cast
+import gait
 import landscape
 
 RUNNERS = ["priya", "aisha", "zara", "jamal", "owen", "tomos"]
@@ -40,7 +41,7 @@ def walker(scene, root, w, arr, pid, coll, prefix):
         pram.location = (PRAM_HANDLE_AHEAD, 0, 0)
         for side, s in (("l", 1), ("r", -1)):
             person["ctl"][f"hand_{side}"].location = (PRAM_HANDLE_AHEAD - 0.02, 0.19 * s, handle_z - 0.02)
-    cast.bake_gait(person, frames, cast.distances(arr[:, 0:2]), float(arr[0, 4]), w["activity"], scene.view_layers[0], wheels)
+    gait.bake_gait(person, frames, cast.distances(arr[:, 0:2]), float(arr[0, 4]), w["activity"], scene.view_layers[0], wheels)
     return {"walker": w["index"], "activity": w["activity"], "person": pid, "heightM": w["heightM"], "scale": round(person["k"], 3)}
 
 
@@ -58,7 +59,7 @@ def rider(scene, root, rows, dims, coll, prefix):
         obj.rotation_mode = "XYZ"
     wheel, crank = rows[:, 9].astype(np.float64), rows[:, 10].astype(np.float64)
     for obj, a in ((parts["rear_wheel"], wheel), (parts["front_wheel"], wheel), (parts["crank"], crank), (parts["pedal_l"], -crank), (parts["pedal_r"], -crank)):
-        cast.key_array(obj, "rotation_euler", 1, frames, a)
+        gait.key_array(obj, "rotation_euler", 1, frames, a)
     return {"person": cast.RIDER, **fit}
 
 

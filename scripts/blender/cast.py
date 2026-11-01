@@ -1,18 +1,15 @@
-"""The cast: MPFB people, their IK controls, and foot-locked walking, running, pram pushing and riding (Phase 4).
+"""The cast: MPFB people, their IK controls, and riding (Phase 4); walking, running and pram pushing are gait.py's.
 
-People are MakeHuman meshes (MPFB 2.0.18, CC0 system assets) with the `game_engine` skeleton. Gait is procedural and
-keyed per frame from distance travelled (plan Phase 4 step 3: time follows distance), so a planted foot never slides:
-the stance foot's ankle moves back at exactly the root's speed, rolling heel to toe; the hip height each frame is the
-highest both legs reach (which gives the body its rise and fall). Riders sit on the procedural bicycle with feet on
-the pedals and hands on the grips by IK (R02/R03). PROFILES is the casting sheet (plan Phase 4: varied ages, genders,
-ethnic backgrounds and builds; never one model recoloured).
+People are MakeHuman meshes (MPFB 2.0.18, CC0 system assets) with the `game_engine` skeleton. Riders sit on the
+procedural bicycle with feet on the pedals and hands on the grips by IK (R02/R03). PROFILES is the casting sheet (plan
+Phase 4: varied ages, genders, ethnic backgrounds and builds; never one model recoloured).
 """
 import math
 
 import addon_utils
 import bpy
 import numpy as np
-from mathutils import Matrix, Quaternion, Vector
+from mathutils import Matrix, Vector
 
 import kit
 
@@ -40,12 +37,6 @@ PROFILES = [
     ("jamal", 1, 23, (1.0, 0.0, 0.0), 0.45, 0.6, "young_african_male", "short01", "eyebrow005", "male_casualsuit02", "shoes05", -0.04, None),
 ]
 RIDER = "dylan"
-GAIT = {  # stride per gait cycle (in body heights), stance fraction, foot lift (m at 1.7 m), arm swing (m), lean (deg)
-    "walk": dict(stride=0.75, duty=0.6, lift=0.07, arm=0.15, lean=3.0, twist=5.0),
-    "pram": dict(stride=0.68, duty=0.62, lift=0.06, arm=0.0, lean=8.0, twist=2.0),
-    "run": dict(stride=1.15, duty=0.36, lift=0.22, arm=0.2, lean=10.0, twist=8.0),
-}
-LEG_REACH = 0.985  # of the rest leg length: the IK never straightens fully (no knee snap)
 
 
 def ensure_mpfb():
@@ -245,137 +236,6 @@ def relax_hands(arm, curl=0.35):
         elif pb.name.startswith("thumb_02") or pb.name.startswith("thumb_03"):
             pb.rotation_mode = "XYZ"
             pb.rotation_euler = (curl * 0.5, 0, 0)
-
-
-# ---------------------------------------------------------------- gait
-
-def _pivot(x, z, off, pitch):
-    """The ankle when the foot pitches about a contact point `off` (forward, up) from the flat foot's ankle at (x, z):
-    the contact stays where it is on the ground, so nothing slides while the foot rolls."""
-    c, sn = math.cos(-pitch), math.sin(-pitch)
-    rx, rz = off[0] * c + off[1] * sn, -off[0] * sn + off[1] * c
-    return x + off[0] - rx, z + off[1] - rz
-
-
-def _foot(u, g, S, info, k):
-    """Ankle position (x forward, z up; root space, metres) and toe pitch (rad, + toes up) at gait fraction u."""
-    duty, ankle_z = g["duty"], info["ankle_z"] * k
-    ball = (info["ball"][0] * k, info["ball"][1] * k)
-    heel = (info["heel"][0] * k, info["heel"][1] * k)
-    half = S * duty / 2
-    strike, toe_off = math.radians(12), math.radians(-35 if g is GAIT["run"] else -30)
-    front = _pivot(half, ankle_z, heel, strike)
-    back = _pivot(-half, ankle_z, ball, toe_off)
-    if u < duty:
-        s = u / duty
-        x = half - S * duty * s
-        if s < 0.12:  # heel strike: rolling forward onto the heel
-            p = strike * (1 - s / 0.12)
-            return (*_pivot(x, ankle_z, heel, p), p)
-        if s < 0.6:
-            return x, ankle_z, 0.0
-        p = toe_off * ((s - 0.6) / 0.4) ** 2  # heel off: pivoting on the ball
-        return (*_pivot(x, ankle_z, ball, p), p)
-    s = (u - duty) / (1 - duty)
-    e = s * s * (3 - 2 * s)
-    x = back[0] + (front[0] - back[0]) * e
-    z = back[1] + (front[1] - back[1]) * e + g["lift"] * k * math.sin(math.pi * s) ** (0.8 if g is GAIT["run"] else 1.2)
-    p = toe_off + (strike - toe_off) * min(1.0, s * 1.6) if s < 0.75 else strike
-    return x, z, p
-
-
-def key_array(obj, path, index, frames, values):
-    """Linear keys for one channel from arrays, written straight into the F-curve (thousands of frames at once)."""
-    ad = obj.animation_data_create()
-    if ad.action is None:
-        ad.action = bpy.data.actions.new(obj.name + "-motion")
-    act = ad.action
-    if hasattr(act, "fcurve_ensure_for_datablock"):
-        fc = act.fcurve_ensure_for_datablock(obj, path, index=index)
-    else:
-        fc = act.fcurves.find(path, index=index) or act.fcurves.new(path, index=index)
-    n = len(frames)
-    co = np.empty(2 * n, dtype=np.float32)
-    co[0::2], co[1::2] = frames, values
-    fc.keyframe_points.clear()
-    fc.keyframe_points.add(n)
-    fc.keyframe_points.foreach_set("co", co)
-    fc.keyframe_points.foreach_set("interpolation", np.ones(n, dtype=np.int32))  # LINEAR
-    fc.update()
-
-
-def key_vectors(obj, path, frames, rows):
-    rows = np.asarray(rows, dtype=np.float64)
-    for i in range(rows.shape[1]):
-        key_array(obj, path, i, frames, rows[:, i])
-
-
-def bake_gait(person, frames, distance, phase0, activity, view_layer, prams=None):
-    """Key a person's body bob, pelvis twist, feet and hands for every frame from the distance it has travelled."""
-    arm, ctl, info, k = person["arm"], person["ctl"], person["info"], person["k"]
-    g = GAIT[activity]
-    S = g["stride"] * info["height"] * k
-    to_root = Matrix.Rotation(math.pi / 2, 3, "Z")  # armature space (forward -Y) to root space (forward +X)
-    foot_rest = {s: to_root @ arm.data.bones[f"foot_{s}"].matrix_local.to_3x3() for s in ("l", "r")}
-    hip_w = (info["hip_l"].x - info["hip_r"].x) / 2 * k
-    L = info["leg"] * k * LEG_REACH
-    rest_hip = info["hip_z"] * k
-    lean = math.radians(g["lean"])
-    ch = {key: [] for key in ("bob", "foot_l", "rot_l", "foot_r", "rot_r", "pelvis", "spine_02", "spine_03", "hand_l", "hand_r")}
-    for i in range(len(frames)):
-        ph = phase0 + 2 * math.pi * distance[i] / S
-        feet = {}
-        for side, off in (("l", 0.0), ("r", math.pi)):
-            u = ((ph + off) % (2 * math.pi)) / (2 * math.pi)
-            x, z, pitch = _foot(u, g, S, info, k)
-            feet[side] = (Vector((x, hip_w * 0.85 * (1 if side == "l" else -1), z)), pitch, u)
-        # the highest hip both legs reach, below the standing height: this is the body's rise and fall
-        h = rest_hip * 0.99
-        for side, (a, _, _) in feet.items():
-            dy = a.y - (hip_w if side == "l" else -hip_w)
-            h = min(h, a.z + math.sqrt(max(L * L - a.x * a.x - dy * dy, 0.0)))
-        if activity == "run":  # flight: the body rises between foot contacts
-            h += 0.035 * k * max(0.0, math.cos(2 * ph))
-        ch["bob"].append(h - rest_hip)
-        for side, (a, pitch, _) in feet.items():
-            ch[f"foot_{side}"].append(tuple(a))
-            q = (Matrix.Rotation(-pitch, 3, "Y") @ foot_rest[side]).to_quaternion()
-            if ch[f"rot_{side}"] and Quaternion(ch[f"rot_{side}"][-1]).dot(q) < 0:
-                q.negate()
-            ch[f"rot_{side}"].append(tuple(q))
-        twist = math.radians(g["twist"]) * math.cos(ph)  # the hip of the forward leg leads
-        ch["pelvis"].append(tuple(rotate_bone(arm, "pelvis", (Vector((0, 0, 1)), -twist))))
-        ch["spine_02"].append(tuple(rotate_bone(arm, "spine_02", (Vector((1, 0, 0)), lean))))
-        ch["spine_03"].append(tuple(rotate_bone(arm, "spine_03", (Vector((0, 0, 1)), twist * 1.6))))
-        for side, s in (("l", 1), ("r", -1)):
-            opp = feet["r" if side == "l" else "l"][2]
-            c = math.cos(2 * math.pi * opp)  # the hand swings with the opposite leg; armature space, forward -Y
-            sh = info[f"shoulder_{side}"]
-            if activity == "run":  # elbows bent near a right angle, hands passing the hips
-                ch[f"hand_{side}"].append((sh.x, sh.y - 0.10 - g["arm"] * c, sh.z - 0.36 + 0.06 * max(0.0, c)))
-            else:
-                ch[f"hand_{side}"].append((sh.x + s * 0.05, sh.y - g["arm"] * c, sh.z - info["arm"] * 0.93 + 0.05 * abs(c)))
-        if i == 0:  # calibrate the knees and elbows on the first pose, before anything is keyed
-            arm.location = (0, 0, ch["bob"][0])
-            for side in ("l", "r"):
-                ctl[f"foot_{side}"].location = ch[f"foot_{side}"][0]
-                ctl[f"foot_{side}"].rotation_mode = "QUATERNION"
-                ctl[f"foot_{side}"].rotation_quaternion = ch[f"rot_{side}"][0]
-                if activity != "pram":
-                    ctl[f"hand_{side}"].location = ch[f"hand_{side}"][0]
-            calibrate_poles(arm, view_layer)
-    fr = np.asarray(frames, dtype=np.float64)
-    key_array(arm, "location", 2, fr, ch["bob"])
-    for side in ("l", "r"):
-        key_vectors(ctl[f"foot_{side}"], "location", fr, ch[f"foot_{side}"])
-        key_vectors(ctl[f"foot_{side}"], "rotation_quaternion", fr, ch[f"rot_{side}"])
-        if activity != "pram":
-            key_vectors(ctl[f"hand_{side}"], "location", fr, ch[f"hand_{side}"])
-    for bone in ("pelvis", "spine_02", "spine_03"):
-        key_vectors(arm, f'pose.bones["{bone}"].rotation_quaternion', fr, ch[bone])
-    for w in prams or []:
-        w.rotation_mode = "XYZ"
-        key_array(w, "rotation_euler", 1, fr, np.asarray(distance) / 0.118)
 
 
 def person_on_root(pid, root, prefix, coll, height_m, activity):
