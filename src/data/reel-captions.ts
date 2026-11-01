@@ -1,6 +1,8 @@
 // Iteration 2: at most 15 characters per second, inside the safe area (docs/adr/0048-overlays-safe-area-and-pacing.md).
 // Every caption of the 3D compositions as data, with frame ranges (docs/adr/0036-captions-as-data.md;
-// spec RL17–RL22). No caption text lives in a component.
+// spec RL17–RL22). No caption text lives in a component. Distances read in miles and heights in feet (units.ts).
+
+import { feet, miles } from "./units";
 
 export type CaptionPosition = "top-left" | "bottom-left" | "bottom-center" | "badge" | "attribution";
 export type Caption = { id: string; text: string; from: number; to: number; position: CaptionPosition; scene?: string };
@@ -29,7 +31,7 @@ export const CAPTIONS: Caption[] = [
   { id: "attribution", text: ATTRIBUTION, from: 0, to: 2700, position: "attribution" },
   { id: "intro-title", text: "Blaenau Ffestiniog ↔ Trawsfynydd — a cycling concept on the former Bala and Festiniog Railway", from: 15, to: 236, position: "top-left", scene: "intro" },
   { id: "heritage", text: "Mothballed, not dismantled. Heritage rail and rail-with-trail have both been proposed.", from: 255, to: 470, position: "top-left", scene: "heritage" },
-  { id: "overview-title", text: "13.2 km of trackbed, 170–247 m above sea level — shown from real lidar terrain", from: 500, to: 700, position: "top-left", scene: "overview" },
+  { id: "overview-title", text: `${miles(13240)} miles of trackbed, ${feet(170)}–${feet(247)} ft above sea level — shown from real lidar terrain`, from: 500, to: 700, position: "top-left", scene: "overview" },
   { id: "live-station", text: "Blaenau Ffestiniog: still a live station (Conwy Valley Line, Ffestiniog Railway)", from: 795, to: 990, position: "top-left", scene: "blaenau" },
   { id: "vale-north-title", text: "Vale of Ffestiniog — the trackbed drops towards the valley floor", from: 1100, to: 1260, position: "top-left", scene: "vale" },
   { id: "vale-title", text: "Vale of Ffestiniog: past the old Festiniog station site, demolished by 2011", from: 1365, to: 1545, position: "top-left", scene: "vale" },
@@ -46,7 +48,7 @@ export const reelCaptions = (look: "concept" | "photo"): Caption[] => (look === 
 export const PHOTO_CAPTIONS: Caption[] = [
   { id: "disclaimer", text: DISCLAIMER, from: 0, to: 600, position: "badge" },
   { id: "attribution", text: ATTRIBUTION, from: 0, to: 600, position: "attribution" },
-  { id: "section-title", text: "Maentwrog Road · km 7.7–9.7 of the mothballed Bala–Festiniog line", from: 0, to: 170, position: "top-left" },
+  { id: "section-title", text: `Maentwrog Road · miles ${miles(7700)}–${miles(9700)} of the mothballed Bala–Festiniog line`, from: 0, to: 170, position: "top-left" },
   { id: "proposed-label", text: "Proposed trail (concept): 3 m shared-use path on the old trackbed", from: 0, to: 160, position: "bottom-left" },
   { id: "riders-view", text: "Rider's view at handlebar height; gradients from the lidar profile", from: 180, to: 345, position: "bottom-left" },
   { id: "closing", text: "Concept only. Mothballed line; heritage rail has been proposed. Not an approved route.", from: 410, to: 600, position: "top-left" },
@@ -58,16 +60,16 @@ export const PHOTO_LEGEND = {
   bridge: "Bridge: OSM position, approximate generic form",
   ground: "People illustrative; verges levelled and cleared for the concept",
 } as const;
-/** The legend line for registered earthworks a drone shot flies over (spec G8): their km (or km range), marked
- * approximate and DEM-derived, as the register's notes say. */
+/** The legend line for registered earthworks a drone shot flies over (spec G8): where they are along the line, in miles
+ * from Blaenau Ffestiniog (the register keeps km), marked approximate and DEM-derived, as the register's notes say. */
 export const photoEarthworksLine = (fromKm: number, toKm: number): string =>
-  toKm - fromKm < 0.005 ? `Earthwork at km ${fromKm.toFixed(2)}: approximate, DEM-derived` : `Earthworks at km ${fromKm.toFixed(2)}–${toKm.toFixed(2)}: approximate, DEM-derived`;
+  toKm - fromKm < 0.005 ? `Earthwork at mile ${miles(fromKm * 1000, 2)}: approximate, DEM-derived` : `Earthworks at miles ${miles(fromKm * 1000, 2)}–${miles(toKm * 1000, 2)}: approximate, DEM-derived`;
 
 /** The 12 s Maentwrog proof of concept on its own (360 frames), with the ranges its render checks expect. */
 export const POC_CAPTIONS: Caption[] = [
   { id: "disclaimer", text: DISCLAIMER, from: 0, to: 360, position: "badge" },
   { id: "attribution", text: ATTRIBUTION, from: 0, to: 360, position: "attribution" },
-  { id: "section-title", text: "Maentwrog Road · km 7.7–9.7 of the mothballed Bala–Festiniog line", from: 0, to: 170, position: "top-left" },
+  { id: "section-title", text: `Maentwrog Road · miles ${miles(7700)}–${miles(9700)} of the mothballed Bala–Festiniog line`, from: 0, to: 170, position: "top-left" },
   { id: "proposed-label", text: "Proposed trail (concept): 3 m shared-use path on the old trackbed", from: 0, to: 160, position: "bottom-left" },
   { id: "closing", text: "Concept only. Mothballed line; heritage rail has been proposed. Not an approved route.", from: 170, to: 360, position: "top-left" },
 ];

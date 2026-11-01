@@ -5,6 +5,7 @@ import { TitleCard, DisclaimerBadge } from "../components/Caption";
 import { ElevationStrip } from "../components/ElevationStrip";
 import { useRouteData } from "../data/RouteDataProvider";
 import { SCENES } from "../data/timeline";
+import { miles } from "../data/units";
 
 export const Scene8FutureVision: React.FC = () => {
   const frame = useCurrentFrame();
@@ -29,7 +30,7 @@ export const Scene8FutureVision: React.FC = () => {
           <DisclaimerBadge durationInFrames={duration} />
           <TitleCard
             title="A concept for the future"
-            subtitle="13.2 km of former railway, one possible active-travel link — subject to ownership, heritage-rail history, and full feasibility review"
+            subtitle={`${miles(13240)} miles of former railway, one possible active-travel link — subject to ownership, heritage-rail history, and full feasibility review`}
             durationInFrames={duration}
           />
           <ElevationStrip t={1} />

@@ -1,6 +1,7 @@
 import React from "react";
 import { ElevationProfilePoint } from "../data/route";
 import { useRouteData } from "../data/RouteDataProvider";
+import { feet, miles } from "../data/units";
 
 const W = 560;
 const H = 120;
@@ -66,9 +67,9 @@ export const ElevationStrip: React.FC<ElevationStripProps> = ({ t }) => {
           paddingBottom: 6,
         }}
       >
-        Elevation {min.toFixed(0)}–{max.toFixed(0)} m
+        Elevation {feet(min)}–{feet(max)} ft
         {" · "}
-        {totalKm.toFixed(1)} km
+        {miles(totalKm * 1000)} miles
       </div>
     </div>
   );

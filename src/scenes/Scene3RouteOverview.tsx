@@ -5,6 +5,7 @@ import { Label } from "../components/Caption";
 import { ElevationStrip } from "../components/ElevationStrip";
 import { useRouteData } from "../data/RouteDataProvider";
 import { SCENES } from "../data/timeline";
+import { miles } from "../data/units";
 
 export const Scene3RouteOverview: React.FC = () => {
   const frame = useCurrentFrame();
@@ -25,9 +26,7 @@ export const Scene3RouteOverview: React.FC = () => {
       overlay={
         <>
           <Label
-            text={`${(totalLengthM / 1000).toFixed(1)} km / ${(
-              totalLengthM / 1609.34
-            ).toFixed(1)} miles, Blaenau Ffestiniog to Trawsfynydd`}
+            text={`${miles(totalLengthM)} miles, Blaenau Ffestiniog to Trawsfynydd`}
             durationInFrames={duration}
             position="top-left"
           />

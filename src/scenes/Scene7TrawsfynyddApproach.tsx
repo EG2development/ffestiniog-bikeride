@@ -5,6 +5,7 @@ import { Cyclist } from "../components/Cyclist";
 import { Label, TitleCard } from "../components/Caption";
 import { useRouteData } from "../data/RouteDataProvider";
 import { SCENES } from "../data/timeline";
+import { miles } from "../data/units";
 
 const T_START = 0.68;
 const T_END = 1.0;
@@ -39,7 +40,7 @@ export const Scene7TrawsfynyddApproach: React.FC = () => {
           <Sequence from={labelDuration} layout="none">
             <TitleCard
               title="Trawsfynydd"
-              subtitle="Journey's end for this concept — 13.2 km from Blaenau Ffestiniog"
+              subtitle={`Journey's end for this concept — ${miles(13240)} miles from Blaenau Ffestiniog`}
               durationInFrames={DESTINATION_CARD_FRAMES}
             />
           </Sequence>
