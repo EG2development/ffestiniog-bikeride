@@ -35,6 +35,25 @@ describe("pipeline self-tests", () => {
       expect(r.status, `${script}: ${r.out.split("\n").slice(-3).join("\n")}`).toBe(0);
     }
   });
+
+  it("fetch_photo_refs.py --self-test (taken dates, headings, licences, route snapping)", () => {
+    const r = python("scripts/fetch_photo_refs.py", "--self-test");
+    expect(r.status, r.out.split("\n").slice(-3).join("\n")).toBe(0);
+  });
+});
+
+type Photo = { id: string; date: string | null; use: string; licence: string; location: { offset_m: number }; source: string; photographer: string | null };
+
+describe("the photographic reference catalogue (data/photo-references.json)", () => {
+  it("only photos taken in 2012 or later are for reconstruction; every one is openly licensed, sourced, credited and in the corridor", () => {
+    const { photos } = readJson<{ photos: Photo[] }>("data/photo-references.json");
+    expect(photos.length).toBeGreaterThan(100);
+    const bad = photos.filter((p) =>
+      (p.use === "reconstruction") !== (p.date !== null && Number(p.date.slice(0, 4)) >= 2012) ||
+      !/^(CC0|CC BY|Public domain)/i.test(p.licence) || !p.source?.startsWith("https://commons.wikimedia.org/") || p.location.offset_m > 600);
+    expect(bad.map((p) => p.id)).toEqual([]);
+    expect(photos.filter((p) => p.use === "reconstruction" && !p.photographer).map((p) => p.id)).toEqual([]);
+  });
 });
 
 type Header = { cols: number; rows: number; spacingM: number; originE: number; originN: number; nodata: number; file: string; sourceFile: string };

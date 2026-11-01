@@ -49,13 +49,28 @@ open items):
 | Nearby National Cycle Network (NCN 82, Trawsfynydd–Gellilydan) | [walkwheelcycletrust.org.uk](https://www.walkwheelcycletrust.org.uk/find-a-route-on-the-national-cycle-network/trawsfynydd-to-gellilydan) (Sustrans route page, now under the Walk Wheel Cycle Trust domain) | Confirms this route runs the opposite way around the lake, not along our corridor |
 | Gwynedd Council Active Travel Network Map consultation | WebSearch snippets of democracy.gwynedd.llyw.cymru / gwynedd.llyw.cymru pages | **Not independently verified by direct page fetch — confirm before citing publicly.** Reported window: 3 Sept–26 Nov 2026 |
 
-## Visual references (not yet gathered)
+## Visual references: photographs along the route
 
-Deliverable #3 of the brief (landscape/visual reference catalogue for
-Snowdonia/Eryri, Blaenau Ffestiniog slate landscape, Trawsfynydd lake, former
-station buildings) has not been started. Do this before building scene
-visuals so the stylised environment stays recognisable rather than generic
-mountain scenery.
+`data/photo-references.json`, built by `python scripts/fetch_photo_refs.py`
+from the Wikimedia Commons API (fetched 2026-10-31): every openly licensed,
+geolocated Commons photo whose camera stands within 600 m of the trackbed,
+most of them Geograph Britain and Ireland imports, which carry the camera and
+subject positions and the taken date. 1,170 photos, 715 taken in 2012 or
+later (`use: "reconstruction"`); older ones are marked `history` and undated
+ones `undated`, and neither is used for the current scene. Each record has
+the camera position, route distance and offset, taken date and its
+confidence (taken date, not upload date), photographer, licence (CC BY-SA 2.0
+for 90 %), heading (camera to subject), 35 mm lens when the EXIF holds one,
+subject, section and whether it looks along the trackbed. Only links are
+stored: no photograph is copied into the project, and any published use must
+credit the photographer and keep the licence (CC BY-SA is share-alike).
+
+`matrix` in the same file is the location-to-photograph matrix: per ground
+section, coverage by subject, headings known, 250 m stretches within 150 m of
+the line that have no post-2012 photo (`gaps_near_line`), and the best
+candidates for matched cameras. `scripts/blender/photo_match.py` renders the
+dressed reel from those camera positions beside each photograph. Google Street View and Google Earth
+were not used: their terms do not allow building models from their imagery.
 
 ## Map basemap tile pipeline
 
