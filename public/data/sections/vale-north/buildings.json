@@ -492,11 +492,12 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes",
+  "type": "ruins",
   "lidar": "absent",
   "lidarFlown": "2022-01-11",
   "osMap": "absent",
-  "mapEditedAt": "2022-10-16"
+  "mapEditedAt": "2022-10-16",
+  "ruin": true
  },
  {
   "id": "building-vale-north-1237771745",
@@ -4367,11 +4368,12 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes",
+  "type": "ruins",
   "lidar": "present",
   "lidarFlown": "2022-01-11",
   "osMap": "absent",
-  "mapEditedAt": "2016-12-27"
+  "mapEditedAt": "2016-12-27",
+  "ruin": true
  },
  {
   "id": "building-vale-north-462094632",
@@ -5457,11 +5459,12 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes",
+  "type": "ruins",
   "lidar": "present",
   "lidarFlown": "2022-01-11",
   "osMap": "confirmed",
-  "mapEditedAt": "2016-12-27"
+  "mapEditedAt": "2016-12-27",
+  "ruin": true
  },
  {
   "id": "building-vale-north-834775892",

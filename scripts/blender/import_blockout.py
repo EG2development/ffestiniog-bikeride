@@ -31,7 +31,7 @@ PLAIN = {
     "building-existing": ((0.62, 0.58, 0.52, 1), 0.8), "building-translucent": ((0.80, 0.30, 0.25, 1), 0.8),
     "barrier-wall": ((0.40, 0.38, 0.35, 1), 0.9), "barrier-hedge": ((0.15, 0.30, 0.12, 1), 0.9), "barrier-fence": ((0.45, 0.33, 0.22, 1), 0.9),
     "conifer": ((0.08, 0.20, 0.09, 1), 0.9), "broadleaf": ((0.17, 0.30, 0.10, 1), 0.9), "grass": ((0.30, 0.38, 0.14, 1), 0.9),
-    "rider": ((0.9, 0.15, 0.1, 1), 0.6), "walk": ((0.15, 0.35, 0.80, 1), 0.7), "run": ((0.90, 0.60, 0.10, 1), 0.7), "pram": ((0.60, 0.20, 0.70, 1), 0.7),
+    "rider": ((0.9, 0.15, 0.1, 1), 0.6), "walk": ((0.15, 0.35, 0.80, 1), 0.7), "run": ((0.90, 0.60, 0.10, 1), 0.7), "pram": ((0.60, 0.20, 0.70, 1), 0.7), "cycle": ((0.85, 0.25, 0.55, 1), 0.6), "trike": ((0.95, 0.45, 0.10, 1), 0.6), "sit": ((0.30, 0.65, 0.65, 1), 0.7), "dog": ((0.45, 0.30, 0.15, 1), 0.8),
     "water": ((0.10, 0.25, 0.40, 1), 0.1),
 }
 # nominal heights (metres) the placeholders are drawn at, times the instance's own scale (src/three-core/trees.ts)
@@ -188,7 +188,9 @@ def build_section(pkg_dir, prefix="", samples=64, dressed=False):
         import cast
         import dress
         import landscape
+        import trailfolk
         import vegetation
+        import waterside
         cast.ensure_mpfb()
     pkg = Path(pkg_dir)
     man = json.loads((pkg / "manifest.json").read_text(encoding="utf8"))
@@ -274,14 +276,30 @@ def build_section(pkg_dir, prefix="", samples=64, dressed=False):
             me.from_pydata(verts, [], faces)
             me.update()
             obj = link(bpy.data.objects.new(n(f"water-{w['id']}"), me), colls["ExistingFeatures"])
-            obj.data.materials.append(landscape.water_material() if dressed else plain_material("plain-water", *PLAIN["water"]))
+            # a reservoir (Llyn Trawsfynydd) is near-black with a low reflection (waterside.py)
+            water_mat = (waterside.lake_material() if w.get("reservoir") else landscape.water_material()) if dressed else plain_material("plain-water", *PLAIN["water"])
+            obj.data.materials.append(water_mat)
 
     frames = sec["frames"]
     cam_data = np.fromfile(pkg / man["camera"]["data"]["file"], dtype="<f4").reshape(frames, 7)
 
+    # OSM's watercourses (the terrain refined and lowered under them), a reservoir's draw-down shore and the power lines,
+    # before the vegetation and the sward, which keep off them
+    terrain = bpy.data.objects.get(n("terrain"))
+    if dressed and terrain is not None:
+        if man.get("waterways"):
+            report["waterways"] = waterside.channels(man["waterways"], terrain, colls["ExistingFeatures"], n, cam_data[:, 0:3].astype(np.float64))
+        if any(w.get("reservoir") for w in man["water"]):
+            report["shore"] = waterside.shore_band(terrain, [w for w in man["water"] if w.get("reservoir")])
+        if man.get("power", {}).get("supports"):
+            import power
+            report["power"] = power.build_power(man["power"], terrain, colls["ExistingFeatures"], n)
+
     # vegetation: placeholders, or instanced trees and grass with a level of detail per tree
     if dressed:
         rows = {inst["kind"]: read_array(pkg, inst["data"]).reshape(-1, 7).astype(np.float64) for inst in man["instances"]}
+        if "grass" in rows and terrain is not None:
+            rows["grass"] = waterside.off_shore(rows["grass"], terrain)
         report["vegetation"] = vegetation.dress_vegetation(rows, cam_data[:, 0:3].astype(np.float64), colls["Vegetation"], n, not ground, bpy.data.objects[n("terrain")])
         if not ground and n("barrier-hedge") in bpy.data.objects:
             report["vegetation"]["hedgerow"] = vegetation.hedgerows(bpy.data.objects[n("barrier-hedge")], colls["Vegetation"], n)
@@ -295,6 +313,7 @@ def build_section(pkg_dir, prefix="", samples=64, dressed=False):
             report["objects"][obj.name] = {"instances": inst["count"], "vertices": len(obj.data.vertices)}
 
     shots = man["camera"]["shots"]
+    scene["shot_ends"] = [int(s["lastBlenderFrame"]) for s in shots]  # (lockup.py: what happens after a cut)
     all_frames = np.arange(1, frames + 1)
 
     # the camera rider (ground scenes only; hidden in first-person shots, as the prototype does) and the walkers
@@ -312,9 +331,11 @@ def build_section(pkg_dir, prefix="", samples=64, dressed=False):
             y = up.cross(fwd).normalized()
             quats.append(Matrix([fwd.normalized(), y, up.normalized()]).transposed().to_quaternion())
         key_transforms(r_obj, all_frames, [tuple(row[0:3]) for row in rider], quats=continuous(quats))
-        if dressed:
+        if dressed and not man["rider"].get("hidden"):
             report["rider"] = dress.rider(scene, r_obj, rider, dims, colls["Cyclists"], n("rider:"))
             dress.hide_in_shots(r_obj, shots, frames)
+        # street furniture (existing or proposed; trailfolk.props) before the people, who sit on its benches
+        seats = trailfolk.props(man, colls["ExistingFeatures"], n("prop:")) if dressed and man.get("props") else []
         for shot in (s for s in shots if s["kind"] == "first-person" and not dressed):
             lo, hi = shot["firstBlenderFrame"], shot["lastBlenderFrame"]
             for f, value in ((lo - 1, False), (lo, True), (hi, True), (hi + 1, False)):
@@ -325,8 +346,9 @@ def build_section(pkg_dir, prefix="", samples=64, dressed=False):
             r_obj.hide_render = r_obj.hide_viewport = False
         casting = dress.cast_walkers(sec["id"], man["walkers"]) if dressed else []
         report["cast"] = []
-        for w in man["walkers"]:
-            arr = np.fromfile(pkg / w["data"]["file"], dtype="<f4").reshape(frames, 5)
+        # everyone's track, so each person can look at the others (attention.py)
+        everyone = [(w["index"], w["activity"], np.fromfile(pkg / w["data"]["file"], dtype="<f4").reshape(frames, 5)) for w in man["walkers"]]
+        for w, (_, _, arr) in zip(man["walkers"], everyone):
             wn = n(f"walker-{w['index']}-{w['activity']}")
             if dressed:
                 obj = link(bpy.data.objects.new(wn, None), colls["Pedestrians"])
@@ -334,9 +356,20 @@ def build_section(pkg_dir, prefix="", samples=64, dressed=False):
                 obj = link(bpy.data.objects.new(wn, box_mesh(wn, (0.5, 0.35, w["heightM"]))), colls["Pedestrians"])
                 obj.data.materials.append(plain_material(f"plain-{w['activity']}", *PLAIN[w["activity"]]))
             key_transforms(obj, all_frames, [tuple(r[0:3]) for r in arr], yaws=np.unwrap(arr[:, 3].astype(np.float64)))
+            # a dog on a lead: its own keyed root at its person's side (choreography.ts)
+            dog = None
+            if w.get("dog"):
+                d_arr = np.fromfile(pkg / w["dog"]["data"]["file"], dtype="<f4").reshape(frames, 5)
+                dn = n(f"walker-{w['index']}-dog")
+                d_obj = link(bpy.data.objects.new(dn, None if dressed else box_mesh(dn, (0.8, 0.3, 0.5))), colls["Pedestrians"])
+                if not dressed:
+                    d_obj.data.materials.append(plain_material("plain-dog", *PLAIN["dog"]))
+                key_transforms(d_obj, all_frames, [tuple(r[0:3]) for r in d_arr], yaws=np.unwrap(d_arr[:, 3].astype(np.float64)))
+                dog = (d_obj, d_arr)
             if dressed:
                 pid = casting[len(report["cast"])]
-                report["cast"].append(dress.walker(scene, obj, w, arr, pid, colls["Pedestrians"], n(f"walker-{w['index']}:")))
+                report["cast"].append(dress.walker(scene, obj, w, arr, pid, colls["Pedestrians"], n(f"walker-{w['index']}:"), seats, dog,
+                                                  [e for e in everyone if e[0] != w["index"]]))
 
     # one camera per shot, keyed over its own frames, with a marker bound at each cut
     first_cam = None

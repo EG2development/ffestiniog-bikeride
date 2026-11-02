@@ -70,6 +70,42 @@ export function droneSideTrack(p: {
   };
 }
 
+/**
+ * A crane shot that comes down behind the rider: it starts `fromBackM` back and `fromUpM` up, looking `lookAheadM` along
+ * the route ahead of them (the way they are going, and the view they ride into), and eases over the whole shot to
+ * `toBackM`/`toUpM`, looking at the rider as a follow shot does, so a follow shot after it carries on without a jump.
+ */
+export function craneShot(p: {
+  trail: Trail;
+  poseAt: (frame: number) => CyclistPose;
+  distAt: (frame: number) => number;
+  fromBackM: number;
+  toBackM: number;
+  fromUpM: number;
+  toUpM: number;
+  sideM: number;
+  lookAheadM: number;
+  frames: number;
+}): Shot {
+  const n = Math.max(2, p.frames);
+  return (frame) => {
+    const f = clampFrame(frame, n);
+    const v = f / (n - 1);
+    const u = v * v * (3 - 2 * v);
+    const here = p.poseAt(frame).position;
+    const [hx, hz] = headingXZ(p.trail, p.distAt(frame));
+    const back = lerp(p.fromBackM, p.toBackM, u) / 10;
+    const up = lerp(p.fromUpM, p.toUpM, u) / 10;
+    const look = lerp(p.lookAheadM, 5, u) / 10; // a follow shot looks 5 m ahead of the rider
+    // left of travel is (hz, -hx)
+    return {
+      position: [here[0] - hx * back + hz * (p.sideM / 10), here[1] + up, here[2] - hz * back - hx * (p.sideM / 10)],
+      target: [here[0] + hx * look, here[1] + 0.1, here[2] + hz * look],
+      fovDeg: FOV_DEG,
+    };
+  };
+}
+
 export function followShot(p: { poseAt: (frame: number) => CyclistPose; backM: number; upM: number; sideM: number }): Shot {
   return (frame) => {
     const here = p.poseAt(frame).position;

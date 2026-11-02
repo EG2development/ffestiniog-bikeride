@@ -1,0 +1,87 @@
+{
+  "description": "Railway underbridges over farm tracks that the open lidar shows and OpenStreetMap lacks. Each is a notch through the embankment in the bare-earth DTM (the ground filter drops a bridge deck to the ground beneath) with the DSM (first returns) at the embankment's crest across it: a deck. Adopted ones are bridge spans in the windows' trail profiles (scripts/build_section_data.py) and register structures (scripts/lidar_underbridges.py --register).",
+  "method": "scripts/lidar_underbridges.py --measure: the 1 m DTM and DSM along the OSM centreline, 60 m either side of the centre; the notch is where the DTM is more than 1 m below the chord between the window's ends; the span is the notch widened by 3 m each end for the abutments. Cross-sections every 2 m along and 4 m across (24 m either side) show each notch running through the embankment to the ground on both sides, as at the OSM-mapped underbridge at km 9.16 (way/159029124).",
+  "sources": {
+    "lidar": "Welsh Government / NRW lidar DTM and DSM, 1 m, 32-bit COGs (Open Government Licence), retrieved 2026-11-02",
+    "corroboration": "Gwynedd Council map captures (OS MasterMap base, Crown copyright, OS licence AC0000821460), captured 2026-11-02: the bridge symbol over a track at each place. Evidence only: no position, line or outline was taken from them (data/source-register.md)."
+  },
+  "underbridges": [
+    {
+      "id": "underbridge-6.308",
+      "window": "vale-south",
+      "status": "adopted",
+      "place": "Ty-coch / Bodloesygad farm track",
+      "carries": "a farm track (Ty-coch / Bodloesygad)",
+      "centreKm": 6.308,
+      "fromKm": 6.3,
+      "toKm": 6.316,
+      "notchM": [
+        6303,
+        6313
+      ],
+      "dtmDipM": 4.12,
+      "floorM": 173.56,
+      "crestM": 177.69,
+      "dsmOverNotchM": [
+        178.82,
+        180.53
+      ],
+      "confidence": "high",
+      "corroboration": "council map captures 21 and 22 draw the line on a bridge over a track (reported at km 6.28 by their own chainage)",
+      "osm": "neither the track nor a bridge is mapped",
+      "replaces": "earthwork-fill-6.309",
+      "dsmNote": "trees overhang the opening, so the DSM stands above the crest here; the deck is read from the cross-sections and the map"
+    },
+    {
+      "id": "underbridge-7.356",
+      "window": "vale-south",
+      "status": "adopted",
+      "place": "Cynfal-fawr farm track",
+      "carries": "a farm track (Cynfal-fawr)",
+      "centreKm": 7.356,
+      "fromKm": 7.347,
+      "toKm": 7.364,
+      "notchM": [
+        7350,
+        7361
+      ],
+      "dtmDipM": 3.65,
+      "floorM": 181.53,
+      "crestM": 185.18,
+      "dsmOverNotchM": [
+        185.36,
+        185.6
+      ],
+      "confidence": "high",
+      "corroboration": "council map captures 18 and 19 draw the line on a bridge over a track (reported at km 7.34 by their own chainage)",
+      "osm": "neither the track nor a bridge is mapped",
+      "replaces": "earthwork-fill-7.356"
+    },
+    {
+      "id": "underbridge-9.006",
+      "window": "maentwrog",
+      "status": "adopted",
+      "place": "Beudy Isaf farm track",
+      "carries": "the Beudy Isaf farm track (OSM way/159029132)",
+      "centreKm": 9.006,
+      "fromKm": 9.001,
+      "toKm": 9.012,
+      "notchM": [
+        9004,
+        9009
+      ],
+      "dtmDipM": 4.15,
+      "floorM": 186.56,
+      "crestM": 190.71,
+      "dsmOverNotchM": [
+        190.66,
+        190.68
+      ],
+      "confidence": "medium",
+      "corroboration": "council map capture 14 draws the line on a bridge over the track (reported at km 8.98 by its own chainage)",
+      "osm": "OSM maps the track crossing at grade and the railway is not split as a bridge: a conflict the lidar settles for a deck (open ground either side, the DSM equal to the DTM there, and at the crest over a 4 m notch); narrower than the other two, so medium",
+      "replaces": null
+    }
+  ],
+  "fields": "notchM: the notch on the centreline (m along the route); dtmDipM: its depth below the chord; floorM, crestM: the DTM at its floor and the chord there (m OD); dsmOverNotchM: the DSM over the notch, [min, median] (m OD)"
+}

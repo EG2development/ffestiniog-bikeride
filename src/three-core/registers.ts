@@ -50,6 +50,10 @@ export type Feature = {
   /** required for buildings (docs/adr/0051-register-status-and-provenance.md) */
   status?: FeatureStatus;
   provenance?: FeatureProvenance;
+  /** for a building OSM records as a ruin: its walls stand unroofed (scripts/fetch_osm_extras.py) */
+  condition?: "ruin";
+  /** for a watercourse or power line: where it crosses the line, km along the route */
+  crossingsKm?: number[];
 };
 
 export type Asset = {
@@ -99,6 +103,8 @@ export function validateFeatures(x: unknown): Feature[] {
     for (const key of ["fromKm", "toKm"] as const) {
       if (raw[key] !== undefined && typeof raw[key] !== "number") fail(`${at}.${key}`, "expected a number");
     }
+    if (raw.condition !== undefined && (kind !== "building" || raw.condition !== "ruin")) fail(`${at}.condition`, `expected "ruin" on a building, got ${JSON.stringify(raw.condition)}`);
+    if (raw.crossingsKm !== undefined && (!Array.isArray(raw.crossingsKm) || !raw.crossingsKm.every((k) => typeof k === "number" && Number.isFinite(k)))) fail(`${at}.crossingsKm`, "expected an array of km");
     if (kind === "building") validateBuilding(raw, at, type);
     return {
       ...(raw as object),
@@ -335,6 +341,8 @@ export type SectionBuilding = {
   status: FeatureStatus;
   landmark?: string;
   model?: LandmarkModel;
+  /** OSM records it as a ruin: walls without a roof (scripts/fetch_osm_extras.py) */
+  ruin?: boolean;
 };
 
 /** A section's buildings file, checked at the boundary; each failure names the file, the index and the field (spec BL11, RD5). */
@@ -354,6 +362,7 @@ export function validateBuildings(x: unknown, path: string): SectionBuilding[] {
     const h = finiteNumber(raw.heightM, `${at}.heightM`);
     if (h <= 0 || h > MAX_BUILDING_M) fail(`${at}.heightM`, `expected a height above 0 and at most ${MAX_BUILDING_M} m, got ${h}`); // t9 F1
     if (raw.roof !== "flat" && raw.roof !== "gabled") fail(`${at}.roof`, `expected flat or gabled, got ${JSON.stringify(raw.roof)}`);
+    if (raw.ruin !== undefined && typeof raw.ruin !== "boolean") fail(`${at}.ruin`, "expected true or false");
     if (!STATUSES.includes(raw.status as FeatureStatus)) fail(`${at}.status`, `expected one of ${STATUSES.join(", ")}`);
     const kind = raw.kind ?? "background";
     if (kind !== "background" && kind !== "landmark") fail(`${at}.kind`, "expected background or landmark");

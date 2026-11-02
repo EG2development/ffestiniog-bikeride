@@ -99,7 +99,7 @@ describe("the concept look ignores the photo extras (ADR 60)", () => {
 });
 
 describe("the photo look's people on each real trail: walkers, runners and prams at random (C9, ADRs 60, 61)", () => {
-  const counts = { run: 0, pram: 0, walk: 0 };
+  const counts: Record<string, number> = { run: 0, pram: 0, walk: 0 };
   const aside = (ax: number, az: number, bx: number, bz: number) => Math.hypot(ax - bx, az - bz);
   for (const id of GROUND) {
     it(`${id}: the same draw every time, a runner and a pram among them, each in the section, seen, and clear of the rider, the camera and the others`, () => {
@@ -191,8 +191,8 @@ describe("the aerial scenes' ground and trees (ADR 60)", () => {
       n++;
     }
     expect(n).toBeGreaterThan(10_000);
-    expect(scene.trees.conifer.length).toBeLessThanOrEqual(cfg.maxTreesPerKind!);
-    expect(scene.trees.broadleaf.length).toBeLessThanOrEqual(cfg.maxTreesPerKind!);
+    // the photo look's woods take their kinds from OSM, and the two kinds share twice the per-kind cap (trees.ts woodKinds)
+    expect(scene.trees.conifer.length + scene.trees.broadleaf.length).toBeLessThanOrEqual(2 * cfg.maxTreesPerKind!);
     // a sample of crowns: each stands beside a node where the canopy is at least 3 m and the cover is not bare
     for (const t of [...scene.trees.conifer, ...scene.trees.broadleaf].filter((_, i) => i % 97 === 0)) {
       const ll = all.route.unproject(t.x, t.z);

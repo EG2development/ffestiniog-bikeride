@@ -30,12 +30,13 @@ from build_section_data import SECTIONS  # noqa: E402
 from dem.bng import wgs84_to_bng  # noqa: E402
 from dem.cog import Cog  # noqa: E402
 from fetch_os_buildings import PRODUCT as OS_PRODUCT  # noqa: E402
+from osm.extras import building_value  # noqa: E402
 from osm.fetch_bbox import USER_AGENT  # noqa: E402
 
 DSM_URL = LIDAR_URL.replace("wales_dtm_32bit_cog.tif", "wales_dsm_32bit_cog.tif")
 TODAY = datetime.date.today().isoformat()
 LEVEL = 1  # 2 m: enough cells for a house, a quarter of the 1 m download
-KEEP = ("building", "building:levels", "height", "roof:shape")  # no names, addresses or contacts (spec BL17)
+KEEP = ("building", "building:levels", "height", "roof:shape", "ruins", "historic")  # no names, addresses or contacts (spec BL17); a ruin's condition
 HOUSE_TYPES = {"house", "detached", "semidetached_house", "terrace", "farm", "farm_auxiliary", "barn", "cottage", "residential", "church", "chapel"}
 
 
@@ -258,12 +259,14 @@ def main(section):
             confidence = lm["confidence"] if lm else cap or ("high" if src == "lidar-dsm" and not over_three_years(observed, TODAY) else "medium")
             bid = f"building-{section}-{'os-' if from_os else ''}{pid.split('/')[1]}"
             roof = lm["model"].get("roof", roof_of(t, ring)) if lm else roof_of(t, ring)  # a curated landmark's roof is sourced
+            ruin = building_value(t) == "ruins"  # drawn as walls open to the sky (fetch_osm_extras.py marks the same)
             out.append({"id": bid, ("os" if from_os else "osm"): pid, "footprint": ring, "heightM": h, "heightSource": src, "roof": roof,
-                        "kind": "landmark" if featured else "background", "status": status, "type": t.get("building", "yes"),
+                        "kind": "landmark" if featured else "background", "status": status, "type": "ruins" if ruin else t.get("building", "yes"),
                         "lidar": lidar, **({"lidarFlown": flown} if flown else {}), "osMap": osmap, "mapEditedAt": stamp,
                         **({"listed": [{"record": x["record"], "grade": x["grade"]} for x in listed]} if listed else {}),
                         **({"nmrw": [x["nprn"] for x in sites]} if sites else {}),
-                        **({"curated": lm["id"]} if lm else {}), **({"landmark": lm["id"], "model": lm["model"]} if featured else {})})
+                        **({"curated": lm["id"]} if lm else {}), **({"landmark": lm["id"], "model": lm["model"]} if featured else {}),
+                        **({"ruin": True} if ruin else {})})
             urls = list(dict.fromkeys(([OS_PRODUCT] if from_os else [f"https://www.openstreetmap.org/{pid}"] + ([OS_PRODUCT] if osmap == "confirmed" else []))
                                       + ([DSM_URL] if src == "lidar-dsm" or flown else []) + [x["url"] for x in listed + sites]
                                       + ([s["url"] for s in lm["sources"]] if lm else [])))
@@ -278,8 +281,8 @@ def main(section):
                             "provenance": {"urls": urls, "evidence": sorted(set(evidence)), "observedAt": observed, "retrievedAt": TODAY,
                                            "licence": licence + ("; OGL (height, Welsh Government lidar DSM/DTM)" if src == "lidar-dsm" else "") + (f"; {lm['licence']}" if lm else ""),
                                            "confidence": confidence},
-                            "note": ("OS outline, generalised; not in OSM; " if from_os else "") + f"{t.get('building', 'yes')}; height {h} m from {src}"
-                            + ("" if src == "lidar-dsm" else " (approximate)") + currency})
+                            "note": ("OS outline, generalised; not in OSM; " if from_os else "") + f"{'ruins' if ruin else t.get('building', 'yes')}; height {h} m from {src}"
+                            + ("" if src == "lidar-dsm" else " (approximate)") + currency, **({"condition": "ruin"} if ruin else {})})
     # a demolished building is recorded with its evidence, not drawn: the reel shows what stands (ADR 63). The candidate
     # pass reads this list, so the next pass leaves it out (BL1: what is built is what the candidates list)
     # (earlier records stay while their footprint is not rebuilt, as the candidate pass then leaves it out; delete the

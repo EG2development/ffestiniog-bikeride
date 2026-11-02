@@ -2338,11 +2338,12 @@
   "roof": "flat",
   "kind": "background",
   "status": "existing",
-  "type": "yes",
+  "type": "ruins",
   "lidar": "present",
   "lidarFlown": "2022-03-01",
   "osMap": "absent",
-  "mapEditedAt": "2015-10-03"
+  "mapEditedAt": "2015-10-03",
+  "ruin": true
  },
  {
   "id": "building-trawsfynydd-373577738",

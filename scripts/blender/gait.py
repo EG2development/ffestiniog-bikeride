@@ -6,10 +6,14 @@ The body is a chain of coupled oscillators read off the gait phase. The pelvis c
 surges and eases within each step, drops on the swing side and turns with the forward leg; each segment of the spine
 answers it a little later than the one below (overlapping action), the shoulders counter-rotate and the neck and head
 take out what is left so the gaze stays level. Arms swing from the shoulders a beat behind the opposite leg, the elbows
-bending as they come forward and the hands trailing the forearms. The hip height is a soft minimum of what both legs
-reach, so the rise and fall has no creases; its accelerations drive damped springs for the soft tissue (a shape key on
-the body and what it wears) and the head's nod, secondary motion that follows the footfalls. Each person moves in their
-own way (`style`). Keys are Bezier with auto-clamped handles.
+bending as they come forward and the hands trailing the forearms. Walking and pushing a pram, the feet, the hips'
+height and the swinging leg come from stride.py's cycle, the knees in the normal walking pattern (no locked stance
+knee, no snap straight before the heel strikes) and the toes bending at the ball as the heel lifts; running keeps the
+soft minimum of what both legs reach. The hips' rise and fall drives damped springs for the soft tissue (a shape key on
+the body and what it wears) and the head's nod, secondary motion that follows the footfalls. Standing still, the
+stride settles into a standing pose. The head turns where the person looks (attention.py). Each person moves in their
+own way (`style`: stride, knee lift, push-off and arm swing by age, and a little of their own). Keys are Bezier with
+auto-clamped handles.
 """
 import math
 
@@ -19,6 +23,7 @@ from mathutils import Matrix, Quaternion, Vector
 from mathutils.kdtree import KDTree
 
 import cast
+import stride
 
 GAIT = {  # stride per gait cycle (body heights), stance fraction, foot lift (m at 1.7 m), arm swing (m), lean, pelvis turn
     # and drop (deg), weight shift and surge (m), the running stance's knee bend (m of hip height), soft tissue's bounce
@@ -37,14 +42,18 @@ X, FWD, UP = Vector((1, 0, 0)), Vector((0, -1, 0)), Vector((0, 0, 1))  # armatur
 
 
 def style(pid):
-    """A person's own way of moving, from their casting: women's pelvises turn and drop a little more, older people swing
-    their arms less, lean further and lift their feet lower, and everyone varies a little (fixed per person)."""
+    """A person's own way of moving, from their casting: women's pelvises turn and drop a little more; older people take
+    shorter, lower steps, swing their arms less, lean further and push off less; children step out and bounce; and
+    everyone varies a little (fixed per person)."""
     _, sex, years, _, weight = cast.profile(pid)[:5]
     rnd = np.random.default_rng(sum(map(ord, pid)))
     vary = lambda: 1 + rnd.uniform(-0.12, 0.12)  # noqa: E731
     old = min(1.0, max(0.0, (years - 55) / 25))
-    return {"pelvis": (1.25 - 0.25 * sex) * vary(), "arm": (1 - 0.35 * old) * vary(), "lean": 4 * old + rnd.uniform(-1, 1),
-            "lift": (1 - 0.25 * old) * vary(), "flesh": (0.5 + weight) * (1.3 - 0.3 * sex)}
+    young = min(1.0, max(0.0, (16 - years) / 8))
+    return {"pelvis": (1.25 - 0.25 * sex) * vary(), "arm": (1 - 0.35 * old + 0.15 * young) * vary(), "lean": 4 * old + rnd.uniform(-1, 1),
+            "lift": (1 - 0.25 * old) * vary(), "flesh": (0.5 + weight) * (1.3 - 0.3 * sex),
+            "stride": (1 - 0.12 * old + 0.12 * young) * (1 + rnd.uniform(-0.04, 0.04)), "knee_peak": 60 - 6 * old + 4 * young + rnd.uniform(-2, 2),
+            "push": -55 + 12 * old, "give": 1 - 0.2 * old + 0.2 * young, "arm_lr": 1 + rnd.uniform(-0.15, 0.15)}
 
 
 def _smooth(s):
@@ -198,13 +207,15 @@ def key_vectors(obj, path, frames, rows):
         key_array(obj, path, i, frames, rows[:, i])
 
 
-def bake_gait(person, frames, distance, phase0, activity, view_layer, prams=None):
-    """Key a person's body, spine, head, feet, hands and flesh for every frame from the distance it has travelled."""
+def bake_gait(person, frames, distance, phase0, activity, view_layer, prams=None, hold=None, gaze=None):
+    """Key a person's body, spine, head, feet, hands and flesh for every frame from the distance it has travelled.
+    `hold` ("l" or "r"): that hand holds a dog's lead, a little forward and out from the hip, instead of swinging.
+    `gaze`: (frames, 2) head turn and nod (radians, + left and + up) on top of the walk (attention.py)."""
     arm, ctl, info, k = person["arm"], person["ctl"], person["info"], person["k"]
     g, st, run = GAIT[activity], style(person["pid"]), activity == "run"
     scene = view_layer.id_data
     fps = scene.render.fps / scene.render.fps_base
-    S = g["stride"] * info["height"] * k
+    S = g["stride"] * info["height"] * k * (1.0 if run else st["stride"])
     to_root = Matrix.Rotation(math.pi / 2, 3, "Z")  # armature space (forward -Y) to root space (forward +X)
     foot_rest = {s: to_root @ arm.data.bones[f"foot_{s}"].matrix_local.to_3x3() for s in ("l", "r")}
     hip_w = (info["hip_l"].x - info["hip_r"].x) / 2 * k
@@ -212,29 +223,57 @@ def bake_gait(person, frames, distance, phase0, activity, view_layer, prams=None
     rest_hip = info["hip_z"] * k
     lean = math.radians(g["lean"] + st["lean"])
     tw_a, ls_a = math.radians(g["twist"]) * st["pelvis"], math.radians(g["list"]) * st["pelvis"]
-    twist = lambda u: tw_a * math.cos(2 * math.pi * u)  # noqa: E731  (the forward leg's hip leads)
-    tilt = lambda u: ls_a * math.cos(2 * math.pi * (u - 0.3 * g["duty"]))  # noqa: E731  (+ lifts the left hip, the right swinging)
+    twist = lambda u: tw_a * np.cos(2 * np.pi * u)  # noqa: E731  (the forward leg's hip leads)
+    tilt = lambda u: ls_a * np.cos(2 * np.pi * (u - 0.3 * g["duty"]))  # noqa: E731  (+ lifts the left hip, the right swinging)
+    sway_of = lambda u: g["sway"] * k * np.cos(2 * np.pi * (u - g["duty"] / 2))  # noqa: E731  (over the stance foot)
+    surge_of = lambda u: -g["surge"] * k * np.sin(4 * np.pi * (u - g["duty"] / 2))  # noqa: E731  (slowest passing over it)
     lag = 0.04 if run else 0.06  # the arms' beat behind the legs (gait cycles)
+    # walking and pushing a pram: the cycle's tables (stride.py), knees in the normal walking pattern
+    table = None
+    if not run:
+        b = arm.data.bones
+        dims = {"thigh": (b["thigh_l"].tail_local - b["thigh_l"].head_local).length * k, "shin": (b["calf_l"].tail_local - b["calf_l"].head_local).length * k,
+                "ankle_z": info["ankle_z"] * k, "ball": (info["ball"][0] * k, info["ball"][1] * k), "heel": (info["heel"][0] * k, info["heel"][1] * k),
+                "hip_w": hip_w, "rest_hip": rest_hip, "toe": 0.06 * k, "hip_x": -(info["hip_l"].y + info["hip_r"].y) / 2 * k}
+        table = stride.cycle(g, S, dims, st, lambda u: (surge_of(u), sway_of(u), twist(u), tilt(u)))
+    # standing still (a stop, a wait): the stride settles into a standing pose, a short step bringing the feet together
+    speed = np.convolve(np.pad(np.abs(np.gradient(np.asarray(distance, dtype=np.float64))) * fps, 10, mode="edge"), np.ones(21) / 21, mode="valid")
+    walking = stride.smooth(speed / 0.7) if not run else np.ones(len(frames))
     ch = {key: [] for key in ("body", "foot_l", "rot_l", "foot_r", "rot_r", "hand_l", "hand_r")}
+    toes = {"l": [], "r": []}
     beat = []  # the left foot's fraction of its cycle and each arm's swing angle, per frame
+    az = info["ankle_z"] * k
     for i in range(len(frames)):
         ul = ((phase0 / (2 * math.pi) + distance[i] / S)) % 1.0
+        w = float(walking[i])
         feet = {}
-        for side, off in (("l", 0.0), ("r", 0.5)):
-            u = (ul + off) % 1.0
-            x, z, pitch = _foot(u, g, S, info, k, run, st["lift"])
-            feet[side] = (Vector((x, hip_w * 0.85 * (1 if side == "l" else -1), z)), pitch, u)
-        # the pelvis: over the stance foot, slowest as it passes over it; the hip height is the highest both legs reach
-        # with the pelvis turned and tilted (and, running, the knee bent under the load), rounded so it never creases
-        sway = g["sway"] * k * math.cos(2 * math.pi * (ul - g["duty"] / 2))
-        surge = -g["surge"] * k * math.sin(4 * math.pi * (ul - g["duty"] / 2))
-        tw, ls = twist(ul), tilt(ul)
-        reach = [rest_hip * 0.99 - g["drop"] * k * (0.5 - 0.5 * math.cos(4 * math.pi * (ul - g["duty"] / 2)))]
-        for side, s in (("l", 1), ("r", -1)):
-            a = feet[side][0]
-            hx, hy = surge + s * hip_w * math.cos(ls) * math.sin(tw), sway + s * hip_w * math.cos(ls) * math.cos(tw)
-            reach.append(a.z - s * hip_w * math.sin(ls) + math.sqrt(max(L * L - (a.x - hx) ** 2 - (a.y - hy) ** 2, 0.0)))
-        ch["body"].append((surge, sway, _softmin(reach, 0.012 * k) - rest_hip))
+        if table is not None:
+            body, foot = table
+            bx, by, bz = stride.sample(body, np.array([ul]))[0]
+            for side, off, sgn in (("l", 0.0, 1), ("r", 0.5, -1)):
+                fx, fy, fz, pitch, toe = stride.sample(foot, np.array([(ul + off) % 1.0]))[0]
+                # standing: the feet under the hips, a hand's width apart; a foot that moves lifts on its way
+                travel = min(1.0, math.hypot(fx, fz - az) / 0.25)
+                sx, sy, sz = dims["hip_x"], sgn * hip_w * 0.9, az + 0.05 * travel * 4 * w * (1 - w)
+                feet[side] = (Vector((sx + (fx - sx) * w, sy + (sgn * fy - sy) * w, sz + (fz - az) * w)), pitch * w, (ul + off) % 1.0)
+                toes[side].append(toe * w)
+            ch["body"].append((bx * w, by * w, bz * w - 0.006 * k * (1 - w)))
+        else:
+            for side, off in (("l", 0.0), ("r", 0.5)):
+                u = (ul + off) % 1.0
+                x, z, pitch = _foot(u, g, S, info, k, run, st["lift"])
+                feet[side] = (Vector((x, hip_w * 0.85 * (1 if side == "l" else -1), z)), pitch, u)
+                toes[side].append(0.0)
+            # running: the hip height is the highest both legs reach with the pelvis turned and tilted and the knee bent
+            # under the load, rounded so it never creases
+            sway, surge = float(sway_of(ul)), float(surge_of(ul))
+            tw, ls = float(twist(ul)), float(tilt(ul))
+            reach = [rest_hip * 0.99 - g["drop"] * k * (0.5 - 0.5 * math.cos(4 * math.pi * (ul - g["duty"] / 2)))]
+            for side, s in (("l", 1), ("r", -1)):
+                a = feet[side][0]
+                hx, hy = surge + s * hip_w * math.cos(ls) * math.sin(tw), sway + s * hip_w * math.cos(ls) * math.cos(tw)
+                reach.append(a.z - s * hip_w * math.sin(ls) + math.sqrt(max(L * L - (a.x - hx) ** 2 - (a.y - hy) ** 2, 0.0)))
+            ch["body"].append((surge, sway, _softmin(reach, 0.012 * k) - rest_hip))
         for side, (a, pitch, _) in feet.items():
             ch[f"foot_{side}"].append(tuple(a))
             q = (Matrix.Rotation(-pitch, 3, "Y") @ foot_rest[side]).to_quaternion()
@@ -244,9 +283,12 @@ def bake_gait(person, frames, distance, phase0, activity, view_layer, prams=None
         swing = {}
         for side, s in (("l", 1), ("r", -1)):
             a = 2 * math.pi * (feet["r" if side == "l" else "l"][2] - lag)  # the hand swings with the opposite leg
-            c, sh, amp = math.cos(a), info[f"shoulder_{side}"], g["arm"] * st["arm"]
+            c, sh = math.cos(a), info[f"shoulder_{side}"]
+            amp = g["arm"] * st["arm"] * (st["arm_lr"] if side == "l" else 2 - st["arm_lr"]) * walking[i]
             swing[side] = a
-            if run:  # elbows bent near a right angle, hands passing the hips; armature space, forward -Y
+            if side == hold:  # the lead hand: forward of the hip and out to its side, elbow a little bent
+                ch[f"hand_{side}"].append((sh.x + s * 0.13, sh.y - 0.20, sh.z - info["arm"] * 0.80))
+            elif run:  # elbows bent near a right angle, hands passing the hips; armature space, forward -Y
                 ch[f"hand_{side}"].append((sh.x - s * 0.02 * max(0.0, c), sh.y - 0.10 - amp * c, sh.z - 0.36 + 0.06 * max(0.0, c)))
             else:  # the elbow bends and the hand comes in as the arm comes forward
                 ch[f"hand_{side}"].append((sh.x + s * (0.05 - 0.025 * max(0.0, c)), sh.y - amp * c,
@@ -254,23 +296,29 @@ def bake_gait(person, frames, distance, phase0, activity, view_layer, prams=None
         beat.append((ul, swing))
     bob = np.array([b[2] for b in ch["body"]])
     nod = _spring(bob, fps, HEAD_HZ, HEAD_DAMP)
-    bones = {b: [] for b in ("pelvis", "spine_01", "spine_02", "spine_03", "neck_01", "head", "clavicle_l", "clavicle_r", "hand_l", "hand_r")}
+    bones = {b: [] for b in ("pelvis", "spine_01", "spine_02", "spine_03", "neck_01", "head", "clavicle_l", "clavicle_r", "hand_l", "hand_r", "ball_l", "ball_r")}
+    look = np.zeros((len(beat), 2)) if gaze is None else np.asarray(gaze, dtype=np.float64)
     for i, (ul, swing) in enumerate(beat):
-        tw, ls = twist(ul), tilt(ul)
-        pitch = math.radians(2.0 if run else 1.2) * math.cos(4 * math.pi * (ul - 0.08))  # the trunk nods into each footfall
-        bones["pelvis"].append(_quat(arm, "pelvis", (FWD, ls), (UP, -tw), (X, math.radians(1.2) * math.cos(4 * math.pi * (ul - g["duty"] + 0.1)))))
+        w = float(walking[i])
+        tw, ls = float(twist(ul)) * w, float(tilt(ul)) * w
+        pitch = math.radians(2.0 if run else 1.2) * math.cos(4 * math.pi * (ul - 0.08)) * w  # the trunk nods into each footfall
+        bones["pelvis"].append(_quat(arm, "pelvis", (FWD, ls), (UP, -tw), (X, math.radians(1.2) * math.cos(4 * math.pi * (ul - g["duty"] + 0.1)) * w)))
         yaw, roll = -tw, ls
+        turn, nod_up = look[i]
         for name, late, t_share, l_share, r_share in SPINE:
-            t, r = twist(ul - late) * t_share, tilt(ul - late) * r_share
+            t, r = float(twist(ul - late)) * t_share * w, float(tilt(ul - late)) * r_share * w
             yaw, roll = yaw + t, roll + r
-            bones[name].append(_quat(arm, name, (FWD, r), (UP, t), (X, lean * l_share + (pitch if name == "spine_02" else 0.0))))
-        bones["neck_01"].append(_quat(arm, "neck_01", (FWD, -0.5 * roll), (UP, -0.4 * yaw), (X, -0.4 * lean)))
-        bones["head"].append(_quat(arm, "head", (FWD, -0.3 * roll), (UP, -0.3 * yaw), (X, -0.35 * lean - NOD * nod[i])))
+            # a turn of the head starts low in the back: a little of it in the chest
+            chest = 0.12 * turn if name == "spine_03" else 0.0
+            bones[name].append(_quat(arm, name, (FWD, r), (UP, t + chest), (X, lean * l_share * (0.6 + 0.4 * w) + (pitch if name == "spine_02" else 0.0))))
+        bones["neck_01"].append(_quat(arm, "neck_01", (FWD, -0.5 * roll), (UP, -0.4 * yaw + 0.38 * turn), (X, -0.4 * lean - 0.4 * nod_up)))
+        bones["head"].append(_quat(arm, "head", (FWD, -0.3 * roll), (UP, -0.3 * yaw + 0.5 * turn), (X, -0.35 * lean - NOD * nod[i] - 0.6 * nod_up)))
         for side, s in (("l", 1), ("r", -1)):
-            a = swing[side] if activity != "pram" else 0.0
-            amp = st["arm"] if activity != "pram" else 0.0
+            a = swing[side] if activity != "pram" and side != hold else 0.0
+            amp = st["arm"] * w if activity != "pram" and side != hold else 0.0
             bones[f"clavicle_{side}"].append(_quat(arm, f"clavicle_{side}", (UP, -s * math.radians(3) * amp * math.cos(a))))
             bones[f"hand_{side}"].append(_quat(arm, f"hand_{side}", (X, -math.radians(10) * amp * math.sin(a - 0.3))))
+            bones[f"ball_{side}"].append(_quat(arm, f"ball_{side}", (X, -toes[side][i])))  # the toes bend up at the ball
     for q in bones.values():  # one hemisphere per channel, so the keys never flip
         for j in range(1, len(q)):
             if q[j].dot(q[j - 1]) < 0:

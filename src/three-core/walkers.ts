@@ -1,8 +1,10 @@
 // Walkers on the trail, when a section asks (docs/adr/0059-walkers-on-the-trail.md; spec C9).
 import type { Part } from "./cyclistModel";
+import { speedKmh } from "./cyclistMotion";
 import { mulberry32 } from "./rng";
 import type { Trail } from "./trail";
 import type { Vec3 } from "./types";
+import type { Choreo } from "./choreography";
 
 // A walker is the rider's motion model (ADR 15) at a walking pace: a distance table integrated once from a config
 // spec, a pose that is a pure function of the table and the frame, and a figure built from a height. Walkers are
@@ -10,8 +12,14 @@ import type { Vec3 } from "./types";
 // running, or walking behind a pram (docs/adr/0061-trail-users-at-random.md); the prototype places its walkers by spec,
 // the reel's sections by a seeded draw (people.ts).
 
-/** How a person moves along the trail (ADR 61). */
-export type Activity = "walk" | "run" | "pram";
+/** How a person moves along the trail (ADR 61); the community film adds riding a bicycle or an adult tricycle, and
+ * sitting (on a bench, at its spec's place). */
+export type Activity = "walk" | "run" | "pram" | "cycle" | "trike" | "sit";
+/** Who a person is, for casting (the community film): a pupil in school uniform, a younger child, an older resident,
+ * a commuter, a parent, or the adult escorting a group of pupils. */
+export type Role = "pupil" | "child" | "older" | "commuter" | "parent" | "escort";
+/** A dog on a lead (the community film): a Welsh sheepdog, a labrador or a small terrier. */
+export type DogBreed = "collie" | "labrador" | "terrier";
 
 export type WalkerSpec = {
   /** walking (the default), running, or walking behind a pram (ADR 61) */
@@ -26,6 +34,19 @@ export type WalkerSpec = {
   heightM: number;
   /** picks clothing and skin tones and the gait phase; two walkers never share one */
   seed: number;
+  /** who they are, for casting; unset, anyone the activity suits */
+  role?: Role;
+  /** a steady pace instead of the activity's (a group riding together), km/h */
+  speedKmh?: number;
+  /** eases to a halt here (route distance, metres): a cyclist arriving at the lockers */
+  stopAtM?: number;
+  /** having stopped, wheels the bicycle into the open locker beside them, locks it and walks on to the bus stop (the
+   * Blender build animates it: scripts/blender/lockup.py) */
+  locksUp?: boolean;
+  /** walks a dog on a short lead, at their left unless `side` says right (choreography.ts) */
+  dog?: { breed: DogBreed; side?: "left" | "right" };
+  /** walks with the person of this seed, side by side (choreography.ts keeps companions close, not apart) */
+  with?: number;
 };
 
 export type WalkerPose = {
@@ -49,12 +70,21 @@ export function walkerSpeedKmh(gradient: number): number {
 export function paceKmh(activity: Activity, gradient: number): number {
   if (activity === "run") return Math.min(12, Math.max(7.5, 10 - 50 * gradient));
   if (activity === "pram") return Math.min(5, Math.max(3, 4 - 30 * gradient));
+  // the camera rider's own pace (about 11 mph on the flat), so a group riding with it stays together; a tricycle 7.5 mph
+  if (activity === "cycle") return speedKmh(gradient);
+  if (activity === "trike") return Math.min(14, Math.max(8, 12 - 120 * gradient));
+  if (activity === "sit") return 0;
   return walkerSpeedKmh(gradient);
 }
 
+/** The distance a rider covers per turn of the cranks, metres (a 0.68 m wheel at a gear of about 2.1). */
+export const CRANK_TURN_M = 4.5;
+const BRAKE_M = 10; // a rider stopping slows over its last metres
+
 /** Stride (two steps) in metres for a height: about 0.8 of the height walking, 1.15 running (about 2 m at 10 km/h and
  * 165 steps a minute), 0.7 behind a pram. */
-export const strideM = (heightM: number, activity: Activity = "walk"): number => (activity === "run" ? 1.15 : activity === "pram" ? 0.7 : 0.8) * heightM;
+export const strideM = (heightM: number, activity: Activity = "walk"): number =>
+  activity === "cycle" || activity === "trike" ? CRANK_TURN_M : (activity === "run" ? 1.15 : activity === "pram" ? 0.7 : 0.8) * heightM;
 
 /** Distance along the route (m) for every frame, integrated once, in the walker's direction. */
 export function walkerTable(trail: Trail, spec: WalkerSpec, frames: number, fps: number): Float64Array {
@@ -63,25 +93,39 @@ export function walkerTable(trail: Trail, spec: WalkerSpec, frames: number, fps:
   const activity = spec.activity ?? "walk";
   for (let f = 1; f < frames; f++) {
     const g = trail.sampleAt(table[f - 1]).gradient * spec.direction;
-    table[f] = table[f - 1] + (spec.direction * paceKmh(activity, g)) / 3.6 / fps;
+    const pace = activity === "sit" ? 0 : (spec.speedKmh ?? paceKmh(activity, g));
+    // stopping: the pace falls with the square root of the distance left, so it comes to rest at the stop
+    const left = spec.stopAtM === undefined ? Infinity : (spec.stopAtM - table[f - 1]) * spec.direction;
+    table[f] = table[f - 1] + (spec.direction * pace * Math.min(1, Math.sqrt(Math.max(0, left) / BRAKE_M))) / 3.6 / fps;
   }
   return table;
 }
 
-export function walkerPose(trail: Trail, table: Float64Array, frame: number, spec: WalkerSpec): WalkerPose {
+export function walkerPose(trail: Trail, table: Float64Array, frame: number, spec: WalkerSpec, side?: Float64Array, stride?: number): WalkerPose {
   const f = Math.min(table.length - 1, Math.max(0, frame));
   const d = table[f];
   const s = trail.sampleAt(d);
   const l = Math.hypot(s.tangent[0], s.tangent[2]) || 1;
-  const fx = (s.tangent[0] / l) * spec.direction;
-  const fz = (s.tangent[2] / l) * spec.direction;
-  const off = (spec.sideM * spec.direction) / 10;
-  // left of travel is (fz, -fx) in the XZ plane; sideM is left of the route's direction, whichever way the walker faces
+  const [tx, tz] = [s.tangent[0] / l, s.tangent[2] / l];
+  const sideM = side ? side[f] : spec.sideM;
+  // left of the route's direction is (tz, -tx) in the XZ plane; sideM is left of it, whichever way the walker faces
+  const off = sideM / 10;
+  // facing the way they move: along the route in their direction, turned by any drift across it (choreography.ts)
+  let [fx, fz] = [tx * spec.direction, tz * spec.direction];
+  if (side) {
+    const [a, b] = [Math.max(0, f - 1), Math.min(table.length - 1, f + 1)];
+    const [dd, ds] = [Math.abs(table[b] - table[a]), side[b] - side[a]];
+    if (dd > 1e-4) {
+      const [hx, hz] = [fx * dd + tz * ds, fz * dd - tx * ds];
+      const hl = Math.hypot(hx, hz);
+      [fx, fz] = [hx / hl, hz / hl];
+    }
+  }
   const phase0 = 2 * Math.PI * mulberry32(spec.seed)();
   return {
-    position: [s.x + fz * off, s.y, s.z - fx * off],
+    position: [s.x + tz * off, s.y, s.z - tx * off],
     yaw: Math.atan2(-fz, fx),
-    phase: phase0 + (2 * Math.PI * Math.abs(d - table[0])) / strideM(spec.heightM, spec.activity),
+    phase: phase0 + (2 * Math.PI * Math.abs(d - table[0])) / (stride ?? strideM(spec.heightM, spec.activity)),
   };
 }
 
@@ -314,18 +358,40 @@ export const WALKER_PALETTE = {
   shoe: ["#2a2a2a", "#4a3b2a", "#5a5a60"],
 } as const;
 
-export type WalkerTrack = { spec: WalkerSpec; table: Float64Array; poseAt: (frame: number) => WalkerPose };
+export type WalkerTrack = {
+  spec: WalkerSpec;
+  table: Float64Array;
+  /** the line across the path per frame, metres left of the route's direction, when the scene is choreographed */
+  side?: Float64Array;
+  poseAt: (frame: number) => WalkerPose;
+  /** the person's dog, if they walk one: its pose per frame (phase: one trot cycle per DOG_STRIDE_M) */
+  dog?: { breed: DogBreed; poseAt: (frame: number) => WalkerPose };
+};
 
-/** Every walker a section asks for, with its table over the section's frames. */
-export function walkerTracks(trail: Trail, specs: readonly WalkerSpec[], frames: number, fps: number): WalkerTrack[] {
+/** A dog's trot: one cycle of its legs per this many metres. */
+export const DOG_STRIDE_M = 0.9;
+
+/** Every walker a section asks for, with its table over the section's frames; choreographed together (choreography.ts)
+ * when `choreo` is given, each on its own fixed line otherwise. */
+export function walkerTracks(trail: Trail, specs: readonly WalkerSpec[], frames: number, fps: number, choreo?: Choreo[]): WalkerTrack[] {
   const seeds = new Set<number>();
-  return specs.map((spec, i) => {
+  for (const [i, spec] of specs.entries()) {
     if (seeds.has(spec.seed)) throw new Error(`walker ${i}: seed ${spec.seed} is used twice`);
     seeds.add(spec.seed);
-    if (Math.abs(spec.sideM) > 1) throw new Error(`walker ${i}: sideM ${spec.sideM} is more than 1 m off the centreline (C3)`);
-    if (spec.heightM < 1.5 || spec.heightM > 1.95) throw new Error(`walker ${i}: heightM ${spec.heightM} is outside 1.5–1.95 m (C9)`);
-    if (spec.activity !== undefined && !["walk", "run", "pram"].includes(spec.activity)) throw new Error(`walker ${i}: unknown activity ${String(spec.activity)}`);
-    const table = walkerTable(trail, spec, frames, fps);
-    return { spec, table, poseAt: (f: number) => walkerPose(trail, table, f, spec) };
+  }
+  return specs.map((spec, i) => {
+    // on the path within 1 m of the centreline (C3), but someone sitting is on a bench beside it
+    if (Math.abs(spec.sideM) > 1 && spec.activity !== "sit") throw new Error(`walker ${i}: sideM ${spec.sideM} is more than 1 m off the centreline (C3)`);
+    // adults 1.5–1.95 m (C9); pupils and younger children 1.0–1.6 m
+    const [lo, hi] = spec.role === "pupil" || spec.role === "child" ? [1.0, 1.6] : [1.5, 1.95];
+    if (spec.heightM < lo || spec.heightM > hi) throw new Error(`walker ${i}: heightM ${spec.heightM} is outside ${lo}–${hi} m (C9)`);
+    if (spec.activity !== undefined && !["walk", "run", "pram", "cycle", "trike", "sit"].includes(spec.activity)) throw new Error(`walker ${i}: unknown activity ${String(spec.activity)}`);
+    if (spec.dog && (spec.activity ?? "walk") !== "walk") throw new Error(`walker ${i}: only someone walking walks a dog`);
+    if (spec.with !== undefined && !seeds.has(spec.with)) throw new Error(`walker ${i}: walks with seed ${spec.with}, who is not in the scene`);
+    const c = choreo?.[i];
+    const table = c ? c.dist : walkerTable(trail, spec, frames, fps);
+    const side = c?.side;
+    const dog = c?.dog && spec.dog ? { breed: spec.dog.breed, poseAt: (f: number) => walkerPose(trail, c.dog!.dist, f, { ...spec, seed: spec.seed + 1 }, c.dog!.side, DOG_STRIDE_M) } : undefined;
+    return { spec, table, ...(side && { side }), poseAt: (f: number) => walkerPose(trail, table, f, spec, side), ...(dog && { dog }) };
   });
 }

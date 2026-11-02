@@ -7,6 +7,7 @@ import { mulberry32 } from "./rng";
 import { roadWidthM, type RoadLine } from "./roads";
 import type { Trail } from "./trail";
 import type { DemGrid, LandCover, Projector } from "./types";
+import { CONIFER_SHARE } from "./woodland";
 
 // Trees placed by a seeded PRNG at land-cover nodes classed as woodland (from OSM), kept off the
 // trail corridor and road carriageways. Woodland extent is OSM; individual trees are decorative
@@ -51,6 +52,10 @@ export type TreeOptions = {
    * node does (broadleaf outside OSM woodland); built-up, quarry and water nodes never do, as their DSM is roofs and
    * spoil. For a coarse grid, whose single field-tree peaks read as parkland from the air (ADR 60). */
   canopyCover: boolean;
+  /** each DEM node's wood kind (woodland.ts WOOD, from the OSM polygon's tags): with it a woodland node's trees are
+   * conifer at its kind's CONIFER_SHARE instead of 55 % everywhere, and the two kinds share one budget of twice
+   * `maxTrees` (the instance budget the per-kind cap allowed), spread evenly over the nodes that can grow a tree */
+  woodKinds?: Uint8Array;
 };
 
 /** The heights the drawn crowns reach per unit of scale, metres: a canopy height divided by these gives the scale. */
@@ -178,7 +183,7 @@ export function placeTrees(
   const covered = (r: number, c: number) => opts.canopyCover && canopy !== undefined && !bare[land.classes[r * dem.cols + c]] && canopyAt(r, c) >= opts.minCanopyM;
 
   // Candidate nodes first, so the per-kind cap thins the whole woodland evenly instead of stopping part way
-  // through the row-major scan (review R2). Conifers are 55 % of the draws.
+  // through the row-major scan (review R2). Conifers are 55 % of the draws, or their wood kind's share (woodland.ts).
   const candidate = (r: number, c: number): boolean => {
     const i = r * dem.cols + c;
     if (land.classes[i] !== woodland && !covered(r, c)) return false;
@@ -187,9 +192,23 @@ export function placeTrees(
     const p = project(lon, lat);
     return inNearZone(p.x, p.y);
   };
+  const kinds = opts.woodKinds;
+  if (kinds && kinds.length !== dem.cols * dem.rows) throw new Error(`woodKinds has ${kinds.length} values for ${dem.cols * dem.rows} DEM nodes`);
+  /** a node's conifer share: by its wood kind where the tags are known, 55 % without them; canopy cover is broadleaf */
+  const coniferShare = (i: number, mapped: boolean) => (!mapped ? 0 : kinds ? CONIFER_SHARE[kinds[i]] ?? CONIFER_SHARE[0] : 0.55);
   let candidates = 0;
-  for (let r = 0; r < dem.rows; r++) for (let c = 0; c < dem.cols; c++) if (candidate(r, c)) candidates++;
-  const evenUnderCap = candidates > 0 ? (0.9 * opts.maxTrees) / (0.55 * candidates * opts.treesPerNode) : 1;
+  let growable = 0;
+  for (let r = 0; r < dem.rows; r++) {
+    for (let c = 0; c < dem.cols; c++) {
+      if (!candidate(r, c)) continue;
+      candidates++;
+      if (!canopy || canopyAt(r, c) >= opts.minCanopyM) growable++;
+    }
+  }
+  // with wood kinds the two kinds share 2 x maxTrees, spread over the nodes that can grow one (the lidar's canopy)
+  const evenUnderCap = kinds
+    ? growable > 0 ? (0.9 * 2 * opts.maxTrees) / (growable * opts.treesPerNode) : 1
+    : candidates > 0 ? (0.9 * opts.maxTrees) / (0.55 * candidates * opts.treesPerNode) : 1;
   const probability = options.probability ?? Math.min(keep, evenUnderCap);
 
   // coarse hash of trail samples for the "clear of the trail" test
@@ -285,14 +304,14 @@ export function placeTrees(
         const { lon, lat } = bngToWgs84(e, n);
         const p = project(lon, lat);
         if (!inNearZone(p.x, p.y) || !clearOfTrail(p.x, p.y) || !clearOfRoads(p.x, p.y) || !outOfKeepOut(p.x, p.y)) continue;
-        const k = fieldTree || cover ? "broadleaf" : kind < 0.55 ? "conifer" : "broadleaf";
+        const k = fieldTree || cover ? "broadleaf" : kind < coniferShare(i, mapped) ? "conifer" : "broadleaf";
         // several crowns to a node are not all the node's height: the lidar cell holds the tallest and some below it
         if (canopy !== undefined) scale = scaleFor(k, canopyAt(r, c)) * (t === 0 ? 1 : 0.7 + 0.3 * size);
         const y = (h / 10) * opts.ve;
         if (!clearOfSight(p.x, y, p.y, k, scale)) continue; // decorative trees give way to the view of the rider (ADR 47)
         if (!clearOfBuildings(p.x, p.y, Math.max(...CROWN_SPHERES[k].map((s) => s.r)) * scale)) continue; // and to sourced buildings (BL13)
         const list = out[k];
-        if (list.length >= opts.maxTrees) continue; // the cap is per kind (ADR 37)
+        if (kinds ? out.conifer.length + out.broadleaf.length >= 2 * opts.maxTrees : list.length >= opts.maxTrees) continue; // the cap is per kind (ADR 37), or shared with wood kinds
         // look variation from a second stream keyed by node (and by tree within it): the photoreal view reads it, the concept view ignores it
         const look = mulberry32((opts.seed + 7919 + i + t * 1_000_003) >>> 0);
         list.push({ x: p.x, y, z: p.y, scale, yaw, tint: 0.85 + 0.3 * look(), variant: Math.floor(look() * 3) });

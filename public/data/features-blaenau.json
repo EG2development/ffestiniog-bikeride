@@ -26318,5 +26318,1061 @@
       "confidence": "high"
     },
     "note": "OS outline, generalised; not in OSM; yes; height 3.6 m from lidar-dsm"
+  },
+  {
+    "id": "waterway-blaenau-24308307",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24308307"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "crossingsKm": [
+      0.751
+    ],
+    "note": "waterway=stream (Afon Du-B\u00e2ch); centreline from OSM; width not tagged; crosses the line at km 0.751"
+  },
+  {
+    "id": "waterway-blaenau-24308320",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24308320"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-24308395",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24308395"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-24308400",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24308400"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=stream (Ceunant Sych); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-24308406",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24308406"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-55068799",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/55068799"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-55068851",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/55068851"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=stream (Nant Dwr-oer); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-270487746",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270487746"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=river (Afon Bowydd); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-270497593",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270497593"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-270497603",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270497603"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=river (Afon Bowydd); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-272200825",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/272200825"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=river (Afon Bowydd); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-272200828",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/272200828"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=river (Afon Bowydd); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-372883800",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372883800"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=stream (Afon Bowydd); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-372887493",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372887493"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=stream (Afon Bowydd); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-372887494",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372887494"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-461162944",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461162944"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-461162945",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461162945"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-461162946",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461162946"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-461362604",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461362604"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "crossingsKm": [
+      1.847
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged; crosses the line at km 1.847"
+  },
+  {
+    "id": "waterway-blaenau-461362605",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461362605"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-462007885",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462007885"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-462105409",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462105409"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-462133778",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462133778"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=river (Afon Bowydd); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-462133780",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462133780"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=river (Afon Bowydd); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-462137116",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462137116"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=river (Afon Bowydd); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-462137120",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462137120"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=river (Afon Bowydd); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-1104456105",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1104456105"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=stream (Ceunant Sych); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-1104456106",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1104456106"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=stream (Ceunant Sych); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-1104456107",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1104456107"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=stream (Ceunant Sych); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-blaenau-1104456108",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1104456108"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "waterway=stream (Ceunant Sych); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "power-line-blaenau-462002581",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462002581"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-blaenau-462007887",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462007887"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-blaenau-462007905",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462007905"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=minor_line overhead line from OSM, 11000 V; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-blaenau-462007913",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462007913"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-blaenau-462180952",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/462180952"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-blaenau-1391444647",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1391444647"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-pole-blaenau-4566746687",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4566746687"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4566746796",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4566746796"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574335129",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574335129"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574335130",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574335130"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574335143",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574335143"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574335144",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574335144"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574335145",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574335145"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574335147",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574335147"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369340",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369340"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369341",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369341"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369342",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369342"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369344",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369344"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369345",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369345"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369346",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369346"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369347",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369347"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369348",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369348"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369349",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369349"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369350",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369350"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369352",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369352"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369353",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369353"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369512",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369512"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369514",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369514"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369515",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369515"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369516",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369516"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369517",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369517"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369554",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369554"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369555",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369555"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369556",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369556"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369557",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369557"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4574369558",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4574369558"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4575857661",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4575857661"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4575857662",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4575857662"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4575857669",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4575857669"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4575857674",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4575857674"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4575857675",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4575857675"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4575857676",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4575857676"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4575857678",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4575857678"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-4575857679",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4575857679"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-blaenau-9556834232",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/9556834232"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-blaenau"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
   }
 ]

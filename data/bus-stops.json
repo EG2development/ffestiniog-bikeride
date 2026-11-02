@@ -1,0 +1,188 @@
+{
+ "description": "OpenStreetMap bus stops (highway=bus_stop) within 600 m of the trackbed: existing infrastructure.",
+ "source": "© OpenStreetMap contributors, ODbL 1.0, via api.openstreetmap.org/api/0.6/map",
+ "fetched": "2026-11-01",
+ "stops": [
+  {
+   "id": "node/2687603031",
+   "name": "Commercial Hotel",
+   "lon": -3.9411821,
+   "lat": 52.9954486,
+   "routeM": 0,
+   "offsetM": 424,
+   "tags": {
+    "name": "Commercial Hotel"
+   }
+  },
+  {
+   "id": "node/3756078671",
+   "name": null,
+   "lon": -3.94331,
+   "lat": 52.99518,
+   "routeM": 0,
+   "offsetM": 549,
+   "tags": {}
+  },
+  {
+   "id": "node/4572016418",
+   "name": "Blaenau Ffestiniog, Church Street",
+   "lon": -3.9391498,
+   "lat": 52.9954803,
+   "routeM": 0,
+   "offsetM": 306,
+   "tags": {
+    "name": "Blaenau Ffestiniog, Church Street",
+    "shelter": "no",
+    "bench": "no"
+   }
+  },
+  {
+   "id": "node/4572091355",
+   "name": "Commercial Hotel",
+   "lon": -3.9414679,
+   "lat": 52.9954777,
+   "routeM": 0,
+   "offsetM": 443,
+   "tags": {
+    "name": "Commercial Hotel",
+    "shelter": "yes"
+   }
+  },
+  {
+   "id": "node/4575518925",
+   "name": "Blaenau Ffestiniog Church Street",
+   "lon": -3.9387556,
+   "lat": 52.995546,
+   "routeM": 0,
+   "offsetM": 290,
+   "tags": {
+    "name": "Blaenau Ffestiniog Church Street",
+    "shelter": "yes",
+    "bench": "yes"
+   }
+  },
+  {
+   "id": "node/12172114807",
+   "name": null,
+   "lon": -3.9388141,
+   "lat": 52.9954751,
+   "routeM": 0,
+   "offsetM": 288,
+   "tags": {}
+  },
+  {
+   "id": "node/4572016417",
+   "name": "Blaenau Ffestiniog, Station",
+   "lon": -3.9368001,
+   "lat": 52.9946203,
+   "routeM": 0,
+   "offsetM": 123,
+   "tags": {
+    "name": "Blaenau Ffestiniog, Station",
+    "shelter": "yes",
+    "bench": "yes"
+   }
+  },
+  {
+   "id": "node/13760804773",
+   "name": null,
+   "lon": -3.9364794,
+   "lat": 52.9945028,
+   "routeM": 0,
+   "offsetM": 98,
+   "tags": {}
+  },
+  {
+   "id": "node/2699859419",
+   "name": null,
+   "lon": -3.9323655,
+   "lat": 52.9941689,
+   "routeM": 219,
+   "offsetM": 80,
+   "tags": {}
+  },
+  {
+   "id": "node/2699859447",
+   "name": null,
+   "lon": -3.9323115,
+   "lat": 52.9940865,
+   "routeM": 219,
+   "offsetM": 71,
+   "tags": {}
+  },
+  {
+   "id": "node/10274381667",
+   "name": null,
+   "lon": -3.9296483,
+   "lat": 52.9923966,
+   "routeM": 437,
+   "offsetM": 24,
+   "tags": {}
+  },
+  {
+   "id": "node/10274381668",
+   "name": null,
+   "lon": -3.9294694,
+   "lat": 52.9923624,
+   "routeM": 445,
+   "offsetM": 34,
+   "tags": {}
+  },
+  {
+   "id": "node/10274381669",
+   "name": "Y Don",
+   "lon": -3.9289368,
+   "lat": 52.9906922,
+   "routeM": 636,
+   "offsetM": 43,
+   "tags": {
+    "name": "Y Don"
+   }
+  },
+  {
+   "id": "node/10274381670",
+   "name": null,
+   "lon": -3.9281563,
+   "lat": 52.9898234,
+   "routeM": 728,
+   "offsetM": 60,
+   "tags": {}
+  },
+  {
+   "id": "node/10274381671",
+   "name": null,
+   "lon": -3.928462,
+   "lat": 52.9875624,
+   "routeM": 850,
+   "offsetM": 167,
+   "tags": {}
+  },
+  {
+   "id": "node/10274381672",
+   "name": null,
+   "lon": -3.9289956,
+   "lat": 52.9871444,
+   "routeM": 873,
+   "offsetM": 191,
+   "tags": {}
+  },
+  {
+   "id": "node/2768532641",
+   "name": null,
+   "lon": -3.9298884,
+   "lat": 52.9815511,
+   "routeM": 1849,
+   "offsetM": 92,
+   "tags": {}
+  },
+  {
+   "id": "node/2768532666",
+   "name": null,
+   "lon": -3.929812,
+   "lat": 52.981216,
+   "routeM": 1891,
+   "offsetM": 85,
+   "tags": {}
+  }
+ ]
+}

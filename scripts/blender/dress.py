@@ -3,17 +3,27 @@
 Called from import_blockout.build_section(..., dressed=True), in place of the blockout's placeholders. Positions,
 scales, paths, timings and the camera rider's visibility are exactly the package's; only how things look changes.
 """
+import math
+
 import numpy as np
 
+import attention
 import bike
 import cast
+import dog as dogs
 import gait
 import landscape
+import lockup
+import trailfolk
 
 RUNNERS = ["priya", "aisha", "zara", "jamal", "owen", "tomos"]
 PRAM = ["amara", "kwame", "elin", "mei", "gwyn", "samuel", "hiro", "rhiannon"]
 WALKERS = ["rhiannon", "gwyn", "samuel", "lin", "hiro", "mei", "elin", "kwame", "amara", "tomos", "owen", "jamal"]
 PRAM_HANDLE_AHEAD = 0.42  # metres from the walker's root to the pram's handle
+# the community film casts by role first (walkers.ts Role): pupils in uniform, younger children, older residents, adults
+ROLES = {"pupil": cast.PUPILS, "child": cast.CHILDREN, "older": ["gwyn", "rhiannon", "samuel", "lin"],
+         "parent": ["amara", "kwame", "elin", "mei", "hiro"], "commuter": ["mei", "kwame", "jamal", "hiro", "owen"], "escort": ["elin", "hiro", "amara", "kwame"]}
+RIDERS = ["mei", "hiro", "elin", "kwame", "amara", "lin", "gwyn", "rhiannon", "samuel"]
 
 
 def cast_walkers(section_id, walkers):
@@ -21,7 +31,7 @@ def cast_walkers(section_id, walkers):
     used, out = {cast.RIDER}, []
     offset = sum(map(ord, section_id))
     for w in walkers:
-        pool = {"run": RUNNERS, "pram": PRAM}.get(w["activity"], WALKERS)
+        pool = ROLES.get(w.get("role")) or {"run": RUNNERS, "pram": PRAM, "cycle": RIDERS, "trike": RIDERS, "sit": ROLES["older"]}.get(w["activity"], WALKERS)
         start = (offset + int(w["seed"])) % len(pool)
         pid = next((pool[(start + i) % len(pool)] for i in range(len(pool)) if pool[(start + i) % len(pool)] not in used), None)
         pid = pid or next(p[0] for p in cast.PROFILES if p[0] not in used)
@@ -30,8 +40,37 @@ def cast_walkers(section_id, walkers):
     return out
 
 
-def walker(scene, root, w, arr, pid, coll, prefix):
-    """A person on a keyed walker root, with gait keyed from the distance it travels (and a pram, if it pushes one)."""
+def looks(fps, w, arr, others, dog=None, heading=None, seated=False):
+    """Where a person looks over the scene (attention.py): at their companion (whoever keeps within 1.6 m of them), at
+    anyone else who comes past, at their dog, and out over the open valley side (right of the way to Trawsfynydd)."""
+    here = arr[:, 0:3].astype(np.float64)
+    companions, passers = [], []
+    for _, activity, o in others:
+        d = np.hypot(*(o[:, 0:2].astype(np.float64) - here[:, 0:2]).T)
+        (companions if np.median(d) < 1.6 else passers if activity != "sit" else []).append(o[:, 0:3])
+    heading = arr[:, 3].astype(np.float64) if heading is None else np.full(len(arr), heading)
+    view = None if seated else -0.9 * float(w["direction"])
+    ahead = 0.0 if seated else (-0.08 if w["activity"] == "run" else -0.13)
+    return attention.gaze(fps, here, heading, 0.93 * float(w["heightM"]) * (0.7 if seated else 1.0), int(w["seed"]),
+                          companions, passers, None if dog is None else dog[1][:, 0:3], view, seated, ahead)
+
+
+def walker(scene, root, w, arr, pid, coll, prefix, seats=(), dog=None, others=()):
+    """A person on a keyed walker root, with gait keyed from the distance it travels (and a pram, if it pushes one, or
+    a dog on a lead: `dog` is its keyed root and package rows); a rider or a sitter is trailfolk's. `others`: everyone
+    else in the scene, (index, activity, rows), for where they look."""
+    fps = scene.render.fps / scene.render.fps_base
+    if w.get("locksUp"):  # rides in, locks the bicycle in a locker and walks on to the bus
+        return lockup.lock_up(scene, root, w, arr, pid, coll, prefix, looks(fps, w, arr, others) * 0.45)
+    if w["activity"] in ("cycle", "trike"):
+        return trailfolk.cyclist(scene, root, w, arr, pid, coll, prefix, looks(fps, w, arr, others) * 0.45)
+    if w["activity"] == "sit":
+        here = arr[0, 0:3]
+        seat = min(seats, key=lambda s: sum((s[0][i] - here[i]) ** 2 for i in range(2)))
+        seats.remove(seat)
+        face = math.atan2(seat[1].y, seat[1].x)
+        company = any(a == "sit" and np.hypot(*(o[0, 0:2] - here[0:2])) < 1.6 for _, a, o in others)  # someone to talk to
+        return trailfolk.sitter(scene, w, pid, coll, prefix, seat, looks(fps, w, arr, others, heading=face, seated=True), company)
     frames = np.arange(1, len(arr) + 1, dtype=np.float64)
     person = cast.person_on_root(pid, root, prefix, coll, float(w["heightM"]), w["activity"])
     wheels = None
@@ -41,8 +80,21 @@ def walker(scene, root, w, arr, pid, coll, prefix):
         pram.location = (PRAM_HANDLE_AHEAD, 0, 0)
         for side, s in (("l", 1), ("r", -1)):
             person["ctl"][f"hand_{side}"].location = (PRAM_HANDLE_AHEAD - 0.02, 0.19 * s, handle_z - 0.02)
-    gait.bake_gait(person, frames, cast.distances(arr[:, 0:2]), float(arr[0, 4]), w["activity"], scene.view_layers[0], wheels)
-    return {"walker": w["index"], "activity": w["activity"], "person": pid, "heightM": w["heightM"], "scale": round(person["k"], 3)}
+    hold = None
+    if dog:
+        hold = "r" if w["dog"].get("side") == "right" else "l"
+    gaze = looks(fps, w, arr, others, dog)
+    gait.bake_gait(person, frames, cast.distances(arr[:, 0:2]), float(arr[0, 4]), w["activity"], scene.view_layers[0], wheels, hold, gaze)
+    out = {"walker": w["index"], "activity": w["activity"], "person": pid, "heightM": w["heightM"], "scale": round(person["k"], 3)}
+    if dog:
+        d_root, d_arr = dog
+        breed = w["dog"]["breed"]
+        parts = dogs.build_dog(prefix + "dog:", coll, breed, collar=((0.55, 0.05, 0.04), (0.05, 0.25, 0.55), (0.10, 0.40, 0.12))[int(w["seed"]) % 3])
+        parts["root"].parent = d_root
+        dogs.animate(parts, frames, d_arr[:, 4], cast.distances(d_arr[:, 0:2]), breed)
+        dogs.lead(prefix + "dog:", coll, person["ctl"][f"hand_{hold}"], parts["collar"])
+        out["dog"] = breed
+    return out
 
 
 def rider(scene, root, rows, dims, coll, prefix):

@@ -6393,7 +6393,8 @@
       "licence": "ODbL (footprint, OpenStreetMap contributors); OGL (height, Welsh Government lidar DSM/DTM)",
       "confidence": "medium"
     },
-    "note": "yes; height 4.7 m from lidar-dsm; not in OS OpenMap Local 2026-10-26"
+    "note": "ruins; height 4.7 m from lidar-dsm; not in OS OpenMap Local 2026-10-26",
+    "condition": "ruin"
   },
   {
     "id": "building-trawsfynydd-373577738",
@@ -9437,5 +9438,6610 @@
       "confidence": "high"
     },
     "note": "OS outline, generalised; not in OSM; yes; height 2.8 m from lidar-dsm"
+  },
+  {
+    "id": "waterway-trawsfynydd-24309315",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309315"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "crossingsKm": [
+      8.888
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged; crosses the line at km 8.888"
+  },
+  {
+    "id": "waterway-trawsfynydd-24309354",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309354"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-24309357",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309357"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-24309362",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309362"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-24309367",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309367"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream (Nant Twll-y-cwm); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-24309369",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309369"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-24309371",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309371"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "crossingsKm": [
+      10.5
+    ],
+    "note": "waterway=stream (Nant Tyddyn-yr-yn); centreline from OSM; width not tagged; crosses the line at km 10.500"
+  },
+  {
+    "id": "waterway-trawsfynydd-24309373",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309373"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-24309382",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309382"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-24309385",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309385"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-24309436",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309436"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "crossingsKm": [
+      11.718
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged; crosses the line at km 11.718"
+  },
+  {
+    "id": "waterway-trawsfynydd-24309440",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309440"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "crossingsKm": [
+      11.938
+    ],
+    "note": "waterway=stream (Nant Islyn); centreline from OSM; width not tagged; crosses the line at km 11.938"
+  },
+  {
+    "id": "waterway-trawsfynydd-24309441",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309441"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-24309444",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309444"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-24309446",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309446"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-24309451",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309451"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=river (Afon Prysor); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-24309479",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309479"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-126523136",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/126523136"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-126526133",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/126526133"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "crossingsKm": [
+      10.758
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged; crosses the line at km 10.758"
+  },
+  {
+    "id": "waterway-trawsfynydd-126526136",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/126526136"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "crossingsKm": [
+      11.409
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged; crosses the line at km 11.409"
+  },
+  {
+    "id": "waterway-trawsfynydd-270718801",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270718801"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-270718804",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270718804"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=river (Afon Tafarn-helyg); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-270718807",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/270718807"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-295757417",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295757417"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-295757418",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295757418"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-295757419",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295757419"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-295757420",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295757420"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-295757421",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295757421"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-295757673",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295757673"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=ditch; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-295793431",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295793431"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-295793432",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295793432"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-295793433",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295793433"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-311744175",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/311744175"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-311744176",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/311744176"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-314047585",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314047585"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "crossingsKm": [
+      11.511
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged; crosses the line at km 11.511"
+  },
+  {
+    "id": "waterway-trawsfynydd-314047586",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314047586"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-314047587",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314047587"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-314047588",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314047588"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-314047589",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314047589"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-318893146",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318893146"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-318893147",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/318893147"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-338686470",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338686470"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-338686471",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338686471"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-338686475",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338686475"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-338704301",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338704301"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-338704306",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338704306"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-357873347",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357873347"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream (Afon Tafarn-helyg); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-357873348",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357873348"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream (Afon Tafarn-helyg); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-357873354",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357873354"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-357873355",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357873355"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-357880200",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357880200"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-357880206",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357880206"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-357880207",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357880207"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-357880209",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357880209"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-357888119",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357888119"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-361181588",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361181588"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-361200005",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361200005"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-361200008",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361200008"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-361201367",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/361201367"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-364829251",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/364829251"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-364829845",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/364829845"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-364886224",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/364886224"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-364886234",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/364886234"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-364997714",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/364997714"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=ditch; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-364997719",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/364997719"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-369340239",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/369340239"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-371941156",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/371941156"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-371941158",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/371941158"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-373575637",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373575637"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-373575647",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373575647"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-373575648",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373575648"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-373575649",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373575649"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-373575650",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373575650"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-373589751",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373589751"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-373589752",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373589752"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-373595263",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373595263"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-405940094",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/405940094"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream (Nant Islyn); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-405940095",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/405940095"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream (Nant Islyn) in a culvert; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-405940098",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/405940098"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-405940099",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/405940099"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream in a culvert; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-405940100",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/405940100"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-405940101",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/405940101"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-405940102",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/405940102"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream in a culvert; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-405940103",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/405940103"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-405940104",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/405940104"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "crossingsKm": [
+      11.527
+    ],
+    "note": "waterway=stream in a culvert; centreline from OSM; width not tagged; crosses the line at km 11.527"
+  },
+  {
+    "id": "waterway-trawsfynydd-405940105",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/405940105"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-428720081",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428720081"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=ditch; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-428787301",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428787301"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-428787302",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428787302"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-428787303",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428787303"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-428787304",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428787304"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-428787315",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428787315"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-428787316",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428787316"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-428787318",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428787318"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-428787319",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428787319"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-428787320",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/428787320"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-945118070",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/945118070"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-945118071",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/945118071"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "crossingsKm": [
+      9.873
+    ],
+    "note": "waterway=stream in a culvert; centreline from OSM; width not tagged; crosses the line at km 9.873"
+  },
+  {
+    "id": "waterway-trawsfynydd-945118072",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/945118072"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-945118073",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/945118073"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream in a culvert; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-945118074",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/945118074"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-945118075",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/945118075"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "crossingsKm": [
+      9.63
+    ],
+    "note": "waterway=stream in a culvert; centreline from OSM; width not tagged; crosses the line at km 9.630"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153473",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153473"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153474",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153474"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153476",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153476"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153477",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153477"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153478",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153478"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain in a culvert; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153479",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153479"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153482",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153482"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain in a culvert; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153483",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153483"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153488",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153488"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153498",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153498"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153499",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153499"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain in a culvert; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153500",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153500"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153501",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153501"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153502",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153502"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain in a culvert; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153503",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153503"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153504",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153504"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153516",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153516"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153517",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153517"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153518",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153518"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153519",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153519"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1084153522",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1084153522"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=ditch; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-trawsfynydd-1229885250",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1229885250"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "power-line-trawsfynydd-89574896",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/89574896"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=line overhead line from OSM, 275000 V; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-95341330",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/95341330"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "crossingsKm": [
+      10.007
+    ],
+    "note": "power=line overhead line from OSM, 400000 V; supports from its tower and pole nodes; crosses the line at km 10.007"
+  },
+  {
+    "id": "power-line-trawsfynydd-142846019",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/142846019"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=line overhead line from OSM, 400000 V; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-142846020",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/142846020"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=line overhead line from OSM, 275000 V; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-292649382",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/292649382"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=line overhead line from OSM, 400000 V; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-292650880",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/292650880"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=line overhead line from OSM, 400000 V; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-292650882",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/292650882"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=line overhead line from OSM, 275000 V; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-311747305",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/311747305"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "crossingsKm": [
+      9.678
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes; crosses the line at km 9.678"
+  },
+  {
+    "id": "power-line-trawsfynydd-338686468",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338686468"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-338686472",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338686472"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-357880202",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/357880202"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-359865714",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/359865714"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-359865715",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/359865715"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-359865717",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/359865717"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-364997727",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/364997727"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-364997740",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/364997740"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "crossingsKm": [
+      8.993
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes; crosses the line at km 8.993"
+  },
+  {
+    "id": "power-line-trawsfynydd-369300925",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/369300925"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-373589758",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373589758"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-1475070082",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1475070082"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=line overhead line from OSM, 275000 V; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-1475070083",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1475070083"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=line overhead line from OSM, 275000 V; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-1475070084",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1475070084"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=line overhead line from OSM, 275000 V; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-1475070086",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1475070086"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=line overhead line from OSM, 275000 V; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-1475070087",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1475070087"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=line overhead line from OSM, 275000 V; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-trawsfynydd-1475070088",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1475070088"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=line overhead line from OSM, 275000 V; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038302527",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038302527"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319042",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319042"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319078",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319078"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319111",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319111"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319115",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319115"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319140",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319140"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319177",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319177"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319181",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319181"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319193",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319193"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319225",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319225"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319233",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319233"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319280",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319280"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319345",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319345"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319355",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319355"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319420",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319420"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319423",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319423"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319441",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319441"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319460",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319460"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319488",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319488"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319518",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319518"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319530",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319530"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319550",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319550"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319558",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319558"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1038319561",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319561"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105688062",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105688062"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702153",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702153"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702155",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702155"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702156",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702156"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702158",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702158"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702159",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702159"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702162",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702162"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702163",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702163"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702166",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702166"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702167",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702167"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702168",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702168"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702169",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702169"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702170",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702170"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702173",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702173"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702177",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702177"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702178",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702178"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702180",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702180"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702181",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702181"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702186",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702186"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702188",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702188"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702190",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702190"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702195",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702195"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702196",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702196"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702198",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702198"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702199",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702199"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702202",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702202"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702205",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702205"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702207",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702207"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702208",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702208"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702209",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702209"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702210",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702210"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702214",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702214"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702216",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702216"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702219",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702219"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702220",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702220"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702226",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702226"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702227",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702227"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702228",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702228"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702229",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702229"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702230",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702230"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702232",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702232"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702235",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702235"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702237",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702237"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702238",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702238"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702240",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702240"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105702244",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105702244"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715856",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715856"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715857",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715857"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715858",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715858"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715859",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715859"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715860",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715860"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715861",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715861"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715862",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715862"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715863",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715863"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715864",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715864"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715865",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715865"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715866",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715866"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715867",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715867"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715868",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715868"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715869",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715869"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715870",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715870"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715871",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715871"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715872",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715872"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715873",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715873"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715874",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715874"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715875",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715875"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715876",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715876"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715877",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715877"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715879",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715879"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715880",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715880"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715882",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715882"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715883",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715883"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715884",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715884"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715885",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715885"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715886",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715886"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715887",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715887"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715888",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715888"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715889",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715889"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715890",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715890"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715891",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715891"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715892",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715892"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715893",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715893"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715894",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715894"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715895",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715895"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715896",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715896"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715897",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715897"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715898",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715898"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715899",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715899"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715900",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715900"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715901",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715901"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715902",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715902"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715903",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715903"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715904",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715904"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715905",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715905"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715906",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715906"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715907",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715907"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715908",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715908"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715909",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715909"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715910",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715910"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715911",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715911"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715912",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715912"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715913",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715913"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715914",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715914"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715915",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715915"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715916",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715916"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715917",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715917"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715918",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715918"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715919",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715919"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715920",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715920"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715921",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715921"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715922",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715922"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715923",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715923"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715924",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715924"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715925",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715925"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715926",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715926"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715927",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715927"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715928",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715928"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715929",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715929"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715930",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715930"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715931",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715931"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715932",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715932"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715933",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715933"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715934",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715934"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715935",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715935"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715936",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715936"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715937",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715937"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715938",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715938"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715939",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715939"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715940",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715940"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715941",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715941"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715942",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715942"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715943",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715943"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715944",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715944"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715945",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715945"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715946",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715946"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715947",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715947"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715948",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715948"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715949",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715949"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715950",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715950"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715951",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715951"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715952",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715952"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715953",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715953"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715954",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715954"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715955",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715955"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715956",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715956"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715957",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715957"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715958",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715958"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715959",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715959"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715960",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715960"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715961",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715961"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715962",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715962"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715963",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715963"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715964",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715964"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715965",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715965"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715966",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715966"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715967",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715967"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715968",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715968"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715969",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715969"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715970",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715970"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715971",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715971"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715972",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715972"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715973",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715973"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715974",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715974"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715975",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715975"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715976",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715976"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715977",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715977"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715978",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715978"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715979",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715979"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715980",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715980"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715981",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715981"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715982",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715982"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715983",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715983"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715984",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715984"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715985",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715985"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715986",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715986"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715987",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715987"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715988",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715988"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715989",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715989"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715990",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715990"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715992",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715992"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715993",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715993"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715994",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715994"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715995",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715995"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715996",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715996"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715997",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715997"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715998",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715998"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105715999",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105715999"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105716000",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105716000"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105716001",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105716001"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105716002",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105716002"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105716003",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105716003"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105716004",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105716004"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105716005",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105716005"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105716006",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105716006"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105716008",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105716008"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105716009",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105716009"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105716010",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105716010"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105716011",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105716011"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105716012",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105716012"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105716013",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105716013"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105716014",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105716014"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-1105718545",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105718545"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3174666197",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3174666197"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3174666198",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3174666198"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3174666199",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3174666199"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3174666200",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3174666200"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3174666201",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3174666201"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3174666202",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3174666202"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3458097940",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458097940"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3458097941",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458097941"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3458097942",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458097942"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3458097943",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458097943"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3458097944",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458097944"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3458097945",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458097945"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3458097946",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458097946"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3458097979",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458097979"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3458097980",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458097980"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3458097981",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458097981"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3458097982",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458097982"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3629700622",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3629700622"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3629700623",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3629700623"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3629700624",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3629700624"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3629700625",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3629700625"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3629700626",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3629700626"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3629700627",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3629700627"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3629700628",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3629700628"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3629700629",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3629700629"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3629700630",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3629700630"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3629700663",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3629700663"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972055",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972055"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972085",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972085"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972086",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972086"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972087",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972087"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972088",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972088"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972089",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972089"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972090",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972090"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972091",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972091"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972092",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972092"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972193",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972193"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972194",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972194"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972195",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972195"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972196",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972196"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972197",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972197"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972198",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972198"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972199",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972199"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972200",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972200"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972201",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972201"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972202",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972202"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972203",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972203"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972204",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972204"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972205",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972205"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972206",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972206"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972207",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972207"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972208",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972208"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972209",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972209"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972210",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972210"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972211",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972211"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972212",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972212"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972213",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972213"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972214",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972214"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972215",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972215"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972216",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972216"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972217",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972217"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972218",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972218"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972219",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972219"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972220",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972220"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972221",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972221"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972222",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972222"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972223",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972223"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972224",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972224"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972225",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972225"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972226",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972226"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972227",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972227"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972228",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972228"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972229",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972229"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972234",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972234"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972235",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972235"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972236",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972236"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972237",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972237"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972238",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972238"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972239",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972239"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3644972240",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3644972240"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3690331359",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3690331359"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3690331360",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3690331360"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3690331630",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3690331630"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3690331631",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3690331631"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3690331632",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3690331632"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3690331633",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3690331633"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3731025830",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3731025830"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3731025832",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3731025832"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3731025833",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3731025833"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3731025834",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3731025834"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-trawsfynydd-3770305066",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770305066"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-tower-trawsfynydd-3774273454",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3774273454"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-13532463076",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/13532463076"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-13532463077",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/13532463077"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-trawsfynydd-13532463078",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/13532463078"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-trawsfynydd"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
   }
 ]

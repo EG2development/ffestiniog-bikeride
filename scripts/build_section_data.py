@@ -25,6 +25,8 @@ from build_poc_data import (LEGEND, LIDAR_URL, PROFILE_PAD_M, ROAD_CLASSES, ROOT
 from dem.bng import bng_to_wgs84, wgs84_to_bng  # noqa: E402
 from dem.cog import Cog  # noqa: E402
 from osm.fetch_bbox import _relation_features, complete_water_relations, fetch_bbox, fetch_way_full, to_features  # noqa: E402
+from osm.extras import building_value, extra_tags, extras_of, owned_by_extras  # noqa: E402
+from lidar_underbridges import owns as owns_underbridge, underbridge_spans  # noqa: E402
 
 TODAY = datetime.date.today().isoformat()
 MARGIN_M = 600
@@ -43,13 +45,14 @@ KEEP_TAGS = {"highway", "bridge", "tunnel", "cutting", "embankment", "layer", "r
 
 
 def minimise_tags(features):
-    """Returns the features with only KEEP_TAGS, `building` reduced to "yes", and `name` kept only for the railway itself."""
+    """Returns the features with only KEEP_TAGS (an extra kind its own, osm/extras.py), `building` reduced to "yes" ("ruins"
+    or "abandoned" for those), and `name` kept only for the railway itself."""
     out = []
     for f in features:
         tags = f["properties"].get("tags", {})
-        kept = {k: v for k, v in tags.items() if k in KEEP_TAGS}
+        kept = extra_tags(f) or {k: v for k, v in tags.items() if k in KEEP_TAGS}
         if "building" in kept:
-            kept["building"] = "yes"
+            kept["building"] = building_value(tags)
         if tags.get("name") == "Bala and Festiniog Railway":
             kept["name"] = tags["name"]
         props = {k: v for k, v in f["properties"].items() if k != "tags"}
@@ -278,7 +281,7 @@ def main(section, reuse_osm=False):
             ds = [distance_of(lons, lats, dist, lo, la) for lo, la in f["geometry"]["coordinates"]]
             if max(ds) >= s0 and min(ds) <= s1:  # any overlap with the window, so a bridge across its edge is kept (review R7)
                 bridges.append([round(min(ds), 1), round(max(ds), 1), f["properties"]["id"]])
-    bridges.sort()
+    bridges = sorted(bridges + underbridge_spans(s0, s1))  # with the decks the lidar shows and OSM lacks (lidar_underbridges.py)
     k_lon = 111320 * math.cos(math.radians(lat_c))
     loc = lambda lo, la: ((lo - lon0) * k_lon, (la - lat0) * 111320)  # noqa: E731
     sec_idx = [i for i in range(len(lons) - 1) if dist[i + 1] >= s0 - PROFILE_PAD_M and dist[i] <= s1 + PROFILE_PAD_M]
@@ -367,7 +370,7 @@ def main(section, reuse_osm=False):
     structures = [f for f in feats if any(k in f["properties"]["tags"] for k in ("bridge", "cutting", "embankment", "tunnel"))
                   and f["properties"]["tags"].get("name") == "Bala and Festiniog Railway"]
     over_ids = {w for _, _, w, _ in overbridges}  # footbridges and other non-road overbridges must survive a --reuse-osm rebuild (t10 P-M3)
-    kept = minimise_tags(roads + structures + [f for f in feats if f["properties"]["id"] in over_ids and f not in roads] + [f for c, f in polys if c is not None])
+    kept = minimise_tags(roads + structures + [f for f in feats if f["properties"]["id"] in over_ids and f not in roads] + [f for c, f in polys if c is not None] + extras_of(feats))
     write_json(f"{out_rel}/osm.geojson", {"type": "FeatureCollection", "retrieved": TODAY, "section": section,
                                           "source": "OpenStreetMap contributors (ODbL), api.openstreetmap.org/api/0.6/map" if feats else "none",
                                           "features": kept})
@@ -382,7 +385,7 @@ def main(section, reuse_osm=False):
             features.append({"id": f"landcover-{section}", "kind": "landcover", "category": "approximate",
                              "source": {"type": "osm", "ref": f"landuse/natural polygons in {out_rel}/osm.geojson"}, "scenes": scenes})
         # the line's structures are registered by the ground windows; an aerial window would draw them twice
-        for b0, b1, wid in (bridges if S["kind"] == "ground" else []):
+        for b0, b1, wid in ([b for b in bridges if b[2].startswith("way/")] if S["kind"] == "ground" else []):  # lidar ones: lidar_underbridges.py
             features.append({"id": f"bridge-{section}-{wid.split('/')[1]}", "kind": "structure", "category": "approximate", "source": {"type": "osm", "ref": wid},
                              "scenes": scenes, "fromKm": b0 / 1000, "toKm": b1 / 1000, "note": "position from OSM; generic deck and parapets"})
         for o0, o1, wid, hw in (overbridges if S["kind"] == "ground" else []):
@@ -403,15 +406,16 @@ def main(section, reuse_osm=False):
           f"water bodies {len(water)} (levels {', '.join(f'{k} {v:.2f} m' for k, v in levels.items() if any(k == w for w, _ in water))}); land cover {counts}")
 
 
-# register entries other steps own: build_buildings.py writes the buildings and gen-earthworks.ts the earthworks (each
-# replaces only its own kind), so a rebuild keeps them (t9 F4; t10: vale-north lost its 17 earthworks on a rebuild)
-OWNED_ELSEWHERE = ("building", "earthwork")
+# register entries other steps own: build_buildings.py writes the buildings, gen-earthworks.ts the earthworks, fetch_barriers.py
+# the boundaries, fetch_osm_extras.py the watercourses and power lines and lidar_underbridges.py its bridges (each replaces only
+# its own), so a rebuild keeps them (t9 F4; t10: vale-north lost its 17 earthworks on a rebuild)
+OWNED_ELSEWHERE = ("building", "earthwork", "barrier")
 
 
 def keep_owned(path, generated):
     """The window register as generated, plus the existing entries another step owns."""
-    existing = json.load(open(path)) if os.path.exists(path) else []
-    return generated + [e for e in existing if e.get("kind") in OWNED_ELSEWHERE]
+    existing = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else []  # gen-earthworks.ts writes UTF-8
+    return generated + [e for e in existing if e.get("kind") in OWNED_ELSEWHERE or owned_by_extras(e) or owns_underbridge(e)]
 
 
 def self_test():

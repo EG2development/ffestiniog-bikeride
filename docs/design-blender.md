@@ -66,7 +66,9 @@ in the files (the exporter evaluates, it does not convert); the importer applies
 | `trail` | ribbon positions, indices, uvs; samples (distM, x, y, z, gradient) every 1 m | `scene.trail` |
 | `roads`, `bridges[i]`, `barriers.{wall,hedge,fence}` | positions, indices, uvs where present | `scene.roads`, `scene.bridges`, `scene.barriers` |
 | `buildings[kind]` | positions, normals, indices; status per group | `scene.buildings.groups` |
-| `water[i]` | positions, indices (triangulated with `waterArrays`, holes kept), surfaceY, OSM id | `scene.water`, `src/three/waterGeometry.ts` |
+| `water[i]` | positions, indices (triangulated with `waterArrays`, holes kept), surfaceY, OSM id; areaM2, `reservoir` (draw-down shore) | `scene.water`, `src/three/waterGeometry.ts` |
+| `waterways[i]` (ground) | runs of [x, y, z] at the water's surface (just below the ground across the channel); kind, widthM, widthSource (default widths: river 5, stream 1.8, drain and ditch 0.8 m) | `scene.waterways` (`waterways.ts`); built by `scripts/blender/waterside.py` |
+| `power` | supports: kind, position, heightM, heightSource, voltageV; lines: supports by index, cables, voltageV; status "existing" | `scene.power` (`power.ts`); built by `scripts/blender/power.py` |
 | `trees.{conifer,broadleaf}` | x, y, z, scale, yaw f32; tint f32; variant u8 | `scene.trees` (all placements; Blender culls nothing by hand) |
 | `grass` | x, y, z, yaw, scale, tint f32 | `scene.grass` |
 | `camera` | per frame: position f32 ×3, target f32 ×3, fovDeg f32, near f32; shot index u8 and shot kinds (manifest) | `scene.shot(f)`, `shotSpecAt`, `Section3D`'s near-plane rule |

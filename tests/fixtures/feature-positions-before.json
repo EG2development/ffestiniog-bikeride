@@ -1,5 +1,9 @@
 {
 "note": "Register positions before the water, readiness, clarity and buildings iteration (captured at t6, 2026-10-25, before any code change). Spec CL7: none of these may move or disappear. Not a visual baseline.",
+"superseded": {
+"earthwork-fill-6.309": {"by": "bridge-vale-south-lidar-6.308", "reason": "2026-11-02: the lidar notch is an underbridge's opening over a farm track, not a fill (data/lidar-underbridges.json)"},
+"earthwork-fill-7.356": {"by": "bridge-vale-south-lidar-7.356", "reason": "2026-11-02: the lidar notch is an underbridge's opening over a farm track, not a fill (data/lidar-underbridges.json)"}
+},
 "features": {
 "bridge-159029124": {
 "file": "data/features-3d.json",

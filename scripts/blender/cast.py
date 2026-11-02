@@ -35,7 +35,18 @@ PROFILES = [
     ("owen", 1, 31, (0.0, 0.0, 1.0), 0.7, 0.65, "young_caucasian_male", "short01", "eyebrow001", "male_casualsuit06", "shoes05", 0.0, (0.18, 0.11, 0.06)),
     ("zara", 0, 30, (0.5, 0.0, 0.5), 0.5, 0.55, "young_african_female", "ponytail01", "eyebrow006", "female_sportsuit01", "shoes02", -0.1, (0.04, 0.03, 0.025)),
     ("jamal", 1, 23, (1.0, 0.0, 0.0), 0.45, 0.6, "young_african_male", "short01", "eyebrow005", "male_casualsuit02", "shoes05", -0.04, None),
+    # the community film's pupils (10-12, in school uniform: kit.py) and younger children
+    ("cerys", 0, 11, (0.0, 0.0, 1.0), 0.45, 0.5, "young_caucasian_female", "ponytail01", "eyebrow007", "female_casualsuit01", "shoes02", 0.0, (0.16, 0.09, 0.04)),
+    ("osian", 1, 12, (0.0, 0.0, 1.0), 0.45, 0.55, "young_caucasian_male", "short02", "eyebrow001", "male_casualsuit06", "shoes02", 0.0, (0.06, 0.04, 0.03)),
+    ("nia", 0, 10, (0.7, 0.0, 0.3), 0.45, 0.45, "young_african_female", "braid01", "eyebrow009", "female_casualsuit01", "shoes02", 0.0, None),
+    ("dewi", 1, 11, (0.0, 0.0, 1.0), 0.5, 0.5, "young_caucasian_male2", "short03", "eyebrow008", "male_casualsuit06", "shoes02", 0.0, None),
+    ("ffion", 0, 12, (0.0, 0.5, 0.5), 0.4, 0.55, "young_asian_female", "bob01", "eyebrow002", "female_casualsuit01", "shoes02", 0.0, (0.03, 0.025, 0.02)),
+    ("harri", 1, 10, (1.0, 0.0, 0.0), 0.45, 0.45, "young_african_male", "short01", "eyebrow005", "male_casualsuit02", "shoes02", 0.0, None),
+    ("mabli", 0, 7, (0.0, 0.0, 1.0), 0.45, 0.5, "young_caucasian_female", "long01", "eyebrow011", "female_casualsuit01", "shoes06", 0.3, (0.35, 0.22, 0.10)),
+    ("gruff", 1, 8, (0.3, 0.3, 0.4), 0.45, 0.5, "young_asian_male", "short02", "eyebrow010", "male_casualsuit03", "shoes06", -0.2, None),
 ]
+PUPILS = ["cerys", "osian", "nia", "dewi", "ffion", "harri"]
+CHILDREN = ["mabli", "gruff"]
 RIDER = "dylan"
 
 
@@ -268,11 +279,11 @@ def seat_rider(person, bike, view_layer, lean_deg=40.0):
     # saddle height: at the bottom of the stroke the hip-to-ankle distance is 95 % of the leg (R02)
     bb, sdir = bike["bb"], bike["seat_dir"]
     hip_off = Vector((0.0, 0, 0.085 * k))
-    lo, hi = 0.4, 1.1
+    lo, hi = 0.4 * bike.get("crank_len", bk.CRANK) / bk.CRANK, 1.1  # the search floor shrinks with a smaller bicycle
     for _ in range(40):
         mid = (lo + hi) / 2
         hip = bb + sdir * mid + Vector((0, 0, 0.035)) + hip_off
-        ankle = bb + Vector((0.03, 0, -bk.CRANK + ankle_above_pedal))
+        ankle = bb + Vector((0.03, 0, -bike.get("crank_len", bk.CRANK) + ankle_above_pedal))
         lo, hi = (mid, hi) if (hip - ankle).length < 0.95 * leg else (lo, mid)
     saddle_h = (lo + hi) / 2
     saddle_top = bb + sdir * saddle_h + Vector((0, 0, 0.035))

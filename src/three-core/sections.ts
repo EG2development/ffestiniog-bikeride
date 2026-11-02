@@ -5,18 +5,23 @@ import { wgs84ToBng } from "./bng";
 import { buildBridgeMesh } from "./bridge";
 import { placeGrass, type GrassClump } from "./grass";
 import { sectionBuildings, type BuildingStatus, type SectionBuildings } from "./buildings";
-import { aerialOrbit, droneSideTrack, firstPersonShot, followShot, liftClear, pullBack, sequenceShots, withClearance, type HeightAt, type Shot } from "./camera";
+import { aerialOrbit, craneShot, droneSideTrack, firstPersonShot, followShot, liftClear, pullBack, sequenceShots, withClearance, type HeightAt, type Shot } from "./camera";
 import { cyclistPose, defaultCyclistDims, distanceTable, type CyclistDims } from "./cyclistMotion";
 import { buildTerrainMesh, heightAtBng, meshHeightAtBng } from "./dem";
 import type { Feature, OsmLine, SectionBuilding } from "./registers";
-import { buildRoadMarkings, buildRoadMesh, buildRoadStructures, gradeToRoads, layRoads, seatRoads, type RoadLayout, type RoadLine } from "./roads";
+import { COMMUNITY } from "./community";
+import { buildRoadMarkings, buildRoadMesh, gradeToRoads, layRoads, roadIndex, seatRoads, type RoadLayout, type RoadLine } from "./roads";
+import { buildRoadStructures } from "./roadStructures";
+import { crossingGround, meetsTrail } from "./roadCrossings";
 import { IMAGERY_GRADE } from "./photoLook";
 import { imageryNodeColours, imageryPixels, shadeTerrain, type GroundImage } from "./shading";
 import { buildTrail, centrelineIndex, flattenCorridor, TRAIL_WIDTH_M, type CutFill, type Trail, type TrailProfile } from "./trail";
 import { placeTrees, type TreePlacement } from "./trees";
+import { photoDressing, type Dressing } from "./dressing";
 import type { DemGrid, LandCover, MeshArrays, Vec3 } from "./types";
-import { placePeople, type PeopleOptions } from "./people";
-import { walkerTracks, type WalkerSpec, type WalkerTrack } from "./walkers";
+import type { PeopleOptions } from "./people";
+import { sectionWalkers } from "./sectionPeople";
+import type { WalkerSpec, WalkerTrack } from "./walkers";
 import { waterBodies, type WaterBody } from "./water";
 
 export type { OsmLine } from "./registers";
@@ -31,9 +36,15 @@ export type Look = "concept" | "photo";
 export type ShotSpec =
   | { kind: "drone-side"; fromDistM: number; toDistM: number; startHeightM: number; endHeightM: number; sideM: number; frames: number }
   | { kind: "follow"; backM: number; upM: number; sideM: number; frames: number }
+  /** comes down behind the rider, looking ahead along the route, to a follow position (camera.ts craneShot) */
+  | { kind: "crane"; fromBackM: number; toBackM: number; fromUpM: number; toUpM: number; sideM: number; lookAheadM: number; frames: number }
   | { kind: "aerial-orbit"; centreDistM: number; radiusM: number; heightM: number; fromDeg: number; toDeg: number; frames: number }
-  | { kind: "pull-back"; fromDistM: number; startHeightM: number; endHeightM: number; backM: number; frames: number }
-  | { kind: "hold"; distM: number; heightM: number; sideM: number; frames: number }
+  /** rises and backs away from a trail point, looking at it; with lookAheadM it looks instead at the trail that far on
+   * (negative: back towards the route's start) and backs away from there, so the view runs out along the route */
+  | { kind: "pull-back"; fromDistM: number; startHeightM: number; endHeightM: number; backM: number; frames: number; lookAheadM?: number }
+  /** a still camera at a route distance (beyond the trail's ends, on along its end's direction and over the ground
+   * there: the station a path's end leads to) and metres right of the route's direction */
+  | { kind: "hold"; distM: number; heightM: number; sideM: number; frames: number; target?: { distM: number; sideM?: number; upM?: number }; fovDeg?: number }
   | { kind: "first-person"; eyeHeightM: number; lookAheadM: number; frames: number };
 export type SectionConfig = {
   id: string;
@@ -48,7 +59,7 @@ export type SectionConfig = {
   captionIds: string[];
   featureIds: string[];
   ve: 1;
-  /** instanced trees per kind; lower for a window whose terrain alone is large (RN6) */
+  /** instanced trees per kind (in the photo look, with the woods' kinds from OSM, the two kinds share twice this); lower for a window whose terrain alone is large (RN6) */
   maxTreesPerKind?: number;
   /** the photoreal layer's sourced extras (docs/adr/0054-photoreal-layer.md), built in the photo look only, so the concept
    * look's output stays unchanged (ADR 60): trees sized from the lidar canopy (ADR 57), OSM field boundaries (ADR 58),
@@ -60,6 +71,8 @@ export type SectionConfig = {
     grassAlongM?: [number, number];
     grassBandM?: number;
     walkers?: WalkerSpec[];
+    /** the walkers move together, aware of each other and the rider (choreography.ts), not each on a fixed line */
+    choreograph?: boolean;
     /** walkers, runners and people behind prams by a seeded draw, along `grassAlongM` (ADR 61) */
     people?: PeopleOptions;
     /** trunks no closer than this to the centreline, instead of the reel's 10 m (ADR 11): the lidar canopy stands
@@ -73,6 +86,9 @@ export type SectionConfig = {
     canopyCover?: boolean;
     /** the ground's colour from the window's Sentinel-2 image instead of its land cover (ADR 60) */
     imagery?: boolean;
+    /** street furniture, existing or proposed (props.ts), and no camera rider drawn (others carry the scene) */
+    props?: import("./props").PropSpec[];
+    riderHidden?: boolean;
   };
 };
 
@@ -174,8 +190,8 @@ export const PROTOTYPES: Record<string, SectionConfig> = {
 
 /** A section or prototype config by id, or a named error at the boundary. */
 export function configById(id: string): SectionConfig {
-  const cfg = SECTIONS[id] ?? PROTOTYPES[id];
-  if (!cfg) throw new Error(`unknown section "${id}"; known sections: ${[...Object.keys(SECTIONS), ...Object.keys(PROTOTYPES)].join(", ")}`);
+  const cfg = SECTIONS[id] ?? PROTOTYPES[id] ?? COMMUNITY[id];
+  if (!cfg) throw new Error(`unknown section "${id}"; known sections: ${[...Object.keys(SECTIONS), ...Object.keys(PROTOTYPES), ...Object.keys(COMMUNITY)].join(", ")}`);
   return cfg;
 }
 
@@ -216,7 +232,7 @@ export type PocScene = {
 
 /** The ground's photograph for the photo look's terrain (ADR 60): graded sRGB RGBA pixels on the DEM's grid. */
 export type SceneImage = { width: number; height: number; scale: number; rgba: Uint8Array; cols: number; rows: number };
-export type SectionScene = PocScene & { groundImage?: SceneImage; config: SectionConfig; roads: MeshArrays; roadMarkings: MeshArrays; roadStructures: MeshArrays; bridges: MeshArrays[]; trees: TreePlacement; water: WaterBody[]; buildings: SectionBuildings; barriers: BarrierMeshes; grass: GrassClump[]; walkers: WalkerTrack[] };
+export type SectionScene = PocScene & { groundImage?: SceneImage; config: SectionConfig; roads: MeshArrays; roadMarkings: MeshArrays; roadStructures: MeshArrays; bridges: MeshArrays[]; trees: TreePlacement; water: WaterBody[]; buildings: SectionBuildings; barriers: BarrierMeshes; grass: GrassClump[]; walkers: WalkerTrack[]; waterways: Dressing["channels"]; power: Dressing["power"] };
 
 /** The ground scene of a section: trail, flattened and shaded terrain (graded to `roads`), rider table, heights and shots. */
 function groundScene(cfg: SectionConfig, inputs: PocInputs, roads: RoadLine[] = []): PocScene {
@@ -246,17 +262,14 @@ function groundScene(cfg: SectionConfig, inputs: PocInputs, roads: RoadLine[] = 
   };
   const groundOf = (mesh: MeshArrays): DemGrid => ({ ...dem, heights: Float32Array.from({ length: dem.cols * dem.rows }, (_, k) => mesh.positions[k * 3 + 1]) });
   const bareHeightAt = lookup(dem, (h) => (h / 10) * cfg.ve);
-  // the roads keep their real level (the bare DTM's, or the trail's grading where that is higher) and the ground is
-  // graded to them, except in the trail's own corridor (docs/design-3d.md D10)
+  // the roads keep their real level (bare DTM, or the trail's grading where higher), the ground graded to them (D10)
   let roadLayout: RoadLayout | undefined;
   if (roads.length > 0) {
     const flat = lookup(groundOf(terrain), (h) => h, meshHeightAtBng);
-    // the trail's formation and one grid cell: beyond it an existing road keeps its real level and the ground between
-    // is graded to it as a bank (the proposed trail does not lift a road beside it onto its own level)
+    // the trail's formation and a grid cell; a road beyond keeps its real level, the trail never lifts it onto its own
     const reach = (TRAIL_WIDTH_M / 2 + 1 + dem.spacingM) / 10;
     const nearTrail = centrelineIndex(trail, reach);
-    // a road the line crosses on one of its bridges passes under the span on its own level (from the bare DTM either
-    // side and the lidar's ground under the span, not raised to the trail's grading), and its ground is graded to it
+    // a road under one of the line's bridges passes beneath on its own level (bare DTM, the lidar's ground under the span)
     const spans = profile.bridges ?? [];
     const underSpan = (x: number, z: number) => {
       const foot = nearTrail(x, z);
@@ -266,17 +279,41 @@ function groundScene(cfg: SectionConfig, inputs: PocInputs, roads: RoadLine[] = 
       return { lateral: foot!.lateral, ...(ground != null && { ground: (ground / 10) * cfg.ve }) };
     };
     const keep = (x: number, z: number) => (nearTrail(x, z)?.lateral ?? Infinity) <= reach && !underSpan(x, z);
-    roadLayout = layRoads(roads, route.project, (x, z) => Math.max(bareHeightAt(x, z), flat(x, z)), { ve: cfg.ve, keep, under: underSpan });
-    // where the grid cannot be graded level with every road (two roads too close for its cells, a junction's mouth),
-    // a road is seated on the ground graded to it, and the ground graded again to the seated road: its verges and
-    // banks follow it up instead of leaving it on a wall
+    const meet = meetsTrail(trail, nearTrail, profile); // elsewhere: over it with a railway's headroom, or on its level
+    roadLayout = meet(layRoads(roads, route.project, (x, z) => Math.max(bareHeightAt(x, z), flat(x, z)), { ve: cfg.ve, keep, under: underSpan }));
+    // a road the grid cannot grade level with (two roads too close for its cells, a junction's mouth) is seated on the
+    // ground graded to it, and the ground graded again to it; a level crossing's ground is graded to it in the corridor
     const ungraded = terrain.positions;
     const surface = (positions: Float32Array) => lookup(groundOf({ ...terrain, positions }), (h) => h, meshHeightAtBng);
     for (let pass = 0; pass < 2; pass++) {
-      const graded = gradeToRoads(ungraded, roadLayout, { spacingM: dem.spacingM, keep });
-      roadLayout = seatRoads(roadLayout, surface(graded));
+      const crossing = crossingGround(roadLayout, 1.5);
+      const graded = gradeToRoads(ungraded, roadLayout, { spacingM: dem.spacingM, keep: (x, z) => keep(x, z) && !crossing(x, z) });
+      roadLayout = meet(seatRoads(roadLayout, surface(graded)));
       terrain = { ...terrain, positions: graded };
     }
+  }
+  {
+    // under the path's own surface the ground never rises through it: each node no higher than its formation (a level
+    // crossing's ground is graded to the road) and, where the profile sags, than the lowest of the trail a grid cell
+    // either way, so the ground's straight triangles stay under the ribbon's (a sharp sag by Maentwrog Road showed)
+    // every node of a triangle under the ribbon: the reach flattenCorridor levels (its 1 m shoulder and a cell's diagonal)
+    const ribbon = (TRAIL_WIDTH_M / 2 + 1 + dem.spacingM * Math.SQRT2) / 10;
+    const nearTrail = centrelineIndex(trail, ribbon);
+    const spans = profile.bridges ?? [];
+    const formation = flattened.mesh.positions;
+    // a road beside the path (not across it) keeps the ground graded to it: lowering that would leave the road afloat
+    const alongside = roadLayout ? roadIndex(roadLayout, 1.5 / 10) : () => [];
+    const crossing = roadLayout ? crossingGround(roadLayout, 1.5) : () => false;
+    const held = Float32Array.from(terrain.positions);
+    for (let i = 0; i < held.length; i += 3) {
+      const foot = nearTrail(held[i], held[i + 2]);
+      if (!foot || !foot.interior || foot.lateral > ribbon || spans.some(([a, b]) => foot.distM >= a && foot.distM <= b)) continue;
+      if (alongside(held[i], held[i + 2]).length > 0 && !crossing(held[i], held[i + 2])) continue;
+      const here = trail.sampleAt(foot.distM).y;
+      const sag = Math.min(0, trail.sampleAt(foot.distM - dem.spacingM).y - here, trail.sampleAt(foot.distM + dem.spacingM).y - here);
+      held[i + 1] = Math.min(held[i + 1], formation[i + 1] + sag);
+    }
+    terrain = { ...terrain, positions: held };
   }
   const groundGrid = groundOf(terrain);
   const heightAt = lookup(groundGrid, (h) => h);
@@ -296,6 +333,20 @@ export const followStartFrame = (cfg: SectionConfig): number => {
   return cfg.frames;
 };
 
+/** A hold camera's point: `sideM` right of the route at `distM`, `upM` over the trail, or beyond the trail's ends on along
+ * its end's direction and `upM` over the ground there. */
+function holdPoint(scene: Pick<PocScene, "trail" | "heightAt">, distM: number, sideM: number, upM: number): Vec3 {
+  const s = scene.trail.sampleAt(distM);
+  const over = distM - s.distM;
+  if (over === 0) return [s.x - s.tangent[2] * (sideM / 10), s.y + upM / 10, s.z + s.tangent[0] * (sideM / 10)];
+  const l = Math.hypot(s.tangent[0], s.tangent[2]) || 1;
+  const [fx, fz] = [s.tangent[0] / l, s.tangent[2] / l];
+  const [x, z] = [s.x + (fx * over - fz * sideM) / 10, s.z + (fz * over + fx * sideM) / 10];
+  const ground = scene.heightAt(x, z);
+  if (!Number.isFinite(ground)) throw new Error(`a hold camera ${Math.abs(over).toFixed(0)} m beyond the trail's end is off the terrain`);
+  return [x, ground + upM / 10, z];
+}
+
 /** The section's camera from its shot specs; each shot sees local frames, follow shots read the rider at the global frame. */
 export function shotsOf(cfg: SectionConfig, scene: Pick<PocScene, "trail" | "riderAt" | "heightAt"> & { poseAt: (f: number) => ReturnType<typeof cyclistPose>; distAt?: (f: number) => number }): Shot {
   const far = (): Vec3 => [1e6, 1e6, 1e6];
@@ -314,6 +365,13 @@ export function shotsOf(cfg: SectionConfig, scene: Pick<PocScene, "trail" | "rid
       case "drone-side":
         shot = droneSideTrack({ trail: scene.trail, riderAt: scene.riderAt, heightAt: scene.heightAt, ...spec });
         break;
+      case "crane": {
+        const offset = start;
+        const distAt = scene.distAt;
+        if (!distAt) throw new Error(`section ${cfg.id}: a crane shot needs the rider's distance table (distAt)`);
+        shot = craneShot({ trail: scene.trail, poseAt: (g) => scene.poseAt(g + offset), distAt: (g) => distAt(g + offset), ...spec });
+        break;
+      }
       case "follow": {
         const offset = start;
         shot = followShot({ poseAt: (g) => scene.poseAt(g + offset), backM: spec.backM, upM: spec.upM, sideM: spec.sideM });
@@ -327,17 +385,17 @@ export function shotsOf(cfg: SectionConfig, scene: Pick<PocScene, "trail" | "rid
       case "pull-back": {
         const s = scene.trail.sampleAt(spec.fromDistM);
         // back away along the trail (against the direction of travel), so the alignment stays in view and the path follows the valley
-        const t = s.tangent;
+        const target: Vec3 = spec.lookAheadM === undefined ? [s.x, s.y, s.z] : holdPoint(scene, spec.fromDistM + spec.lookAheadM, 0, 0);
+        const t = spec.lookAheadM === undefined ? s.tangent : [target[0] - s.x, 0, target[2] - s.z];
         const l = Math.hypot(t[0], t[2]) || 1;
-        shot = pullBack({ from: [s.x, s.y, s.z], target: [s.x, s.y, s.z], startHeightM: spec.startHeightM, endHeightM: spec.endHeightM, backM: spec.backM, frames: spec.frames, back: [-t[0] / l, -t[2] / l] });
+        shot = pullBack({ from: [s.x, s.y, s.z], target, startHeightM: spec.startHeightM, endHeightM: spec.endHeightM, backM: spec.backM, frames: spec.frames, back: [-t[0] / l, -t[2] / l] });
         break;
       }
       case "hold": {
-        const s = scene.trail.sampleAt(spec.distM);
-        const ahead = scene.trail.sampleAt(spec.distM + 200);
-        const t = s.tangent;
-        const position: Vec3 = [s.x - t[2] * (spec.sideM / 10), s.y + spec.heightM / 10, s.z + t[0] * (spec.sideM / 10)];
-        shot = () => ({ position, target: [ahead.x, ahead.y, ahead.z], fovDeg: 45 });
+        const at = spec.target;
+        const position = holdPoint(scene, spec.distM, spec.sideM, spec.heightM);
+        const target = holdPoint(scene, at?.distM ?? spec.distM + 200, at?.sideM ?? 0, at?.upM ?? 0);
+        shot = () => ({ position, target, fovDeg: spec.fovDeg ?? 45 });
         break;
       }
     }
@@ -398,9 +456,10 @@ function extras(cfg: SectionConfig, inputs: ExtraInputs, scene: PocScene, look: 
   // only bridges inside this section's km range: the merged registers also hold other windows' structures, and a span
   // outside the trail would be built at its clamped end as a stray deck
   const inRange = (f: Feature) => f.fromKm !== undefined && f.toKm !== undefined && f.toKm >= cfg.kmRange[0] && f.fromKm <= cfg.kmRange[1];
-  const bridges = inputs.features
+  const spans = inputs.features
     .filter((f) => f.kind === "structure" && f.id.startsWith("bridge-") && (inputs.bridgeIds ? inputs.bridgeIds.includes(f.id) : true) && inRange(f))
-    .map((f) => buildBridgeMesh(scene.trail, [f.fromKm! * 1000, f.toKm! * 1000]));
+    .map((f): [number, number] => [f.fromKm! * 1000, f.toKm! * 1000]);
+  const bridges = spans.map((s) => buildBridgeMesh(scene.trail, s));
   // The roads as the ground was graded to them (a scene built without them lays them on its ground as it is). Where
   // the trail's corridor leaves a road above the ground it keeps its level on a generic structure: a deck over the
   // trail's clearance (the A470 crosses the line twice, on overbridges both times) and walls either side of it.
@@ -422,6 +481,9 @@ function extras(cfg: SectionConfig, inputs: ExtraInputs, scene: PocScene, look: 
     return pts.slice(1).map((b, k) => ({ a: { x: pts[k].x, z: pts[k].y }, b: { x: b.x, z: b.y }, rM: 1.5 }));
   });
   const canopy = photo?.canopyTrees ? inputs.canopy : undefined;
+  const water = drawsCover ? waterBodies(inputs.osm, inputs.route.project, scene.heightAt, 10_000, inputs.waterLevels ?? {}, cfg.ve) : [];
+  // the photo look's OSM dressing (dressing.ts): woods by their tags, watercourses and power lines, trees and grass clear of the water
+  const dress = photoDressing({ photo: !!photo, ground: cfg.kind === "ground", ve: cfg.ve }, inputs, scene, { spans, roads, water, footprints });
   return {
     roads: buildRoadMesh(layout),
     roadMarkings: buildRoadMarkings(layout),
@@ -430,7 +492,7 @@ function extras(cfg: SectionConfig, inputs: ExtraInputs, scene: PocScene, look: 
     // an aerial shot has no rider to keep in view, so its trees need no sight lines
     trees:
       drawsCover
-        ? placeTrees(inputs.dem, inputs.land, inputs.route.project, scene.trail, {
+        ? dress.clearTrees(placeTrees(inputs.dem, inputs.land, inputs.route.project, scene.trail, {
             roads,
             ve: cfg.ve,
             sightLines: cfg.kind === "ground" ? sightLines(cfg, scene) : [],
@@ -442,32 +504,27 @@ function extras(cfg: SectionConfig, inputs: ExtraInputs, scene: PocScene, look: 
             ...(photo?.treeZoneM !== undefined && { nearZoneM: photo.treeZoneM }),
             ...(photo?.treesPerNode !== undefined && { treesPerNode: photo.treesPerNode }),
             ...(photo?.canopyCover && { canopyCover: true }),
-          })
+            ...(dress.woodKinds && { woodKinds: dress.woodKinds }),
+          }))
         : { conifer: [], broadleaf: [] },
-    water: drawsCover ? waterBodies(inputs.osm, inputs.route.project, scene.heightAt, 10_000, inputs.waterLevels ?? {}, cfg.ve) : [],
+    water,
     buildings,
     barriers: lines.length > 0 ? buildBarrierMeshes(lines, inputs.route.project, scene.heightAt, { ve: cfg.ve, trail: scene.trail, gapM: 3 }) : NO_BARRIERS(),
     // open ground gets grass; the woodland floor a sparser, darker growth (bracken and bramble read as the same clumps);
     // every clump stands on the rendered (flattened) ground, like the roads and trees (RL15)
     grass:
       photo?.grassAlongM && photo.grassBandM !== undefined && cfg.kind === "ground"
-        ? [
+        ? dress.clearGrass([
             ...placeGrass(inputs.dem, inputs.land, inputs.route.project, scene.trail, { alongM: photo.grassAlongM, bandM: photo.grassBandM, ve: cfg.ve, groundAt: scene.heightAt }),
             ...placeGrass(inputs.dem, inputs.land, inputs.route.project, scene.trail, { seed: 20261030, alongM: photo.grassAlongM, bandM: photo.grassBandM, ve: cfg.ve, classes: /wood|forest/, per100m2: 25, tintScale: 0.72, groundAt: scene.heightAt }),
-          ]
+          ])
         : [],
     // walkers where the config places them (ADR 59) and people by its seeded draw (ADR 61); their tables run the
     // section's frames at the rider's fps
-    walkers: photo && cfg.kind === "ground" ? walkerTracks(scene.trail, [...(photo.walkers ?? []), ...peopleOf(cfg, scene)], cfg.frames, POC.fps) : [],
+    walkers: photo && cfg.kind === "ground" ? sectionWalkers(cfg, scene, POC.fps) : [],
+    waterways: dress.channels,
+    power: dress.power,
   };
-}
-
-/** The section's people by its seeded draw, on the stretch its shots see (ADR 61). */
-function peopleOf(cfg: SectionConfig, scene: PocScene): WalkerSpec[] {
-  const people = cfg.photo?.people;
-  if (!people) return [];
-  const alongM = cfg.photo?.grassAlongM ?? [cfg.startDistM - 100, cfg.startDistM + 300];
-  return placePeople({ trail: scene.trail, frames: cfg.frames, fps: POC.fps, kmRange: cfg.kmRange, alongM, rider: { table: scene.table, lateralM: scene.dims.lateralOffsetM }, shot: scene.shot }, people);
 }
 
 const buildingStatus = (features: Feature[]) => new Map<string, BuildingStatus>(features.filter((f) => f.kind === "building" && f.status).map((f) => [f.id, f.status!]));

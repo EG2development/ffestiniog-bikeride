@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
-import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import type { RouteModel } from "../data/route";
 import { ATMOSPHERE, LIGHTING_PHOTO, sunDirection } from "../three-core/atmosphere";
@@ -8,8 +8,10 @@ import { buildingShell } from "../three-core/buildings";
 import { cyclistPose, poseAxes, type CyclistPose } from "../three-core/cyclistMotion";
 import { LEGEND, PHOTO_LEGEND, photoEarthworksLine } from "../data/reel-captions";
 import type { Feature } from "../three-core/registers";
+import { placeProps, proposedLine } from "../three-core/props";
 import { buildSectionScene, configById, earthworksInRange, shotSpecAt, type Look, type SectionScene } from "../three-core/sections";
 import type { MeshArrays, Vec3 } from "../three-core/types";
+import { DOG_STRIDE_M } from "../three-core/walkers";
 import { blenderFrame, dirToBlender, METRES_PER_UNIT, positionsToBlender, toBlender, yawToBlender, type Origin } from "./coords";
 import { loadSection, type SourceFile } from "./loadSection";
 
@@ -98,13 +100,15 @@ function legendRuns(scene: SectionScene, features: readonly Feature[], look: Loo
   const cfg = scene.config;
   const runs: { from: number; to: number; lines: string[] }[] = [];
   const translucent = scene.buildings.groups.some((g) => g.kind === "translucent");
+  const proposed = proposedLine(cfg.photo?.props ?? []);
   for (let f = 0; f < cfg.frames; f++) {
     const spec = shotSpecAt(cfg, f);
-    const earthworks = spec.kind === "drone-side" ? earthworksInRange(features, [Math.min(spec.fromDistM, spec.toDistM, cfg.startDistM), Math.max(spec.fromDistM, spec.toDistM, scene.distAt(f))]) : null;
+    const earthworks = spec.kind === "drone-side" ? earthworksInRange(features, [Math.min(spec.fromDistM, spec.toDistM, cfg.startDistM), Math.max(spec.fromDistM, spec.toDistM, scene.distAt(f))]) : spec.kind === "crane" ? earthworksInRange(features, [scene.distAt(f) - spec.fromBackM, scene.distAt(f) + spec.lookAheadM]) : null;
     const lines = [
       ...(cfg.kind === "ground" && scene.bridges.length > 0 ? [PHOTO_LEGEND.bridge] : []),
       ...(earthworks ? [photoEarthworksLine(earthworks[0], earthworks[1])] : []),
       ...(cfg.kind === "ground" ? [PHOTO_LEGEND.ground] : []),
+      ...(proposed ? [proposed] : []),
       ...(translucent ? [LEGEND.translucent] : []),
     ];
     const last = runs[runs.length - 1];
@@ -112,6 +116,14 @@ function legendRuns(scene: SectionScene, features: readonly Feature[], look: Loo
     else runs.push({ from: f, to: f + 1, lines });
   }
   return runs.filter((r) => r.lines.length > 0);
+}
+
+/** The OSM bus stops by id (data/bus-stops.json, scripts/fetch_bus_stops.py), where a prop stands at one. */
+function busStops(root: string): Map<string, { lon: number; lat: number }> {
+  const path = join(root, "data/bus-stops.json");
+  if (!existsSync(path)) return new Map();
+  const { stops } = JSON.parse(readFileSync(path, "utf8")) as { stops: { id: string; lon: number; lat: number }[] };
+  return new Map(stops.map((s) => [s.id, { lon: s.lon, lat: s.lat }]));
 }
 
 function buildManifest(side: Sidecars, root: string, sources: SourceFile[], scene: SectionScene, look: Look, features: readonly Feature[], route: RouteModel) {
@@ -139,6 +151,8 @@ function buildManifest(side: Sidecars, root: string, sources: SourceFile[], scen
       return {
         id: r.id,
         roof: r.roof,
+        // a ruin: walls only, open to the sky (scripts/fetch_osm_extras.py)
+        ...(r.ruin && { ruin: true }),
         ring: s.ring.map((q) => [METRES_PER_UNIT * (q.x - origin.x0), -METRES_PER_UNIT * (q.z - origin.z0)]),
         baseZ: METRES_PER_UNIT * s.base,
         topZ: METRES_PER_UNIT * s.top,
@@ -149,11 +163,41 @@ function buildManifest(side: Sidecars, root: string, sources: SourceFile[], scen
   const water = scene.water.map((w) => ({
     id: w.id,
     surfaceZ: METRES_PER_UNIT * w.surfaceY,
+    areaM2: Math.round(w.areaM2),
+    // a reservoir's level is regulated: the dressed scene darkens it and gives it a pale draw-down shore (waterside.py)
+    ...(w.reservoir && { reservoir: true }),
     polygons: w.polygons.map((p) => ({
       outer: p.outer.map((q) => [METRES_PER_UNIT * (q.x - origin.x0), -METRES_PER_UNIT * (q.z - origin.z0)]),
       holes: p.holes.map((h) => h.map((q) => [METRES_PER_UNIT * (q.x - origin.x0), -METRES_PER_UNIT * (q.z - origin.z0)])),
     })),
   }));
+
+  // OSM watercourses as channels (waterways.ts): centreline points at the water's surface, a little below the ground
+  // across the channel; widths are defaults unless OSM tags one. Culverts, tunnels and the line's formation are left out.
+  const mm = (v: Vec3) => v.map((c) => Math.round(c * 1000) / 1000);
+  const waterways = scene.waterways.map((c) => ({
+    id: c.id,
+    kind: c.kind,
+    ...(c.name && { name: c.name }),
+    widthM: c.widthM,
+    widthSource: c.widthSource,
+    runs: c.runs.map((r) => r.map((q) => mm(toBlender([q.x, q.y, q.z], origin)))),
+  }));
+  // OSM's power lines (power.ts): supports on the rendered ground, heights tagged or typical for the voltage; each line
+  // runs through its supports (indices) and carries `cables` conductors
+  const power = {
+    status: "existing",
+    supports: scene.power.supports.map((q) => ({
+      id: q.id,
+      kind: q.kind,
+      position: mm(toBlender([q.x, q.y, q.z], origin)),
+      heightM: q.heightM,
+      heightSource: q.heightSource,
+      ...(q.voltageV !== undefined && { voltageV: q.voltageV }),
+      ...(q.implied && { implied: true }),
+    })),
+    lines: scene.power.lines,
+  };
 
   // instance points: one record per tree or clump, [x, y, z, scale, yaw, tint, variant]; scale is the source's own, untouched
   const instanceKinds: Record<string, { x: number; y: number; z: number; scale: number; yaw: number; tint?: number; variant?: number }[]> = { conifer: scene.trees.conifer, broadleaf: scene.trees.broadleaf, grass: scene.grass };
@@ -189,8 +233,20 @@ function buildManifest(side: Sidecars, root: string, sources: SourceFile[], scen
       const p = w.poseAt(f);
       data.set([...toBlender(p.position, origin), yawToBlender(p.yaw), p.phase], f * 5);
     }
-    return { index: i, activity: w.spec.activity ?? "walk", heightM: w.spec.heightM, seed: w.spec.seed, direction: w.spec.direction, sideM: w.spec.sideM, fields: ["x", "y", "z", "yaw", "phase"], data: side.put(`walker-${i}.f32`, data) };
+    // a dog on a lead walks at its person's side: its own pose per frame (phase: one trot cycle per DOG_STRIDE_M)
+    let dog: { breed: string; side: string; strideM: number; fields: string[]; data: unknown } | undefined;
+    if (w.dog) {
+      const rows = new Float32Array(frames * 5);
+      for (let f = 0; f < frames; f++) {
+        const p = w.dog.poseAt(f);
+        rows.set([...toBlender(p.position, origin), yawToBlender(p.yaw), p.phase], f * 5);
+      }
+      dog = { breed: w.dog.breed, side: w.spec.dog?.side ?? "left", strideM: DOG_STRIDE_M, fields: ["x", "y", "z", "yaw", "phase"], data: side.put(`walker-${i}-dog.f32`, rows) };
+    }
+    return { index: i, activity: w.spec.activity ?? "walk", role: w.spec.role ?? null, heightM: w.spec.heightM, seed: w.spec.seed, direction: w.spec.direction, sideM: w.spec.sideM, fields: ["x", "y", "z", "yaw", "phase"], data: side.put(`walker-${i}.f32`, data), ...(dog && { dog }), ...(w.spec.locksUp && { locksUp: true }) };
   });
+  // street furniture on the rendered ground, existing (where OSM maps it) or proposed (status says which)
+  const props = placeProps(cfg.photo?.props ?? [], scene.trail, route.project, scene.surfaceAt, busStops(root)).map((p) => ({ kind: p.kind, status: p.status, position: toBlender(p.position, origin), yaw: yawToBlender(p.yaw), opts: p.opts, ...(p.source && { source: p.source }) }));
 
   let startFrame = 0;
   const shots = cfg.shots.map((s, i) => {
@@ -219,8 +275,10 @@ function buildManifest(side: Sidecars, root: string, sources: SourceFile[], scen
       fields: ["px", "py", "pz", "fx", "fy", "fz", "ux", "uy", "uz", "wheelAngle", "crankAngle"],
       data: side.put("rider.f32", rider),
       note: "the camera rider's full body is hidden in first-person shots, as in the prototype",
+      hidden: !!cfg.photo?.riderHidden,
     },
     walkers,
+    props,
     /** ADR 18's sun as the three.js scene lights it: a unit vector towards the sun, in Blender axes */
     lighting: {
       sunDirection: dirOf(sunDirection(route, ATMOSPHERE[cfg.kind])),
@@ -234,12 +292,17 @@ function buildManifest(side: Sidecars, root: string, sources: SourceFile[], scen
     /** non-landmark existing buildings: ring in Blender XY metres, heights in Blender Z metres (the merged mesh's walls) */
     buildings: footprints,
     water,
+    /** watercourse channels: [x, y, z] points per run, z the water's surface (Blender metres) */
+    waterways,
+    power,
     instances,
     counts: {
       terrainVertices: scene.terrain.positions.length / 3,
       trailSamples: scene.trail.samples.length,
       buildings: scene.buildings.records.length,
       water: water.length,
+      waterways: waterways.length,
+      powerSupports: power.supports.length,
       trees: scene.trees.conifer.length + scene.trees.broadleaf.length,
       grassClumps: scene.grass.length,
       walkers: walkers.length,
@@ -252,6 +315,7 @@ function buildManifest(side: Sidecars, root: string, sources: SourceFile[], scen
         "A concept visualisation, not an approved route; the 3 m trail ribbon is a concept, not proof of suitability.",
         "The ground meshes are 4 m samples of 1 m lidar; the corridor window is 16 m.",
         "Tree species, bridge form and heights are generic or default unless the registers say otherwise.",
+        "Watercourse widths (river 5 m, stream 1.8 m, drain and ditch 0.8 m) and power-support heights are defaults unless OSM tags them.",
       ],
     },
   };

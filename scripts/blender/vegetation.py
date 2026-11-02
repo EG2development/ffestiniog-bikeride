@@ -16,6 +16,9 @@ from landscape import VENDOR, Nodes, _cache, register
 NEAR_M, MID_M = 45.0, 320.0  # level-of-detail bands, by distance to the nearest camera position of the section
 
 
+WIND = {"tree": math.radians(0.6), "grass": math.radians(4.0)}  # how far plants lean in the breeze (radians)
+
+
 def _library_objects(asset_id, names):
     """Append named objects from a Poly Haven model file once per Blender file; their textures stay in the vendor dir."""
     path = VENDOR / register()[asset_id]["files"]["blend"]["path"]
@@ -241,6 +244,29 @@ def _instancer_tree(collection):
         return a.outputs["Attribute"]
     rot = n.new("ShaderNodeCombineXYZ")
     link(attr("yaw"), rot.inputs["Z"])
+    # a breeze: each plant leans a little about its base and back, slowly, out of step with its neighbours (its phase
+    # from where it stands); grass more than trees
+    sway = WIND["grass" if "grass" in collection.name else "tree"]
+    clock = n.new("GeometryNodeInputSceneTime")
+    where = n.new("ShaderNodeSeparateXYZ")
+    link(n.new("GeometryNodeInputPosition").outputs["Position"], where.inputs[0])
+
+    def op(kind, a, b=None, value=None):
+        m = n.new("ShaderNodeMath")
+        m.operation = kind
+        for i, v in enumerate((a, b)):
+            if v is None:
+                continue
+            if isinstance(v, (int, float)):
+                m.inputs[i].default_value = v
+            else:
+                link(v, m.inputs[i])
+        return m.outputs[0]
+    phase = op("ADD", op("MULTIPLY", where.outputs["X"], 0.37), op("MULTIPLY", where.outputs["Y"], 0.23))
+    for axis, (hz, amp, k) in (("X", (0.23, 1.0, 1.0)), ("Y", (0.17, 0.6, 1.3))):
+        wave = op("SINE", op("ADD", op("MULTIPLY", clock.outputs["Seconds"], 2 * math.pi * hz), op("MULTIPLY", phase, k)))
+        gust = op("SINE", op("ADD", op("MULTIPLY", clock.outputs["Seconds"], 2 * math.pi * hz * 2.7), op("MULTIPLY", phase, 1.9 * k)))
+        link(op("MULTIPLY", op("ADD", wave, op("MULTIPLY", gust, 0.35)), sway * amp), rot.inputs[axis])
     link(gin.outputs["Geometry"], pts.inputs["Mesh"])
     link(pts.outputs["Points"], inst.inputs["Points"])
     link(ci.outputs["Instances"], inst.inputs["Instance"])

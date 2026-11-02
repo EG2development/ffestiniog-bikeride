@@ -6,7 +6,8 @@ import type { Vec3 } from "./types";
 
 type XZ = { x: number; z: number };
 export type BuildingStatus = "existing" | "construction" | "approved" | "demolished";
-export type BuildingRecord = { id: string; ring: XZ[]; heightM: number; roof: "flat" | "gabled"; status: BuildingStatus };
+/** `ruin`: OSM records it as a ruin, drawn as its walls open to the sky (no roof, faced inside and out). */
+export type BuildingRecord = { id: string; ring: XZ[]; heightM: number; roof: "flat" | "gabled"; status: BuildingStatus; ruin?: boolean };
 export type BuildingGroup = { kind: "existing" | "translucent"; positions: Float32Array; normals: Float32Array; indices: Uint32Array };
 
 const area2 = (r: XZ[]) => r.reduce((a, p, i) => a + p.x * r[(i + 1) % r.length].z - r[(i + 1) % r.length].x * p.z, 0);
@@ -129,15 +130,15 @@ export function buildingShell(r: BuildingRecord, heightAt: HeightAt, ve: number)
   return { ring, base, top: base + (r.heightM / 10) * ve, minEaves: highest + 0.2 };
 }
 
-/** Walls from the lowest ground under each footprint to its top, with a flat or gabled roof, merged into at most one
- * group per look: existing (and under construction), and translucent for approved or demolished (spec BL10, BL14). */
+/** Walls from the lowest ground under each footprint to its top, with a flat or gabled roof (none on a ruin), merged into
+ * at most one group per look: existing (and under construction), and translucent for approved or demolished (spec BL10, BL14). */
 export function buildingArrays(records: BuildingRecord[], heightAt: HeightAt, ve: number, landmarks: LandmarkPlacement[] = []): { groups: BuildingGroup[] } {
   const builders = { existing: new Builder(), translucent: new Builder() };
   const look = (status: BuildingStatus) => builders[status === "approved" || status === "demolished" ? "translucent" : "existing"];
   for (const r of records) {
     const { ring, base, top, minEaves } = buildingShell(r, heightAt, ve);
     const b = look(r.status);
-    const rect = r.roof === "gabled" ? rectangleAxes(ring) : null;
+    const rect = r.roof === "gabled" && !r.ruin ? rectangleAxes(ring) : null;
     // the recorded height is the top (a DSM height reaches the ridge): a gabled roof sits inside it, not on it (BL6)
     const hW = top - base;
     const rise = rect ? Math.min(0.4 * rect.lv, 0.35 * hW) : 0;
@@ -146,7 +147,10 @@ export function buildingArrays(records: BuildingRecord[], heightAt: HeightAt, ve
       const d = ring[(k + 1) % ring.length];
       const out: Vec3 = [d.z - a.z, 0, -(d.x - a.x)]; // anticlockwise ring: the outward side of edge a→d
       b.face([[a.x, base, a.z], [d.x, base, d.z], [d.x, eaves, d.z], [a.x, eaves, a.z]], out);
+      // a ruin's walls are open to the sky, so their inner faces show over the wall tops
+      if (r.ruin) b.face([[a.x, base, a.z], [d.x, base, d.z], [d.x, eaves, d.z], [a.x, eaves, a.z]], [-out[0], 0, -out[2]]);
     });
+    if (r.ruin) continue;
     if (!rect) {
       for (const [i0, i1, i2] of earClip(ring)) b.face([[ring[i0].x, eaves, ring[i0].z], [ring[i1].x, eaves, ring[i1].z], [ring[i2].x, eaves, ring[i2].z]], [0, 1, 0]);
       continue;
@@ -326,7 +330,7 @@ export function sectionBuildings(
       });
       const [a, z] = [ring[0], ring[ring.length - 1]];
       if (ring.length > 3 && Math.abs(a.x - z.x) < 1e-9 && Math.abs(a.z - z.z) < 1e-9) ring.pop(); // OSM rings repeat the first point
-      return { id: b.id, ring, heightM: b.heightM, roof: b.roof, status: status.get(b.id)!, kind: b.kind, ...(b.model && { model: b.model }) };
+      return { id: b.id, ring, heightM: b.heightM, roof: b.roof, status: status.get(b.id)!, kind: b.kind, ...(b.model && { model: b.model }), ...(b.ruin && { ruin: true }) };
     })
     // a footprint that runs off the terrain window has no ground to stand on there: walls would reach -Infinity (t10 H2)
     .filter((r) => [...r.ring, centroid(r.ring)].every((p) => Number.isFinite(heightAt(p.x, p.z))));

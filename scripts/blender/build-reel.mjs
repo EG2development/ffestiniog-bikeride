@@ -3,7 +3,7 @@
 // out/blender/master/reel-master.blend (one Scene per reel scene plus a Video Sequencer master with the captions) and,
 // with --render, renders the preview to out/blender/reel/reel-blockout-preview.mp4. --dressed builds the realistic version
 // (out/blender/master/reel-dressed.blend, rendering to reel-dressed-preview.mp4); it needs `npm run blender:assets` first.
-//   npm run blender:reel [-- --render] [--dressed] [--percent 50] [--samples 16]
+//   npm run blender:reel [-- --render] [--dressed] [--percent 50] [--samples 16] [--film community]
 // Blender is found from $BLENDER, then C:/blender/blender.exe, then PATH.
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdirSync } from "node:fs";
@@ -17,7 +17,10 @@ const arg = (name, fallback) => {
 const percent = arg("percent", "50");
 const samples = arg("samples", "16");
 const dressed = process.argv.includes("--dressed");
-const master = dressed ? "out/blender/master/reel-dressed.blend" : "out/blender/master/reel-master.blend";
+// --film community builds the community film (src/data/community-film.ts) instead of the reel
+const film = arg("film", "reel");
+if (!["reel", "community"].includes(film)) throw new Error(`unknown film ${film}: reel or community`);
+const master = `out/blender/master/${film === "reel" ? "reel" : film}-${dressed ? "dressed" : "master"}.blend`;
 
 const run = (cmd, args, label) => {
   const r = spawnSync(cmd, args, { cwd: root, stdio: "inherit", shell: process.platform === "win32" && cmd === "npm" });
@@ -32,7 +35,7 @@ const findBlender = () => {
 
 const blender = findBlender();
 mkdirSync(resolve(root, "out/blender/reel"), { recursive: true });
-run("npm", ["run", "blender:export", "--", "reel"], "export");
-run(blender, ["--background", "--factory-startup", "--python-exit-code", "1", "--python", "scripts/blender/build_reel.py", "--", "out/blender/exports", master, percent, samples, ...(dressed ? ["--dressed"] : [])], "master build");
+run("npm", ["run", "blender:export", "--", film], "export");
+run(blender, ["--background", "--factory-startup", "--python-exit-code", "1", "--python", "scripts/blender/build_reel.py", "--", "out/blender/exports", master, percent, samples, ...(dressed ? ["--dressed"] : []), "--film", film], "master build");
 if (process.argv.includes("--render")) run(blender, ["--background", master, "-a"], "render");
 console.log(`built ${master}`);

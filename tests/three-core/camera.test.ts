@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { droneSideTrack, followShot, sequenceShots, withClearance, type Shot } from "../../src/three-core/camera";
+import { craneShot, droneSideTrack, followShot, sequenceShots, withClearance, type Shot } from "../../src/three-core/camera";
 import type { Vec3 } from "../../src/three-core/types";
 import { expectCameraCriteria } from "./criteria";
 import { loadExports } from "./pending";
@@ -76,5 +76,26 @@ describe("camera (CA1–CA4)", () => {
     const fixed = withClearance(buried, () => 18, () => rider, 2, 1.5)(0);
     expect(fixed.position[1]).toBeGreaterThanOrEqual(18 + 0.2 - 1e-9);
     expect(Math.hypot(fixed.position[0] - 10, fixed.position[1] - 18, fixed.position[2])).toBeGreaterThanOrEqual(0.15 - 1e-9);
+  });
+
+  it("a crane shot comes down behind the rider looking ahead, and hands over to a follow shot without a jump", () => {
+    const trail = analyticTrail(1000, syntheticProfile(1000));
+    const rider = analyticRider(trail, 100, FPS);
+    const crane = craneShot({ trail, poseAt: rider.poseAt, distAt: rider.distAt, fromBackM: 35, toBackM: 8, fromUpM: 14, toUpM: 3, sideM: 1.5, lookAheadM: 60, frames: 180 });
+    const shot = withClearance(crane, valley, rider.riderAt, 2, 1.5);
+    expectCameraCriteria(shot, [[0, 180]], valley, rider.riderAt, FPS);
+    // it starts high and well back, looking at the route ahead of the rider (not down at them)
+    const first = crane(0);
+    const r0 = rider.riderAt(0);
+    expect(Math.hypot(first.position[0] - r0[0], first.position[2] - r0[2]) * 10).toBeGreaterThan(30);
+    const ahead = trail.sampleAt(rider.distAt(0) + 60);
+    expect(Math.hypot(first.target[0] - ahead.x, first.target[2] - ahead.z) * 10).toBeLessThan(2);
+    const pitch = Math.atan2(first.target[1] - first.position[1], Math.hypot(first.target[0] - first.position[0], first.target[2] - first.position[2]));
+    expect((pitch * 180) / Math.PI).toBeGreaterThan(-20);
+    // its last frame is where the follow shot that comes after it begins
+    const follow = followShot({ poseAt: (g) => rider.poseAt(g + 179), backM: 8, upM: 3, sideM: 1.5 });
+    const [a, b] = [crane(179), follow(0)];
+    expect(Math.hypot(a.position[0] - b.position[0], a.position[1] - b.position[1], a.position[2] - b.position[2]) * 10).toBeLessThan(0.1);
+    expect(Math.hypot(a.target[0] - b.target[0], a.target[1] - b.target[1], a.target[2] - b.target[2]) * 10).toBeLessThan(0.1);
   });
 });

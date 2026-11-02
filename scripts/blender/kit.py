@@ -20,9 +20,17 @@ KITS = {
     "priya": ("tights", 0.92, (0.015, 0.015, 0.05), "tee", (0.32, 0.55, 0.04), "shoes05"),
 }
 SLEEVE = 0.36  # a tee's sleeve, as a share of the upper arm from the shoulder
+CUFF = 0.9  # a jumper's sleeve, as a share of the forearm from the elbow
+# the community film's pupils wear a generic school uniform (no school's colours or badge): grey trousers, a jumper,
+# black shoes; each child's jumper one of the colours Welsh schools commonly use
+UNIFORM_JUMPERS = {"cerys": (0.010, 0.020, 0.10), "osian": (0.010, 0.020, 0.10), "nia": (0.13, 0.010, 0.02),
+                   "dewi": (0.13, 0.010, 0.02), "ffion": (0.010, 0.06, 0.02), "harri": (0.010, 0.06, 0.02)}
+GREY = (0.045, 0.045, 0.05)
 
 
 def kit_for(pid, activity):
+    if pid in UNIFORM_JUMPERS:
+        return ("trousers", 0.95, GREY, "jumper", UNIFORM_JUMPERS[pid], "shoes02")
     return KITS.get(pid) if activity == "run" else None
 
 
@@ -71,7 +79,7 @@ def regions(body, arm, kit):
     bottom, hem = kit[0], kit[1]
     bones = arm.data.bones
     names = ["pelvis", "spine_01", "spine_02", "spine_03", "clavicle_l", "clavicle_r", "thigh_l", "thigh_r", "calf_l", "calf_r",
-             "upperarm_l", "upperarm_r"]
+             "upperarm_l", "upperarm_r", "lowerarm_l", "lowerarm_r"]
     best, in_body = _weights(body, names)
     co = rest_co(body.data)
     z = co[:, 2]
@@ -87,9 +95,12 @@ def regions(body, arm, kit):
     neck = bones["neck_01"].head_local
     front = np.clip(-(co[:, 1] - neck.y) / 0.08, 0, 1) * (np.abs(co[:, 0]) < 0.075)  # the neckline dips at the front
     upper = in_body & (z >= hem_z) & (z <= neck.z - 0.03 - 0.05 * front) & np.isin(best, [0, 1, 2, 3, 4, 5])
+    long = kit[3] == "jumper"
     for side in "lr":
-        ua = names.index(f"upperarm_{side}")
-        upper |= in_body & (best == ua) & (_along(co, bones[f"upperarm_{side}"]) <= SLEEVE)
+        ua, fa = names.index(f"upperarm_{side}"), names.index(f"lowerarm_{side}")
+        upper |= in_body & (best == ua) & (long | (_along(co, bones[f"upperarm_{side}"]) <= SLEEVE))
+        if long:
+            upper |= in_body & (best == fa) & (_along(co, bones[f"lowerarm_{side}"]) <= CUFF)
     return lower, upper, co
 
 
@@ -185,10 +196,12 @@ def dress(arm, kit, pid):
     if bottom == "shorts":  # loose legs: the flare grows from the hips to 2 cm at the hem
         thigh_top = arm.data.bones["thigh_l"].head_local.z
         off = np.where(co[:, 2] < thigh_top, 0.006 + 0.016 * np.clip((thigh_top - co[:, 2]) / 0.25, 0, 1), 0.006)
+    elif bottom == "trousers":  # school trousers hang a little off the leg
+        off = np.full(n, 0.011)
     bones = arm.data.bones
     _garment(body, arm, co, lower, off, f"{arm.name}.{bottom}", _fabric(f"kit-{pid}-{bottom}", b_col, 0.5 if bottom == "tights" else 0.65),
              hem=(co[lower, 2].max(), -1))
-    _garment(body, arm, co, upper, np.full(n, 0.011), f"{arm.name}.{top}", _fabric(f"kit-{pid}-{top}", t_col, 0.6),
+    _garment(body, arm, co, upper, np.full(n, 0.016 if top == "jumper" else 0.011), f"{arm.name}.{top}", _fabric(f"kit-{pid}-{top}", t_col, 0.75 if top == "jumper" else 0.6),
              hem=(bones["pelvis"].head_local.z - 0.01, 1))
     # mask the skin under the kit, three vertex rings in from its edges (smoothed inwards) so no gap opens at a hem
     covered = lower | upper

@@ -36,6 +36,13 @@ describe("pipeline self-tests", () => {
     }
   });
 
+  it("fetch_osm_extras.py and lidar_underbridges.py --self-test (watercourse, power and ruin tags, route crossings, underbridge spans)", () => {
+    for (const script of ["scripts/fetch_osm_extras.py", "scripts/lidar_underbridges.py"]) {
+      const r = python(script, "--self-test");
+      expect(r.status, `${script}: ${r.out.split("\n").slice(-3).join("\n")}`).toBe(0);
+    }
+  });
+
   it("fetch_photo_refs.py --self-test (taken dates, headings, licences, route snapping)", () => {
     const r = python("scripts/fetch_photo_refs.py", "--self-test");
     expect(r.status, r.out.split("\n").slice(-3).join("\n")).toBe(0);

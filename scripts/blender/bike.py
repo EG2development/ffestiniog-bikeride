@@ -191,6 +191,37 @@ def build_bicycle(prefix, coll, paint=(0.08, 0.22, 0.36), step_through=False):
     return parts
 
 
+def scale_bicycle(parts, s):
+    """A smaller bicycle for a younger rider (a 24-inch wheel is about 0.88 of the 0.68 m reference): every part's mesh
+    and offset scaled about the bicycle's origin, and the points and lengths the rider is fitted to with them."""
+    for o in parts["root"].children_recursive:
+        if o.type == "MESH":
+            o.data.transform(Matrix.Scale(s, 4))
+        o.location = o.location * s
+    for key in ("bb", "head_top", "grip_offset"):
+        parts[key] = parts[key] * s
+    parts["crank_len"], parts["wheel_r"] = CRANK * s, WHEEL_R * s
+    return parts
+
+
+def build_trike(prefix, coll, paint=(0.55, 0.12, 0.10)):
+    """An adult tricycle: the step-through frame with two rear wheels on an axle 0.72 m wide and a rear basket."""
+    parts = build_bicycle(prefix, coll, paint, step_through=True)
+    mats = bike_materials(paint)
+    rear = parts["rear_wheel"]
+    twin = rear.copy()
+    twin.data = rear.data.copy()
+    twin.name = prefix + "wheel-rear-2"
+    coll.objects.link(twin)
+    rear.location.y, twin.location.y = 0.36, -0.36
+    bm = bmesh.new()
+    _tube(bm, Vector((rear.location.x, -0.36, WHEEL_R)), Vector((rear.location.x, 0.36, WHEEL_R)), 0.018)
+    bmesh.ops.create_cube(bm, size=1.0, matrix=Matrix.Translation((rear.location.x, 0, WHEEL_R + 0.28)) @ Matrix.Diagonal((0.42, 0.55, 0.26, 1)))
+    _object(prefix + "trike-axle", bm, [mats["paint"]], coll, parts["root"], smooth=False)
+    parts["rear_wheel_2"] = twin
+    return parts
+
+
 def fit_bicycle(parts, saddle_height, reach, bar_rise):
     """Fit the seat post and the bars to a rider (R02): saddle height from the bottom bracket along the seat tube,
     bars `reach` ahead of the saddle and `bar_rise` above it. Returns (saddle top, left grip, right grip) in bicycle space."""

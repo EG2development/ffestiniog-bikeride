@@ -29,9 +29,9 @@ export type PeopleInputs = {
 };
 
 /** Along the path, the span a person (and a pram ahead of its pusher) takes, metres behind and ahead of their position. */
-const SPAN: Record<Activity, [number, number]> = { walk: [0.3, 0.3], run: [0.4, 0.4], pram: [0.3, 1.3] };
+const SPAN: Record<Activity, [number, number]> = { walk: [0.3, 0.3], run: [0.4, 0.4], pram: [0.3, 1.3], cycle: [1.0, 1.0], trike: [1.0, 1.2], sit: [0.3, 0.3] };
 /** Across the path, half the width a person or a pram takes, metres. */
-const HALF: Record<Activity, number> = { walk: 0.28, run: 0.28, pram: 0.33 };
+const HALF: Record<Activity, number> = { walk: 0.28, run: 0.28, pram: 0.33, cycle: 0.35, trike: 0.45, sit: 0.3 };
 /** The rider: 1.75 m long, 0.35 m from the line to the outer end of the bars and an elbow. */
 const RIDER = { span: [1.0, 1.0] as [number, number], half: 0.35 };
 /** Clearance between the rider and a person, and between two people, beyond their half-widths, metres. */

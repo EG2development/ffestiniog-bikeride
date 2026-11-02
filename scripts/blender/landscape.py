@@ -444,7 +444,7 @@ def sky_world(name, sun_dir, strength=1.0):
 
 
 def render_settings(scene, samples):
-    """EEVEE with ray-traced reflections and global illumination, soft sun shadows, AgX at medium contrast."""
+    """EEVEE with ray-traced reflections and global illumination, soft sun shadows, motion blur, AgX at medium contrast."""
     e = scene.eevee
     e.taa_render_samples = samples
     e.use_raytracing = True
@@ -457,6 +457,10 @@ def render_settings(scene, samples):
     e.shadow_resolution_scale = 1.0
     e.volumetric_end = 4000.0
     scene.render.film_transparent = False
+    # motion blur over half a frame (a 180-degree shutter), as a film camera: walking legs and turning wheels read as
+    # movement instead of strobing at 30 frames a second
+    scene.render.use_motion_blur = True
+    scene.render.motion_blur_shutter = 0.5
     try:
         scene.view_settings.look = "AgX - Medium High Contrast"
     except TypeError:

@@ -107,7 +107,7 @@ const Scene: React.FC<Props & { drape: MapDrape | null; photoAssets: PhotoAssets
   const spec = shotSpecAt(cfg, frame);
   const firstPerson = spec.kind === "first-person";
   // a drone shot of the photo look names the registered earthworks between its track and the rider (G8)
-  const earthworks = photo && spec.kind === "drone-side" ? earthworksInRange(data.features, [Math.min(spec.fromDistM, spec.toDistM, cfg.startDistM), Math.max(spec.fromDistM, spec.toDistM, scene.distAt(frame))]) : null;
+  const earthworks = photo && spec.kind === "drone-side" ? earthworksInRange(data.features, [Math.min(spec.fromDistM, spec.toDistM, cfg.startDistM), Math.max(spec.fromDistM, spec.toDistM, scene.distAt(frame))]) : photo && spec.kind === "crane" ? earthworksInRange(data.features, [scene.distAt(frame) - spec.fromBackM, scene.distAt(frame) + spec.lookAheadM]) : null;
   const list = captions === "photo" ? PHOTO_CAPTIONS : captions === "poc" ? POC_CAPTIONS : captions === "section" ? sectionCaptions(cfg, look) : captions === "base" ? reelCaptions(look).filter((c) => c.id === "disclaimer" || c.id === "attribution") : [];
   // the near plane moves in once the camera does: the section's own follow-shot start, not the POC's (review R3)
   const near = cfg.kind === "aerial" ? 2 : firstPerson ? 0.02 : frame < followStartFrame(cfg) ? 0.5 : 0.05;

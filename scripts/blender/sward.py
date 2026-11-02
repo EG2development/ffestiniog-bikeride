@@ -39,6 +39,10 @@ def _near_faces(terrain, cameras):
     col = col.reshape(-1, 4)[:, :3]
     lum = col @ np.array([0.2126, 0.7152, 0.0722])
     factor *= np.clip((lum - 0.02) / 0.03, 0.15, 1.0)  # little grass on a dark woodland floor
+    if "shore" in me.attributes:  # none on a reservoir's stony draw-down band (waterside.py)
+        shore = np.empty(len(me.vertices), np.float32)
+        me.attributes["shore"].data.foreach_get("value", shore)
+        factor *= 1.0 - shore
     tri = np.empty(len(me.polygons) * 3, np.int32)
     me.polygons.foreach_get("vertices", tri)
     tri = tri.reshape(-1, 3)

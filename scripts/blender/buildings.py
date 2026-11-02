@@ -4,7 +4,9 @@ The walls stand on the footprint from its base to its eaves exactly as the block
 top (a DSM height reaches the ridge), so a pitched roof sits inside it (BL6). OSM rarely tags a roof shape and the
 valley's buildings are pitched slate, so rectangles get a gable along their long side (shallow on wide sheds), other
 outlines a hipped roof, and only very large footprints stay flat. Houses get sash windows, a door on the wall whose
-ground is nearest the floor, a chimney and either slate-stone or painted render walls, varied per building.
+ground is nearest the floor, a chimney and either slate-stone or painted render walls, varied per building. A ruin (OSM
+building=ruins; "ruin" in the package) is its walls only, open to the sky as the three.js scene draws it: thick, dark
+weathered stone, their tops uneven and lower where a stretch has fallen.
 """
 import math
 import zlib
@@ -25,6 +27,8 @@ RENDER = [(0.78, 0.76, 0.70), (0.80, 0.80, 0.78), (0.70, 0.66, 0.55), (0.62, 0.6
 DOORS = [(0.02, 0.06, 0.03), (0.01, 0.02, 0.06), (0.15, 0.015, 0.012), (0.012, 0.012, 0.012), (0.12, 0.06, 0.025)]
 SLOTS = ["wall", "roof", "flat", "window", "door"]
 SLATE = (0.042, 0.046, 0.055)  # blue-grey Welsh roofing slate, linear (the texture's own slates are paler and browner)
+RUIN_STONE = (0.05, 0.052, 0.046)  # weathered, lichened wall stone, darker than a lived-in wall (linear)
+RUIN_WALL_M = 0.55  # a ruin's wall thickness
 
 
 def _clean(ring):
@@ -191,11 +195,15 @@ def _hip(roofs, r, eaves, area, perimeter, rise_cap):
 def dress_buildings(footprints, terrain, coll, n):
     """Build the footprints into a walls-and-openings object and a roofs object (with thickness). Returns counts."""
     ground_at = _ground(terrain)
-    g, roofs = Geometry(), Geometry()
-    counts = {"gabled": 0, "hipped": 0, "flat": 0, "houses": 0}
+    g, roofs, ruins = Geometry(), Geometry(), Geometry()
+    counts = {"gabled": 0, "hipped": 0, "flat": 0, "houses": 0, "ruins": 0}
     for b in footprints:
         rng = np.random.default_rng(zlib.crc32(b["id"].encode()))
         r = _clean(b["ring"])
+        if b.get("ruin"):
+            _ruin(ruins, r, b["baseZ"], b["topZ"], rng)
+            counts["ruins"] += 1
+            continue
         base, top, min_eaves = b["baseZ"], b["topZ"], b["minEavesZ"]
         area = abs(sum(a.x * c.y - c.x * a.y for a, c in zip(r, r[1:] + r[:1]))) / 2
         perimeter = sum((c - a).length for a, c in zip(r, r[1:] + r[:1]))
@@ -250,7 +258,33 @@ def dress_buildings(footprints, terrain, coll, n):
         coll.objects.link(obj)
         sol = obj.modifiers.new("slate", "SOLIDIFY")
         sol.thickness, sol.offset = ROOF_T, -1.0
+    if ruins.faces:
+        stone = surface_material("ruin-stone", "stone-wall", TILE_M["stone-wall"], box=True, rough_scale=1.15, centre=RUIN_STONE)
+        obj = bpy.data.objects.new(n("ruins"), ruins.mesh(n("ruins"), [stone]))
+        obj["status"] = "existing"
+        coll.objects.link(obj)
+        sol = obj.modifiers.new("walls", "SOLIDIFY")  # thick walls, inwards from the footprint, with their tops closed
+        sol.thickness, sol.offset, sol.use_rim = RUIN_WALL_M, -1.0, True
     return counts
+
+
+def _ruin(g, r, base, top, rng):
+    """A ruin's walls on its footprint, no roof: each corner at its own height (55-100 % of the recorded height), and a
+    long wall dipping at a fallen stretch part way along."""
+    full = max(1.2, top - base)
+    heights = [full * float(rng.uniform(0.55, 1.0)) for _ in r]
+    stone = {"paint": 0.0, "rand": float(rng.random())}
+    u = 0.0
+    for k, a in enumerate(r):
+        c = r[(k + 1) % len(r)]
+        ha, hc = heights[k], heights[(k + 1) % len(r)]
+        pts = [(a, ha), (c, hc)]
+        if (c - a).length > 4.0:  # a fallen stretch: a lower point between the corners
+            f = float(rng.uniform(0.3, 0.7))
+            pts.insert(1, (a.lerp(c, f), full * float(rng.uniform(0.3, 0.75))))
+        for (p, hp), (q, hq) in zip(pts, pts[1:]):
+            g.quad(Vector((p.x, p.y, base)), Vector((q.x, q.y, base)), hp, hq, "wall", u, stone)
+            u += (q - p).length
 
 
 def _chimney(g, rect, ridge, s):

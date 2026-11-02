@@ -10,7 +10,8 @@ import type { Projector } from "./types";
 type LonLat = [number, number];
 type XZ = { x: number; z: number };
 export type WaterPolygon = { outer: XZ[]; holes: XZ[][] };
-export type WaterBody = { id: string; polygons: WaterPolygon[]; surfaceY: number; areaM2: number };
+/** `reservoir` where OSM tags one (water=reservoir or landuse=reservoir): a regulated level, with a draw-down shore */
+export type WaterBody = { id: string; polygons: WaterPolygon[]; surfaceY: number; areaM2: number; reservoir?: true };
 
 const isWater = (tags: Record<string, string>) => tags.natural === "water" || tags.waterway === "riverbank" || tags.landuse === "reservoir";
 
@@ -73,7 +74,8 @@ export function waterBodies(osm: OsmLine[], project: Projector, heightAt: Height
       if (hs.length === 0) continue;
       surfaceY = hs.length % 2 ? hs[(hs.length - 1) / 2] : (hs[hs.length / 2 - 1] + hs[hs.length / 2]) / 2;
     }
-    out.push({ id, polygons, surfaceY, areaM2 });
+    const t = f.properties.tags;
+    out.push({ id, polygons, surfaceY, areaM2, ...((t.water === "reservoir" || t.landuse === "reservoir") && { reservoir: true as const }) });
   }
   return out;
 }

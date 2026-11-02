@@ -184,6 +184,64 @@ describe("the Maentwrog prototype package", () => {
     expect(dist(0, 599)).toBeGreaterThan(0.9 * travelled);
   }, 120_000);
 
+  it("carries the window's watercourses at their widths, their surface below the terrain, and its power supports", () => {
+    expect(m.waterways.length).toBeGreaterThan(5);
+    expect(m.counts.waterways).toBe(m.waterways.length);
+    // the terrain's own triangles under each channel point (Blender XY, Z up)
+    const pos = f32("terrain.positions.f32");
+    const idx = (() => {
+      const b = readFileSync(join(first.outDir, "terrain.indices.u32"));
+      return new Uint32Array(b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength));
+    })();
+    const cells = new Map<string, number[]>();
+    for (let t = 0; t < idx.length; t += 3) {
+      const key = `${Math.floor(pos[3 * idx[t]] / 8)},${Math.floor(pos[3 * idx[t] + 1] / 8)}`;
+      (cells.get(key) ?? cells.set(key, []).get(key)!).push(t);
+    }
+    const groundAt = (x: number, y: number): number | null => {
+      for (let dx = -1; dx <= 1; dx++) {
+        for (let dy = -1; dy <= 1; dy++) {
+          for (const t of cells.get(`${Math.floor(x / 8) + dx},${Math.floor(y / 8) + dy}`) ?? []) {
+            const [a, b, c] = [idx[t], idx[t + 1], idx[t + 2]].map((i) => [pos[3 * i], pos[3 * i + 1], pos[3 * i + 2]]);
+            const d = (b[1] - c[1]) * (a[0] - c[0]) + (c[0] - b[0]) * (a[1] - c[1]);
+            const u = ((b[1] - c[1]) * (x - c[0]) + (c[0] - b[0]) * (y - c[1])) / d;
+            const v = ((c[1] - a[1]) * (x - c[0]) + (a[0] - c[0]) * (y - c[1])) / d;
+            if (u >= -1e-6 && v >= -1e-6 && u + v <= 1 + 1e-6) return u * a[2] + v * b[2] + (1 - u - v) * c[2];
+          }
+        }
+      }
+      return null;
+    };
+    let checked = 0;
+    for (const w of m.waterways) {
+      expect(["river", "stream", "canal", "drain", "ditch"]).toContain(w.kind);
+      expect(w.widthM, w.id).toBe({ river: 5, stream: 1.8, canal: 6, drain: 0.8, ditch: 0.8 }[w.kind]);
+      expect(w.widthSource).toBe("default");
+      for (const run of w.runs) {
+        expect(run.length).toBeGreaterThanOrEqual(2);
+        for (const [x, y, z] of run) {
+          const g = groundAt(x, y);
+          if (g === null) continue;
+          expect(z, `${w.id} at ${x.toFixed(1)}, ${y.toFixed(1)}`).toBeLessThanOrEqual(g + 0.002); // mm rounding
+          checked++;
+        }
+      }
+    }
+    expect(checked).toBeGreaterThan(1000);
+    expect(m.power.status).toBe("existing");
+    expect(m.power.supports.length).toBe(m.counts.powerSupports);
+    expect(m.power.supports.length).toBeGreaterThan(50);
+    for (const s of m.power.supports) {
+      expect(["tower", "pole"]).toContain(s.kind);
+      expect(s.heightM, s.id).toBeGreaterThanOrEqual(8);
+      expect(s.heightM, s.id).toBeLessThanOrEqual(46);
+      expect(s.position.every(Number.isFinite)).toBe(true);
+    }
+    for (const l of m.power.lines) for (const i of l.supports) expect(m.power.supports[i], `${l.id} support ${i}`).toBeDefined();
+    // the reservoir carries its flag for the dressed shore
+    for (const w of m.water) expect(w.areaM2).toBeGreaterThan(0);
+  });
+
   it("is repeatable: a second export writes identical files", () => {
     const second = exportSection({ root: ROOT, outRoot: join(out, "b"), sectionId: "maentwrog-photo" });
     const hashes = (r: typeof first) => JSON.stringify(readFileSync(join(r.outDir, "manifest.json"), "utf8").match(/"sha256": "[0-9a-f]{64}"/g));

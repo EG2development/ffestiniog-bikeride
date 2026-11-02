@@ -135,6 +135,9 @@ export type HeightAt = (x: number, z: number) => number; // world units; -Infini
 export function droneSideTrack(p: { trail: Trail; riderAt: (frame: number) => Vec3; heightAt: HeightAt;
   fromDistM: number; toDistM: number; startHeightM: number; endHeightM: number; sideM: number; frames: number }): Shot;
 export function followShot(p: { poseAt: (frame: number) => CyclistPose; backM: number; upM: number; sideM: number }): Shot;
+export function craneShot(p: { trail: Trail; poseAt: (frame: number) => CyclistPose; distAt: (frame: number) => number;
+  fromBackM: number; toBackM: number; fromUpM: number; toUpM: number; sideM: number; lookAheadM: number; frames: number }): Shot;
+  // down behind the rider, looking ahead along the route, easing into the follow shot that comes after it
 export function withClearance(shot: Shot, heightAt: HeightAt, riderAt: (frame: number) => Vec3,
   minAboveM: number, minFromRiderM: number): Shot;    // CA3; this and droneSideTrack throw if no terrain is under the camera
 export function sequenceShots(shots: { shot: Shot; frames: number }[]): Shot; // each shot sees its own local frames
@@ -143,6 +146,9 @@ export function sequenceShots(shots: { shot: Shot; frames: number }[]): Shot; //
 export type RoadLine = { coords: [number, number][]; highway: string; bridge?: boolean };  // lon/lat; OSM bridge=*
 export type RoadGround = { groundAt: HeightAt; openAt: (x: number, z: number) => boolean; ve: number };
 export type RoadLayout = { runs: Run[]; ve: number };  // each run: highway, half-width, cross-sections (centre, level, along)
+export type Station = { x: number; z: number; lx: number; lz: number; y: number; edges?: [number, number]; alongM: number; bridge: boolean; interior: boolean };
+export type Run = { highway: string; half: number; stations: Station[] };
+export const levelAt: (s: Station, half: number, side: number, ve: number) => number; // the surface across a station (crown to edge)
 export const roadWidthM: (highway: string) => number;                    // typical width by class, not surveyed
 export function layRoads(roads: RoadLine[], project: Projector, heightAt: HeightAt,
   opts: { ve: number; keep?: (x: number, z: number) => boolean;
@@ -167,6 +173,22 @@ export function gradeToRoads(positions: Float32Array, layout: RoadLayout,
 export function seatRoads(layout: RoadLayout, groundAt: HeightAt): RoadLayout;
 //   each road raised onto the graded ground wherever it still rises above a cross-section (two roads too close for
 //   the grid, a junction's mouth), 5 cm clear, eased over 6 m either way; groundScene grades, seats and grades again
+export function roadIndex(layout: RoadLayout, reach: number): (x: number, z: number) => { run: Run; s: Station; lateral: number; beyond: number }[];
+//   every carriageway within reach of its edge, at its nearest point; Station gains crossing?: boolean (roadCrossings.ts)
+// roadCrossings.ts: where a road meets the trail, as it physically could (the film's "bridge on the path" review)
+export const OVERBRIDGE_CLEAR_M: number;                          // 3.7 m under an overbridge's soffit (LTN 1/20: 2.4, 2.7 preferred)
+export type TrailFoot = { lateral: number; distM: number; level: number; away?: [number, number] };
+export type CrossingOptions = { trailAt: (x: number, z: number) => TrailFoot | null; overbridges: readonly [number, number][]; bridges: readonly [number, number][] };
+export type CrossingReport = { highway: string; distM: number; kind: 'overbridge' | 'level'; changeM: number };
+export function meetTrail(layout: RoadLayout, opts: CrossingOptions): { layout: RoadLayout; crossings: CrossingReport[] };
+//   a mapped overbridge's deck raised (never lowered) until its soffit clears the trail by the headroom; a road
+//   crossing on the level brought flush with the trail (within 2.5 m), each eased back along the road (about 1 in 10);
+//   a road mapped so close alongside that it would overlap the path nudged off it (its edge 1.8 m from the centre, at
+//   most 1.5 m); the line's own bridges are layRoads' (under); the trail never moves
+export function crossingGround(layout: RoadLayout, vergeM: number): (x: number, z: number) => boolean; // under a level crossing: graded to it in the corridor too
+export function meetsTrail(trail: Trail, nearTrail: (x: number, z: number) => { lateral: number; distM: number; interior: boolean } | null,
+  profile: { bridges?: [number, number][]; overbridges?: [number, number][] }): (layout: RoadLayout) => RoadLayout; // groundScene's, each grading pass
+// roadStructures.ts: the masonry under raised roads (ADR 12)
 export function buildRoadStructures(layout: RoadLayout, ground: RoadGround): MeshArrays;
 //   generic masonry wherever a road stands more than 0.6 m above groundAt: a deck where openAt (the trail's
 //   clearance) or a bridge way's span, walls to the ground beside it, parapets over 2 m; form generic (ADR 12)
@@ -284,14 +306,15 @@ export type FeatureProvenance = { urls: string[]; evidence: ("map" | "imagery" |
 // registers.ts: a section's buildings.json (BL11, RD5; heights capped at 200 m, t9) and the tile manifest (RD5, t9), checked at the boundary
 export type TilesManifest = { layers: { name?: string; zoom: number; tiles: { x: number; y: number; path: string }[] }[] };
 export function validateTilesManifest(x: unknown, path: string): TilesManifest;
-export type SectionBuilding = { id: string; osm?: string; footprint: [number, number][]; heightM: number; heightSource?: string; roof: "flat" | "gabled"; kind: "background" | "landmark"; status: FeatureStatus; landmark?: string; model?: LandmarkModel };
+export type SectionBuilding = { id: string; osm?: string; footprint: [number, number][]; heightM: number; heightSource?: string; roof: "flat" | "gabled"; kind: "background" | "landmark"; status: FeatureStatus; landmark?: string; model?: LandmarkModel; ruin?: boolean }; // ruin: OSM records it as one (scripts/fetch_osm_extras.py)
+// Feature gains condition?: "ruin" (a building OSM records as a ruin) and crossingsKm?: number[] (where a watercourse or power line crosses the line)
 export function validateBuildings(x: unknown, path: string): SectionBuilding[];
 // visibility.ts: candidate buildings, one list over all the shots' poses (ADR 49)
 export type Footprint = { id: string; ring: { x: number; z: number }[]; heightM: number };
 export function visibleFootprints(poses: CameraPose[], footprints: Footprint[], heightAt: HeightAt, opts?: { aspect?: number; far?: number; stepUnits?: number }): string[];
 // buildings.ts: merged buildings and procedural landmarks (ADR 50)
 export type BuildingStatus = FeatureStatus;
-export type BuildingRecord = { id: string; ring: { x: number; z: number }[]; heightM: number; roof: "flat" | "gabled"; status: BuildingStatus };
+export type BuildingRecord = { id: string; ring: { x: number; z: number }[]; heightM: number; roof: "flat" | "gabled"; status: BuildingStatus; ruin?: boolean }; // a ruin: walls faced inside and out, no roof
 export type BuildingGroup = { kind: "existing" | "translucent"; positions: Float32Array; normals: Float32Array; indices: Uint32Array };
 export function buildingBase(ring: { x: number; z: number }[], heightAt: HeightAt): number;
 export function buildingShell(r: BuildingRecord, heightAt: HeightAt, ve: number): { ring: { x: number; z: number }[]; base: number; top: number; minEaves: number }; // what the walls stand on and reach; exported to Blender
@@ -354,6 +377,50 @@ export function barrierKind(tags: Record<string, string>): BarrierKind | null;
 export function barrierLines(osm: OsmLine[]): BarrierLine[];
 export type BarrierMeshes = Record<BarrierKind, MeshArrays>; // MeshArrays gains uvs?: Float32Array; the trail ribbon carries UVs too
 export function buildBarrierMeshes(lines: BarrierLine[], project: Projector, heightAt: HeightAt, opts: { ve: number; trail?: Trail; gapM?: number }): BarrierMeshes;
+// osmExtras.ts (2026-11-02): the watercourses, power lines and pylons fetch_osm_extras.py appends to a window's osm.geojson
+// (towers and poles as Point features). Read only, nothing drawn yet; roads, land cover and water polygons ignore them.
+export type WaterwayKind = "river" | "stream" | "canal" | "drain" | "ditch";
+export type WaterwayLine = { id: string; kind: WaterwayKind; name?: string; widthM?: number; culvert: boolean; coords: [number, number][] };
+export type PowerLine = { id: string; kind: "line" | "minor_line"; voltageV?: number; coords: [number, number][] };
+export type PowerSupport = { id: string; kind: "tower" | "pole"; at: [number, number] };
+export function waterwayLines(osm: OsmLine[]): WaterwayLine[];
+export function powerLines(osm: OsmLine[]): PowerLine[];
+export function powerSupports(osm: OsmLine[]): PowerSupport[];
+export function routeCrossingsM(coords: [number, number][], route: { routePoints: { lon: number; lat: number; dist: number }[]; project: Projector }): number[]; // where a line crosses the route, m along it; a shared node counts once
+// --- the OSM dressing for the Blender build (2026-11-02: the council map and aerial reviews) ---
+// osmExtras.ts: WaterwayLine gains tunnel: boolean (tunnel=yes and the like; a culvert stays `culvert`). water.ts: WaterBody
+// gains reservoir?: true (water=reservoir or landuse=reservoir). SectionScene gains waterways and power, empty in the concept look.
+// woodland.ts: each woodland node's kind from the smallest OSM wood polygon holding it: leaf_type when tagged, else
+// landuse=forest a plantation (conifer) and natural=wood broadleaf, except where the review's evidence says otherwise
+export const WOOD: { unknown: 0; broadleaf: 1; conifer: 2; mixed: 3 };
+export type WoodKind = keyof typeof WOOD;
+export const CONIFER_SHARE: readonly [0.12, 0.04, 0.9, 0.5]; // by WOOD value: an untagged wood 88 % broadleaf, a plantation 90 % conifer
+export const WOOD_EVIDENCE: Record<string, WoodKind>; // Coed Caersaeson (relation/6373661, km 9.3-10.9): broadleaf, as the imagery shows
+export function woodKindOf(tags: Record<string, string>): WoodKind | null;
+export function woodlandPolygons(osm: OsmLine[]): { kind: WoodKind; area: number; outer: [number, number][]; holes: [number, number][][]; box: [number, number, number, number] }[];
+export function woodKindGrid(dem: DemGrid, land: LandCover, osm: OsmLine[]): Uint8Array; // WOOD per DEM node
+// trees.ts: TreeOptions gains woodKinds?: Uint8Array. With it (the photo look) a woodland node's trees are conifer at its
+// kind's CONIFER_SHARE and both kinds share 2 x maxTrees, spread over the nodes that can grow one; without it 55 % and per kind
+// waterways.ts: OSM watercourses as channels on a ground window's rendered ground (default widths: OSM tags none here)
+export const WATERWAY_WIDTH_M: Record<WaterwayKind, number>; // river 5, stream 1.8, canal 6, drain and ditch 0.8 m
+export const SURFACE_BELOW_M: number; // 0.03: the surface under the lowest ground across the channel and round its edge
+export const BANK_CLEAR_M: number; // 3: the water stops this far beyond its half-width from a carriageway or a wall
+export type ChannelPoint = { x: number; y: number; z: number };
+export type Channel = { id: string; kind: WaterwayKind; name?: string; widthM: number; widthSource: 'osm' | 'default'; runs: ChannelPoint[][] };
+export type ChannelOptions = { project: Projector; surfaceAt: HeightAt; trail: Trail; spans: [number, number][]; roads: RoadLine[]; water: WaterBody[]; footprints: { x: number; z: number }[][]; spacingM: number; ve: number };
+export function sectionChannels(osm: OsmLine[], o: ChannelOptions): Channel[]; // culverts, tunnels, the trail's formation off its bridges, roads, walls and water areas left out
+export function clearOfChannels<T extends { x: number; z: number }>(items: T[], channels: Channel[], marginM: number): T[];
+// power.ts: OSM's power lines, existing: supports on the rendered ground, heights tagged or typical for the voltage
+export type SupportKind = 'tower' | 'pole';
+export type PlacedSupport = { id: string; kind: SupportKind; x: number; y: number; z: number; heightM: number; heightSource: 'osm' | 'default'; voltageV?: number; implied?: true };
+export type PlacedLine = { id: string; kind: 'line' | 'minor_line'; voltageV?: number; cables: number; supports: number[] };
+export function voltageOf(tag: string | undefined): number | undefined; // the highest of a `;` list
+export function supportHeightM(kind: SupportKind, voltageV: number | undefined): number; // poles 8-12 m; towers 13 m at 33 kV to 46 m at 400 kV
+export function placePower(osm: OsmLine[], project: Projector, surfaceAt: HeightAt): { supports: PlacedSupport[]; lines: PlacedLine[] };
+// dressing.ts: the photo look's OSM dressing of a section, trees and grass kept clear of the water
+export const CLEAR_OF_WATER_M: { tree: 1.5; grass: 1.2 };
+export type Dressing = { woodKinds?: Uint8Array; channels: Channel[]; power: { supports: PlacedSupport[]; lines: PlacedLine[] }; clearTrees: (t: TreePlacement) => TreePlacement; clearGrass: <T extends { x: number; z: number }>(list: T[]) => T[] };
+export function photoDressing(look: { photo: boolean; ground: boolean; ve: number }, inputs: { dem: DemGrid; land: LandCover; osm: OsmLine[]; route: RouteModel; profile: TrailProfile }, scene: { surfaceAt: HeightAt; trail: Trail }, around: { spans: [number, number][]; roads: RoadLine[]; water: WaterBody[]; footprints: { x: number; z: number }[][] }): Dressing;
 // trees.ts (ADR 57): TreeOptions gains canopy?, minCanopyM (3) and fieldTreeM (6); TreeInstance gains tint? and variant?
 export const NOMINAL_TREE_HEIGHT_M: { conifer: number; broadleaf: number }; // the drawn crowns' heights per unit of scale
 // registers.ts (ADR 57): the canopy grid header, which must be the DEM's grid; KINDS gains 'barrier' (ADR 58)
@@ -389,6 +456,47 @@ export type PeopleOptions = { count: number; seed: number };   // SectionConfig.
 export type PeopleInputs = { trail: Trail; frames: number; fps: number; kmRange: [number, number]; alongM: [number, number]; rider: { table: Float64Array; lateralM: number }; shot: Shot };
 export function placePeople(inp: PeopleInputs, opts: PeopleOptions): WalkerSpec[]; // a runner and a pram among them; a walker may bring a companion
 export const PEOPLE_RULES: { span: Record<Activity, [number, number]>; half: Record<Activity, number>; rider: { span: [number, number]; half: number }; clear: { rider: number; person: number }; cameraM: number; seenM: number };
+// --- the community film (docs/community-reel-research.md; src/data/community-film.ts) ---
+// walkers.ts: Activity gains 'cycle' | 'trike' | 'sit' (cycle at the camera rider's pace, trike clamp(12 − 120 g, 8, 14),
+// sit still); WalkerSpec gains role?: Role, speedKmh? (a group's steady pace) and stopAtM? (eases to a halt there) and locksUp? (then
+// locks the bicycle in the open locker and walks on to the bus stop: scripts/blender/lockup.py);
+// a sitter may stand off the path (C3) and pupils and children are 1.0–1.6 m (C9)
+export type Role = 'pupil' | 'child' | 'older' | 'commuter' | 'parent' | 'escort';
+export const CRANK_TURN_M: number;                                // 4.5 m per crank turn: a rider's phase
+// props.ts: street furniture, existing (where OSM maps it) or proposed, and says which
+export type PropKind = 'bench' | 'lockers' | 'fingerpost' | 'bus-shelter' | 'bus-stop-flag' | 'bus' | 'viewpoint-board';
+export type PropStatus = 'proposed' | 'existing';
+export type PropSpec = { kind: PropKind; status: PropStatus; at: { distM: number; sideM: number } | { stop: string; eastM?: number; northM?: number }; headingDeg: number; opts?: Record<string, unknown>; source?: string };
+export type MappedPoint = { lon: number; lat: number };      // a stop of data/bus-stops.json, by its OSM id
+export type PlacedProp = { kind: PropKind; status: PropStatus; position: Vec3; yaw: number; opts: Record<string, unknown>; source?: string };
+export function placeProps(props: readonly PropSpec[], trail: Trail, project: Projector, groundAt: HeightAt,
+  stops?: ReadonlyMap<string, MappedPoint>): PlacedProp[];      // at a stop: through the shared projection's own east and north
+export function proposedLine(props: readonly PropSpec[]): string | null; // "Proposed (concept only): …", a scene's legend line
+// walkers.ts: WalkerSpec gains dog?: { breed: DogBreed; side?: 'left' | 'right' } and with?: number (a companion's
+// seed); walkerPose(trail, table, frame, spec, side?, stride?) faces the way they move; WalkerTrack gains side? and
+// dog?: { breed; poseAt }; walkerTracks(trail, specs, frames, fps, choreo?) takes choreography.ts's tables
+export type DogBreed = 'collie' | 'labrador' | 'terrier';
+export const DOG_STRIDE_M: number;                                // 0.9 m per trot cycle: a dog's phase
+// choreography.ts: everyone on the path at once, aware of everyone else, keeping left (SectionConfig.photo.choreograph)
+export const BODY_HALF_M: Record<Activity, number>;               // across the path, as people.ts's HALF
+export const BODY_REACH_M: Record<Activity, [number, number]>;    // behind and ahead, as people.ts's SPAN
+export const DOG: { sideM: number; aheadM: number; wanderSideM: number; wanderAheadM: number; halfM: number; lengthM: number };
+export const EDGE_M: number;                                      // 1.2 m: a centre's furthest off the centreline (+0.15 on foot, the verge)
+export const CLEAR_M: { foot: number; wheelsByFoot: number; wheels: number; companions: number }; // 0.25, 0.5, 0.4, 0.04 m
+export type Choreo = { dist: Float64Array; side: Float64Array; dog?: { dist: Float64Array; side: Float64Array } };
+export type ChoreoOptions = { rider?: { table: Float64Array; lateralM: number } };
+export function choreograph(trail: Trail, specs: readonly WalkerSpec[], frames: number, fps: number, opts?: ChoreoOptions): Choreo[];
+//   per frame, each picks the line costing least (near their own and where they are, clear of everyone met within
+//   8 s, oncoming people on their right, overtaking on the right, never through anyone level with them; people on
+//   foot first, people on wheels making the room); slows behind someone they cannot pass, stops for someone they
+//   cannot clear; companions keep together; the camera rider keeps its line; dogs at heel, wandering (seeded)
+export function closeCalls(specs: readonly WalkerSpec[], choreo: readonly Choreo[], opts: ChoreoOptions & { minM: (a: Activity | 'dog' | 'rider', b: Activity | 'dog' | 'rider', companions: boolean) => number }): { a: string; b: string; frame: number; gapM: number; needM: number }[];
+// sectionPeople.ts: a section's walkers by spec and by its seeded draw, choreographed where the config asks
+export function sectionWalkers(cfg: SectionConfig, scene: PocScene, fps: number): WalkerTrack[];
+// community.ts: the film's twelve section configs (reel windows; people by spec; props); configById finds them
+export const COMMUNITY: Record<string, SectionConfig>;
+// sections.ts: SectionConfig.photo gains props?: PropSpec[] and riderHidden?: boolean; a hold shot may take
+// target?: { distM; sideM?; upM? } (sideM right of the route's direction, as its own) and fovDeg?
 ```
 
 ### Runtime data: `src/data/Scene3DDataProvider.tsx` (new)
@@ -444,6 +552,8 @@ It releases its hold in an effect after its children have mounted, so `<ThreeCan
 
   Bridge and overbridge spans are interpolated by `interpolate_spans`, which clips spans to the profile (ADR 23, review R6).
 - `scripts/gen-earthworks.ts` (`npm run data:earthworks`): runs the shipped `flattenCorridor` on the real data and writes one "approximate" earthwork entry per cut or fill deeper than 2 m.
+- `scripts/fetch_osm_extras.py` (with `scripts/osm/extras.py`): appends a ground window's waterway lines, power lines and power towers and poles to its `osm.geojson` and sets a ruin's `building` value to `ruins`, changing no other feature (CL7, checked by the run); registers them (`waterway-<w>-<id>`, `power-…`, with `crossingsKm`) and marks drawn ruins in `buildings.json` and the register. `--offline` re-registers from the file; the corridor takes the ground windows'. `build_section_data.py --reuse-osm` keeps them (a fresh fetch keeps the lines; run this again for the towers and poles), and `build_buildings.py` carries a ruin's condition.
+- `scripts/lidar_underbridges.py`: `data/lidar-underbridges.json`, the underbridges the lidar shows (a DTM notch through the embankment, the DSM at the crest) and OSM lacks. `build_section_data.py` adds each adopted span to the window profile's `bridges` (so the trail keeps its level and the ground under it is left alone); `--register` adds `bridge-<w>-lidar-<km>` decks; `--measure` re-reads the lidar. `data/evidence-crossings.json` holds the level crossings only the council map captures show: chainage, side and confidence, no geometry.
 - `scripts/sync-public-data.mjs` (`npm run data:sync`, D19); `scripts/render-checks.mjs` (`npm run test:render`, the **R** checks).
 - `package.json` scripts:
   - `still:poc` and `render:poc`, both with `--gl=angle` (D17);
@@ -455,7 +565,7 @@ It releases its hold in an effect after its children have mounted, so `<ThreeCan
 | File | Checks |
 |---|---|
 | `tests/route.test.ts` | The existing 2D projection tests, unchanged (RG2). |
-| `tests/blender/export.test.ts` | The Blender transfer (docs/blender-build-plan.md): the Three.js→Blender coordinate contract, and the Maentwrog prototype package matching its source within 0.05 m, repeatably. |
+| `tests/blender/export.test.ts` | The Blender transfer (docs/blender-build-plan.md): the Three.js→Blender coordinate contract, and the Maentwrog prototype package matching its source within 0.05 m, repeatably; its watercourses at their default widths with every surface point on or under the exported terrain's triangles, and its power supports and lines. |
 | `tests/blender/reel.test.ts` | The reel's Blender export: nine scenes, 2,700 frames, the concept badge and credits kept, aerial and ground scenes as the three.js reel draws them. |
 | `tests/three-core/bng.test.ts` | OS worked example; WGS84→BNG→WGS84 round trip < 0.01 m. |
 | `tests/three-core/unproject.test.ts` | `unproject` inverts `project` (RG5). |
@@ -463,7 +573,7 @@ It releases its hold in an effect after its children have mounted, so `<ThreeCan
 | `tests/three-core/trail.test.ts` | `buildTrail`: G1 (centreline = `project()`), G4, TR1, TR2. |
 | `tests/three-core/corridor.test.ts` | `flattenCorridor`: G5a, G5b, bridge spans, depths in metres whatever the ve (R3). |
 | `tests/three-core/cyclist.test.ts` | C1–C7 on every frame of a synthetic run. |
-| `tests/three-core/camera.test.ts` | CA1–CA4 on every frame of the two POC shots; `sequenceShots`; `withClearance`; throws with no terrain (R7); ADR 35: `aerialOrbit` and `pullBack` meet CA1–CA4 over a synthetic valley. |
+| `tests/three-core/camera.test.ts` | CA1–CA4 on every frame of the two POC shots; `sequenceShots`; `withClearance`; throws with no terrain (R7); ADR 35: `aerialOrbit` and `pullBack` meet CA1–CA4 over a synthetic valley; `craneShot` meets CA1–CA4, starts high and back looking ahead, and ends where a follow shot begins. |
 | `tests/three-core/roads.test.ts` | `buildRoadMesh` drops the parts of a road off the terrain, joins ways end to end, rounds corners through the OSM nodes, smooths the profile, crowns the cross-section and carries bridge decks over dips; a road under the line's bridge dips to the lidar's ground there (not a stream's far below); `seatRoads` raises a road onto ground left above it, eased, never lower; `gradeToRoads` grades verges, cuttings and banks (on 16 m grids too) and leaves the trail's corridor and bridge spans alone; `buildRoadMarkings` paints centre and edge lines; `buildRoadStructures` walls raised roads and spans the trail; on the real Maentwrog data the A470 overbridge keeps its deck level, the lane the line bridges at km 9.159 passes 2.5 m or more under the trail with no wall beside it, no raised road floats, roads are not buried and structures stand only at the bridges; at Trawsfynydd the A470 stays within 1 m of the lidar beside the trail. |
 | `tests/three-core/trees.test.ts` | `placeTrees`: 2 m off carriageways (R4); RL13 near zone, 1–15 per 100 m² and none beyond 300 m (ADR 37); R2 per-kind cap spread over the whole woodland; ve (R3). |
 | `tests/three-core/rng.test.ts` | `mulberry32` determinism (RN1, RN2). |
@@ -473,6 +583,10 @@ It releases its hold in an effect after its children have mounted, so `<ThreeCan
 | `tests/docs.test.ts` | This document's interface block matches the exports of `src/three-core`; every `npm run` script named in the docs exists; this table lists every test file. |
 | `tests/reel-timeline.test.ts` | RL1, RL2: 2,700 frames at 30 fps; the nine sequences match the spec's 8-scene budget, contiguous and summing to 2,700. |
 | `tests/reel-captions.test.ts` | RL17–RL22: every caption's id, text, frame range and minimum duration; no caption text inside `src/scenes3d/` (ADR 36). |
+| `tests/community-movement.test.ts` | In every community scene with people, choreographed together: nobody passes through anybody, a dog or the rider (clear across the path whenever level along it); everyone keeps to the path (a step onto the verge for a bicycle) and crosses it at walking or riding speeds without jerks; oncoming people pass keeping left; companions keep together; dogs stay at heel in four or more scenes; the cyclist who locks up stops by the lockers with eight seconds or more of the shot left (for `scripts/blender/lockup.py`'s dismount, locking and walking on); and no structure, road or building stands in the people's room over the path (3 m wide, 0.1–2.7 m up) where they use it. |
+| `tests/community-views.test.ts` | Every community ground shot looks out, not down into a field (pitch no lower than −30°) or up into a bank (a quarter of the frame at least sees past 60 m of terrain); the aerials look out over the land (pitch no lower than −35°), the closing pull-back along the route (its `lookAheadM`); the ground never shows through the path's surface (level crossings and sags in its profile included); every bench faces open ground (nothing rising over 2° in front of it); the rest place's bench faces Llyn Trawsfynydd; the station scene frames the existing bus stop the path leads to. |
+| `tests/three-core/roadCrossings.test.ts` | `meetTrail` brings a road crossing on the level flush with the trail, eased back without a step, and marks its ground; raises a low overbridge's deck to the headroom and leaves a high one alone; leaves roads under the line's bridges, far above or below it, or away from it unchanged. |
+| `tests/community-film.test.ts` | The community film runs 180 s or less from back-to-back scenes in five or more places; its captions are readable at 15 characters a second, give distances in miles and speeds in mph, keep the concept notice and end on "More than a path. A connection for our communities."; every prop is existing or proposed, proposals are named in the legend, and the bus stop stands where OSM maps it. |
 | `tests/three-core/sections.test.ts` | RL4: every `SECTIONS` config is complete; the Maentwrog config reproduces the POC scene (ADR 40). |
 | `tests/three-core/atmosphere.test.ts` | RL11, RL12, CL6: both section kinds defined; the fog colour equals the horizon colour (ADR 30); the drape grade tints only the map's neutral paper, at its own luma. |
 | `tests/three-core/shading.test.ts` | RL10: `shadeTerrain` keeps positions and colour ranges, darkens slopes, barely changes flat ground (ADR 31). |
@@ -483,7 +597,7 @@ It releases its hold in an effect after its children have mounted, so `<ThreeCan
 | `tests/three-core/water-holes.test.ts` | WA3, WA5: `polygonsOf` keeps holes from the geometry and `inner_rings` alike, orients rings, assigns each hole to its part; `waterBodies` keeps holes and uses shared levels; Llyn Trawsfynydd has one level and the same islands in both windows (ADRs 41, 42). |
 | `tests/water-geometry.test.ts` | WA1, WA2: `waterArrays` faces every triangle up for either winding, leaves islands open, keeps the area; real lake (ADR 41). |
 | `tests/three-core/water-terrain.test.ts` | WA7: no terrain node inside a lake, more than 0.1 m from its shore and outside its islands, rises above the lake's shared level; every drawn lake has one (t10). |
-| `tests/pipeline-python.test.ts` | WA3, WA4, WA6, WA7, CL4, BL6, BL17: the pipeline and still-metric self-tests, and the canopy, boundary and imagery scripts' (ADRs 57, 58, 60); Llyn Trawsfynydd's islands rise above the lake level in the real DTM (ADRs 41, 42, 49). |
+| `tests/pipeline-python.test.ts` | WA3, WA4, WA6, WA7, CL4, BL6, BL17: the pipeline and still-metric self-tests, and the canopy, boundary and imagery scripts' (ADRs 57, 58, 60), the OSM extras' and the lidar underbridges'; Llyn Trawsfynydd's islands rise above the lake level in the real DTM (ADRs 41, 42, 49). |
 | `tests/load-gate.test.ts` | RD3–RD5: one hold per input, taken while rendering (not in an effect), new hold before the old is released, stale and unmounted settles ignored, errors name section and asset; the providers use the gate; `memoOnSuccess` keeps only successful loads (ADR 43, t8). |
 | `tests/load-gate-hook.test.ts` | RD3: in a component, the render with a new input never returns the old input's data and is already held; effects run again after a cleanup still load (t10). |
 | `tests/three-core/occlusion.test.ts` | CL5: no drawn tree crown (exact cone, enclosing ellipsoid) between the camera and the rider in any frame of both ground shots in the five ground sections, in both looks (ADRs 47, 60). |
@@ -492,7 +606,11 @@ It releases its hold in an effect after its children have mounted, so `<ThreeCan
 | `tests/three-core/visibility.test.ts` | BL1: `visibleFootprints` lists footprints in view and not behind terrain (ADR 49). |
 | `tests/three-core/buildings.test.ts` | BL5, BL6, BL7–BL11, BL14: base on the lowest ground, no floating walls, drawn at the recorded height (gabled ridge included), no roads through, overlap share, ≤ 3 merged groups, translucent approved/demolished, landmark dimensions and placement (tower to the west), per-section loading (ADR 50). |
 | `tests/three-core/buildings-real.test.ts` | BL1, BL7, BL8, BL10, BL13, BL15, BL16 on the real sections: candidates tested at measured heights; drawn buildings resolve to sourced register entries, no trail or road through a footprint (one listed building on a dismantled stretch), no overlaps, ≤ 3 groups, no tree in or over a building, ODbL/OGL recorded and credited; `validateBuildings` names the file and field. |
-| `tests/three-core/positions.test.ts` | CL7: every register entry captured before the iteration keeps its source, category and km range (fixture `tests/fixtures/feature-positions-before.json`). |
+| `tests/three-core/positions.test.ts` | CL7: every register entry captured before the iteration keeps its source, category and km range (fixture `tests/fixtures/feature-positions-before.json`), except those the fixture lists as superseded, each gone and replaced in its file by an entry covering its km range (the two fills that were underbridges). |
+| `tests/three-core/waterways.test.ts` | The OSM watercourses as channels: default or tagged widths; the surface just below the lowest ground across the channel; culverts and tunnels left out; under the trail's formation only at a bridge; clear of roads, walls and water areas with room for the bank; instances kept clear; Afon Du-Bâch, Afon Teigl and Afon Cynfal run under their bridges metres below the deck, every channel below the rendered ground, no tree or grass clump in the water. |
+| `tests/three-core/power.test.ts` | Power lines: voltages and typical support heights; tagged and implied supports joined in the way's order, a tagged height kept, a line split where a support is off the ground, a support shared; in Maentwrog every support on the rendered ground, the 400 kV line on 46 m towers and the 33 kV line on 10-15 m towers; nothing in the concept look. |
+| `tests/three-core/woodland.test.ts` | Woods' kinds from OSM tags; the tree mix per kind (55 % conifer without kinds), the same trees in the same places, the kinds sharing twice the per-kind cap over the whole wood; Coed Caersaeson broadleaf and the Cynfal plantation block conifer; the school-run window broadleaf-dominant. |
+| `tests/three-core/osm-extras.test.ts` | The council map reviews' gaps: Afon Du-Bâch, Afon Teigl, Nant Llyn-morwynion and Afon Cynfal cross the line under their registered bridges; the 33 kV line crosses at km 8.31 with two towers within 35 m; the extras follow every earlier feature and water, barriers and roads ignore them; a ruin is drawn without a roof and faced inside, and the OSM ruins are marked in `buildings.json`, the register and `osm.geojson`; every adopted lidar underbridge is a profile span and a registered deck with no more sag than the OSM bridges, and vale-south reports no fill at either opening; the evidence-only crossings are well-formed points where OSM has no road across. |
 | `tests/three-core/first-person.test.ts` | ADRs 54, 56: the rider's view meets CA1, CA2, CA4 and CA3 as amended, bobs with the crank, plays at the section frame; the prototype config sits outside the reel and names the shot owning each frame. |
 | `tests/three-core/barriers.test.ts` | ADR 58: OSM tags to wall, hedge or fence; lofted boxes of each kind's size or the tagged height, embedded 0.3 m, on a slope, with UVs; the gap at the trail; stations off the terrain dropped. |
 | `tests/three-core/grass.test.ts` | ADR 54: clumps only on grass-like cover inside the band and clear of the ribbon, never on woodland; the stretch, the thinning band edge, determinism, the cap. |

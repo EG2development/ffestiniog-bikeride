@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { loadSection } from "../../src/blender/loadSection";
-import { buildRoadMarkings, buildRoadMesh, buildRoadStructures, gradeToRoads, layRoads, roadWidthM, seatRoads, type RoadLine } from "../../src/three-core/roads";
+import { buildRoadMarkings, buildRoadMesh, gradeToRoads, layRoads, roadWidthM, seatRoads, type RoadLine } from "../../src/three-core/roads";
+import { buildRoadStructures } from "../../src/three-core/roadStructures";
 import { centrelineIndex } from "../../src/three-core/trail";
 import { buildSectionScene, configById } from "../../src/three-core/sections";
 import { ROOT } from "./fixtures";

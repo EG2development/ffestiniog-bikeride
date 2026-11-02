@@ -1,6 +1,6 @@
 """Builds the reel's Blender master: one Scene per reel scene plus a master Scene that cuts them together in the Video Sequencer.
 
-    blender --background --factory-startup --python scripts/blender/build_reel.py -- <exports dir> <out .blend> [preview percent] [samples] [--dressed]
+    blender --background --factory-startup --python scripts/blender/build_reel.py -- <exports dir> <out .blend> [preview percent] [samples] [--dressed] [--film community]
 
 The exports dir holds the section packages and reel.json written by `npm run blender:export -- reel`. Every scene is the plain
 geographic blockout of import_blockout.py; the master takes exactly the master timeline's frame count from each (the Maentwrog
@@ -67,9 +67,9 @@ def text_strip(se, name, text, channel, start, length, style, location, anchor, 
     return st
 
 
-def build(exports_dir, out_blend, percent=100, samples=16, dressed=False):
+def build(exports_dir, out_blend, percent=100, samples=16, dressed=False, film="reel"):
     exp = Path(exports_dir)
-    reel = json.loads((exp / "reel.json").read_text(encoding="utf8"))
+    reel = json.loads((exp / f"{film}.json").read_text(encoding="utf8"))  # reel.json, or community.json
     bpy.ops.wm.read_factory_settings(use_empty=True)
     default_scenes = list(bpy.data.scenes)
 
@@ -149,7 +149,8 @@ def build(exports_dir, out_blend, percent=100, samples=16, dressed=False):
 if __name__ == "__main__":
     args = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
     dressed = "--dressed" in args
-    args = [a for a in args if a != "--dressed"]
+    film = args[args.index("--film") + 1] if "--film" in args else "reel"
+    args = [a for i, a in enumerate(args) if a != "--dressed" and a != "--film" and (i == 0 or args[i - 1] != "--film")]
     if len(args) < 2:
         raise SystemExit("usage: blender --background --factory-startup --python build_reel.py -- <exports dir> <out .blend> [preview percent] [samples] [--dressed]")
-    print("REEL_REPORT " + json.dumps(build(args[0], args[1], *(int(a) for a in args[2:4]), dressed=dressed)))
+    print("REEL_REPORT " + json.dumps(build(args[0], args[1], *(int(a) for a in args[2:4]), dressed=dressed, film=film)))

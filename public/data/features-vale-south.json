@@ -2521,38 +2521,6 @@
     "note": "cut, up to 2.2 m; DEM-derived, not a surveyed earthwork"
   },
   {
-    "id": "earthwork-fill-6.309",
-    "kind": "earthwork",
-    "category": "approximate",
-    "source": {
-      "type": "lidar-dtm",
-      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
-    },
-    "scenes": [
-      "Section-vale-south",
-      "Reel3D"
-    ],
-    "fromKm": 6.309,
-    "toKm": 6.309,
-    "note": "fill, up to 2.5 m; DEM-derived, not a surveyed earthwork"
-  },
-  {
-    "id": "earthwork-fill-7.356",
-    "kind": "earthwork",
-    "category": "approximate",
-    "source": {
-      "type": "lidar-dtm",
-      "ref": "implied by flattening the 3 m trail corridor onto the lidar terrain"
-    },
-    "scenes": [
-      "Section-vale-south",
-      "Reel3D"
-    ],
-    "fromKm": 7.356,
-    "toKm": 7.356,
-    "note": "fill, up to 2.6 m; DEM-derived, not a surveyed earthwork"
-  },
-  {
     "id": "barrier-vale-south-89578700",
     "kind": "barrier",
     "category": "approximate",
@@ -8483,5 +8451,7869 @@
       "confidence": "high"
     },
     "note": "OS outline, generalised; not in OSM; yes; height 2.6 m from lidar-dsm"
+  },
+  {
+    "id": "bridge-vale-south-lidar-6.308",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "data/lidar-underbridges.json#underbridge-6.308"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "fromKm": 6.3,
+    "toKm": 6.316,
+    "note": "underbridge over a farm track (Ty-coch / Bodloesygad); not in OSM; lidar DTM notch 4.12 m with the DSM at the crest over it; generic deck and parapets; replaces earthwork-fill-6.309"
+  },
+  {
+    "id": "bridge-vale-south-lidar-7.356",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "lidar-dtm",
+      "ref": "data/lidar-underbridges.json#underbridge-7.356"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "fromKm": 7.347,
+    "toKm": 7.364,
+    "note": "underbridge over a farm track (Cynfal-fawr); not in OSM; lidar DTM notch 3.65 m with the DSM at the crest over it; generic deck and parapets; replaces earthwork-fill-7.356"
+  },
+  {
+    "id": "waterway-vale-south-4685491",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/4685491"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=river (Afon Teigl); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-24308656",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24308656"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-24308892",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24308892"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-24308925",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24308925"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-24308931",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24308931"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-24308934",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24308934"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-24308937",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24308937"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-24308939",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24308939"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-24309288",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309288"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-24309289",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309289"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-24309303",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309303"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "crossingsKm": [
+      8.223
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged; crosses the line at km 8.223"
+  },
+  {
+    "id": "waterway-vale-south-24309304",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/24309304"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-123461512",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/123461512"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=river (Afon Cynfal); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-159029548",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029548"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream (Afon Cynfal); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-159029552",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/159029552"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-271932719",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271932719"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=river (Ceunant Sych); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-271964238",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271964238"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-271964241",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271964241"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-271964243",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/271964243"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-295793437",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295793437"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-295793438",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/295793438"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-314022263",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314022263"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "crossingsKm": [
+      3.982
+    ],
+    "note": "waterway=stream (Nant Llyn-morwynion); centreline from OSM; width not tagged; crosses the line at km 3.982"
+  },
+  {
+    "id": "waterway-vale-south-314022273",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314022273"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=drain (Nant Brysgwll); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-314022274",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314022274"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream (Afon Cynfal); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-314090448",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314090448"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-314092268",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314092268"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-314092269",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314092269"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-314092270",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314092270"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-314092271",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314092271"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream (Nant Brysgwll); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-314092272",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314092272"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-314092273",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314092273"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-314092274",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/314092274"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-338684642",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338684642"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-360032855",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/360032855"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-371582013",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/371582013"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-371586032",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/371586032"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-405981246",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/405981246"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-405981247",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/405981247"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-461138250",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461138250"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-461162380",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461162380"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=drain; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-707085676",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/707085676"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-707085684",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/707085684"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream in a culvert; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-707085688",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/707085688"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-822221120",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/822221120"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "crossingsKm": [
+      6.635
+    ],
+    "note": "waterway=stream (Afon Cynfal); centreline from OSM; width not tagged; crosses the line at km 6.635"
+  },
+  {
+    "id": "waterway-vale-south-822221128",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/822221128"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-916910300",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/916910300"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream in a culvert; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-916910302",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/916910302"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-916910303",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/916910303"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream in a culvert; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-916910304",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/916910304"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-978249729",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/978249729"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "crossingsKm": [
+      5.014
+    ],
+    "note": "waterway=stream (Nant Brysgwll); centreline from OSM; width not tagged; crosses the line at km 5.014"
+  },
+  {
+    "id": "waterway-vale-south-978249730",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/978249730"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream (Nant Brysgwll) in a culvert; centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-1199355341",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1199355341"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "waterway=stream (Nant Brysgwll); centreline from OSM; width not tagged"
+  },
+  {
+    "id": "waterway-vale-south-1536020292",
+    "kind": "water",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1536020292"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "crossingsKm": [
+      3.781
+    ],
+    "note": "waterway=river (Afon Teigl); centreline from OSM; width not tagged; crosses the line at km 3.781"
+  },
+  {
+    "id": "power-line-vale-south-142846020",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/142846020"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=line overhead line from OSM, 275000 V; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-vale-south-338684648",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338684648"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-vale-south-338684649",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/338684649"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-vale-south-372528393",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/372528393"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=minor_line overhead line from OSM, 33000 V; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-vale-south-373593549",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373593549"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-vale-south-373593552",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373593552"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-vale-south-373593553",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/373593553"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-vale-south-383175255",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/383175255"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "crossingsKm": [
+      8.306
+    ],
+    "note": "power=line overhead line from OSM, 33000 V; supports from its tower and pole nodes; crosses the line at km 8.306"
+  },
+  {
+    "id": "power-line-vale-south-405979602",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/405979602"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "crossingsKm": [
+      6.56
+    ],
+    "note": "power=minor_line overhead line from OSM, 11000 V; supports from its tower and pole nodes; crosses the line at km 6.560"
+  },
+  {
+    "id": "power-line-vale-south-461133557",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461133557"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "crossingsKm": [
+      5.763
+    ],
+    "note": "power=minor_line overhead line from OSM, 400 V; supports from its tower and pole nodes; crosses the line at km 5.763"
+  },
+  {
+    "id": "power-line-vale-south-461362550",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461362550"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-vale-south-461387665",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461387665"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "crossingsKm": [
+      3.707
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes; crosses the line at km 3.707"
+  },
+  {
+    "id": "power-line-vale-south-461387669",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461387669"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-vale-south-461388843",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461388843"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-vale-south-461388844",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/461388844"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-vale-south-1391160800",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1391160800"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-vale-south-1391160801",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1391160801"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=minor_line overhead line from OSM; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-vale-south-1391160802",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1391160802"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "crossingsKm": [
+      4.586,
+      4.947
+    ],
+    "note": "power=minor_line overhead line from OSM, 11000 V; supports from its tower and pole nodes; crosses the line at km 4.586, 4.947"
+  },
+  {
+    "id": "power-line-vale-south-1391276013",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1391276013"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "crossingsKm": [
+      5.781
+    ],
+    "note": "power=minor_line overhead line from OSM, 230 V; supports from its tower and pole nodes; crosses the line at km 5.781"
+  },
+  {
+    "id": "power-line-vale-south-1391444648",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1391444648"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=minor_line overhead line from OSM, 11000 V; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-line-vale-south-1391444649",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "way/1391444649"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=minor_line overhead line from OSM, 11000 V; supports from its tower and pole nodes"
+  },
+  {
+    "id": "power-tower-vale-south-1038319042",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319042"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319078",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319078"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319111",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319111"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319115",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319115"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319140",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319140"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319181",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319181"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319193",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319193"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319225",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319225"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319233",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319233"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319280",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319280"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319345",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319345"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319355",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319355"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319420",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319420"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319423",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319423"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319441",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319441"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319460",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319460"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319488",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319488"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319518",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319518"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319530",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319530"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319550",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319550"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319558",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319558"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1038319561",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1038319561"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1105718545",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1105718545"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710569653",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710569653"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710569684",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710569684"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710572616",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710572616"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710572625",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710572625"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710572628",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710572628"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710572631",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710572631"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710572637",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710572637"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710709059",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710709059"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710709060",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710709060"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710709062",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710709062"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710709064",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710709064"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710709066",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710709066"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710709069",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710709069"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710709075",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710709075"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710709076",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710709076"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710709078",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710709078"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710717904",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710717904"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710717907",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710717907"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710717911",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710717911"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710717914",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710717914"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710717917",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710717917"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710745618",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710745618"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710745619",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710745619"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710745620",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710745620"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710745621",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710745621"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710745623",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710745623"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-pole-vale-south-1710745624",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710745624"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-tower-vale-south-1710745625",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710745625"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710745626",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710745626"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710745627",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710745627"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710745630",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710745630"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710745631",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710745631"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710745634",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710745634"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710745635",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710745635"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710745636",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710745636"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710745637",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710745637"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710745638",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710745638"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710745639",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710745639"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710745642",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710745642"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710745643",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710745643"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-pole-vale-south-1710746506",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710746506"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-1710746509",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710746509"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-1710746511",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710746511"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-tower-vale-south-1710756402",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756402"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756406",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756406"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756407",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756407"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756410",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756410"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756416",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756416"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756419",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756419"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756420",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756420"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756424",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756424"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756425",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756425"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756428",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756428"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756430",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756430"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756433",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756433"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756435",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756435"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756437",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756437"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756441",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756441"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756446",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756446"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756455",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756455"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756463",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756463"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756465",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756465"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756466",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756466"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756476",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756476"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1710756480",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1710756480"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1711334782",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1711334782"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1711334785",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1711334785"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1711334801",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1711334801"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1711334811",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1711334811"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-1711334821",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/1711334821"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248713",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248713"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248715",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248715"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248717",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248717"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248719",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248719"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248726",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248726"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248728",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248728"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248729",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248729"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248732",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248732"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248734",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248734"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248738",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248738"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248742",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248742"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248745",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248745"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248752",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248752"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248755",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248755"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248769",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248769"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248774",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248774"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248783",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248783"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248787",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248787"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248789",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248789"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248798",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248798"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248801",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248801"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248805",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248805"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248808",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248808"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248810",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248810"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248813",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248813"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-2757248815",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2757248815"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-pole-vale-south-2763583153",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2763583153"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-2768532571",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2768532571"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-2768532632",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2768532632"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-2768532647",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2768532647"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-2768532660",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2768532660"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-2768532682",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2768532682"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-2768532690",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2768532690"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-2768532701",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/2768532701"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-tower-vale-south-3200157651",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200157651"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445210",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445210"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445211",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445211"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445212",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445212"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445213",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445213"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445214",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445214"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445215",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445215"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445216",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445216"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445217",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445217"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445218",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445218"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445219",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445219"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445220",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445220"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445221",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445221"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445222",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445222"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445223",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445223"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445224",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445224"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445225",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445225"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445226",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445226"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445227",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445227"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445228",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445228"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445229",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445229"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445230",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445230"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445231",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445231"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445232",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445232"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445233",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445233"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445234",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445234"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445235",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445235"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445236",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445236"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445237",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445237"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445238",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445238"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445239",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445239"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445240",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445240"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445241",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445241"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445242",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445242"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445243",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445243"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445244",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445244"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445245",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445245"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445246",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445246"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445247",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445247"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445248",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445248"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445249",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445249"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445250",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445250"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445251",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445251"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445252",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445252"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445253",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445253"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445254",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445254"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445255",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445255"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445256",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445256"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445257",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445257"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445258",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445258"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445259",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445259"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445260",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445260"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445461",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445461"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445462",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445462"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445463",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445463"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445464",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445464"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445465",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445465"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445466",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445466"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445467",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445467"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445468",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445468"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445469",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445469"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445470",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445470"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445471",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445471"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445472",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445472"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200445473",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200445473"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200474697",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200474697"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200474698",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200474698"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200474699",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200474699"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200474700",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200474700"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-3200474701",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3200474701"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-pole-vale-south-3457920304",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3457920304"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3458076172",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458076172"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3458076173",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458076173"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3458076175",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458076175"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3458076176",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458076176"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3458076177",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458076177"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3458076178",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458076178"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3458076179",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458076179"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3458076180",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458076180"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3458076181",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458076181"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3458076182",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458076182"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3458076183",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458076183"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3458076184",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458076184"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3458076185",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458076185"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3458076186",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458076186"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3458076187",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3458076187"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760849139",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760849139"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760849140",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760849140"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760849141",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760849141"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760849142",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760849142"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760849143",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760849143"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760849148",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760849148"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760866646",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760866646"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760866647",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760866647"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760866648",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760866648"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760866649",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760866649"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760866650",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760866650"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760866651",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760866651"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760866652",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760866652"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760866653",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760866653"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760866654",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760866654"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760866655",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760866655"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760866656",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760866656"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760871357",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760871357"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760871358",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760871358"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760871371",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760871371"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760871372",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760871372"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760871373",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760871373"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760875444",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760875444"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760875446",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760875446"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760875447",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760875447"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760875448",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760875448"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760875449",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760875449"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760875450",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760875450"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3760877489",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3760877489"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3764404963",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3764404963"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3764404964",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3764404964"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3764404965",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3764404965"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3764404966",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3764404966"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3764404967",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3764404967"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3764404968",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3764404968"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3764404969",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3764404969"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3764404970",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3764404970"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3764404971",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3764404971"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3764404972",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3764404972"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3764404973",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3764404973"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338001",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338001"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338002",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338002"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338003",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338003"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338004",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338004"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338005",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338005"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338006",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338006"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338007",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338007"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338008",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338008"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338009",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338009"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338010",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338010"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338059",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338059"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338060",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338060"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338061",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338061"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338062",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338062"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338063",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338063"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338064",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338064"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338065",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338065"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338066",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338066"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338067",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338067"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338068",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338068"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338069",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338069"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338070",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338070"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338071",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338071"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338072",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338072"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338073",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338073"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338074",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338074"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338075",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338075"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338076",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338076"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338077",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338077"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338078",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338078"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338079",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338079"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338080",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338080"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338081",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338081"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338082",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338082"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338083",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338083"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338084",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338084"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338085",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338085"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338086",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338086"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338089",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338089"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3770338090",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3770338090"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3863881152",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3863881152"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3863881153",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3863881153"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3863881154",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3863881154"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3863881155",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3863881155"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-3863881156",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/3863881156"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4081097056",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4081097056"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4081097057",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4081097057"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4081097058",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4081097058"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4081097059",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4081097059"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4081097060",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4081097060"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4081097061",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4081097061"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4081097165",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4081097165"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4081097166",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4081097166"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4081097167",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4081097167"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4081097168",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4081097168"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4081097169",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4081097169"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-tower-vale-south-4277452201",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4277452201"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-pole-vale-south-4566768680",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4566768680"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4566768681",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4566768681"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4566768682",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4566768682"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4566768683",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4566768683"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4567024690",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4567024690"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4567024691",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4567024691"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4567024692",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4567024692"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4567024697",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4567024697"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4567024698",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4567024698"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4567024755",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4567024755"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4567050107",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4567050107"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4567050108",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4567050108"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4567050109",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4567050109"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568679381",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568679381"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568679382",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568679382"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568927271",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568927271"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568927272",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568927272"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568927273",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568927273"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568927274",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568927274"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568927275",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568927275"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568928020",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568928020"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568928196",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568928196"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568928197",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568928197"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568928198",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568928198"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568928199",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568928199"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568928200",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568928200"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568928201",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568928201"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568928202",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568928202"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568928258",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568928258"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568928259",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568928259"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568928260",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568928260"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568928261",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568928261"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568928262",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568928262"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568928263",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568928263"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568928264",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568928264"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568928265",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568928265"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568928266",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568928266"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568928267",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568928267"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568928269",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568928269"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568935895",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568935895"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568935896",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568935896"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568935897",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568935897"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568935898",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568935898"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568935899",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568935899"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-4568935915",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/4568935915"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-5332064458",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/5332064458"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-5332064492",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/5332064492"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-5332064498",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/5332064498"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-7894356957",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/7894356957"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-7894356958",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/7894356958"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-7894356959",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/7894356959"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-7894356960",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/7894356960"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-7894356961",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/7894356961"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-7894356962",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/7894356962"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-7894356963",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/7894356963"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-7894356964",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/7894356964"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-7894356965",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/7894356965"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-7894356966",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/7894356966"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-7894356967",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/7894356967"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-7894356968",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/7894356968"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-7894356969",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/7894356969"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213535",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213535"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213544",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213544"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213545",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213545"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213546",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213546"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213547",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213547"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213548",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213548"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213549",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213549"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213550",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213550"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213551",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213551"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213552",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213552"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213553",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213553"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213554",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213554"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213555",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213555"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213556",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213556"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213557",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213557"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213558",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213558"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213559",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213559"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213560",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213560"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213582",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213582"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213583",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213583"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213584",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213584"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213585",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213585"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213586",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213586"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213587",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213587"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213588",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213588"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213589",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213589"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213590",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213590"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213591",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213591"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213592",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213592"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213593",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213593"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213594",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213594"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213595",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213595"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213596",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213596"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213597",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213597"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213598",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213598"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213599",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213599"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877213600",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877213600"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877237802",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877237802"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877237803",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877237803"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877237804",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877237804"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877237805",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877237805"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877237806",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877237806"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877237807",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877237807"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877237808",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877237808"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877237809",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877237809"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877237810",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877237810"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877237811",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877237811"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877237812",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877237812"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877237813",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877237813"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877237814",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877237814"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877237815",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877237815"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877237816",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877237816"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12877237817",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12877237817"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174138",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174138"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174139",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174139"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174140",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174140"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174141",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174141"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174142",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174142"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174143",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174143"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174144",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174144"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174145",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174145"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174146",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174146"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174147",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174147"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174149",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174149"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174158",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174158"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174159",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174159"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174160",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174160"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174161",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174161"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174162",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174162"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174163",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174163"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174164",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174164"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174165",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174165"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174166",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174166"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174167",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174167"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174168",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174168"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174169",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174169"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174170",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174170"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174171",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174171"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174172",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174172"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174173",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174173"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174174",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174174"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174252",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174252"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174253",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174253"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174254",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174254"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174255",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174255"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174256",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174256"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174257",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174257"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174258",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174258"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174259",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174259"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174260",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174260"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174261",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174261"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174262",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174262"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174263",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174263"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174264",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174264"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174265",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174265"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12878174266",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12878174266"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12879672347",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12879672347"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12879672361",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12879672361"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12879672371",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12879672371"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12879672372",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12879672372"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12879672373",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12879672373"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12879672374",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12879672374"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12879672375",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12879672375"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12879672376",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12879672376"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12879672386",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12879672386"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12879672387",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12879672387"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12879726908",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12879726908"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-pole-vale-south-12879726909",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/12879726909"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=pole from OSM; position only, generic pole"
+  },
+  {
+    "id": "power-tower-vale-south-13449100877",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/13449100877"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-13532463076",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/13532463076"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-13532463077",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/13532463077"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
+  },
+  {
+    "id": "power-tower-vale-south-13532463078",
+    "kind": "structure",
+    "category": "approximate",
+    "source": {
+      "type": "osm",
+      "ref": "node/13532463078"
+    },
+    "scenes": [
+      "Reel3D",
+      "Section-vale-south"
+    ],
+    "note": "power=tower from OSM; position only, generic lattice pylon"
   }
 ]
