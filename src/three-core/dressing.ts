@@ -1,8 +1,10 @@
 // The photo look's OSM dressing of a section (the council map reviews of 2026-11-02): its woods' kinds from their tags
 // (woodland.ts), its watercourses on a ground window's own ground (waterways.ts; an aerial window's 16 m ground and its
-// imagery carry them) and its power lines (power.ts), with trees and grass kept clear of the water.
+// imagery carry them) and its power lines (power.ts), with trees and grass kept clear of the water and a reservoir's
+// islands wooded (islands.ts).
 import type { HeightAt } from "./camera";
 import type { RouteModel } from "../data/route";
+import { islandTrees } from "./islands";
 import { placePower, type PlacedLine, type PlacedSupport } from "./power";
 import type { OsmLine } from "./registers";
 import type { RoadLine } from "./roads";
@@ -39,7 +41,11 @@ export function photoDressing(
     ...(look.photo && { woodKinds: woodKindGrid(inputs.dem, inputs.land, inputs.osm) }),
     channels,
     power: look.photo ? placePower(inputs.osm, inputs.route.project, scene.surfaceAt) : { supports: [], lines: [] },
-    clearTrees: (t) => ({ conifer: clear(t.conifer, CLEAR_OF_WATER_M.tree), broadleaf: clear(t.broadleaf, CLEAR_OF_WATER_M.tree) }),
+    // a reservoir's islands are wooded in the imagery; the coarse grid leaves most of them bare (islands.ts)
+    clearTrees: (t) => {
+      const kept = { conifer: clear(t.conifer, CLEAR_OF_WATER_M.tree), broadleaf: clear(t.broadleaf, CLEAR_OF_WATER_M.tree) };
+      return look.photo ? { ...kept, broadleaf: [...kept.broadleaf, ...islandTrees(around.water, scene.surfaceAt, kept)] } : kept;
+    },
     clearGrass: (list) => clear(list, CLEAR_OF_WATER_M.grass),
   };
 }

@@ -5,7 +5,8 @@
 import { feet, miles } from "./units";
 
 export type CaptionPosition = "top-left" | "bottom-left" | "bottom-center" | "badge" | "attribution";
-export type Caption = { id: string; text: string; from: number; to: number; position: CaptionPosition; scene?: string };
+/** `text` is the English; `cy`, where a film is bilingual (the community film), the Welsh shown above it. */
+export type Caption = { id: string; text: string; cy?: string; from: number; to: number; position: CaptionPosition; scene?: string };
 
 // buildings OSM lacks come from OS OpenMap - Local, whose OGL notice is quoted as OS sets it (ADR 63)
 const OS_NOTICE = "Contains OS data © Crown copyright and database right 2026";
@@ -59,11 +60,24 @@ export const PHOTO_CAPTIONS: Caption[] = [
 export const PHOTO_LEGEND = {
   bridge: "Bridge: OSM position, approximate generic form",
   ground: "People illustrative; verges levelled and cleared for the concept",
+  /** the community film's "then" shot: the mothballed line's track is drawn on the mapped alignment, not surveyed */
+  railway: "Railway today: illustrative, track on the mapped line",
 } as const;
 /** The legend line for registered earthworks a drone shot flies over (spec G8): where they are along the line, in miles
  * from Blaenau Ffestiniog (the register keeps km), marked approximate and DEM-derived, as the register's notes say. */
 export const photoEarthworksLine = (fromKm: number, toKm: number): string =>
   toKm - fromKm < 0.005 ? `Earthwork at mile ${miles(fromKm * 1000, 2)}: approximate, DEM-derived` : `Earthworks at miles ${miles(fromKm * 1000, 2)}–${miles(toKm * 1000, 2)}: approximate, DEM-derived`;
+
+/** The legend's lines in Welsh, for a bilingual film (the community film shows each Welsh line above its English;
+ * curated text, ADR 38). */
+export const PHOTO_LEGEND_CY: Record<keyof typeof PHOTO_LEGEND | "translucent", string> = {
+  bridge: "Pont: lleoliad OSM, ffurf gyffredinol fras",
+  ground: "Pobl er darlunio; ymylon wedi'u lefelu a'u clirio ar gyfer y cysyniad",
+  railway: "Y rheilffordd heddiw: darlun, trac ar y llinell a fapiwyd",
+  translucent: "Tryloyw: wedi'i gymeradwyo neu ei ddymchwel, nid yw'n sefyll",
+};
+export const photoEarthworksLineCy = (fromKm: number, toKm: number): string =>
+  toKm - fromKm < 0.005 ? `Gwaith pridd ym milltir ${miles(fromKm * 1000, 2)}: bras, o'r DEM` : `Gwaith pridd rhwng milltir ${miles(fromKm * 1000, 2)} a ${miles(toKm * 1000, 2)}: bras, o'r DEM`;
 
 /** The 12 s Maentwrog proof of concept on its own (360 frames), with the ranges its render checks expect. */
 export const POC_CAPTIONS: Caption[] = [

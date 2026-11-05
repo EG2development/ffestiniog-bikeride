@@ -1,7 +1,8 @@
 """The community film's trail users beyond walking: people riding bicycles or an adult tricycle, people sitting on a
 bench, and the street furniture they use (street.py), placed where the package says and marked existing or proposed.
 
-Riders are the camera rider's model (cast.seat_rider) on their own bicycle, a smaller one for a child; wheels turn by
+Riders are the camera rider's model (cast.seat_rider) on their own bicycle, a smaller one for a child, or on a cargo
+cycle (cargobikes.py) with children or shopping aboard; wheels turn by
 the distance the root travels and cranks by the package's phase (one turn per CRANK_TURN_M, src/three-core/walkers.ts).
 A sitter is seated on the nearest bench seat facing the bench's front, thighs level and shins down, hands on the knees.
 """
@@ -11,6 +12,7 @@ import numpy as np
 from mathutils import Matrix, Vector
 
 import bike
+import cargobikes
 import cast
 import gait
 import idle
@@ -21,30 +23,41 @@ SMALL_BIKE = 0.72  # a 20-inch wheel, for a younger child
 
 
 def cyclist(scene, root, w, arr, pid, coll, prefix, gaze=None, out=None):
-    """A person riding along the keyed root: bicycle (or tricycle), seated rider, wheels and cranks keyed; the head
-    looking about by `gaze` (attention.py), if given. `out` (a dict) receives the bicycle's parts and the person."""
-    trike = w["activity"] == "trike"
+    """A person riding along the keyed root: bicycle, tricycle or cargo cycle (cargobikes.py, with its passengers and
+    shopping), seated rider, wheels and cranks keyed; the head looking about by `gaze` (attention.py), if given. `out`
+    (a dict) receives the bicycle's parts and the person."""
+    trike, kind = w["activity"] == "trike", w.get("cycle")
     paint = PAINTS[int(w["seed"]) % len(PAINTS)]
-    parts = bike.build_trike(prefix, coll) if trike else bike.build_bicycle(prefix, coll, paint, step_through=pid in cast.CHILDREN)
+    if kind:
+        parts = cargobikes.build(kind, prefix, coll, paint, w.get("carries"))
+    else:
+        parts = bike.build_trike(prefix, coll) if trike else bike.build_bicycle(prefix, coll, paint, step_through=pid in cast.CHILDREN)
     if pid in cast.PUPILS or pid in cast.CHILDREN:
         bike.scale_bicycle(parts, SMALL_BIKE if pid in cast.CHILDREN else CHILD_BIKE)
     parts["root"].parent = root
     arm = cast.make_person(pid, prefix + "body", coll)
     info = cast.rig_info(arm)
     person = {"arm": arm, "info": info, "k": float(w["heightM"]) / info["height"]}
-    fit = cast.seat_rider(person, parts, scene.view_layers[0], lean_deg=22.0 if trike else 30.0)
+    lean = cargobikes.LEAN_DEG[kind] if kind else (22.0 if trike else 30.0)
+    fit = cast.seat_rider(person, parts, scene.view_layers[0], lean_deg=lean)
+    if kind:
+        cargobikes.finish(parts, prefix, coll)
     frames = np.arange(1, len(arr) + 1, dtype=np.float64)
-    wheel = cast.distances(arr[:, 0:2].astype(np.float64)) / parts.get("wheel_r", bike.WHEEL_R)
+    travelled = cast.distances(arr[:, 0:2].astype(np.float64))
     crank = arr[:, 4].astype(np.float64)
-    wheels = [parts["rear_wheel"], parts["front_wheel"]] + ([parts["rear_wheel_2"]] if trike else [])
-    for obj, a in [(o, wheel) for o in wheels] + [(parts["crank"], crank), (parts["pedal_l"], -crank), (parts["pedal_r"], -crank)]:
+    for obj, a in [(o, travelled / r) for o, r in parts["wheels"]] + [(parts["crank"], crank), (parts["pedal_l"], -crank), (parts["pedal_r"], -crank)]:
         obj.rotation_mode = "XYZ"
         gait.key_array(obj, "rotation_euler", 1, frames, a)
     if gaze is not None:
         idle.bake_head(person["arm"], frames, gaze)
+    riding = []
+    if kind and w.get("passengers"):
+        riding = cargobikes.seat_children(parts, w["passengers"], (w.get("carries") or {}).get("children", []), coll, prefix, frames,
+                                          gaze if gaze is not None else np.zeros((len(arr), 2)))
     if out is not None:
         out.update(parts=parts, person=person)
-    return {"walker": w["index"], "activity": w["activity"], "person": pid, "heightM": w["heightM"], "scale": round(person["k"], 3), **fit}
+    extra = {"cycle": kind, "passengers": riding, "shopping": bool((w.get("carries") or {}).get("shopping"))} if kind else {}
+    return {"walker": w["index"], "activity": w["activity"], "person": pid, "heightM": w["heightM"], "scale": round(person["k"], 3), **fit, **extra}
 
 
 def sitter(scene, w, pid, coll, prefix, seat, gaze, talking=True):

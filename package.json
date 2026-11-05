@@ -62,7 +62,16 @@
     "data:canopy": "python3 scripts/build_canopy.py --section",
     "data:barriers": "python3 scripts/fetch_barriers.py --section",
     "still:photo": "remotion still src/index.ts Poc3DMaentwrogPhoto out/photo-still.png --gl=angle",
-    "render:photo": "remotion render src/index.ts Poc3DMaentwrogPhoto out/poc-maentwrog-photo.mp4 --gl=angle --hardware-acceleration=if-possible --video-bitrate=10M"
+    "render:photo": "remotion render src/index.ts Poc3DMaentwrogPhoto out/poc-maentwrog-photo.mp4 --gl=angle --hardware-acceleration=if-possible --video-bitrate=10M",
+    "social:plan": "esbuild scripts/social/plan.ts --bundle --platform=node --format=esm --outfile=out/.social-plan.mjs --log-level=warning && node out/.social-plan.mjs",
+    "social:plates": "node scripts/social/render-plates.mjs",
+    "social:audio": "python scripts/social/make_audio.py out/social/public/audio",
+    "social:render": "esbuild scripts/social/render-social.ts --bundle --platform=node --format=esm --packages=external --outfile=out/.social-render.mjs --log-level=warning && node out/.social-render.mjs",
+    "social:qa": "node scripts/social/qa.mjs",
+    "social:studio": "remotion studio --public-dir=out/social/public",
+    "film:audio": "python scripts/film/make_audio.py",
+    "film:encode": "node scripts/film/encode.mjs",
+    "film:compare": "python scripts/film/compare.py"
   },
   "allowScripts": {
     "esbuild": false

@@ -11,6 +11,7 @@ import attention
 import bike
 import cast
 import dog as dogs
+import finish
 import gait
 import landscape
 import lockup
@@ -37,6 +38,11 @@ def cast_walkers(section_id, walkers):
         pid = pid or next(p[0] for p in cast.PROFILES if p[0] not in used)
         used.add(pid)
         out.append(pid)
+        kids = (w.get("carries") or {}).get("children") or []
+        if kids:  # a cargo cycle's passengers, cast too (trailfolk.cyclist seats them)
+            free = [p for p in cast.PASSENGERS if p not in used]
+            w["passengers"] = [free[(start + i) % len(free)] for i in range(len(kids))]
+            used.update(w["passengers"])
     return out
 
 
@@ -151,5 +157,7 @@ def sky(scene, man, samples):
     sun = light["sunDirection"] if light else (0.0, -0.57, 0.57)
     scene.world = landscape.sky_world(f"sky-{man['section']['id']}", sun)
     landscape.render_settings(scene, samples)
-    landscape.haze(scene, man["section"].get("kind") == "aerial")
+    finish.shadows(scene)
+    finish.look(scene, man["section"].get("kind") == "aerial")
+    finish.compositor(scene, man["section"].get("kind") == "aerial")  # haze on the land only, the sky laid back, a vignette
     return {"sunDirection": sun, "hdriSunElevationDeg": round(scene.world["hdri_sun_elevation_deg"], 1), "skyTurnDeg": round(scene.world["turn_deg"], 1)}

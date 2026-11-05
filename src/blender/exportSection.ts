@@ -6,9 +6,10 @@ import type { RouteModel } from "../data/route";
 import { ATMOSPHERE, LIGHTING_PHOTO, sunDirection } from "../three-core/atmosphere";
 import { buildingShell } from "../three-core/buildings";
 import { cyclistPose, poseAxes, type CyclistPose } from "../three-core/cyclistMotion";
-import { LEGEND, PHOTO_LEGEND, photoEarthworksLine } from "../data/reel-captions";
+import { LEGEND, PHOTO_LEGEND, PHOTO_LEGEND_CY, photoEarthworksLine, photoEarthworksLineCy } from "../data/reel-captions";
 import type { Feature } from "../three-core/registers";
-import { placeProps, proposedLine } from "../three-core/props";
+import { placeProps, proposedLine, proposedLineCy } from "../three-core/props";
+import { FILM_IMAGERY_GRADE } from "../three-core/photoLook";
 import { buildSectionScene, configById, earthworksInRange, shotSpecAt, type Look, type SectionScene } from "../three-core/sections";
 import type { MeshArrays, Vec3 } from "../three-core/types";
 import { DOG_STRIDE_M } from "../three-core/walkers";
@@ -101,15 +102,18 @@ function legendRuns(scene: SectionScene, features: readonly Feature[], look: Loo
   const runs: { from: number; to: number; lines: string[] }[] = [];
   const translucent = scene.buildings.groups.some((g) => g.kind === "translucent");
   const proposed = proposedLine(cfg.photo?.props ?? []);
+  const proposedCy = proposedLineCy(cfg.photo?.props ?? []);
+  // a bilingual section shows each line's Welsh above its English
+  const pair = (cy: string, en: string) => (cfg.bilingual ? [cy, en] : [en]);
   for (let f = 0; f < cfg.frames; f++) {
     const spec = shotSpecAt(cfg, f);
     const earthworks = spec.kind === "drone-side" ? earthworksInRange(features, [Math.min(spec.fromDistM, spec.toDistM, cfg.startDistM), Math.max(spec.fromDistM, spec.toDistM, scene.distAt(f))]) : spec.kind === "crane" ? earthworksInRange(features, [scene.distAt(f) - spec.fromBackM, scene.distAt(f) + spec.lookAheadM]) : null;
     const lines = [
-      ...(cfg.kind === "ground" && scene.bridges.length > 0 ? [PHOTO_LEGEND.bridge] : []),
-      ...(earthworks ? [photoEarthworksLine(earthworks[0], earthworks[1])] : []),
-      ...(cfg.kind === "ground" ? [PHOTO_LEGEND.ground] : []),
-      ...(proposed ? [proposed] : []),
-      ...(translucent ? [LEGEND.translucent] : []),
+      ...(cfg.kind === "ground" && scene.bridges.length > 0 ? pair(PHOTO_LEGEND_CY.bridge, PHOTO_LEGEND.bridge) : []),
+      ...(earthworks ? pair(photoEarthworksLineCy(earthworks[0], earthworks[1]), photoEarthworksLine(earthworks[0], earthworks[1])) : []),
+      ...(cfg.kind === "ground" ? (cfg.photo?.railway ? pair(PHOTO_LEGEND_CY.railway, PHOTO_LEGEND.railway) : pair(PHOTO_LEGEND_CY.ground, PHOTO_LEGEND.ground)) : []),
+      ...(proposed && proposedCy ? pair(proposedCy, proposed) : []),
+      ...(translucent ? pair(PHOTO_LEGEND_CY.translucent, LEGEND.translucent) : []),
     ];
     const last = runs[runs.length - 1];
     if (last && last.to === f && JSON.stringify(last.lines) === JSON.stringify(lines)) last.to = f + 1;
@@ -243,7 +247,7 @@ function buildManifest(side: Sidecars, root: string, sources: SourceFile[], scen
       }
       dog = { breed: w.dog.breed, side: w.spec.dog?.side ?? "left", strideM: DOG_STRIDE_M, fields: ["x", "y", "z", "yaw", "phase"], data: side.put(`walker-${i}-dog.f32`, rows) };
     }
-    return { index: i, activity: w.spec.activity ?? "walk", role: w.spec.role ?? null, heightM: w.spec.heightM, seed: w.spec.seed, direction: w.spec.direction, sideM: w.spec.sideM, fields: ["x", "y", "z", "yaw", "phase"], data: side.put(`walker-${i}.f32`, data), ...(dog && { dog }), ...(w.spec.locksUp && { locksUp: true }) };
+    return { index: i, activity: w.spec.activity ?? "walk", role: w.spec.role ?? null, heightM: w.spec.heightM, seed: w.spec.seed, direction: w.spec.direction, sideM: w.spec.sideM, fields: ["x", "y", "z", "yaw", "phase"], data: side.put(`walker-${i}.f32`, data), ...(dog && { dog }), ...(w.spec.locksUp && { locksUp: true }), ...(w.spec.cycle && { cycle: w.spec.cycle }), ...(w.spec.carries && { carries: w.spec.carries }) };
   });
   // street furniture on the rendered ground, existing (where OSM maps it) or proposed (status says which)
   const props = placeProps(cfg.photo?.props ?? [], scene.trail, route.project, scene.surfaceAt, busStops(root)).map((p) => ({ kind: p.kind, status: p.status, position: toBlender(p.position, origin), yaw: yawToBlender(p.yaw), opts: p.opts, ...(p.source && { source: p.source }) }));
@@ -258,7 +262,7 @@ function buildManifest(side: Sidecars, root: string, sources: SourceFile[], scen
 
   return {
     schema: SCHEMA_VERSION,
-    section: { id: cfg.id, title: cfg.title, kind: cfg.kind, window: cfg.window, kmRange: cfg.kmRange, look, fps: FPS, frames, startDistM: cfg.startDistM },
+    section: { id: cfg.id, title: cfg.title, kind: cfg.kind, window: cfg.window, kmRange: cfg.kmRange, look, fps: FPS, frames, startDistM: cfg.startDistM, ...(cfg.photo?.railway && { railway: true }) },
     // Blender = rotation + 10× scale of Three.js about this horizontal origin (Three.js world units); see src/blender/coords.ts
     coordinates: {
       origin,
@@ -327,7 +331,8 @@ export function exportSection(opts: { root: string; outRoot: string; sectionId: 
   const cfg = configById(opts.sectionId);
   const photo = look === "photo" ? cfg.photo : undefined;
   const { inputs, sources } = loadSection(opts.root, cfg, { canopy: !!photo?.canopyTrees, barriers: !!photo?.barriers, imagery: !!photo?.imagery });
-  const scene = buildSectionScene(cfg, inputs, look);
+  // the film keeps grey slate and brown moor out of the imagery's warming (photoLook.ts FILM_IMAGERY_GRADE)
+  const scene = buildSectionScene(cfg, inputs, look, FILM_IMAGERY_GRADE);
   const side = new Sidecars();
   const manifest = buildManifest(side, opts.root, sources, scene, look, inputs.features, inputs.route);
 

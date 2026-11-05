@@ -8,6 +8,7 @@ import type { DemGrid, LandCover } from "../../src/three-core/types";
 import { REEL_LOOK, REEL_SCENES } from "../../src/data/reel-timeline";
 import { PHOTO_LEGEND, photoEarthworksLine, reelCaptions } from "../../src/data/reel-captions";
 import { wgs84ToBng } from "../../src/three-core/bng";
+import { onReservoirIsland } from "../../src/three-core/islands";
 import { readJson, readProjectFile, realRoute } from "./fixtures";
 
 // The reel in the photo look (docs/adr/0060-reel-in-the-photo-look.md): every scene carries the photoreal layer's
@@ -55,12 +56,14 @@ describe("the reel's look (ADR 60)", () => {
   });
 
   it("keeps the photo legend to three lines (spec CL10): the bridge, an earthwork and one line for the people and the verges", () => {
-    const lines = [PHOTO_LEGEND.bridge, photoEarthworksLine(8.6, 9.01), PHOTO_LEGEND.ground];
-    expect(Object.keys(PHOTO_LEGEND).length + 1).toBeLessThanOrEqual(3);
+    const lines = [PHOTO_LEGEND.bridge, photoEarthworksLine(8.6, 9.01), PHOTO_LEGEND.ground, PHOTO_LEGEND.railway];
+    // the railway line stands in for the ground line in the community film's "then" shot, never beside it
+    expect(Object.keys(PHOTO_LEGEND).filter((k) => k !== "railway").length + 1).toBeLessThanOrEqual(3);
     // the legend box does not wrap: each line stays short enough to sit right of the 820 px caption column
     for (const l of lines) expect(l.length, l).toBeLessThanOrEqual(70);
     expect(PHOTO_LEGEND.ground).toMatch(/illustrative/);
     expect(PHOTO_LEGEND.ground).toMatch(/levelled and cleared/);
+    expect(PHOTO_LEGEND.railway).toMatch(/illustrative/);
   });
 
   it("gives every ground scene the prototype's extras and every aerial scene the lidar canopy, its walls and the satellite image", () => {
@@ -191,10 +194,13 @@ describe("the aerial scenes' ground and trees (ADR 60)", () => {
       n++;
     }
     expect(n).toBeGreaterThan(10_000);
+    // the reservoir's islands are wooded from the imagery, not the 16 m canopy (islands.ts); every other crown is placeTrees'
+    const island = (t: { x: number; z: number }) => onReservoirIsland(scene.water, t);
+    const placed = [...scene.trees.conifer, ...scene.trees.broadleaf].filter((t) => !island(t));
     // the photo look's woods take their kinds from OSM, and the two kinds share twice the per-kind cap (trees.ts woodKinds)
-    expect(scene.trees.conifer.length + scene.trees.broadleaf.length).toBeLessThanOrEqual(2 * cfg.maxTreesPerKind!);
+    expect(placed.length).toBeLessThanOrEqual(2 * cfg.maxTreesPerKind!);
     // a sample of crowns: each stands beside a node where the canopy is at least 3 m and the cover is not bare
-    for (const t of [...scene.trees.conifer, ...scene.trees.broadleaf].filter((_, i) => i % 97 === 0)) {
+    for (const t of placed.filter((_, i) => i % 97 === 0)) {
       const ll = all.route.unproject(t.x, t.z);
       const { e, n: north } = wgs84ToBng(ll.lon, ll.lat);
       const c = Math.round((e - originE) / spacingM);

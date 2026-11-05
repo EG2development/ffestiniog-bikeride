@@ -49,45 +49,64 @@ def _variant_collection(name, objs, unit_height=True):
     return coll
 
 
-def _impostor(kind):
-    """A distant tree: a few hundred triangles, a lumpy crown in the instance's tint (seen from hundreds of metres)."""
-    name = f"impostor-{kind}"
-    coll = bpy.data.collections.get(name)
-    if coll:
-        return coll
+# distant crowns' shapes (review 2026-11-03: one shape for every far tree read as rows of identical lollipops from the
+# path): (half width, half depth, crown centre, crown base) as shares of the tree's height
+BROADLEAF_CROWNS = ((0.24, 0.17, 0.62, 0.30), (0.17, 0.25, 0.63, 0.26), (0.33, 0.13, 0.56, 0.28), (0.22, 0.18, 0.60, 0.24))
+CONIFER_CROWNS = (1.0, 0.82, 1.18)  # tier widths' scale: average, slender, broad
+
+
+def _impostor_mesh(kind, v, rng):
+    """One distant tree, a few hundred triangles, 1 unit tall: a lumpy broadleaf crown or a tiered conifer."""
     import bmesh
     bm = bmesh.new()
-    rng = np.random.default_rng(7)
     if kind == "conifer":  # tiers of drooping branches: star-shaped cones, narrowing to the leader
+        w = CONIFER_CROWNS[v]
         for i, (z, r) in enumerate(((0.12, 0.34), (0.26, 0.3), (0.4, 0.25), (0.53, 0.2), (0.66, 0.14), (0.79, 0.08))):
             depth = 0.3 - 0.025 * i
-            cone = bmesh.ops.create_cone(bm, cap_ends=True, segments=14, radius1=r, radius2=0.0, depth=depth,
-                                         matrix=Matrix.Translation((0, 0, z + depth / 2)) @ Matrix.Rotation(0.4 * i, 4, "Z"))
-            rim = [v for v in cone["verts"] if abs(v.co.z - z) < 1e-4 and v.co.xy.length > 1e-4]
-            for k, v in enumerate(sorted(rim, key=lambda v: math.atan2(v.co.y, v.co.x))):
-                v.co.xy *= (0.62 if k % 2 else 1.0) * (1 + 0.1 * rng.standard_normal())
+            cone = bmesh.ops.create_cone(bm, cap_ends=True, segments=14, radius1=r * w * (1 + 0.08 * rng.standard_normal()), radius2=0.0, depth=depth,
+                                         matrix=Matrix.Translation((0, 0, z + depth / 2)) @ Matrix.Rotation(0.4 * i + v, 4, "Z"))
+            rim = [p for p in cone["verts"] if abs(p.co.z - z) < 1e-4 and p.co.xy.length > 1e-4]
+            for k, p in enumerate(sorted(rim, key=lambda p: math.atan2(p.co.y, p.co.x))):
+                p.co.xy *= (0.62 if k % 2 else 1.0) * (1 + 0.1 * rng.standard_normal())
         bmesh.ops.create_cone(bm, cap_ends=False, segments=6, radius1=0.025, radius2=0.02, depth=0.15,
                               matrix=Matrix.Translation((0, 0, 0.075)))
-    else:  # a cauliflower crown: overlapping lobes of foliage, denser and lighter at the top
-        lobes = [((0, 0, 0.58), 0.33)]
-        for _ in range(11):
-            d = rng.normal(size=3) * (0.2, 0.2, 0.13)
-            lobes.append(((d[0], d[1], 0.6 + abs(d[2])), rng.uniform(0.17, 0.27)))
+    else:  # a cauliflower crown of overlapping lobes, its shape from BROADLEAF_CROWNS, lopsided now and then
+        wx, wz, cz, base = BROADLEAF_CROWNS[v]
+        lean = rng.normal(size=2) * 0.04 if v == 3 else np.zeros(2)
+        lobes = [((lean[0], lean[1], cz), wx * 1.25)]
+        for _ in range(13):
+            d = rng.normal(size=3) * (wx * 0.85, wx * 0.85, wz * 0.9)
+            r = rng.uniform(0.55, 0.95) * wx
+            z = max(cz + d[2], base + r * 0.7)  # lobes reach down to the crown's base, never below it
+            lobes.append(((d[0] + lean[0], d[1] + lean[1], z), r))
         for c, r in lobes:
-            s = bmesh.ops.create_icosphere(bm, subdivisions=1, radius=r, matrix=Matrix.Translation(c))
-            for v in s["verts"]:
-                v.co = Vector(c) + (v.co - Vector(c)) * (1 + 0.12 * rng.standard_normal())
-        bmesh.ops.create_cone(bm, cap_ends=False, segments=6, radius1=0.04, radius2=0.03, depth=0.36,
-                              matrix=Matrix.Translation((0, 0, 0.18)))
-    me = bpy.data.meshes.new(name)
+            sp = bmesh.ops.create_icosphere(bm, subdivisions=1, radius=r, matrix=Matrix.Translation(c))
+            for p in sp["verts"]:
+                p.co = Vector(c) + (p.co - Vector(c)) * (1 + 0.12 * rng.standard_normal())
+        bmesh.ops.create_cone(bm, cap_ends=False, segments=6, radius1=0.035, radius2=0.025, depth=base + 0.1,
+                              matrix=Matrix.Translation((0, 0, (base + 0.1) / 2)))
+        top = max(p.co.z for p in bm.verts)
+        for p in bm.verts:  # 1 unit tall, so the instance's scale is its height
+            p.co.z /= top
+    me = bpy.data.meshes.new(f"impostor-{kind}:{v}")
     bm.to_mesh(me)
     bm.free()
     for p in me.polygons:
         p.use_smooth = True
-    mat = bpy.data.materials.get("impostor-foliage") or _impostor_material()
-    me.materials.append(mat)
+    me.materials.append(bpy.data.materials.get("impostor-foliage") or _impostor_material())
+    return me
+
+
+def _impostor(kind):
+    """Distant trees: a few crown shapes per kind (the instance's variant picks one), in the instance's tint."""
+    name = f"impostor-{kind}"
+    coll = bpy.data.collections.get(name)
+    if coll:
+        return coll
+    rng = np.random.default_rng(7)
     coll = bpy.data.collections.new(name)
-    coll.objects.link(bpy.data.objects.new(name + ":0", me))
+    for v in range(len(CONIFER_CROWNS if kind == "conifer" else BROADLEAF_CROWNS)):
+        coll.objects.link(bpy.data.objects.new(f"{name}:{v}", _impostor_mesh(kind, v, rng)))
     return coll
 
 
@@ -360,7 +379,7 @@ def hedgerows(hedge, coll, n, spacing=2.6, height=2.4):
     np.minimum.at(z, inv, co[:, 2])
     rng = np.random.default_rng(k)
     h = height * rng.uniform(0.8, 1.2, k)
-    rows = np.column_stack([xy, z - 0.25 * h, np.ones(k), rng.uniform(0, 2 * math.pi, k), rng.uniform(0, 1, k), np.zeros(k), h, np.zeros(k)])
+    rows = np.column_stack([xy, z - 0.25 * h, np.ones(k), rng.uniform(0, 2 * math.pi, k), rng.uniform(0, 1, k), np.zeros(k), h, rng.integers(0, len(BROADLEAF_CROWNS), k)])
     _points_object(n("hedgerow-bushes"), rows, coll, _impostor("broadleaf"), True)
     return int(k)
 

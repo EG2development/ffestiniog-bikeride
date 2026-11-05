@@ -36,16 +36,22 @@ export type GroundImage = { width: number; height: number; scale: number; rgb: U
 /**
  * A satellite image graded to ground colour (docs/adr/0060-reel-in-the-photo-look.md), as sRGB RGBA bytes for a texture:
  * each 8-bit value is linear in reflectance (Sentinel-2 TCI), scaled by `gain`, its saturation lifted about its luma,
- * tinted per channel, then encoded. No slope shading: the photograph already has its relief.
+ * tinted per channel (with `vegetationOnly`, in proportion to how green the pixel is), then encoded. No slope shading: the photograph already has its relief.
  */
-export function imageryPixels(image: GroundImage, grade: { gain: number; saturation: number; tint: readonly [number, number, number] }): Uint8Array {
+export function imageryPixels(image: GroundImage, grade: { gain: number; saturation: number; tint: readonly [number, number, number]; vegetationOnly?: boolean }): Uint8Array {
   const { rgb } = image;
   const out = new Uint8Array((rgb.length / 3) * 4);
   const encode = (v: number) => (v <= 0.0031308 ? 12.92 * v : 1.055 * v ** (1 / 2.4) - 0.055);
   for (let i = 0, o = 0; i < rgb.length; i += 3, o += 4) {
     const [r, g, b] = [rgb[i], rgb[i + 1], rgb[i + 2]].map((v) => (v / 255) * grade.gain);
     const l = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-    for (const [j, v] of [r, g, b].entries()) out[o + j] = Math.round(255 * Math.min(1, Math.max(0, encode(Math.max(0, l + (v - l) * grade.saturation) * grade.tint[j]))));
+    // vegetationOnly: the tint in full where green leads red and blue by a fifth of the luma, half on warm brown ground
+    // (bracken, heather: red well above blue), none on grey (slate, stone, roads, shingle)
+    const lum = Math.max(l, 0.02);
+    const green = Math.min(1, Math.max(0, ((g - Math.max(r, b)) / lum - 0.03) / 0.2));
+    const warm = Math.min(1, Math.max(0, ((r - b) / lum - 0.12) / 0.3));
+    const w = grade.vegetationOnly ? Math.max(green, 0.5 * warm) : 1;
+    for (const [j, v] of [r, g, b].entries()) out[o + j] = Math.round(255 * Math.min(1, Math.max(0, encode(Math.max(0, l + (v - l) * grade.saturation) * (1 + (grade.tint[j] - 1) * w)))));
     out[o + 3] = 255;
   }
   return out;

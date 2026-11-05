@@ -7,6 +7,7 @@
 // speeds, never in a jump. A dog on a lead walks at its person's side and widens their room.
 import { mulberry32 } from "./rng";
 import type { Trail } from "./trail";
+import { CYCLES, cyclePace } from "./cycles";
 import { paceKmh, type Activity, type WalkerSpec } from "./walkers";
 
 /** Across the path, half the width a person (with whatever they push or ride) takes, metres (people.ts's HALF). */
@@ -60,9 +61,12 @@ type Mover = {
   drift: (t: number) => number;
 };
 
+/** Half a person's width across the path: their activity's, or their cargo cycle's (cycles.ts). */
+const halfOf = (m: { activity: Activity; spec: WalkerSpec }) => (m.spec.cycle ? CYCLES[m.spec.cycle].halfM : BODY_HALF_M[m.activity]);
+
 /** A person's outline across the path at line s, in route-left metres: [right edge, left edge]. */
 function across(m: { activity: Activity; dir: 1 | -1; spec: WalkerSpec }, s: number): [number, number] {
-  const h = BODY_HALF_M[m.activity];
+  const h = halfOf(m);
   if (!m.spec.dog) return [s - h, s + h];
   // the dog is at the person's left (their right if the spec says so); left of travel is +dir in route terms
   const out = (m.spec.dog.side === "right" ? -1 : 1) * m.dir * (DOG.sideM + DOG.wanderSideM + DOG.halfM);
@@ -71,7 +75,7 @@ function across(m: { activity: Activity; dir: 1 | -1; spec: WalkerSpec }, s: num
 
 /** A person's reach along the route at distance d, in route metres: [behind, ahead] in the route's direction. */
 function along(m: { activity: Activity; dir: 1 | -1; spec: WalkerSpec }, d: number): [number, number] {
-  const [back, ahead0] = BODY_REACH_M[m.activity];
+  const [back, ahead0] = m.spec.cycle ? CYCLES[m.spec.cycle].reachM : BODY_REACH_M[m.activity];
   const ahead = m.spec.dog ? Math.max(ahead0, DOG.aheadM + DOG.wanderAheadM + DOG.lengthM / 2) : ahead0;
   return m.dir === 1 ? [d - back, d + ahead] : [d - ahead, d + back];
 }
@@ -127,7 +131,7 @@ export function choreograph(trail: Trail, specs: readonly WalkerSpec[], frames: 
   const wanted = (m: Mover) => {
     if (m.activity === "sit") return 0;
     const g = trail.sampleAt(m.d).gradient * m.dir;
-    const pace = (m.spec.speedKmh ?? paceKmh(m.activity, g)) * m.pace;
+    const pace = (m.spec.speedKmh ?? paceKmh(m.activity, g) * cyclePace(m.spec)) * m.pace;
     const left = m.spec.stopAtM === undefined ? Infinity : (m.spec.stopAtM - m.d) * m.dir;
     return (pace / 3.6) * Math.min(1, Math.sqrt(Math.max(0, left) / BRAKE_M));
   };
@@ -183,7 +187,7 @@ export function choreograph(trail: Trail, specs: readonly WalkerSpec[], frames: 
         consider(null, r0, rider.lateralM, rider.lateralM, (r1 - r0) / dt, riderBody, false);
       }
       // the line that costs least: near their own, near where they are, clear of everyone they will meet, kept left
-      const edge = EDGE_M - Math.max(0, BODY_HALF_M[me.activity] - 0.28) + (wheeled(me.activity) ? 0 : VERGE_STEP_M);
+      const edge = EDGE_M - Math.max(0, halfOf(me) - 0.28) + (wheeled(me.activity) ? 0 : VERGE_STEP_M);
       let best = me.s;
       let bestCost = Infinity;
       let blocked = false;

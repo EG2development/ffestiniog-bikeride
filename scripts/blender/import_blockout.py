@@ -188,6 +188,7 @@ def build_section(pkg_dir, prefix="", samples=64, dressed=False):
         import cast
         import dress
         import landscape
+        import railway
         import trailfolk
         import vegetation
         import waterside
@@ -196,6 +197,7 @@ def build_section(pkg_dir, prefix="", samples=64, dressed=False):
     man = json.loads((pkg / "manifest.json").read_text(encoding="utf8"))
     sec = man["section"]
     ground = sec.get("kind", "ground") == "ground"
+    railway_scene = dressed and bool(sec.get("railway"))  # the film's "then" shot: the mothballed track in place of the path
     scene = bpy.data.scenes.new(prefix + sec["id"])
 
     def n(name):
@@ -243,7 +245,7 @@ def build_section(pkg_dir, prefix="", samples=64, dressed=False):
         if dressed and landscape.material_for(role, not ground):
             if role == "road":  # the export's metre UVs, across and along, which the asphalt reads
                 me.uv_layers["UV"].name = "metres"
-            obj.data.materials.append(landscape.material_for(role, not ground))
+            obj.data.materials.append(railway.trackbed_material() if railway_scene and role == "trail" else landscape.material_for(role, not ground))
             if role.startswith(("bridge", "building", "barrier")):
                 landscape.wall_uvs(me)
             if role == "terrain":
@@ -303,10 +305,13 @@ def build_section(pkg_dir, prefix="", samples=64, dressed=False):
         report["vegetation"] = vegetation.dress_vegetation(rows, cam_data[:, 0:3].astype(np.float64), colls["Vegetation"], n, not ground, bpy.data.objects[n("terrain")])
         if not ground and n("barrier-hedge") in bpy.data.objects:
             report["vegetation"]["hedgerow"] = vegetation.hedgerows(bpy.data.objects[n("barrier-hedge")], colls["Vegetation"], n)
+        if railway_scene:  # rails and sleepers on the trackbed, which the sward is then free to grow through
+            report["railway"] = railway.build_track(bpy.data.objects[n("trail")], cam_data[:, 0:3].astype(np.float64), colls["ExistingFeatures"], n)
         if ground:
             import sward
+            clear_of = (() if railway_scene else ("trail",)) + ("roads", "bridge", "barrier", "water", "buildings")
             report["sward"] = sward.sward(bpy.data.objects[n("terrain")], cam_data[:, 0:3].astype(np.float64), colls["Vegetation"], n,
-                                          [o for o in scene.collection.all_objects if o.type == "MESH" and o.name.startswith(tuple(n(k) for k in ("trail", "roads", "bridge", "barrier", "water", "buildings")))])
+                                          [o for o in scene.collection.all_objects if o.type == "MESH" and o.name.startswith(tuple(n(k) for k in clear_of))])
     else:
         for inst in man["instances"]:
             obj = merged_placeholders(n(f"{inst['kind']}-placeholders"), inst["kind"], read_array(pkg, inst["data"]), colls["Vegetation"])
@@ -383,6 +388,9 @@ def build_section(pkg_dir, prefix="", samples=64, dressed=False):
         cam = link(bpy.data.objects.new(cd.name, cd), colls["Cameras"])
         qs = continuous([(Vector(r[3:6]) - Vector(r[0:3])).to_track_quat("-Z", "Y") for r in rows])
         key_transforms(cam, np.arange(shot["firstBlenderFrame"], shot["lastBlenderFrame"] + 1), [tuple(r[0:3]) for r in rows], quats=qs)
+        if dressed and ground:  # focus on the shot's aim point (finish.py)
+            import finish
+            finish.depth_of_field(cd, [(shot["firstBlenderFrame"] + i, float(np.linalg.norm(r[3:6] - r[0:3]))) for i, r in enumerate(rows)])
         marker = scene.timeline_markers.new(cam.name, frame=shot["firstBlenderFrame"])
         marker.camera = cam
         first_cam = first_cam or cam

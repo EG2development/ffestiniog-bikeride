@@ -172,6 +172,80 @@ on the `imageUv` attribute; the land cover drives the detail blend as in `Terrai
 Command: `blender -b out/blender/scenes/<config>.blend --factory-startup --python-exit-code 1 -P
 scripts/blender/render.py -- --frames 1-600 --out out/blender/frames/<config>/`.
 
+The dressed films render in EEVEE (`landscape.render_settings`) and are finished by `scripts/blender/finish.py`
+(review 2026-11-03). That covers:
+- **Sky and light (review 2026-11-05):** the CC0 `kloofendal_48d_partly_cloudy_puresky` HDRI (`landscape.SKY_HDRI`),
+  turned to the package's sun azimuth; EEVEE takes the shadowing sun from it at 48°. Chosen on renders of four frames
+  under seven candidate skies: the 38° one the film had read flat and milky, the low-sun skies went orange with long
+  shadows, and a 28° clear sky gave a southern-hemisphere blue with hard shadows.
+- **Haze:** the mist pass, linear in distance and eased exponentially, hazes the land only. The film renders with a
+  transparent background and the sky is laid back from the environment pass, so the sky is no longer veiled. Strength
+  is 0.14 on the ground and 0.10 from the air (0.25 and 0.16 veiled the middle distance).
+- **Vignette:** 10 % at the corners.
+- **Shadows:** a 1.5 GB shadow pool.
+- **Look and grade:** AgX Punchy for every scene, after a grade in scene-linear (`finish.grade`): an ASC-CDL slope of
+  (1.04, 1.0, 0.95) with an offset of (−0.004, 0, 0.006) for warm highlights and cool shadows, then saturation ×1.05
+  and +0.12 EV on the ground, ×1.0 and +0.05 EV from the air. The social plates take the same finish, with no grade of
+  their own.
+- **Depth of field:** f/4 on the ground shots, focused on each shot's aim point.
+
+The aerial imagery takes `FILM_IMAGERY_GRADE`, warming only vegetation, so slate tips and shingle keep their grey.
+The path is `roadway.path_material`: compacted stone dust at a 0.9 m tile, with the verge creeping raggedly over its
+edges. Distant trees take one of four broadleaf or three conifer crown shapes (`vegetation.BROADLEAF_CROWNS`,
+`CONIFER_CROWNS`).
+
+The community film's cargo cycles (review 2026-11-04; `src/three-core/cycles.ts`) are `scripts/blender/cargobikes.py`'s.
+Each is built on `bike.build_bicycle`, which takes `rear_extra` and `front` for them:
+- **Long-tail:** the rear axle 0.40 m back, under a deck with footboards, wheel guards, and a padded seat and hoop for a
+  child.
+- **Long john:** a plywood box between the head tube and a 20-inch front wheel steered by a rod.
+- **Christiania-style box tricycle:** its box, bar posts and two 20-inch front wheels fitted to the rider's hands once
+  the rider is seated (`finish`).
+
+Children are cast from `cast.PASSENGERS` (ages 4 to 6). They sit on the box's bench, or astride the long-tail's seat,
+parented to the cycle and looking about. Shopping is a crate and bags.
+
+Every caption of the community film is bilingual, Welsh first: `build_reel.body` sets a caption's `cy` above its
+`text`, and each legend line's Welsh stands above its English (`SectionConfig.bilingual`). The film's `layout`
+(`COMMUNITY_LAYOUT`) widens the caption box to 900 px. `build_reel.captions` places the captions and legend clear of
+the credits and the badge, whose heights it measures from the font's own metrics (`blf`).
+
+Typography (review 2026-11-05): every strip is set in Inter, the OFL font Blender ships in its datafiles, in place of
+the sequencer's monospaced default. A scene caption is a translucent panel with a leaf-green accent bar, its Welsh at
+36 px over its English at 27 px in a lighter ink, pre-wrapped to the caption width; the credits run throughout in one
+13 px line per language; a scene's legend (what is proposed or illustrative) shows for its first six seconds under
+the badge, then clears the frame.
+
+The opening shows what is there before what could be: `community-then` draws the mothballed railway's track on the
+trail's line (`SectionConfig.photo.railway`; `scripts/blender/railway.py` builds rails and sleepers within 350 m of
+the cameras, gives the ribbon a ballast finish with the verge creeping over it, and lets the sward grow through it),
+and `community-now`, the same camera with people on the path, cross-dissolves over its last 30 frames
+(`ReelScene.dissolve`: the dissolving strip sits on channel 2 with its alpha keyed up over the overlap).
+
+The film renders to PNG frames with `scripts/blender/render_film.py` (resumable; a changed scene is re-rendered over
+its own frames alone) and is encoded with its soundtrack by `npm run film:encode` (the social cuts' delivery preset:
+H.264 High CRF 16, closed GOP 15 with two B-frames, BT.709, AAC 320 kbps, Fast Start). The soundtrack is
+`npm run film:audio`: the social cuts' original score shaped to the film's chapters (low under the opening, resting at
+the bench, full under the ride) over a breeze, birdsong and the hush of tyres in the ride scenes, at −14 LUFS.
+`npm run film:compare` writes before-and-after sheets of two cuts at the same moments.
+
+The community film's social cuts (`src/data/social-cuts.ts`) are rendered fresh from its dressed master, not cropped
+from the 3-minute film, which is never re-saved:
+- **Plates:** `scripts/blender/render_social.py` renders each plate at its format's own size (1080 × 1920, 1440 × 1800 or
+  1920 × 1080), clean of captions. Each plate is a run of one of the film's camera shots. The camera keeps the plan's
+  share of the master's horizontal view (half for 9:16), pans about the vertical and shifts its lens to hold the
+  subject and the view. The finish is sharpened for phones: 48 samples, a 1.25 px filter, a 126° shutter and f/5.6. The
+  grade is the film's own (`finish.grade`, review 2026-11-05), so a cut matches the film shot for shot; the story,
+  highlights and feed cuts open with the film's then-and-now pair.
+- **Edit:** Remotion lays each cut's plates frame for frame under its Welsh-first captions, the concept badge, notes on
+  existing and proposed furniture, and the end card (`src/social/SocialCut.tsx`), all inside the format's safe area.
+- **Sound:** an original synthesised piece with a countryside bed (`scripts/social/make_audio.py`), normalised to
+  −14 LUFS.
+- **Export:** H.264 High, 4:2:0, BT.709, Fast Start, AAC 320 kbps at 48 kHz, with SRT subtitles and the post text
+  (`npm run social:plates`, `social:audio`, `social:render`). `social:qa` then probes each export as uploaded: the
+  stream and its tags, loudness and true peak, Fast Start, no frozen or black stretches, each shot's middle frame
+  against its plate, and the sound in sync with its soundtrack, with a contact sheet and a still per shot.
+
 ## 6. Checks
 
 | Check | How | Threshold |

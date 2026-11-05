@@ -23,6 +23,14 @@ const photoMetadata = async () => {
   const { PROTOTYPES } = await import("./three-core/sections");
   return { durationInFrames: PROTOTYPES["maentwrog-photo"].frames, fps: 30 };
 };
+// the community film's social cuts (src/data/social-cuts.ts): each at its own format's size, reading its Blender plates
+// from out/social/public (npm run social:studio, npm run social:render)
+const socialMetadata = (id: string) => async () => {
+  const { CUTS, FORMATS, cutFrames, SOCIAL_FPS } = await import("./data/social-cuts");
+  const cut = CUTS.find((c) => c.id === id)!;
+  return { durationInFrames: cutFrames(cut), fps: SOCIAL_FPS, width: FORMATS[cut.format].w, height: FORMATS[cut.format].h };
+};
+const SOCIAL_IDS = ["teaser", "highlights", "story", "feed", "youtube"] as const;
 const SECTION_IDS = ["intro", "heritage", "overview", "blaenau", "vale-north", "vale-south", "maentwrog", "trawsfynydd", "closing"];
 // the reel and its sections render in the photo look (REEL_LOOK, docs/adr/0060-reel-in-the-photo-look.md); set `look` to
 // "concept" in the props for the first look
@@ -73,6 +81,9 @@ export const RemotionRoot: React.FC = () => {
           height={1080}
           defaultProps={{ section: id, diagnostics: false, captions: "section" as const, look: LOOK }}
         />
+      ))}
+      {SOCIAL_IDS.map((id) => (
+        <Composition key={id} id={`Social-${id}`} lazyComponent={() => import("./social/SocialCut")} calculateMetadata={socialMetadata(id)} width={1080} height={1920} defaultProps={{ cut: id }} />
       ))}
     </>
   );

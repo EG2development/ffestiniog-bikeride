@@ -44,9 +44,16 @@ PROFILES = [
     ("harri", 1, 10, (1.0, 0.0, 0.0), 0.45, 0.45, "young_african_male", "short01", "eyebrow005", "male_casualsuit02", "shoes02", 0.0, None),
     ("mabli", 0, 7, (0.0, 0.0, 1.0), 0.45, 0.5, "young_caucasian_female", "long01", "eyebrow011", "female_casualsuit01", "shoes06", 0.3, (0.35, 0.22, 0.10)),
     ("gruff", 1, 8, (0.3, 0.3, 0.4), 0.45, 0.5, "young_asian_male", "short02", "eyebrow010", "male_casualsuit03", "shoes06", -0.2, None),
+    # little ones riding in a cargo cycle's box or on a long-tail's seat (cargobikes.py)
+    ("efa", 0, 4, (0.0, 0.0, 1.0), 0.5, 0.5, "young_caucasian_female", "bob02", "eyebrow004", "female_casualsuit01", "shoes06", 0.35, (0.30, 0.18, 0.08)),
+    ("macsen", 1, 5, (0.0, 0.0, 1.0), 0.5, 0.5, "young_caucasian_male", "short03", "eyebrow001", "male_casualsuit03", "shoes06", 0.15, (0.10, 0.06, 0.03)),
+    ("amani", 0, 5, (1.0, 0.0, 0.0), 0.5, 0.5, "young_african_female", "afro01", "eyebrow009", "female_casualsuit01", "shoes06", -0.25, None),
+    ("leo", 1, 4, (0.0, 1.0, 0.0), 0.5, 0.5, "young_asian_male", "short02", "eyebrow010", "male_casualsuit06", "shoes06", 0.4, (0.03, 0.03, 0.03)),
+    ("seren", 0, 6, (0.0, 0.0, 1.0), 0.45, 0.5, "young_caucasian_female", "ponytail01", "eyebrow011", "female_casualsuit01", "shoes06", -0.4, (0.45, 0.30, 0.12)),
 ]
 PUPILS = ["cerys", "osian", "nia", "dewi", "ffion", "harri"]
 CHILDREN = ["mabli", "gruff"]
+PASSENGERS = ["efa", "macsen", "amani", "leo", "seren"]
 RIDER = "dylan"
 
 

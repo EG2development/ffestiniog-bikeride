@@ -24,6 +24,11 @@ export const GRASS = { bladeWidthM: 0.09, bladeHeightM: 0.26, blades: 3, base: "
  * satellite's view through the air has flattened, and the tint (linear, per channel) warms its July greens to the ground
  * scenes' palette, so a cut between an aerial and a ground scene keeps one look (spec CL6: hue and saturation within 15 %). */
 export const IMAGERY_GRADE = { gain: 1.0, saturation: 1.1, tint: [1.6, 1.0, 0.7] } as const;
+/** The Blender film's grade (review 2026-11-03): the same warming, but only on vegetation. The flat tint turns
+ * Blaenau's blue-grey slate tips and the lake's stony shores pink-beige and pushes the russet moor towards orange, where
+ * the aerial references (docs/new-images, captures 164105 and 164558) show them grey and russet; a pixel's share of the
+ * tint follows how much greener it is than its red and blue, half of it on warm brown ground (shading.ts imageryPixels). */
+export const FILM_IMAGERY_GRADE = { ...IMAGERY_GRADE, vegetationOnly: true } as const;
 
 /** Barrier colours until a textured material lands: stone, leaf and weathered timber. */
 export const BARRIER_COLOURS = { wall: "#8c877a", hedge: "#3c5a2a", fence: "#6a5a48" } as const;

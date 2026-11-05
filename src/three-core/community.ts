@@ -1,5 +1,6 @@
 // The community film's scenes (docs/community-reel-research.md): the reel's terrain windows, with people choreographed
-// by spec (pupils riding to school with an adult, a family, walkers, a commuter, older residents resting, a tricycle) and
+// by spec (pupils riding to school with an adult, a family, walkers, a commuter, older residents resting, a tricycle,
+// and cargo bikes, long-tails and a box tricycle carrying children and shopping: cycles.ts) and
 // street furniture that is either existing (the bus stop OSM maps at Blaenau Ffestiniog station) or a proposal, and
 // says so. Rendered by the Blender build only; the reel and CyclingVision are untouched.
 import { miles } from "../data/units";
@@ -14,6 +15,7 @@ const ground = (c: Omit<SectionConfig, "kind" | "ve" | "featureIds" | "captionId
   ve: 1,
   featureIds: SHARED,
   captionIds: [],
+  bilingual: true,
   ...c,
   photo: { canopyTrees: true, barriers: true, grassBandM: 50, treeClearOfTrailM: 5, choreograph: true, ...c.photo },
 });
@@ -22,6 +24,7 @@ const aerial = (c: Pick<SectionConfig, "id" | "title" | "frames" | "startDistM" 
   ve: 1,
   featureIds: ["terrain-lidar", "trail-proposed"],
   captionIds: [],
+  bilingual: true,
   kmRange: [0, 13.24],
   window: "corridor",
   // the kinds share twice this (trees.ts woodKinds): with the woods broadleaf by their tags, 25000 lets mapped woodland
@@ -59,12 +62,33 @@ const fingerpost = (distM: number, sideM: number): PropSpec => ({
 const STATION_STOP = "node/4572016417";
 
 export const COMMUNITY: Record<string, SectionConfig> = {
+  // the familiar landscape (review 2026-11-05): one slow, low arc about Llan Ffestiniog, the middle community, with the
+  // vale and the hills in frame rather than a plan of rooftops
   "community-open": aerial({
-    id: "community-open", title: "Three communities", frames: 600, startDistM: 300,
-    shots: [
-      { kind: "aerial-orbit", centreDistM: 400, radiusM: 520, heightM: 300, fromDeg: 230, toDeg: 190, frames: 300 },
-      { kind: "aerial-orbit", centreDistM: 5330, radiusM: 450, heightM: 240, fromDeg: 120, toDeg: 80, frames: 300 },
-    ],
+    id: "community-open", title: "Three communities", frames: 180, startDistM: 5330,
+    shots: [{ kind: "aerial-orbit", centreDistM: 5330, radiusM: 600, heightM: 170, fromDeg: 120, toDeg: 92, frames: 180 }],
+  }),
+  // then and now, from one camera by Llan Ffestiniog looking back along the line to the village: the mothballed railway
+  // as it stands today (its track on the mapped line, grown over), and the same view as a shared path with neighbours
+  // on it. The film dissolves the first into the second.
+  "community-then": ground({
+    id: "community-then", title: "The railway today", kmRange: [4.8, 7.7], window: "vale-south", frames: 240, startDistM: 5190,
+    shots: [{ kind: "hold", distM: 5262, heightM: 1.7, sideM: -2.6, target: { distM: 5190, upM: 0.4 }, fovDeg: 42, frames: 240 }],
+    photo: { grassAlongM: [5100, 5560], riderHidden: true, railway: true, walkers: [] },
+  }),
+  "community-now": ground({
+    id: "community-now", title: "The same view, as a path", kmRange: [4.8, 7.7], window: "vale-south", frames: 210, startDistM: 5190,
+    shots: [{ kind: "hold", distM: 5262, heightM: 1.7, sideM: -2.6, target: { distM: 5190, upM: 0.4 }, fovDeg: 42, frames: 210 }],
+    photo: {
+      grassAlongM: [5100, 5560],
+      riderHidden: true,
+      walkers: [
+        // two neighbours and their dog walking away from the camera towards the village, a commuter riding in
+        w(5250, -1, -0.4, 1.70, 9121, "walk", undefined, { dog: { breed: "collie" }, with: 9122 }),
+        w(5250.3, -1, -1.0, 1.64, 9122, "walk", "older", { with: 9121 }),
+        w(5222, 1, 0.5, 1.75, 9123, "cycle", "commuter"),
+      ],
+    },
   }),
   // pupils riding towards Llan Ffestiniog with an adult; the camera rider is not drawn, the follow camera rides with them
   "community-school": ground({
@@ -72,14 +96,17 @@ export const COMMUNITY: Record<string, SectionConfig> = {
     shots: [
       // down behind the pupils, looking ahead along the path with the vale open on the right
       { kind: "crane", fromBackM: 40, toBackM: 10, fromUpM: 18, toUpM: 3.5, sideM: 0, lookAheadM: 70, frames: 240 },
-      { kind: "hold", distM: 5262, heightM: 1.5, sideM: 3.2, target: { distM: 5240, upM: 1.1 }, fovDeg: 40, frames: 210 },
+      // low on the uphill verge as the group comes through: wheels, pedals and faces close by (review 2026-11-05)
+      { kind: "hold", distM: 5258, heightM: 0.85, sideM: -2.3, target: { distM: 5246, sideM: 0.2, upM: 0.75 }, fovDeg: 36, frames: 210 },
       { kind: "follow", backM: 7, upM: 2.2, sideM: 1.2, frames: 300 },
     ],
     photo: {
       grassAlongM: [5100, 5560],
       riderHidden: true,
       walkers: [
-        w(5181, 1, -0.4, 1.78, 9101, "cycle", "escort"),
+        // the adult with them rides at the back, a younger brother or sister on the back of a long-tail, in sight of the
+        // cameras that follow the group
+        w(5156, 1, -0.4, 1.78, 9101, "cycle", "escort", { cycle: "longtail", carries: { children: [1.05] } }),
         w(5177, 1, 0.45, 1.46, 9102, "cycle", "pupil"),
         w(5173, 1, -0.45, 1.52, 9103, "cycle", "pupil"),
         w(5169, 1, 0.45, 1.42, 9104, "cycle", "pupil"),
@@ -107,6 +134,8 @@ export const COMMUNITY: Record<string, SectionConfig> = {
         w(2921, 1, -0.65, 1.24, 9202, "cycle", "child", { speedKmh: 5, with: 9201 }),
         w(3010, -1, -0.6, 1.72, 9204, "run"),
         w(2995, -1, -0.7, 1.70, 9205, "walk", undefined, { dog: { breed: "labrador" } }),
+        // and at the back of the family, riding at their pace, a parent with two small children in the box of a cargo bike
+        w(2915.5, 1, -0.6, 1.72, 9206, "cycle", "parent", { cycle: "cargo", carries: { children: [0.95, 1.0] }, speedKmh: 5 }),
       ],
     },
   }),
@@ -135,10 +164,12 @@ export const COMMUNITY: Record<string, SectionConfig> = {
       // over the stone cutting the path ends in, close enough to the lockers to see the cyclist arrive, wheel the bicycle
       // into one, lock it and walk on, with the bridge and the town beyond: at path level its walls, the bridge and the
       // houses close every view in
-      { kind: "hold", distM: 19, heightM: 4.5, sideM: 1.3, target: { distM: 8, sideM: -2.0, upM: 2.2 }, fovDeg: 46, frames: 435 },
+      { kind: "hold", distM: 4, heightM: 2.0, sideM: 0.8, target: { distM: 13, sideM: -2.5, upM: 1.0 }, fovDeg: 50, frames: 435 },
       // from behind the existing stop at the station, 145 m on from the path's end: the bus at the kerb, the shelter and
       // flag, and across the station yard the path the cyclist has just come in on
-      { kind: "hold", distM: -145, heightM: 4, sideM: -11.7, target: { distM: 0, upM: 2 }, fovDeg: 32, frames: 165 },
+      // a medium shot of the stop itself, the shelter, the flag and the bus, as the cyclist walks up to it (review
+      // 2026-11-05: aimed at the path's end 110 m off, the stop was a corner of a wide, empty frame)
+      { kind: "hold", distM: -140, heightM: 1.9, sideM: -3.5, target: { distM: -122, sideM: -9.0, upM: 1.4 }, fovDeg: 30, frames: 165 },
     ],
     photo: {
       grassAlongM: [0, 400],
@@ -166,12 +197,14 @@ export const COMMUNITY: Record<string, SectionConfig> = {
   "community-welcome": ground({
     id: "community-welcome", title: "A place to rest", kmRange: [9.7, 13.24], window: "trawsfynydd", frames: 750, startDistM: 11270, maxTreesPerKind: 4000,
     shots: [
-      // over the residents' shoulders, out across the falling ground to the lake
-      { kind: "hold", distM: 11340.2, heightM: 1.9, sideM: 1.6, target: { distM: 11334.8, sideM: 63, upM: -6 }, fovDeg: 42, frames: 300 },
+      // from the uphill verge level with the bench, looking straight across the path, the residents and the falling
+      // ground to the lake, which lies square to the line here (review 2026-11-05: the 28° over-the-shoulder view
+      // showed two heads and little else; an oblique view from the verge had the hillside, not the water, behind them)
+      { kind: "hold", distM: 11341, heightM: 2.6, sideM: -5.0, target: { distM: 11338, sideM: 25, upM: -1.5 }, fovDeg: 40, frames: 300 },
       // side on, from along the path: the residents, the lake one way and the path the other
       { kind: "hold", distM: 11348, heightM: 1.3, sideM: 4.9, target: { distM: 11340, sideM: 3.4, upM: 0.7 }, fovDeg: 42, frames: 240 },
-      // behind the tricycle on the uphill verge, looking ahead to the bench and the lake side as the dog walker comes by
-      { kind: "hold", distM: 11310, heightM: 1.6, sideM: -2.4, target: { distM: 11352, sideM: 6, upM: 0.6 }, fovDeg: 50, frames: 210 },
+      // low on the uphill verge further on, looking back along the path as the tricycle rides up and passes close by
+      { kind: "hold", distM: 11370, heightM: 1.3, sideM: -2.6, target: { distM: 11354, sideM: 0.3, upM: 0.8 }, fovDeg: 40, frames: 210 },
     ],
     photo: {
       grassAlongM: [11140, 11590],
@@ -195,18 +228,19 @@ export const COMMUNITY: Record<string, SectionConfig> = {
   "community-ride-blaenau": ground({
     id: "community-ride-blaenau", title: "Riding: Blaenau Ffestiniog", kmRange: [0, 1.5], window: "blaenau", frames: 300, startDistM: 800,
     shots: [{ kind: "first-person", eyeHeightM: 1.25, lookAheadM: 15, frames: 300 }],
-    photo: { grassAlongM: [750, 1300], walkers: [w(880, -1, -0.7, 1.70, 9601, "walk"), w(960, -1, -0.5, 1.62, 9602, "cycle")] },
+    photo: { grassAlongM: [750, 1300], walkers: [w(880, -1, -0.7, 1.70, 9601, "walk"), w(868, -1, -0.5, 1.62, 9602, "cycle", undefined, { cycle: "cargo", carries: { shopping: true } })] },
   }),
   // past the lane that crosses the line at km 2.31
   "community-ride-manod": ground({
     id: "community-ride-manod", title: "Riding: Manod", kmRange: [1.5, 4.8], window: "vale-north", frames: 300, startDistM: 2600,
-    shots: [{ kind: "first-person", eyeHeightM: 1.25, lookAheadM: 15, frames: 300 }],
-    photo: { grassAlongM: [2550, 3100], walkers: [w(2720, -1, -0.7, 1.74, 9701, "run"), w(2680, -1, -0.65, 1.72, 9702, "walk", undefined, { dog: { breed: "collie" } })] },
+    // the rider's view, then wheel height beside the back wheel: the path streaming by, the pedals turning
+    shots: [{ kind: "first-person", eyeHeightM: 1.25, lookAheadM: 15, frames: 180 }, { kind: "follow", backM: 3.2, upM: 0.95, sideM: 0.9, frames: 120 }],
+    photo: { grassAlongM: [2550, 3100], walkers: [w(2720, -1, -0.7, 1.74, 9701, "run"), w(2680, -1, -0.65, 1.72, 9702, "walk", undefined, { dog: { breed: "collie" } }), w(2668, -1, -0.55, 1.70, 9703, "cycle", "commuter", { cycle: "longtail", carries: { shopping: true } })] },
   }),
   "community-ride-maentwrog": ground({
     id: "community-ride-maentwrog", title: "Riding: under the A470", kmRange: [7.7, 9.7], window: "maentwrog", frames: 300, startDistM: 8450,
     shots: [{ kind: "first-person", eyeHeightM: 1.25, lookAheadM: 15, frames: 300 }],
-    photo: { grassAlongM: [8400, 9000], walkers: [w(8640, -1, -0.4, 1.68, 9801, "walk", "parent", { with: 9802 }), w(8640.2, -1, -1.0, 1.25, 9802, "walk", "child", { with: 9801 })] },
+    photo: { grassAlongM: [8400, 9000], walkers: [w(8640, -1, -0.4, 1.68, 9801, "walk", "parent", { with: 9802 }), w(8640.2, -1, -1.0, 1.25, 9802, "walk", "child", { with: 9801 }), w(8525, -1, -0.55, 1.68, 9803, "cycle", "parent", { cycle: "cargo", carries: { children: [1.0] } })] },
   }),
   // past the building that stands on the mapped line near km 10.93 (docs/community-reel-research.md §7)
   "community-ride-trawsfynydd": ground({
@@ -214,7 +248,7 @@ export const COMMUNITY: Record<string, SectionConfig> = {
     shots: [{ kind: "first-person", eyeHeightM: 1.25, lookAheadM: 15, frames: 300 }],
     photo: { grassAlongM: [11330, 11900], walkers: [w(11530, -1, -0.6, 1.66, 9901, "trike")] },
   }),
-  // everyone together near Maentwrog Road: pupils, a family, older neighbours, a commuter and a tricycle
+  // everyone together near Maentwrog Road: pupils, a family, older neighbours and a box tricycle with two children
   "community-together": ground({
     id: "community-together", title: "Together", kmRange: [7.7, 9.7], window: "maentwrog", frames: 360, startDistM: 9150, featureIds: [...SHARED, "bridge-159029124"],
     shots: [{ kind: "hold", distM: 9232, heightM: 2.2, sideM: -4.5, target: { distM: 9195, upM: 1.0 }, fovDeg: 46, frames: 360 }],
@@ -222,8 +256,8 @@ export const COMMUNITY: Record<string, SectionConfig> = {
       grassAlongM: [9050, 9320],
       riderHidden: true,
       walkers: [
-        // pupils ride towards the camera and meet, in turn, a parent and child, an older couple with their dog, and a
-        // tricycle, each keeping left
+        // pupils ride towards the camera and meet, in turn, a box tricycle, a parent and child and an older couple with
+        // their dog, each keeping left
         w(9180, 1, 0.5, 1.48, 10001, "cycle", "pupil"),
         w(9176, 1, -0.35, 1.53, 10002, "cycle", "pupil"),
         w(9172, 1, 0.45, 1.80, 10003, "cycle", "escort"),
@@ -231,7 +265,9 @@ export const COMMUNITY: Record<string, SectionConfig> = {
         w(9222.5, -1, -0.2, 1.22, 10007, "walk", "child", { with: 10006 }),
         w(9236, -1, -1.0, 1.66, 10004, "walk", "older", { with: 10005, dog: { breed: "terrier" } }),
         w(9236.3, -1, -0.4, 1.72, 10005, "walk", "older", { with: 10004 }),
-        w(9262, -1, -0.6, 1.66, 10008, "trike"),
+        // a parent with two children in the box of a Christiania-style tricycle, riding on to meet the pupils (towards the
+        // camera, the 0.9 m box and the older couple walking two abreast with their dog would not fit the 3 m path)
+        w(9214, -1, -0.6, 1.66, 10008, "trike", "parent", { cycle: "christiania", carries: { children: [1.0, 1.1] } }),
         // a neighbour resting on a bench on the open side, looking out over the vale
         w(9216, 1, -3.3, 1.62, 10009, "sit", "older"),
       ],

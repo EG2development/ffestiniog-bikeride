@@ -61,6 +61,8 @@ export type SectionConfig = {
   ve: 1;
   /** instanced trees per kind (in the photo look, with the woods' kinds from OSM, the two kinds share twice this); lower for a window whose terrain alone is large (RN6) */
   maxTreesPerKind?: number;
+  /** its on-screen text in Welsh first, then English (the community film): the legend's lines in pairs */
+  bilingual?: boolean;
   /** the photoreal layer's sourced extras (docs/adr/0054-photoreal-layer.md), built in the photo look only, so the concept
    * look's output stays unchanged (ADR 60): trees sized from the lidar canopy (ADR 57), OSM field boundaries (ADR 58),
    * grass clumps along the stretch the camera sees, and the walkers a section choreographs on the trail (ADR 59) */
@@ -89,6 +91,9 @@ export type SectionConfig = {
     /** street furniture, existing or proposed (props.ts), and no camera rider drawn (others carry the scene) */
     props?: import("./props").PropSpec[];
     riderHidden?: boolean;
+    /** the corridor as it stands today, for the community film's "then" shot: the mothballed railway's track on the
+     * trail's line, grown over, in place of the proposed path (built by the Blender dressing only; railway.py) */
+    railway?: boolean;
   };
 };
 
@@ -530,13 +535,14 @@ function extras(cfg: SectionConfig, inputs: ExtraInputs, scene: PocScene, look: 
 const buildingStatus = (features: Feature[]) => new Map<string, BuildingStatus>(features.filter((f) => f.kind === "building" && f.status).map((f) => [f.id, f.status!]));
 
 /** A section's scene in a look: the concept look ignores the config's photo extras (ADR 60). */
-export function buildSectionScene(cfg: SectionConfig, inputs: Omit<ExtraInputs, "bridgeIds">, look: Look = "concept"): SectionScene {
+/** `imageryGrade`: the satellite image's grade in the photo look (the Blender film passes FILM_IMAGERY_GRADE). */
+export function buildSectionScene(cfg: SectionConfig, inputs: Omit<ExtraInputs, "bridgeIds">, look: Look = "concept", imageryGrade: Parameters<typeof imageryPixels>[1] = IMAGERY_GRADE): SectionScene {
   const scene = groundScene(cfg, inputs, roadLines(cfg, inputs, look));
   // the terrain's vertices are the DEM's nodes row by row, so the image's node colours replace the land cover's one for one
   let groundImage: SceneImage | undefined;
   if (look === "photo" && cfg.photo?.imagery) {
     if (!inputs.imagery) throw new Error(`section ${cfg.id}: the photo look wants the window's imagery and none was loaded`);
-    const rgba = imageryPixels(inputs.imagery, IMAGERY_GRADE);
+    const rgba = imageryPixels(inputs.imagery, imageryGrade);
     const { cols, rows } = inputs.dem;
     groundImage = { width: inputs.imagery.width, height: inputs.imagery.height, scale: inputs.imagery.scale, rgba, cols, rows };
     scene.terrain = { ...scene.terrain, colors: imageryNodeColours(inputs.imagery, rgba, cols, rows) };

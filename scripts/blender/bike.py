@@ -89,15 +89,15 @@ def _object(name, bm, mats, coll, parent=None, smooth=True):
     return obj
 
 
-def _wheel(name, mats, coll, parent, x):
-    """Tyre, rim, hub and 32 spokes about a local Y axle; the object's origin is the axle."""
+def _wheel(name, mats, coll, parent, x, r=WHEEL_R, tyre=TYRE_R):
+    """Tyre, rim, hub and 32 spokes about a local Y axle, radius `r`; the object's origin is the axle."""
     bm = bmesh.new()
-    _torus(bm, (0, 0, 0), WHEEL_R - TYRE_R, TYRE_R, seg=64, ring=12)
+    _torus(bm, (0, 0, 0), r - tyre, tyre, seg=64, ring=12)
     n_tyre = len(bm.faces)
-    _torus(bm, (0, 0, 0), WHEEL_R - 2 * TYRE_R - 0.004, 0.009, seg=64, ring=6)
+    _torus(bm, (0, 0, 0), r - 2 * tyre - 0.004, 0.009, seg=64, ring=6)
     n_rim = len(bm.faces)
     _tube(bm, (0, -0.05, 0), (0, 0.05, 0), 0.018, seg=16)
-    hub_r = WHEEL_R - 2 * TYRE_R - 0.012
+    hub_r = r - 2 * tyre - 0.012
     for i in range(32):
         a = 2 * math.pi * i / 32
         side = 0.035 if i % 2 else -0.035
@@ -105,35 +105,42 @@ def _wheel(name, mats, coll, parent, x):
     for k, f in enumerate(bm.faces):
         f.material_index = 0 if k < n_tyre else (1 if k < n_rim else 2)
     obj = _object(name, bm, [mats["rubber"], mats["alloy"], mats["steel"]], coll, parent)
-    obj.location = (x, 0, WHEEL_R)
+    obj.location = (x, 0, r)
     return obj
 
 
-def build_bicycle(prefix, coll, paint=(0.08, 0.22, 0.36), step_through=False):
-    """A hybrid bicycle under an Empty `<prefix>bike`; returns the parts the rig and the keys need."""
+def build_bicycle(prefix, coll, paint=(0.08, 0.22, 0.36), step_through=False, rear_extra=0.0, front="fork"):
+    """A hybrid bicycle under an Empty `<prefix>bike`; returns the parts the rig and the keys need. The cargo cycles
+    (cargobikes.py) start from it: `rear_extra` moves the rear axle back (a long-tail), and `front` is "fork" (the
+    hybrid's), "head" (the head tube and bars only: a long john steers its far front wheel by a rod) or "none" (the
+    rear half alone: a box tricycle's box carries the front)."""
     mats = bike_materials(paint)
     root = bpy.data.objects.new(prefix + "bike", None)
     root.empty_display_size = 0.3
     coll.objects.link(root)
-    rear, front = Vector((-WHEELBASE / 2, 0, WHEEL_R)), Vector((WHEELBASE / 2, 0, WHEEL_R))
+    rear, front_axle = Vector((-WHEELBASE / 2 - rear_extra, 0, WHEEL_R)), Vector((WHEELBASE / 2, 0, WHEEL_R))
     seat_angle, head_angle = math.radians(73), math.radians(71)
     seat_top = BB + Vector((-math.cos(seat_angle), 0, math.sin(seat_angle))) * 0.50
-    head_bot = front + Vector((-math.cos(head_angle), 0, math.sin(head_angle))) * 0.40
+    head_bot = front_axle + Vector((-math.cos(head_angle), 0, math.sin(head_angle))) * 0.40
     head_top = head_bot + Vector((-math.cos(head_angle), 0, math.sin(head_angle))) * 0.15
 
     bm = bmesh.new()
     top_from = seat_top + (BB - seat_top) * (0.55 if step_through else 0.1)
-    for a, b, r in [(BB, seat_top, 0.016), (BB, head_bot, 0.019), (top_from, head_top + (head_bot - head_top) * 0.2, 0.015),
-                    (head_bot, head_top, 0.02)]:
+    tubes = [(BB, seat_top, 0.016)]
+    if front != "none":
+        tubes += [(BB, head_bot, 0.019), (top_from, head_top + (head_bot - head_top) * 0.2, 0.015), (head_bot, head_top, 0.02)]
+    for a, b, r in tubes:
         _tube(bm, a, b, r)
     for side in (-0.06, 0.06):
         _tube(bm, BB + Vector((0, side * 0.5, 0)), rear + Vector((0, side, 0)), 0.009)
         _tube(bm, seat_top + Vector((0, side * 0.3, -0.02)), rear + Vector((0, side, 0)), 0.008)
-        _tube(bm, head_bot + Vector((0, side * 0.6, 0)), front + Vector((0, side, 0)), 0.011)  # fork blades
+        if front == "fork":
+            _tube(bm, head_bot + Vector((0, side * 0.6, 0)), front_axle + Vector((0, side, 0)), 0.011)  # fork blades
     _object(prefix + "frame", bm, [mats["paint"]], coll, root)
 
     # seat post and saddle, stem and bars: their heights are fitted to the rider, so they are separate objects
-    parts = {"root": root, "bb": BB.copy(), "seat_dir": (seat_top - BB).normalized(), "head_top": head_top, "head_dir": (head_top - head_bot).normalized()}
+    parts = {"root": root, "bb": BB.copy(), "seat_dir": (seat_top - BB).normalized(), "head_top": head_top, "head_bot": head_bot,
+             "head_dir": (head_top - head_bot).normalized(), "seat_top": seat_top, "rear_axle": rear.copy(), "mats": mats}
     bm = bmesh.new()
     _tube(bm, (0, 0, -0.25), (0, 0, 0.0), 0.0135)
     post = _object(prefix + "seatpost", bm, [mats["alloy"]], coll, root)
@@ -160,7 +167,10 @@ def build_bicycle(prefix, coll, paint=(0.08, 0.22, 0.36), step_through=False):
     parts.update(bars=bars, grip_offset=Vector((0.09, 0.26, 0.09)))
 
     parts["rear_wheel"] = _wheel(prefix + "wheel-rear", mats, coll, root, rear.x)
-    parts["front_wheel"] = _wheel(prefix + "wheel-front", mats, coll, root, front.x)
+    parts["wheels"] = [(parts["rear_wheel"], WHEEL_R)]
+    if front == "fork":
+        parts["front_wheel"] = _wheel(prefix + "wheel-front", mats, coll, root, front_axle.x)
+        parts["wheels"].append((parts["front_wheel"], WHEEL_R))
 
     # chain: an elongated loop from the chainring to the sprocket, on the drive side (-Y, the bicycle's right)
     bm = bmesh.new()
@@ -201,6 +211,7 @@ def scale_bicycle(parts, s):
     for key in ("bb", "head_top", "grip_offset"):
         parts[key] = parts[key] * s
     parts["crank_len"], parts["wheel_r"] = CRANK * s, WHEEL_R * s
+    parts["wheels"] = [(o, r * s) for o, r in parts["wheels"]]
     return parts
 
 
@@ -219,6 +230,7 @@ def build_trike(prefix, coll, paint=(0.55, 0.12, 0.10)):
     bmesh.ops.create_cube(bm, size=1.0, matrix=Matrix.Translation((rear.location.x, 0, WHEEL_R + 0.28)) @ Matrix.Diagonal((0.42, 0.55, 0.26, 1)))
     _object(prefix + "trike-axle", bm, [mats["paint"]], coll, parts["root"], smooth=False)
     parts["rear_wheel_2"] = twin
+    parts["wheels"].append((twin, WHEEL_R))
     return parts
 
 

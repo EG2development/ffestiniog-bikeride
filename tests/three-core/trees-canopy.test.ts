@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { wgs84ToBng } from "../../src/three-core/bng";
 import { validateCanopyHeader, validateFeatures, validateImageryHeader } from "../../src/three-core/registers";
 import { imageryNodeColours, imageryPixels } from "../../src/three-core/shading";
+import { FILM_IMAGERY_GRADE, IMAGERY_GRADE } from "../../src/three-core/photoLook";
 import type { Trail } from "../../src/three-core/trail";
 import { NOMINAL_TREE_HEIGHT_M, placeTrees, treesInShots, type TreeInstance } from "../../src/three-core/trees";
 import type { DemGrid, LandCover } from "../../src/three-core/types";
@@ -133,6 +134,19 @@ describe("placeTrees on a coarse grid, and the ground image", () => {
     expect(nodes.length).toBe(12);
     expect(nodes[3] * 255).toBeCloseTo(flat[4 * 2], 3);
     expect(nodes[9] * 255).toBeCloseTo(flat[4 * 8], 3);
+  });
+
+  it("the film's grade warms vegetation as the reel's does and leaves grey slate grey (FILM_IMAGERY_GRADE)", () => {
+    // a grass pixel, a slate-grey pixel and a warm brown (bracken) pixel
+    const image = { width: 3, height: 1, scale: 1, rgb: Uint8Array.from([40, 90, 30, 70, 72, 76, 90, 70, 45]) };
+    const reel = imageryPixels(image, IMAGERY_GRADE);
+    const film = imageryPixels(image, FILM_IMAGERY_GRADE);
+    expect([...film.slice(0, 3)]).toEqual([...reel.slice(0, 3)]);
+    const untinted = imageryPixels(image, { ...IMAGERY_GRADE, tint: [1, 1, 1] });
+    expect([...film.slice(4, 7)]).toEqual([...untinted.slice(4, 7)]); // slate keeps its own grey
+    expect(reel[4] - reel[6]).toBeGreaterThan(30); // where the flat tint turned it pink-beige
+    expect(film[8]).toBeLessThan(reel[8]); // brown ground half warmed
+    expect(film[8]).toBeGreaterThan(untinted[8]);
   });
 
   it("refuses an image that is not on the DEM's grid at a whole scale", () => {

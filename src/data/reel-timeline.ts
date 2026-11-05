@@ -7,7 +7,15 @@ export const REEL_FRAMES = 2700;
 export const REEL_LOOK = "photo" as const;
 
 /** One entry per sequence; `id` is the storyboard scene, `section` its data window, `config` its section config. */
-export type ReelScene = { id: string; section: string; config: string; from: number; frames: number };
+export type ReelScene = {
+  id: string;
+  section: string;
+  config: string;
+  from: number;
+  frames: number;
+  /** cross-dissolves from the scene before over this many frames: its first `dissolve` frames overlap that scene's last */
+  dissolve?: number;
+};
 
 export const REEL_SCENES: ReelScene[] = [
   { id: "intro", section: "corridor", config: "intro", from: 0, frames: 240 },

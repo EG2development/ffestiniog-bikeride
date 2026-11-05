@@ -5,6 +5,7 @@ import { mulberry32 } from "./rng";
 import type { Trail } from "./trail";
 import type { Vec3 } from "./types";
 import type { Choreo } from "./choreography";
+import { checkCycle, cyclePace, type CycleKind, type Load } from "./cycles";
 
 // A walker is the rider's motion model (ADR 15) at a walking pace: a distance table integrated once from a config
 // spec, a pose that is a pure function of the table and the frame, and a figure built from a height. Walkers are
@@ -47,6 +48,10 @@ export type WalkerSpec = {
   dog?: { breed: DogBreed; side?: "left" | "right" };
   /** walks with the person of this seed, side by side (choreography.ts keeps companions close, not apart) */
   with?: number;
+  /** rides a cargo bike, a long-tail or a box tricycle instead of a hybrid or an adult tricycle (cycles.ts) */
+  cycle?: CycleKind;
+  /** what that cycle carries: younger children and shopping */
+  carries?: Load;
 };
 
 export type WalkerPose = {
@@ -93,7 +98,7 @@ export function walkerTable(trail: Trail, spec: WalkerSpec, frames: number, fps:
   const activity = spec.activity ?? "walk";
   for (let f = 1; f < frames; f++) {
     const g = trail.sampleAt(table[f - 1]).gradient * spec.direction;
-    const pace = activity === "sit" ? 0 : (spec.speedKmh ?? paceKmh(activity, g));
+    const pace = activity === "sit" ? 0 : (spec.speedKmh ?? paceKmh(activity, g) * cyclePace(spec));
     // stopping: the pace falls with the square root of the distance left, so it comes to rest at the stop
     const left = spec.stopAtM === undefined ? Infinity : (spec.stopAtM - table[f - 1]) * spec.direction;
     table[f] = table[f - 1] + (spec.direction * pace * Math.min(1, Math.sqrt(Math.max(0, left) / BRAKE_M))) / 3.6 / fps;
@@ -387,6 +392,7 @@ export function walkerTracks(trail: Trail, specs: readonly WalkerSpec[], frames:
     if (spec.heightM < lo || spec.heightM > hi) throw new Error(`walker ${i}: heightM ${spec.heightM} is outside ${lo}–${hi} m (C9)`);
     if (spec.activity !== undefined && !["walk", "run", "pram", "cycle", "trike", "sit"].includes(spec.activity)) throw new Error(`walker ${i}: unknown activity ${String(spec.activity)}`);
     if (spec.dog && (spec.activity ?? "walk") !== "walk") throw new Error(`walker ${i}: only someone walking walks a dog`);
+    checkCycle(spec, i);
     if (spec.with !== undefined && !seeds.has(spec.with)) throw new Error(`walker ${i}: walks with seed ${spec.with}, who is not in the scene`);
     const c = choreo?.[i];
     const table = c ? c.dist : walkerTable(trail, spec, frames, fps);

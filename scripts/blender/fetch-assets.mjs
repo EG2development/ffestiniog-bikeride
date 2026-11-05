@@ -29,7 +29,7 @@ export const TEXTURES = {
 };
 // Poly Haven models (1k Blender files and their textures)
 export const MODELS = ["grass_medium_01", "fir_tree_01", "tree_small_02"];
-export const HDRI = "kloofendal_38d_partly_cloudy_puresky"; // a 38° sun, close to the project's 35° (research §4)
+export const HDRI = "kloofendal_48d_partly_cloudy_puresky"; // the same sky with a 48° sun: cumulus over blue, and shadows with some modelling (review 2026-11-05; the 38° one read flat and milky)
 const MAKEHUMAN = {
   id: "makehuman_system_assets_cc0",
   url: "https://files.makehumancommunity.org/asset_packs/makehuman_system_assets/makehuman_system_assets_cc0.zip",

@@ -71,3 +71,9 @@ export function proposedLine(props: readonly PropSpec[]): string | null {
   const kinds = [...new Set(props.filter((p) => p.status === "proposed").map((p) => names[p.kind]))];
   return kinds.length > 0 ? `Proposed (concept only): ${kinds.join(", ")}` : null;
 }
+/** The same line in Welsh, for a bilingual film. */
+export function proposedLineCy(props: readonly PropSpec[]): string | null {
+  const names: Record<PropKind, string> = { bench: "meinciau", lockers: "loceri beiciau", fingerpost: "arwyddion", "viewpoint-board": "man gwylio", "bus-shelter": "cysgodfan", "bus-stop-flag": "safle bws", bus: "bws" };
+  const kinds = [...new Set(props.filter((p) => p.status === "proposed").map((p) => names[p.kind]))];
+  return kinds.length > 0 ? `Arfaethedig (cysyniad yn unig): ${kinds.join(", ")}` : null;
+}

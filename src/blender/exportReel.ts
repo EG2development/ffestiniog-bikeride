@@ -1,6 +1,6 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { COMMUNITY_CAPTIONS, COMMUNITY_FPS, COMMUNITY_FRAMES, COMMUNITY_SCENES } from "../data/community-film";
+import { COMMUNITY_CAPTIONS, COMMUNITY_FPS, COMMUNITY_FRAMES, COMMUNITY_LAYOUT, COMMUNITY_SCENES } from "../data/community-film";
 import { reelCaptions, type Caption } from "../data/reel-captions";
 import { REEL_FPS, REEL_FRAMES, REEL_LOOK, REEL_SCENES, type ReelScene } from "../data/reel-timeline";
 import { configById } from "../three-core/sections";
@@ -13,18 +13,20 @@ import { exportSection, type Manifest } from "./exportSection";
 
 export type ReelManifest = ReturnType<typeof buildReelManifest>;
 export type FilmId = "reel" | "community";
-type Film = { scenes: ReelScene[]; fps: number; frames: number; captions: Caption[]; file: string };
+/** `layout`: build_reel.py's caption width (px) and credits size where a film sets its own (the bilingual community film) */
+type Film = { scenes: ReelScene[]; fps: number; frames: number; captions: Caption[]; file: string; layout?: { captionW: number; attributionSize: number } };
 const FILMS: Record<FilmId, Film> = {
   reel: { scenes: REEL_SCENES, fps: REEL_FPS, frames: REEL_FRAMES, captions: reelCaptions(REEL_LOOK), file: "reel.json" },
-  community: { scenes: COMMUNITY_SCENES, fps: COMMUNITY_FPS, frames: COMMUNITY_FRAMES, captions: COMMUNITY_CAPTIONS, file: "community.json" },
+  community: { scenes: COMMUNITY_SCENES, fps: COMMUNITY_FPS, frames: COMMUNITY_FRAMES, captions: COMMUNITY_CAPTIONS, file: "community.json", layout: COMMUNITY_LAYOUT },
 };
 
 function buildReelManifest(film: Film, scenes: { scene: ReelScene; sectionFrames: number }[]) {
   let at = 0;
   for (const { scene, sectionFrames } of scenes) {
-    if (scene.from !== at) throw new Error(`reel scene ${scene.config} starts at ${scene.from}, not at ${at}: the timeline has a gap or an overlap`);
+    const dissolve = scene.dissolve ?? 0; // a dissolving scene starts under the last frames of the one before
+    if (scene.from !== at - dissolve) throw new Error(`reel scene ${scene.config} starts at ${scene.from}, not at ${at - dissolve}: the timeline has a gap or an overlap`);
     if (sectionFrames < scene.frames) throw new Error(`reel scene ${scene.config} takes ${scene.frames} frames of a section that has only ${sectionFrames}`);
-    at += scene.frames;
+    at = scene.from + scene.frames;
   }
   if (at !== film.frames) throw new Error(`the film's scenes add up to ${at} frames, not ${film.frames}`);
   return {
@@ -34,8 +36,9 @@ function buildReelManifest(film: Film, scenes: { scene: ReelScene; sectionFrames
     look: REEL_LOOK,
     resolution: [1920, 1080] as [number, number],
     // each scene takes exactly the master timeline's frame count from its section package (the Maentwrog section is 360 frames, the reel uses 300)
-    scenes: scenes.map(({ scene, sectionFrames }) => ({ id: scene.id, config: scene.config, package: scene.config, from: scene.from, frames: scene.frames, sectionFrames })),
+    scenes: scenes.map(({ scene, sectionFrames }) => ({ id: scene.id, config: scene.config, package: scene.config, from: scene.from, frames: scene.frames, sectionFrames, ...(scene.dissolve && { dissolve: scene.dissolve }) })),
     captions: film.captions,
+    ...(film.layout && { layout: film.layout }),
   };
 }
 

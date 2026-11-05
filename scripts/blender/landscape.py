@@ -14,6 +14,9 @@ import numpy as np
 from mathutils import Vector
 
 VENDOR = Path(__file__).resolve().parents[2] / "out" / "blender" / "vendor"
+# the sky (review 2026-11-05): the same Poly Haven site with its sun at 48°, cumulus over blue, after the 38° one read
+# flat and milky in the film; EEVEE takes the shadowing sun from it (fetch-assets.mjs HDRI)
+SKY_HDRI = "kloofendal_48d_partly_cloudy_puresky"
 TILE_M = {"terrain-grass": 3.0, "terrain-grass-sparse": 3.0, "terrain-forest": 4.0, "terrain-rock": 6.0, "terrain-aerial": 90.0,
           "trail": 1.6, "road": 4.0, "stone-wall": 3.0, "dry-stone": 1.6, "roof": 2.5, "timber": 2.0}
 _cache = {}
@@ -374,7 +377,8 @@ def material_for(role, aerial):
     if role == "terrain":
         return terrain_material("terrain-aerial" if aerial else "terrain-ground", aerial)
     if role == "trail":
-        return surface_material("trail-gravel", "trail", TILE_M["trail"], rough_scale=1.1, centre=(0.20, 0.19, 0.17))  # compacted grey slate dust
+        import roadway  # compacted grey stone dust, its edges grassed over (on the ribbon's UVs)
+        return roadway.path_material()
     if role in ("road", "road-marking"):
         import roadway  # the carriageways' asphalt (on their metre UVs) and paint
         return roadway.road_material() if role == "road" else roadway.marking_material()
@@ -419,7 +423,7 @@ def sky_world(name, sun_dir, strength=1.0):
     world.use_nodes = True
     nt = world.node_tree
     nt.nodes.clear()
-    rec = register()["kloofendal_38d_partly_cloudy_puresky"]
+    rec = register()[SKY_HDRI]
     img = bpy.data.images.load(str(VENDOR / rec["files"]["hdr"]["path"]), check_existing=True)
     hdr_sun = _hdri_sun_direction(img)
     turn = math.atan2(hdr_sun.y, hdr_sun.x) - math.atan2(sun_dir[1], sun_dir[0])
@@ -444,7 +448,7 @@ def sky_world(name, sun_dir, strength=1.0):
 
 
 def render_settings(scene, samples):
-    """EEVEE with ray-traced reflections and global illumination, soft sun shadows, motion blur, AgX at medium contrast."""
+    """EEVEE with ray-traced reflections and global illumination, soft sun shadows and motion blur; the look is finish.py's."""
     e = scene.eevee
     e.taa_render_samples = samples
     e.use_raytracing = True
@@ -461,37 +465,3 @@ def render_settings(scene, samples):
     # movement instead of strobing at 30 frames a second
     scene.render.use_motion_blur = True
     scene.render.motion_blur_shutter = 0.5
-    try:
-        scene.view_settings.look = "AgX - Medium High Contrast"
-    except TypeError:
-        pass
-
-
-HORIZON = {"ground": (0.765, 0.827, 0.863), "aerial": (0.78, 0.84, 0.87)}  # src/three-core/atmosphere.ts, sRGB
-
-
-def haze(scene, aerial, strength=0.35):
-    """Aerial perspective: the mist pass (quadratic over 3.5 km on the ground, 6 km from the air) mixes the render
-    towards the horizon colour in the scene's compositor, as the three.js scene's fog does."""
-    vl = scene.view_layers[0]
-    vl.use_pass_mist = True
-    ms = scene.world.mist_settings
-    ms.start, ms.depth, ms.falloff = 0.0, (6000.0 if aerial else 3500.0), "QUADRATIC"
-    ng = bpy.data.node_groups.new(f"haze-{scene.name}", "CompositorNodeTree")
-    ng.interface.new_socket("Image", in_out="OUTPUT", socket_type="NodeSocketColor")
-    rl = ng.nodes.new("CompositorNodeRLayers")
-    rl.scene = scene
-    fac = ng.nodes.new("ShaderNodeMath")
-    fac.operation = "MULTIPLY"
-    fac.inputs[1].default_value = strength
-    mix = ng.nodes.new("ShaderNodeMix")
-    mix.data_type = "RGBA"
-    srgb = HORIZON["aerial" if aerial else "ground"]
-    mix.inputs[7].default_value = (*[c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4 for c in srgb], 1.0)
-    out = ng.nodes.new("NodeGroupOutput")
-    ng.links.new(rl.outputs["Mist"], fac.inputs[0])
-    ng.links.new(fac.outputs[0], mix.inputs[0])
-    ng.links.new(rl.outputs["Image"], mix.inputs[6])
-    ng.links.new(mix.outputs[2], out.inputs[0])
-    scene.compositing_node_group = ng
-    scene.render.use_compositing = True
