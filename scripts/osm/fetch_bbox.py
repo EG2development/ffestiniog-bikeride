@@ -8,7 +8,7 @@ Overpass mirrors proved unreliable from this environment; the core API works for
 import urllib.request
 import xml.etree.ElementTree as ET
 
-USER_AGENT = "ffestiniog-bikeride-concept-video/1.0 (contact: eray4793@gmail.com)"
+USER_AGENT = "ffestiniog-bikeride-concept-video/1.0 (+https://github.com/EG2development/ffestiniog-bikeride)"
 
 
 def _fetch(lon0, lat0, lon1, lat1):

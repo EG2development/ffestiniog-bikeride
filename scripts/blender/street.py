@@ -23,7 +23,9 @@ import bike
 from bike import _mat, _object, _tube
 
 PROPOSED, EXISTING = "proposed", "existing"
-FONT_PATH = "C:/Windows/Fonts/arial.ttf"  # Blender's bundled font also has ½ and ŵ ŷ â; Arial is preferred where present
+# Inter (OFL) from Blender's own datafiles, as the captions use (build_reel.py), so signs render the same on every
+# machine; Arial, where a machine has it, is the fallback. Both have ½ and ŵ ŷ â.
+FONT_FALLBACK = "C:/Windows/Fonts/arial.ttf"
 FRACTIONS = {0.25: "¼", 0.5: "½", 0.75: "¾"}
 MATS = {  # key: (linear rgba, roughness, metallic, coat); "green" is RAL 6009 fir green, the usual locker finish
     "steel": ((0.045, 0.05, 0.055, 1), 0.5, 0.6), "grey": ((0.38, 0.40, 0.42, 1), 0.4, 0.8),
@@ -111,11 +113,19 @@ def _place(origin, right, up):
 
 
 def _font():
-    return bpy.data.fonts.load(FONT_PATH, check_existing=True) if os.path.exists(FONT_PATH) else None
+    v = bpy.app.version
+    inter = os.path.join(os.path.dirname(bpy.app.binary_path), f"{v[0]}.{v[1]}", "datafiles", "fonts", "Inter.woff2")
+    for path in (inter, FONT_FALLBACK):
+        if os.path.exists(path):
+            try:
+                return bpy.data.fonts.load(path, check_existing=True)
+            except RuntimeError:
+                continue
+    return None
 
 
 def _fit(body, size, width):
-    """Shrink a text size so its longest line fits `width` (about 0.55 em per character in Arial)."""
+    """Shrink a text size so its longest line fits `width` (about 0.55 em per character in Inter or Arial)."""
     longest = max(len(line) for line in body.split("\n"))
     return min(size, width / (0.55 * max(longest, 1)))
 

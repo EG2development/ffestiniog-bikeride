@@ -1,9 +1,12 @@
 {
   "name": "ffestiniog-bikeride",
   "version": "1.0.0",
-  "description": "My Remotion video",
-  "repository": {},
-  "license": "UNLICENSED",
+  "description": "Concept visualisation of a walking and cycling route on the mothballed Bala and Festiniog Railway corridor between Blaenau Ffestiniog and Trawsfynydd (Welsh-first, 2D and 3D, Remotion and Blender)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EG2development/ffestiniog-bikeride.git"
+  },
+  "license": "MIT",
   "engines": {
     "node": "^20.19.0 || ^22.13.0 || >=24"
   },
@@ -75,5 +78,9 @@
   },
   "allowScripts": {
     "esbuild": false
+  },
+  "homepage": "https://github.com/EG2development/ffestiniog-bikeride#readme",
+  "bugs": {
+    "url": "https://github.com/EG2development/ffestiniog-bikeride/issues"
   }
 }

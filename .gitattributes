@@ -1,0 +1,25 @@
+# Normalise line endings to LF in the repository; editors may use native endings in the working copy.
+* text=auto eol=lf
+
+# Binary data and media: never diffed or normalised
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.f32 binary
+*.u8 binary
+*.mp4 binary
+*.wav binary
+*.blend binary
+
+# Keep diffs and GitHub language statistics focused on the source
+public/maps/tiles/** linguist-generated
+public/data/** linguist-generated
+data/*.geojson linguist-generated
+data/features-*.json linguist-generated
+docs/evidence/** linguist-documentation
+package-lock.json -diff

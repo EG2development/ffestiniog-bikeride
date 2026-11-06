@@ -32,7 +32,7 @@ const MAPS = { map: "diff", normalMap: "nor_gl" };
 const sha256 = (file) => createHash("sha256").update(readFileSync(file)).digest("hex");
 
 async function download(url, file) {
-  const r = await fetch(url, { headers: { "User-Agent": "ffestiniog-bikeride-concept-video/1.0 (contact: eray4793@gmail.com)" } });
+  const r = await fetch(url, { headers: { "User-Agent": "ffestiniog-bikeride-concept-video/1.0 (+https://github.com/EG2development/ffestiniog-bikeride)" } });
   if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
   const buf = Buffer.from(await r.arrayBuffer());
   if (buf.length < 50_000) throw new Error(`${url}: only ${buf.length} bytes`);

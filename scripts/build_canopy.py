@@ -64,7 +64,7 @@ def main(section):
         "cols": cols, "rows": rows, "spacingM": header["spacingM"], "originE": header["originE"], "originN": header["originN"], "crs": "EPSG:27700",
         "file": "canopy.f32", "units": "metres above the DTM, 0 = no canopy or no data", "maxM": MAX_CANOPY_M,
         "source": f"Welsh Government / NRW lidar DSM minus DTM, 1 m, 32-bit COGs ({header['spacingM']} m overview level)",
-        "urls": [DSM_URL, LIDAR_URL], "licence": header.get("licence", "Open Government Licence (to confirm)"),
+        "urls": [DSM_URL, LIDAR_URL], "licence": header.get("licence", "Open Government Licence v3.0 (confirmed 2026-10-30 on the DataMapWales LiDAR viewer; data/source-register.md)"),
         "surveyDate": "not published with the COG (design risk K16)", "retrieved": TODAY,
         "stats": {"cellsOver2m": int(wooded.sum()), "share": round(float(wooded.mean()), 4), "p50OverTwo": round(float(np.median(canopy[wooded])), 2) if wooded.any() else 0.0,
                   "p95OverTwo": round(float(np.percentile(canopy[wooded], 95)), 2) if wooded.any() else 0.0, "max": round(float(canopy.max()), 2)},

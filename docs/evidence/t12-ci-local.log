@@ -36,7 +36,7 @@ node v24.13.1, npm 11.21.0, Python 3.13.5; macOS (the hosted runner is ubuntu-24
 
 == Step: Install the data pipeline's Python dependency
   $ python -m pip install numpy==2.4.4
-  Requirement already satisfied: numpy==2.4.4 in /Users/eray/miniconda3/lib/python3.13/site-packages (2.4.4)
+  Requirement already satisfied: numpy==2.4.4 in ~/miniconda3/lib/python3.13/site-packages (2.4.4)
   
   [notice] A new release of pip is available: 26.1.1 -> 26.2.2
   [notice] To update, run: pip install --upgrade pip

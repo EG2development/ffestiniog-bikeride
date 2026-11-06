@@ -206,7 +206,8 @@ Render performance (EEVEE, 32 samples, 1920 × 1080, one GPU, `scripts/blender/r
 | Aerials (open, closing) | about 1.7 s a frame |
 | First-person rides and the woodland then/now | about 6–6.5 s a frame (the vegetation and motion blur) |
 | Encode (x264 slow) + probes | 2 min 29 s |
-| Social plates from the v9 master (17 + 13 + 17 plates, three formats) | about 8 h, running after the film |
+| Social plates from the v9 master (17 + 13 + 17 plates, 4,950 frames, three formats) | 7 h 25 min, after the film |
+| Social cuts: Remotion render of the five cuts / QA probes | 20 min 34 s / 4 min 3 s |
 
 The frames are kept (`out/blender/frames/community-v9/`, 15.7 GB), so a changed scene re-renders over its own range
 with `--from/--to` and the film re-encodes in 2.5 min. Visual inspection of the render: per-scene contact sheets of
@@ -214,6 +215,22 @@ seven frames each (all fourteen scenes), four full-resolution frames (the dissol
 bus stop, the tricycle pass), the eighteen before/after sheets and the two-second contact sheet of the whole film
 were viewed; no placeholder, black or noisy frame, no caption overlap, and the people's timing matches the master
 preview pass.
+
+The social cuts, re-exported from those plates (`npm run social:render`, `social:qa`; report in
+`out/social/qa/report.md`, the v8 set kept in `out/social/exports-v8/` and `qa-v8/`): all five pass the same gate as
+before. Loudness is −14 LUFS and −1.5 dBTP on every cut, audio sync 0 ms, no frozen or black stretches, BT.709 tags
+throughout, and the worst shot against its plate scores SSIM 0.970–0.985 (v8: 0.971–0.984), so the cuts carry the
+plates' finish without an added loss. Six-frame contact sheets of each cut over its v8 version were viewed: the story,
+feed and YouTube cuts now open on the then-and-now railway pair, the teaser and highlights keep their shot order, and
+the disclaimer badge, captions and attribution card are present in every frame.
+
+| Cut | Size | Length | Mean bitrate | File |
+|---|---|---|---|---|
+| teaser | 1080 × 1920 | 15 s | 17.8 Mbit/s | 32.5 MB |
+| highlights | 1080 × 1920 | 30 s | 20.1 Mbit/s | 73.1 MB |
+| story | 1080 × 1920 | 60 s | 20.0 Mbit/s | 145.1 MB |
+| feed | 1440 × 1800 | 45 s | 27.0 Mbit/s | 146.4 MB |
+| youtube | 1920 × 1080 | 60 s | 24.8 Mbit/s | 179.9 MB |
 
 ## 12. Improvements and outstanding limitations
 

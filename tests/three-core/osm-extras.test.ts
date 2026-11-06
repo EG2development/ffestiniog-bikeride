@@ -170,7 +170,10 @@ describe("evidence-only level crossings", () => {
       expect(c.side.length).toBeGreaterThan(0);
       const [k0, k1] = WINDOW_KM[c.window];
       expect(c.km >= k0 && c.km <= k1, `${c.id} in ${c.window}`).toBe(true);
-      expect(existsSync(resolve(ROOT, c.image)), c.image).toBe(true);
+      // The captures are Crown-copyright evidence kept outside version control (docs/new-images/ is ignored), so a
+      // public clone has none of them: the path is checked only where the folder exists.
+      if (existsSync(resolve(ROOT, "docs/new-images"))) expect(existsSync(resolve(ROOT, c.image)), c.image).toBe(true);
+      expect(c.image).toMatch(/^docs\/new-images\//);
       expect(JSON.stringify(c)).not.toMatch(/coordinates|lon|lat/);
     }
     const lc = doc.crossings.find((c) => c.km === 10.0)!;

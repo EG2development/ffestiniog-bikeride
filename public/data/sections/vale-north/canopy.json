@@ -13,7 +13,7 @@
     "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
     "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif"
   ],
-  "licence": "Open Government Licence (to confirm on the layer's metadata page; one catalogue lists 'Not Specified')",
+  "licence": "Open Government Licence v3.0 (confirmed 2026-10-30 on the DataMapWales LiDAR viewer; data/source-register.md)",
   "surveyDate": "not published with the COG (design risk K16)",
   "retrieved": "2026-10-30",
   "stats": {

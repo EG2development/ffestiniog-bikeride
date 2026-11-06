@@ -15,7 +15,7 @@
   "sourceFile": "dem-source.u8",
   "source": "Welsh Government / NRW lidar DTM, 1 m, 32-bit COG (4 m overview level)",
   "url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif",
-  "licence": "Open Government Licence (to confirm on the layer's metadata page; one catalogue lists 'Not Specified')",
+  "licence": "Open Government Licence v3.0 (confirmed 2026-10-30 on the DataMapWales LiDAR viewer; data/source-register.md)",
   "fill": {
     "nodataBefore": 0,
     "waterShoreHeight": 77,

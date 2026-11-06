@@ -1,6 +1,6 @@
 # t7 (mission msn_33e838999675db739df3c922) evidence, 2026-10-25
 # npx vitest run
- RUN  v5.0.5 /Users/eray/ffestiniog-bikeride
+ RUN  v5.0.5 ~/ffestiniog-bikeride
 (node:34649) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
 Replace `const THREE = require("three")` with `import * as THREE from "three"`.
 (Use `node --trace-deprecation ...` to show where the warning was created)

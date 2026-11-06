@@ -25,7 +25,7 @@ import urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 API = "https://commons.wikimedia.org/w/api.php"
-USER_AGENT = "ffestiniog-bikeride-concept-video/1.0 (contact: eray4793@gmail.com)"
+USER_AGENT = "ffestiniog-bikeride-concept-video/1.0 (+https://github.com/EG2development/ffestiniog-bikeride)"
 TODAY = datetime.date.today().isoformat()
 OUT = "data/photo-references.json"
 

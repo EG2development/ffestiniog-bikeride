@@ -13,17 +13,16 @@ __pycache__/
 .env
 .env.*
 
-# Ruflo runtime state and secrets: only config.yaml, CAPABILITIES.md and .gitignore under .claude-flow/ are tracked
-.claude-flow/*
-!.claude-flow/config.yaml
-!.claude-flow/CAPABILITIES.md
-!.claude-flow/.gitignore
+# Local AI-tooling state (Claude Code commands, hooks and settings, Codex and vendored agent skills, Ruflo): per
+# machine, not part of the project. Project guidance for agents lives in AGENTS.md and CLAUDE.md.
+.claude/
+.agents/
+.claude-flow/
+skills-lock.json
 # Agent memory databases built from session content (t9 security review)
 .swarm/
 ruvector.db*
 agentdb.rvf*
-# Settings backups ruflo writes beside .claude/settings.json
-.claude/*.bak-*
 
 # Codex local configuration
 .codex/
@@ -31,3 +30,8 @@ agentdb.rvf*
 # Editor metadata and test caches
 .idea/
 .vitest/
+
+# Local-only files that must never be committed: the Claude Code Windows bootstrap script and the owner's
+# reference photographs (rights not cleared for redistribution)
+install.cmd
+docs/new-images/

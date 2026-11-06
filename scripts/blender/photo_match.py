@@ -19,7 +19,7 @@ import numpy as np
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-USER_AGENT = "ffestiniog-bikeride-concept-video/1.0 (contact: eray4793@gmail.com)"
+USER_AGENT = "ffestiniog-bikeride-concept-video/1.0 (+https://github.com/EG2development/ffestiniog-bikeride)"
 EYE_M = 1.6
 ASSUMED_35MM = 35
 HEIGHT_PX = 540

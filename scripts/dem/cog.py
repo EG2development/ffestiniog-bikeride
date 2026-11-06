@@ -15,7 +15,7 @@ TAGS = {256: "width", 257: "height", 259: "compression", 317: "predictor", 322: 
         33550: "pixel_scale", 33922: "tiepoint", 42113: "nodata"}
 TYPE_SIZE = {1: 1, 2: 1, 3: 2, 4: 4, 5: 8, 11: 4, 12: 8, 16: 8, 17: 8, 18: 8}
 TYPE_FMT = {1: "B", 3: "H", 4: "I", 11: "f", 12: "d", 16: "Q", 17: "q", 18: "Q"}
-USER_AGENT = "ffestiniog-bikeride-concept-video/1.0 (contact: eray4793@gmail.com)"
+USER_AGENT = "ffestiniog-bikeride-concept-video/1.0 (+https://github.com/EG2development/ffestiniog-bikeride)"
 
 
 def fetch(url, start, length):

@@ -163,7 +163,7 @@ def main():
         "cols": cols, "rows": rows, "spacingM": 4, "pixelSizeM": [px, py], "originE": origin_e, "originN": origin_n,
         "crs": "EPSG:27700", "nodata": cog.nodata, "fallbackCells": 0, "file": "dem-poc.f32", "sourceFile": "dem-poc-source.u8",
         "source": "Welsh Government / NRW lidar DTM, 1 m, 32-bit COG (4 m overview level)", "url": LIDAR_URL,
-        "licence": "Open Government Licence (to confirm on the layer's metadata page; one catalogue lists 'Not Specified')",
+        "licence": "Open Government Licence v3.0 (confirmed 2026-10-30 on the DataMapWales LiDAR viewer; data/source-register.md)",
         "resampling": "unknown (COG overview as published)", "retrieved": TODAY,
         "heightsMin": float(grid.min()), "heightsMax": float(grid.max()),
     }, indent=2)

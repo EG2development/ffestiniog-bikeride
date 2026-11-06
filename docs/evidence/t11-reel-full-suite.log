@@ -19,7 +19,7 @@ source snapshot sha256 (src, public, scripts, tests, data, configs, lockfile): 6
 == $ npx vitest run --reporter=verbose
 ================================================================
 
- RUN  v5.0.5 /Users/eray/ffestiniog-bikeride
+ RUN  v5.0.5 ~/ffestiniog-bikeride
 
  ✓ tests/three-core/tileUv.test.ts > tile UVs (RL6) > tileRange covers exactly the cached wide layer's tiles for its bounding box 16ms
  ✓ tests/three-core/tileUv.test.ts > tile UVs (RL6) > maps the range's north-west corner to (0, 1) and its south-east corner to (1, 0) 1ms

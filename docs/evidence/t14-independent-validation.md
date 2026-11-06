@@ -2,7 +2,7 @@
 
 **Validator:** t14 production-validation agent. It did not build or review this work before.
 **When:** 2026-10-25, 12:24–12:40 GMT.
-**What was checked:** the worktree at `/Users/eray/ffestiniog-bikeride`. The 3D work is uncommitted (HEAD `4493c87`), and `git status --porcelain` was the same before and after this run.
+**What was checked:** the worktree at `~/ffestiniog-bikeride`. The 3D work is uncommitted (HEAD `4493c87`), and `git status --porcelain` was the same before and after this run.
 **Machine:** darwin-arm64, Node 24.13.1, Python 3.13 with numpy 2.4.4.
 **Scratch directory (S):** `/private/tmp/claude-501/-Users-eray-ffestiniog-bikeride/bb3f26c8-7af5-483b-b78b-7ff809bf3730/scratchpad/t14`
 

@@ -19,7 +19,7 @@ source snapshot sha256 (src, public, scripts, tests, data, configs, lockfile): 6
 == $ npx vitest run --reporter=verbose
 ================================================================
 
- RUN  v5.0.5 /Users/eray/ffestiniog-bikeride
+ RUN  v5.0.5 ~/ffestiniog-bikeride
 
  ✓ tests/registers.test.ts > validateFeatures (H1, ADR 20) > accepts a valid register 1ms
  ✓ tests/registers.test.ts > validateFeatures (H1, ADR 20) > rejects a register that is not an array 0ms

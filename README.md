@@ -1,182 +1,97 @@
-# Trawsfynydd ↔ Blaenau Ffestiniog cycling concept video
+# Llwybr Blaenau Ffestiniog – Trawsfynydd · a cycling and walking route concept
 
-An early-stage, concept-only animated proposal for repurposing part of the
-disused Bala and Festiniog Railway corridor (Blaenau Ffestiniog ↔
-Trawsfynydd) as a cycling/walking route. **Not an approved route, engineering
-design, or confirmation of landowner agreement** — see
-`docs/research.md` for the full research summary and limitations, including
-why this corridor is not simply "abandoned" (it's a mothballed, Network
-Rail-protected line with a repeated heritage-railway restoration history).
+**Cysyniad cymunedol yw hwn, nid cynllun cymeradwy.** This is a community concept, not an approved scheme.
 
-## What's in this repo
+An animated, bilingual (Welsh first) visualisation of what a walking and cycling route along the mothballed Bala and
+Festiniog Railway corridor between Blaenau Ffestiniog and Trawsfynydd could look like: 8.2 miles through
+Llan Ffestiniog, past Maentwrog Road and the Trawsfynydd lake. It exists to help a conversation, not to settle one.
 
-- `docs/research.md` — research summary: line history, current status,
-  verified vs. proposed vs. unknown, and limitations.
-- `docs/route-map.md`, `public/maps/route-preview.html` — a self-contained
-  Leaflet map for sanity-checking the real alignment.
-- `docs/storyboard.md` — the scene-by-scene plan behind `src/CyclingVision.tsx`.
-- `data/` — the GIS pipeline's outputs: `railway-route.geojson`,
-  `railway-route.gpx`, `waypoints.json`, `elevation-profile.json`, the 3D registers
-  `features-3d.json`, `features-<window>.json` and `assets-3d.json`, and
-  `source-register.md` documenting where every figure came from and what's
-  still unverified. **Source of truth** — after editing anything here, run
-  `npm run data:sync` to copy it into `public/data/` (the running video fetches from
-  there, not from `data/` directly; a static test fails if the two differ) before re-rendering.
-- `src/data/route.ts` — turns the raw GIS files into a stylised 2.5D
-  world-space model (projection, distance, elevation lookups). Read via the
-  `useRouteData()` hook (`src/data/RouteDataProvider.tsx`), which fetches the
-  `public/data/*.json` files at render time.
-- `src/components/` — `RouteStage` (camera/viewBox), `MapBasemap` (real
-  OpenTopoMap tiles, two zoom tiers, aligned to the route via the shared
-  projection), `Cyclist`, `Caption`, `ElevationStrip`.
-- `src/scenes/` — one file per storyboard scene; `src/CyclingVision.tsx`
-  sequences them with `<Series>`.
+> The corridor is a mothballed, Network Rail-protected railway with a history of heritage-railway proposals. Nothing
+> here is an engineering design, a route approval, a planning application or a statement about land ownership.
+> Every proposed or approximate feature carries an on-screen label saying so, and the terrain and features come from
+> open lidar, OpenStreetMap and satellite data, not from survey. `docs/research.md` sets out what is verified, what is
+> proposed and what is unknown.
 
-## 3D work (in progress)
+| | |
+|---|---|
+| ![The mothballed railway today](docs/images/film-then-railway.jpg) | ![The same place as a shared path](docs/images/film-now-path.jpg) |
+| ![Children riding to school](docs/images/film-school.jpg) | ![A bench above the lake](docs/images/film-bench-lake.jpg) |
+| ![The bus stop at the station](docs/images/film-bus-stop.jpg) | ![The rider's own view](docs/images/film-ride.jpg) |
 
-A Three.js upgrade is being added alongside the 2D video, not in place of
-it. Start with `docs/sop-3d.md` (how to run and change it), then
-`docs/adr/README.md` (one record per decision), `docs/spec-3d.md`
-(requirements and acceptance criteria) and `docs/design-3d.md` (modules and
-interfaces). The full brief is `docs/mission-3d-brief.md`.
+*Frames from the three-minute community film (Blender, EEVEE). The railway "today" is illustrative: track on the mapped
+line, not a survey of its condition.*
 
-The first 3D piece is a 12 s proof of concept on the Maentwrog Road section,
-composition `Poc3DMaentwrog`: `npm run render:poc` writes
-`out/poc-maentwrog.mp4`. Always render 3D with `--gl=angle` (the npm scripts
-do); see `docs/sop-3d.md`. `render:poc` and `render:reel` also encode on the GPU (VideoToolbox)
-where it exists, in software elsewhere, at 10 Mbit/s; the 2D video keeps software encoding so its
-md5 baseline holds (ADR 53).
+## What is here
 
-The reel, composition `Reel3D`, is the 1:30 concept film: 2,700 frames at 30 fps, 1920 × 1080,
-nine sections from Blaenau Ffestiniog to Trawsfynydd, each built by one assembly from its
-`SectionConfig` in `src/three-core/sections.ts` on a lidar window under
-`public/data/sections/<window>/` (the four aerial sections share `corridor`), built by
-`npm run data:section -- <window>`, with its register `data/features-<window>.json`. The ground
-windows' buildings come from OSM footprints with lidar heights: run
-`npm run data:candidates -- --section <window>`, then `python3 scripts/build_buildings.py --section <window>`,
-then both again, so every footprint is tested at its measured height (`docs/sop-3d.md`). `npm run render:reel`
-writes `out/reel.mp4`; `npm run still:reel -- --frame=<n>` renders one frame; every section is
-also registered as `Section-<id>` for stills. Captions are data in `src/data/reel-captions.ts`
-and the frame budget in `src/data/reel-timeline.ts`.
+| Piece | What it is | Where |
+|---|---|---|
+| `CyclingVision` | The original 2D route video: a stylised map journey over an OpenTopoMap basemap with the elevation profile and captions | `src/CyclingVision.tsx`, `src/scenes/`, `src/components/` |
+| `Reel3D` and `Section-<id>` | A 1:30 Three.js reel of nine sections on real lidar terrain, with trees sized from the canopy model, OSM walls and buildings, and a Sentinel-2 image on the aerials | `src/three-core/`, `src/three/`, `src/data/reel-*.ts` |
+| The community film | A three-minute Blender film of the route in use (school run, families, neighbours, the station, a place to rest, the ride), with a soundtrack and Welsh-over-English captions | `src/data/community-film.ts`, `scripts/blender/`, `scripts/film/` |
+| The social cuts | Five short vertical, square and landscape cuts of the film with SRT subtitles and post text | `src/social/`, `src/data/social-cuts.ts`, `scripts/social/` |
+| The data pipeline | Fetches and processes the open data: lidar DTM and DSM, OSM, OS OpenMap Local buildings, Sentinel-2, DataMapWales records | `scripts/*.py`, `scripts/dem/`, `scripts/osm/`, outputs in `data/` and `public/data/` |
+| Documentation | Research, storyboard, specification, design, 63 architecture decision records, validation logs | `docs/`, index of decisions in `docs/adr/README.md` |
 
-**Photoreal prototype (2026-10-29, ADRs 54–59) and the reel in its look (ADR 60).** `Poc3DMaentwrogPhoto` is a 20 s proof of a more lifelike look on
-the Maentwrog window: an aerial establishing shot, the rider's own view at handlebar height, and a follow shot across
-the OSM bridge. It is the same scene and data with a `look: "photo"` layer: detail-textured terrain by land cover and
-slope, a gravel trail, stone bridge, card trees sized from the lidar canopy (`npm run data:canopy -- <window>`),
-OSM drystone walls and fences (`npm run data:barriers -- <window>`), grass, three walkers sharing the path in the
-rider's view (ADR 59, conceptual), a cloud sky that lights the scene, and a post pass (ambient occlusion, AgX tone
-mapping). `npm run render:photo` writes `out/poc-maentwrog-photo.mp4`;
-`npm run still:photo -- --frame=<n>` one frame. Since 2026-10-30 the reel is drawn in this look too (ADR 60): every
-ground section with its own lidar trees, walls, grass, and walkers, runners and people pushing prams placed by a
-seeded draw (ADR 61), and the aerial sections over the corridor's OSM
-cover and lidar canopy, coloured by a Sentinel-2 image (`python3 scripts/build_imagery.py --section corridor`; the
-attribution carries the Copernicus notice). `--props='{"look":"concept"}'` renders the first look, unchanged. How it
-was chosen, what it costs and what is still generic: `docs/research-photoreal.md`, `docs/design-photoreal.md`,
-`docs/sop-3d.md`. A native Blender build of the film is planned and specified, not built: `docs/blender-build-plan.md` (phases and
-readiness checklist), `docs/design-blender.md` (the export package, coordinate mapping, Blender 5.2 import recipes and
-render preset) and `docs/research-blender.md` (the verified research; ADR 62).
+## Requirements
 
-Checks:
-- **CI** (`.github/workflows/ci.yml`) runs `npm run lint`, `npm test` (unit, static, docs
-  and real-data acceptance tests), the dependency audit, the Python pipeline's self-test and
-  compile check, and the build.
-- **Locally, before merging any change that can affect rendering:** `npm run test:render`.
-  It runs the 2D regression and the full 2D md5, the POC and reel checks (a full reel render,
-  blank-frame scan, determinism, load per scene and before each cut, caption visibility),
-  fresh-process stills per section and at every cut, the overlay safe-area and missing-tile
-  checks, and the before/after still metrics (water, trees, trail, one look) against
-  `out/before-masks/`. When the code has changed it re-renders the measurement stills with
-  `node scripts/stills.mjs out/after` (139 stills). It needs Python with numpy and Pillow, and
-  ffmpeg; it writes one preview still per scene to `out/previews/` and appends its results to
-  `docs/validation-3d.md`.
+| Need | For |
+|---|---|
+| Node.js 24 (20.19 or 22.13 also work) and npm | Everything: `npm ci` installs the pinned dependencies without running install scripts |
+| Python 3.12 or later with `numpy` and `pillow` (`scipy` for the soundtrack scripts) | The data pipeline, the pipeline self-tests in `npm test`, the still metrics and the audio |
+| ffmpeg and ffprobe on `PATH` | Encoding the film and the checks on rendered video |
+| A GPU | The 3D renders and render checks run on the CPU but take far longer |
+| Blender 5.2 with the MPFB 2.0.18 add-on, and about 800 MB of CC0 assets fetched by `npm run blender:assets` | The community film and the social cuts only |
 
-Results, reviews and benchmarks are logged in `docs/validation-3d.md`, and the output of full
-test runs is kept in `docs/evidence/`. The trail is a concept, not an approved route, and the
-3D terrain and features are DEM- and OSM-derived, not survey-grade (`data/source-register.md`).
+Nothing needs an account, a key or a private service. The pipeline reads public endpoints (DataMapWales, the
+OpenStreetMap API, the OS Downloads API, AWS open data) with an identifying User-Agent; the processed results are
+already in the repository, so the videos render without re-fetching anything.
 
-## Previewing and editing this video
+## Quick start
 
 ```console
+npm ci
 npm run dev
 ```
 
-Then open the **CyclingVision** composition in Remotion Studio. The 3D compositions are
-there too: `Poc3DMaentwrog`, `Reel3D`, `Section-intro` … `Section-closing` and
-`Poc3DMaentwrogPhoto`. Scene timing lives in one place,
-`src/data/timeline.ts`, so re-pacing the cut doesn't mean hunting through
-every scene file.
+Remotion Studio opens with the compositions `CyclingVision`, `Reel3D`, `Section-intro` … `Section-closing`,
+`Poc3DMaentwrog` and `Poc3DMaentwrogPhoto`. Then:
 
-## Rendering
+| Task | Command |
+|---|---|
+| Lint and type-check | `npm run lint` |
+| Tests (unit, static, documentation and real-data acceptance) | `npm test` |
+| Render checks before changing anything that affects pixels (10–30 min, GPU, ffmpeg) | `npm run test:render` |
+| Render the 2D video | `npx remotion render src/index.ts CyclingVision out/trawsfynydd-cycle-vision.mp4` |
+| Render the 3D reel | `npm run render:reel` (passes `--gl=angle`; never set the GL renderer in `remotion.config.ts`) |
+| One frame of the reel | `npm run still:reel -- --frame=<n>` |
+| Rebuild one section's data from the open sources | `npm run data:section -- <window>` then `npm run data:sync` |
+| The community film | `npm run blender:assets`, `npm run blender:export -- community`, `npm run blender:reel -- --dressed --film community --samples 32`, then render with `scripts/blender/render_film.py` and `npm run film:audio` and `npm run film:encode` |
+| The social cuts | `npm run social:plates`, `npm run social:audio`, `npm run social:render`, `npm run social:qa` |
 
-```console
-npx remotion render src/index.ts CyclingVision out/trawsfynydd-cycle-vision.mp4
-```
+The step-by-step operating procedure, with what each check proves, is `docs/sop-3d.md`; the Blender pipeline is
+`docs/design-blender.md`; the film's direction, grade and shot list are `docs/film-enhancement-2026-11.md`.
 
-1920×1080 at 30fps by default (per `src/Root.tsx`); pass `--width`/`--height`
-to render at a different resolution (e.g. 4K) for the same composition.
+## Honesty rules the code enforces
 
-## Current state / what's not done yet
+- The route is drawn from OpenStreetMap's mapped alignment and the terrain from 1 m lidar; neither is survey-grade.
+- Proposed features (the path, benches, lockers, signs) are labelled "proposed" and "concept only" on screen; the
+  existing station, bus stop and buildings are labelled "existing". A test fails if a labelled feature loses its label.
+- Captions are Welsh first, then English, with miles and mph on screen.
+- 3D renders are deterministic: no clocks, timers or unseeded randomness (a static test checks the source).
+- `data/source-register.md` records where every figure came from and what is still unverified.
 
-The video now renders over a real OpenTopoMap basemap (see
-`data/source-register.md` for the tile pipeline and required attribution,
-which is already burned into every scene). Still not done: a stylised
-"designed" landscape look beyond the real map tiles (brief wanted an
-original stylised environment, not just a real map); the visual-reference
-catalogue (brief deliverable #3); narration/audio; and the cyclist icon is a
-simple line-art placeholder. See `docs/research.md` §8 (Limitations) for the
-data-side gaps.
+## Data and licences
 
----
+The code, the documentation and the project's own renders are under the MIT licence in `LICENSE` (frames of the 2D
+video include OpenTopoMap tiles, so shared renders of it carry the tiles' CC BY-SA terms as well). The open data and
+assets the repository redistributes stay under their own licences, listed with their required attributions in
+[`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md): OpenStreetMap (ODbL), OpenTopoMap tiles (CC BY-SA), Welsh
+Government and Natural Resources Wales lidar, OS OpenMap Local and DataMapWales records (Open Government Licence
+v3.0), Copernicus Sentinel-2 (Sentinel data legal notice), Open-Meteo elevations (CC BY 4.0), Poly Haven and MakeHuman
+assets (CC0), the Inter font (OFL). Remotion itself is source-available and needs a company licence above three
+employees; see its [terms](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+## Contributing and security
 
-Welcome to your Remotion project!
-
-## Commands
-
-**Install Dependencies**
-
-```console
-npm i --loglevel=error
-```
-
-**Start Preview**
-
-```console
-npm run dev
-```
-
-**Render video**
-
-```console
-npx remotion render
-```
-
-**Upgrade Remotion**
-
-```console
-npx remotion upgrade
-```
-
-## Docs
-
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
-
-## Help
-
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+Contributions are welcome: see [`CONTRIBUTING.md`](CONTRIBUTING.md). Please report security problems privately as
+described in [`SECURITY.md`](SECURITY.md). Guidance for AI coding agents is in [`AGENTS.md`](AGENTS.md).

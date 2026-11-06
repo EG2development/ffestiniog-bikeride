@@ -267,7 +267,7 @@ def main(section, reuse_osm=False):
         "cols": cols, "rows": rows, "spacingM": S["spacing"], "pixelSizeM": [px, py], "originE": origin_e, "originN": origin_n,
         "crs": "EPSG:27700", "nodata": cog.nodata, "fallbackCells": int(source.sum()), "file": "dem.f32", "sourceFile": "dem-source.u8",
         "source": f"Welsh Government / NRW lidar DTM, 1 m, 32-bit COG ({S['spacing']} m overview level)", "url": LIDAR_URL,
-        "licence": "Open Government Licence (to confirm on the layer's metadata page; one catalogue lists 'Not Specified')",
+        "licence": "Open Government Licence v3.0 (confirmed 2026-10-30 on the DataMapWales LiDAR viewer; data/source-register.md)",
         "fill": {"nodataBefore": before, "waterShoreHeight": int(water_filled.sum()), "neighbourMean": int(other_filled.sum()),
                  "note": "filled cells have sourceIndex 1 and are approximate (ADR 32)"},
         "section": section, "kmRange": [s0 / 1000, s1 / 1000], "retrieved": TODAY, "heightsMin": float(grid.min()), "heightsMax": float(grid.max()),
