@@ -1,6 +1,8 @@
 # Dependabot version updates (security updates are a repository setting, not configured here).
 # Schema: https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference
 # Minor and patch npm updates arrive as one weekly pull request after a seven-day cooldown; majors come singly.
+# The rendering stack that ADR 22 pins exactly (three, fiber, Remotion) arrives as its own pull request, because
+# the static test enforces the pins and an upgrade is a deliberate decision with a render-baseline check.
 # There is no Python manifest: the two pipeline packages are installed by version in .github/workflows/ci.yml.
 version: 2
 updates:
@@ -12,9 +14,13 @@ updates:
     cooldown:
       default-days: 7
     groups:
+      rendering-stack:
+        applies-to: version-updates
+        patterns: ["three", "@types/three", "@react-three/*", "remotion", "@remotion/*"]
       npm-minor-and-patch:
         applies-to: version-updates
         update-types: ["minor", "patch"]
+        exclude-patterns: ["three", "@types/three", "@react-three/*", "remotion", "@remotion/*"]
     open-pull-requests-limit: 5
     commit-message:
       prefix: "chore(deps)"
