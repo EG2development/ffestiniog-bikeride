@@ -26,7 +26,10 @@ describe("cyclistParts (RL16, C1)", () => {
     expect(length).toBeLessThanOrEqual(1.9);
     const tyres = parts.filter((p) => p.material === "tyre");
     expect(tyres.length).toBe(2);
-    for (const t of tyres) expect((t.r * 2 * 10) / 1).toBeGreaterThanOrEqual(0.62), expect(t.r * 2 * 10).toBeLessThanOrEqual(0.72);
+    for (const t of tyres) {
+      expect(t.r * 2 * 10).toBeGreaterThanOrEqual(0.62);
+      expect(t.r * 2 * 10).toBeLessThanOrEqual(0.72);
+    }
   });
 
   it("keeps each leg's thigh and shin at their lengths for every crank angle (feet on the pedals)", async () => {

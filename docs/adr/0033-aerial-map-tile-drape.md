@@ -28,4 +28,6 @@ RL6 (amended), RL22 (R); `tests/three-core/tileUv.test.ts` (design D29).
 
 ## Relations
 
+Amended by: [46. Clarity tuned as data, from one source, against metrics](0046-clarity-tuned-as-data.md), [60. The reel in the photo look: every scene, its aerials coloured by a satellite image](0060-reel-in-the-photo-look.md)
+
 Related to: [10. Colour the terrain from OSM land cover as vertex colours](0010-landcover-vertex-colours.md), [4. Pass data into the canvas as props, not context](0004-props-into-canvas.md)

@@ -30,7 +30,7 @@ export const CYCLES: Record<CycleKind, CycleType> = {
 };
 
 /** A passenger's standing height, metres: a toddler to an infant-school child. */
-export const PASSENGER_HEIGHT_M: [number, number] = [0.85, 1.3];
+const PASSENGER_HEIGHT_M: [number, number] = [0.85, 1.3];
 
 /** The cycle's pace factor for a person (1 for anyone not riding one of these). */
 export const cyclePace = (spec: WalkerSpec): number => (spec.cycle ? CYCLES[spec.cycle].pace : 1);

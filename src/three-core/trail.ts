@@ -51,7 +51,7 @@ function bracket(xs: ArrayLike<number>, v: number): number {
   return lo;
 }
 
-export function profileHeightAt(profile: TrailProfile, d: number): number {
+function profileHeightAt(profile: TrailProfile, d: number): number {
   const ds = profile.distanceM;
   if (d <= ds[0]) return profile.elevationM[0];
   if (d >= ds[ds.length - 1]) return profile.elevationM[ds.length - 1];

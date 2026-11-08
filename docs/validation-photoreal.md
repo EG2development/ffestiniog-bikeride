@@ -1,4 +1,4 @@
-# Validation log: the photoreal layer (ADRs 54–60)
+# Validation log: the photoreal layer (ADRs 54–61, 63)
 
 The photoreal prototype's records (`Poc3DMaentwrogPhoto`; `docs/design-photoreal.md`, `docs/research-photoreal.md`), kept
 apart from `docs/validation-3d.md` as the POC and reel records are (`docs/validation-poc.md`, `docs/validation-reel.md`).

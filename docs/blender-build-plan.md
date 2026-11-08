@@ -1,7 +1,7 @@
 # Blender build plan: Blaenau Ffestiniog – Llan Ffestiniog – Trawsfynydd community reel
 
-Created: 2026-10-29. Updated: 2026-10-30 (research for the build). Status: proposed implementation plan, ready to
-start; no Blender scenes or scripts have been built yet. The verified research is [research-blender.md](research-blender.md),
+Created: 2026-10-29. Updated: 2026-10-30 (research for the build). Status: implemented
+(2026-10-31 to 2026-11-06; the as-built record is [design-blender.md](design-blender.md) §5 and [film-enhancement-2026-11.md](film-enhancement-2026-11.md)). The verified research is [research-blender.md](research-blender.md),
 the build specification (interchange package, coordinate mapping, Blender 5.2 import recipes, render preset, checks) is
 [design-blender.md](design-blender.md), and the decision is [ADR 62](adr/0062-blender-pipeline.md). Section 9 is the
 readiness checklist.
@@ -116,7 +116,7 @@ Map source frame `f` to Blender frame `f + 1`. Use one camera per shot and camer
 ### Phase 1 — Freeze the reference and prepare Blender
 
 1. Record the current source files, data hashes, baseline frames, timeline and known geographic limitations. Include uncommitted inputs in the manifest; HEAD alone does not identify this working tree.
-2. Install and pin **Blender 5.2.3 LTS** (22 Oct 2026; 5.2 is supported through July 2028): the DMG `blender-5.2.3-macos-arm64.dmg` checked against its published sha256, or Homebrew `blender@lts` (the plain `blender` cask moves to 5.3 in November). Record it in `config/blender/toolchain.json`, with `bpy==5.2.3` (Blender as a Python module, arm64 Python 3.13) for headless tests. Select the GPU in the script (`compute_device_type = 'METAL'`, `refresh_devices()`; `--factory-startup` ignores saved preferences) and confirm MetalRT is in use. Test EEVEE with `blender -b` outside a login session. **Free disk first**: about 5 GB is free; plan an external volume for `out/blender/` or section-by-section encoding. [Official release announcement](https://www.blender.org/press/blender-5-2-lts-release/); details in [research §2](research-blender.md#2-platform-blender-on-the-m4-pro).
+2. Install and pin **Blender 5.2.3 LTS** (22 Oct 2026; 5.2 is supported through July 2028): the DMG `blender-5.2.3-macos-arm64.dmg` checked against its published sha256, or Homebrew `blender@lts` (the plain `blender` cask moves to 5.3 in November). Record it in the build scripts (as built, `build_reel.py` checks `bpy.app.version`), with `bpy==5.2.3` (Blender as a Python module, arm64 Python 3.13) for headless tests. Select the GPU in the script (`compute_device_type = 'METAL'`, `refresh_devices()`; `--factory-startup` ignores saved preferences) and confirm MetalRT is in use. Test EEVEE with `blender -b` outside a login session. **Free disk first**: about 5 GB is free; plan an external volume for `out/blender/` or section-by-section encoding. [Official release announcement](https://www.blender.org/press/blender-5-2-lts-release/); details in [research §2](research-blender.md#2-platform-blender-on-the-m4-pro).
 3. Set Metric units, 30 fps, square pixels and 1920 × 1080. Create shared render presets and the section collection structure: `Terrain`, `ExistingFeatures`, `ProposedTrail`, `Vegetation`, `People` (with `Cyclists` and `Pedestrians`), `Dogs`, `CommunityAmenities`, `ActivityAreas`, `Cameras`, `Lighting`, `Reference`.
 4. Save comparison frames from the existing prototype at 0, 119, 120, 200, 359, 360, 400 and 599. These cover both shot boundaries and the rider/bridge views.
 5. Build a rough community animatic using existing renders, the section 8 storyboard and placeholder narration. Map every community requirement to a shot, asset or supporting concept view before detailed art work.
@@ -358,7 +358,7 @@ This is the proposed community edit; the section 4 table preserves the existing 
 | 78–84 s | 2340–2519 | Simple choices/next-steps graphic | Explore access, railway options, nature and long-term care together |
 | 84–90 s | 2520–2699 | Community invitation, readable short URL and QR | Where would you join? What matters most? |
 
-The community master remains 2,700 frames at 30 fps. Keep the concept badge and appropriate attribution. Use narration for explanation and short captions for the key message. Provide accurate speech subtitles, a transcript, good contrast, sufficient reading time and a sound-off check. Welsh narration with English subtitles is a proposed master; an English-narrated version can serve additional audiences. Use actual consented resident voices when available, and identify scripted placeholders during development. Draft translations require fluent local review.
+The community master was planned at 2,700 frames at 30 fps and grew to 5,400 (three minutes) in the build. Keep the concept badge and appropriate attribution. Use narration for explanation and short captions for the key message. Provide accurate speech subtitles, a transcript, good contrast, sufficient reading time and a sound-off check. Welsh narration with English subtitles is a proposed master; an English-narrated version can serve additional audiences. Use actual consented resident voices when available, and identify scripted placeholders during development. Draft translations require fluent local review.
 
 ### Landscape, access and credibility checks
 
@@ -407,13 +407,13 @@ Go/no-go before phase 2. Each line is a check on this machine, not a document.
 | # | Item | Done when |
 |---|---|---|
 | 1 | Disk | at least 20 GB free for the pilot (Blender, caches, exports, frames, encodes), or `out/blender/` on an external volume; the render script refuses to start below its estimate |
-| 2 | Blender | 5.2.3 installed from the checksum-verified DMG or `blender@lts`; `blender --version` recorded in `config/blender/toolchain.json` |
+| 2 | Blender | 5.2.3 installed from the checksum-verified DMG or `blender@lts`; `blender --version` recorded by the build scripts (`bpy.app.version_string` in their reports) |
 | 3 | GPU | a 16-sample Cycles still renders on METAL with MetalRT and the GPU denoiser, from a `--factory-startup` script |
 | 4 | Headless tests | `bpy==5.2.3` in an arm64 Python 3.13 environment runs an empty pytest suite under `tests/blender/` |
 | 5 | EEVEE | `blender -b` renders an EEVEE frame outside a login session, or previews fall back to Cycles at low samples |
 | 6 | Benchmark | 10–20 frames of a plain Maentwrog blockout at the draft preset, after a warm-up: seconds per frame, peak memory, bytes per frame |
 | 7 | Assets | the shortlist's licences re-opened and copied into `data/assets-3d.json` entries before download; the unverified ones (Fab EULA, Mixamo, Rokoko, ActorCore) left out until verified |
-| 8 | Exporter | `src/blender/export.ts` writes the Maentwrog package; its hashes and the design §6 transfer and camera checks pass |
+| 8 | Exporter | `scripts/blender/export-section.ts` writes the Maentwrog package; its hashes and the design §6 transfer and camera checks pass |
 | 9 | Owner decisions | paid assets (if any), an external disk, and whether captions are composited from Remotion or rebuilt in the Video Sequencer |
 
 ## Planning record

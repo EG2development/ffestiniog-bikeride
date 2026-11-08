@@ -142,6 +142,3 @@ export function placePeople(inp: PeopleInputs, opts: PeopleOptions): WalkerSpec[
   }
   return placed.map((p) => p.spec);
 }
-
-/** The minimum gaps the placer keeps, for the checks (ADR 61). */
-export const PEOPLE_RULES = { span: SPAN, half: HALF, rider: RIDER, clear: CLEAR, cameraM: CAMERA_M, seenM: SEEN_M } as const;

@@ -20,15 +20,16 @@ with dates and request details, is in `data/source-register.md`; the 3D asset re
 | Photograph references (links, photographers, licences and thumbnail URLs only; no images are copied) | `data/photo-references.json` | Wikimedia Commons and Geograph APIs | Per photograph, recorded in the file (mostly CC BY-SA 2.0) | Credit the photographer and keep the licence if any image is ever reproduced |
 | Landmark notes (paraphrased, nothing reproduced) | `data/landmarks.json` | Coflein (RCAHMW), Gwynedd Council planning pages, gov.uk | Coflein text is under the Non-Commercial Government Licence; gov.uk under OGL v3. Used as evidence only. | None for paraphrase; do not reproduce Coflein text in a commercial context |
 
-## Assets fetched at build time (not in the repository)
+## Assets fetched or generated at build time (not in the repository)
 
-| Asset | Fetched to | Source | Licence |
+| Asset | Fetched or generated to | Source | Licence |
 |---|---|---|---|
 | Poly Haven 2K textures, three models and the sky `kloofendal_48d_partly_cloudy_puresky` | `out/blender/vendor/polyhaven/` by `npm run blender:assets` (`scripts/blender/fetch-assets.mjs`) | [Poly Haven](https://polyhaven.com) | [CC0 1.0](https://polyhaven.com/license) |
 | MakeHuman system assets (skins, hair, eyebrows, clothes, shoes) for the cast | `out/blender/vendor/mpfb/` by the same script | [MakeHuman community](https://www.makehumancommunity.org) | CC0 1.0 (the `makehuman_system_assets_cc0` pack) |
 | MPFB add-on 2.0.18 (the MakeHuman plug-in for Blender) | Installed in Blender by the user | [extensions.blender.org](https://extensions.blender.org/add-ons/mpfb/) | GPL-3.0-or-later (not redistributed here) |
 | Inter font, used for captions and signs | Blender's own `datafiles/fonts/Inter.woff2` | [Inter](https://rsms.me/inter/) | SIL Open Font Licence 1.1 |
 | Leaflet 1.9.4 for `public/maps/route-preview.html` | Loaded from unpkg in the browser; live tiles from `tile.openstreetmap.org` | [Leaflet](https://leafletjs.com) | BSD-2-Clause; tiles ODbL with "© OpenStreetMap contributors" shown on the page |
+| Music, birdsong and tyre ambience | Generated into `out/` by `scripts/film/make_audio.py` and `scripts/social/make_audio.py` | Synthesised by the scripts; no samples | The repository licence |
 
 ## Assets tracked in this repository
 
@@ -36,7 +37,6 @@ with dates and request details, is in `data/source-register.md`; the 3D asset re
 |---|---|---|---|
 | Eight Poly Haven texture sets (1K diffuse and normal maps) | `public/3d/textures/**` (sha256 in `data/assets-3d.json`) | Poly Haven | CC0 1.0 |
 | The procedural cyclist, the terrain, trail, bridge, tree, wall, people and sky code | `src/`, `scripts/blender/` | This project | The repository licence (`LICENSE`) |
-| Music, birdsong and tyre ambience | Generated into `out/` by `scripts/film/make_audio.py` and `scripts/social/make_audio.py` | Synthesised by the scripts; no samples | The repository licence |
 | Renders and evidence stills | `docs/images/*.jpg`, `docs/evidence/photo/*.jpg` | This project | The repository licence for the Blender film frames in `docs/images/`; the concept-look stills in `docs/evidence/photo/` include OpenTopoMap tiles and are CC BY-SA |
 
 ## Dependencies

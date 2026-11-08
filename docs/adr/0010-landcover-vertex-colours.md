@@ -28,4 +28,6 @@ H1, RN6 (see docs/spec-3d.md). Design reference: D8 in docs/design-3d.md.
 
 ## Relations
 
+Amended by: [31. Terrain relief shading without textures](0031-terrain-shading-without-textures.md)
+
 Related to: [11. Place trees by seeded random inside OSM woodland](0011-seeded-trees-in-woodland.md)

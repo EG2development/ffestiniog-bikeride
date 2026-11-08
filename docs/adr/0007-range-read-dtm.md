@@ -28,4 +28,6 @@ G2(b); a unit test that parses the cached header bytes (see docs/spec-3d.md). De
 
 ## Relations
 
+Amended by: [29. Terrain data in a window per section, plus a coarse corridor window](0029-terrain-windows-per-section.md)
+
 Related to: [6. Use the Welsh lidar DTM for terrain](0006-welsh-lidar-dtm.md)

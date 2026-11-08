@@ -71,7 +71,7 @@ function tiles(full: THREE.BufferGeometry): THREE.BufferGeometry[] {
 }
 
 /** One-hot splat weights per DEM node from the legend: grass is the rest (farmland, "other", built-up, water). */
-export function splatWeights(land: LandCover): Float32Array {
+function splatWeights(land: LandCover): Float32Array {
   const perClass = land.legend.map((name) => WEIGHT_OF.find(([re]) => re.test(name.toLowerCase()))?.[1] ?? 0);
   const out = new Float32Array(land.classes.length * 4);
   for (let i = 0; i < land.classes.length; i++) out[4 * i + perClass[land.classes[i]]] = 1;

@@ -1,6 +1,7 @@
 // Buildings as merged geometry and landmarks as procedural parts (docs/adr/0050-merged-buildings-and-procedural-landmarks.md;
 // spec BL5, BL7–BL10, BL14). Pure: arrays only, in world units (10 m); the view turns them into meshes.
 import type { HeightAt } from "./camera";
+import { inRingXZ as inRing } from "./plane";
 import type { SectionBuilding } from "./registers";
 import type { Vec3 } from "./types";
 
@@ -35,16 +36,6 @@ function withoutCollinear(r: XZ[]): XZ[] {
     return Math.abs(cross) > 1e-3 * Math.hypot(b.x - a.x, b.z - a.z) ** 2;
   });
   return out.length >= 3 ? out : r;
-}
-
-function inRing(x: number, z: number, ring: XZ[]): boolean {
-  let inside = false;
-  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-    const a = ring[i];
-    const b = ring[j];
-    if (a.z > z !== b.z > z && x < ((b.x - a.x) * (z - a.z)) / (b.z - a.z) + a.x) inside = !inside;
-  }
-  return inside;
 }
 
 /** Ear clipping of a simple anticlockwise ring; returns index triples. */

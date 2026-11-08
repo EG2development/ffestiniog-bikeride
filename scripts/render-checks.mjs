@@ -51,6 +51,7 @@ const check = async (id, fn) => {
     const stderr = e.stderr ? String(e.stderr) : "";
     const lines = stderr
       .split("\n")
+      // eslint-disable-next-line no-control-regex -- strips the ANSI colour codes from Remotion's stderr
       .map((l) => l.replace(/\x1b\[[0-9;]*m/g, "").trim())
       .filter((l) => l !== "" && !l.startsWith("[chrome]"));
     const cause = lines.find((l) => /Error:/.test(l)) ?? lines.find((l) => /error|could not|not found|exception/i.test(l));

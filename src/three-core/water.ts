@@ -1,5 +1,6 @@
 // Iteration 2: holes and upward faces (docs/adr/0041-water-polygons-with-holes.md); one level per water body (docs/adr/0042-one-level-per-water-body.md).
 import type { HeightAt } from "./camera";
+import { inRingXY } from "./plane";
 import type { OsmLine } from "./registers";
 import type { Projector } from "./types";
 
@@ -19,15 +20,7 @@ const signedArea = (r: LonLat[]) => r.reduce((a, p, i) => a + p[0] * r[(i + 1) %
 const dedupe = (r: LonLat[]): LonLat[] => (r.length > 1 && r[0][0] === r[r.length - 1][0] && r[0][1] === r[r.length - 1][1] ? r.slice(0, -1) : r.slice());
 const oriented = (r: LonLat[], anticlockwise: boolean) => ((signedArea(r) > 0) === anticlockwise ? r : [...r].reverse());
 
-function inRing([x, y]: LonLat, ring: LonLat[]): boolean {
-  let inside = false;
-  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-    const [xi, yi] = ring[i];
-    const [xj, yj] = ring[j];
-    if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
-  }
-  return inside;
-}
+const inRing = (p: LonLat, ring: LonLat[]) => inRingXY(p[0], p[1], ring);
 
 /** One normaliser for polygons with holes, mirrored by the pipeline's polygon_rings: outer + holes per part, from the
  * geometry's own holes and from `innerRings`, each given to the part that holds most of its vertices; outer rings

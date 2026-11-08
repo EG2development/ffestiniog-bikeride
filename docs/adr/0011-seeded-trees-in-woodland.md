@@ -27,4 +27,6 @@ RN1, RN2, H1 (see docs/spec-3d.md). Design reference: D9 in docs/design-3d.md.
 
 ## Relations
 
+Amended by: [37. Vegetation in a near zone with a density band](0037-vegetation-near-zone.md), [57. Tree heights and field trees from the lidar canopy, when a section asks](0057-canopy-heights-from-lidar.md)
+
 Related to: [10. Colour the terrain from OSM land cover](0010-landcover-vertex-colours.md)

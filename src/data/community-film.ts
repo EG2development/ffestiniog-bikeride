@@ -1,7 +1,7 @@
 // The community film (180 s at 30 fps): its scenes in order and its captions, as data (ADR 36). Its scenes are
 // src/three-core/community.ts's configs; the Blender build assembles them as it does the reel (npm run blender:reel --
 // --film community). Every caption is bilingual, Welsh first (review 2026-11-04): short, the English in British English,
-// distances in miles (milltir) and speeds in mph (mya, units.ts), and the closing line is the brief's. Every proposal is labelled by its scene's legend; the concept badge and the sources run throughout.
+// distances in miles (milltir) and speeds in mph (mya), and the closing line is the brief's. Every proposal is labelled by its scene's legend; the concept badge and the sources run throughout.
 import type { Caption } from "./reel-captions";
 import type { ReelScene } from "./reel-timeline";
 import { miles } from "./units";

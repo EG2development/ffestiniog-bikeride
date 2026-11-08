@@ -6,6 +6,7 @@
 import type { HeightAt } from "./camera";
 import { waterwayLines, type WaterwayKind } from "./osmExtras";
 import type { OsmLine } from "./registers";
+import { inRingXZ } from "./plane";
 import { roadWidthM, type RoadLine } from "./roads";
 import { centrelineIndex, TRAIL_WIDTH_M, type Trail } from "./trail";
 import type { Projector } from "./types";
@@ -29,14 +30,7 @@ export type Channel = { id: string; kind: WaterwayKind; name?: string; widthM: n
 
 type XZ = { x: number; z: number };
 
-function inRing(p: XZ, ring: XZ[]): boolean {
-  let inside = false;
-  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-    const [a, b] = [ring[i], ring[j]];
-    if (a.z > p.z !== b.z > p.z && p.x < ((b.x - a.x) * (p.z - a.z)) / (b.z - a.z) + a.x) inside = !inside;
-  }
-  return inside;
-}
+const inRing = (p: XZ, ring: XZ[]) => inRingXZ(p.x, p.z, ring);
 
 const segDistance = (p: XZ, a: XZ, b: XZ) => {
   const [vx, vz] = [b.x - a.x, b.z - a.z];

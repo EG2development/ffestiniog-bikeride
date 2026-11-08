@@ -6,7 +6,7 @@ Status: written 2026-10-25 for mission `msn_33e838999675db739df3c922`, task t3.
 |---|---|
 | Spec rows WA1–WA7, RD1–RD7, CL1–CL14, BL1–BL18, X1–X5 | `docs/spec-3d.md`, "Specification extension: water, readiness, clarity and buildings" |
 | Findings with file:line | `docs/prior-art-3d.md`, "Prior art for the water, readiness, clarity and buildings iteration" |
-| The goal, in full | ruflo memory `ffestiniog-bikeride/3d-reel-v2/goal-full` |
+| The goal, in full | ruflo memory `ffestiniog-bikeride/3d-reel-v2/goal-full` (local tooling, not in the repository) |
 
 This file holds the design because `docs/design-3d.md` is close to the 500-line limit.
 `docs/design-3d.md` stays the binding record. When code lands (t7), its pure-core interface

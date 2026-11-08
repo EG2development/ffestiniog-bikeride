@@ -28,6 +28,8 @@ G4, TR2 (see docs/spec-3d.md). Design reference: D7 in docs/design-3d.md.
 
 ## Relations
 
+Amended by: [23. Remove road-bridge decks from the trail profile](0023-remove-road-decks-from-profile.md)
+
 Related to: [6. Use the Welsh lidar DTM for terrain](0006-welsh-lidar-dtm.md)
 Related to: [8. Convert WGS84 and British National Grid with the OS Helmert transform](0008-helmert-datum.md)
 Related to: [12. Model only structures that have a cited source](0012-sourced-structures-only.md)

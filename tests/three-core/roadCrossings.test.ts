@@ -10,8 +10,8 @@ const project = (lon: number, lat: number) => ({ x: lon * 1000, y: lat * 1000 })
 const trailAt = (x: number, z: number): TrailFoot | null => (Math.abs(z) < 2 ? { lateral: Math.abs(z), distM: x * 10, level: 18 } : null);
 const TRAIL = 18;
 // a road crossing the trail square at x = 5 (50 m), its own ground `h` everywhere
-const crossing = (h: number): RoadLine => ({ coords: [[0.005, -0.004], [0.005, 0.004]], highway: "unclassified" });
-const lay = (h: number) => layRoads([crossing(h)], project, () => h, { ve: 1 });
+const crossing: RoadLine = { coords: [[0.005, -0.004], [0.005, 0.004]], highway: "unclassified" };
+const lay = (h: number) => layRoads([crossing], project, () => h, { ve: 1 });
 const at = (stations: { z: number; y: number }[], z: number) => stations.reduce((a, b) => (Math.abs(b.z - z) < Math.abs(a.z - z) ? b : a));
 
 describe("meetTrail", () => {

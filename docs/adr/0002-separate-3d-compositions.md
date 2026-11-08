@@ -28,5 +28,7 @@ RG1, RG2 (see docs/spec-3d.md). Design reference: D1 in docs/design-3d.md.
 
 ## Relations
 
+Amended by: [24. Load 3D compositions lazily](0024-lazy-3d-compositions.md), [27. Build every section from one config and one assembly](0027-section-config.md), [28. One master composition with hard cuts and premount](0028-reel-master-composition.md)
+
 Related to: [1. Use @remotion/three's ThreeCanvas for 3D, alongside the 2D video](0001-use-remotion-three-threecanvas.md)
 Related to: [3. Keep the 3D maths in a pure, React-free core](0003-pure-core-thin-views.md)

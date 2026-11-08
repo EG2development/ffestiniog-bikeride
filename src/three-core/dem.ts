@@ -3,40 +3,33 @@ import type { DemGrid, LandCover, MeshArrays, Projector } from "./types";
 
 // docs/pseudocode-3d.md §2.2, docs/adr/0006-welsh-lidar-dtm.md, docs/adr/0010-landcover-vertex-colours.md
 
-/** Bilinear height in metres at a British National Grid point; null outside the grid or at nodata. */
-export function heightAtBng(grid: DemGrid, e: number, n: number): number | null {
+/** The grid cell under a British National Grid point, with the point's fractions across it and its four corner
+ * heights; null outside the grid or where a corner is nodata. */
+function cellAt(grid: DemGrid, e: number, n: number): { u: number; v: number; h00: number; h01: number; h10: number; h11: number } | null {
   const fx = (e - grid.originE) / grid.spacingM;
   const fy = (grid.originN - n) / grid.spacingM;
   if (!(fx >= 0 && fy >= 0 && fx <= grid.cols - 1 && fy <= grid.rows - 1)) return null;
   const c = Math.min(Math.floor(fx), grid.cols - 2);
   const r = Math.min(Math.floor(fy), grid.rows - 2);
-  const u = fx - c;
-  const v = fy - r;
   const at = (rr: number, cc: number) => grid.heights[rr * grid.cols + cc];
-  const h00 = at(r, c);
-  const h01 = at(r, c + 1);
-  const h10 = at(r + 1, c);
-  const h11 = at(r + 1, c + 1);
-  if ([h00, h01, h10, h11].some((h) => h === grid.nodata)) return null;
+  const cell = { u: fx - c, v: fy - r, h00: at(r, c), h01: at(r, c + 1), h10: at(r + 1, c), h11: at(r + 1, c + 1) };
+  return [cell.h00, cell.h01, cell.h10, cell.h11].some((h) => h === grid.nodata) ? null : cell;
+}
+
+/** Bilinear height in metres at a British National Grid point; null outside the grid or at nodata. */
+export function heightAtBng(grid: DemGrid, e: number, n: number): number | null {
+  const k = cellAt(grid, e, n);
+  if (!k) return null;
+  const { u, v, h00, h01, h10, h11 } = k;
   return h00 * (1 - u) * (1 - v) + h01 * u * (1 - v) + h10 * (1 - u) * v + h11 * u * v;
 }
 
 /** Height in metres at a BNG point on buildTerrainMesh's own triangles (each cell split along its south-west to
  * north-east diagonal), so a ribbon draped on it neither floats nor sinks where the bilinear surface bulges; null as above. */
 export function meshHeightAtBng(grid: DemGrid, e: number, n: number): number | null {
-  const fx = (e - grid.originE) / grid.spacingM;
-  const fy = (grid.originN - n) / grid.spacingM;
-  if (!(fx >= 0 && fy >= 0 && fx <= grid.cols - 1 && fy <= grid.rows - 1)) return null;
-  const c = Math.min(Math.floor(fx), grid.cols - 2);
-  const r = Math.min(Math.floor(fy), grid.rows - 2);
-  const u = fx - c;
-  const v = fy - r;
-  const at = (rr: number, cc: number) => grid.heights[rr * grid.cols + cc];
-  const h00 = at(r, c);
-  const h01 = at(r, c + 1);
-  const h10 = at(r + 1, c);
-  const h11 = at(r + 1, c + 1);
-  if ([h00, h01, h10, h11].some((h) => h === grid.nodata)) return null;
+  const k = cellAt(grid, e, n);
+  if (!k) return null;
+  const { u, v, h00, h01, h10, h11 } = k;
   // triangles (r,c) (r+1,c) (r,c+1) and (r,c+1) (r+1,c) (r+1,c+1), as the mesh's indices
   return u + v <= 1 ? h00 + u * (h01 - h00) + v * (h10 - h00) : h11 + (1 - u) * (h10 - h11) + (1 - v) * (h01 - h11);
 }
@@ -53,7 +46,7 @@ const PALETTE: [RegExp, [number, number, number]][] = [
 // land OSM doesn't classify here; a muted rough-grazing green rather than a guess at a specific cover
 const OTHER: [number, number, number] = [0.48, 0.53, 0.37];
 
-export const colourForClass = (name: string): [number, number, number] =>
+const colourForClass = (name: string): [number, number, number] =>
   PALETTE.find(([re]) => re.test(name.toLowerCase()))?.[1] ?? OTHER;
 
 /** One vertex per DEM node, projected through the shared 2D projection; vertex colours from land cover. */

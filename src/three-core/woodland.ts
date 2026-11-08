@@ -3,6 +3,7 @@
 // kind of the smallest OSM woodland polygon that holds it, so the tree placer can draw its mix of kinds from the tags
 // instead of one share for every wood.
 import { bngToWgs84 } from "./bng";
+import { inRingXY } from "./plane";
 import type { OsmLine } from "./registers";
 import type { DemGrid, LandCover } from "./types";
 import { polygonsOf } from "./water";
@@ -38,25 +39,17 @@ export function woodKindOf(tags: Record<string, string>): WoodKind | null {
  * the lake's north tip, km 9.3-10.9, closed broadleaf canopy with conifers in a few clumps by the lake (Gwynedd map
  * viewer captures 164531, 164542 and 164558, reviewed 2 Nov 2026). A leaf_type tag, where OSM gains one, wins.
  */
-export const WOOD_EVIDENCE: Record<string, WoodKind> = { "relation/6373661": "broadleaf" };
+const WOOD_EVIDENCE: Record<string, WoodKind> = { "relation/6373661": "broadleaf" };
 
 type LonLat = [number, number];
 type Poly = { kind: WoodKind; area: number; outer: LonLat[]; holes: LonLat[][]; box: [number, number, number, number] };
 
-function inRing([x, y]: LonLat, ring: LonLat[]): boolean {
-  let inside = false;
-  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-    const [xi, yi] = ring[i];
-    const [xj, yj] = ring[j];
-    if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
-  }
-  return inside;
-}
+const inRing = (p: LonLat, ring: LonLat[]) => inRingXY(p[0], p[1], ring);
 
 const ringArea = (r: LonLat[]) => Math.abs(r.reduce((a, p, i) => a + p[0] * r[(i + 1) % r.length][1] - r[(i + 1) % r.length][0] * p[1], 0)) / 2;
 
 /** The window's woodland polygons with their kinds and bounding boxes (lon/lat). */
-export function woodlandPolygons(osm: OsmLine[]): Poly[] {
+function woodlandPolygons(osm: OsmLine[]): Poly[] {
   const out: Poly[] = [];
   for (const f of osm) {
     const tagged = woodKindOf(f.properties.tags);

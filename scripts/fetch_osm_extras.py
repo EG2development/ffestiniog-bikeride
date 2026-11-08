@@ -25,7 +25,7 @@ import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from build_poc_data import ROOT, along, load_route  # noqa: E402
+from build_poc_data import ROOT, load_route, section_box  # noqa: E402
 from build_section_data import MARGIN_M, SECTIONS  # noqa: E402
 from osm.extras import building_value, extra_kind, extras_of, owned_by_extras, point_features  # noqa: E402
 from osm.fetch_bbox import _fetch, to_features  # noqa: E402
@@ -45,11 +45,8 @@ def write_json(rel, obj, indent=None):
 def window_box(section, lons, lats, dist):
     """The window's OSM box and splits, as build_section_data.py fetches it."""
     s0, s1 = SECTIONS[section]["km"]
-    sec = (dist >= s0) & (dist <= s1)
-    sl = np.concatenate([[along(lons, lats, dist, s0)[0]], lons[sec], [along(lons, lats, dist, s1)[0]]])
-    sa = np.concatenate([[along(lons, lats, dist, s0)[1]], lats[sec], [along(lons, lats, dist, s1)[1]]])
-    dlat, dlon = MARGIN_M / 111320, MARGIN_M / (111320 * math.cos(math.radians(float(sa.mean()))))
-    return (sl.min() - dlon, sa.min() - dlat, sl.max() + dlon, sa.max() + dlat), SECTIONS[section].get("splits") or (2 if (s1 - s0) <= 2200 else 3)
+    box, _ = section_box(lons, lats, dist, s0, s1, MARGIN_M)
+    return box, SECTIONS[section].get("splits") or (2 if (s1 - s0) <= 2200 else 3)
 
 
 def fetch_tagged(box, splits):

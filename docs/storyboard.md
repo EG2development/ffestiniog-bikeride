@@ -32,8 +32,8 @@ computed figures, not placeholders. Timings are a first pass for a
 - No bridge/cutting/structure inventory yet, so "notable railway heritage
   features" in scenes 5–7 are generic for now (cutting/embankment shapes
   from the elevation profile, not specific named structures).
-- Visual reference catalogue (brief §3) not yet built — see
-  `data/source-register.md`.
+- Visual reference catalogue (brief §3): `data/photo-references.json`, 1,170 geolocated
+  photographs with their licences, described in `data/source-register.md`.
 - Welsh-language captions/place names: the Welsh forms used in
   `waypoints.json.name_cy` are the plain place names, not translated
   signage text — don't invent bilingual trail-sign wording.

@@ -27,5 +27,7 @@ CA1–CA4 (see docs/spec-3d.md). Design reference: D14 in docs/design-3d.md.
 
 ## Relations
 
+Amended by: [35. Camera shots per section from a spec, with aerial shots](0035-shot-specs.md), [56. The rider's view as a shot: handlebar height, cadence bob, no rider model](0056-first-person-shot.md)
+
 Related to: [15. Drive cyclist motion from a precomputed distance table](0015-distance-table-motion.md)
 Related to: [17. Set the camera during render, not in useFrame](0017-camera-set-during-render.md)

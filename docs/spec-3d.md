@@ -149,7 +149,7 @@ are decided; item 4 is still pending (risk K4).
 
 Status: written 2026-10-25 for the reel mission. Inputs: the goal ("enhance and
 improve 3D models, more realistic, every part of the route, a 1:30 reel"), the
-owner's decisions recorded in ruflo memory (`ffestiniog-bikeride/3d-reel/decisions`),
+owner's decisions recorded in ruflo memory (`ffestiniog-bikeride/3d-reel/decisions`, local tooling, not in the repository),
 `docs/prior-art-3d.md` (the reel section), `docs/storyboard.md` and brief §5.
 Every P2 requirement above still holds (its T criteria run on the Maentwrog window's real data; the other windows have the DEM, gradient, config and caption tests). Phases: **P3** reusable components,
 **P4** route sections, **P5** the reel. "Realistic" is given numeric and visual
@@ -234,7 +234,7 @@ Raised at the specification; each was decided in the design (t3) and is now ship
 # Specification extension: water, readiness, clarity and buildings
 
 Status: written 2026-10-25 for mission `msn_33e838999675db739df3c922`, task t2. The goal's
-full text is ruflo memory `ffestiniog-bikeride/3d-reel-v2/goal-full`; the findings behind
+full text is ruflo memory `ffestiniog-bikeride/3d-reel-v2/goal-full` (local tooling, not in the repository); the findings behind
 these rows are in `docs/prior-art-3d.md`, "Prior art for the water, readiness, clarity and
 buildings iteration". Phase **I2**. Every RL requirement above still holds. The methods are
 T, S, R, D and V, as above. "Before" means the snapshot at the start of this mission;

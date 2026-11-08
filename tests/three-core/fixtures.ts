@@ -3,7 +3,8 @@ import { resolve } from "node:path";
 import { buildRouteModel, type RouteModel } from "../../src/data/route";
 import type { Trail, TrailProfile, TrailSample } from "../../src/three-core/trail";
 import type { CyclistPose } from "../../src/three-core/cyclistMotion";
-import type { MeshArrays, Vec3 } from "../../src/three-core/types";
+import type { DemGrid, LandCover, MeshArrays, Vec3 } from "../../src/three-core/types";
+import { validateFeatures, type Feature, type OsmLine } from "../../src/three-core/registers";
 
 // Hand-built inputs, independent of the code under test, so each test fails
 // only because of the module it targets.
@@ -33,6 +34,24 @@ export function realRoute(): RouteModel {
 }
 
 /** A ~1 km gentle S-curve near Maentwrog Road. */
+/** A real section window's inputs for buildSectionScene, as the data provider assembles them: the DEM, land cover,
+ * profile, OSM and both registers. The photo look's extras (canopy, barriers, buildings) are the caller's to add. */
+export function windowInputs(id: string): { route: RouteModel; dem: DemGrid; land: LandCover; profile: TrailProfile; osm: OsmLine[]; features: Feature[] } {
+  const w = `public/data/sections/${id}`;
+  const header = readJson<DemGrid & { file: string; sourceFile: string }>(`${w}/dem.json`);
+  const buf = readProjectFile(`${w}/${header.file}`);
+  const dem: DemGrid = { ...header, heights: new Float32Array(buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength)), sourceIndex: new Uint8Array(readProjectFile(`${w}/${header.sourceFile}`)) };
+  const landMeta = readJson<{ legend: string[]; file: string }>(`${w}/landcover.json`);
+  return {
+    route: realRoute(),
+    dem,
+    land: { legend: landMeta.legend, classes: new Uint8Array(readProjectFile(`${w}/${landMeta.file}`)) },
+    profile: readJson<TrailProfile>(`${w}/trail-profile.json`),
+    osm: readJson<{ features: OsmLine[] }>(`${w}/osm.geojson`).features,
+    features: [...validateFeatures(readJson<unknown>("data/features-3d.json")), ...validateFeatures(readJson<unknown>(`data/features-${id}.json`))],
+  };
+}
+
 export function syntheticRoute(): RouteModel {
   const coords: [number, number, number][] = [];
   for (let i = 0; i <= 50; i++) {
@@ -126,9 +145,6 @@ export function analyticRider(trail: Trail, d0: number, fps: number) {
   };
   return { distAt, riderAt, poseAt };
 }
-
-/** Rolling hills, in world units: up to ±20 m around 18 units (180 m). */
-export const hillyHeightAt = (x: number, z: number): number => 18 + 2 * Math.sin(x / 15) * Math.cos(z / 15);
 
 export type WorldGrid = {
   mesh: MeshArrays;

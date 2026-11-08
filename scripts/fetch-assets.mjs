@@ -8,7 +8,7 @@
 // (https://polyhaven.com/license), so no on-screen credit is required, and the source is still named here.
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
-import { dirname, join, resolve } from "node:path";
+import { dirname, resolve } from "node:path";
 
 const ROOT = resolve(import.meta.dirname, "..");
 const REGISTER = resolve(ROOT, "data/assets-3d.json");

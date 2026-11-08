@@ -11,18 +11,18 @@ import { CYCLES, cyclePace } from "./cycles";
 import { paceKmh, type Activity, type WalkerSpec } from "./walkers";
 
 /** Across the path, half the width a person (with whatever they push or ride) takes, metres (people.ts's HALF). */
-export const BODY_HALF_M: Record<Activity, number> = { walk: 0.28, run: 0.28, pram: 0.33, cycle: 0.35, trike: 0.45, sit: 0.3 };
+const BODY_HALF_M: Record<Activity, number> = { walk: 0.28, run: 0.28, pram: 0.33, cycle: 0.35, trike: 0.45, sit: 0.3 };
 /** Along the path, how far a person reaches behind and ahead of their position, metres (a pram ahead of its pusher). */
-export const BODY_REACH_M: Record<Activity, [number, number]> = { walk: [0.3, 0.3], run: [0.4, 0.4], pram: [0.3, 1.3], cycle: [1.0, 1.0], trike: [1.0, 1.2], sit: [0.3, 0.3] };
+const BODY_REACH_M: Record<Activity, [number, number]> = { walk: [0.3, 0.3], run: [0.4, 0.4], pram: [0.3, 1.3], cycle: [1.0, 1.0], trike: [1.0, 1.2], sit: [0.3, 0.3] };
 /** A dog at heel on a short lead: this far to its person's side and ahead of them, give or take its wander, metres. */
 export const DOG = { sideM: 0.55, aheadM: 0.7, wanderSideM: 0.18, wanderAheadM: 0.25, halfM: 0.15, lengthM: 0.85 };
 /** The furthest a person's centre goes from the centreline: the 3 m path less a body; someone on foot may step onto
  * the verge to let a bicycle by (a dog may walk on it). */
-export const EDGE_M = 1.2;
+const EDGE_M = 1.2;
 const VERGE_STEP_M = 0.15;
 /** The clearance kept between two people's outlines, metres: pedestrians, anyone passing a pedestrian on wheels, two
  * people on wheels, and two companions walking together. */
-export const CLEAR_M = { foot: 0.25, wheelsByFoot: 0.5, wheels: 0.4, companions: 0.04 };
+const CLEAR_M = { foot: 0.25, wheelsByFoot: 0.5, wheels: 0.4, companions: 0.04 };
 const HORIZON_S = 8; // how far ahead each person looks (a rider deciding to overtake must see the way clear)
 const EARLY_M = 0.5; // and they treat others as this much longer, to be clear in good time
 const STEP_M = 0.05; // the lines they choose between

@@ -27,4 +27,6 @@ C1, C8 (see docs/spec-3d.md). Design reference: D12 in docs/design-3d.md.
 
 ## Relations
 
+Amended by: [34. Build the cyclist from its dimensions](0034-cyclist-from-dims.md)
+
 Related to: [15. Drive cyclist motion from a precomputed distance table](0015-distance-table-motion.md)

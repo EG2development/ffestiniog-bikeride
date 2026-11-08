@@ -42,4 +42,6 @@ its config asks.
 
 ## Relations
 
+Amended by: [60. The reel in the photo look: every scene, its aerials coloured by a satellite image](0060-reel-in-the-photo-look.md)
+
 Amends: [12. Model only structures that have a cited source](0012-sourced-structures-only.md), [20. Keep feature and asset registers as validated JSON](0020-registers-as-json.md). Related to: [54. A photoreal look as a layer](0054-photoreal-layer.md).

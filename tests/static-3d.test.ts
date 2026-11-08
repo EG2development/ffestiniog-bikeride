@@ -1,7 +1,7 @@
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
-import { join, relative, resolve } from "node:path";
+import { join, resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import { POC } from "../src/three-core/poc";
 
@@ -17,8 +17,8 @@ function files(relDir: string): string[] {
   const out: string[] = [];
   for (const name of readdirSync(dir)) {
     const full = join(dir, name);
-    if (statSync(full).isDirectory()) out.push(...files(relative(ROOT, full)));
-    else if (/\.(ts|tsx)$/.test(name)) out.push(relative(ROOT, full));
+    if (statSync(full).isDirectory()) out.push(...files(`${relDir}/${name}`));
+    else if (/\.(ts|tsx)$/.test(name)) out.push(`${relDir}/${name}`);
   }
   return out;
 }

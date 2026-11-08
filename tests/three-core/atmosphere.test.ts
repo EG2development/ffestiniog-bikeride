@@ -11,7 +11,10 @@ describe("atmosphere (RL11)", () => {
     const { ATMOSPHERE } = await load<Mod>("src/three-core/atmosphere.ts");
     for (const kind of ["ground", "aerial"] as const) {
       const a = ATMOSPHERE[kind];
-      for (const c of [...a.zenith, ...a.horizon]) expect(c).toBeGreaterThanOrEqual(0), expect(c).toBeLessThanOrEqual(1);
+      for (const c of [...a.zenith, ...a.horizon]) {
+        expect(c).toBeGreaterThanOrEqual(0);
+        expect(c).toBeLessThanOrEqual(1);
+      }
       expect(a.fogDensity).toBeGreaterThan(0);
       expect(a.sunAzimuthDeg).toBe(200);
       expect(a.sunElevationDeg).toBe(35);

@@ -8,6 +8,10 @@ Scope: `src/three/Lighting.tsx`
 
 Proposed
 
+## Relations
+
+Amended by: [30. A gradient sky dome and exponential fog, with the fog colour equal to the horizon](0030-sky-dome-and-fog.md), [46. Clarity tuned as data, from one source, against metrics](0046-clarity-tuned-as-data.md), [54. A photoreal look as a layer over the same scene, prototyped on Maentwrog Road](0054-photoreal-layer.md)
+
 ## Context
 
 The look should be natural, deterministic and inside the performance budget, without large or restrictively licensed assets.

@@ -3,6 +3,7 @@ import { existsSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import { wgs84ToBng } from "../src/three-core/bng";
+import { inRingXY as inRing } from "../src/three-core/plane";
 import { readJson, readProjectFile, ROOT } from "./three-core/fixtures";
 
 // The Python pipeline's own checks run in the suite (spec WA3, WA4, WA6, WA7, CL4, BL6, BL17; ADRs 41, 42, 44, 49;
@@ -66,15 +67,6 @@ describe("the photographic reference catalogue (data/photo-references.json)", ()
 type Header = { cols: number; rows: number; spacingM: number; originE: number; originN: number; nodata: number; file: string; sourceFile: string };
 type Feature = { properties: { id: string; inner_rings?: [number, number][][] }; geometry: { type: string; coordinates: unknown } };
 
-const inRing = (x: number, y: number, ring: [number, number][]) => {
-  let inside = false;
-  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-    const [xi, yi] = ring[i];
-    const [xj, yj] = ring[j];
-    if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
-  }
-  return inside;
-};
 
 describe("Llyn Trawsfynydd's islands keep their terrain (WA4, real data)", () => {
   it("no island cell is filled, and every island of 1,000 m² or more rises above the lake level", () => {

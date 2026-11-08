@@ -66,7 +66,7 @@ def fetch(url, start, length):
     with urllib.request.urlopen(req, timeout=120) as r:
         data = r.read()
     if len(data) != length:
-        raise IOError(f"range read of {length} bytes at {start} returned {len(data)}")
+        raise OSError(f"range read of {length} bytes at {start} returned {len(data)}")
     return data
 
 

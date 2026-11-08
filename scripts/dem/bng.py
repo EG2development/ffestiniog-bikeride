@@ -46,7 +46,7 @@ def tm_forward(lat_deg, lon_deg):
     dl = np.asarray(lon_deg) * RAD - LAMBDA0
     nu, rho, eta2 = _radii(phi)
     s, c, t2 = np.sin(phi), np.cos(phi), np.tan(phi) ** 2
-    I = _arc(phi) + N0
+    I = _arc(phi) + N0  # noqa: E741  (the OS guide's term names I, II, III, IIIA)
     II = nu / 2 * s * c
     III = nu / 24 * s * c ** 3 * (5 - t2 + 9 * eta2)
     IIIA = nu / 720 * s * c ** 5 * (61 - 58 * t2 + t2 * t2)
@@ -122,7 +122,8 @@ def bng_to_wgs84(e, n):
 
 
 if __name__ == "__main__":
-    dms = lambda d, m, s: d + m / 60 + s / 3600
+    def dms(d, m, s):
+        return d + m / 60 + s / 3600
     e, n = tm_forward(dms(52, 39, 27.2531), dms(1, 43, 4.5177))
     assert abs(e - 651409.903) < 0.001 and abs(n - 313177.270) < 0.001, (e, n)
     lon, lat = bng_to_wgs84(*wgs84_to_bng(-3.94, 52.94))

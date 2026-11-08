@@ -1,5 +1,5 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
-import { join, relative, resolve } from "node:path";
+import { join, relative, resolve, sep } from "node:path";
 import { describe, expect, it } from "vitest";
 import { wgs84ToBng } from "../../src/three-core/bng";
 import { heightAtBng, meshHeightAtBng } from "../../src/three-core/dem";
@@ -235,7 +235,7 @@ describe("POC registers (H1, G5b, G6, G7, L1, C8)", () => {
     const registered = new Set(assets.map((a) => a.path));
     const dir = resolve(ROOT, "public/3d");
     const walk = (d: string): string[] =>
-      existsSync(d) ? readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(join(d, e.name)) : [relative(ROOT, join(d, e.name))])) : [];
+      existsSync(d) ? readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(join(d, e.name)) : [relative(ROOT, join(d, e.name)).split(sep).join("/")])) : [];
     for (const file of walk(dir)) expect(registered.has(file), file).toBe(true);
     const cyclist = features().find((f) => f.kind === "cyclist");
     expect(cyclist?.source.type).toBe("original");

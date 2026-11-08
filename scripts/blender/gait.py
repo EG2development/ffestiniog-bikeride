@@ -244,7 +244,7 @@ def bake_gait(person, frames, distance, phase0, activity, view_layer, prams=None
     beat = []  # the left foot's fraction of its cycle and each arm's swing angle, per frame
     az = info["ankle_z"] * k
     for i in range(len(frames)):
-        ul = ((phase0 / (2 * math.pi) + distance[i] / S)) % 1.0
+        ul = (phase0 / (2 * math.pi) + distance[i] / S) % 1.0
         w = float(walking[i])
         feet = {}
         if table is not None:

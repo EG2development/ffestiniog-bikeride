@@ -21,7 +21,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from bridge_ground import span_ground  # noqa: E402
 from build_poc_data import (LEGEND, LIDAR_URL, PROFILE_PAD_M, ROAD_CLASSES, ROOT, along, distance_of,  # noqa: E402
-                            interpolate_spans, landcover_class, load_route, point_in_ring, write_json)
+                            interpolate_spans, landcover_class, load_route, overbridge_spans, point_in_ring, section_box,
+                            write_json)
 from dem.bng import bng_to_wgs84, wgs84_to_bng  # noqa: E402
 from dem.cog import Cog  # noqa: E402
 from osm.fetch_bbox import _relation_features, complete_water_relations, fetch_bbox, fetch_way_full, to_features  # noqa: E402
@@ -59,10 +60,6 @@ def minimise_tags(features):
         props["tags"] = kept
         out.append({**f, "properties": props})
     return out
-
-
-ROAD_WIDTH_M = {"motorway": 11, "trunk": 7.3, "trunk_link": 6, "primary": 7, "primary_link": 6, "secondary": 6.5,
-                "tertiary": 6, "unclassified": 4.5, "residential": 5, "service": 3.5, "track": 2.5}
 
 
 def sample(grid, origin_e, origin_n, px, py, e, n):
@@ -211,12 +208,7 @@ def main(section, reuse_osm=False):
     os.makedirs(os.path.join(ROOT, out_rel), exist_ok=True)
     lons, lats, dist = load_route()
 
-    sec = (dist >= s0) & (dist <= s1)
-    sl = np.concatenate([[along(lons, lats, dist, s0)[0]], lons[sec], [along(lons, lats, dist, s1)[0]]])
-    sa = np.concatenate([[along(lons, lats, dist, s0)[1]], lats[sec], [along(lons, lats, dist, s1)[1]]])
-    lat_c = float(sa.mean())
-    dlat, dlon = MARGIN_M / 111320, MARGIN_M / (111320 * math.cos(math.radians(lat_c)))
-    lon0, lon1, lat0, lat1 = sl.min() - dlon, sl.max() + dlon, sa.min() - dlat, sa.max() + dlat
+    (lon0, lat0, lon1, lat1), lat_c = section_box(lons, lats, dist, s0, s1, MARGIN_M)
     ce, cn = wgs84_to_bng(np.array([lon0, lon0, lon1, lon1]), np.array([lat0, lat1, lat0, lat1]))
     emin, emax, nmin, nmax = float(ce.min()), float(ce.max()), float(cn.min()), float(cn.max())
 
@@ -282,31 +274,7 @@ def main(section, reuse_osm=False):
             if max(ds) >= s0 and min(ds) <= s1:  # any overlap with the window, so a bridge across its edge is kept (review R7)
                 bridges.append([round(min(ds), 1), round(max(ds), 1), f["properties"]["id"]])
     bridges = sorted(bridges + underbridge_spans(s0, s1))  # with the decks the lidar shows and OSM lacks (lidar_underbridges.py)
-    k_lon = 111320 * math.cos(math.radians(lat_c))
-    loc = lambda lo, la: ((lo - lon0) * k_lon, (la - lat0) * 111320)  # noqa: E731
-    sec_idx = [i for i in range(len(lons) - 1) if dist[i + 1] >= s0 - PROFILE_PAD_M and dist[i] <= s1 + PROFILE_PAD_M]
-    overbridges = []
-    for f in feats:
-        tags = f["properties"]["tags"]
-        if not tags.get("bridge") or "highway" not in tags or f["geometry"]["type"] != "LineString":
-            continue
-        road = [loc(*c) for c in f["geometry"]["coordinates"]]
-        for i in sec_idx:
-            a, b = loc(lons[i], lats[i]), loc(lons[i + 1], lats[i + 1])
-            for p, q in zip(road, road[1:]):
-                den = (b[0] - a[0]) * (q[1] - p[1]) - (b[1] - a[1]) * (q[0] - p[0])
-                if den == 0:
-                    continue
-                t = ((p[0] - a[0]) * (q[1] - p[1]) - (p[1] - a[1]) * (q[0] - p[0])) / den
-                w = ((p[0] - a[0]) * (b[1] - a[1]) - (p[1] - a[1]) * (b[0] - a[0])) / den
-                if not (0 <= t <= 1 and 0 <= w <= 1):
-                    continue
-                d = dist[i] + t * (dist[i + 1] - dist[i])
-                rail, rd = (b[0] - a[0], b[1] - a[1]), (q[0] - p[0], q[1] - p[1])
-                sin = abs(rail[0] * rd[1] - rail[1] * rd[0]) / (math.hypot(*rail) * math.hypot(*rd))
-                half = (ROAD_WIDTH_M.get(tags["highway"], 4) / 2 + 3) / max(sin, 0.3) + 5
-                overbridges.append([round(d - half, 1), round(d + half, 1), f["properties"]["id"], tags["highway"]])
-    overbridges.sort()
+    overbridges = overbridge_spans(feats, lons, lats, dist, s0, s1, lon0, lat0, lat_c)
 
     # Trail profile along the centreline: 1 m for ground windows, the window's own level for the corridor.
     plevel = 0 if S["kind"] == "ground" else S["level"]
@@ -425,7 +393,6 @@ def self_test():
     failures = []
     # a 40 x 40 grid of 1 m cells near (lon 0.0005, lat 0.0005) is awkward in BNG; test in grid space instead:
     # project lon/lat = BNG metres via a stand-in transform, so the fill sees an island lake at 100 m with a 105 m island
-    import types
     global bng_to_wgs84
     saved = bng_to_wgs84
     bng_to_wgs84 = lambda e, n: (np.asarray(e, dtype=float), np.asarray(n, dtype=float))  # noqa: E731

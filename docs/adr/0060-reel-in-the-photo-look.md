@@ -88,4 +88,6 @@ checks (`npm run test:render`) on the photo reel.
 
 ## Relations
 
+Amended by: [61. Trail users at random: walkers, runners and prams, by a seeded draw that keeps the rider's rules](0061-trail-users-at-random.md)
+
 Amends [54. A photoreal look as a layer](0054-photoreal-layer.md) (the reel now uses it), [33. Aerial map-tile drape](0033-aerial-map-tile-drape.md) (now the concept look's only), [57. Canopy heights from the lidar](0057-canopy-heights-from-lidar.md) and [58. Walls and hedges from OSM](0058-walls-and-hedges-from-osm.md) (opt-in per look, not per config), [59. Walkers on the trail](0059-walkers-on-the-trail.md) (the reel's sections list walkers). Related to: [45. Before and after stills from one environment](0045-before-after-stills-one-environment.md), [55. Post-processing takeover](0055-post-processing-takeover.md).

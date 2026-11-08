@@ -83,7 +83,7 @@ export function paceKmh(activity: Activity, gradient: number): number {
 }
 
 /** The distance a rider covers per turn of the cranks, metres (a 0.68 m wheel at a gear of about 2.1). */
-export const CRANK_TURN_M = 4.5;
+const CRANK_TURN_M = 4.5;
 const BRAKE_M = 10; // a rider stopping slows over its last metres
 
 /** Stride (two steps) in metres for a height: about 0.8 of the height walking, 1.15 running (about 2 m at 10 km/h and

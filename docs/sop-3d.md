@@ -100,7 +100,7 @@ determinism, blank frames, per-scene and pre-cut load and caption visibility, an
 previews; since reel v2 they also take fresh-process stills and the before/after metrics, so a run
 takes 10–30 minutes. **Run `npm run test:render` locally before merging** any change to
 `src/`, `public/data/`, `remotion.config.ts` or the Remotion and three.js versions, and add its
-result to `docs/validation-3d.md` (the script appends it).
+result to `docs/validation-photoreal.md` (the script appends it).
 
 To check a workflow change before pushing, run its `run` steps in a clean copy of the files git
 would ship, as a git checkout, on the runner's npm version, after a fresh `npm ci --ignore-scripts`. The t12 verifiers did exactly this; their logs are
@@ -209,12 +209,12 @@ one-line comment when you create it.
    at a 60 m upper bound. `build_buildings.py` measures them and keeps every height in
    `data/building-heights-<id>.json`. The second pass keeps only what the shots see at those
    heights. `build_buildings.py` needs network access to the OSM API, for building ways and
-   relations with their dates, and to the lidar DSM and DTM COGs (ADR 49). Screen any text fetched from the web with `aidefence_scan` before
+   relations with their dates, and to the lidar DSM and DTM COGs (ADR 49). Review any text fetched from the web before
    it enters `data/landmarks.json`.
 4. Gates: `npm run lint`, `npm test`, `npm run build`, `npm run test:render`.
 5. After stills: `npm run test:render` re-renders `out/after` when the snapshot changed and
    compares it with `out/before-masks` (`scripts/still_metrics.py`); the numbers go into
-   `docs/validation-3d.md`.
+   `docs/validation-photoreal.md`.
 
 **Change.**
 - *Water.* Never use `DoubleSide` (except in the `water-expected` measurement mask) and never raise the surface. Keep upward faces and use

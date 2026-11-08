@@ -27,4 +27,6 @@ RL13 (T); `tests/three-core/trees.test.ts` (design D33).
 
 ## Relations
 
+Amended by: [47. Keep decorative trees out of the follow-camera corridor](0047-trees-clear-of-camera-corridor.md), [57. Tree heights and field trees from the lidar canopy, when a section asks](0057-canopy-heights-from-lidar.md)
+
 Amends: [11. Place seeded trees only inside OSM woodland](0011-seeded-trees-in-woodland.md)

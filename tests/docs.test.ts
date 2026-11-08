@@ -1,5 +1,5 @@
 import { readdirSync, readFileSync } from "node:fs";
-import { join, resolve } from "node:path";
+import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
 // The docs must match what ships (mission task t13): these checks fail when code and docs drift apart.
@@ -44,7 +44,7 @@ describe("docs match the shipped code (t13)", () => {
   it("the design's tests table lists exactly the test files that exist", () => {
     const files = (dir: string): string[] =>
       readdirSync(resolve(ROOT, dir), { withFileTypes: true }).flatMap((e) =>
-        e.isDirectory() ? files(join(dir, e.name)) : e.name.endsWith(".test.ts") ? [join(dir, e.name)] : [],
+        e.isDirectory() ? files(`${dir}/${e.name}`) : e.name.endsWith(".test.ts") ? [`${dir}/${e.name}`] : [],
       );
     const listed = new Set([...design().matchAll(/^\| `(tests\/[^`]+\.test\.ts)`/gm)].map((m) => m[1]));
     expect([...listed].sort()).toEqual(files("tests").sort());

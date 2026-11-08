@@ -65,4 +65,6 @@ rider's view, every walker behind the follow camera from its first frame, all in
 
 ## Relations
 
+Amended by: [60. The reel in the photo look: every scene, its aerials coloured by a satellite image](0060-reel-in-the-photo-look.md), [61. Trail users at random: walkers, runners and prams, by a seeded draw that keeps the rider's rules](0061-trail-users-at-random.md)
+
 Implements spec C9. Related to: [14. Procedural cyclist](0014-procedural-cyclist.md), [15. Distance-table motion](0015-distance-table-motion.md), [34. Cyclist from its dimensions](0034-cyclist-from-dims.md), [54. A photoreal look as a layer](0054-photoreal-layer.md), [56. The rider's view as a shot](0056-first-person-shot.md).

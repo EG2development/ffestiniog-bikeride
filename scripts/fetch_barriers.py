@@ -11,15 +11,13 @@ height, natural, leaf_type) and adds one "approximate" register entry per way to
 import argparse
 import datetime
 import json
-import math
 import os
 import sys
 
-import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from build_poc_data import ROOT, along, load_route, write_json  # noqa: E402
+from build_poc_data import ROOT, load_route, section_box, write_json  # noqa: E402
 from build_section_data import MARGIN_M, SECTIONS  # noqa: E402
 from osm.fetch_bbox import fetch_bbox, to_features  # noqa: E402
 
@@ -76,12 +74,7 @@ def main(section):
         raise SystemExit(f"{section} is an aerial window without OSM; its barriers would have nothing to stand beside")
     s0, s1 = S["km"]
     lons, lats, dist = load_route()
-    sec = (dist >= s0) & (dist <= s1)
-    sl = np.concatenate([[along(lons, lats, dist, s0)[0]], lons[sec], [along(lons, lats, dist, s1)[0]]])
-    sa = np.concatenate([[along(lons, lats, dist, s0)[1]], lats[sec], [along(lons, lats, dist, s1)[1]]])
-    lat_c = float(sa.mean())
-    dlat, dlon = MARGIN_M / 111320, MARGIN_M / (111320 * math.cos(math.radians(lat_c)))
-    lon0, lon1, lat0, lat1 = sl.min() - dlon, sl.max() + dlon, sa.min() - dlat, sa.max() + dlat
+    (lon0, lat0, lon1, lat1), _ = section_box(lons, lats, dist, s0, s1, MARGIN_M)
     splits = S.get("splits") or (2 if (s1 - s0) <= 2200 else 3)
     feats = boundary_features(to_features(*fetch_bbox(lon0, lat0, lon1, lat1, splits=splits)))
     rel = f"public/data/sections/{section}"

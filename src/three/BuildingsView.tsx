@@ -11,7 +11,7 @@ import type { RoleTextures } from "./photo/assetRoles";
 // wall and roof colours: its mossy colour map would turn every house near black.
 
 /** Stone walls and slate roofs, as the valley's buildings are; amber only for approved or demolished ones. */
-export const BUILDING_COLOURS = { wall: "#a8a296", roof: "#4e535a", translucent: "#e2a640" } as const;
+const BUILDING_COLOURS = { wall: "#a8a296", roof: "#4e535a", translucent: "#e2a640" } as const;
 
 function useGroupGeometry(g: BuildingGroup, tileM?: number): THREE.BufferGeometry {
   const geometry = useMemo(() => {

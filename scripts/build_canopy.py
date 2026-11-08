@@ -12,7 +12,6 @@ scrub read as what the lidar measured. The DSM's survey date is not published wi
 import argparse
 import datetime
 import json
-import math
 import os
 import sys
 

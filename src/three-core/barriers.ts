@@ -1,5 +1,6 @@
 // Photoreal layer: field boundaries from OSM barrier ways (docs/adr/0058-walls-and-hedges-from-osm.md).
 import type { HeightAt } from "./camera";
+import { withinReach } from "./plane";
 import type { OsmLine } from "./registers";
 import type { Trail } from "./trail";
 import type { MeshArrays, Projector } from "./types";
@@ -46,23 +47,10 @@ export function barrierLines(osm: OsmLine[]): BarrierLine[] {
 
 export type BarrierMeshes = Record<BarrierKind, MeshArrays>;
 
-/** True within `reachUnits` of any trail sample, hashed by cell (the same test the tree placer uses). */
+/** True within `reachUnits` of any trail sample (the same test the tree placer uses); nowhere when there is no trail. */
 function nearTrail(trail: Trail | undefined, reachUnits: number): (x: number, z: number) => boolean {
   if (!trail || trail.samples.length === 0) return () => false;
-  const cell = Math.max(reachUnits, 1e-6);
-  const cells = new Map<string, { x: number; z: number }[]>();
-  for (const s of trail.samples) {
-    const key = `${Math.floor(s.x / cell)},${Math.floor(s.z / cell)}`;
-    const list = cells.get(key);
-    if (list) list.push(s);
-    else cells.set(key, [s]);
-  }
-  return (x, z) => {
-    const cx = Math.floor(x / cell);
-    const cz = Math.floor(z / cell);
-    for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) for (const s of cells.get(`${cx + i},${cz + j}`) ?? []) if (Math.hypot(s.x - x, s.z - z) <= reachUnits) return true;
-    return false;
-  };
+  return withinReach(trail.samples, reachUnits);
 }
 
 /**

@@ -1,7 +1,10 @@
 # Design: the Blender build (export, import, render)
 
 Status: specification, written 2026-10-30 from [the research](research-blender.md) for [the build
-plan](blender-build-plan.md); nothing here is implemented yet. It fixes the contracts a first implementation needs: the
+plan](blender-build-plan.md); implemented 2026-10-31 to 2026-11-06. As built, the exporter is
+`scripts/blender/export-section.ts`, the scene builders `scripts/blender/import_blockout.py` and `build_reel.py`, the
+renderer `render_film.py` (EEVEE, §5) and the encode `scripts/film/encode.mjs`; the names `src/blender/export.ts`,
+`import_section.py`, `render.py` and `assemble.py` below are the plan's. It fixed the contracts the implementation needed: the
 pinned toolchain, the interchange package, the coordinate and frame mapping, the import recipes for Blender 5.2's API,
 the render preset, the checks and the disk rules. The decision is recorded as [ADR 62](adr/0062-blender-pipeline.md).
 
@@ -259,9 +262,9 @@ from the 3-minute film, which is never re-saved:
 | Determinism of the import | two imports from one package | identical mesh and key arrays |
 | Edit | frame count, no black frame (luma scan as the reel's RL26), captions inside the safe area | as the reel's checks |
 
-Tests run without the app through `bpy==5.2.3` under pytest (`tests/blender/`), spawned from vitest as
-`tests/pipeline-python.test.ts` spawns the pipeline self-tests; the app smoke test is
-`blender -b --factory-startup --python-exit-code 1 -P tests/blender/run.py`.
+As built, the tests run in vitest: `tests/blender/export.test.ts` checks the coordinate contract and the interchange
+package and `tests/blender/reel.test.ts` the reel build; the Blender-side checks (version, engine, view transform,
+objects) are reported by `import_blockout.py` and `build_reel.py` themselves.
 
 ## 7. Close-up data (phase 3)
 
@@ -289,9 +292,9 @@ depending on them). Leaf-off capture makes broadleaves lower and harder to find 
 |---|---|---|
 | `src/blender/` | the exporter and its schema (TypeScript) | yes |
 | `scripts/blender/` | import, materials, vegetation, people, render and assembly scripts (Python, < 500 lines each) | yes |
-| `config/blender/` | `toolchain.json` (Blender 5.2.3, the DMG's sha256, `bpy==5.2.3`), render presets | yes |
-| `tests/blender/` | pytest suites on `bpy`, the app smoke test | yes |
-| `public/3d/blender/` | registered third-party assets (CC0/CC BY with attribution; Royalty Free assets stay out of the public repository) | per licence |
+| `config/blender/` | not created: `build_reel.py` and `import_blockout.py` check `bpy.app.version` themselves, and `scripts/blender/lib.mjs` finds the executable | — |
+| `tests/blender/` | vitest checks of the export contract and the reel build | yes |
+| `out/blender/vendor/` | the registered CC0 assets fetched by `npm run blender:assets`, with `register.json` (source, licence, SHA-256) | no (fetched) |
 | `out/blender/` | exports, `.blend` files, frames, masters | no (generated) |
 
 Disk: about 5 GB is free on this machine. Before any render the script checks free space against frames × measured

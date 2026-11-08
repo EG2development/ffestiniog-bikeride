@@ -28,7 +28,10 @@ describe("shadeTerrain (RL10)", () => {
     const shaded = shadeTerrain(mesh, g);
     expect(Array.from(shaded.positions)).toEqual(Array.from(mesh.positions));
     expect(shaded.colors).toBeDefined();
-    for (const v of shaded.colors!) expect(v).toBeGreaterThanOrEqual(0), expect(v).toBeLessThanOrEqual(1);
+    for (const v of shaded.colors!) {
+      expect(v).toBeGreaterThanOrEqual(0);
+      expect(v).toBeLessThanOrEqual(1);
+    }
   });
 
   it("makes a steep node darker than a flat one of the same class, and barely changes a flat grid", async () => {

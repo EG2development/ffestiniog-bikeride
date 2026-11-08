@@ -4,7 +4,7 @@ import { validateFeatures } from "../../src/three-core/registers";
 import type { TrailProfile } from "../../src/three-core/trail";
 import type { DemGrid, LandCover } from "../../src/three-core/types";
 import { load } from "./pending";
-import { analyticRider, analyticTrail, readJson, readProjectFile, realRoute, syntheticProfile } from "./fixtures";
+import { analyticRider, analyticTrail, readJson, readProjectFile, realRoute, syntheticProfile, windowInputs } from "./fixtures";
 
 // Every section is built from one config by one assembly (spec RL4; ADRs 27, 40).
 type Shot = { kind: string; frames: number };
@@ -64,29 +64,13 @@ describe("section configs (RL4)", () => {
     expect(scene.terrain.positions.length).toBe(poc.terrain.positions.length);
     for (const f of [0, 90, 180, 359]) expect(scene.shot(f).position).toEqual(poc.shot(f).position);
     expect(extras.bridges.length).toBeGreaterThan(0);
-  });
+  }, 30_000); // builds two full Maentwrog scenes: over 5 s under full-suite load
 });
 
 describe("sections after the t10 review", () => {
-  const WINDOW_INPUTS = (id: string) => {
-    const w = `public/data/sections/${id}`;
-    const header = readJson<DemGrid & { file: string; sourceFile: string }>(`${w}/dem.json`);
-    const buf = readProjectFile(`${w}/${header.file}`);
-    const dem: DemGrid = { ...header, heights: new Float32Array(buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength)), sourceIndex: new Uint8Array(readProjectFile(`${w}/${header.sourceFile}`)) };
-    const landMeta = readJson<{ legend: string[]; file: string }>(`${w}/landcover.json`);
-    return {
-      route: realRoute(),
-      dem,
-      land: { legend: landMeta.legend, classes: new Uint8Array(readProjectFile(`${w}/${landMeta.file}`)) } as LandCover,
-      profile: readJson<TrailProfile>(`${w}/trail-profile.json`),
-      osm: readJson<{ features: OsmLine[] }>(`${w}/osm.geojson`).features,
-      features: [...validateFeatures(readJson<unknown>("data/features-3d.json")), ...validateFeatures(readJson<unknown>(`data/features-${id}.json`))],
-    };
-  };
-
   it("R1: draws every railway bridge the window's register holds", async () => {
     const { SECTIONS, buildSectionScene } = await load<Sections>("src/three-core/sections.ts");
-    const inputs = WINDOW_INPUTS("blaenau");
+    const inputs = windowInputs("blaenau");
     const registered = inputs.features.filter((f) => f.kind === "structure" && f.id.startsWith("bridge-blaenau-")).length;
     expect(registered).toBeGreaterThan(0);
     expect((buildSectionScene(SECTIONS.blaenau, inputs) as unknown as { bridges: unknown[] }).bridges.length).toBe(registered);

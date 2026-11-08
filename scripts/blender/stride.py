@@ -196,7 +196,7 @@ def cycle(g, S, dims, st, pelvis):
     # the swinging foot clears the ground by CLEARANCE wherever it would come lower (a short, low stride): lifted
     # more by the hip and knee through the middle of the swing
     def lowest(i):
-        x, z, pt, toe = foot[i, 0], foot[i, 2], foot[i, 3], foot[i, 4]
+        z, pt, toe = foot[i, 2], foot[i, 3], foot[i, 4]
         return np.minimum.reduce([z + _rot_z(heel, pt), z + _rot_z(ball, pt), z + _rot_z(ball, pt) + dims["toe"] * np.sin(pt + toe)])
     mid = sw & (u >= duty + 0.15 * span) & (u <= duty + 0.85 * span)
     rise = np.sin(np.pi * q)

@@ -28,4 +28,6 @@ CA1–CA4 on the POC and on the synthetic orbit and pull-back (T); `tests/three-
 
 ## Relations
 
+Amended by: [56. The rider's view as a shot: handlebar height, cadence bob, no rider model](0056-first-person-shot.md)
+
 Amends: [16. Define camera shots as pure functions with clearance limits](0016-pure-camera-shots.md)

@@ -17,7 +17,8 @@ captions, corrections to the Welsh, and improvements to the pipeline.
 ## Making a change
 
 1. Fork the repository and create a branch from `main`.
-2. Run the checks that CI runs: `npm run lint` and `npm test`. The render checks (`npm run test:render`) need a GPU,
+2. Run the checks that CI runs: `npm run lint`, `npm test`, `npm audit --audit-level=high` and `npm run build` (CI also
+   byte-compiles the Python pipeline and runs its BNG self-test). The render checks (`npm run test:render`) need a GPU,
    ffmpeg and Python with numpy and Pillow; run them locally before changing anything that affects rendered pixels.
 3. Keep data honest: `data/source-register.md` records where every figure and dataset came from. If you add data,
    add its source and licence there, and run `npm run data:sync` so `public/data/` matches.

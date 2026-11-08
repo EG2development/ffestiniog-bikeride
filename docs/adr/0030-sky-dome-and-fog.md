@@ -28,4 +28,6 @@ RL11 (T, V); `tests/three-core/atmosphere.test.ts` (design D26).
 
 ## Relations
 
+Amended by: [54. A photoreal look as a layer over the same scene, prototyped on Maentwrog Road](0054-photoreal-layer.md)
+
 Amends: [18. Light with a fixed sun, hemisphere fill and fog](0018-fixed-lighting.md)

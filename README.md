@@ -54,7 +54,8 @@ npm run dev
 ```
 
 Remotion Studio opens with the compositions `CyclingVision`, `Reel3D`, `Section-intro` … `Section-closing`,
-`Poc3DMaentwrog` and `Poc3DMaentwrogPhoto`. Then:
+`Poc3DMaentwrog` and `Poc3DMaentwrogPhoto`; the five `Social-<cut>` compositions need the rendered plates
+(`npm run social:studio`). Then:
 
 | Task | Command |
 |---|---|

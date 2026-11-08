@@ -4,7 +4,7 @@ export type TileRange = { x0: number; x1: number; y0: number; y1: number };
 export type Bbox = { west: number; south: number; east: number; north: number };
 
 /** Fractional tile coordinates of a lon/lat at zoom z. */
-export function tileCoords(lon: number, lat: number, z: number): { tx: number; ty: number } {
+function tileCoords(lon: number, lat: number, z: number): { tx: number; ty: number } {
   const n = 2 ** z;
   const phi = (lat * Math.PI) / 180;
   return { tx: ((lon + 180) / 360) * n, ty: ((1 - Math.log(Math.tan(phi) + 1 / Math.cos(phi)) / Math.PI) / 2) * n };

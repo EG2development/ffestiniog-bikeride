@@ -1,10 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { followStartFrame, SECTIONS, buildSectionScene, type SectionScene } from "../../src/three-core/sections";
 import { CROWN_SHAPES } from "../../src/three-core/trees";
-import { validateFeatures, type OsmLine } from "../../src/three-core/registers";
-import type { TrailProfile } from "../../src/three-core/trail";
-import type { DemGrid, LandCover } from "../../src/three-core/types";
-import { readJson, readProjectFile, realRoute } from "./fixtures";
+import type { OsmLine } from "../../src/three-core/registers";
+import { readJson, readProjectFile, windowInputs } from "./fixtures";
 
 // Trees never hide the rider in any ground shot that frames them, drone-side or follow (spec CL5 as amended
 // at t6; ADR 47; pseudocode-reel-v2 §4.5). Checked on the real sections against the crowns TreesView draws,
@@ -41,20 +39,10 @@ function crownHit(a: V3, b: V3, t: { x: number; y: number; z: number; scale: num
   return false;
 }
 
-/** Does the segment a→b pass within r of c? (a coarse prefilter on the tree's bounding sphere) */
 function inputs(id: string) {
   const w = `public/data/sections/${id}`;
-  const header = readJson<DemGrid & { file: string; sourceFile: string }>(`${w}/dem.json`);
-  const buf = readProjectFile(`${w}/${header.file}`);
-  const dem: DemGrid = { ...header, heights: new Float32Array(buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength)), sourceIndex: new Uint8Array(readProjectFile(`${w}/${header.sourceFile}`)) };
-  const landMeta = readJson<{ legend: string[]; file: string }>(`${w}/landcover.json`);
   return {
-    route: realRoute(),
-    dem,
-    land: { legend: landMeta.legend, classes: new Uint8Array(readProjectFile(`${w}/${landMeta.file}`)) } as LandCover,
-    profile: readJson<TrailProfile>(`${w}/trail-profile.json`),
-    osm: readJson<{ features: OsmLine[] }>(`${w}/osm.geojson`).features,
-    features: [...validateFeatures(readJson<unknown>("data/features-3d.json")), ...validateFeatures(readJson<unknown>(`data/features-${id}.json`))],
+    ...windowInputs(id),
     // the photo look's lidar canopy and field boundaries (ADRs 57, 58, 60); the concept look ignores them
     canopy: (() => {
       const c = readProjectFile(`${w}/canopy.f32`);

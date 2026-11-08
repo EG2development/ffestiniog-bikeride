@@ -4,6 +4,7 @@
 // gets broadleaf crowns on a jittered grid, kept back from its shore, standing at least at the water's level; an
 // island that already carries trees only has its gaps filled. The extent is OSM's; the trees are decorative.
 import type { HeightAt } from "./camera";
+import { inRingXZ } from "./plane";
 import { mulberry32 } from "./rng";
 import { NOMINAL_TREE_HEIGHT_M, type TreeInstance, type TreePlacement } from "./trees";
 import type { WaterBody } from "./water";
@@ -22,15 +23,7 @@ export const ISLAND_TREES = {
   seed: 20261102,
 } as const;
 
-function inRing(p: XZ, ring: XZ[]): boolean {
-  let inside = false;
-  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-    const a = ring[i];
-    const b = ring[j];
-    if (a.z > p.z !== b.z > p.z && p.x < ((b.x - a.x) * (p.z - a.z)) / (b.z - a.z) + a.x) inside = !inside;
-  }
-  return inside;
-}
+const inRing = (p: XZ, ring: XZ[]) => inRingXZ(p.x, p.z, ring);
 
 function distToRing(p: XZ, ring: XZ[]): number {
   let best = Infinity;

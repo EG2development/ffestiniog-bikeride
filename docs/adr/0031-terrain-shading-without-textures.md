@@ -28,4 +28,6 @@ RL10 (R, V); `tests/three-core/shading.test.ts` (design D27).
 
 ## Relations
 
+Amended by: [46. Clarity tuned as data, from one source, against metrics](0046-clarity-tuned-as-data.md), [54. A photoreal look as a layer over the same scene, prototyped on Maentwrog Road](0054-photoreal-layer.md)
+
 Amends: [10. Colour the terrain from OSM land cover as vertex colours](0010-landcover-vertex-colours.md)

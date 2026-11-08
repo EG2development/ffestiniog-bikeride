@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { bngToWgs84 } from "../../src/three-core/bng";
+import { inRingXZ as inRing } from "../../src/three-core/plane";
 import { validateDemHeader, type OsmLine } from "../../src/three-core/registers";
 import { waterBodies, type WaterBody } from "../../src/three-core/water";
 import type { DemGrid } from "../../src/three-core/types";
@@ -29,11 +30,6 @@ const edgeDistance = (x: number, z: number, r: { x: number; z: number }[]) =>
     const u = Math.max(0, Math.min(1, ((x - a.x) * vx + (z - a.z) * vz) / (vx * vx + vz * vz || 1)));
     return Math.hypot(x - a.x - u * vx, z - a.z - u * vz);
   }));
-const inRing = (x: number, z: number, r: { x: number; z: number }[]) => {
-  let c = false;
-  for (let i = 0, j = r.length - 1; i < r.length; j = i++) if (r[i].z > z !== r[j].z > z && x < ((r[j].x - r[i].x) * (z - r[i].z)) / (r[j].z - r[i].z) + r[i].x) c = !c;
-  return c;
-};
 
 describe.each(WINDOWS)("window %s", (w) => {
   it("WA7: no terrain node inside a lake, outside its islands, is above the water surface", () => {

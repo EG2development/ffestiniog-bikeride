@@ -3,6 +3,7 @@ import React, { useEffect, useLayoutEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import type { GrassClump } from "../../three-core/grass";
 import { GRASS } from "../../three-core/photoLook";
+import { setInstances } from "../instancing";
 import type { Mask } from "../mask";
 
 // A clump is three bent blades crossed at 60°, three triangles each, darker at the base and lighter at the tip, drawn
@@ -51,21 +52,7 @@ export const GrassView: React.FC<{ clumps: GrassClump[]; mask?: Mask }> = ({ clu
   const geometry = useMemo(clumpGeometry, []);
   useEffect(() => () => geometry.dispose(), [geometry]);
   useLayoutEffect(() => {
-    const mesh = ref.current;
-    if (!mesh) return;
-    const m = new THREE.Matrix4();
-    const q = new THREE.Quaternion();
-    const up = new THREE.Vector3(0, 1, 0);
-    const colour = new THREE.Color();
-    clumps.forEach((c, i) => {
-      q.setFromAxisAngle(up, c.yaw);
-      m.compose(new THREE.Vector3(c.x, c.y, c.z), q, new THREE.Vector3(c.scale, c.scale, c.scale));
-      mesh.setMatrixAt(i, m);
-      mesh.setColorAt(i, colour.setScalar(c.tint));
-    });
-    mesh.instanceMatrix.needsUpdate = true;
-    if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
-    mesh.computeBoundingSphere();
+    if (ref.current) setInstances(ref.current, clumps, (c) => c.tint);
   }, [clumps]);
   if (clumps.length === 0) return null;
   return (

@@ -27,5 +27,7 @@ H1, G5–G8, L1 (see docs/spec-3d.md). Design reference: D18 in docs/design-3d.m
 
 ## Relations
 
+Amended by: [51. Register entries carry status and provenance](0051-register-status-and-provenance.md), [58. Field boundaries from OSM barrier ways, in their own file, with a gap at the trail](0058-walls-and-hedges-from-osm.md)
+
 Related to: [12. Model only structures that have a cited source](0012-sourced-structures-only.md)
 Related to: [21. Treat data/ as the source of truth, synced to public/data](0021-data-sync.md)

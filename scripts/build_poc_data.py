@@ -129,17 +129,57 @@ def write_json(rel, obj, indent=None):
     print("wrote", rel)
 
 
+def section_box(lons, lats, dist, s0, s1, margin_m=MARGIN_M):
+    """The lon/lat box round the route between s0 and s1 m with a margin, as (lon0, lat0, lon1, lat1), and the section's
+    mean latitude (for local metres)."""
+    sec = (dist >= s0) & (dist <= s1)
+    sl = np.concatenate([[along(lons, lats, dist, s0)[0]], lons[sec], [along(lons, lats, dist, s1)[0]]])
+    sa = np.concatenate([[along(lons, lats, dist, s0)[1]], lats[sec], [along(lons, lats, dist, s1)[1]]])
+    lat_c = float(sa.mean())
+    dlat, dlon = margin_m / 111320, margin_m / (111320 * math.cos(math.radians(lat_c)))
+    return (sl.min() - dlon, sa.min() - dlat, sl.max() + dlon, sa.max() + dlat), lat_c
+
+
+def overbridge_spans(feats, lons, lats, dist, s0, s1, lon0, lat0, lat_c):
+    """Road bridges over the line between s0 and s1 m, as sorted [from_m, to_m, id, highway] spans: the lidar DTM keeps
+    their decks, which would put a hump in the trail profile. Each span is the deck footprint plus abutments, widened
+    for a skew crossing."""
+    k_lon = 111320 * math.cos(math.radians(lat_c))
+
+    def loc(lo, la):
+        return (lo - lon0) * k_lon, (la - lat0) * 111320
+
+    sec_idx = [i for i in range(len(lons) - 1) if dist[i + 1] >= s0 - PROFILE_PAD_M and dist[i] <= s1 + PROFILE_PAD_M]
+    overbridges = []
+    for f in feats:
+        tags = f["properties"]["tags"]
+        if not tags.get("bridge") or "highway" not in tags or f["geometry"]["type"] != "LineString":
+            continue
+        road = [loc(*c) for c in f["geometry"]["coordinates"]]
+        for i in sec_idx:
+            a, b = loc(lons[i], lats[i]), loc(lons[i + 1], lats[i + 1])
+            for p, q in zip(road, road[1:]):
+                den = (b[0] - a[0]) * (q[1] - p[1]) - (b[1] - a[1]) * (q[0] - p[0])
+                if den == 0:
+                    continue
+                t = ((p[0] - a[0]) * (q[1] - p[1]) - (p[1] - a[1]) * (q[0] - p[0])) / den
+                w = ((p[0] - a[0]) * (b[1] - a[1]) - (p[1] - a[1]) * (b[0] - a[0])) / den
+                if not (0 <= t <= 1 and 0 <= w <= 1):
+                    continue
+                d = dist[i] + t * (dist[i + 1] - dist[i])
+                rail, rd = (b[0] - a[0], b[1] - a[1]), (q[0] - p[0], q[1] - p[1])
+                sin = abs(rail[0] * rd[1] - rail[1] * rd[0]) / (math.hypot(*rail) * math.hypot(*rd))
+                half = (ROAD_WIDTH_M.get(tags["highway"], 4) / 2 + 3) / max(sin, 0.3) + 5
+                overbridges.append([round(d - half, 1), round(d + half, 1), f["properties"]["id"], tags["highway"]])
+    return sorted(overbridges)
+
+
 def main():
     lons, lats, dist = load_route()
     s0, s1 = SECTION_M
 
     # Box: the section plus a margin, in British National Grid.
-    sec = (dist >= s0) & (dist <= s1)
-    sl = np.concatenate([[along(lons, lats, dist, s0)[0]], lons[sec], [along(lons, lats, dist, s1)[0]]])
-    sa = np.concatenate([[along(lons, lats, dist, s0)[1]], lats[sec], [along(lons, lats, dist, s1)[1]]])
-    lat_c = float(sa.mean())
-    dlat, dlon = MARGIN_M / 111320, MARGIN_M / (111320 * math.cos(math.radians(lat_c)))
-    lon0, lon1, lat0, lat1 = sl.min() - dlon, sl.max() + dlon, sa.min() - dlat, sa.max() + dlat
+    (lon0, lat0, lon1, lat1), lat_c = section_box(lons, lats, dist, s0, s1)
     ce, cn = wgs84_to_bng(np.array([lon0, lon0, lon1, lon1]), np.array([lat0, lat1, lat0, lat1]))
     emin, emax, nmin, nmax = float(ce.min()), float(ce.max()), float(cn.min()), float(cn.max())
 
@@ -181,33 +221,7 @@ def main():
                 bridges.append([round(min(ds), 1), round(max(ds), 1), f["properties"]["id"]])
     bridges.sort()
 
-    # Road bridges over the line: the lidar DTM keeps their decks, which would put a hump in the trail profile.
-    k_lon = 111320 * math.cos(math.radians(lat_c))
-    loc = lambda lo, la: ((lo - lon0) * k_lon, (la - lat0) * 111320)
-    sec_idx = [i for i in range(len(lons) - 1) if dist[i + 1] >= s0 - PROFILE_PAD_M and dist[i] <= s1 + PROFILE_PAD_M]
-    overbridges = []
-    for f in feats:
-        tags = f["properties"]["tags"]
-        if not tags.get("bridge") or "highway" not in tags or f["geometry"]["type"] != "LineString":
-            continue
-        road = [loc(*c) for c in f["geometry"]["coordinates"]]
-        for i in sec_idx:
-            a, b = loc(lons[i], lats[i]), loc(lons[i + 1], lats[i + 1])
-            for p, q in zip(road, road[1:]):
-                den = (b[0] - a[0]) * (q[1] - p[1]) - (b[1] - a[1]) * (q[0] - p[0])
-                if den == 0:
-                    continue
-                t = ((p[0] - a[0]) * (q[1] - p[1]) - (p[1] - a[1]) * (q[0] - p[0])) / den
-                w = ((p[0] - a[0]) * (b[1] - a[1]) - (p[1] - a[1]) * (b[0] - a[0])) / den
-                if not (0 <= t <= 1 and 0 <= w <= 1):
-                    continue
-                d = dist[i] + t * (dist[i + 1] - dist[i])
-                rail = (b[0] - a[0], b[1] - a[1])
-                rd = (q[0] - p[0], q[1] - p[1])
-                sin = abs(rail[0] * rd[1] - rail[1] * rd[0]) / (math.hypot(*rail) * math.hypot(*rd))
-                half = (ROAD_WIDTH_M.get(tags["highway"], 4) / 2 + 3) / max(sin, 0.3) + 5  # deck footprint + abutments
-                overbridges.append([round(d - half, 1), round(d + half, 1), f["properties"]["id"], tags["highway"]])
-    overbridges.sort()
+    overbridges = overbridge_spans(feats, lons, lats, dist, s0, s1, lon0, lat0, lat_c)
 
     # Trail profile from the 1 m DTM along the centreline.
     ds = np.arange(s0 - PROFILE_PAD_M, s1 + PROFILE_PAD_M + 1, 1.0)

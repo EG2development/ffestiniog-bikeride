@@ -27,7 +27,7 @@ Three deliverables share one code base:
 | Render checks before any change that affects pixels | `npm run test:render` (GPU, ffmpeg, about 10–30 minutes) |
 | Preview | `npm run dev` |
 | Rebuild a section's data | `npm run data:section -- <window>`, then `npm run data:sync` |
-| Blender film | `npm run blender:export -- community`, `npm run blender:reel -- --dressed --film community`, then `scripts/blender/render_film.py` and `npm run film:encode` |
+| Blender film | `npm run blender:assets`, `npm run blender:export -- community`, `npm run blender:reel -- --dressed --film community`, then `scripts/blender/render_film.py`, `npm run film:audio` and `npm run film:encode` |
 
 ## Rules
 

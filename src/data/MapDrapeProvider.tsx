@@ -18,7 +18,7 @@ const Ctx = createContext<MapDrape | null>(null);
 const TILE = 256;
 type Manifest = { layers: { name: string; zoom: number; tiles: { x: number; y: number; path: string }[] }[] };
 
-export const bboxOf = (dem: Pick<DemGrid, "cols" | "rows" | "spacingM" | "originE" | "originN">): Bbox => {
+const bboxOf = (dem: Pick<DemGrid, "cols" | "rows" | "spacingM" | "originE" | "originN">): Bbox => {
   const corners = [
     bngToWgs84(dem.originE, dem.originN),
     bngToWgs84(dem.originE + (dem.cols - 1) * dem.spacingM, dem.originN),

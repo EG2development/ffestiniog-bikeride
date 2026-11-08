@@ -30,8 +30,8 @@ record: `docs/adr/0001-use-remotion-three-threecanvas.md`.
 ## ADRs and memory searched
 
 - **Project ADRs:** only `docs/adr/0001-use-remotion-three-threecanvas.md` (Proposed): `@remotion/three` `<ThreeCanvas>`, the compatibility table, and 8 POC acceptance criteria.
-- **ruflo console ADR digest** (`.claude-flow/console/adr-digest.json`): no ADRs attached to mission `msn_abdfd5eabd397f0f653da39f`.
-- **`.claude/helpers/adr-compliance.sh`:** checks the claude-flow toolchain's own ADRs (ADR-001 "agentic-flow as core foundation", and so on). They're about the toolchain, not this project, so they don't apply.
+- **ruflo console ADR digest** (`.claude-flow/console/adr-digest.json`, local tooling, not in the repository): no ADRs attached to mission `msn_abdfd5eabd397f0f653da39f`.
+- **`.claude/helpers/adr-compliance.sh`** (local tooling, not in the repository): checks the claude-flow toolchain's own ADRs (ADR-001 "agentic-flow as core foundation", and so on). They're about the toolchain, not this project, so they don't apply.
 - **Claude Code project memory:** `trawsfynydd_railway_status.md` (corridor is mothballed, not dismantled; scope stops at Trawsfynydd; heritage-trust history) and `three_js_upgrade_decision.md` (ThreeCanvas decision, vitest added).
 - **ruflo memory** (`memory_search_unified`, namespaces default, claude-memories, auto-memory, patterns, tasks, feedback): no results.
 

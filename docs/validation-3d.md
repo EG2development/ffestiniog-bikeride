@@ -1,7 +1,8 @@
 # Validation log: 3D cycling route animation
 
 Results of the checks in `docs/spec-3d.md`. Automated render checks
-(`npm run test:render`) append their results below. Review items are filled in
+(`npm run test:render`) appended their results below until ADR 60, and since then to
+`docs/validation-photoreal.md`. Review items are filled in
 by a reviewer who did not build the work, as the mission requires.
 
 ## Review checklist

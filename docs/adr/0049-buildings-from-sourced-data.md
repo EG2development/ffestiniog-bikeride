@@ -34,6 +34,8 @@ Spec BL1–BL6, BL11 and BL15–BL18; design D45.
 
 ## Relations
 
+Amended by: [63. Buildings up to date: every building near the line, checked against the latest OS release and the lidar](0063-buildings-up-to-date.md)
+
 Amends: [12. Model only structures that have a cited source](0012-sourced-structures-only.md). Related to: [20. Keep feature and asset registers as validated JSON](0020-registers-as-json.md), [38. On-screen text comes only from curated files, never from OSM tags](0038-labels-from-curated-files.md)
 
 ## As built (t13, 2026-10-26)

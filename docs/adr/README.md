@@ -1,11 +1,11 @@
 # Architecture decision records
 
-Decisions for the 3D upgrade of the cycling route video. How to run the
+Decisions for the 3D upgrade of the cycling route video, its reel and the Blender film. How to run the
 3D work and how to change a decision: docs/sop-3d.md. Each design decision
 D1–D20 in docs/design-3d.md has its own record; D21 is ADR 23. D22 (render-check
 diagnostics through Remotion's Node API) is an implementation detail of the checks, recorded
 in the design only. ADRs 24–26 came from the benchmark (t8), security review (t9) and CI (t12)
-tasks. ADRs 27–40 record the reel design (D23–D36, mission `msn_44274a1de641722956fc9ce5`); ADRs 41–52 record the water, readiness, clarity and buildings iteration (D37–D48 in `docs/design-reel-v2.md`, mission `msn_33e838999675db739df3c922`). ADR 53, GPU encoding for 3D renders, came from the t8 benchmark. ADRs 41, 42, 44–51 and 53 each end with an "As built" section (t13) recording how the decision shipped; the decisions themselves are unchanged. ADRs 54–58 record the photoreal layer (2026-10-29; D49–D53 in `docs/design-photoreal.md`, research in `docs/research-photoreal.md`). All records stay "Proposed" until the project owner accepts or rejects them.
+tasks. ADRs 27–40 record the reel design (D23–D36, mission `msn_44274a1de641722956fc9ce5`); ADRs 41–52 record the water, readiness, clarity and buildings iteration (D37–D48 in `docs/design-reel-v2.md`, mission `msn_33e838999675db739df3c922`). ADR 53, GPU encoding for 3D renders, came from the t8 benchmark. ADRs 41, 42, 44–51 and 53 each end with an "As built" section (t13) recording how the decision shipped; the decisions themselves are unchanged. ADRs 54–58 record the photoreal layer (2026-10-29; D49–D53 in `docs/design-photoreal.md`, research in `docs/research-photoreal.md`). ADRs 59–61 record the people on the trail (`docs/design-photoreal.md`), ADR 62 the Blender build (`docs/design-blender.md`) and ADR 63 the buildings refresh against the latest OS release and the lidar. All records stay "Proposed" until the project owner accepts or rejects them.
 
 New records use the MADR 4.0.0 template in `template.md` (front matter with status and date, then Context and Problem Statement, Decision Drivers, Considered Options, Decision Outcome with Consequences and Confirmation, Pros and Cons of the Options, More Information). Records 1–63 predate it and keep their original headings; they map as Context → Context and Problem Statement, Decision → Decision Outcome, Consequences → Consequences, Verification → Confirmation, Relations → More Information.
 

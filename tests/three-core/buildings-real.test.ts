@@ -2,13 +2,12 @@ import { existsSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import { footprintOverlap, segmentsInFootprints } from "../../src/three-core/buildings";
-import { validateBuildings, validateFeatures, type OsmLine } from "../../src/three-core/registers";
+import { inRingXZ as inRing } from "../../src/three-core/plane";
+import { validateBuildings, validateFeatures } from "../../src/three-core/registers";
 import { buildSectionScene, SECTIONS, type SectionScene } from "../../src/three-core/sections";
 import { CROWN_SPHERES } from "../../src/three-core/trees";
-import type { TrailProfile } from "../../src/three-core/trail";
-import type { DemGrid, LandCover } from "../../src/three-core/types";
 import { CAPTIONS, POC_CAPTIONS } from "../../src/data/reel-captions";
-import { readJson, readProjectFile, realRoute } from "./fixtures";
+import { readJson, windowInputs } from "./fixtures";
 
 // The buildings each ground section draws, on the real data (spec BL7, BL8, BL10, BL11, BL16; ADRs 49, 50;
 // pseudocode-reel-v2 §5.4, §5.5): only register entries with a real source, clear of the trail and the roads,
@@ -31,19 +30,7 @@ const OVER_A_ROAD: Record<string, string[]> = { blaenau: ["building-blaenau-4619
 
 function inputs(id: string) {
   const w = `public/data/sections/${id}`;
-  const header = readJson<DemGrid & { file: string; sourceFile: string }>(`${w}/dem.json`);
-  const buf = readProjectFile(`${w}/${header.file}`);
-  const dem: DemGrid = { ...header, heights: new Float32Array(buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength)), sourceIndex: new Uint8Array(readProjectFile(`${w}/${header.sourceFile}`)) };
-  const landMeta = readJson<{ legend: string[]; file: string }>(`${w}/landcover.json`);
-  return {
-    route: realRoute(),
-    dem,
-    land: { legend: landMeta.legend, classes: new Uint8Array(readProjectFile(`${w}/${landMeta.file}`)) } as LandCover,
-    profile: readJson<TrailProfile>(`${w}/trail-profile.json`),
-    osm: readJson<{ features: OsmLine[] }>(`${w}/osm.geojson`).features,
-    features: [...validateFeatures(readJson<unknown>("data/features-3d.json")), ...validateFeatures(readJson<unknown>(`data/features-${id}.json`))],
-    buildings: validateBuildings(readJson<unknown>(`${w}/buildings.json`), `${w}/buildings.json`),
-  };
+  return { ...windowInputs(id), buildings: validateBuildings(readJson<unknown>(`${w}/buildings.json`), `${w}/buildings.json`) };
 }
 
 describe.each(GROUND)("section %s", (id) => {
@@ -85,14 +72,6 @@ describe.each(GROUND)("section %s", (id) => {
   });
 
   it("BL13: no decorative tree stands in a building or hangs its crown over one (crowns as drawn)", () => {
-    const inRing = (x: number, z: number, ring: { x: number; z: number }[]) => {
-      let c = false;
-      for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-        const [a, b] = [ring[i], ring[j]];
-        if (a.z > z !== b.z > z && x < ((b.x - a.x) * (z - a.z)) / (b.z - a.z) + a.x) c = !c;
-      }
-      return c;
-    };
     const edgeDist = (x: number, z: number, ring: { x: number; z: number }[]) =>
       Math.min(...ring.map((a, i) => {
         const b = ring[(i + 1) % ring.length];

@@ -8,6 +8,3 @@ export const miles = (metres: number, digits = 1): string => (metres / M_PER_MIL
 
 /** Metres as whole feet, with a thousands separator: feet(247) is "810". */
 export const feet = (metres: number): string => Math.round(metres / M_PER_FOOT).toLocaleString("en-GB");
-
-/** Metres per second as whole miles per hour: mph(5) is "11". */
-export const mph = (metresPerSecond: number): string => String(Math.round((metresPerSecond * 3600) / M_PER_MILE));

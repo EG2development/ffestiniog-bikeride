@@ -28,4 +28,6 @@ RL14 (T, V); `tests/three-core/water.test.ts` (design D28).
 
 ## Relations
 
+Amended by: [41. Water polygons keep their holes and face up](0041-water-polygons-with-holes.md), [42. One water level per water body, computed once](0042-one-level-per-water-body.md)
+
 Related to: [12. Model only structures that have a cited source](0012-sourced-structures-only.md), [6. Use the Welsh lidar DTM](0006-welsh-lidar-dtm.md)

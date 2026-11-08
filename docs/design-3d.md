@@ -62,8 +62,8 @@ decision, follow `docs/sop-3d.md`.
 | D18 | **Registers:** `data/features-3d.json` and `data/assets-3d.json` (schemas below; plus one `data/features-<id>.json` per reel window, ADR 29) are validated by a small hand-written validator in `src/three-core/registers.ts`, so no new dependency is needed. | H1, G5–G8, L1. |
 | D19 | **One copy direction:** `data/` is the source of truth, and `npm run data:sync` copies its JSON/GeoJSON into `public/data/`. A static test fails if any pair differs. Large generated binaries (`*.f32`, `*.u8`) live only in `public/data/`, with their provenance in a JSON header beside them. | Removes the manual-copy drift the README warns about. |
 | D21 | **Road-bridge decks are removed from the trail profile** (ADR 23). Found during the build: the lidar DTM keeps the A470 deck at km 8.56, which put a 26 % hump in the profile. Overbridge spans are interpolated like rail-over bridges, still flattened beneath, and not reported as earthworks. | Geographic accuracy; spec TR2. |
-| D22 | **Render-check diagnostics use Remotion's Node API** (`renderStill` with `onBrowserLog`). The CLI does not print the page's console output, so the draw-call, triangle and overlay logs can only be read this way. `@remotion/renderer` and `@remotion/bundler` are pinned dev dependencies at 4.0.538. | Spec RN6, H2a, L2. |
-| D20 | **Dependencies, pinned exactly:** `three@0.186.1`, `@react-three/fiber@9.8.2` (peers react ≥19 <19.4: installed 19.2.3 ✓; three ≥0.156 ✓), `@remotion/three@4.0.538` (matches remotion), `@types/three@0.186.0` (dev). No drei. | ADR compatibility table; minimal deps. |
+| D22 | **Render-check diagnostics use Remotion's Node API** (`renderStill` with `onBrowserLog`). The CLI does not print the page's console output, so the draw-call, triangle and overlay logs can only be read this way. `@remotion/renderer` and `@remotion/bundler` are pinned dev dependencies at 4.0.539 (ADR 22). | Spec RN6, H2a, L2. |
+| D20 | **Dependencies, pinned exactly:** `three@0.186.1`, `@react-three/fiber@9.8.2` (peers react ≥19 <19.4: installed 19.3.1 ✓; three ≥0.156 ✓), `@remotion/three@4.0.539` (matches remotion; ADR 22 records the moves), `@types/three@0.186.0` (dev). No drei. | ADR compatibility table; minimal deps. |
 
 ### Spec amendments made by this design
 
@@ -100,7 +100,12 @@ export function tmInverse(e: number, n: number): { lat: number; lon: number };
 export function heightAtBng(grid: DemGrid, e: number, n: number): number | null; // bilinear; null outside or at nodata
 export function meshHeightAtBng(grid: DemGrid, e: number, n: number): number | null; // on the terrain mesh's own triangles
 export function buildTerrainMesh(grid: DemGrid, land: LandCover, project: Projector, ve: number): MeshArrays;
-export const colourForClass: (name: string) => [number, number, number];         // land-cover palette (sRGB)
+
+// plane.ts: plan-view helpers the modules share
+export type PlanePoint = { x: number; z: number };
+export function inRingXZ(x: number, z: number, ring: readonly PlanePoint[]): boolean;                 // even-odd test against an {x, z} ring
+export function inRingXY(x: number, y: number, ring: readonly (readonly [number, number])[]): boolean; // the same for [lon, lat] tuples
+export function withinReach(samples: readonly PlanePoint[], reachUnits: number, stride?: number): (x: number, z: number) => boolean; // cell-hashed
 
 // trail.ts
 export const TRAIL_WIDTH_M = 3;
@@ -108,7 +113,6 @@ export type TrailProfile = { distanceM: number[]; elevationM: number[]; smoothin
   bridges?: [number, number][]; overbridges?: [number, number][] };              // spans in metres along the route
 export type TrailSample = { x: number; y: number; z: number; distM: number; tangent: Vec3; gradient: number };
 export type Trail = { samples: TrailSample[]; sampleAt: (distM: number) => TrailSample; ribbon: MeshArrays; maxGradient: number };
-export function profileHeightAt(profile: TrailProfile, d: number): number;
 export function buildTrail(route: RouteModel, profile: TrailProfile,
   section: { startKm: number; endKm: number }, opts: { widthM: number; ve: number }): Trail;
 export type CutFill = { fromKm: number; toKm: number; kind: 'cut' | 'fill'; maxDepthM: number };
@@ -279,7 +283,6 @@ export function waterBodies(osm: OsmLine[], project: Projector, heightAt: Height
 // tileUv.ts (ADR 33)
 export type TileRange = { x0: number; x1: number; y0: number; y1: number };
 export type Bbox = { west: number; south: number; east: number; north: number };
-export function tileCoords(lon: number, lat: number, z: number): { tx: number; ty: number };
 export function tileRange(bbox: Bbox, z: number): TileRange;
 export function tileUvs(positions: Float32Array, unproject: (x: number, z: number) => { lon: number; lat: number }, range: TileRange, z: number): Float32Array;
 // cyclistModel.ts (ADR 34)
@@ -395,9 +398,7 @@ export function routeCrossingsM(coords: [number, number][], route: { routePoints
 export const WOOD: { unknown: 0; broadleaf: 1; conifer: 2; mixed: 3 };
 export type WoodKind = keyof typeof WOOD;
 export const CONIFER_SHARE: readonly [0.12, 0.04, 0.9, 0.5]; // by WOOD value: an untagged wood 88 % broadleaf, a plantation 90 % conifer
-export const WOOD_EVIDENCE: Record<string, WoodKind>; // Coed Caersaeson (relation/6373661, km 9.3-10.9): broadleaf, as the imagery shows
 export function woodKindOf(tags: Record<string, string>): WoodKind | null;
-export function woodlandPolygons(osm: OsmLine[]): { kind: WoodKind; area: number; outer: [number, number][]; holes: [number, number][][]; box: [number, number, number, number] }[];
 export function woodKindGrid(dem: DemGrid, land: LandCover, osm: OsmLine[]): Uint8Array; // WOOD per DEM node
 // trees.ts: TreeOptions gains woodKinds?: Uint8Array. With it (the photo look) a woodland node's trees are conifer at its
 // kind's CONIFER_SHARE and both kinds share 2 x maxTrees, spread over the nodes that can grow one; without it 55 % and per kind
@@ -461,14 +462,12 @@ export const PRAM_PALETTE: { frame: readonly string[]; fabric: readonly string[]
 export type PeopleOptions = { count: number; seed: number };   // SectionConfig.photo gains people?: PeopleOptions
 export type PeopleInputs = { trail: Trail; frames: number; fps: number; kmRange: [number, number]; alongM: [number, number]; rider: { table: Float64Array; lateralM: number }; shot: Shot };
 export function placePeople(inp: PeopleInputs, opts: PeopleOptions): WalkerSpec[]; // a runner and a pram among them; a walker may bring a companion
-export const PEOPLE_RULES: { span: Record<Activity, [number, number]>; half: Record<Activity, number>; rider: { span: [number, number]; half: number }; clear: { rider: number; person: number }; cameraM: number; seenM: number };
 // --- the community film (docs/community-reel-research.md; src/data/community-film.ts) ---
 // walkers.ts: Activity gains 'cycle' | 'trike' | 'sit' (cycle at the camera rider's pace, trike clamp(12 − 120 g, 8, 14),
 // sit still); WalkerSpec gains role?: Role, speedKmh? (a group's steady pace) and stopAtM? (eases to a halt there) and locksUp? (then
 // locks the bicycle in the open locker and walks on to the bus stop: scripts/blender/lockup.py);
 // a sitter may stand off the path (C3) and pupils and children are 1.0–1.6 m (C9)
 export type Role = 'pupil' | 'child' | 'older' | 'commuter' | 'parent' | 'escort';
-export const CRANK_TURN_M: number;                                // 4.5 m per crank turn: a rider's phase
 // props.ts: street furniture, existing (where OSM maps it) or proposed, and says which
 export type PropKind = 'bench' | 'lockers' | 'fingerpost' | 'bus-shelter' | 'bus-stop-flag' | 'bus' | 'viewpoint-board';
 export type PropStatus = 'proposed' | 'existing';
@@ -486,7 +485,6 @@ export function proposedLineCy(props: readonly PropSpec[]): string | null; // "A
 export type CycleKind = 'cargo' | 'longtail' | 'christiania';
 export type Load = { children?: number[]; shopping?: boolean };      // passengers' standing heights, metres
 export const CYCLES: Record<CycleKind, { activity: 'cycle' | 'trike'; halfM: number; reachM: [number, number]; pace: number; seats: number }>;
-export const PASSENGER_HEIGHT_M: [number, number];                  // 0.85–1.3 m: a toddler to an infant-school child
 export function cyclePace(spec: WalkerSpec): number;                 // 0.82–0.9 on a long john or box tricycle, else 1
 export function checkCycle(spec: WalkerSpec, i: number): void;       // throws on a load without a cargo cycle, a child riding one, too many children
 // walkers.ts: WalkerSpec gains dog?: { breed: DogBreed; side?: 'left' | 'right' } and with?: number (a companion's
@@ -495,11 +493,7 @@ export function checkCycle(spec: WalkerSpec, i: number): void;       // throws o
 export type DogBreed = 'collie' | 'labrador' | 'terrier';
 export const DOG_STRIDE_M: number;                                // 0.9 m per trot cycle: a dog's phase
 // choreography.ts: everyone on the path at once, aware of everyone else, keeping left (SectionConfig.photo.choreograph)
-export const BODY_HALF_M: Record<Activity, number>;               // across the path, as people.ts's HALF
-export const BODY_REACH_M: Record<Activity, [number, number]>;    // behind and ahead, as people.ts's SPAN
 export const DOG: { sideM: number; aheadM: number; wanderSideM: number; wanderAheadM: number; halfM: number; lengthM: number };
-export const EDGE_M: number;                                      // 1.2 m: a centre's furthest off the centreline (+0.15 on foot, the verge)
-export const CLEAR_M: { foot: number; wheelsByFoot: number; wheels: number; companions: number }; // 0.25, 0.5, 0.4, 0.04 m
 export type Choreo = { dist: Float64Array; side: Float64Array; dog?: { dist: Float64Array; side: Float64Array } };
 export type ChoreoOptions = { rider?: { table: Float64Array; lateralM: number } };
 export function choreograph(trail: Trail, specs: readonly WalkerSpec[], frames: number, fps: number, opts?: ChoreoOptions): Choreo[];
@@ -657,7 +651,7 @@ The measured figures exceed the estimate but stay well inside the RN6 budget. Th
 | # | Risk | Handling |
 |---|---|---|
 | K1 | The Helmert datum error (±5 m) puts the OSM centreline off the trackbed formation in a 1 m DTM, which shows up as profile noise and cut/fill artefacts. | Report the std dev of (raw 1 m profile − 25 m smoothed) in `docs/validation-3d.md`. If it exceeds 1.5 m, upgrade to OSTN15 before P4. |
-| K2 | Lidar licence listings conflict (OGL vs "Not Specified"). | Confirm on the layer metadata page; until then L1 lists the licence as "OGL (to confirm)". |
+| K2 | Lidar licence listings conflict (OGL vs "Not Specified"). | Closed 2026-10-30: the DataMapWales LiDAR viewer states OGL v3, and L1 and the DEM headers carry it (`data/source-register.md`). |
 | K3 | Setting the camera in render without `useFrame` may not apply before `advance()`. | The RN2 double render detects it; the fallback is a `useLayoutEffect` that sets the camera, then calls `advance(0)`. |
 | K4 | Trail width primary source unconfirmed (TR1). | The ATAG 2021 PDF is too large for the fetch tool; read §11/appendix G locally before P5. |
 | K5 | The DTM has nodata in the box. | GLO-30 fallback per cell, recorded in `sourceIndex` and the register. |

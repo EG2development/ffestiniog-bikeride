@@ -97,7 +97,7 @@ def _limb(name, length, r_top, r_bottom, mat, coll, parent, foot=None):
 def build_dog(prefix, coll, breed="collie", collar=(0.55, 0.05, 0.04)):
     """A dog in dog space under a root Empty; returns its parts for animate() and the collar Empty for the lead."""
     b = BREEDS[breed]
-    h, l, r = b["h"], b["l"], b["r"]
+    h, length, r = b["h"], b["l"], b["r"]
     main = _fur(f"dog-{breed}-coat", b["main"], b["rough"])
     second = _fur(f"dog-{breed}-white", b["second"], b["rough"])
     nose = _mat("dog-nose", (0.01, 0.01, 0.01, 1), 0.3)
@@ -107,12 +107,12 @@ def build_dog(prefix, coll, breed="collie", collar=(0.55, 0.05, 0.04)):
     coll.objects.link(root)
     # the trunk's top line a little under the withers, the chest deeper than the loin, haunches over the hind legs
     top = h - r * 0.55
-    head_at = Vector((l / 2 + 0.07 + b["head"] * 0.6, 0, h + b["head"] * 1.25))
+    head_at = Vector((length / 2 + 0.07 + b["head"] * 0.6, 0, h + b["head"] * 1.25))
     elements = [
-        ((l * 0.05, 0, top), (l * 0.62, r * 0.95, r), 0.0),
-        ((l * 0.36, 0, top - r * 0.25), (r * 1.35, r * 1.0, r * 1.35), 0.0),
-        ((-l * 0.36, 0, top + r * 0.05), (r * 1.2, r * 0.95, r * 1.1), 0.0),
-        ((l / 2 + 0.05, 0, h + b["head"] * 0.4), (r * 0.55, r * 0.6, b["head"] * 1.25), -0.6),
+        ((length * 0.05, 0, top), (length * 0.62, r * 0.95, r), 0.0),
+        ((length * 0.36, 0, top - r * 0.25), (r * 1.35, r * 1.0, r * 1.35), 0.0),
+        ((-length * 0.36, 0, top + r * 0.05), (r * 1.2, r * 0.95, r * 1.1), 0.0),
+        ((length / 2 + 0.05, 0, h + b["head"] * 0.4), (r * 0.55, r * 0.6, b["head"] * 1.25), -0.6),
         (tuple(head_at), (b["head"] * 1.15, b["head"] * 0.95, b["head"] * 0.95), 0.0),
         (tuple(head_at + Vector((b["head"] * 0.7 + b["muzzle"] * 0.4, 0, -b["head"] * 0.3))), (b["muzzle"] * 0.75, b["head"] * 0.5, b["head"] * 0.45), 0.15),
     ]
@@ -122,7 +122,7 @@ def build_dog(prefix, coll, breed="collie", collar=(0.55, 0.05, 0.04)):
     if b["white"]:
         _metaball_mesh(prefix + "blaze", [
             (tuple(head_at + Vector((b["head"] * 0.75 + b["muzzle"] * 0.45, 0, -b["head"] * 0.38))), (b["muzzle"] * 0.72, b["head"] * 0.48, b["head"] * 0.4), 0.15),
-            ((l / 2 + 0.02, 0, h - r * 0.7), (r * 0.55, r * 0.7, r * 0.85), -0.3),
+            ((length / 2 + 0.02, 0, h - r * 0.7), (r * 0.55, r * 0.7, r * 0.85), -0.3),
         ], second, coll, root)
     # nose and eyes
     tip = head_at + Vector((b["head"] * 0.7 + b["muzzle"] * 1.1, 0, -b["head"] * 0.18))
@@ -143,7 +143,7 @@ def build_dog(prefix, coll, breed="collie", collar=(0.55, 0.05, 0.04)):
             bmesh.ops.create_uvsphere(bm, u_segments=8, v_segments=6, radius=1.0, matrix=m)
     _object(prefix + "ears", bm, [main], coll, root)
     # collar round the neck, and the lead's ring on top of it
-    neck = Vector((l / 2 + 0.07, 0, h + b["head"] * 0.2))
+    neck = Vector((length / 2 + 0.07, 0, h + b["head"] * 0.2))
     bm = bmesh.new()
     bmesh.ops.create_cone(bm, cap_ends=False, segments=16, radius1=r * 0.68, radius2=r * 0.68, depth=0.025,
                           matrix=Matrix.Translation(neck) @ Matrix.Rotation(-0.7, 4, "Y"))
@@ -157,7 +157,7 @@ def build_dog(prefix, coll, breed="collie", collar=(0.55, 0.05, 0.04)):
     # tail: three segments from the croup, carried by breed, a little curl
     tail = bpy.data.objects.new(prefix + "tail", None)
     tail.parent = root
-    tail.location = (-l / 2 - r * 0.6, 0, top + r * 0.35)
+    tail.location = (-length / 2 - r * 0.6, 0, top + r * 0.35)
     coll.objects.link(tail)
     bm = bmesh.new()
     length = h * 0.62 if breed != "terrier" else h * 0.45
@@ -174,7 +174,7 @@ def build_dog(prefix, coll, breed="collie", collar=(0.55, 0.05, 0.04)):
     parts["tail"] = tail
     # legs: fore under the chest, hind under the haunches; upper and lower parts, socks in the second colour
     hip_z, sh_z = top - r * 0.2, top - r * 0.35
-    for name, x, z, front in (("fl", l * 0.40, sh_z, True), ("fr", l * 0.40, sh_z, True), ("hl", -l * 0.40, hip_z, False), ("hr", -l * 0.40, hip_z, False)):
+    for name, x, z, front in (("fl", length * 0.40, sh_z, True), ("fr", length * 0.40, sh_z, True), ("hl", -length * 0.40, hip_z, False), ("hr", -length * 0.40, hip_z, False)):
         y = (r * 0.55) * (1 if name.endswith("l") else -1)
         joint = bpy.data.objects.new(f"{prefix}{name}-upper", None)
         joint.parent = root

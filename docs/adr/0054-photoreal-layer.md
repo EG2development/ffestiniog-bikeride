@@ -70,4 +70,6 @@ stills in `docs/evidence/photo/` and the reviews in `docs/validation-photoreal.m
 
 ## Relations
 
+Amended by: [60. The reel in the photo look: every scene, its aerials coloured by a satellite image](0060-reel-in-the-photo-look.md)
+
 Supersedes: spec CL14 (scope guard of iteration 2). Amends: [18. Light with a fixed sun, hemisphere fill and fog](0018-fixed-lighting.md), [30. A gradient sky dome and exponential fog](0030-sky-dome-and-fog.md), [31. Terrain relief shading without textures](0031-terrain-shading-without-textures.md). Related to: ADRs 55–58.

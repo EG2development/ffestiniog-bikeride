@@ -3,7 +3,7 @@
 Date: 2026-10-30
 
 Scope: the planned Blender build ([plan](../blender-build-plan.md), [design](../design-blender.md), [research](../research-blender.md));
-no code exists yet
+built 2026-10-31 to 2026-11-06 (see "As built" below)
 
 ## Status
 
@@ -59,7 +59,17 @@ licence-clean assets cover most, not all, of the cast and landscape.
 
 ## Verification
 
-None yet: the design's §6 lists the checks the first implementation must add (`tests/blender/`, run under `bpy`).
+As built: `tests/blender/` holds vitest checks of the coordinate contract, the interchange package and the reel build; the
+Blender-side checks (version, engine, view transform, objects) are reported by the import and build scripts themselves.
+
+## As built (2026-11-06)
+
+The build followed the decision with three changes, recorded in `docs/design-blender.md` §5 and
+`docs/film-enhancement-2026-11.md`: the films render in EEVEE (the render settings in `scripts/blender/landscape.py`,
+finished by `finish.py`), not Cycles on Metal; the frames are encoded by `scripts/film/encode.mjs` with ffmpeg instead
+of being assembled in the Video Sequencer; and Blender runs on Windows, found by `scripts/blender/lib.mjs` and started
+with `--factory-startup`. The exporter is `scripts/blender/export-section.ts`; the scene builders are
+`import_blockout.py` and `build_reel.py`.
 
 ## Relations
 

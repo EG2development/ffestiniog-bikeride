@@ -28,5 +28,7 @@ G6 (see docs/spec-3d.md). Design reference: D10 in docs/design-3d.md.
 
 ## Relations
 
+Amended by: [49. Buildings and landmarks from sourced data only](0049-buildings-from-sourced-data.md), [58. Field boundaries from OSM barrier ways, in their own file, with a gap at the trail](0058-walls-and-hedges-from-osm.md)
+
 Related to: [9. Take the trail height from the DTM along the centreline](0009-trail-height-from-dtm.md)
 Related to: [13. Model the trail as a 3 m ribbon over a flattened corridor](0013-trail-ribbon-corridor.md)

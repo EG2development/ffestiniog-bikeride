@@ -30,6 +30,8 @@ Spec BL5, BL7–BL10 and BL12–BL14; design D46.
 
 ## Relations
 
+Amended by: [63. Buildings up to date: every building near the line, checked against the latest OS release and the lidar](0063-buildings-up-to-date.md)
+
 Related to: [39. Performance measured per section and at the cuts](0039-performance-per-section-and-cuts.md), [49. Buildings and landmarks from sourced data only](0049-buildings-from-sourced-data.md)
 
 ## As built (t13, 2026-10-26)

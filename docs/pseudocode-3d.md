@@ -103,7 +103,7 @@ for each node (r, c): E = Emin + 4c + 2,  N = Nmax − 4r − 2
 write heights as float32 little-endian, row-major north→south (dem-poc.f32),
   and sourceIndex as one byte per node (dem-poc-source.u8)
 header: { cols, rows, spacingM: 4, originE, originN, crs: "EPSG:27700",
-          source, licence: "OGL (to confirm)", retrieved, resampling: "unknown (COG overview)",
+          source, licence: "Open Government Licence v3.0 (confirmed 2026-10-30)", retrieved, resampling: "unknown (COG overview)",
           fallbackCells: count(sourceIndex = 1) }
 ```
 
@@ -376,9 +376,8 @@ RG5: 3D sources import project/unproject from src/data/route and define no other
 ADR 3: src/three-core imports nothing from react, three, @react-three/*, remotion
 ADR 4: src/three/** contains no useContext, useRouteData or useScene3DData
 ADR 21: each data/*.json and *.geojson is byte-identical to its public/data/ copy
-ADR 22: package.json pins three 0.186.1, @react-three/fiber 9.8.2, @remotion/three 4.0.538, @types/three 0.186.0
-RG2: sha256(tests/route.test.ts) equals tests/baselines/route-test.sha256 (recorded before 3D work;
-     the file is not yet tracked by git, so a git diff would prove nothing) and the suite passes
+ADR 22: package.json pins three 0.186.1, @react-three/fiber 9.8.2, @remotion/three 4.0.539, @types/three 0.186.0
+RG2: sha256(tests/route.test.ts) equals tests/baselines/route-test.sha256 (recorded before 3D work) and the suite passes
 RG3: npm run lint exits 0 (CI step)
 ```
 

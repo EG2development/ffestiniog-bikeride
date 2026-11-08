@@ -4,7 +4,7 @@ import { useMeshGeometry } from "./geometry";
 import { maskColour, type Mask } from "./mask";
 
 // Proposed surface: a warm resin-bound buff, deliberately unlike any land-cover colour (spec H2c).
-export const TRAIL_COLOUR = "#d8b06a";
+const TRAIL_COLOUR = "#d8b06a";
 
 export const TrailView: React.FC<{ ribbon: MeshArrays; mask?: Mask }> = ({ ribbon, mask }) => {
   const mc = maskColour(mask, "trail");

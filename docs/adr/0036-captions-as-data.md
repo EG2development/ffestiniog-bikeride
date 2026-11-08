@@ -28,4 +28,6 @@ RL17–RL22 (R, V); `tests/reel-captions.test.ts` (design D32).
 
 ## Relations
 
+Amended by: [48. Overlays inside the safe area, captions paced for reading](0048-overlays-safe-area-and-pacing.md)
+
 Related to: [20. Keep feature and asset registers as validated JSON](0020-registers-as-json.md)

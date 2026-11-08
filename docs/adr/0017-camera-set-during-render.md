@@ -27,4 +27,6 @@ RN1, RN2 (see docs/spec-3d.md). Design reference: D15 in docs/design-3d.md.
 
 ## Relations
 
+Amended by: [55. Post-processing as the one render-priority subscriber under a never frame loop](0055-post-processing-takeover.md)
+
 Related to: [16. Define camera shots as pure functions with clearance limits](0016-pure-camera-shots.md)

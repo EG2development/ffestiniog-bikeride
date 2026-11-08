@@ -5,9 +5,9 @@
 // (out/blender/master/reel-dressed.blend, rendering to reel-dressed-preview.mp4); it needs `npm run blender:assets` first.
 //   npm run blender:reel [-- --render] [--dressed] [--percent 50] [--samples 16] [--film community]
 // Blender is found from $BLENDER, then C:/blender/blender.exe, then PATH.
-import { spawnSync } from "node:child_process";
-import { existsSync, mkdirSync } from "node:fs";
+import { mkdirSync } from "node:fs";
 import { resolve } from "node:path";
+import { findBlender, runner } from "./lib.mjs";
 
 const root = resolve(import.meta.dirname, "../..");
 const arg = (name, fallback) => {
@@ -22,16 +22,7 @@ const film = arg("film", "reel");
 if (!["reel", "community"].includes(film)) throw new Error(`unknown film ${film}: reel or community`);
 const master = `out/blender/master/${film === "reel" ? "reel" : film}-${dressed ? "dressed" : "master"}.blend`;
 
-const run = (cmd, args, label) => {
-  const r = spawnSync(cmd, args, { cwd: root, stdio: "inherit", shell: process.platform === "win32" && cmd === "npm" });
-  if (r.status !== 0) throw new Error(`${label} failed (${r.status ?? r.error?.message})`);
-};
-const findBlender = () => {
-  const found = [process.env.BLENDER, "C:/blender/blender.exe", "C:/Program Files/Blender Foundation/Blender 5.2/blender.exe"].filter(Boolean).find((c) => existsSync(c));
-  if (found) return found;
-  if (spawnSync("blender", ["--version"], { stdio: "ignore" }).status === 0) return "blender";
-  throw new Error("Blender not found: set BLENDER to its executable, or put it on PATH");
-};
+const run = runner(root);
 
 const blender = findBlender();
 mkdirSync(resolve(root, "out/blender/reel"), { recursive: true });

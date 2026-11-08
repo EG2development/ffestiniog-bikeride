@@ -17,7 +17,6 @@ import json
 import math
 import os
 import re
-import sys
 import time
 import urllib.parse
 import urllib.request
@@ -272,13 +271,11 @@ def main():
     records = [r for r in (record(p, route) for p in details(ids)) if r]
     records.sort(key=lambda r: (r["location"]["route_m"], r["date"] or ""))
     out = {
-        "description": "Openly licensed, geolocated photographs within %d m of the trackbed (Wikimedia Commons, including "
-                       "Geograph Britain and Ireland imports). use='reconstruction' only for photos taken in %d or later; "
-                       "older photos are for history only. Links only: no image is copied into this project."
-                       % (CORRIDOR_M, FROM_YEAR),
+        "description": f"Openly licensed, geolocated photographs within {CORRIDOR_M} m of the trackbed (Wikimedia Commons, including "
+                       f"Geograph Britain and Ireland imports). use='reconstruction' only for photos taken in {FROM_YEAR} or later; "
+                       "older photos are for history only. Links only: no image is copied into this project.",
         "fetched": TODAY,
-        "source": "commons.wikimedia.org API (list=geosearch every %d m, radius %d m; prop=imageinfo|coordinates)"
-                  % (SEARCH_STEP_M, SEARCH_RADIUS_M),
+        "source": f"commons.wikimedia.org API (list=geosearch every {SEARCH_STEP_M} m, radius {SEARCH_RADIUS_M} m; prop=imageinfo|coordinates)",
         "fields": {"date_confidence": "verified = full taken date; approximate = year/month or qualified; uncertain = none",
                    "heading_deg": "camera to subject position, both from the file page; null when no subject position",
                    "confidence": "verified = camera position, heading and full date all present",

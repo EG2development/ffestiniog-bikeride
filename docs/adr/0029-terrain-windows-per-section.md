@@ -28,5 +28,7 @@ RL5, RL6, RL7 (T, D); per-window acceptance tests on the real data (design D25).
 
 ## Relations
 
+Amended by: [42. One water level per water body, computed once](0042-one-level-per-water-body.md)
+
 Amends: [7. Read the DTM by HTTP range requests](0007-range-read-dtm.md)
 Related to: [6. Use the Welsh lidar DTM](0006-welsh-lidar-dtm.md), [21. Treat data/ as the source of truth, synced to public/data](0021-data-sync.md)

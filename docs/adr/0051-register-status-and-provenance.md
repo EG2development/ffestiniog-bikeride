@@ -33,6 +33,8 @@ Spec BL2–BL4 and BL16; design D47.
 
 ## Relations
 
+Amended by: [63. Buildings up to date: every building near the line, checked against the latest OS release and the lidar](0063-buildings-up-to-date.md)
+
 Amends: [20. Keep feature and asset registers as validated JSON](0020-registers-as-json.md)
 
 ## As built (t13, 2026-10-26)

@@ -47,4 +47,6 @@ statistics in `docs/validation-photoreal.md`.
 
 ## Relations
 
+Amended by: [60. The reel in the photo look: every scene, its aerials coloured by a satellite image](0060-reel-in-the-photo-look.md)
+
 Amends: [11. Place trees by seeded random inside OSM woodland](0011-seeded-trees-in-woodland.md), [37. Vegetation in a near zone](0037-vegetation-near-zone.md). Related to: [49. Buildings and landmarks from sourced data only](0049-buildings-from-sourced-data.md).

@@ -3,6 +3,7 @@ import React, { useEffect, useLayoutEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { mergeGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
 import { CROWN_SHAPES, TREE_COLOURS, TREE_FILL, type TreeInstance, type TreePlacement } from "../three-core/trees";
+import { setInstances } from "./instancing";
 import { maskColour, type Mask } from "./mask";
 
 // Two instanced meshes (conifer, broadleaf): two draw calls for all trees (spec RN6).
@@ -35,18 +36,7 @@ const Instances: React.FC<{ kind: "conifer" | "broadleaf"; trees: TreeInstance[]
   const geometry = useMemo(() => treeGeometry(kind), [kind]);
   useEffect(() => () => geometry.dispose(), [geometry]);
   useLayoutEffect(() => {
-    const mesh = ref.current;
-    if (!mesh) return;
-    const m = new THREE.Matrix4();
-    const q = new THREE.Quaternion();
-    const up = new THREE.Vector3(0, 1, 0);
-    trees.forEach((t, i) => {
-      q.setFromAxisAngle(up, t.yaw);
-      m.compose(new THREE.Vector3(t.x, t.y, t.z), q, new THREE.Vector3(t.scale, t.scale, t.scale));
-      mesh.setMatrixAt(i, m);
-    });
-    mesh.instanceMatrix.needsUpdate = true;
-    mesh.computeBoundingSphere();
+    if (ref.current) setInstances(ref.current, trees);
   }, [trees]);
   if (trees.length === 0) return null;
   return (

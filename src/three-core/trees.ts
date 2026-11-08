@@ -3,6 +3,7 @@
 import { bngToWgs84 } from "./bng";
 import { heightAtBng } from "./dem";
 import type { Vec3 } from "./types";
+import { inRingXZ as inRing, withinReach } from "./plane";
 import { mulberry32 } from "./rng";
 import { roadWidthM, type RoadLine } from "./roads";
 import type { Trail } from "./trail";
@@ -94,15 +95,6 @@ function segmentNear(a: Vec3, b: Vec3, c: Vec3, r: number): boolean {
   return p[0] * p[0] + p[1] * p[1] + p[2] * p[2] < r * r;
 }
 
-function inRing(x: number, z: number, ring: { x: number; z: number }[]): boolean {
-  let inside = false;
-  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-    const [a, b] = [ring[i], ring[j]];
-    if (a.z > z !== b.z > z && x < ((b.x - a.x) * (z - a.z)) / (b.z - a.z) + a.x) inside = !inside;
-  }
-  return inside;
-}
-
 /** Plan distance from (x, z) to the nearest edge of a ring. */
 function edgeDistance(x: number, z: number, ring: { x: number; z: number }[]): number {
   let best = Infinity;
@@ -117,29 +109,10 @@ function edgeDistance(x: number, z: number, ring: { x: number; z: number }[]): n
 
 const DEFAULTS: TreeOptions = { seed: 20261025, probability: 0.12, maxTrees: 6000, clearOfTrailM: 10, roads: [], clearOfRoadM: 2, ve: 1, nearZoneM: 300, densityPer100m2: 4, minCanopyM: 3, fieldTreeM: 6, treesPerNode: 1, canopyCover: false };
 
-/** True within `reachUnits` of any trail sample; samples are hashed by cell so each node checks its 3 × 3 neighbourhood only. */
+/** True within `reachUnits` of any trail sample (every 5th, 10 m: enough for a 300 m zone); everywhere when the reach is unbounded or there is no trail. */
 function nearTrail(samples: { x: number; z: number }[], reachUnits: number): (x: number, z: number) => boolean {
   if (!Number.isFinite(reachUnits) || samples.length === 0) return () => true;
-  const cell = Math.max(reachUnits, 1e-6);
-  const cells = new Map<string, { x: number; z: number }[]>();
-  // every 5th sample (10 m) is enough for a 300 m zone
-  for (let i = 0; i < samples.length; i += 5) {
-    const s = samples[i];
-    const key = `${Math.floor(s.x / cell)},${Math.floor(s.z / cell)}`;
-    const list = cells.get(key);
-    if (list) list.push(s);
-    else cells.set(key, [s]);
-  }
-  return (x, z) => {
-    const cx = Math.floor(x / cell);
-    const cz = Math.floor(z / cell);
-    for (let i = -1; i <= 1; i++) {
-      for (let j = -1; j <= 1; j++) {
-        for (const s of cells.get(`${cx + i},${cz + j}`) ?? []) if (Math.hypot(s.x - x, s.z - z) <= reachUnits) return true;
-      }
-    }
-    return false;
-  };
+  return withinReach(samples, reachUnits, 5);
 }
 
 /** Segments hashed by grid cell; `near(x, z)` lists the segments within `reach` of any point in that cell. */

@@ -12,7 +12,7 @@ Proposed
 
 Amended by: [19. Pass --gl=angle per 3D render, never globally](0019-gl-angle-per-render.md)
 
-Nothing in this ADR has been built yet. Two parts have moved on since it was
+The proof of concept and the reel were built on this decision (ADRs 2 onwards). Two parts have moved on since it was
 written: the global `setChromiumOpenGlRenderer('angle')` called for below is
 replaced by ADR 19, and the detailed POC acceptance criteria now live in the
 spec (docs/spec-3d.md).
