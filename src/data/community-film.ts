@@ -1,6 +1,7 @@
 // The community film (180 s at 30 fps): its scenes in order and its captions, as data (ADR 36). Its scenes are
 // src/three-core/community.ts's configs; the Blender build assembles them as it does the reel (npm run blender:reel --
-// --film community). Every caption is bilingual, Welsh first (review 2026-11-04): short, the English in British English,
+// --film community). Every caption is bilingual, Welsh first (reviews 2026-11-04 and 2026-11-08, the second for natural
+// North Wales Welsh: efo, yma'n barod, trafod rather than archwilio): short, the English in British English,
 // distances in miles (milltir) and speeds in mph (mya), and the closing line is the brief's. Every proposal is labelled by its scene's legend; the concept badge and the sources run throughout.
 import type { Caption } from "./reel-captions";
 import type { ReelScene } from "./reel-timeline";
@@ -46,22 +47,22 @@ export const MINUTES = Math.round((+miles(ROUTE_M) / 10) * 60);
 /** Every caption Welsh first, then English (`cy` above `text`), in natural Welsh and British English, short enough
  * that each language reads in its own line or two. */
 export const COMMUNITY_CAPTIONS: Caption[] = [
-  { id: "disclaimer", cy: "Darlun cysyniadol — nid llwybr cymeradwy", text: "Concept visualisation — not an approved route", from: 0, to: 5400, position: "badge" },
+  { id: "disclaimer", cy: "Darlun cysyniadol — nid llwybr wedi'i gymeradwyo", text: "Concept visualisation — not an approved route", from: 0, to: 5400, position: "badge" },
   { id: "attribution", cy: SOURCES_CY, text: SOURCES, from: 0, to: 5400, position: "attribution" },
   { id: "places", cy: "Blaenau Ffestiniog, Llan Ffestiniog a Thrawsfynydd", text: "Blaenau Ffestiniog, Llan Ffestiniog and Trawsfynydd", from: 20, to: 170, position: "top-left" },
   { id: "today", cy: "Heddiw: rheilffordd segur ers y 1990au", text: "Today: a railway mothballed since the 1990s", from: 200, to: 400, position: "top-left" },
-  { id: "idea", cy: "Un hen reilffordd, tair cymuned:\nsyniad i'w archwilio gyda'n gilydd", text: "One former railway, three communities:\nan idea to explore together", from: 425, to: 595, position: "top-left" },
+  { id: "idea", cy: "Un hen reilffordd, tair cymuned:\nsyniad i'w drafod efo'n gilydd", text: "One former railway, three communities:\nan idea to explore together", from: 425, to: 595, position: "top-left" },
   { id: "school", cy: "Taith fwy diogel a mwy annibynnol i'r ysgol", text: "A safer, more independent journey to school", from: 640, to: 930, position: "top-left" },
-  { id: "school-2", cy: "Beicio gyda'n gilydd ar lwybr di-draffig", text: "Riding together on a traffic-free path", from: 1060, to: 1340, position: "top-left" },
-  { id: "everyday", cy: "Teithiau bob dydd: teuluoedd, beiciau cargo a chŵn", text: "Everyday trips: families, cargo bikes and dog walks", from: 1370, to: 1700, position: "top-left" },
+  { id: "school-2", cy: "Beicio efo'n gilydd ar lwybr di-draffig", text: "Riding together on a traffic-free path", from: 1060, to: 1340, position: "top-left" },
+  { id: "everyday", cy: "Teithiau bob dydd:\nteuluoedd, beiciau cargo a mynd â'r ci am dro", text: "Everyday trips: families, cargo bikes and dog walks", from: 1370, to: 1700, position: "top-left" },
   { id: "pace", cy: "Lle i gerdded, rhedeg a phasio'n ofalus", text: "Room to walk, run and pass with care", from: 1760, to: 2090, position: "top-left" },
   { id: "bus", cy: "Beicio i'r orsaf, cloi'r beic, dal bws neu drên", text: "Ride to the station, lock up, catch a bus or train", from: 2120, to: 2420, position: "top-left" },
-  { id: "bus-existing", cy: "Yn bodoli: gorsaf a safle bws\nArfaethedig: loceri beiciau ac arwyddion", text: "Existing: station and bus stop\nProposed: cycle lockers and signs", from: 2130, to: 2690, position: "bottom-left" },
+  { id: "bus-existing", cy: "Yma'n barod: gorsaf a safle bws\nArfaethedig: loceri beiciau ac arwyddion", text: "Existing: station and bus stop\nProposed: cycle lockers and signs", from: 2130, to: 2690, position: "bottom-left" },
   { id: "welcome", cy: "Lle i orffwys a mwynhau'r olygfa", text: "A place to rest and take in the view", from: 2720, to: 3020, position: "top-left" },
-  { id: "everyone", cy: "Croeso i bawb, beth bynnag fo'ch cyflymder", text: "Welcoming for everyone, whatever your pace", from: 3080, to: 3440, position: "top-left" },
+  { id: "everyone", cy: "Croeso i bawb, yn eich amser eich hun", text: "Welcoming for everyone, whatever your pace", from: 3080, to: 3440, position: "top-left" },
   { id: "ride", cy: `${miles(ROUTE_M)} milltir o Flaenau Ffestiniog i Drawsfynydd`, text: `${miles(ROUTE_M)} miles from Blaenau Ffestiniog to Trawsfynydd`, from: 3480, to: 3800, position: "top-left" },
   { id: "ride-time", cy: `Tua ${MINUTES} munud ar 10 mya hamddenol`, text: `About ${MINUTES} minutes at an easy 10 mph`, from: 3880, to: 4180, position: "top-left" },
-  { id: "heritage", cy: "Treftadaeth a dyfodol y rheilffordd:\ni'w harchwilio gyda phawb", text: "Railway heritage and future rail options:\nto explore with everyone", from: 4220, to: 4640, position: "top-left" },
+  { id: "heritage", cy: "Treftadaeth a dyfodol y rheilffordd:\ni'w trafod efo pawb", text: "Railway heritage and future rail options:\nto explore with everyone", from: 4220, to: 4640, position: "top-left" },
   { id: "together", cy: "Cysylltu ysgolion, teuluoedd, cymdogion ac ymwelwyr", text: "Linking schools, families, neighbours and visitors", from: 4690, to: 5000, position: "top-left" },
   { id: "closing", cy: "Mwy na llwybr. Cysylltiad i'n cymunedau.", text: "More than a path. A connection for our communities.", from: 5040, to: 5400, position: "bottom-center" },
 ];

@@ -12,8 +12,9 @@ from landscape import TILE_M, Nodes, _data_tinted, _finish, _untiled
 WHEEL_PATHS_M = (0.9, 2.7)  # out from the centreline: a lane's two wheel paths on a 7.3 m road, one lane's on a narrow one
 PATH_WIDTH_M = 0.35
 # the shared path (review 2026-11-03: the gravel texture's 4.3 m second sample read as cobbles from the saddle): fine
-# aggregate at a 0.9 m tile, a gentler relief, and the verge's soil and grass creeping 0.1-0.3 m in at either edge
-TRAIL = {"tile_m": 0.9, "relief": 0.7, "width_m": 3.0, "edge_m": 0.4, "creep": 0.75, "colour": (0.20, 0.19, 0.17), "verge": (0.85, 0.85, 0.8)}
+# aggregate at a 0.9 m tile, a gentler relief, and the verge's grass creeping 0.1-0.25 m in at either edge in the
+# colour of the ground beside it (review 2026-11-08: the raw texture over 0.4 m read as a tan band along the path)
+TRAIL = {"tile_m": 0.9, "relief": 0.7, "width_m": 3.0, "edge_m": 0.3, "creep": 0.75, "colour": (0.20, 0.19, 0.17), "verge": (0.85, 0.85, 0.8)}
 
 
 def road_material():
@@ -95,8 +96,11 @@ def path_material():
     creep.inputs["From Min"].default_value, creep.inputs["From Max"].default_value = -0.08, 0.08
     creep.inputs["To Max"].default_value = TRAIL["creep"]
     nd.link(nd.math("SUBTRACT", ragged.outputs["Fac"], reach, -200, 1800), creep.inputs["Value"])
-    # the creeping verge is the sward's own ground texture, darkened a little where it is trodden
-    verge = nd.mix(1.0, _untiled(nd, "terrain-grass", TILE_M["terrain-grass"], y=-2400)[0], (*TRAIL["verge"], 1.0), blend="MULTIPLY")
+    # the creeping verge is the sward's own ground texture re-centred on the ground's data colour under the ribbon's
+    # edge (the trail mesh's "land" attribute, import_blockout.py), darkened a little where it is trodden
+    land = nd.new("ShaderNodeVertexColor", -1400, -2400, layer_name="land").outputs["Color"]
+    grass_tex = _untiled(nd, "terrain-grass", TILE_M["terrain-grass"], y=-2400)[0]
+    verge = nd.mix(1.0, _data_tinted(nd, grass_tex, "terrain-grass", land, keep=0.25), (*TRAIL["verge"], 1.0), blend="MULTIPLY")
     col = nd.mix(creep.outputs[0], col, verge, blend="MIX")
     rough = nd.mix(creep.outputs[0], rough, (0.95, 0.95, 0.95, 1.0), blend="MIX")
     _finish(nd, col, nor, rough, TRAIL["relief"], 1.1)

@@ -5,7 +5,7 @@
 // It needs the plates (npm run social:plates) and the soundtracks (npm run social:audio) in out/social/public.
 import { bundle } from "@remotion/bundler";
 import { renderMedia, selectComposition } from "@remotion/renderer";
-import { existsSync, mkdirSync, statSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { CUTS, cutFrames, EXPORT_PRESETS, FORMATS, plateById, type Cut } from "../../src/data/social-cuts";
 import { postText, srt } from "../../src/social/subtitles";
@@ -46,6 +46,9 @@ for (const cut of cuts) {
 }
 mkdirSync(outDir, { recursive: true });
 const serveUrl = await bundle({ entryPoint: resolve(root, "src/index.ts"), publicDir: pub });
+// the bundle is a copy of the whole public folder (the plates: 16 GB) in the temp folder, which Remotion leaves
+// behind; one per run filled the disk (review 2026-11-09), so it goes when the process ends, however it ends
+process.on("exit", () => rmSync(serveUrl, { recursive: true, force: true }));
 for (const cut of cuts) {
   const id = `Social-${cut.id}`;
   const composition = await selectComposition({ serveUrl, id, inputProps: { cut: cut.id } });

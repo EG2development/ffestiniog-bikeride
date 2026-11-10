@@ -262,6 +262,16 @@ def build_section(pkg_dir, prefix="", samples=64, dressed=False):
         import buildings
         report["buildings"] = buildings.dress_buildings(man["buildings"], bpy.data.objects[n("terrain")], colls["ExistingFeatures"], n)
 
+    # the path's verge creep (roadway.path_material) takes the colour of the ground beside it: the terrain's data
+    # colour under each ribbon vertex, as the grass clumps do (review 2026-11-08: the raw texture read as a tan band)
+    trail_obj = bpy.data.objects.get(n("trail"))
+    if dressed and trail_obj is not None and bpy.data.objects.get(n("terrain")) is not None:
+        tv = np.empty(len(trail_obj.data.vertices) * 3, np.float32)
+        trail_obj.data.vertices.foreach_get("co", tv)
+        rgba = np.ones((len(tv) // 3, 4), np.float32)
+        rgba[:, :3] = vegetation.ground_colours(tv.reshape(-1, 3) + np.array(trail_obj.location, np.float32), bpy.data.objects[n("terrain")])
+        trail_obj.data.color_attributes.new("land", "FLOAT_COLOR", "POINT").data.foreach_set("color", rgba.ravel())
+
     # water: flat polygons at the body's level, holes included
     from mathutils.geometry import tessellate_polygon
     for w in man["water"]:
@@ -297,11 +307,18 @@ def build_section(pkg_dir, prefix="", samples=64, dressed=False):
             import power
             report["power"] = power.build_power(man["power"], terrain, colls["ExistingFeatures"], n)
 
+    # street furniture (existing or proposed; trailfolk.props) before the vegetation and the sward, which keep off it,
+    # and before the people, who sit on its benches
+    seats = trailfolk.props(man, colls["ExistingFeatures"], n("prop:")) if dressed and ground and man.get("props") else []
+    prop_meshes = [o for o in scene.collection.all_objects if o.type == "MESH" and o.name.startswith(n("prop:"))] if dressed else []
+
     # vegetation: placeholders, or instanced trees and grass with a level of detail per tree
     if dressed:
         rows = {inst["kind"]: read_array(pkg, inst["data"]).reshape(-1, 7).astype(np.float64) for inst in man["instances"]}
         if "grass" in rows and terrain is not None:
             rows["grass"] = waterside.off_shore(rows["grass"], terrain)
+        if "grass" in rows and prop_meshes:  # none through a bench's slab or the lockers' base
+            rows["grass"] = trailfolk.off_props(rows["grass"], prop_meshes, scene)
         report["vegetation"] = vegetation.dress_vegetation(rows, cam_data[:, 0:3].astype(np.float64), colls["Vegetation"], n, not ground, bpy.data.objects[n("terrain")])
         if not ground and n("barrier-hedge") in bpy.data.objects:
             report["vegetation"]["hedgerow"] = vegetation.hedgerows(bpy.data.objects[n("barrier-hedge")], colls["Vegetation"], n)
@@ -309,7 +326,7 @@ def build_section(pkg_dir, prefix="", samples=64, dressed=False):
             report["railway"] = railway.build_track(bpy.data.objects[n("trail")], cam_data[:, 0:3].astype(np.float64), colls["ExistingFeatures"], n)
         if ground:
             import sward
-            clear_of = (() if railway_scene else ("trail",)) + ("roads", "bridge", "barrier", "water", "buildings")
+            clear_of = (() if railway_scene else ("trail",)) + ("roads", "bridge", "barrier", "water", "buildings", "prop:")
             report["sward"] = sward.sward(bpy.data.objects[n("terrain")], cam_data[:, 0:3].astype(np.float64), colls["Vegetation"], n,
                                           [o for o in scene.collection.all_objects if o.type == "MESH" and o.name.startswith(tuple(n(k) for k in clear_of))])
     else:
@@ -339,8 +356,6 @@ def build_section(pkg_dir, prefix="", samples=64, dressed=False):
         if dressed and not man["rider"].get("hidden"):
             report["rider"] = dress.rider(scene, r_obj, rider, dims, colls["Cyclists"], n("rider:"))
             dress.hide_in_shots(r_obj, shots, frames)
-        # street furniture (existing or proposed; trailfolk.props) before the people, who sit on its benches
-        seats = trailfolk.props(man, colls["ExistingFeatures"], n("prop:")) if dressed and man.get("props") else []
         for shot in (s for s in shots if s["kind"] == "first-person" and not dressed):
             lo, hi = shot["firstBlenderFrame"], shot["lastBlenderFrame"]
             for f, value in ((lo - 1, False), (lo, True), (hi, True), (hi + 1, False)):

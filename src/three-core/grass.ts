@@ -2,7 +2,7 @@
 import { bngToWgs84 } from "./bng";
 import { heightAtBng } from "./dem";
 import { mulberry32 } from "./rng";
-import type { Trail } from "./trail";
+import { centrelineIndex, type Trail } from "./trail";
 import type { DemGrid, LandCover, Projector } from "./types";
 
 // Grass is decorative, like the trees (ADR 11): it is placed only on land cover that is grass, heath or unclassified
@@ -19,7 +19,8 @@ export type GrassOptions = {
   bandM: number;
   /** clumps per 100 m² of eligible ground */
   per100m2: number;
-  /** no clump within this distance of the centreline: the ribbon and its shoulder */
+  /** no clump within this lateral distance of the centreline: the ribbon's 1.5 m half-width, a verge, and the
+   * clump's own spread (the largest clump is 0.6 m across at its biggest scale) */
   clearOfTrailM: number;
   maxClumps: number;
   ve: number;
@@ -33,7 +34,7 @@ export type GrassOptions = {
   groundAt?: (x: number, z: number) => number;
 };
 
-const DEFAULTS: GrassOptions = { seed: 20261029, alongM: [0, Infinity], bandM: 60, per100m2: 70, clearOfTrailM: 2, maxClumps: 80_000, ve: 1, classes: /grass|farm|meadow|pasture|heath|scrub|other/, tintScale: 1 };
+const DEFAULTS: GrassOptions = { seed: 20261029, alongM: [0, Infinity], bandM: 60, per100m2: 70, clearOfTrailM: 2.3, maxClumps: 80_000, ve: 1, classes: /grass|farm|meadow|pasture|heath|scrub|other/, tintScale: 1 };
 
 export function placeGrass(dem: DemGrid, land: LandCover, project: Projector, trail: Trail, options: Partial<GrassOptions> = {}): GrassClump[] {
   const opts = { ...DEFAULTS, ...options };
@@ -50,7 +51,10 @@ export function placeGrass(dem: DemGrid, land: LandCover, project: Projector, tr
     if (list) list.push(s);
     else cells.set(key, [s]);
   }
+  // the clearance is the lateral distance to the centreline's segments (trail.ts), never to its sample points: a
+  // point test passed a clump midway between two samples while it stood on the path itself (review 2026-11-08)
   const clear = opts.clearOfTrailM / 10;
+  const footOf = centrelineIndex(trail, clear);
   const nearest = (x: number, z: number): number => {
     let best = Infinity;
     const cx = Math.floor(x / band);
@@ -83,7 +87,7 @@ export function placeGrass(dem: DemGrid, land: LandCover, project: Projector, tr
         if (h === null) continue;
         const { lon, lat } = bngToWgs84(e, n);
         const p = project(lon, lat);
-        if (nearest(p.x, p.y) < clear) continue;
+        if ((footOf(p.x, p.y)?.lateral ?? Infinity) < clear) continue;
         if (out.length >= opts.maxClumps) return out;
         // the clump stands on the rendered ground when the caller gives it, else on the bare DTM
         const y = opts.groundAt ? opts.groundAt(p.x, p.y) : (h / 10) * opts.ve;

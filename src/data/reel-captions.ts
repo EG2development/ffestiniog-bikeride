@@ -72,8 +72,8 @@ export const photoEarthworksLine = (fromKm: number, toKm: number): string =>
  * curated text, ADR 38). */
 export const PHOTO_LEGEND_CY: Record<keyof typeof PHOTO_LEGEND | "translucent", string> = {
   bridge: "Pont: lleoliad OSM, ffurf gyffredinol fras",
-  ground: "Pobl er darlunio; ymylon wedi'u lefelu a'u clirio ar gyfer y cysyniad",
-  railway: "Y rheilffordd heddiw: darlun, trac ar y llinell a fapiwyd",
+  ground: "Pobl er enghraifft yn unig; ymylon wedi'u lefelu a'u clirio ar gyfer y cysyniad",
+  railway: "Y rheilffordd heddiw: darlun bras, y trac ar y llinell a fapiwyd",
   translucent: "Tryloyw: wedi'i gymeradwyo neu ei ddymchwel, nid yw'n sefyll",
 };
 export const photoEarthworksLineCy = (fromKm: number, toKm: number): string =>

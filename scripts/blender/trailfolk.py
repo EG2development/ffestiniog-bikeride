@@ -118,3 +118,18 @@ def props(man, coll, prefix):
             for s in built["seats"]:
                 seats.append((root.location + turn @ Vector(s), (turn @ Vector(f)).normalized()))
     return seats
+
+
+def off_props(rows, meshes, scene, margin_m=0.3):
+    """Grass rows (x, y, z, ...) not under the street furniture: none within `margin_m` of the plan footprint of any
+    prop mesh (a bench's slab, the lockers, a shelter's paving), so no clump grows through a paved base (review
+    2026-11-08)."""
+    if not len(rows) or not meshes:
+        return rows
+    scene.view_layers[0].update()  # the roots were just placed: the meshes' world matrices follow the update
+    keep = np.ones(len(rows), bool)
+    for o in meshes:
+        pts = np.array([o.matrix_world @ Vector(c) for c in o.bound_box])
+        lo, hi = pts[:, :2].min(axis=0) - margin_m, pts[:, :2].max(axis=0) + margin_m
+        keep &= ~np.all((rows[:, 0:2] >= lo) & (rows[:, 0:2] <= hi), axis=1)
+    return rows[keep]

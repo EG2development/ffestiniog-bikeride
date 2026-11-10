@@ -73,7 +73,7 @@ describe("the community film's captions", () => {
     const badge = COMMUNITY_CAPTIONS.find((c) => c.position === "badge")!;
     expect([badge.from, badge.to]).toEqual([0, COMMUNITY_FRAMES]);
     expect(badge.text).toMatch(/not an approved route/);
-    expect(badge.cy).toMatch(/nid llwybr cymeradwy/);
+    expect(badge.cy).toMatch(/nid llwybr wedi'i gymeradwyo/);
   });
 
   it("are set Welsh first in every scene: each scene's legend gives its Welsh above its English", () => {

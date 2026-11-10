@@ -82,12 +82,12 @@ export const LINES = {
 export type LineId = keyof typeof LINES;
 
 /** On screen throughout: this is a concept, not a scheme. */
-export const BADGE: Line = { cy: "Darlun cysyniadol · nid llwybr cymeradwy", en: "Concept visualisation · not an approved route" };
+export const BADGE: Line = { cy: "Darlun cysyniadol · nid llwybr wedi'i gymeradwyo", en: "Concept visualisation · not an approved route" };
 /** Small notes under the badge where a shot's subject is proposed street furniture. */
 export const NOTES = {
   lockers: { cy: "Arfaethedig: loceri beiciau", en: "Proposed: cycle lockers" },
   benches: { cy: "Arfaethedig: meinciau", en: "Proposed: benches" },
-  busStop: { cy: "Yn bodoli: safle bws", en: "Existing: bus stop" },
+  busStop: { cy: "Yma'n barod: safle bws", en: "Existing: bus stop" },
 } satisfies Record<string, Line>;
 export type NoteId = keyof typeof NOTES;
 
@@ -95,19 +95,19 @@ export type NoteId = keyof typeof NOTES;
 export const END_CARD = {
   title: { cy: "Mwy na llwybr.\nCysylltiad i'n cymunedau.", en: "More than a path.\nA connection for our communities." },
   places: "Blaenau Ffestiniog · Llan Ffestiniog · Trawsfynydd", // no-break spaces: a name never splits across lines
-  invite: { cy: "Syniad i'w archwilio gyda'n gilydd", en: "An idea to explore together" },
+  invite: { cy: "Syniad i'w drafod efo'n gilydd", en: "An idea to explore together" },
   credits: { cy: SOURCES_CY, en: SOURCES },
 };
 
 /** What goes with each upload: its title and the post's text, Welsh first, and the same credits as the end card. */
 export const POST_TEXT: Line = {
-  cy: "Darlun cysyniadol o lwybr cerdded a beicio ar hyd yr hen reilffordd rhwng Blaenau Ffestiniog a Thrawsfynydd. Nid yw'n llwybr cymeradwy: syniad i'w archwilio gyda'n gilydd yw hwn.",
+  cy: "Darlun cysyniadol o lwybr cerdded a beicio ar hyd yr hen reilffordd rhwng Blaenau Ffestiniog a Thrawsfynydd. Dydi'r llwybr ddim wedi'i gymeradwyo: syniad i'w drafod efo'n gilydd ydi o.",
   en: "A concept visualisation of a walking and cycling route along the former railway between Blaenau Ffestiniog and Trawsfynydd. It is not an approved route: it is an idea to explore together.",
 };
 export const POST_TITLES: Record<CutId, Line> = {
   teaser: { cy: "Mwy na llwybr: Blaenau Ffestiniog i Drawsfynydd", en: "More than a path: Blaenau Ffestiniog to Trawsfynydd" },
   highlights: { cy: "Llwybr i bawb rhwng ein cymunedau", en: "A route for everyone between our communities" },
-  story: { cy: "Hen reilffordd, llwybr newydd? Syniad i'w archwilio", en: "A former railway, a new path? An idea to explore" },
+  story: { cy: "Hen reilffordd, llwybr newydd? Syniad i'w drafod", en: "A former railway, a new path? An idea to explore" },
   feed: { cy: "Cysylltu cymunedau: syniad ar gyfer yr hen reilffordd", en: "Connecting communities: an idea for the former railway" },
   youtube: { cy: "Blaenau Ffestiniog i Drawsfynydd: darlun o lwybr cerdded a beicio", en: "Blaenau Ffestiniog to Trawsfynydd: a walking and cycling route visualised" },
 };
